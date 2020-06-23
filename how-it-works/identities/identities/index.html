@@ -11,7 +11,7 @@
         <meta name="description" content="Binbash Leverage Reference Architecture Documentation">
       
       
-        <link rel="canonical" href="https://binbashar.github.io/le-tf-infra-aws/how-it-works/identities/identities/">
+        <link rel="canonical" href="https://binbashar.github.io/le-ref-architectre-doc/how-it-works/identities/identities/">
       
       
         <meta name="author" content="Binbash">
@@ -45,7 +45,9 @@
     
     
     
-      <link rel="stylesheet" href="../../../extra.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/extra.css">
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/404.css">
     
     
       
@@ -77,7 +79,7 @@
     
       <header class="md-header" data-md-component="header">
   <nav class="md-header-nav md-grid" aria-label="Header">
-    <a href="https://binbashar.github.io/le-tf-infra-aws" title="Binbash Leverage Reference Architecture" class="md-header-nav__button md-logo" aria-label="Binbash Leverage Reference Architecture">
+    <a href="https://binbashar.github.io/le-ref-architectre-doc" title="Binbash Leverage Reference Architecture" class="md-header-nav__button md-logo" aria-label="Binbash Leverage Reference Architecture">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 5c-1.11-.35-2.33-.5-3.5-.5-1.95 0-4.05.4-5.5 1.5-1.45-1.1-3.55-1.5-5.5-1.5-1.95 0-4.05.4-5.5 1.5v14.65c0 .25.25.5.5.5.1 0 .15-.05.25-.05C3.1 20.45 5.05 20 6.5 20c1.95 0 4.05.4 5.5 1.5 1.35-.85 3.8-1.5 5.5-1.5 1.65 0 3.35.3 4.75 1.05.1.05.15.05.25.05.25 0 .5-.25.5-.5V6c-.6-.45-1.25-.75-2-1m0 13.5c-1.1-.35-2.3-.5-3.5-.5-1.7 0-4.15.65-5.5 1.5V8c1.35-.85 3.8-1.5 5.5-1.5 1.2 0 2.4.15 3.5.5v11.5z"/></svg>
@@ -234,7 +236,7 @@
                   <div class="md-sidebar__inner">
                     <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="https://binbashar.github.io/le-tf-infra-aws" title="Binbash Leverage Reference Architecture" class="md-nav__button md-logo" aria-label="Binbash Leverage Reference Architecture">
+    <a href="https://binbashar.github.io/le-ref-architectre-doc" title="Binbash Leverage Reference Architecture" class="md-nav__button md-logo" aria-label="Binbash Leverage Reference Architecture">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 5c-1.11-.35-2.33-.5-3.5-.5-1.95 0-4.05.4-5.5 1.5-1.45-1.1-3.55-1.5-5.5-1.5-1.95 0-4.05.4-5.5 1.5v14.65c0 .25.25.5.5.5.1 0 .15-.05.25-.05C3.1 20.45 5.05 20 6.5 20c1.95 0 4.05.4 5.5 1.5 1.35-.85 3.8-1.5 5.5-1.5 1.65 0 3.35.3 4.75 1.05.1.05.15.05.25.05.25 0 .5-.25.5-.5V6c-.6-.45-1.25-.75-2-1m0 13.5c-1.1-.35-2.3-.5-3.5-.5-1.7 0-4.15.65-5.5 1.5V8c1.35-.85 3.8-1.5 5.5-1.5 1.2 0 2.4.15 3.5.5v11.5z"/></svg>
@@ -1255,7 +1257,7 @@
 <p>Having this <a href="https://d0.awsstatic.com/aws-answers/AWS_Multi_Account_Security_Strategy.pdf">official AWS resource</a> 
 as reference  we've define a security account structure for managing multiple accounts.</p>
 <div class="admonition tip">
-<p class="admonition-title">User Management Definitions <img alt="aws-service" src="../../../images/icons/aws-emojipack/General_AWScloud.png" style="width:30px" /> <img alt="aws-service" src="../../../images/icons/aws-emojipack/SecurityIdentityCompliance_IAM.png" style="width:15px" /></p>
+<p class="admonition-title">User Management Definitions <img alt="aws-service" src="../../../assets/images/icons/aws-emojipack/General_AWScloud.png" style="width:30px" /> <img alt="aws-service" src="../../../assets/images/icons/aws-emojipack/SecurityIdentityCompliance_IAM.png" style="width:15px" /></p>
 <ul class="task-list">
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> IAM users will strictly be created and centralized in the Security account (member accounts IAM Users could be exceptionally created for very specific tools that still don’t support IAM roles for cross-account auth). </li>
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> All access to resources within the Client organization will be assigned via policy documents attached to IAM roles or groups.</li>
@@ -1274,7 +1276,7 @@ as reference  we've define a security account structure for managing multiple ac
 of AWS-based deployments, centralize security monitoring and management, manage identity and access, and provide 
 audit and compliance monitoring services</p>
 </div>
-<p><img alt="leverage-aws-iam" src="../../../images/diagrams/aws-iam.png" style="width:600px" title="Leverage" />
+<p><img alt="leverage-aws-iam" src="../../../assets/images/diagrams/aws-iam.png" style="width:600px" title="Leverage" />
 <figcaption><strong>Figure:</strong> AWS Organization Security account structure for managing multiple accounts (just as reference).</figcaption></p>
 <h2 id="iam-groups-roles-definition">IAM Groups &amp; Roles definition<a class="headerlink" href="#iam-groups-roles-definition" title="Permanent link"> ¶</a></h2>
 <p><strong>AWS Org member accounts IAM groups :</strong></p>
@@ -1537,7 +1539,7 @@ audit and compliance monitoring services</p>
     </div>
     
       <script src="../../../assets/javascripts/vendor.d710d30a.min.js"></script>
-      <script src="../../../assets/javascripts/bundle.7f4f3c92.min.js"></script><script id="__lang" type="application/json">{"search.config.lang": "en", "search.result.one": "1 matching document", "clipboard.copied": "Copied to clipboard", "search.config.pipeline": "trimmer, stopWordFilter", "search.result.placeholder": "Type to start searching", "search.result.other": "# matching documents", "search.result.none": "No matching documents", "search.config.separator": "[\\s\\-]+", "clipboard.copy": "Copy to clipboard"}</script>
+      <script src="../../../assets/javascripts/bundle.7f4f3c92.min.js"></script><script id="__lang" type="application/json">{"clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "clipboard.copy": "Copy to clipboard", "search.config.separator": "[\\s\\-]+", "search.result.one": "1 matching document", "search.result.none": "No matching documents"}</script>
       
       <script>
         app = initialize({

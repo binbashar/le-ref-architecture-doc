@@ -1,162 +1,162 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"><url>
-     <loc>https://binbashar.github.io/le-tf-infra-aws/</loc>
+     <loc>https://binbashar.github.io/le-ref-architectre-doc/</loc>
      <lastmod>2020-06-23</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
-     <loc>https://binbashar.github.io/le-tf-infra-aws/how-it-works/</loc>
+     <loc>https://binbashar.github.io/le-ref-architectre-doc/how-it-works/</loc>
      <lastmod>2020-06-23</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
-     <loc>https://binbashar.github.io/le-tf-infra-aws/support/</loc>
+     <loc>https://binbashar.github.io/le-ref-architectre-doc/support/</loc>
      <lastmod>2020-06-23</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
-     <loc>https://binbashar.github.io/le-tf-infra-aws/development/</loc>
+     <loc>https://binbashar.github.io/le-ref-architectre-doc/development/</loc>
      <lastmod>2020-06-23</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
-     <loc>https://binbashar.github.io/le-tf-infra-aws/how-it-works/</loc>
+     <loc>https://binbashar.github.io/le-ref-architectre-doc/how-it-works/</loc>
      <lastmod>2020-06-23</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
-     <loc>https://binbashar.github.io/le-tf-infra-aws/how-it-works/code-library/code-library/</loc>
+     <loc>https://binbashar.github.io/le-ref-architectre-doc/how-it-works/code-library/code-library/</loc>
      <lastmod>2020-06-23</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
-     <loc>https://binbashar.github.io/le-tf-infra-aws/how-it-works/code-library/code-library-specs/</loc>
+     <loc>https://binbashar.github.io/le-ref-architectre-doc/how-it-works/code-library/code-library-specs/</loc>
      <lastmod>2020-06-23</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
-     <loc>https://binbashar.github.io/le-tf-infra-aws/how-it-works/code-library/modules-library-per-tech/</loc>
+     <loc>https://binbashar.github.io/le-ref-architectre-doc/how-it-works/code-library/modules-library-per-tech/</loc>
      <lastmod>2020-06-23</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
-     <loc>https://binbashar.github.io/le-tf-infra-aws/how-it-works/organization/organization/</loc>
+     <loc>https://binbashar.github.io/le-ref-architectre-doc/how-it-works/organization/organization/</loc>
      <lastmod>2020-06-23</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
-     <loc>https://binbashar.github.io/le-tf-infra-aws/how-it-works/identities/identities/</loc>
+     <loc>https://binbashar.github.io/le-ref-architectre-doc/how-it-works/identities/identities/</loc>
      <lastmod>2020-06-23</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
-     <loc>https://binbashar.github.io/le-tf-infra-aws/how-it-works/security/vpn/</loc>
+     <loc>https://binbashar.github.io/le-ref-architectre-doc/how-it-works/security/vpn/</loc>
      <lastmod>2020-06-23</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
-     <loc>https://binbashar.github.io/le-tf-infra-aws/how-it-works/security/services/</loc>
+     <loc>https://binbashar.github.io/le-ref-architectre-doc/how-it-works/security/services/</loc>
      <lastmod>2020-06-23</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
-     <loc>https://binbashar.github.io/le-tf-infra-aws/how-it-works/network/vpc/</loc>
+     <loc>https://binbashar.github.io/le-ref-architectre-doc/how-it-works/network/vpc/</loc>
      <lastmod>2020-06-23</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
-     <loc>https://binbashar.github.io/le-tf-infra-aws/how-it-works/network/vpc-peering/</loc>
+     <loc>https://binbashar.github.io/le-ref-architectre-doc/how-it-works/network/vpc-peering/</loc>
      <lastmod>2020-06-23</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
-     <loc>https://binbashar.github.io/le-tf-infra-aws/how-it-works/network/dns/</loc>
+     <loc>https://binbashar.github.io/le-ref-architectre-doc/how-it-works/network/dns/</loc>
      <lastmod>2020-06-23</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
-     <loc>https://binbashar.github.io/le-tf-infra-aws/how-it-works/compute/k8s-kops/</loc>
+     <loc>https://binbashar.github.io/le-ref-architectre-doc/how-it-works/compute/k8s-kops/</loc>
      <lastmod>2020-06-23</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
-     <loc>https://binbashar.github.io/le-tf-infra-aws/how-it-works/compute/k8s-eks/</loc>
+     <loc>https://binbashar.github.io/le-ref-architectre-doc/how-it-works/compute/k8s-eks/</loc>
      <lastmod>2020-06-23</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
-     <loc>https://binbashar.github.io/le-tf-infra-aws/how-it-works/compute/serverless/</loc>
+     <loc>https://binbashar.github.io/le-ref-architectre-doc/how-it-works/compute/serverless/</loc>
      <lastmod>2020-06-23</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
-     <loc>https://binbashar.github.io/le-tf-infra-aws/how-it-works/database/database/</loc>
+     <loc>https://binbashar.github.io/le-ref-architectre-doc/how-it-works/database/database/</loc>
      <lastmod>2020-06-23</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
-     <loc>https://binbashar.github.io/le-tf-infra-aws/how-it-works/database/mysql/</loc>
+     <loc>https://binbashar.github.io/le-ref-architectre-doc/how-it-works/database/mysql/</loc>
      <lastmod>2020-06-23</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
-     <loc>https://binbashar.github.io/le-tf-infra-aws/how-it-works/database/postgres/</loc>
+     <loc>https://binbashar.github.io/le-ref-architectre-doc/how-it-works/database/postgres/</loc>
      <lastmod>2020-06-23</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
-     <loc>https://binbashar.github.io/le-tf-infra-aws/how-it-works/storage/storage/</loc>
+     <loc>https://binbashar.github.io/le-ref-architectre-doc/how-it-works/storage/storage/</loc>
      <lastmod>2020-06-23</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
-     <loc>https://binbashar.github.io/le-tf-infra-aws/how-it-works/cdn/cdn/</loc>
+     <loc>https://binbashar.github.io/le-ref-architectre-doc/how-it-works/cdn/cdn/</loc>
      <lastmod>2020-06-23</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
-     <loc>https://binbashar.github.io/le-tf-infra-aws/how-it-works/ci-cd/ci-cd/</loc>
+     <loc>https://binbashar.github.io/le-ref-architectre-doc/how-it-works/ci-cd/ci-cd/</loc>
      <lastmod>2020-06-23</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
-     <loc>https://binbashar.github.io/le-tf-infra-aws/how-it-works/tools/tools/</loc>
+     <loc>https://binbashar.github.io/le-ref-architectre-doc/how-it-works/tools/tools/</loc>
      <lastmod>2020-06-23</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
-     <loc>https://binbashar.github.io/le-tf-infra-aws/how-it-works/monitoring/monitoring/</loc>
+     <loc>https://binbashar.github.io/le-ref-architectre-doc/how-it-works/monitoring/monitoring/</loc>
      <lastmod>2020-06-23</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
-     <loc>https://binbashar.github.io/le-tf-infra-aws/how-it-works/monitoring/metrics/</loc>
+     <loc>https://binbashar.github.io/le-ref-architectre-doc/how-it-works/monitoring/metrics/</loc>
      <lastmod>2020-06-23</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
-     <loc>https://binbashar.github.io/le-tf-infra-aws/how-it-works/monitoring/logs/</loc>
+     <loc>https://binbashar.github.io/le-ref-architectre-doc/how-it-works/monitoring/logs/</loc>
      <lastmod>2020-06-23</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
-     <loc>https://binbashar.github.io/le-tf-infra-aws/how-it-works/monitoring/tracing/</loc>
+     <loc>https://binbashar.github.io/le-ref-architectre-doc/how-it-works/monitoring/tracing/</loc>
      <lastmod>2020-06-23</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
-     <loc>https://binbashar.github.io/le-tf-infra-aws/how-it-works/secrets/secrets/</loc>
+     <loc>https://binbashar.github.io/le-ref-architectre-doc/how-it-works/secrets/secrets/</loc>
      <lastmod>2020-06-23</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
-     <loc>https://binbashar.github.io/le-tf-infra-aws/how-it-works/reliability/dr/</loc>
+     <loc>https://binbashar.github.io/le-ref-architectre-doc/how-it-works/reliability/dr/</loc>
      <lastmod>2020-06-23</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
-     <loc>https://binbashar.github.io/le-tf-infra-aws/how-it-works/reliability/backups/</loc>
+     <loc>https://binbashar.github.io/le-ref-architectre-doc/how-it-works/reliability/backups/</loc>
      <lastmod>2020-06-23</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
-     <loc>https://binbashar.github.io/le-tf-infra-aws/how-it-works/costs/costs/</loc>
+     <loc>https://binbashar.github.io/le-ref-architectre-doc/how-it-works/costs/costs/</loc>
      <lastmod>2020-06-23</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
-     <loc>https://binbashar.github.io/le-tf-infra-aws/how-it-works/read-more/</loc>
+     <loc>https://binbashar.github.io/le-ref-architectre-doc/how-it-works/read-more/</loc>
      <lastmod>2020-06-23</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
-     <loc>https://binbashar.github.io/le-tf-infra-aws/user-guide/configuration/configs/</loc>
+     <loc>https://binbashar.github.io/le-ref-architectre-doc/user-guide/configuration/configs/</loc>
      <lastmod>2020-06-23</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
-     <loc>https://binbashar.github.io/le-tf-infra-aws/user-guide/</loc>
+     <loc>https://binbashar.github.io/le-ref-architectre-doc/user-guide/</loc>
      <lastmod>2020-06-23</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
-     <loc>https://binbashar.github.io/le-tf-infra-aws/examples/</loc>
+     <loc>https://binbashar.github.io/le-ref-architectre-doc/examples/</loc>
      <lastmod>2020-06-23</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
-     <loc>https://binbashar.github.io/le-tf-infra-aws/examples/PREREQUISITES/</loc>
+     <loc>https://binbashar.github.io/le-ref-architectre-doc/examples/PREREQUISITES/</loc>
      <lastmod>2020-06-23</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
-     <loc>https://binbashar.github.io/le-tf-infra-aws/examples/organization/</loc>
+     <loc>https://binbashar.github.io/le-ref-architectre-doc/examples/organization/</loc>
      <lastmod>2020-06-23</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
-     <loc>https://binbashar.github.io/le-tf-infra-aws/examples/k8s-kops/</loc>
+     <loc>https://binbashar.github.io/le-ref-architectre-doc/examples/k8s-kops/</loc>
      <lastmod>2020-06-23</lastmod>
      <changefreq>daily</changefreq>
     </url>

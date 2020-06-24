@@ -7,6 +7,17 @@ All notable changes to this project will be documented in this file.
 
 
 
+<a name="v0.0.5"></a>
+## [v0.0.5] - 2020-06-24
+
+- BBL-119 adding .gitignore
+- Merge branch 'master' into gh-pages
+- BBL-119 mergin gb-pages to master branch
+- Deployed fb59342 with MkDocs version: 1.1.2
+- Merge branch 'BBL-119-mkdocs-gh-updates' into gh-pages
+- Deployed d2f6694 with MkDocs version: 1.1.2
+
+
 <a name="v0.0.4"></a>
 ## [v0.0.4] - 2020-06-24
 
@@ -64,7 +75,8 @@ All notable changes to this project will be documented in this file.
 - Deployed  with MkDocs version: 1.1.2
 
 
-[Unreleased]: https://github.com/binbashar/le-ref-architectre-doc/compare/v0.0.4...HEAD
+[Unreleased]: https://github.com/binbashar/le-ref-architectre-doc/compare/v0.0.5...HEAD
+[v0.0.5]: https://github.com/binbashar/le-ref-architectre-doc/compare/v0.0.4...v0.0.5
 [v0.0.4]: https://github.com/binbashar/le-ref-architectre-doc/compare/v0.0.3...v0.0.4
 [v0.0.3]: https://github.com/binbashar/le-ref-architectre-doc/compare/v0.0.2...v0.0.3
 [v0.0.2]: https://github.com/binbashar/le-ref-architectre-doc/compare/v0.0.1...v0.0.2

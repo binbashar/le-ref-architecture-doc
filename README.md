@@ -13,7 +13,7 @@
 This repository contains all files used to create Binbash Leverage Reference Documentation
 
 ## Documentation
-Check it out [here](https://binbashar.github.io/le-ref-architectre-doc/).
+Check it out [here](https://leverage.binbash.com.ar-doc/).
 
 ## Development / Contributing
 

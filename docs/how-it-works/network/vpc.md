@@ -100,4 +100,4 @@ subnets in each of these VPCs defining Private and Public subnets split among di
     * :ledger: **Reserved IP Addresses**
     The first four IP addresses and the last IP address in each subnet CIDR block are not available for you to use, 
     and cannot be assigned to an instance. For example, in a subnet with CIDR block 10.0.0.0/24, the following five IP 
-    addresses are reserved. For more [AWS VPC Subnets IP addressing](info https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Subnets.html#vpc-sizing-ipv4)
+    addresses are reserved. For more [AWS VPC Subnets IP addressing](https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Subnets.html#vpc-sizing-ipv4)

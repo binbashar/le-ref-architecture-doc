@@ -4,11 +4,11 @@
 #===================================================================================#
 site_name: Binbash Leverage Reference Architecture
 repo_name: "binbashar/le-tf-infra-aws"
-repo_url: https://github.com/binbashar/le-tf-infra-aws
+repo_url: https://github.com/binbashar/le-ref-architectre-doc
 site_url: https://binbashar.github.io/le-ref-architectre-doc
 site_description: Binbash Leverage Reference Architecture Documentation
 site_author: Binbash
-copyright: Copyright &copy; 2020 <a href="https://www.binbash.com.ar">Binbash</a>
+copyright: Copyright &copy; 2017-2020 <a href="https://www.binbash.com.ar">Binbash</a>
 
 #===================================================================================#
 # Mkdocs Theme (Material Mkdocs) + Extras
@@ -55,8 +55,6 @@ markdown_extensions:
   - pymdownx.emoji:
       emoji_index: !!python/name:materialx.emoji.twemoji
       emoji_generator: !!python/name:materialx.emoji.to_svg
-      # emoji_index: !!python/name:pymdownx.emoji.gemoji
-      # emoji_generator: !!python/name:pymdownx.emoji.to_svg
   - meta
   - toc:
       # insert a blank space before the character

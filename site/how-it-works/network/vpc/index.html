@@ -16,7 +16,7 @@
       
         <meta name="author" content="Binbash">
       
-      <link rel="shortcut icon" href="../../../images/logos/favicon.ico">
+      <link rel="shortcut icon" href="../../../assets/images/logos/favicon.ico">
       <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-5.3.2">
     
     
@@ -1363,9 +1363,7 @@ use cases</p>
 <p class="admonition-title">Individual CIDR Segments (VPCs)</p>
 <p><img alt="⏩" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/23e9.svg" title=":fast_forward:" /> Then each of these are /20 to /24</p>
 <ul class="task-list">
-<li class="task-list-item">
-<p><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Considering the whole Starting CIDR Segment (AWS Org) before declared, we'll start at <code>172.18.0.0/20</code></p>
-<ul>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Considering the whole Starting CIDR Segment (AWS Org) before declared, we'll start at <code>172.18.0.0/20</code><ul>
 <li><strong>shared</strong><ul>
 <li>1ry VPC CIDR: <code>172.18.0.0/24</code></li>
 <li>2ry VPC CIDR: <code>172.18.16.0/24</code></li>
@@ -1384,14 +1382,12 @@ use cases</p>
 <li>1ry VPC CIDR: <code>172.18.128.0/24</code></li>
 <li>2ry VPC CIDR: <code>172.18.144.0/24</code></li>
 <li>1ry VPC DR CIDR: <code>172.18.160.0/24</code></li>
-<li>2ry VPC DR CIDR: <code>172.18.176.0/24</code></li>
+<li>2ry VPC DR CIDR: <code>172.18.176.0/24</code>            </li>
 </ul>
 </li>
 </ul>
 </li>
-<li class="task-list-item">
-<p><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Resulting in <strong>Subnets: 16 x VPC</strong></p>
-<ul>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Resulting in <strong>Subnets: 16 x VPC</strong><ul>
 <li>VPC Subnets with Hosts/Net: 256.</li>
 <li>Eg: apps-devstg account → us-east-1 w/ 3 AZs → 3 x Private Subnets /az + 3 x Public Subnets /az<ul>
 <li>1ry VPC CIDR: <code>172.18.64.0/24</code>Subnets:<ul>
@@ -1509,21 +1505,17 @@ subnets in each of these VPCs defining Private and Public subnets split among di
 <div class="admonition warning">
 <p class="admonition-title">Design considerations</p>
 <ul>
-<li>
-<p><strong>AWS EKS:</strong> Docker runs in the 172.17.0.0/16 CIDR range in Amazon EKS clusters. 
+<li><img alt="📒" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f4d2.svg" title=":ledger:" /> <strong>AWS EKS:</strong> Docker runs in the 172.17.0.0/16 CIDR range in Amazon EKS clusters. 
   We recommend that your cluster's VPC subnets do not overlap this range. Otherwise, you will 
   receive the following error:
   <div class="highlight"><pre><span></span><code>Error: : error upgrading connection: error dialing backend: dial tcp 172.17.nn.nn:10250: 
 getsockopt: no route to host
 </code></pre></div>
-  Read more: <a href="https://docs.aws.amazon.com/eks/latest/userguide/network_reqs.html">AWS EKS network requirements</a></p>
-</li>
-<li>
-<p><strong>Reserved IP Addresses</strong>
+  Read more: <a href="https://docs.aws.amazon.com/eks/latest/userguide/network_reqs.html">AWS EKS network requirements</a></li>
+<li><img alt="📒" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f4d2.svg" title=":ledger:" /> <strong>Reserved IP Addresses</strong>
 The first four IP addresses and the last IP address in each subnet CIDR block are not available for you to use, 
 and cannot be assigned to an instance. For example, in a subnet with CIDR block 10.0.0.0/24, the following five IP 
-addresses are reserved. For more <a href="info https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Subnets.html#vpc-sizing-ipv4">AWS VPC Subnets IP addressing</a></p>
-</li>
+addresses are reserved. For more <a href="info https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Subnets.html#vpc-sizing-ipv4">AWS VPC Subnets IP addressing</a></li>
 </ul>
 </div>
                 
@@ -1637,7 +1629,7 @@ addresses are reserved. For more <a href="info https://docs.aws.amazon.com/vpc/l
     </div>
     
       <script src="../../../assets/javascripts/vendor.d710d30a.min.js"></script>
-      <script src="../../../assets/javascripts/bundle.7f4f3c92.min.js"></script><script id="__lang" type="application/json">{"search.config.lang": "en", "search.config.separator": "[\\s\\-]+", "clipboard.copied": "Copied to clipboard", "search.result.one": "1 matching document", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.other": "# matching documents", "search.config.pipeline": "trimmer, stopWordFilter", "clipboard.copy": "Copy to clipboard"}</script>
+      <script src="../../../assets/javascripts/bundle.7f4f3c92.min.js"></script><script id="__lang" type="application/json">{"clipboard.copied": "Copied to clipboard", "search.result.other": "# matching documents", "search.result.one": "1 matching document", "search.config.pipeline": "trimmer, stopWordFilter", "search.result.none": "No matching documents", "search.config.separator": "[\\s\\-]+", "search.config.lang": "en", "clipboard.copy": "Copy to clipboard", "search.result.placeholder": "Type to start searching"}</script>
       
       <script>
         app = initialize({

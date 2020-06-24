@@ -2,7 +2,7 @@ style: github
 template: CHANGELOG.tpl.md
 info:
   title: CHANGELOG
-  repository_url: https://github.com/binbashar/le-ref-architectre-doc
+  repository_url: https://github.com/binbashar/le-ref-architecture-doc
 options:
   header:
     pattern: "^(.*)$"

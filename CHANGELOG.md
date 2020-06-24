@@ -7,6 +7,13 @@ All notable changes to this project will be documented in this file.
 
 
 
+<a name="v0.0.2"></a>
+## [v0.0.2] - 2020-06-24
+
+- BBL-119 adding site dir
+- BBL-119 commiting docs dir
+
+
 <a name="v0.0.1"></a>
 ## v0.0.1 - 2020-06-24
 
@@ -41,4 +48,5 @@ All notable changes to this project will be documented in this file.
 - Deployed  with MkDocs version: 1.1.2
 
 
-[Unreleased]: https://github.com/binbashar/le-ref-architectre-doc/compare/v0.0.1...HEAD
+[Unreleased]: https://github.com/binbashar/le-ref-architectre-doc/compare/v0.0.2...HEAD
+[v0.0.2]: https://github.com/binbashar/le-ref-architectre-doc/compare/v0.0.1...v0.0.2

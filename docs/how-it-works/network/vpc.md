@@ -1,7 +1,6 @@
 ## Network Layer
 
 !!! info "In this section we detail all the network design related specifications"
-
     * [x] VPCs CIDR blocks
     * [x] VPC Gateways:  Internet, NAT, VPN.
     * [x] VPC Peerings
@@ -10,8 +9,7 @@
 
 ### VPCs IP Addressing Plan (CIDR blocks sizing)
 
-!!! abstract "Introduction"
-    
+!!! abstract "Introduction"  
     VPCs can vary in size from 16 addresses (/28 netmask) to 65,536 addresses (/16 netmask). 
     In order to size a VPC correctly, it is important to understand the number, types, and sizes of workloads 
     expected to run in it, as well as workload elasticity and load balancing requirements. 
@@ -33,7 +31,6 @@
 ## Networking - IP Addressing
 
 !!! example "Starting CIDR Segment (AWS Org)"
-
     * [x] AWS Org IP Addressing calculation is presented below based on segment `172.16.0.0.0/12`
     * [x] We started from `172.16.0.0.0/12` and subnetted to `/20`
     * [x] Resulting in **Total Subnets: 256**
@@ -43,9 +40,8 @@
 
 
 !!! example "Individual CIDR Segments (VPCs)"
-    
     :fast_forward: Then each of these are /20 to /24
-    
+       
     *   [x] Considering the whole Starting CIDR Segment (AWS Org) before declared, we'll start at `172.18.0.0/20`
         *   **shared**
             *   1ry VPC CIDR: `172.18.0.0/24`
@@ -61,8 +57,7 @@
             *   1ry VPC CIDR: `172.18.128.0/24`
             *   2ry VPC CIDR: `172.18.144.0/24`
             *   1ry VPC DR CIDR: `172.18.160.0/24`
-            *   2ry VPC DR CIDR: `172.18.176.0/24`
-            
+            *   2ry VPC DR CIDR: `172.18.176.0/24`            
     *   [x] Resulting in **Subnets: 16 x VPC**
         *   VPC Subnets with Hosts/Net: 256.
         *   Eg: apps-devstg account → us-east-1 w/ 3 AZs → 3 x Private Subnets /az + 3 x Public Subnets /az
@@ -93,8 +88,7 @@ subnets in each of these VPCs defining Private and Public subnets split among di
 ### Considerations
 
 !!! warning "Design considerations"
-
-    * **AWS EKS:** Docker runs in the 172.17.0.0/16 CIDR range in Amazon EKS clusters. 
+    * :ledger: **AWS EKS:** Docker runs in the 172.17.0.0/16 CIDR range in Amazon EKS clusters. 
       We recommend that your cluster's VPC subnets do not overlap this range. Otherwise, you will 
       receive the following error:
       ```
@@ -102,8 +96,7 @@ subnets in each of these VPCs defining Private and Public subnets split among di
       getsockopt: no route to host
       ```
       Read more: [AWS EKS network requirements](https://docs.aws.amazon.com/eks/latest/userguide/network_reqs.html)
-       
-    * **Reserved IP Addresses**
+    * :ledger: **Reserved IP Addresses**
     The first four IP addresses and the last IP address in each subnet CIDR block are not available for you to use, 
     and cannot be assigned to an instance. For example, in a subnet with CIDR block 10.0.0.0/24, the following five IP 
     addresses are reserved. For more [AWS VPC Subnets IP addressing](info https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Subnets.html#vpc-sizing-ipv4)

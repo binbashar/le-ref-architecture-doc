@@ -2,9 +2,9 @@
 
 !!! tip ":checkered_flag: **As Code:** Hundred of thousands lines of code written in"
     
-    - Terraform, 
-    - Groovy (Jenkinsfiles), 
-    - Ansible,  
+    - Terraform 
+    - Groovy (Jenkinsfiles)
+    - Ansible 
     - Makefiles + Bash 
     - Dockerfiles
     - Helm Charts
@@ -62,7 +62,7 @@
                 }
                 ```
 
-!!! tip ":checkered_flag: **Solutions must be versioned:**"      
+!!! tip ":checkered_flag: **Solutions must be versioned**"      
     
     So as to be able to manage them as a software product with releases and change log. 
     In this way we'll be able to know which version is currently deployed in a certain client and consider it's upgrade.
@@ -73,7 +73,7 @@
     Promote inmutable, versioned infra modules based across envs. 
      
 
-!!! tip ":checkered_flag: **Updated:**"      
+!!! tip ":checkered_flag: **Updated**"      
    
     Continually make updates, additions, and fixes to the libraries and modules. 
 
@@ -82,7 +82,7 @@
     approach for our solutions.
         - TODO: FLOW DIAGRAM HERE 
         
-!!! tip ":checkered_flag: **Proven & Tested:**"      
+!!! tip ":checkered_flag: **Proven & Tested**"      
 
         Customers & every commit goes through a suite of automated tests to gran code styling and functional testing.
     
@@ -93,7 +93,7 @@
         *   [x] Terraform:
             *   [gruntwork-io/terratest](https://github.com/gruntwork-io/terratest)
     
-!!! tip ":checkered_flag: **Cost savings:**"      
+!!! tip ":checkered_flag: **Cost savings**"      
 
     The architecture for our Library / Code Modules helps an organization to analyze its current IT and DevSecOps
     Cloud strategy and identify areas where changes could lead to cost savings. For instance, the architecture may show
@@ -107,11 +107,11 @@
     You get access to 100% of the code under Open Source license ([https://choosealicense.com/](https://choosealicense.com/)) 
       so If you ever choose to cancel, you keep rights to all the code.
      
-!!! tip ":checkered_flag: **Documented:**"      
+!!! tip ":checkered_flag: **Documented**"      
     
     Includes example code, use case and thorough documentation, such as[ README.md](http://readme.md/), 
     --help command, doc-string and in line comments.
      
-!!! tip ":checkered_flag: **Supported  & Customizable:**"      
+!!! tip ":checkered_flag: **Supported  & Customizable**"      
 
      Commercially maintained and supported by **_Binbash_**.

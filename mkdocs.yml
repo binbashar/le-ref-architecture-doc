@@ -18,7 +18,7 @@ theme:
   language: en
   icon:
       logo: material/book-open-variant
-  favicon: images/logos/favicon.ico
+  favicon: assets/images/logos/favicon.ico
   font:
     text: Roboto
     code: Roboto Mono

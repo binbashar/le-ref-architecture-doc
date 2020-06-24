@@ -1,0 +1,26 @@
+{
+  "name": "aws-slack-emojipack",
+  "version": "1.0.0",
+  "description": "All of the icons from https://aws.amazon.com/architecture/icons/ in Slack Emojipack-compatible format",
+  "main": "index.js",
+  "dependencies": {},
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/aendrew/aws-slack-emojipack.git"
+  },
+  "keywords": [
+    "slack",
+    "emoji",
+    "emojipacks"
+  ],
+  "author": "Ændrew Rininsland <andrew.rininsland@ft.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/aendrew/aws-slack-emojipack/issues"
+  },
+  "homepage": "https://github.com/aendrew/aws-slack-emojipack#readme"
+}

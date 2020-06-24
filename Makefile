@@ -16,6 +16,7 @@ docs-local-prereqs: ## Install local mkdocs pre-requisites
 
 docs-deploy-gh: ## deploy to Github pages
 	mkdocs gh-deploy --clean
+	rm -rf ./site
 
 docs-live: ## Build and launch a local copy of the documentation website in http://localhost:3000
 	@docker run --rm -it \

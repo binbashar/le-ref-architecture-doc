@@ -7,6 +7,13 @@ All notable changes to this project will be documented in this file.
 
 
 
+<a name="v0.0.3"></a>
+## [v0.0.3] - 2020-06-24
+
+- Merge branch 'master' into gh-pages
+- Deployed 24beaf5 with MkDocs version: 1.1.2
+
+
 <a name="v0.0.2"></a>
 ## [v0.0.2] - 2020-06-24
 
@@ -48,5 +55,6 @@ All notable changes to this project will be documented in this file.
 - Deployed  with MkDocs version: 1.1.2
 
 
-[Unreleased]: https://github.com/binbashar/le-ref-architectre-doc/compare/v0.0.2...HEAD
+[Unreleased]: https://github.com/binbashar/le-ref-architectre-doc/compare/v0.0.3...HEAD
+[v0.0.3]: https://github.com/binbashar/le-ref-architectre-doc/compare/v0.0.2...v0.0.3
 [v0.0.2]: https://github.com/binbashar/le-ref-architectre-doc/compare/v0.0.1...v0.0.2

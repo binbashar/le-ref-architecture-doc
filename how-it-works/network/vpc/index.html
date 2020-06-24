@@ -559,6 +559,8 @@
     
     <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
     
+      
+    
     
       <label class="md-nav__link md-nav__link--active" for="__toc">
         VPC
@@ -575,6 +577,8 @@
 <nav class="md-nav md-nav--secondary" aria-label="Table of contents">
   
   
+    
+  
   
     <label class="md-nav__title" for="__toc">
       <span class="md-nav__icon md-icon">
@@ -585,22 +589,9 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#network-layer" class="md-nav__link">
-    Network Layer
-  </a>
-  
-    <nav class="md-nav" aria-label="Network Layer">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
   <a href="#vpcs-ip-addressing-plan-cidr-blocks-sizing" class="md-nav__link">
     VPCs IP Addressing Plan (CIDR blocks sizing)
   </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -1238,6 +1229,8 @@
 <nav class="md-nav md-nav--secondary" aria-label="Table of contents">
   
   
+    
+  
   
     <label class="md-nav__title" for="__toc">
       <span class="md-nav__icon md-icon">
@@ -1248,22 +1241,9 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#network-layer" class="md-nav__link">
-    Network Layer
-  </a>
-  
-    <nav class="md-nav" aria-label="Network Layer">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
   <a href="#vpcs-ip-addressing-plan-cidr-blocks-sizing" class="md-nav__link">
     VPCs IP Addressing Plan (CIDR blocks sizing)
   </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -1314,9 +1294,7 @@
                   
                 
                 
-                  <h1>VPC</h1>
-                
-                <h2 id="network-layer">Network Layer<a class="headerlink" href="#network-layer" title="Permanent link"> ¶</a></h2>
+                <h1 id="network-layer">Network Layer<a class="headerlink" href="#network-layer" title="Permanent link"> ¶</a></h1>
 <div class="admonition info">
 <p class="admonition-title">In this section we detail all the network design related specifications</p>
 <ul class="task-list">
@@ -1363,7 +1341,9 @@ use cases</p>
 <p class="admonition-title">Individual CIDR Segments (VPCs)</p>
 <p><img alt="⏩" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/23e9.svg" title=":fast_forward:" /> Then each of these are /20 to /24</p>
 <ul class="task-list">
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Considering the whole Starting CIDR Segment (AWS Org) before declared, we'll start at <code>172.18.0.0/20</code><ul>
+<li class="task-list-item">
+<p><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Considering the whole Starting CIDR Segment (AWS Org) before declared, we'll start at <code>172.18.0.0/20</code></p>
+<ul>
 <li><strong>shared</strong><ul>
 <li>1ry VPC CIDR: <code>172.18.0.0/24</code></li>
 <li>2ry VPC CIDR: <code>172.18.16.0/24</code></li>
@@ -1382,12 +1362,14 @@ use cases</p>
 <li>1ry VPC CIDR: <code>172.18.128.0/24</code></li>
 <li>2ry VPC CIDR: <code>172.18.144.0/24</code></li>
 <li>1ry VPC DR CIDR: <code>172.18.160.0/24</code></li>
-<li>2ry VPC DR CIDR: <code>172.18.176.0/24</code>            </li>
+<li>2ry VPC DR CIDR: <code>172.18.176.0/24</code></li>
 </ul>
 </li>
 </ul>
 </li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Resulting in <strong>Subnets: 16 x VPC</strong><ul>
+<li class="task-list-item">
+<p><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Resulting in <strong>Subnets: 16 x VPC</strong></p>
+<ul>
 <li>VPC Subnets with Hosts/Net: 256.</li>
 <li>Eg: apps-devstg account → us-east-1 w/ 3 AZs → 3 x Private Subnets /az + 3 x Public Subnets /az<ul>
 <li>1ry VPC CIDR: <code>172.18.64.0/24</code>Subnets:<ul>
@@ -1511,7 +1493,7 @@ subnets in each of these VPCs defining Private and Public subnets split among di
   <div class="highlight"><pre><span></span><code>Error: : error upgrading connection: error dialing backend: dial tcp 172.17.nn.nn:10250: 
 getsockopt: no route to host
 </code></pre></div>
-  Read more: <a href="https://docs.aws.amazon.com/eks/latest/userguide/network_reqs.html">AWS EKS network requirements</a></li>
+  Read more: <a href="https://docs.aws.amazon.com/eks/latest/userguide/network_reqs.html">AWS EKS network requirements</a>   </li>
 <li><img alt="📒" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f4d2.svg" title=":ledger:" /> <strong>Reserved IP Addresses</strong>
 The first four IP addresses and the last IP address in each subnet CIDR block are not available for you to use, 
 and cannot be assigned to an instance. For example, in a subnet with CIDR block 10.0.0.0/24, the following five IP 
@@ -1629,7 +1611,7 @@ addresses are reserved. For more <a href="info https://docs.aws.amazon.com/vpc/l
     </div>
     
       <script src="../../../assets/javascripts/vendor.d710d30a.min.js"></script>
-      <script src="../../../assets/javascripts/bundle.7f4f3c92.min.js"></script><script id="__lang" type="application/json">{"search.result.other": "# matching documents", "clipboard.copy": "Copy to clipboard", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.placeholder": "Type to start searching", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en"}</script>
+      <script src="../../../assets/javascripts/bundle.7f4f3c92.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "clipboard.copied": "Copied to clipboard", "search.result.other": "# matching documents", "search.result.one": "1 matching document", "search.result.none": "No matching documents", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.result.placeholder": "Type to start searching"}</script>
       
       <script>
         app = initialize({

@@ -7,6 +7,15 @@ All notable changes to this project will be documented in this file.
 
 
 
+<a name="v0.0.4"></a>
+## [v0.0.4] - 2020-06-24
+
+- BBL-119 updating dns.md
+- Merge branch 'master' into BBL-119-mkdocs-gh-updates
+- BBL-119 adding site folder updates
+- BBL-119 adding DNS md file
+
+
 <a name="v0.0.3"></a>
 ## [v0.0.3] - 2020-06-24
 
@@ -55,6 +64,7 @@ All notable changes to this project will be documented in this file.
 - Deployed  with MkDocs version: 1.1.2
 
 
-[Unreleased]: https://github.com/binbashar/le-ref-architectre-doc/compare/v0.0.3...HEAD
+[Unreleased]: https://github.com/binbashar/le-ref-architectre-doc/compare/v0.0.4...HEAD
+[v0.0.4]: https://github.com/binbashar/le-ref-architectre-doc/compare/v0.0.3...v0.0.4
 [v0.0.3]: https://github.com/binbashar/le-ref-architectre-doc/compare/v0.0.2...v0.0.3
 [v0.0.2]: https://github.com/binbashar/le-ref-architectre-doc/compare/v0.0.1...v0.0.2

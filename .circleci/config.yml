@@ -1,0 +1,52 @@
+version: 2.1
+
+jobs:
+  #
+  # Release
+  #
+  release-version-with-changelog:
+    machine:
+      image: ubuntu-1604:201903-01
+      docker_layer_caching: false
+
+    environment:
+      VERSION_NUMBER: patch # opts: patch, minor or major.
+
+    steps:
+      - checkout
+
+      - run:
+          name: Context Info Cmds
+          command: pwd && ls -ltra && git branch
+
+      - run:
+          name: Release New Version
+          command: |
+            if git status | grep 'nothing to commit, working tree clean'; then
+              echo "==============================================================================================="
+              echo "release-$VERSION_NUMBER-with-changelog-circleci"
+              echo "==============================================================================================="
+              git config --global user.email "$GIT_USER_EMAIL"
+              git config --global user.name "$GIT_USER_NAME"
+              make -f Makefile.release release-$VERSION_NUMBER-with-changelog-circleci
+            else
+              echo "==============================================================================================="
+              echo "Changes in working directory pending to be pushed - please check 'git status' cmd output below "
+              echo "==============================================================================================="
+              echo "$(git status)"
+              echo "==============================================================================================="
+            fi
+
+#
+# Jobs workflow
+#
+workflows:
+  version: 2
+  test_and_release:
+    jobs:
+      - release-version-with-changelog:
+          context: binbashar-org-global-context
+          filters:
+            branches:
+             only: # only branches matching the below regex filters will run
+               - master

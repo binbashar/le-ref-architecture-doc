@@ -17,7 +17,7 @@ jobs:
           command: pwd && ls -ltra && git branch
 
       - run:
-          name: Release New Version
+          name: Deploy GitHub Pages Site w/ MkDocs
           command: |
             make docs-local-prereqs
             make docs-live

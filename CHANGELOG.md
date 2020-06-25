@@ -7,8 +7,14 @@ All notable changes to this project will be documented in this file.
 
 
 
+<a name="v0.0.25"></a>
+## [v0.0.25] - 2020-06-25
+
+- BBL-19 upgrading home (landing) with custom html
+
+
 <a name="v0.0.24"></a>
-## [v0.0.24] - 0001-01-01
+## [v0.0.24] - 2020-06-25
 
 
 
@@ -192,7 +198,8 @@ All notable changes to this project will be documented in this file.
 - Deployed  with MkDocs version: 1.1.2
 
 
-[Unreleased]: https://github.com/binbashar/le-ref-architecture-doc/compare/v0.0.24...HEAD
+[Unreleased]: https://github.com/binbashar/le-ref-architecture-doc/compare/v0.0.25...HEAD
+[v0.0.25]: https://github.com/binbashar/le-ref-architecture-doc/compare/v0.0.24...v0.0.25
 [v0.0.24]: https://github.com/binbashar/le-ref-architecture-doc/compare/v0.0.23...v0.0.24
 [v0.0.23]: https://github.com/binbashar/le-ref-architecture-doc/compare/v0.0.22...v0.0.23
 [v0.0.22]: https://github.com/binbashar/le-ref-architecture-doc/compare/v0.0.21...v0.0.22

@@ -7,8 +7,14 @@ All notable changes to this project will be documented in this file.
 
 
 
+<a name="v0.0.14"></a>
+## [v0.0.14] - 2020-06-25
+
+- BBL-119 removing not necessary files + circleci updated to autodeploy GitHub Pages site + Makefile update
+
+
 <a name="v0.0.13"></a>
-## [v0.0.13] - 0001-01-01
+## [v0.0.13] - 2020-06-24
 
 
 
@@ -132,7 +138,8 @@ All notable changes to this project will be documented in this file.
 - Deployed  with MkDocs version: 1.1.2
 
 
-[Unreleased]: https://github.com/binbashar/le-ref-architecture-doc/compare/v0.0.13...HEAD
+[Unreleased]: https://github.com/binbashar/le-ref-architecture-doc/compare/v0.0.14...HEAD
+[v0.0.14]: https://github.com/binbashar/le-ref-architecture-doc/compare/v0.0.13...v0.0.14
 [v0.0.13]: https://github.com/binbashar/le-ref-architecture-doc/compare/v0.0.12...v0.0.13
 [v0.0.12]: https://github.com/binbashar/le-ref-architecture-doc/compare/v0.0.11...v0.0.12
 [v0.0.11]: https://github.com/binbashar/le-ref-architecture-doc/compare/v0.0.10...v0.0.11

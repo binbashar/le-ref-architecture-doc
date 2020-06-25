@@ -18,6 +18,7 @@ help:
 docs-local-prereqs: ## Install local mkdocs pre-requisites
 	pip install --user --upgrade pip==${PY_PIP_VER}
 	pip install --user mkdocs
+	pip install --user markdown
 	pip install --user pymdown-extensions
 	pip install --user mkdocs-material-extensions
 	pip install --user mkdocs-awesome-pages-plugin

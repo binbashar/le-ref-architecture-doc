@@ -1519,11 +1519,8 @@ jq-1.5-1-a5b5cbe
 </ul>
 </div>
 <h4 id="resulting-solutions-architecture">Resulting Solutions Architecture<a class="headerlink" href="#resulting-solutions-architecture" title="Permanent link"> ¶</a></h4>
-<p><div align="center">
-  <img src="https://raw.githubusercontent.com/binbashar/bb-devops-tf-aws-kops/master/figures/binbash-aws-kops.png"
-alt="leverage" width="1200"/>
-</div></p>
-<p><strong>figure-1:</strong> AWS K8s Kops architecture diagram (just as reference).</p>
+<p><img alt="leverage-aws-k8s-kops" src="../../../assets/images/diagrams/aws-k8s-kops.png" style="width:950px" title="Leverage" />
+<figcaption><strong>Figure:</strong> AWS K8s Kops architecture diagram (just as reference).</figcaption></p>
 <h3 id="why-this-workflow">Why this workflow<a class="headerlink" href="#why-this-workflow" title="Permanent link"> ¶</a></h3>
 <p>The workflow follows the same approach that is used to manage other terraform resources in your AWS accounts.
 E.g. network, identities, and so on.</p>
@@ -1540,12 +1537,8 @@ fully customize any AWS component without having to alter our Kubernetes cluster
 the state of our cluster in YAML files fits <strong>100% as code &amp; GitOps</strong> based approach.</p>
 </li>
 </ol>
-<div align="center">
-  <img src="https://raw.githubusercontent.com/binbashar/bb-devops-tf-aws-kops/master/figures/binbash-aws-kops-tf.png"
-alt="leverage" width="1200"/>
-</div>
-
-<p><strong>figure-2:</strong> Workflow diagram (https://medium.com/bench-engineering/deploying-kubernetes-clusters-with-kops-and-terraform-832b89250e8e)</p>
+<p><img alt="leverage-aws-k8s-kops" src="../../../assets/images/diagrams/aws-k8s-kops-tf.png" style="width:950px" title="Leverage" />
+<figcaption><strong>Figure:</strong> <a href="https://medium.com/bench-engineering/deploying-kubernetes-clusters-with-kops-and-terraform-832b89250e8e">Workflow diagram</a>.</figcaption></p>
 <h2 id="kops-cluster-management">Kops Cluster Management<a class="headerlink" href="#kops-cluster-management" title="Permanent link"> ¶</a></h2>
 <p>The <code>2-kops</code> directory includes helper scripts and Terraform files in order to template our Kubernetes
 cluster definition. The idea is to use our <strong>Terraform outputs</strong> from <code>1-prerequisites</code> to construct a cluster definition.</p>

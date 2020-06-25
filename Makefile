@@ -1,7 +1,9 @@
 .PHONY: help
-SHELL := /bin/bash
-MAKEFILE_IMPORT_CIRCLECI 	:= ./@bin/makefiles/circleci/Makefile.circleci
-PY_PIP_VER := 20.1.1
+SHELL                    := /bin/bash
+MAKEFILE_IMPORT_CIRCLECI := ./@bin/makefiles/circleci/Makefile.circleci
+
+LOCAL_OS_USER_ID         := $(shell id -u)
+LOCAL_OS_GROUP_ID        := $(shell id -g)
 
 define MAKE_CIRCLECI
 make \
@@ -15,18 +17,14 @@ help:
 #==============================================================#
 # DOCUMENTATION                                                #
 #==============================================================#
-docs-local-prereqs: ## Install local mkdocs pre-requisites
-	pip install --user --upgrade pip==${PY_PIP_VER}
-	pip install --user mkdocs
-	pip install --user markdown
-	pip install --user pymdown-extensions
-	pip install --user mkdocs-material-extensions
-	pip install --user mkdocs-awesome-pages-plugin
-
 docs-deploy-gh: ## deploy to Github pages
-	mkdocs gh-deploy --clean \
+	docker run --rm -it \
+	-v ~/.ssh:/root/.ssh \
+	-v ${PWD}:/docs \
+	squidfunk/mkdocs-material gh-deploy --clean \
 	--message "CircleCI deploying to gh-pages [ci skip]" \
 	--remote-branch gh-pages
+	sudo chown -R ${LOCAL_OS_USER_ID}:${LOCAL_OS_GROUP_ID} ./site
 	rm -rf ./site
 
 docs-live: ## Build and launch a local copy of the documentation website in http://localhost:3000

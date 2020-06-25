@@ -7,6 +7,12 @@ All notable changes to this project will be documented in this file.
 
 
 
+<a name="v0.0.15"></a>
+## [v0.0.15] - 2020-06-25
+
+- BBL-119 updating Makefile cmd to install mkdocs
+
+
 <a name="v0.0.14"></a>
 ## [v0.0.14] - 2020-06-25
 
@@ -138,7 +144,8 @@ All notable changes to this project will be documented in this file.
 - Deployed  with MkDocs version: 1.1.2
 
 
-[Unreleased]: https://github.com/binbashar/le-ref-architecture-doc/compare/v0.0.14...HEAD
+[Unreleased]: https://github.com/binbashar/le-ref-architecture-doc/compare/v0.0.15...HEAD
+[v0.0.15]: https://github.com/binbashar/le-ref-architecture-doc/compare/v0.0.14...v0.0.15
 [v0.0.14]: https://github.com/binbashar/le-ref-architecture-doc/compare/v0.0.13...v0.0.14
 [v0.0.13]: https://github.com/binbashar/le-ref-architecture-doc/compare/v0.0.12...v0.0.13
 [v0.0.12]: https://github.com/binbashar/le-ref-architecture-doc/compare/v0.0.11...v0.0.12

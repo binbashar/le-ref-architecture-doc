@@ -1,5 +1,11 @@
 .PHONY: help
 SHELL := /bin/bash
+MAKEFILE_IMPORT_CIRCLECI 	:= ./@bin/makefiles/circleci/Makefile.circleci
+
+define MAKE_CIRCLECI
+make \
+-f ${MAKEFILE_IMPORT_CIRCLECI}
+endef
 
 help:
 	@echo 'Available Commands:'
@@ -15,7 +21,9 @@ docs-local-prereqs: ## Install local mkdocs pre-requisites
 	pip install mkdocs-awesome-pages-plugin
 
 docs-deploy-gh: ## deploy to Github pages
-	mkdocs gh-deploy --clean
+	mkdocs gh-deploy --clean \
+	--message "CircleCI deploying to gh-pages [ci skip]" \
+	--remote-branch gh-pages
 	rm -rf ./site
 
 docs-live: ## Build and launch a local copy of the documentation website in http://localhost:3000
@@ -29,3 +37,9 @@ docs-check-dead-links: ## Check if the documentation contains dead links.
 	  -v $$PWD:/tmp aledbf/awesome_bot:0.1 \
 	  --allow-dupe \
 	  --allow-redirect $(shell find $$PWD -mindepth 1 -name "*.md" -printf '%P\n' | grep -v vendor | grep -v Changelog.md)
+
+#==============================================================#
+# CIRCLECI                                                     #
+#==============================================================#
+circleci-validate-config: ## Validate A CircleCI Config (https://circleci.com/docs/2.0/local-cli/)
+	${MAKE_CIRCLECI} circleci-validate-config

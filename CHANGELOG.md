@@ -7,6 +7,12 @@ All notable changes to this project will be documented in this file.
 
 
 
+<a name="v0.0.35"></a>
+## [v0.0.35] - 2020-06-25
+
+- BBL-19 fixing how it works link in the welcome page
+
+
 <a name="v0.0.34"></a>
 ## [v0.0.34] - 2020-06-25
 
@@ -247,7 +253,8 @@ All notable changes to this project will be documented in this file.
 - Deployed  with MkDocs version: 1.1.2
 
 
-[Unreleased]: https://github.com/binbashar/le-ref-architecture-doc/compare/v0.0.34...HEAD
+[Unreleased]: https://github.com/binbashar/le-ref-architecture-doc/compare/v0.0.35...HEAD
+[v0.0.35]: https://github.com/binbashar/le-ref-architecture-doc/compare/v0.0.34...v0.0.35
 [v0.0.34]: https://github.com/binbashar/le-ref-architecture-doc/compare/v0.0.33...v0.0.34
 [v0.0.33]: https://github.com/binbashar/le-ref-architecture-doc/compare/v0.0.32...v0.0.33
 [v0.0.32]: https://github.com/binbashar/le-ref-architecture-doc/compare/v0.0.31...v0.0.32

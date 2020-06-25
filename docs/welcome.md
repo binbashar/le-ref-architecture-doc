@@ -22,6 +22,6 @@ This repository contains all Terraform configuration files used to create Binbas
 Architecture.
 
 ## Getting Started
-:books: See [**How it works**](./how-it-works/welcome.md) for a whirlwind tour that will get you started.
+:books: See [**How it works**](./how-it-works/index.md) for a whirlwind tour that will get you started.
 
 :books: See [**User guide**](./user-guide/) for a hands on help.

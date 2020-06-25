@@ -1221,38 +1221,11 @@
     Workflow
   </a>
   
-    <nav class="md-nav" aria-label="Workflow">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#cluster-creation-update" class="md-nav__link">
-    Cluster: Creation &amp; Update
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#cluster-deletion" class="md-nav__link">
-    Cluster: Deletion
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
 </li>
         
           <li class="md-nav__item">
   <a href="#tipical-workflow" class="md-nav__link">
     Tipical Workflow
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#what-about-persistent-and-stateful-k8s-resources" class="md-nav__link">
-    What about persistent and stateful K8s resources?
   </a>
   
 </li>
@@ -1466,38 +1439,11 @@
     Workflow
   </a>
   
-    <nav class="md-nav" aria-label="Workflow">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#cluster-creation-update" class="md-nav__link">
-    Cluster: Creation &amp; Update
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#cluster-deletion" class="md-nav__link">
-    Cluster: Deletion
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
 </li>
         
           <li class="md-nav__item">
   <a href="#tipical-workflow" class="md-nav__link">
     Tipical Workflow
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#what-about-persistent-and-stateful-k8s-resources" class="md-nav__link">
-    What about persistent and stateful K8s resources?
   </a>
   
 </li>
@@ -1607,7 +1553,8 @@ cluster definition. The idea is to use our <strong>Terraform outputs</strong> fr
 <p>Cluster Management via Kops is typically carried out through the kops CLI. In this case, we use a <code>2-kops</code> directory that contains a Makefile, Terraform files and other helper scripts that reinforce the workflow we use to create/update/delete the cluster.</p>
 <h3 id="workflow">Workflow<a class="headerlink" href="#workflow" title="Permanent link"> ¶</a></h3>
 <p>This workflow is a little different to the typical Terraform workflows we use. The full workflow goes as follows:</p>
-<h4 id="cluster-creation-update">Cluster: Creation &amp; Update<a class="headerlink" href="#cluster-creation-update" title="Permanent link"> ¶</a></h4>
+<div class="admonition example">
+<p class="admonition-title">Cluster: Creation &amp; Update</p>
 <ol>
 <li>Modify files under <code>1-prerequisites</code></li>
 <li>Main files to update probably are <code>locals.tf</code> and <code>outputs.tf</code></li>
@@ -1634,7 +1581,9 @@ cluster definition. The idea is to use our <strong>Terraform outputs</strong> fr
 <li>Run <code>make cluster-rolling-update-yes</code></li>
 <li>To actually make any changes to the cluster masters/nodes happen</li>
 </ol>
-<h4 id="cluster-deletion">Cluster: Deletion<a class="headerlink" href="#cluster-deletion" title="Permanent link"> ¶</a></h4>
+</div>
+<div class="admonition example">
+<p class="admonition-title">Cluster: Deletion</p>
 <p>To clean-up any resources created for your K8s cluster, you should run:</p>
 <ol>
 <li>At <code>2-kops</code> folder context run <code>make destroy</code></li>
@@ -1651,13 +1600,15 @@ cluster.</li>
 </ul>
 </li>
 </ol>
+</div>
 <h3 id="tipical-workflow">Tipical Workflow<a class="headerlink" href="#tipical-workflow" title="Permanent link"> ¶</a></h3>
 <p>The workflow may look complicated at first but generally it boils down to these simplified steps:
 1. Modify <code>cluster-template.yml</code>
 2. Run <code>make cluste-update</code>
 3. Run <code>make apply</code>
 4. Run <code>make cluster-rolling-update-yes</code></p>
-<h3 id="what-about-persistent-and-stateful-k8s-resources">What about persistent and stateful K8s resources?<a class="headerlink" href="#what-about-persistent-and-stateful-k8s-resources" title="Permanent link"> ¶</a></h3>
+<div class="admonition note">
+<p class="admonition-title">What about persistent and stateful K8s resources?</p>
 <p>This approach will work better the more stateless your Kubernetes workloads are.
 Treating Kubernetes clusters as ephemeral and replaceable infrastructure requires to consider
 not to use persistent volumes or the drawback of difficulties when running workloads such as
@@ -1670,6 +1621,7 @@ nodes without any user intervention. Moreover simplifying volume backups via EBS
 (consider https://github.com/binbashar/terraform-aws-backup-by-tags). We also use a very valuable
 backup tool named Velero (formerly Heptio Ark - https://github.com/vmware-tanzu/velero) to o back
 up and restore our Kubernetes cluster resources and persistent volumes.</p>
+</div>
 <h2 id="todo">TODO<a class="headerlink" href="#todo" title="Permanent link"> ¶</a></h2>
 <ol>
 <li>

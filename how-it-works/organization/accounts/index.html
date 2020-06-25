@@ -11,7 +11,7 @@
         <meta name="description" content="Binbash Leverage Reference Architecture Documentation">
       
       
-        <link rel="canonical" href="https://leverage.binbash.com.ar/how-it-works/reliability/dr/">
+        <link rel="canonical" href="https://leverage.binbash.com.ar/how-it-works/organization/accounts/">
       
       
         <meta name="author" content="Binbash">
@@ -21,7 +21,7 @@
     
     
       
-        <title>Disaster Recovery - Binbash Leverage Reference Architecture</title>
+        <title>Accounts - Binbash Leverage Reference Architecture</title>
       
     
     
@@ -67,6 +67,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#aws-organization-accounts-description" class="md-skip">
+          Skip to content
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -91,7 +96,7 @@
           </span>
           <span class="md-header-nav__topic md-ellipsis">
             
-              Disaster Recovery
+              Accounts
             
           </span>
         </div>
@@ -466,10 +471,12 @@
           
           
 
+  
 
-  <li class="md-nav__item md-nav__item--nested">
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
     
-      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-2-3" type="checkbox" id="nav-2-3">
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-2-3" type="checkbox" id="nav-2-3" checked>
     
     <label class="md-nav__link" for="nav-2-3">
       AWS Organization
@@ -493,7 +500,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../organization/organization/" title="Organizaion" class="md-nav__link">
+    <a href="../organization/" title="Organizaion" class="md-nav__link">
       Organizaion
     </a>
   </li>
@@ -503,11 +510,60 @@
           
           
 
+  
 
-  <li class="md-nav__item">
-    <a href="../../organization/accounts/" title="Accounts" class="md-nav__link">
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        Accounts
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 9h14V7H3v2m0 4h14v-2H3v2m0 4h14v-2H3v2m16 0h2v-2h-2v2m0-10v2h2V7h-2m0 6h2v-2h-2v2z"/></svg>
+        </span>
+      </label>
+    
+    <a href="./" title="Accounts" class="md-nav__link md-nav__link--active">
       Accounts
     </a>
+    
+      
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#account-shared-services-resources" class="md-nav__link">
+    Account: Shared Services | Resources
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#account-apps-devstg-prod" class="md-nav__link">
+    Account: Apps DevStg | Prod
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+    
   </li>
 
         
@@ -934,12 +990,10 @@
           
           
 
-  
 
-
-  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+  <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-2-15" type="checkbox" id="nav-2-15" checked>
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-2-15" type="checkbox" id="nav-2-15">
     
     <label class="md-nav__link" for="nav-2-15">
       Reliability
@@ -961,18 +1015,11 @@
           
           
 
-  
 
-
-  <li class="md-nav__item md-nav__item--active">
-    
-    <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-    
-    
-    <a href="./" title="Disaster Recovery" class="md-nav__link md-nav__link--active">
+  <li class="md-nav__item">
+    <a href="../../reliability/dr/" title="Disaster Recovery" class="md-nav__link">
       Disaster Recovery
     </a>
-    
   </li>
 
         
@@ -982,7 +1029,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../health-checks/" title="Health Checks" class="md-nav__link">
+    <a href="../../reliability/health-checks/" title="Health Checks" class="md-nav__link">
       Health Checks
     </a>
   </li>
@@ -994,7 +1041,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../backups/" title="Backups" class="md-nav__link">
+    <a href="../../reliability/backups/" title="Backups" class="md-nav__link">
       Backups
     </a>
   </li>
@@ -1233,12 +1280,51 @@
               </div>
             
             
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#account-shared-services-resources" class="md-nav__link">
+    Account: Shared Services | Resources
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#account-apps-devstg-prod" class="md-nav__link">
+    Account: Apps DevStg | Prod
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
           
           <div class="md-content">
             <article class="md-content__inner md-typeset">
               
                 
-                  <a href="https://github.com/binbashar/le-ref-architecture-doc/edit/master/docs/how-it-works/reliability/dr.md" title="Edit this page" class="md-content__button md-icon">
+                  <a href="https://github.com/binbashar/le-ref-architecture-doc/edit/master/docs/how-it-works/organization/accounts.md" title="Edit this page" class="md-content__button md-icon">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg>
                   </a>
                 
@@ -1246,9 +1332,46 @@
                   
                 
                 
-                  <h1>Disaster Recovery</h1>
-                
-                
+                <h1 id="aws-organization-accounts-description">AWS Organization Accounts description<a class="headerlink" href="#aws-organization-accounts-description" title="Permanent link"> ¶</a></h1>
+<p>Our default AWS Organizations terraform layout solution includes <code>5 accounts + 1</code> or <strong>N Accts</strong> (if you invite pre-existing AWS Account/s).</p>
+<table>
+<thead>
+<tr>
+<th>Account</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Root Organizations</td>
+<td>Used to manage configuration and access to AWS Org managed accounts. The AWS Organizations account provides the ability to create and financially manage member accounts, it contains AWS Organizations Service Control Policies(SCPs).</td>
+</tr>
+<tr>
+<td>Shared Services / Resources</td>
+<td>Reference for creating infrastructure shared services such as directory services, DNS, VPN Solution, Monitoring tools like Prometheus and Graphana, CI/CD server (Jenkins, Drone, Spinnaker, etc), centralized logging solution like ELK  and Vault Server (Hashicorp Vault)</td>
+</tr>
+<tr>
+<td>Security</td>
+<td>Intended for centralized user mamangement via IAM roles based cross-org auth approach (IAM roles per account to be assumed still needed. Also to centralize AWS CloudTrail and AWS Config logs, and used as the master AWS GuardDuty Account</td>
+</tr>
+<tr>
+<td>Legacy</td>
+<td>Your pre existing AWS Accounts to be invited as members of the new AWS Organization, probably several services and workloads are going to be progressively migrated to your new Accounts.</td>
+</tr>
+<tr>
+<td>Apps DevStg</td>
+<td>Host your DEV, QA and STG environment workloads Compute / Web App Servers (K8s Clusters and Lambda Functions), Load Balancers, DB Servers, Caching Services, Job queues &amp; Servers, Data, Storage, CDN</td>
+</tr>
+<tr>
+<td>Apps Prod</td>
+<td>Host your PROD environment workloads Compute / Web App Servers (K8s Clusters and Lambda Functions), Load Balancers, DB Servers, Caching Services, Job queues &amp; Servers, Data, Storage, CDN</td>
+</tr>
+</tbody>
+</table>
+<h2 id="account-shared-services-resources">Account: Shared Services | Resources<a class="headerlink" href="#account-shared-services-resources" title="Permanent link"> ¶</a></h2>
+<p><img alt="leverage-aws-org" src="../../../assets/images/diagrams/aws-acct-shared.png" style="width:750px" title="Leverage" /></p>
+<h2 id="account-apps-devstg-prod">Account: Apps DevStg | Prod<a class="headerlink" href="#account-apps-devstg-prod" title="Permanent link"> ¶</a></h2>
+<p><img alt="leverage-aws-org" src="../../../assets/images/diagrams/aws-acct-apps-prd.png" style="width:750px" title="Leverage" /></p>
                 
               
               
@@ -1267,7 +1390,7 @@
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid" aria-label="Footer">
         
-          <a href="../../secrets/secrets/" title="Secrets" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href="../organization/" title="Organizaion" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-footer-nav__button md-icon">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
             </div>
@@ -1276,19 +1399,19 @@
                 <span class="md-footer-nav__direction">
                   Previous
                 </span>
-                Secrets
+                Organizaion
               </div>
             </div>
           </a>
         
         
-          <a href="../health-checks/" title="Health Checks" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="../../identities/identities/" title="Identities" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-footer-nav__title">
               <div class="md-ellipsis">
                 <span class="md-footer-nav__direction">
                   Next
                 </span>
-                Health Checks
+                Identities
               </div>
             </div>
             <div class="md-footer-nav__button md-icon">

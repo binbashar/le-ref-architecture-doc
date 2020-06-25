@@ -21,7 +21,7 @@
     
     
       
-        <title>AWS Organization - Binbash Leverage Reference Architecture</title>
+        <title>Organizaion - Binbash Leverage Reference Architecture</title>
       
     
     
@@ -96,7 +96,7 @@
           </span>
           <span class="md-header-nav__topic md-ellipsis">
             
-              AWS Organization
+              Organizaion
             
           </span>
         </div>
@@ -474,6 +474,33 @@
   
 
 
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-2-3" type="checkbox" id="nav-2-3" checked>
+    
+    <label class="md-nav__link" for="nav-2-3">
+      AWS Organization
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="AWS Organization" data-md-level="2">
+      <label class="md-nav__title" for="nav-2-3">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+        </span>
+        AWS Organization
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+  
+
+
   <li class="md-nav__item md-nav__item--active">
     
     <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
@@ -482,14 +509,14 @@
     
     
       <label class="md-nav__link md-nav__link--active" for="__toc">
-        AWS Organization
+        Organizaion
         <span class="md-nav__icon md-icon">
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 9h14V7H3v2m0 4h14v-2H3v2m0 4h14v-2H3v2m16 0h2v-2h-2v2m0-10v2h2V7h-2m0 6h2v-2h-2v2z"/></svg>
         </span>
       </label>
     
-    <a href="./" title="AWS Organization" class="md-nav__link md-nav__link--active">
-      AWS Organization
+    <a href="./" title="Organizaion" class="md-nav__link md-nav__link--active">
+      Organizaion
     </a>
     
       
@@ -519,19 +546,6 @@
     AWS Organization Accounts Layout
   </a>
   
-    <nav class="md-nav" aria-label="AWS Organization Accounts Layout">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#aws-organization-accounts-description" class="md-nav__link">
-    AWS Organization Accounts description
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
 </li>
       
         <li class="md-nav__item">
@@ -545,6 +559,23 @@
   
 </nav>
     
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../accounts/" title="Accounts" class="md-nav__link">
+      Accounts
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
   </li>
 
         
@@ -704,6 +735,18 @@
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
         
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../compute/overview/" title="Overview" class="md-nav__link">
+      Overview
+    </a>
+  </li>
+
         
           
           
@@ -1274,19 +1317,6 @@
     AWS Organization Accounts Layout
   </a>
   
-    <nav class="md-nav" aria-label="AWS Organization Accounts Layout">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#aws-organization-accounts-description" class="md-nav__link">
-    AWS Organization Accounts description
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
 </li>
       
         <li class="md-nav__item">
@@ -1350,42 +1380,6 @@ services, such as DNS, among others. </p>
 </code></pre></div></p>
 <p><img alt="leverage-aws-org" src="../../../assets/images/diagrams/aws-organizations.png" style="width:750px" title="Leverage" /></p>
 <p><strong>NOTE:</strong> <em>Image just as reference</em></p>
-<h3 id="aws-organization-accounts-description">AWS Organization Accounts description<a class="headerlink" href="#aws-organization-accounts-description" title="Permanent link"> ¶</a></h3>
-<p>Our default AWS Organizations terraform layout solution includes <code>5 accounts + 1</code> or <strong>N Accts</strong> (if you invite pre-existing AWS Account/s).</p>
-<table>
-<thead>
-<tr>
-<th>Account</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Root Organizations</td>
-<td>Used to manage configuration and access to AWS Org managed accounts. The AWS Organizations account provides the ability to create and financially manage member accounts, it contains AWS Organizations Service Control Policies(SCPs).</td>
-</tr>
-<tr>
-<td>Shared Services / Resources</td>
-<td>Reference for creating infrastructure shared services such as directory services, DNS, VPN Solution, Monitoring tools like Prometheus and Graphana, CI/CD server (Jenkins, Drone, Spinnaker, etc), centralized logging solution like ELK  and Vault Server (Hashicorp Vault)</td>
-</tr>
-<tr>
-<td>Security</td>
-<td>Intended for centralized user mamangement via IAM roles based cross-org auth approach (IAM roles per account to be assumed still needed. Also to centralize AWS CloudTrail and AWS Config logs, and used as the master AWS GuardDuty Account</td>
-</tr>
-<tr>
-<td>Legacy</td>
-<td>Your pre existing AWS Accounts to be invited as members of the new AWS Organization, probably several services and workloads are going to be progressively migrated to your new Accounts.</td>
-</tr>
-<tr>
-<td>Apps DevStg</td>
-<td>Host your DEV, QA and STG environment workloads Compute / Web App Servers (K8s Clusters and Lambda Functions), Load Balancers, DB Servers, Caching Services, Job queues &amp; Servers, Data, Storage, CDN</td>
-</tr>
-<tr>
-<td>Apps Prod</td>
-<td>Host your PROD environment workloads Compute / Web App Servers (K8s Clusters and Lambda Functions), Load Balancers, DB Servers, Caching Services, Job queues &amp; Servers, Data, Storage, CDN</td>
-</tr>
-</tbody>
-</table>
 <div class="admonition tip">
 <p class="admonition-title">Benefits of <a href="https://aws.amazon.com/organizations/"><strong>AWS Organizations</strong></a></p>
 <ul class="task-list">
@@ -1474,13 +1468,13 @@ place (usually, security/users account) and use AssumeRole to works with org acc
           </a>
         
         
-          <a href="../../identities/identities/" title="Identities" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="../accounts/" title="Accounts" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-footer-nav__title">
               <div class="md-ellipsis">
                 <span class="md-footer-nav__direction">
                   Next
                 </span>
-                Identities
+                Accounts
               </div>
             </div>
             <div class="md-footer-nav__button md-icon">

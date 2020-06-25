@@ -11,7 +11,7 @@
         <meta name="description" content="Binbash Leverage Reference Architecture Documentation">
       
       
-        <link rel="canonical" href="https://leverage.binbash.com.ar/how-it-works/reliability/dr/">
+        <link rel="canonical" href="https://leverage.binbash.com.ar/how-it-works/compute/overview/">
       
       
         <meta name="author" content="Binbash">
@@ -21,7 +21,7 @@
     
     
       
-        <title>Disaster Recovery - Binbash Leverage Reference Architecture</title>
+        <title>Overview - Binbash Leverage Reference Architecture</title>
       
     
     
@@ -67,6 +67,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#compute" class="md-skip">
+          Skip to content
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -91,7 +96,7 @@
           </span>
           <span class="md-header-nav__topic md-ellipsis">
             
-              Disaster Recovery
+              Overview
             
           </span>
         </div>
@@ -652,10 +657,12 @@
           
           
 
+  
 
-  <li class="md-nav__item md-nav__item--nested">
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
     
-      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-2-7" type="checkbox" id="nav-2-7">
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-2-7" type="checkbox" id="nav-2-7" checked>
     
     <label class="md-nav__link" for="nav-2-7">
       Compute
@@ -677,11 +684,20 @@
           
           
 
+  
 
-  <li class="md-nav__item">
-    <a href="../../compute/overview/" title="Overview" class="md-nav__link">
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+    <a href="./" title="Overview" class="md-nav__link md-nav__link--active">
       Overview
     </a>
+    
   </li>
 
         
@@ -691,7 +707,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../compute/k8s-kops/" title="K8s Kops" class="md-nav__link">
+    <a href="../k8s-kops/" title="K8s Kops" class="md-nav__link">
       K8s Kops
     </a>
   </li>
@@ -703,7 +719,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../compute/k8s-eks/" title="K8s EKS" class="md-nav__link">
+    <a href="../k8s-eks/" title="K8s EKS" class="md-nav__link">
       K8s EKS
     </a>
   </li>
@@ -715,7 +731,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../compute/serverless/" title="Serverless" class="md-nav__link">
+    <a href="../serverless/" title="Serverless" class="md-nav__link">
       Serverless
     </a>
   </li>
@@ -934,12 +950,10 @@
           
           
 
-  
 
-
-  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+  <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-2-15" type="checkbox" id="nav-2-15" checked>
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-2-15" type="checkbox" id="nav-2-15">
     
     <label class="md-nav__link" for="nav-2-15">
       Reliability
@@ -961,18 +975,11 @@
           
           
 
-  
 
-
-  <li class="md-nav__item md-nav__item--active">
-    
-    <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-    
-    
-    <a href="./" title="Disaster Recovery" class="md-nav__link md-nav__link--active">
+  <li class="md-nav__item">
+    <a href="../../reliability/dr/" title="Disaster Recovery" class="md-nav__link">
       Disaster Recovery
     </a>
-    
   </li>
 
         
@@ -982,7 +989,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../health-checks/" title="Health Checks" class="md-nav__link">
+    <a href="../../reliability/health-checks/" title="Health Checks" class="md-nav__link">
       Health Checks
     </a>
   </li>
@@ -994,7 +1001,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../backups/" title="Backups" class="md-nav__link">
+    <a href="../../reliability/backups/" title="Backups" class="md-nav__link">
       Backups
     </a>
   </li>
@@ -1233,12 +1240,27 @@
               </div>
             
             
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+    
+  
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
           
           <div class="md-content">
             <article class="md-content__inner md-typeset">
               
                 
-                  <a href="https://github.com/binbashar/le-ref-architecture-doc/edit/master/docs/how-it-works/reliability/dr.md" title="Edit this page" class="md-content__button md-icon">
+                  <a href="https://github.com/binbashar/le-ref-architecture-doc/edit/master/docs/how-it-works/compute/overview.md" title="Edit this page" class="md-content__button md-icon">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg>
                   </a>
                 
@@ -1246,9 +1268,20 @@
                   
                 
                 
-                  <h1>Disaster Recovery</h1>
-                
-                
+                <h1 id="compute">Compute<a class="headerlink" href="#compute" title="Permanent link"> ¶</a></h1>
+<div class="admonition abstract">
+<p class="admonition-title">Overview</p>
+<p>In order to serve Client application workloads we propose to implement <strong><em>Kubernetes</em></strong>, and proceed to containerize all
+application stacks whenever it’s the best solution (we’ll also consider <strong><em>AWS Lambda</em></strong> for a Serverless approach when
+it fits better). Kubernetes is an open source container orchestration platform that eases the process of running
+containers across many different machines, scaling up or down by adding or removing containers when demand changes
+and provides high availability features. Also, it serves as an abstraction layer that will give Client the
+possibility, with minimal effort, to move the apps to other Kubernetes clusters running elsewhere, or a managed
+Kubernetes service such as AWS EKS, GCP GKE or others.</p>
+</div>
+<p><img alt="leverage-k8s-architecture" src="../../../assets/images/diagrams/k8s-architecture.png" style="width:700" title="Leverage" />
+<figcaption><strong>Figure:</strong> <a href="https://kubernetes.io/blog/2018/07/18/11-ways-not-to-get-hacked/">Kubernetes high level components architecture</a>.
+</figcaption></p>
                 
               
               
@@ -1267,7 +1300,7 @@
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid" aria-label="Footer">
         
-          <a href="../../secrets/secrets/" title="Secrets" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href="../../network/dns/" title="DNS" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-footer-nav__button md-icon">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
             </div>
@@ -1276,19 +1309,19 @@
                 <span class="md-footer-nav__direction">
                   Previous
                 </span>
-                Secrets
+                DNS
               </div>
             </div>
           </a>
         
         
-          <a href="../health-checks/" title="Health Checks" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="../k8s-kops/" title="K8s Kops" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-footer-nav__title">
               <div class="md-ellipsis">
                 <span class="md-footer-nav__direction">
                   Next
                 </span>
-                Health Checks
+                K8s Kops
               </div>
             </div>
             <div class="md-footer-nav__button md-icon">

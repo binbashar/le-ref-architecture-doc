@@ -4,6 +4,7 @@ MAKEFILE_IMPORT_CIRCLECI := ./@bin/makefiles/circleci/Makefile.circleci
 
 LOCAL_OS_USER_ID         := $(shell id -u)
 LOCAL_OS_GROUP_ID        := $(shell id -g)
+MKDOCS_DOCKER_IMG        := squidfunk/mkdocs-material:5.3.3
 
 define MAKE_CIRCLECI
 make \
@@ -21,7 +22,7 @@ docs-deploy-gh: ## deploy to Github pages
 	docker run --rm -it \
 	-v ~/.ssh:/root/.ssh \
 	-v ${PWD}:/docs \
-	squidfunk/mkdocs-material gh-deploy --clean \
+	${MKDOCS_DOCKER_IMG} gh-deploy --clean \
 	--message "CircleCI deploying to gh-pages [ci skip]" \
 	--remote-branch gh-pages
 	sudo chown -R ${LOCAL_OS_USER_ID}:${LOCAL_OS_GROUP_ID} ./site
@@ -31,7 +32,7 @@ docs-live: ## Build and launch a local copy of the documentation website in http
 	@docker run --rm -it \
 		-p 8000:8000 \
 		-v ${PWD}:/docs \
-		squidfunk/mkdocs-material:5.2.3
+		${MKDOCS_DOCKER_IMG}
 
 docs-check-dead-links: ## Check if the documentation contains dead links.
 	@docker run -t \

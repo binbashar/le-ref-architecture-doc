@@ -15,6 +15,7 @@ copyright: Copyright &copy; 2017-2020 <a href="https://www.binbash.com.ar">Binba
 #===================================================================================#
 theme:
   name: material
+  custom_dir: material
   language: en
   icon:
       logo: material/book-open-variant
@@ -27,7 +28,7 @@ theme:
     - instant
   palette:
     primary: "teal"
-    accent: "green"
+    accent: "deep purple"
   include_sidebar: true
 
 extra:
@@ -38,8 +39,11 @@ extra:
       link: 'https://www.linkedin.com/company/binbash'
     - icon: material/twitter
       link: 'https://twitter.com/binbash_devops'
+    - icon: material/docker
+      link: 'https://hub.docker.com/orgs/binbash'
     - icon: material/home
-      link: https://www.binbash.com.ar
+      link: 'https://www.binbash.com.ar'
+
 
 #===================================================================================#
 # Mkdocs Markdown Extentions, Plugins & extras
@@ -78,11 +82,13 @@ extra_css:
 # Mkdocs Navigation Tree
 #===================================================================================#
 nav:
-  - Welcome:
-      - Welcome: "index.md"
+  - Home:
+      - Home: "index.md"
+      - Welcome: "welcome.md"
       - How it works: "how-it-works/index.md"
       - Support: "support.md"
       - Development: "development.md"
+      - License: "license.md"
   - How it works:
         - How it works: "how-it-works/index.md"
         - Leverage Code Library:
@@ -132,3 +138,4 @@ nav:
       - AWS:
           - Organization: "examples/organization.md"
           - K8s Kops: "examples/k8s-kops.md"
+

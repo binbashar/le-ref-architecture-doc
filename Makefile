@@ -1,6 +1,7 @@
 .PHONY: help
 SHELL := /bin/bash
 MAKEFILE_IMPORT_CIRCLECI 	:= ./@bin/makefiles/circleci/Makefile.circleci
+PY_PIP_VER := 20.1.1
 
 define MAKE_CIRCLECI
 make \
@@ -15,10 +16,11 @@ help:
 # DOCUMENTATION                                                #
 #==============================================================#
 docs-local-prereqs: ## Install local mkdocs pre-requisites
-	pip install mkdocs
-	pip install pymdown-extensions
-	pip install mkdocs-material-extensions
-	pip install mkdocs-awesome-pages-plugin
+	pip install --user --upgrade pip==${PY_PIP_VER}
+	pip install --user mkdocs
+	pip install --user pymdown-extensions
+	pip install --user mkdocs-material-extensions
+	pip install --user mkdocs-awesome-pages-plugin
 
 docs-deploy-gh: ## deploy to Github pages
 	mkdocs gh-deploy --clean \

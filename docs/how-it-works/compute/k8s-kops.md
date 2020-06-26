@@ -1,0 +1,19 @@
+# Kubernetes Kops
+
+**_[Kops is an official Kubernetes project](https://github.com/kubernetes/kops)_** for managing production-grade 
+Kubernetes clusters. Kops is currently the best tool to deploy Kubernetes clusters to Amazon Web Services. 
+The project describes itself as kubectl for clusters.
+
+!!! success "Core Features"
+    - [x] Open-source & supports AWS and GCE
+    - [x] Deploy clusters to existing virtual private clouds (VPC) or create a new VPC from scratch
+    - [x] Supports public & private topologies
+    - [x] Provisions single or multiple master clusters
+    - [x] Configurable bastion machines for SSH access to individual cluster nodes
+    - [x] Built on a state-sync model for dry-runs and automatic idempotency
+    - [x] Direct infrastructure manipulation, or works with CloudFormation and Terraform
+    - [x] Rolling cluster updates
+    - [x] Supports heterogeneous clusters by creating multiple instance groups
+    
+![leverage-aws-k8s-kops](../../assets/images/diagrams/aws-k8s-kops.png "Leverage"){: style="width:950px"}
+<figcaption>**Figure:** AWS K8s Kops architecture diagram (just as reference).</figcaption>

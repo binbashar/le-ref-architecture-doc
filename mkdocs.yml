@@ -70,7 +70,6 @@ plugins:
 
 extra_css:
     - assets/stylesheets/extra.css
-    - assets/stylesheets/404.css
 
 # Google Analytics
 #
@@ -95,7 +94,9 @@ nav:
           - Overview: "how-it-works/code-library/code-library.md"
           - Specifications: "how-it-works/code-library/code-library-specs.md"
           - Modules per Tech: "how-it-works/code-library/modules-library-per-tech.md"
-        - AWS Organization: "how-it-works/organization/organization.md"
+        - AWS Organization:
+          - Organizaion: "how-it-works/organization/organization.md"
+          - Accounts: "how-it-works/organization/accounts.md"
         - Identities: "how-it-works/identities/identities.md"
         - Security:
           - VPN: "how-it-works/security/vpn.md"
@@ -105,6 +106,7 @@ nav:
           - VPC Peering: "how-it-works/network/vpc-peering.md"
           - DNS: "how-it-works/network/dns.md"
         - Compute:
+          - Overview: "how-it-works/compute/overview.md"
           - K8s Kops: "how-it-works/compute/k8s-kops.md"
           - K8s EKS: "how-it-works/compute/k8s-eks.md"
           - Serverless: "how-it-works/compute/serverless.md"
@@ -129,9 +131,20 @@ nav:
         - Costs: "how-it-works/costs/costs.md"
         - Read More: "how-it-works/read-more.md"
   - User guide:
+      - Basic usage: "user-guide/index.md"
       - Configuration:
-          - Configs: "user-guide/configuration/configs.md"
-          - Basic usage: "user-guide/index.md"
+        - Overview: "user-guide/configuration/overview.md"
+        - Repos:
+          - Terraform Infra: "user-guide/configuration/repo-le-tf-infra-aws.md"
+          - Ansible Infra: "user-guide/configuration/repo-le-ansible-infra.md"
+          - Helm Infra: "user-guide/configuration/repo-le-helm-infra.md"
+      - Workflow:
+        - Repos:
+          - Terraform Infra: "user-guide/workflow/repo-le-tf-infra-aws.md"
+          - Ansible Infra: "user-guide/workflow/repo-le-ansible-infra.md"
+          - Helm Infra: "user-guide/workflow/repo-le-helm-infra.md"
+        - Compute:
+          - K8s Kops: "user-guide/compute/k8s-kops.md"
   - Examples:
       - Introduction: "examples/index.md"
       - Prerequisites: "examples/PREREQUISITES.md"

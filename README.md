@@ -36,6 +36,7 @@ make docs-deploy-gh
 via CircleCI job to the `gh-pages` branch (currently being built from this branch).
 
 ### TODO
-- Several sections needs completion or update 
+1. Several sections needs completion or update. 
+2. Add figures caption cross doc.
 
 

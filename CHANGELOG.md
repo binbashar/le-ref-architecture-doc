@@ -7,8 +7,13 @@ All notable changes to this project will be documented in this file.
 
 
 
+<a name="v0.0.41"></a>
+## [v0.0.41] - 0001-01-01
+
+
+
 <a name="v0.0.40"></a>
-## [v0.0.40] - 0001-01-01
+## [v0.0.40] - 2020-07-06
 
 
 
@@ -288,7 +293,8 @@ All notable changes to this project will be documented in this file.
 - Deployed  with MkDocs version: 1.1.2
 
 
-[Unreleased]: https://github.com/binbashar/le-ref-architecture-doc/compare/v0.0.40...HEAD
+[Unreleased]: https://github.com/binbashar/le-ref-architecture-doc/compare/v0.0.41...HEAD
+[v0.0.41]: https://github.com/binbashar/le-ref-architecture-doc/compare/v0.0.40...v0.0.41
 [v0.0.40]: https://github.com/binbashar/le-ref-architecture-doc/compare/v0.0.39...v0.0.40
 [v0.0.39]: https://github.com/binbashar/le-ref-architecture-doc/compare/v0.0.38...v0.0.39
 [v0.0.38]: https://github.com/binbashar/le-ref-architecture-doc/compare/v0.0.37...v0.0.38

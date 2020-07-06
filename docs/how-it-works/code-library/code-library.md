@@ -15,7 +15,7 @@ High level summary of the the code reusability efficiency
 ![code-library](../../assets/images/diagrams/code-library-reuse.png "Leverage"){: style="width:750px"}
 
 
-!!! tip "Considerations"
+!!! important "Considerations"
     :warning: Above detailed `%` are to be seen as estimates 
     
     - :cloud: :lock: [AWS PCI-DSS Reference article](https://aws.amazon.com/quickstart/architecture/compliance-pci/)

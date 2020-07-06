@@ -39,6 +39,8 @@ docs-check-dead-links: ## Check if the documentation contains dead links.
 	  -v $$PWD:/tmp aledbf/awesome_bot:0.1 \
 	  --allow-dupe \
 	  --allow-redirect $(shell find $$PWD -mindepth 1 -name "*.md" -printf '%P\n' | grep -v vendor | grep -v Changelog.md)
+	sudo chown -R ${LOCAL_OS_USER_ID}:${LOCAL_OS_GROUP_ID} ab-results-*
+	rm -rf ab-results-*
 
 #==============================================================#
 # CIRCLECI                                                     #

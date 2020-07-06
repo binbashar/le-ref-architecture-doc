@@ -8,7 +8,7 @@
     actions and track potentially dangerous behavior. All services will be enabled via IaC (Terraform or SDK and tracked
     in the proper git repo).
 
-!!! tip "AWS Managed Security Services"
+!!! important "AWS Managed Security Services"
     - [x] ![aws-service](../../assets/images/icons/aws-emojipack/SecurityIdentityCompliance_IAM.png){: style="width:30px"}
         **AWS IAM Access Analyzer:** Generates comprehensive findings that identify resources policies for public or 
         cross-account accessibility, monitors and helps you refine permissions. Provides the highest levels of security assurance.

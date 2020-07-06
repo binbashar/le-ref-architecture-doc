@@ -5,11 +5,11 @@
 TODO
 
 ## Configurations
-- [x] [le-tf-infra-aws](./configuration/repo-le-tf-infra-aws.md)
-- [x] [le-ansible-infra](./configuration/repo-le-ansible-infra.md)
-- [x] [le-helm-infra](./configuration/repo-le-helm-infra.md)
+- [x] [le-tf-infra-aws](base-configuration/repo-le-tf-infra-aws.md)
+- [x] [le-ansible-infra](base-configuration/repo-le-ansible-infra.md)
+- [x] [le-helm-infra](base-configuration/repo-le-helm-infra.md)
 
 ## Workflow
-- [x] [le-tf-infra-aws](./workflow/repo-le-tf-infra-aws.md)
-- [x] [le-ansible-infra](./workflow/repo-le-ansible-infra.md)
-- [x] [le-helm-infra](./workflow/repo-le-helm-infra.md)
+- [x] [le-tf-infra-aws](base-workflow/repo-le-tf-infra-aws.md)
+- [x] [le-ansible-infra](base-workflow/repo-le-ansible-infra.md)
+- [x] [le-helm-infra](base-workflow/repo-le-helm-infra.md)

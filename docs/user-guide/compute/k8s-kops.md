@@ -2,7 +2,7 @@
 
 ## Kops Pre-requisites
 
-!!! warning "Important consderation"
+!!! attention "Important consderation"
     K8s clusters provisioned by Kops have a number of resources that need to be available before the
     cluster is created. These are Kops pre-requisites and they are defined in the `1-prerequisites`
     directory which includes all Terraform files used to create/modify these resources.
@@ -132,7 +132,7 @@ The workflow may look complicated at first but generally it boils down to these 
     up and restore our Kubernetes cluster resources and persistent volumes.
 
 
-!!! warning "TODO"
+!!! attention "TODO"
     1. **IMPORTANT:** Kops terraform output (`kops update cluster --target terraform`) is still generated for Terraform `0.11.x`
           (https://github.com/kubernetes/kops/issues/7052) we'll take care of the migration when `tf-0.12` gets fully supported.
     2. Create a Binbash Leverage public Confluence Wiki entry detailing some more info about etcd, calico and k8s versions

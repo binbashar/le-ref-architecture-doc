@@ -4,7 +4,7 @@
 Kubernetes clusters. Kops is currently the best tool to deploy Kubernetes clusters to Amazon Web Services. 
 The project describes itself as kubectl for clusters.
 
-!!! success "Core Features"
+!!! check "Core Features"
     - [x] Open-source & supports AWS and GCE
     - [x] Deploy clusters to existing virtual private clouds (VPC) or create a new VPC from scratch
     - [x] Supports public & private topologies

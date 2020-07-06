@@ -9,7 +9,7 @@
 
 ### VPCs IP Addressing Plan (CIDR blocks sizing)
 
-!!! abstract "Introduction"
+!!! summary "Introduction"
     VPCs can vary in size from 16 addresses (/28 netmask) to 65,536 addresses (/16 netmask). 
     In order to size a VPC correctly, it is important to understand the number, types, and sizes of workloads 
     expected to run in it, as well as workload elasticity and load balancing requirements. 
@@ -88,7 +88,7 @@ subnets in each of these VPCs defining Private and Public subnets split among di
 
 ### Considerations
 
-!!! warning "Design considerations"
+!!! attention "Design considerations"
     * :ledger: **AWS EKS:** Docker runs in the 172.17.0.0/16 CIDR range in Amazon EKS clusters. 
       We recommend that your cluster's VPC subnets do not overlap this range. Otherwise, you will 
       receive the following error:

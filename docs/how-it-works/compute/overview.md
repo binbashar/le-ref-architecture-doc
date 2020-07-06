@@ -2,7 +2,7 @@
 
 ## Containers and Serverless
 
-!!! abstract "Overview"
+!!! summary "Overview"
     In order to serve Client application workloads we propose to implement **_Kubernetes_**, and proceed to containerize all
     application stacks whenever it’s the best solution (we’ll also consider **_AWS Lambda_** for a Serverless approach when
     it fits better). Kubernetes is an open source container orchestration platform that eases the process of running
@@ -15,8 +15,8 @@ Clusters will be provisioned with [**_Kops_**](https://github.com/kubernetes/kop
 [**_AWS EKS_**](https://aws.amazon.com/eks/), which are solutions meant to orchestrate this
  compute engine in AWS. Whenever possible the initial version deployed will be the latest stable release.
 
-![leverage- [x]k8s- [x]architecture](../../assets/images/diagrams/k8s- [x]architecture.png "Leverage"){: style="width:700"}
-<figcaption>**Figure:** [Kubernetes high level components architecture](https://kubernetes.io/blog/2018/07/18/11- [x]ways- [x]not- [x]to- [x]get- [x]hacked/).
+![leverage-k8s-architecture](../../assets/images/diagrams/k8s-architecture.png "Leverage"){: style="width:700"}
+<figcaption>**Figure:** [Kubernetes high level components architecture](https://kubernetes.io/blog/2018/07/18/11-ways-not-to-get-hacked/).
 </figcaption>
 
 
@@ -35,8 +35,8 @@ Clusters will be provisioned with [**_Kops_**](https://github.com/kubernetes/kop
     **Monitoring & Logs** 
       
     - [x] fluentd daemonset for elasticsearch logs
-    - [x] kube- [x]state- [x]metrics
-    - [x] prometheus node- [x]exporter
+    - [x] kube-state-metrics
+    - [x] prometheus node-exporter
     
     **Distributed Tracing**
         
@@ -45,9 +45,9 @@ Clusters will be provisioned with [**_Kops_**](https://github.com/kubernetes/kop
     
     **UI Dashboard** 
         
-    - [x] kube- [x]ops- [x]view
-    - [x] kubernetes- [x]dashboard
-    - [x] weave- [x]scope
+    - [x] kube-ops-view
+    - [x] kubernetes-dashboard
+    - [x] weave-scope
     
     **Availability & Reliability**
         

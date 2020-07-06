@@ -1,6 +1,6 @@
 # Tech Specifications 
 
-!!! tip ":checkered_flag: **As Code:** Hundred of thousands lines of code written in"
+!!! important ":checkered_flag: **As Code:** Hundred of thousands lines of code written in"
     - [x] Terraform
     - [x] Groovy (Jenkinsfiles)
     - [x] Ansible
@@ -8,7 +8,7 @@
     - [x] Dockerfiles
     - [x] Helm Charts
         
-!!! tip ":checkered_flag: **"Stop reinventing the wheel, automated and fully as code**"
+!!! important ":checkered_flag: **"Stop reinventing the wheel, automated and fully as code**"
     - :fast_forward: automated (executable from a single source).
     - :fast_forward: as code.
     - :fast_forward: parameterized
@@ -20,7 +20,7 @@
         - avoid wasting time.
         - not healthy, not secure and slows us down.
 
-!!! tip ":checkered_flag: **DoD of a highly reusable, configurable, and composible sub-modules which will be 100%**"      
+!!! important ":checkered_flag: **DoD of a highly reusable, configurable, and composible sub-modules which will be 100%**"      
     - :fast_forward: modular 
         - equivalent to other programming languages functions - Example for terraform -
          [https://www.terraform.io/docs/modules/usage.html](https://www.terraform.io/docs/modules/usage.html) (but can be propagated for other languages and tools):
@@ -59,23 +59,23 @@
                 }
                 ```
 
-!!! tip ":checkered_flag: **Solutions must be versioned**"        
+!!! important ":checkered_flag: **Solutions must be versioned**"        
     So as to be able to manage them as a software product with releases and change log. 
     In this way we'll be able to know which version is currently deployed in a certain client and consider it's upgrade.
   
 
-!!! tip ":checkered_flag: **Env Parity**"      
+!!! important ":checkered_flag: **Env Parity**"      
     Promote inmutable, versioned infra modules based across envs. 
      
 
-!!! tip ":checkered_flag: **Updated**"      
+!!! important ":checkered_flag: **Updated**"      
     Continually make updates, additions, and fixes to the libraries and modules. 
 
-!!! tip ":checkered_flag: **Integrated "push button environments (PBE)"**"         
+!!! important ":checkered_flag: **Integrated "push button environments (PBE)"**"         
     approach for our solutions.
         - TODO: FLOW DIAGRAM HERE 
         
-!!! tip ":checkered_flag: **Proven & Tested**"      
+!!! important ":checkered_flag: **Proven & Tested**"      
         Customers & every commit goes through a suite of automated tests to gran code styling and functional testing.
     
         *   [x] Develop a wrapper/jobs together with specific testing tools in order to grant the modules are working as expected.
@@ -85,7 +85,7 @@
         *   [x] Terraform:
             *   [gruntwork-io/terratest](https://github.com/gruntwork-io/terratest)
     
-!!! tip ":checkered_flag: **Cost savings**"      
+!!! important ":checkered_flag: **Cost savings**"      
     The architecture for our Library / Code Modules helps an organization to analyze its current IT and DevSecOps
     Cloud strategy and identify areas where changes could lead to cost savings. For instance, the architecture may show
     that multiple database systems could be changed so only one product is used, reducing software and support costs.
@@ -93,13 +93,13 @@
     Reusable assets are beneficial to an organization, since they can reduce the overall cost of a system and also
     improve its quality, given that a reusable asset has already been proven.
     
-!!! tip ":checkered_flag: **Full Code Access & No Lock-In**"      
+!!! important ":checkered_flag: **Full Code Access & No Lock-In**"      
     You get access to 100% of the code under Open Source license ([https://choosealicense.com/](https://choosealicense.com/)) 
       so If you ever choose to cancel, you keep rights to all the code.
      
-!!! tip ":checkered_flag: **Documented**"       
+!!! important ":checkered_flag: **Documented**"       
     Includes example code, use case and thorough documentation, such as[ README.md](http://readme.md/), 
     --help command, doc-string and in line comments.
      
-!!! tip ":checkered_flag: **Supported  & Customizable**"      
+!!! important ":checkered_flag: **Supported  & Customizable**"      
      Commercially maintained and supported by **_Binbash_**.

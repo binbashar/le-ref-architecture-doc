@@ -7,8 +7,19 @@ All notable changes to this project will be documented in this file.
 
 
 
+<a name="v0.0.39"></a>
+## [v0.0.39] - 2020-07-06
+
+- BBL-119 user-guide sub-sections extended to map the how-it-works
+- BBL-19 Makefile, mkdocs, main doc files updated + examples
+- BBL-19 several how-it-works sections / sub-sections added and updated
+- BBL-19 updating .gitignore to avoid 'make docs-check-dead-links' resulting files to be added by mistake.
+- Merge branch 'master' into BBL-119-mkdocs-gh-updates
+- BBL-19 fixing typo in how-it-works/compute
+
+
 <a name="v0.0.38"></a>
-## [v0.0.38] - 0001-01-01
+## [v0.0.38] - 2020-06-26
 
 
 
@@ -272,7 +283,8 @@ All notable changes to this project will be documented in this file.
 - Deployed  with MkDocs version: 1.1.2
 
 
-[Unreleased]: https://github.com/binbashar/le-ref-architecture-doc/compare/v0.0.38...HEAD
+[Unreleased]: https://github.com/binbashar/le-ref-architecture-doc/compare/v0.0.39...HEAD
+[v0.0.39]: https://github.com/binbashar/le-ref-architecture-doc/compare/v0.0.38...v0.0.39
 [v0.0.38]: https://github.com/binbashar/le-ref-architecture-doc/compare/v0.0.37...v0.0.38
 [v0.0.37]: https://github.com/binbashar/le-ref-architecture-doc/compare/v0.0.36...v0.0.37
 [v0.0.36]: https://github.com/binbashar/le-ref-architecture-doc/compare/v0.0.35...v0.0.36

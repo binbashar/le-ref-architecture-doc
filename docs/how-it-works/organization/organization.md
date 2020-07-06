@@ -4,7 +4,7 @@
 This repository contains all Terraform configuration files used to create Binbash Leverage Reference 
 [**AWS Organizations**](https://aws.amazon.com/organizations/) Multi-Account baseline layout.
 
-!!! Success "Why AWS Organizations?"
+!!! check "Why AWS Organizations?"
     This approach allows it to have a hierarchical structure of AWS accounts, providing additional
     security isolation and the ability to separate resources into Organizational Units with it
     associated Service Control Policies (SCP). 
@@ -38,7 +38,7 @@ The following block provides a brief explanation of the chosen AWS Organization 
 
 **NOTE:** *Image just as reference*
 
-!!! tip "Benefits of [**AWS Organizations**](https://aws.amazon.com/organizations/)"
+!!! important "Benefits of [**AWS Organizations**](https://aws.amazon.com/organizations/)"
     - [x] **Billing:** Consolidated billing for all your accounts within organization, enhanced per account cost 
     filtering and [RI usage](https://aws.amazon.com/about-aws/whats-new/2019/07/amazon-ec2-on-demand-capacity-reservations-shared-across-multiple-aws-accounts/)  
     - [x] **Security I:** Extra security layer: You get fully isolated infrastructure for different organizations 

@@ -2,7 +2,7 @@
 
 ## Containers and Serverless
 
-!!! abstract "Overview"
+!!! summary "Overview"
     In order to serve Client application workloads we propose to implement **_Kubernetes_**, and proceed to containerize all
     application stacks whenever it’s the best solution (we’ll also consider **_AWS Lambda_** for a Serverless approach when
     it fits better). Kubernetes is an open source container orchestration platform that eases the process of running

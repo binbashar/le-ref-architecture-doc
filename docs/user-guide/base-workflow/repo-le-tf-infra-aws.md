@@ -1,6 +1,7 @@
 # Workflow
 
-!!! success "Terraform Workflow"
+## Steps 
+!!! check "Terraform Workflow"
     1. Make sure you've read the 'Pre-requisites' section 1st steps
     2. Get into the folder that you need to work with (e.g. `2_identities`)
     3. Run `make init`
@@ -14,3 +15,13 @@
     `make apply` (`terraform apply`). This brings the huge benefit of treating changes with a **GitOps** oriented 
     approach, basically as we should treat any other code & infrastructure change, and integrate it with the 
     rest of our tools and practices like CI/CD, in
+
+## Running in Automation
+![leverage-aws-terraform](../../assets/images/diagrams/aws-terraform-automation.png "Terraform"){: style="width:350"}
+<figcaption>**Figure:** Running terraform with AWS in automation (just as reference).</figcaption>
+
+## Read More
+
+!!! info "Extra resources"
+    * :ledger: [Running Terraform in automation](https://learn.hashicorp.com/terraform/development/running-terraform-in-automation)
+    

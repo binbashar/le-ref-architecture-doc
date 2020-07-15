@@ -25,7 +25,7 @@ Feel free to contact us for an ![leverage-aws](./assets/images/icons/aws-emojipa
     - [X] [Performance Efficiency](https://drive.google.com/file/d/1B2T-ACEuy6HqHTBhSuRbqS9tNiaVxjQR/view?usp=sharing)
  
 !!! info "WAF Exta Material"
-    - :star: [DevSecOps Security Audit - v0.1](https://drive.google.com/file/d/1mtWfvXpucJP7NCUmuvxNhVq5hQ3kz9zz/view?usp=sharing)
+    - :star: [DevSecOps Security Audit - v0.1](https://drive.google.com/file/d/154ejAyjzAIdcEMGVUCXHZPNkBRc-gxwS/view?usp=sharing)
     - :star: [WAF Cost Optimization Checklist - v0.1](https://drive.google.com/file/d/18boU7ppcBDU5eCm1TGWcjVMM8IrFj6QJ/view?usp=sharing)
  
 #### Read More

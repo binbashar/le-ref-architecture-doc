@@ -110,9 +110,9 @@ Requires human action at some point
    <td>
 <ul>
 
-<li> \
-Notify on-call engineers \
---- At first, notify via SMS/Push \
+<li>
+Notify on-call engineers
+--- At first, notify via SMS/Push
 --- Notify via Phone Call if after 10 minutes the previous has not acknowledged
 
 <li>Notify person X (this is a person who needs to be aware of any of these issues always)
@@ -128,7 +128,7 @@ Notify on-call engineers \
    <td>
 <ul>
 
-<li> \
+<li>
 Notify to Slack => engineering-alerts channel
 </li>
 </ul>
@@ -140,7 +140,7 @@ Notify to Slack => engineering-alerts channel
    <td>
 <ul>
 
-<li> \
+<li>
 Notify to Slack => engineering-alerts channel
 </li>
 </ul>

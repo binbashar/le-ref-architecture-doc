@@ -84,10 +84,15 @@ nav:
   - Home:
     - Home: "index.md"
     - Welcome: "welcome.md"
+    - First steps: "first-steps/index.md"
     - How it works: "how-it-works/index.md"
+    - User guide: "user-guide/index.md"
     - Support: "support.md"
     - Development: "development.md"
     - License: "license.md"
+
+  - First Steps:
+    - Overview: "first-steps/index.md"
 
   - How it works:
     - Desing:
@@ -126,12 +131,14 @@ nav:
       - Metrics: "how-it-works/monitoring/metrics.md"
       - Logs: "how-it-works/monitoring/logs.md"
       - Tracing: "how-it-works/monitoring/tracing.md"
+      - APM: "how-it-works/monitoring/apm.md"
       - Notifications: "how-it-works/monitoring/notification_escalation.md"
     - Secrets: "how-it-works/secrets/secrets.md"
     - Reliability:
-      - Disaster Recovery: "how-it-works/reliability/dr.md"
-      - Health Checks: "how-it-works/reliability/health-checks.md"
       - Backups: "how-it-works/reliability/backups.md"
+      - High Availability: "how-it-works/reliability/high-availability.md"
+      - Health Checks: "how-it-works/reliability/health-checks.md"
+      - Disaster Recovery: "how-it-works/reliability/dr.md"
     - Costs: "how-it-works/costs/costs.md"
     - Read More: "how-it-works/read-more.md"
 
@@ -177,11 +184,12 @@ nav:
       - Metrics: "user-guide/monitoring/metrics.md"
       - Logs: "user-guide/monitoring/logs.md"
       - Tracing: "user-guide/monitoring/tracing.md"
+      - APM: "user-guide/monitoring/apm.md"
     - Secrets: "user-guide/secrets/secrets.md"
     - Reliability:
+      - Backups: "user-guide/reliability/backups.md"
       - Disaster Recovery: "user-guide/reliability/dr.md"
       - Health Checks: "user-guide/reliability/health-checks.md"
-      - Backups: "user-guide/reliability/backups.md"
     - Costs: "user-guide/costs/costs.md"
 
   - Examples:

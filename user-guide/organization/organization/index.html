@@ -2209,9 +2209,13 @@
 <ol>
 <li>Create a brand <a href="https://aws.amazon.com/premiumsupport/knowledge-center/create-and-activate-aws-account/">new AWS Account</a>,
  intended to be our AWS Organization Root Account  </li>
+<li>Via AWS Web Console: in <code>project-root</code> create the <code>root-org</code> IAM user with Admin privileges, which will be use
+ for the initial AWS Org bootstrapping. After it’s 1st execution only nominated Org admin users will persist in the
+ <code>project-root</code> account.</li>
+<li>The AWS Org will be orchestrated -&gt; <a href="https://github.com/binbashar/le-tf-infra-aws/tree/master/root/organizations">Leverage Ref Code</a></li>
 <li>Via AWS Web Console: from your <code>project-root</code> acconunt
  <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_invites.html">invite</a> the 
- pre-existing <code>project-legacy</code> (1 to n accounts).</li>
+pre-existing <code>project-legacy</code> (1 to n accounts).</li>
 <li>Via AWS Web Console: in <code>project-legacy</code> create the <code>OrganizationAccountAccessRole</code> IAM Role with Admin
  permissions.<ul>
 <li><img alt="📙" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f4d9.svg" title=":orange_book:" /> Should follow
@@ -2219,10 +2223,6 @@
 section.</li>
 </ul>
 </li>
-<li>Via AWS Web Console: in <code>project-root</code> create the <code>root-org</code> IAM user with Admin privileges, which will be use
- for the initial AWS Org bootstrapping. After it’s 1st execution only nominated Org admin users will persist in the
- <code>project-root</code> account.</li>
-<li>The AWS Org will be orchestrated -&gt; <a href="https://github.com/binbashar/le-tf-infra-aws/tree/master/root/organizations">Leverage Ref Code</a></li>
 <li>Import your <code>project-legacy</code> account as code.<ul>
 <li>Update the following variables in <code>./@bin/makefiles/terraform12/Makefile.terraform12-import-rm</code>
 <div class="highlight"><pre><span></span><code>TF_IMPORT_RESOURCE                := &quot;aws_organizations_organizational_unit.bbl_apps_devstg&quot;

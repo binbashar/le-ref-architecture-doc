@@ -71,11 +71,11 @@ plugins:
 extra_css:
     - assets/stylesheets/extra.css
 
-# Google Analytics
+# Google Analytics (https://squidfunk.github.io/mkdocs-material/getting-started/#google-analytics)
 #
-#google_analytics:
-#  - 'UA-XXXXXXXX-X'
-#  - 'auto'
+google_analytics:
+  - 'UA-172873342-1'
+  - 'auto'
 
 #===================================================================================#
 # Mkdocs Navigation Tree

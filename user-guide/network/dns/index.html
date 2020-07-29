@@ -1642,16 +1642,22 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#how-it-works" class="md-nav__link">
-    How it works
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#user-guide" class="md-nav__link">
     User guide
   </a>
+  
+    <nav class="md-nav" aria-label="User guide">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#migrated-aws-route53-hosted-zones-between-aws-accounts" class="md-nav__link">
+    Migrated AWS Route53 Hosted Zones between AWS Accounts
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -1938,7 +1944,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../monitoring/apm.md" title="APM" class="md-nav__link">
+    <a href="../../monitoring/apm/" title="APM" class="md-nav__link">
       APM
     </a>
   </li>
@@ -2178,16 +2184,22 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#how-it-works" class="md-nav__link">
-    How it works
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#user-guide" class="md-nav__link">
     User guide
   </a>
+  
+    <nav class="md-nav" aria-label="User guide">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#migrated-aws-route53-hosted-zones-between-aws-accounts" class="md-nav__link">
+    Migrated AWS Route53 Hosted Zones between AWS Accounts
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -2212,10 +2224,57 @@
                 
                 
                 <h1 id="route53-dns-hosted-zones">Route53 DNS hosted zones<a class="headerlink" href="#route53-dns-hosted-zones" title="Permanent link"> ¶</a></h1>
-<h2 id="how-it-works">How it works<a class="headerlink" href="#how-it-works" title="Permanent link"> ¶</a></h2>
-<p>TODO</p>
+<div class="admonition help">
+<p class="admonition-title">How it works</p>
+<p><img alt="📚" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f4da.svg" title=":books:" /> <a href="../../../how-it-works/network/dns/"><strong>documentation:</strong> DNS</a></p>
+</div>
 <h2 id="user-guide">User guide<a class="headerlink" href="#user-guide" title="Permanent link"> ¶</a></h2>
-<p>TODO</p>
+<div class="admonition done">
+<p class="admonition-title">pre-requisites</p>
+<ul>
+<li><img alt="⚙" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/2699.svg" title=":gear:" /> Review &amp; update <a href="../../base-configuration/repo-le-tf-infra-aws/"><strong>configs</strong></a> </li>
+<li><img alt="⚙" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/2699.svg" title=":gear:" /> Review &amp; understand the <a href="../../base-workflow/repo-le-tf-infra-aws/"><strong>workflow</strong></a> </li>
+</ul>
+</div>
+<div class="admonition example">
+<p class="admonition-title">Steps</p>
+<ol>
+<li><strong>DNS</strong> service has to be orchestrated from 
+<a href="https://github.com/binbashar/le-tf-infra-aws/tree/master/shared/base-dns"><code>/shared/base-dns</code></a> layer 
+following the standard <a href="../../base-workflow/repo-le-tf-infra-aws/">workflow</a></li>
+<li>To associate AWS Org Member accounts to your DNS Private Hosted Zones eg: <code>*.aws.domain.com</code> 
+(previously deployed) proceed applying the corresponding layers<ol>
+<li><a href="https://github.com/binbashar/le-tf-infra-aws/tree/master/apps-devstg/base-dns">apps-devstg/base-dns</a></li>
+<li><a href="https://github.com/binbashar/le-tf-infra-aws/tree/master/apps-prd/base-dns">apps-prd/base-dns</a></li>
+<li>repeat for every other necessary AWS Org Memeber account.</li>
+</ol>
+</li>
+</ol>
+</div>
+<h3 id="migrated-aws-route53-hosted-zones-between-aws-accounts">Migrated AWS Route53 Hosted Zones between AWS Accounts<a class="headerlink" href="#migrated-aws-route53-hosted-zones-between-aws-accounts" title="Permanent link"> ¶</a></h3>
+<p>We'll need to setup the Route53 DNS service with an active-active config to avoid any type of service disruption and 
+downtime. This would then allow the Name Servers of both AWS Accounts to be added to your domain provider
+(eg: <a href="https://www.namecheap.com/">namecheap.com</a>) and have for example: </p>
+<ul>
+<li>4 x ns (<code>project-legacy</code> Route53 Account) </li>
+<li>4 x ns (<code>project-shared</code> Route53 Account) </li>
+</ul>
+<p>After the records have propagated and everything looks OK we could remove the <code>project-legacy</code> Route53 ns from your
+domain provider (eg: <a href="https://www.namecheap.com/">namecheap.com</a>) and leave only the of <code>project-shared</code> ones.</p>
+<p>This <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/hosted-zones-migrating.html">official Migrating a hosted zone to a different AWS account - Amazon Route 53 article</a> 
+explains this procedure step by step:</p>
+<div class="admonition example">
+<p class="admonition-title">AWS Route53 hosted zone migration steps</p>
+<ol>
+<li>Create records in the new hosted zone (flex-shared)</li>
+<li>Compare records in the old and new hosted zones (flex-legacy)</li>
+<li>Update the domain registration to use name servers for the new hosted zone (NIC updated to use both 
+flex-legacy + flex-shared)</li>
+<li>Wait for DNS resolvers to start using the new hosted zone</li>
+<li>(Optional) delete the old hosted zone (flex-legacy), remember you'll need to delete the ns delegation 
+records from your domain registration (NIC) too.</li>
+</ol>
+</div>
                 
               
               

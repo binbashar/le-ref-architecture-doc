@@ -1502,24 +1502,45 @@
     User guide
   </a>
   
+    <nav class="md-nav" aria-label="User guide">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#pre-requisites" class="md-nav__link">
+    Pre-requisites
+  </a>
+  
+    <nav class="md-nav" aria-label="Pre-requisites">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#email-setup-example" class="md-nav__link">
+    Email setup example
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example" class="md-nav__link">
+    Example
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
     </ul>
   
 </nav>
     
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../accounts/" title="Accounts" class="md-nav__link">
-      Accounts
-    </a>
   </li>
 
         
@@ -2175,6 +2196,39 @@
     User guide
   </a>
   
+    <nav class="md-nav" aria-label="User guide">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#pre-requisites" class="md-nav__link">
+    Pre-requisites
+  </a>
+  
+    <nav class="md-nav" aria-label="Pre-requisites">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#email-setup-example" class="md-nav__link">
+    Email setup example
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example" class="md-nav__link">
+    Example
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
     </ul>
@@ -2204,6 +2258,36 @@
 <p><img alt="📚" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f4da.svg" title=":books:" /> <a href="../../../how-it-works/organization/accounts/"><strong>documentation:</strong> organization accounts</a></p>
 </div>
 <h2 id="user-guide">User guide<a class="headerlink" href="#user-guide" title="Permanent link"> ¶</a></h2>
+<h3 id="pre-requisites">Pre-requisites<a class="headerlink" href="#pre-requisites" title="Permanent link"> ¶</a></h3>
+<p>You'll need an email to <a href="https://aws.amazon.com/premiumsupport/knowledge-center/create-and-activate-aws-account/">create and register your AWS Organization Root Account</a>.
+For this purpose we recommend to avoid using an individual nominated email user. 
+Instead, whenever possible, it should ideally be associated, with a <strong>distribution list email</strong> such as a 
+<a href="https://support.google.com/a/answer/2727156?hl=en"><strong>GSuite Group</strong></a> to ensure the proper admins member's team 
+(DevOps | SecOps | Cloud Engineering Team) to manage its notifications avoiding a single point of contact (constraint).</p>
+<h4 id="email-setup-example">Email setup example<a class="headerlink" href="#email-setup-example" title="Permanent link"> ¶</a></h4>
+<p><strong>GSuite Group Email address:</strong> <code>aws@domain.com</code> (to which admins / owners belong), and then using the <code>+</code> we generate
+the aliases automatically implicitly when running Terraform's Leverage code.</p>
+<ul>
+<li><img alt="📧" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f4e7.svg" title=":e-mail:" /> <code>aws+security@flexibility.com.ar</code></li>
+<li><img alt="📧" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f4e7.svg" title=":e-mail:" /> <code>aws+shared@flexibility.com.ar</code></li>
+<li><img alt="📧" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f4e7.svg" title=":e-mail:" /> <code>aws+apps-devstg@flexibility.com.ar</code></li>
+<li><img alt="📧" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f4e7.svg" title=":e-mail:" /> <code>aws+apps-prd@flexibility.com.ar</code></li>
+</ul>
+<div class="admonition important reference code as example">
+<p class="admonition-title">Important</p>
+<div class="highlight"><pre><span></span><code><span class="c1">#</span>
+<span class="c1"># Project Prd: services and resources related to production are placed and</span>
+<span class="c1">#  maintained here.</span>
+<span class="c1">#</span>
+<span class="kr">resource</span> <span class="s">&quot;aws_organizations_account&quot; &quot;apps_prd&quot;</span> <span class=" -Punctuation">{</span>
+<span class="na">  name</span>      <span class="o">=</span> <span class="s2">&quot;apps-prd&quot;</span>
+<span class="na">  email</span>     <span class="o">=</span> <span class="s2">&quot;aws+apps-prd@doamin.ar&quot;</span>
+<span class="na">  parent_id</span> <span class="o">=</span> <span class="err">aws_organizations_organizational_unit</span><span class="p">.</span><span class="err">apps_prd</span><span class="p">.</span><span class="err">id</span>
+<span class=" -Punctuation">}</span>
+</code></pre></div>
+
+</div>
+<h3 id="example">Example<a class="headerlink" href="#example" title="Permanent link"> ¶</a></h3>
 <div class="admonition example">
 <p class="admonition-title">Steps</p>
 <ol>
@@ -2269,13 +2353,13 @@ TF_RM_RESOURCE                    := &quot;aws_organizations_organizational_unit
           </a>
         
         
-          <a href="../accounts/" title="Accounts" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="../../identities/identities/" title="Identities" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-footer-nav__title">
               <div class="md-ellipsis">
                 <span class="md-footer-nav__direction">
                   Next
                 </span>
-                Accounts
+                Identities
               </div>
             </div>
             <div class="md-footer-nav__button md-icon">

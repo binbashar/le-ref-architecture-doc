@@ -7,6 +7,38 @@
 
 ## User guide
 
+### Pre-requisites
+
+You'll need an email to [create and register your AWS Organization Root Account](https://aws.amazon.com/premiumsupport/knowledge-center/create-and-activate-aws-account/).
+For this purpose we recommend to avoid using an individual nominated email user. 
+Instead, whenever possible, it should ideally be associated, with a **distribution list email** such as a 
+[**GSuite Group**](https://support.google.com/a/answer/2727156?hl=en) to ensure the proper admins member's team 
+(DevOps | SecOps | Cloud Engineering Team) to manage its notifications avoiding a single point of contact (constraint).
+
+#### Email setup example
+**GSuite Group Email address:** `aws@domain.com` (to which admins / owners belong), and then using the `+` we generate
+the aliases automatically implicitly when running Terraform's Leverage code.
+
+* :e-mail: `aws+security@flexibility.com.ar`
+* :e-mail: `aws+shared@flexibility.com.ar`
+* :e-mail: `aws+apps-devstg@flexibility.com.ar`
+* :e-mail: `aws+apps-prd@flexibility.com.ar`
+
+!!! important Reference Code as example
+    ```terraform
+    #
+    # Project Prd: services and resources related to production are placed and
+    #  maintained here.
+    #
+    resource "aws_organizations_account" "apps_prd" {
+      name      = "apps-prd"
+      email     = "aws+apps-prd@doamin.ar"
+      parent_id = aws_organizations_organizational_unit.apps_prd.id
+    }
+    ```
+
+### Example
+
 !!! example "Steps"
     1. Create a brand [new AWS Account](https://aws.amazon.com/premiumsupport/knowledge-center/create-and-activate-aws-account/),
      intended to be our AWS Organization Root Account  

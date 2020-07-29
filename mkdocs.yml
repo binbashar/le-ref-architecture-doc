@@ -157,7 +157,6 @@ nav:
         - Helm Infra: "user-guide/base-workflow/repo-le-helm-infra.md"
     - AWS Organization:
       - Organization: "user-guide/organization/organization.md"
-      - Accounts: "user-guide/organization/accounts.md"
     - Identities: "user-guide/identities/identities.md"
     - Security:
       - VPN: "user-guide/security/vpn.md"

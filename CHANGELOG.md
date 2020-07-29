@@ -7,8 +7,14 @@ All notable changes to this project will be documented in this file.
 
 
 
+<a name="v0.1.3"></a>
+## [v0.1.3] - 2020-07-29
+
+- BBL-19 user-guide/organizations email pre-req doc added
+
+
 <a name="v0.1.2"></a>
-## [v0.1.2] - 0001-01-01
+## [v0.1.2] - 2020-07-29
 
 
 
@@ -356,7 +362,8 @@ All notable changes to this project will be documented in this file.
 - Deployed  with MkDocs version: 1.1.2
 
 
-[Unreleased]: https://github.com/binbashar/le-ref-architecture-doc/compare/v0.1.2...HEAD
+[Unreleased]: https://github.com/binbashar/le-ref-architecture-doc/compare/v0.1.3...HEAD
+[v0.1.3]: https://github.com/binbashar/le-ref-architecture-doc/compare/v0.1.2...v0.1.3
 [v0.1.2]: https://github.com/binbashar/le-ref-architecture-doc/compare/v0.1.1...v0.1.2
 [v0.1.1]: https://github.com/binbashar/le-ref-architecture-doc/compare/v0.1.0...v0.1.1
 [v0.1.0]: https://github.com/binbashar/le-ref-architecture-doc/compare/v0.0.49...v0.1.0

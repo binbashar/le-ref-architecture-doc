@@ -2,7 +2,7 @@
 
 ## Kops Pre-requisites
 
-!!! attention "Important consderation"
+!!! attention "Important consideration"
     K8s clusters provisioned by Kops have a number of resources that need to be available before the
     cluster is created. These are Kops pre-requisites and they are defined in the `1-prerequisites`
     directory which includes all Terraform files used to create/modify these resources.

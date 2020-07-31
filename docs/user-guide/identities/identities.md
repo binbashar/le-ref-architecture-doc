@@ -27,7 +27,8 @@ afterwards in your [`project-security`](https://github.com/binbashar/le-tf-infra
     9. User should 
     [create his AWS ACCESS KEYS](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_access-keys.html#Using_CreateAccessKey) 
     if needed 
-    10. Set up `~/.aws/project/credentials` + `~/.aws/project/config` following the immediately below **AWS Credentials Setup** sub-section
+    10. User could optionally set up `~/.aws/project/credentials` + `~/.aws/project/config` following the immediately
+     below **AWS Credentials Setup** sub-section
 
 
 ### AWS Credentials Setup

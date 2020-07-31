@@ -33,17 +33,20 @@ theme:
 
 extra:
   social:
+    - icon: material/home
+      link: 'https://www.binbash.com.ar'
     - icon: material/github
       link: 'https://github.com/binbashar'
     - icon: material/linkedin
       link: 'https://www.linkedin.com/company/binbash'
+    - icon: material/slack
+      link: 'https://join.slack.com/t/binbashar/shared_invite/zt-fw1692b6-9k4ADsWJ47lKacszphXM1w'
+    - icon: fontawesome/brands/medium
+      link: 'https://medium.com/binbash-inc'
     - icon: material/twitter
       link: 'https://twitter.com/binbash_devops'
     - icon: material/docker
       link: 'https://hub.docker.com/orgs/binbash'
-    - icon: material/home
-      link: 'https://www.binbash.com.ar'
-
 
 #===================================================================================#
 # Mkdocs Markdown Extentions, Plugins & extras
@@ -157,7 +160,9 @@ nav:
         - Helm Infra: "user-guide/base-workflow/repo-le-helm-infra.md"
     - AWS Organization:
       - Organization: "user-guide/organization/organization.md"
-    - Identities: "user-guide/identities/identities.md"
+    - Identities:
+      - gpg: "user-guide/identities/gpg.md"
+      - identities: "user-guide/identities/identities.md"
     - Security:
       - VPN: "user-guide/security/vpn.md"
       - Services: "user-guide/security/services.md"

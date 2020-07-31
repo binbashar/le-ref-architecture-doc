@@ -7,6 +7,7 @@
     * [x] **Docker engine** `>= 19.03.12`(check via `docker --version`) 
     * [x] **Python** `>= 3.8` (check via `python3 --version` || `python3.8 --version`) 
     * [x] **jq** `>= jq-1.5-1-a5b5cbe` (check via `jq --version`)
+    * [x] **aws-cli** `>= 1.16.265` (check via `aws --version`)
 
 ## Configurations
 Specific configuration per component could be found in the immediately following entries

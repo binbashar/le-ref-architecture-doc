@@ -13,7 +13,7 @@ user's password and user's secret key.
     If possible, always use PGP encryption to prevent Terraform from keeping unencrypted password and access secret key 
     in state file.
 
-!!! check "Keybase pre-requisits"
+!!! check "Keybase pre-requisites"
     When `pgp_key` is specified as `keybase:username`, make sure that the user public key has already been uploaded to 
     the [Reference Architecture base-identities layer `keys` folder](https://github.com/binbashar/le-tf-infra-aws/tree/master/security/base-identities/keys) 
 
@@ -52,11 +52,11 @@ user's password and user's secret key.
     $ gpg --decrypt encrypted_pass
     
     You need a passphrase to unlock the secret key for
-    user: "Exequiel Barrirero (Exequiel Barrirero AWS org binbash-user acct gpg key w/ passphrase) <exequiel.barrirero@binbash.com.ar>"
+    user: "Demo User (AWS org project-user acct gpg key w/ passphrase) <username.lastname@domain.com>"
     2048-bit RSA key, ID 05ED43DC, created 2019-03-15 (main key ID D64DD59F)
     
     gpg: encrypted with 2048-bit RSA key, ID 05ED43DC, created 2019-03-15
-          "Exequiel Barrirero (Exequiel Barrirero AWS org binbash-user acct gpg key w/ passphrase) <exequiel.barrirero@binbash.com.ar>"
+          "Demo User (AWS org project-user acct gpg key w/ passphrase) <username.lastname@domain.com>"
     Vi0JA|c%fP*FhL}CE-D7ssp_TVGlf#%
     ```
     :warning: Depending on your shell version an extra `%` character could appear as shown below, you must disregard this

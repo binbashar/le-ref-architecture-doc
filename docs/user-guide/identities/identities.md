@@ -10,7 +10,7 @@ Please follow the steps below to orchestrate your `base-identities` layer 1st in
 afterwards in your [`project-security`](https://github.com/binbashar/le-tf-infra-aws/tree/master/security/base-identities) account.
 
 !!! example "IAM user standard creation workflow"
-    1. Pre-req add Public PGP Key following the [documentation](./gpg.md) 
+    1. Pre-requisite add Public PGP Key following the [documentation](./gpg.md) 
     2. For steps 3. and 4. consider following 
     [Terraform `make` workflow](https://leverage.binbash.com.ar/user-guide/base-workflow/repo-le-tf-infra-aws/)
     3. Update (add | remove) your IAM Users associated code and deploy 

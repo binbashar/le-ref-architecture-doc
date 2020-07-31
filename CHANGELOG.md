@@ -7,8 +7,16 @@ All notable changes to this project will be documented in this file.
 
 
 
+<a name="v0.1.6"></a>
+## [v0.1.6] - 2020-07-31
+
+- BBL-19 minor adjustments to user-guide identities files
+- BBL-19 small sintaxt improvement
+- BBL-19 | user-guide/identities completed
+
+
 <a name="v0.1.5"></a>
-## [v0.1.5] - 0001-01-01
+## [v0.1.5] - 2020-07-29
 
 
 
@@ -372,7 +380,8 @@ All notable changes to this project will be documented in this file.
 - Deployed  with MkDocs version: 1.1.2
 
 
-[Unreleased]: https://github.com/binbashar/le-ref-architecture-doc/compare/v0.1.5...HEAD
+[Unreleased]: https://github.com/binbashar/le-ref-architecture-doc/compare/v0.1.6...HEAD
+[v0.1.6]: https://github.com/binbashar/le-ref-architecture-doc/compare/v0.1.5...v0.1.6
 [v0.1.5]: https://github.com/binbashar/le-ref-architecture-doc/compare/v0.1.4...v0.1.5
 [v0.1.4]: https://github.com/binbashar/le-ref-architecture-doc/compare/v0.1.3...v0.1.4
 [v0.1.3]: https://github.com/binbashar/le-ref-architecture-doc/compare/v0.1.2...v0.1.3

@@ -11,7 +11,7 @@
         <meta name="description" content="Binbash Leverage Reference Architecture Documentation">
       
       
-        <link rel="canonical" href="https://leverage.binbash.com.ar/user-guide/reliability/backups/">
+        <link rel="canonical" href="https://leverage.binbash.com.ar/user-guide/identities/gpg/">
       
       
         <meta name="author" content="Binbash">
@@ -21,7 +21,7 @@
     
     
       
-        <title>Backups - Binbash Leverage Reference Architecture</title>
+        <title>gpg - Binbash Leverage Reference Architecture</title>
       
     
     
@@ -69,6 +69,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#pgp-keys-helper" class="md-skip">
+          Skip to content
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -93,7 +98,7 @@
           </span>
           <span class="md-header-nav__topic md-ellipsis">
             
-              Backups
+              gpg
             
           </span>
         </div>
@@ -1471,10 +1476,12 @@
           
           
 
+  
 
-  <li class="md-nav__item md-nav__item--nested">
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
     
-      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-4-5" type="checkbox" id="nav-4-5">
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-4-5" type="checkbox" id="nav-4-5" checked>
     
     <label class="md-nav__link" for="nav-4-5">
       Identities
@@ -1496,11 +1503,60 @@
           
           
 
+  
 
-  <li class="md-nav__item">
-    <a href="../../identities/gpg/" title="gpg" class="md-nav__link">
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        gpg
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 9h14V7H3v2m0 4h14v-2H3v2m0 4h14v-2H3v2m16 0h2v-2h-2v2m0-10v2h2V7h-2m0 6h2v-2h-2v2z"/></svg>
+        </span>
+      </label>
+    
+    <a href="./" title="gpg" class="md-nav__link md-nav__link--active">
       gpg
     </a>
+    
+      
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#why-to-use-pgp" class="md-nav__link">
+    Why to use PGP?
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-to-manage-your-gpg-keys" class="md-nav__link">
+    How to manage your GPG keys?
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+    
   </li>
 
         
@@ -1510,7 +1566,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../identities/identities/" title="identities" class="md-nav__link">
+    <a href="../identities/" title="identities" class="md-nav__link">
       identities
     </a>
   </li>
@@ -1939,12 +1995,10 @@
           
           
 
-  
 
-
-  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+  <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-4-16" type="checkbox" id="nav-4-16" checked>
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-4-16" type="checkbox" id="nav-4-16">
     
     <label class="md-nav__link" for="nav-4-16">
       Reliability
@@ -1966,18 +2020,11 @@
           
           
 
-  
 
-
-  <li class="md-nav__item md-nav__item--active">
-    
-    <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-    
-    
-    <a href="./" title="Backups" class="md-nav__link md-nav__link--active">
+  <li class="md-nav__item">
+    <a href="../../reliability/backups/" title="Backups" class="md-nav__link">
       Backups
     </a>
-    
   </li>
 
         
@@ -1987,7 +2034,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../dr/" title="Disaster Recovery" class="md-nav__link">
+    <a href="../../reliability/dr/" title="Disaster Recovery" class="md-nav__link">
       Disaster Recovery
     </a>
   </li>
@@ -1999,7 +2046,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../health-checks/" title="Health Checks" class="md-nav__link">
+    <a href="../../reliability/health-checks/" title="Health Checks" class="md-nav__link">
       Health Checks
     </a>
   </li>
@@ -2142,12 +2189,51 @@
               </div>
             
             
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#why-to-use-pgp" class="md-nav__link">
+    Why to use PGP?
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-to-manage-your-gpg-keys" class="md-nav__link">
+    How to manage your GPG keys?
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
           
           <div class="md-content">
             <article class="md-content__inner md-typeset">
               
                 
-                  <a href="https://github.com/binbashar/le-ref-architecture-doc/edit/master/docs/user-guide/reliability/backups.md" title="Edit this page" class="md-content__button md-icon">
+                  <a href="https://github.com/binbashar/le-ref-architecture-doc/edit/master/docs/user-guide/identities/gpg.md" title="Edit this page" class="md-content__button md-icon">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg>
                   </a>
                 
@@ -2155,9 +2241,78 @@
                   
                 
                 
-                  <h1>Backups</h1>
-                
-                
+                <h1 id="pgp-keys-helper">PGP keys helper<a class="headerlink" href="#pgp-keys-helper" title="Permanent link"> ¶</a></h1>
+<h2 id="why-to-use-pgp">Why to use PGP?<a class="headerlink" href="#why-to-use-pgp" title="Permanent link"> ¶</a></h2>
+<p>By default our <a href="https://github.com/binbashar/le-tf-infra-aws/blob/master/security/base-identities/users.tf">Leverage Reference Architectre base-identities layer</a> 
+approach is to use <a href="[https://github.com/binbashar/terraform-aws-iam/tree/master/modules/iam-user]">IAM module</a> 
+to manage AWS IAM Users credentials with <strong>encryption to grant strong security</strong>. </p>
+<p>This <strong>module</strong> outputs commands and PGP messages which can be decrypted either using command line to get AWS Web Connsole
+user's password and user's secret key.   </p>
+<div class="admonition warning">
+<p class="admonition-title">Notes for keybase users</p>
+<p>If possible, always use PGP encryption to prevent Terraform from keeping unencrypted password and access secret key 
+in state file.</p>
+</div>
+<div class="admonition check">
+<p class="admonition-title">Keybase pre-requisites</p>
+<p>When <code>pgp_key</code> is specified as <code>keybase:username</code>, make sure that the user public key has already been uploaded to 
+the <a href="https://github.com/binbashar/le-tf-infra-aws/tree/master/security/base-identities/keys">Reference Architecture base-identities layer <code>keys</code> folder</a> </p>
+</div>
+<h2 id="how-to-manage-your-gpg-keys">How to manage your GPG keys?<a class="headerlink" href="#how-to-manage-your-gpg-keys" title="Permanent link"> ¶</a></h2>
+<div class="admonition info">
+<p class="admonition-title">Create a key pair</p>
+<ul>
+<li>NOTE: the user for whom this account is being created needs to do this</li>
+<li>Install <code>gpg</code></li>
+<li>Run <code>gpg --version</code> to confirm</li>
+<li>Run <code>gpg --gen-key</code> and provide "Your Name" and "Your Email" as instructed -- you must also provide a passphrase</li>
+<li>Run <code>gpg --list-keys</code> to check that your key was generated</li>
+</ul>
+</div>
+<div class="admonition info">
+<p class="admonition-title">Delete a key pair</p>
+<ul>
+<li>Run <code>gpg --list-keys</code> to check your key id</li>
+<li>Run <code>gpg --delete-secret-keys "Your Name"</code> to delete your private gpg key</li>
+<li>Run <code>gpg --delete-key "Your Name"</code> to delete your public gpg key</li>
+</ul>
+</div>
+<div class="admonition info">
+<p class="admonition-title">Export your public key</p>
+<ul>
+<li>NOTE: the user must have created a key pair before doing this</li>
+<li>Run <code>gpg --export "Your Name" | base64</code></li>
+<li>Now the user can share her/his public key for creating her/his account</li>
+</ul>
+</div>
+<div class="admonition info">
+<p class="admonition-title">Decrypt your encrypted password</p>
+<ol>
+<li>The user should copy the encrypted password from whatever media it was provided to her/him</li>
+<li>Run <code>echo "YOUR ENCRYPTED STRING PASSWORD HERE" | base64 --decode &gt; a_file_with_your_pass</code>
+<div class="highlight"><pre><span></span><code>$ <span class="nb">echo</span> <span class="s2">&quot;wcBMA/ujy1wF7UPcAQgASLL/x8zz7OHIP+EHU7IAZfa1A9qD9ScP5orK1M473WlXVgPrded0iHpyZRwsJRS8Xe38AHZ65O6CnywdR522MbD\</span>
+<span class="s2">RD6Yz+Bfc9NwO316bfSoTpyROXvMi+cfMEcihInHaCIP9YWBaI3eJ6VFdn90g9of00HYehBux7E2VitMuWo+v46W1p8/pw0b0H5qcppnUYYOjjSbjzzAuMF\</span>
+<span class="s2">yNB5M1K8av61bPQPQTxBH3SFaM0B4RNmUl1bHKDIcdESYyIP/PRLQ45Rs5MzGgALIxBy24qdPNjHJQR48/5QV4nzB9qeEe4eWDB4ynSEfLsXggiz8fsbajV\</span>
+<span class="s2">gSLNsdpqP9lYaueFdLgAeR6a+EjvqZfq0hZAgoiymsb4Qtn4A7gmeGmNeDE4td1mVfgzuTZ9zhnSbAYlXNIiM4b0MeX4HrjFkT/Aq+A/rvgBeKhszWD4Ibh\</span>
+<span class="s2">A4PgC+QPiJRb5kQ/mX8DheQfAHJ24iUZk1jh6AsA&quot;</span> <span class="p">|</span> base64 --decode &gt; encrypted_pass
+</code></pre></div></li>
+<li>Run <code>gpg --decrypt a_file_with_your_pass</code> (in the path you've executed 2.) to effectively decrypt your pass using
+ your gpg key and its passphrase
+<div class="highlight"><pre><span></span><code>$ gpg --decrypt encrypted_pass
+
+You need a passphrase to unlock the secret key <span class="k">for</span>
+user: <span class="s2">&quot;Demo User (AWS org project-user acct gpg key w/ passphrase) &lt;username.lastname@domain.com&gt;&quot;</span>
+<span class="m">2048</span>-bit RSA key, ID 05ED43DC, created <span class="m">2019</span>-03-15 <span class="o">(</span>main key ID D64DD59F<span class="o">)</span>
+
+gpg: encrypted with <span class="m">2048</span>-bit RSA key, ID 05ED43DC, created <span class="m">2019</span>-03-15
+      <span class="s2">&quot;Demo User (AWS org project-user acct gpg key w/ passphrase) &lt;username.lastname@domain.com&gt;&quot;</span>
+Vi0JA<span class="p">|</span>c%fP*FhL<span class="o">}</span>CE-D7ssp_TVGlf#%
+</code></pre></div>
+<img alt="⚠" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/26a0.svg" title=":warning:" /> Depending on your shell version an extra <code>%</code> character could appear as shown below, you must disregard this
+character since it's not part of the Initial (one time) AWS Web Console password. </li>
+<li>If all went well, the decrypted password should be there</li>
+</ol>
+</div>
                 
               
               
@@ -2176,7 +2331,7 @@
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid" aria-label="Footer">
         
-          <a href="../../secrets/secrets/" title="Secrets" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href="../../organization/organization/" title="Organization" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-footer-nav__button md-icon">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
             </div>
@@ -2185,19 +2340,19 @@
                 <span class="md-footer-nav__direction">
                   Previous
                 </span>
-                Secrets
+                Organization
               </div>
             </div>
           </a>
         
         
-          <a href="../dr/" title="Disaster Recovery" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="../identities/" title="identities" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-footer-nav__title">
               <div class="md-ellipsis">
                 <span class="md-footer-nav__direction">
                   Next
                 </span>
-                Disaster Recovery
+                identities
               </div>
             </div>
             <div class="md-footer-nav__button md-icon">

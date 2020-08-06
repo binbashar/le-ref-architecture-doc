@@ -150,4 +150,4 @@ source_profile = binbash-security
     Consider the following AWS official links as reference:        
     
     * :orange_book: [Best practices for managing AWS access keys](https://docs.aws.amazon.com/general/latest/gr/aws-access-keys-best-practices.html)
-
+    * :blue_book: [Cloud.gov | Secret key management - AWS credentials ](https://cloud.gov/docs/ops/secrets/)

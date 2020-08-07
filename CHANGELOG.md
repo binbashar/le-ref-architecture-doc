@@ -7,6 +7,17 @@ All notable changes to this project will be documented in this file.
 
 
 
+<a name="v0.1.7"></a>
+## [v0.1.7] - 2020-08-07
+
+- BBL-19 | user-guide/identities/credentials.md read more link added
+- BBL-19 | completing user-guide/identities documentation
+- BBL-19 | formatting html cover code
+- BBL-19 | Customizing color palette
+- BBL-19 | upgrade to squidfunk/mkdocs-material:5.5.3
+- BBL-19 | updating CircleCi config to release if the build-and-deploy stage successfully finish
+
+
 <a name="v0.1.6"></a>
 ## [v0.1.6] - 2020-07-31
 
@@ -380,7 +391,8 @@ All notable changes to this project will be documented in this file.
 - Deployed  with MkDocs version: 1.1.2
 
 
-[Unreleased]: https://github.com/binbashar/le-ref-architecture-doc/compare/v0.1.6...HEAD
+[Unreleased]: https://github.com/binbashar/le-ref-architecture-doc/compare/v0.1.7...HEAD
+[v0.1.7]: https://github.com/binbashar/le-ref-architecture-doc/compare/v0.1.6...v0.1.7
 [v0.1.6]: https://github.com/binbashar/le-ref-architecture-doc/compare/v0.1.5...v0.1.6
 [v0.1.5]: https://github.com/binbashar/le-ref-architecture-doc/compare/v0.1.4...v0.1.5
 [v0.1.4]: https://github.com/binbashar/le-ref-architecture-doc/compare/v0.1.3...v0.1.4

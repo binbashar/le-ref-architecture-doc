@@ -7,6 +7,15 @@ All notable changes to this project will be documented in this file.
 
 
 
+<a name="v0.1.8"></a>
+## [v0.1.8] - 2020-08-10
+
+- BBL-19 | removing not necessary code
+- BBL-19 | unnesessary comments clean-up
+- BBL-19 | updating identities.md icon
+- BBL-19 | user-guide/network/vpc updated + minor changes
+
+
 <a name="v0.1.7"></a>
 ## [v0.1.7] - 2020-08-07
 
@@ -391,7 +400,8 @@ All notable changes to this project will be documented in this file.
 - Deployed  with MkDocs version: 1.1.2
 
 
-[Unreleased]: https://github.com/binbashar/le-ref-architecture-doc/compare/v0.1.7...HEAD
+[Unreleased]: https://github.com/binbashar/le-ref-architecture-doc/compare/v0.1.8...HEAD
+[v0.1.8]: https://github.com/binbashar/le-ref-architecture-doc/compare/v0.1.7...v0.1.8
 [v0.1.7]: https://github.com/binbashar/le-ref-architecture-doc/compare/v0.1.6...v0.1.7
 [v0.1.6]: https://github.com/binbashar/le-ref-architecture-doc/compare/v0.1.5...v0.1.6
 [v0.1.5]: https://github.com/binbashar/le-ref-architecture-doc/compare/v0.1.4...v0.1.5

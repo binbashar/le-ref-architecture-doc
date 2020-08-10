@@ -57,7 +57,7 @@
     
     
     
-    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="" data-md-color-accent="deep-purple">
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="" data-md-color-accent="deep-purple">
   
     
     <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
@@ -2277,7 +2277,10 @@ afterwards in your <a href="https://github.com/binbashar/le-tf-infra-aws/tree/ma
 <li>For steps 3. and 4. consider following 
 <a href="https://leverage.binbash.com.ar/user-guide/base-workflow/repo-le-tf-infra-aws/">Terraform <code>make</code> workflow</a></li>
 <li>Update (add | remove) your IAM Users associated code and deploy 
-<a href="https://github.com/binbashibilitySRL/devops-tf-infra/blob/master/security/base-identities/users.tf">security/base-identities/users.tf</a></li>
+<a href="https://github.com/binbashibilitySRL/devops-tf-infra/blob/master/security/base-identities/users.tf">security/base-identities/users.tf</a><ul>
+<li><img alt="📁" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f4c1.svg" title=":file_folder:" /> Consider customizing your <a href="https://github.com/binbashar/le-tf-infra-aws/blob/master/security/base-identities/account.tf">account Alias and Password Policy</a></li>
+</ul>
+</li>
 <li>Update (add | remove | edit) your IAM Groups associated code and deploy 
 <a href="https://github.com/binbashibilitySRL/devops-tf-infra/blob/master/security/base-identities/groups.tf">security/base-identities/groups.tf</a></li>
 <li>Get and share the IAM Users AWS Console user id and its OTP associated password from the 
@@ -2294,6 +2297,14 @@ afterwards in your <a href="https://github.com/binbashar/le-tf-infra-aws/tree/ma
 if needed </li>
 <li>User could optionally set up <code>~/.aws/project/credentials</code> + <code>~/.aws/project/config</code> following the immediately
  below <strong>AWS Credentials Setup</strong> sub-section</li>
+<li>To allow users to 
+<a href="https://aws.amazon.com/premiumsupport/knowledge-center/organizations-member-account-access/">Access AWS Organization member account</a>      <br />
+consider repeating step 3. but for the corresponding member accounts:<ul>
+<li><a href="https://github.com/binbashar/le-tf-infra-aws/tree/master/shared/base-identities">shared/base-identities</a></li>
+<li><a href="https://github.com/binbashar/le-tf-infra-aws/tree/master/apps-devstg/base-identities">apps-devstg/base-identities</a></li>
+<li><a href="https://github.com/binbashar/le-tf-infra-aws/tree/master/apps-prd/base-identities">app-prd/base-identities</a></li>
+</ul>
+</li>
 </ol>
 </div>
 <h3 id="next-steps">Next Steps<a class="headerlink" href="#next-steps" title="Permanent link"> ¶</a></h3>

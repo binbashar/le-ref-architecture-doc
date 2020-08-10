@@ -21,5 +21,3 @@ An its compose of the following 3 main repos:
 :books: See [**How it works**](./how-it-works/index.md) for a whirlwind tour that will get you started.
 
 :books: See [**User guide**](./user-guide/index.md) for a hands on help.
-
-:material-cursor-default-click-outline: Click on a tile to change the color scheme:

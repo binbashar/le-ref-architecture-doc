@@ -18,22 +18,6 @@ theme:
   custom_dir: material
   language: en
   icon: # https://iconify.design/icon-sets/mdi/
-    #logo: material/account-multiple-check
-    #logo: material/book-open-variant
-    #logo: material/library
-    #logo: material/airplane-takeoff
-    #logo: material/application-import
-    #logo: material/beaker-check
-    #logo: material/beaker-check-outline
-    #logo: material/coffee-to-go
-    #logo: material/coffee-to-go-outline
-    #logo: material/coffee
-    #logo: material/controller-classic
-    #logo: material/controller-classic-outline
-    #logo: material/cube-scan
-    #logo: material/folder-home
-    #logo: material/package-variant
-    #logo: material/jsfiddle
     logo: material/book-open-page-variant
 
   favicon: assets/images/logos/favicon.ico
@@ -45,10 +29,7 @@ theme:
     - instant
   palette:
     scheme: default
-#    scheme: slate
-#    scheme: preference
-#    primary: "teal" # comment to replace by /docs/assets/stylesheets
-#    accent: "teal"
+    #primary: "teal" # comment to replace by /docs/assets/stylesheets
     accent: "deep purple"
 
   include_sidebar: true

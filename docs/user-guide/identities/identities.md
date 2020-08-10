@@ -15,7 +15,7 @@ afterwards in your [`project-security`](https://github.com/binbashar/le-tf-infra
     [Terraform `make` workflow](https://leverage.binbash.com.ar/user-guide/base-workflow/repo-le-tf-infra-aws/)
     3. Update (add | remove) your IAM Users associated code and deploy 
     [security/base-identities/users.tf](https://github.com/binbashibilitySRL/devops-tf-infra/blob/master/security/base-identities/users.tf)
-        - :ledger: Consider customizing your [account Alias and Password Policy](https://github.com/binbashar/le-tf-infra-aws/blob/master/security/base-identities/account.tf)
+        - :file_folder: Consider customizing your [account Alias and Password Policy](https://github.com/binbashar/le-tf-infra-aws/blob/master/security/base-identities/account.tf)
     4. Update (add | remove | edit) your IAM Groups associated code and deploy 
     [security/base-identities/groups.tf](https://github.com/binbashibilitySRL/devops-tf-infra/blob/master/security/base-identities/groups.tf)
     5. Get and share the IAM Users AWS Console user id and its OTP associated password from the 

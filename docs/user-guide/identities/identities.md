@@ -15,6 +15,7 @@ afterwards in your [`project-security`](https://github.com/binbashar/le-tf-infra
     [Terraform `make` workflow](https://leverage.binbash.com.ar/user-guide/base-workflow/repo-le-tf-infra-aws/)
     3. Update (add | remove) your IAM Users associated code and deploy 
     [security/base-identities/users.tf](https://github.com/binbashibilitySRL/devops-tf-infra/blob/master/security/base-identities/users.tf)
+        - :ledger: Consider customizing your [account Alias and Password Policy](https://github.com/binbashar/le-tf-infra-aws/blob/master/security/base-identities/account.tf)
     4. Update (add | remove | edit) your IAM Groups associated code and deploy 
     [security/base-identities/groups.tf](https://github.com/binbashibilitySRL/devops-tf-infra/blob/master/security/base-identities/groups.tf)
     5. Get and share the IAM Users AWS Console user id and its OTP associated password from the 
@@ -29,6 +30,12 @@ afterwards in your [`project-security`](https://github.com/binbashar/le-tf-infra
     if needed 
     10. User could optionally set up `~/.aws/project/credentials` + `~/.aws/project/config` following the immediately
      below **AWS Credentials Setup** sub-section
+    11. To allow users to 
+    [Access AWS Organization member account](https://aws.amazon.com/premiumsupport/knowledge-center/organizations-member-account-access/)        
+    consider repeating step 3. but for the corresponding member accounts:
+        - [shared/base-identities](https://github.com/binbashar/le-tf-infra-aws/tree/master/shared/base-identities)
+        - [apps-devstg/base-identities](https://github.com/binbashar/le-tf-infra-aws/tree/master/apps-devstg/base-identities)
+        - [app-prd/base-identities](https://github.com/binbashar/le-tf-infra-aws/tree/master/apps-prd/base-identities)
 
 
 ### Next Steps

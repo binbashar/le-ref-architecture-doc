@@ -44,6 +44,9 @@ theme:
     - tabs
     - instant
   palette:
+    scheme: default
+#    scheme: slate
+#    scheme: preference
 #    primary: "teal" # comment to replace by /docs/assets/stylesheets
 #    accent: "teal"
     accent: "deep purple"
@@ -93,7 +96,7 @@ plugins:
 extra_css:
     - assets/stylesheets/extra.css
 
-# Google Analytics (https://squidfunk.github.io/mkdocs-material/getting-started/#google-analytics)
+# Google Analytics (https://squidfunk.github.io/mkdocs-material/setup/setting-up-site-analytics/)
 #
 google_analytics:
   - 'UA-172873342-1'

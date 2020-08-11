@@ -11,8 +11,8 @@
 
 :root {
   --md-primary-fg-color:        #172a45;
-  --md-primary-fg-color--light: #303C55;
-  --md-primary-fg-color--dark:  #029c8e;
+  --md-primary-fg-color--light: #029c8e;
+  --md-primary-fg-color--dark:  #303C55;
 }
 
 /*markdown and image alignment

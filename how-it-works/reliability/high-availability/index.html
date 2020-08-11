@@ -57,8 +57,10 @@
     
     
     
-    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="" data-md-color-accent="deep-purple">
+    <body dir="ltr" data-md-color-scheme="preference" data-md-color-primary="" data-md-color-accent="deep-purple">
   
+    
+      <script>matchMedia("(prefers-color-scheme: dark)").matches&&document.body.setAttribute("data-md-color-scheme","slate")</script>
     
     <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
@@ -1211,7 +1213,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../health-checks.md" title="Health Checks" class="md-nav__link">
+    <a href="../health-checks/" title="Health Checks" class="md-nav__link">
       Health Checks
     </a>
   </li>
@@ -2383,13 +2385,13 @@ straightforward, so there is no excuse not to!”    </p>
           </a>
         
         
-          <a href="../dr/" title="Disaster Recovery" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="../health-checks/" title="Health Checks" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-footer-nav__title">
               <div class="md-ellipsis">
                 <span class="md-footer-nav__direction">
                   Next
                 </span>
-                Disaster Recovery
+                Health Checks
               </div>
             </div>
             <div class="md-footer-nav__button md-icon">

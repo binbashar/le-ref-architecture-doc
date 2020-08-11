@@ -28,7 +28,7 @@ docs-deploy-gh: ## deploy to Github pages
 	sudo chown -R ${LOCAL_OS_USER_ID}:${LOCAL_OS_GROUP_ID} ./site
 	rm -rf ./site
 
-docs-live: ## Build and launch a local copy of the documentation website in http://localhost:3000
+docs-live: ## Build and launch a local copy of the documentation website in http://localhost:8000
 	@docker run --rm -it \
 		-p 8000:8000 \
 		-v ${PWD}:/docs \

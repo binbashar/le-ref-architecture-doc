@@ -11,7 +11,7 @@ This is the documentation for the **Leverage Reference Architecture**.
 It is built around the [AWS Well Architected Framework](https://aws.amazon.com/architecture/well-architected/)
 , using a [Terraform](https://www.terraform.io/), [Ansible](https://www.ansible.com/) and [Helm](https://helm.sh/).
 
-An its compose of the following 3 main repos:
+An its compose of the following 3 main repos: test
 
 - [x] [le-tf-infra-aws](https://github.com/binbashar/le-tf-infra-aws)
 - [x] [le-ansible-infra](https://github.com/binbashar/le-ansible-infra)

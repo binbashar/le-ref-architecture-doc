@@ -7,6 +7,12 @@ All notable changes to this project will be documented in this file.
 
 
 
+<a name="v0.1.9"></a>
+## [v0.1.9] - 2020-08-11
+
+- BBL-19 | testing dark-mode color
+
+
 <a name="v0.1.8"></a>
 ## [v0.1.8] - 2020-08-10
 
@@ -400,7 +406,8 @@ All notable changes to this project will be documented in this file.
 - Deployed  with MkDocs version: 1.1.2
 
 
-[Unreleased]: https://github.com/binbashar/le-ref-architecture-doc/compare/v0.1.8...HEAD
+[Unreleased]: https://github.com/binbashar/le-ref-architecture-doc/compare/v0.1.9...HEAD
+[v0.1.9]: https://github.com/binbashar/le-ref-architecture-doc/compare/v0.1.8...v0.1.9
 [v0.1.8]: https://github.com/binbashar/le-ref-architecture-doc/compare/v0.1.7...v0.1.8
 [v0.1.7]: https://github.com/binbashar/le-ref-architecture-doc/compare/v0.1.6...v0.1.7
 [v0.1.6]: https://github.com/binbashar/le-ref-architecture-doc/compare/v0.1.5...v0.1.6

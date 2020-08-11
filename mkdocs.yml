@@ -28,10 +28,9 @@ theme:
     - tabs
     - instant
   palette:
-    scheme: default
+    scheme: preference
     #primary: "teal" # comment to replace by /docs/assets/stylesheets
     accent: "deep purple"
-
   include_sidebar: true
 
 extra:

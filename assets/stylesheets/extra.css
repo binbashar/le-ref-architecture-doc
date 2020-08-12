@@ -13,9 +13,11 @@
     --md-primary-fg-color:        #172a45;
     --md-primary-fg-color--light: #029c8e;
     --md-primary-fg-color--dark:  #303C55;
+}
 
-    --md-text-color:              #172a45;
-    --md-text-link-color:         #029c8e;
+:root>* {
+    --md-typeset-color: var(--md-default-fg-color);
+    --md-typeset-a-color: var(--md-primary-fg-color--light);
 }
 
 /*markdown and image alignment

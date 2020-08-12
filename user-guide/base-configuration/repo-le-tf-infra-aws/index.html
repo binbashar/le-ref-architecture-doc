@@ -30,6 +30,10 @@
         <link rel="stylesheet" href="../../../assets/stylesheets/palette.7f672a1f.min.css">
       
       
+        
+        
+        <meta name="theme-color" content="#009688">
+      
     
     
     
@@ -57,7 +61,7 @@
     
     
     
-    <body dir="ltr" data-md-color-scheme="preference" data-md-color-primary="" data-md-color-accent="deep-purple">
+    <body dir="ltr" data-md-color-scheme="preference" data-md-color-primary="teal" data-md-color-accent="deep-purple">
   
     
       <script>matchMedia("(prefers-color-scheme: dark)").matches&&document.body.setAttribute("data-md-color-scheme","slate")</script>
@@ -631,6 +635,18 @@
   <li class="md-nav__item">
     <a href="../../../how-it-works/organization/accounts/" title="Accounts" class="md-nav__link">
       Accounts
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../how-it-works/organization/billing/" title="Billing" class="md-nav__link">
+      Billing
     </a>
   </li>
 
@@ -1308,6 +1324,18 @@
       Terraform Infra
     </a>
     
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../repo-le-tf-infra-aws-tf-state/" title="Terraform Infra State" class="md-nav__link">
+      Terraform Infra State
+    </a>
   </li>
 
         
@@ -2281,9 +2309,10 @@ each account.</p>
 </ul>
 <h2 id="terraform">Terraform<a class="headerlink" href="#terraform" title="Permanent link"> ¶</a></h2>
 <ul>
-<li>Install terraform &gt;= v0.12.20</li>
+<li>Install terraform &gt;= v0.12.28</li>
 <li>Run <code>terraform version</code> to check</li>
-<li>NOTE: Most <code>Makefiles</code> already grant the recs via Dockerized cmds (https://hub.docker.com/repository/docker/binbash/terraform-resources)  </li>
+<li><strong>NOTE:</strong> Most <code>Makefiles</code> already grant the recs via 
+  <a href="https://hub.docker.com/repository/docker/binbash/terraform-awscli">Dockerized cmds</a>  </li>
 </ul>
 <h2 id="remote-state">Remote State<a class="headerlink" href="#remote-state" title="Permanent link"> ¶</a></h2>
 <p>In the <code>tf-backend</code> folder you should find all setup scripts or configuration files that need to be run before
@@ -2293,10 +2322,15 @@ each account.</p>
 <ul>
 <li>Config files can be found in under each 'config' folder.</li>
 <li>File <code>backend.config</code> contains TF variables that are mainly used to configure TF backend but since
- <code>profile</code> and <code>region</code> are defined there, we also use them to inject those values into other TF commands.</li>
-<li>File <code>base.config</code> contains TF variables that we inject to TF commands such as plan or apply and which 
-cannot be stored in <code>backend.config</code> due to TF restrictions.</li>
-<li>File <code>extra.config</code> similar to <code>base.config</code> but variables declared here are not used by all sub-directories.</li>
+ <code>profile</code> and <code>region</code> are defined there, we also use them to inject those values into other TF commands.<ul>
+<li>eg: <a href="https://github.com/binbashar/le-tf-infra-aws/blob/master/config/common.config">le-tf-infra-aws/config/common.config</a></li>
+</ul>
+</li>
+<li>File <code>/config/common.config</code> contains global context TF variables that we inject to TF commands which are used by all
+  sub-directories such as plan or apply and which cannot be stored in <code>backend.config</code> due to TF.<ul>
+<li>eg: <a href="https://github.com/binbashar/le-tf-infra-aws/blob/master/shared/config/backend.config">le-tf-infra-aws/shared/config/backend.config</a></li>
+</ul>
+</li>
 </ul>
 <h2 id="aws-profile">AWS Profile<a class="headerlink" href="#aws-profile" title="Permanent link"> ¶</a></h2>
 <ul>
@@ -2304,8 +2338,8 @@ cannot be stored in <code>backend.config</code> due to TF restrictions.</li>
 <li>Such profile is usually one that relies on another profile to assume a role to get access to each corresponding account.</li>
 <li>File <code>@doc/binbash-aws-org-config</code> will be considered to be appended to your <code>.aws/config</code> file 
 note that <code>.aws/config</code> will depend on the IAM profiles declared at your <code>.aws/credentials</code> </li>
-<li>Read the following page to understand how to set up a profile to assume 
-a role =&gt; https://docs.aws.amazon.com/cli/latest/userguide/cli-roles.html</li>
+<li>Read the following page leverage doc to understand how to set up a profile to assume 
+a role https://docs.aws.amazon.com/cli/latest/userguide/cli-roles.html</li>
 </ul>
                 
               
@@ -2340,13 +2374,13 @@ a role =&gt; https://docs.aws.amazon.com/cli/latest/userguide/cli-roles.html</li
           </a>
         
         
-          <a href="../repo-le-ansible-infra/" title="Ansible Infra" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="../repo-le-tf-infra-aws-tf-state/" title="Terraform Infra State" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-footer-nav__title">
               <div class="md-ellipsis">
                 <span class="md-footer-nav__direction">
                   Next
                 </span>
-                Ansible Infra
+                Terraform Infra State
               </div>
             </div>
             <div class="md-footer-nav__button md-icon">

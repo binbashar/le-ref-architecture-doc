@@ -30,6 +30,10 @@
         <link rel="stylesheet" href="../../../assets/stylesheets/palette.7f672a1f.min.css">
       
       
+        
+        
+        <meta name="theme-color" content="#009688">
+      
     
     
     
@@ -57,7 +61,7 @@
     
     
     
-    <body dir="ltr" data-md-color-scheme="preference" data-md-color-primary="" data-md-color-accent="deep-purple">
+    <body dir="ltr" data-md-color-scheme="preference" data-md-color-primary="teal" data-md-color-accent="deep-purple">
   
     
       <script>matchMedia("(prefers-color-scheme: dark)").matches&&document.body.setAttribute("data-md-color-scheme","slate")</script>
@@ -631,6 +635,18 @@
   <li class="md-nav__item">
     <a href="../../../how-it-works/organization/accounts/" title="Accounts" class="md-nav__link">
       Accounts
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../how-it-works/organization/billing/" title="Billing" class="md-nav__link">
+      Billing
     </a>
   </li>
 
@@ -1294,6 +1310,18 @@
   <li class="md-nav__item">
     <a href="../../base-configuration/repo-le-tf-infra-aws/" title="Terraform Infra" class="md-nav__link">
       Terraform Infra
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../base-configuration/repo-le-tf-infra-aws-tf-state/" title="Terraform Infra State" class="md-nav__link">
+      Terraform Infra State
     </a>
   </li>
 
@@ -2257,7 +2285,14 @@
 <div class="admonition check">
 <p class="admonition-title">Terraform Workflow</p>
 <ol>
-<li>Make sure you've read the 'Pre-requisites' section 1st steps</li>
+<li>Make sure you've read and prepare your local development environment following the
+<a href="../../base-configuration/overview/">Overview base-configurations</a> section.</li>
+<li>Review and assure you meet all the <a href="../../base-configuration/repo-le-tf-infra-aws/">pre-requisites</a>  <ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> <a href="../../base-configuration/repo-le-tf-infra-aws-tf-state/">Remote State</a></li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Configuration files</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> <a href="../../identities/credentials/">AWS Profile and credentials</a></li>
+</ul>
+</li>
 <li>Get into the folder that you need to work with (e.g. <code>2_identities</code>)</li>
 <li>Run <code>make init</code></li>
 <li>Make whatever changes you need to make</li>

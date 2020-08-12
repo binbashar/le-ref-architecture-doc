@@ -11,7 +11,7 @@
         <meta name="description" content="Binbash Leverage Reference Architecture Documentation">
       
       
-        <link rel="canonical" href="https://leverage.binbash.com.ar/user-guide/base-configuration/overview/">
+        <link rel="canonical" href="https://leverage.binbash.com.ar/user-guide/base-configuration/repo-le-tf-infra-aws-tf-state/">
       
       
         <meta name="author" content="Binbash">
@@ -21,7 +21,7 @@
     
     
       
-        <title>Overview - Binbash Leverage Reference Architecture</title>
+        <title>Terraform Infra State - Binbash Leverage Reference Architecture</title>
       
     
     
@@ -72,7 +72,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#overview" class="md-skip">
+        <a href="#terraform-s3-dynamodb-for-remote-state-storage-locking" class="md-skip">
           Skip to content
         </a>
       
@@ -100,7 +100,7 @@
           </span>
           <span class="md-header-nav__topic md-ellipsis">
             
-              Overview
+              Terraform Infra State
             
           </span>
         </div>
@@ -1271,60 +1271,11 @@
           
           
 
-  
 
-
-  <li class="md-nav__item md-nav__item--active">
-    
-    <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-    
-      
-    
-    
-      <label class="md-nav__link md-nav__link--active" for="__toc">
-        Overview
-        <span class="md-nav__icon md-icon">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 9h14V7H3v2m0 4h14v-2H3v2m0 4h14v-2H3v2m16 0h2v-2h-2v2m0-10v2h2V7h-2m0 6h2v-2h-2v2z"/></svg>
-        </span>
-      </label>
-    
-    <a href="./" title="Overview" class="md-nav__link md-nav__link--active">
+  <li class="md-nav__item">
+    <a href="../overview/" title="Overview" class="md-nav__link">
       Overview
     </a>
-    
-      
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
-      </span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#pre-requisites" class="md-nav__link">
-    Pre-requisites
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#configurations" class="md-nav__link">
-    Configurations
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-    
   </li>
 
         
@@ -1332,10 +1283,12 @@
           
           
 
+  
 
-  <li class="md-nav__item md-nav__item--nested">
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
     
-      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-4-2-2" type="checkbox" id="nav-4-2-2">
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-4-2-2" type="checkbox" id="nav-4-2-2" checked>
     
     <label class="md-nav__link" for="nav-4-2-2">
       Repos
@@ -1369,11 +1322,67 @@
           
           
 
+  
 
-  <li class="md-nav__item">
-    <a href="../repo-le-tf-infra-aws-tf-state/" title="Terraform Infra State" class="md-nav__link">
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        Terraform Infra State
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 9h14V7H3v2m0 4h14v-2H3v2m0 4h14v-2H3v2m16 0h2v-2h-2v2m0-10v2h2V7h-2m0 6h2v-2h-2v2z"/></svg>
+        </span>
+      </label>
+    
+    <a href="./" title="Terraform Infra State" class="md-nav__link md-nav__link--active">
       Terraform Infra State
     </a>
+    
+      
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#overview" class="md-nav__link">
+    Overview
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#prerequisites" class="md-nav__link">
+    Prerequisites
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#set-up" class="md-nav__link">
+    Set up
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+    
   </li>
 
         
@@ -2246,15 +2255,22 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#pre-requisites" class="md-nav__link">
-    Pre-requisites
+  <a href="#overview" class="md-nav__link">
+    Overview
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#configurations" class="md-nav__link">
-    Configurations
+  <a href="#prerequisites" class="md-nav__link">
+    Prerequisites
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#set-up" class="md-nav__link">
+    Set up
   </a>
   
 </li>
@@ -2271,7 +2287,7 @@
             <article class="md-content__inner md-typeset">
               
                 
-                  <a href="https://github.com/binbashar/le-ref-architecture-doc/edit/master/docs/user-guide/base-configuration/overview.md" title="Edit this page" class="md-content__button md-icon">
+                  <a href="https://github.com/binbashar/le-ref-architecture-doc/edit/master/docs/user-guide/base-configuration/repo-le-tf-infra-aws-tf-state.md" title="Edit this page" class="md-content__button md-icon">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg>
                   </a>
                 
@@ -2279,24 +2295,29 @@
                   
                 
                 
-                <h1 id="overview">Overview<a class="headerlink" href="#overview" title="Permanent link"> ¶</a></h1>
-<h2 id="pre-requisites">Pre-requisites<a class="headerlink" href="#pre-requisites" title="Permanent link"> ¶</a></h2>
-<div class="admonition done">
-<p class="admonition-title">Local env pre-requeried packages</p>
-<ul class="task-list">
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> <strong>GNU Make</strong> <code>&gt;= 4.1</code> (check via <code>make --version</code>)</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> <strong>Docker engine</strong> <code>&gt;= 19.03.12</code>(check via <code>docker --version</code>) </li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> <strong>Python</strong> <code>&gt;= 3.8</code> (check via <code>python3 --version</code> || <code>python3.8 --version</code>) </li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> <strong>jq</strong> <code>&gt;= jq-1.5-1-a5b5cbe</code> (check via <code>jq --version</code>)</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> <strong>aws-cli</strong> <code>&gt;= 1.16.265</code> (check via <code>aws --version</code>)  </li>
+                <h1 id="terraform-s3-dynamodb-for-remote-state-storage-locking">Terraform - S3 &amp; DynamoDB for Remote State Storage &amp; Locking<a class="headerlink" href="#terraform-s3-dynamodb-for-remote-state-storage-locking" title="Permanent link"> ¶</a></h1>
+<h2 id="overview">Overview<a class="headerlink" href="#overview" title="Permanent link"> ¶</a></h2>
+<p>Use this terraform configuration files to create the <strong>S3 bucket</strong> &amp; <strong>DynamoDB</strong> table needed to use Terraform Remote
+State Storage &amp; Locking.</p>
+<h2 id="prerequisites">Prerequisites<a class="headerlink" href="#prerequisites" title="Permanent link"> ¶</a></h2>
+<ul>
+<li>Ensure you have <code>make</code> installed in your system</li>
+<li>Refer to <a href="../repo-le-tf-infra-aws/">Configuration Pre-requisites</a> to understand how to set up the
+  configuration files required for this layer.</li>
 </ul>
-</div>
-<h2 id="configurations">Configurations<a class="headerlink" href="#configurations" title="Permanent link"> ¶</a></h2>
-<p>Specific configuration per component could be found in the immediately following entries</p>
-<ul class="task-list">
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> <img alt="⚙" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/2699.svg" title=":gear:" /> <a href="../repo-le-tf-infra-aws/"><strong>config</strong> | le-tf-infra-aws</a></li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> <img alt="⚙" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/2699.svg" title=":gear:" /> <a href="../repo-le-ansible-infra/"><strong>config</strong> | le-ansible-infra</a></li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> <img alt="⚙" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/2699.svg" title=":gear:" /> <a href="../repo-le-helm-infra/"><strong>config</strong> | le-helm-infra</a></li>
+<h2 id="set-up">Set up<a class="headerlink" href="#set-up" title="Permanent link"> ¶</a></h2>
+<ul>
+<li>Run <code>make init</code></li>
+<li>Run <code>make apply</code>, review the output and type <code>yes</code> if you are okay with that</li>
+<li>This should create a <code>terraform.tfstate</code> file in this directory but we don't want to push that to the repository so 
+  let's push the state to the backend we just created</li>
+<li>Open <code>config.tf</code> and uncomment the following lines:
+<div class="highlight"><pre><span></span><code>  # backend &quot;s3&quot; {
+  #   key = &quot;root/tf-backend/terraform.tfstate&quot;
+  # }
+</code></pre></div></li>
+<li>Run <code>make init</code> and type <code>yes</code> when Terraform asks if you want to import the state to the S3 backend</li>
+<li>Done. You can remove <code>terraform.tfstate</code> now (and also <code>terraform.tfstate.backup</code> if available)</li>
 </ul>
                 
               
@@ -2316,7 +2337,7 @@
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid" aria-label="Footer">
         
-          <a href="../../" title="Basic usage" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href="../repo-le-tf-infra-aws/" title="Terraform Infra" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-footer-nav__button md-icon">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
             </div>
@@ -2325,19 +2346,19 @@
                 <span class="md-footer-nav__direction">
                   Previous
                 </span>
-                Basic usage
+                Terraform Infra
               </div>
             </div>
           </a>
         
         
-          <a href="../repo-le-tf-infra-aws/" title="Terraform Infra" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="../repo-le-ansible-infra/" title="Ansible Infra" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-footer-nav__title">
               <div class="md-ellipsis">
                 <span class="md-footer-nav__direction">
                   Next
                 </span>
-                Terraform Infra
+                Ansible Infra
               </div>
             </div>
             <div class="md-footer-nav__button md-icon">

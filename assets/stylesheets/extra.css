@@ -16,7 +16,7 @@
 }
 
 :root>* {
-    --md-typeset-color: var(--md-default-fg-color);
+    --md-typeset-color:   var(--md-default-fg-color);
     --md-typeset-a-color: var(--md-primary-fg-color--light);
 }
 

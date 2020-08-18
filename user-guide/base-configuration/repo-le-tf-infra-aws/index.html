@@ -2338,8 +2338,11 @@ each account.</p>
 <ul>
 <li>File <code>backend.config</code> will inject the profile name that TF will use to make changes on AWS.</li>
 <li>Such profile is usually one that relies on another profile to assume a role to get access to each corresponding account.</li>
-<li>File <code>@doc/binbash-aws-org-config</code> will be considered to be appended to your <code>.aws/config</code> file 
-note that <code>.aws/config</code> will depend on the IAM profiles declared at your <code>.aws/credentials</code> </li>
+<li>Please follow to correctly setup your AWS Credentials<ul>
+<li><a href="../../identities/identities/">user-guide/identities</a></li>
+<li><a href="../../identities/credentials/">user-guide/identities/credentials</a> </li>
+</ul>
+</li>
 <li>Read the following page leverage doc to understand how to set up a profile to assume 
 a role https://docs.aws.amazon.com/cli/latest/userguide/cli-roles.html</li>
 </ul>

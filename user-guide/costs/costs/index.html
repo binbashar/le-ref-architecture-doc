@@ -2288,36 +2288,12 @@
                 <h1 id="cost-management-layer">Cost Management Layer<a class="headerlink" href="#cost-management-layer" title="Permanent link"> ¶</a></h1>
 <div class="admonition help">
 <p class="admonition-title">How it works</p>
-<p><img alt="📚" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f4da.svg" title=":books:" /> <a href="../../../how-it-works/network/vpc/"><strong>documentation:</strong> Networking</a></p>
+<p><img alt="📚" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f4da.svg" title=":books:" /> <a href=""><strong>documentation:</strong> Costs</a></p>
 </div>
 <h2 id="user-guide">User guide<a class="headerlink" href="#user-guide" title="Permanent link"> ¶</a></h2>
-<p>Please follow the steps below to orchestrate your <code>base-network</code> layer, 1st in your
-<a href="https://github.com/binbashar/le-tf-infra-aws/tree/master/shared/base-network"><code>project-shared</code></a> AWS account and
-afterwards in the necessary member accounts which will host network connected resources (EC2, Lambda, EKS, RDS, ALB, NLB, etc):  </p>
-<ul class="task-list">
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> <a href="https://github.com/binbashar/le-tf-infra-aws/tree/master/apps-devstg/base-network"><code>project-apps-devstg</code></a> account.</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> <a href="https://github.com/binbashar/le-tf-infra-aws/tree/master/apps-prd/base-network"><code>project-apps-prd</code></a> account.</li>
-</ul>
-<div class="admonition example">
-<p class="admonition-title">Network layer standard creation workflow</p>
-<ol>
-<li>Please follow 
-<a href="https://leverage.binbash.com.ar/user-guide/base-workflow/repo-le-tf-infra-aws/">Terraform <code>make</code> workflow</a> for
-each of your accounts.</li>
-<li>We'll start by <code>project-shared</code> AWS Account Update (add | remove | customize) your VPC associated code before 
-deploying this layer <a href="https://github.com/binbashar/le-tf-infra-aws/tree/master/shared/base-network">shared/base-network</a>
-    Main files<ul>
-<li><img alt="📁" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f4c1.svg" title=":file_folder:" /> <a href="https://github.com/binbashar/le-tf-infra-aws/blob/master/shared/base-network/network.tf">network.tf</a></li>
-<li><img alt="📁" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f4c1.svg" title=":file_folder:" /> <a href="https://github.com/binbashar/le-tf-infra-aws/blob/master/shared/base-network/locals.tf">locals.tf</a></li>
-</ul>
-</li>
-<li>Repeat for every AWS member Account that needs its own VPC 
-<a href="https://aws.amazon.com/premiumsupport/knowledge-center/organizations-member-account-access/">Access AWS Organization member account</a>      <br />
-consider repeating step 3. but for the corresponding member accounts.</li>
-</ol>
-</div>
+<p>TODO</p>
 <h3 id="next-steps">Next Steps<a class="headerlink" href="#next-steps" title="Permanent link"> ¶</a></h3>
-<p><img alt="📚" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f4da.svg" title=":books:" /> <a href="vpc-peering.md">AWS VPC Peering</a></p>
+<p>TODO</p>
                 
               
               

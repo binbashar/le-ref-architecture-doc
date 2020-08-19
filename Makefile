@@ -4,7 +4,7 @@ MAKEFILE_IMPORT_CIRCLECI := ./@bin/makefiles/circleci/Makefile.circleci
 
 LOCAL_OS_USER_ID         := $(shell id -u)
 LOCAL_OS_GROUP_ID        := $(shell id -g)
-MKDOCS_DOCKER_IMG        := squidfunk/mkdocs-material:5.5.5
+MKDOCS_DOCKER_IMG        := squidfunk/mkdocs-material:5.5.6
 
 define MAKE_CIRCLECI
 make \

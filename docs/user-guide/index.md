@@ -2,7 +2,8 @@
 ![binbash-leverage-tf](../assets/images/logos/binbash-leverage-terraform.png#right "Leverage"){: style="width:130px"}
 
 # Overview
-TODO
+
+Please start by reviewing the [pre-requisites](./base-configuration/overview.md) 
 
 ## Configurations
 - [x] [le-tf-infra-aws](base-configuration/repo-le-tf-infra-aws.md)

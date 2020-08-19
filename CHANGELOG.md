@@ -7,6 +7,16 @@ All notable changes to this project will be documented in this file.
 
 
 
+<a name="v0.1.12"></a>
+## [v0.1.12] - 2020-08-19
+
+- BBL-19 | user-guide several sections and sub-sections updated
+- BBL-19 | how-it-works several sections updated
+- BBL-19 | mkdocs site tree updated + home.html colors updated
+- BBL-19 | assets -> adding images + updating extra.css colors
+- BBL-19 | Updating .gitignore + Makefile w/ latest mkdocs-material docker img + README.md improved
+
+
 <a name="v0.1.11"></a>
 ## [v0.1.11] - 2020-08-11
 
@@ -419,7 +429,8 @@ All notable changes to this project will be documented in this file.
 - Deployed  with MkDocs version: 1.1.2
 
 
-[Unreleased]: https://github.com/binbashar/le-ref-architecture-doc/compare/v0.1.11...HEAD
+[Unreleased]: https://github.com/binbashar/le-ref-architecture-doc/compare/v0.1.12...HEAD
+[v0.1.12]: https://github.com/binbashar/le-ref-architecture-doc/compare/v0.1.11...v0.1.12
 [v0.1.11]: https://github.com/binbashar/le-ref-architecture-doc/compare/v0.1.10...v0.1.11
 [v0.1.10]: https://github.com/binbashar/le-ref-architecture-doc/compare/v0.1.9...v0.1.10
 [v0.1.9]: https://github.com/binbashar/le-ref-architecture-doc/compare/v0.1.8...v0.1.9

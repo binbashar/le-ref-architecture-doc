@@ -2,9 +2,18 @@
 
 ## Setup
 
-* :warning: **TODO:** This task will be automated via 
-    * [x] [Makefile](https://github.com/binbashar/le-tf-infra-aws/blob/master/Makefile)
-    * [x] [Script](https://github.com/binbashar/le-tf-infra-aws/tree/master/%40bin/scripts)
+!!! done "Automated AWS Credentials setup"
+    1. Place your shell at `le-tf-infra-aws/@bin/scripts/aws_credentials_setup`
+    2. Depending on your python version:
+        - Run `pip install --no-cache-dir -r requirements.txt`
+        - Run `pip3 install --no-cache-dir -r requirements.txt` 
+    3. Run `python3 aws_setup_credentials.py`
+    4. Follow the cli workflow shown immediately below to get a better understanding
+    
+![leverage-aws-creds](../../assets/images/animations/aws-identities-credentials-setup.gif "Leverage"){: style="width:1000px"}
+<figcaption>
+**Figure:** AWS credentials automated setup. 
+</figcaption>
 
 ### Resulting Example for: `~/.aws/leverage/credentials`
 
@@ -114,6 +123,7 @@ source_profile = binbash-security
     - [x] :orange_book: [Access AWS Organization member account](https://aws.amazon.com/premiumsupport/knowledge-center/organizations-member-account-access/)        
         - :orange_book: [Switching to a Role (Web Console)](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_use_switch-role-console.html)
         - :orange_book: [Switching to an IAM Role (AWS CLI)](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_use_switch-role-cli.html)
+        - :orange_book: [awscli roles]https://docs.aws.amazon.com/cli/latest/userguide/cli-roles.html
     - [x] :orange_book: [Environment variables to configure the AWS CLI](https://docs.aws.amazon.com/cli/latest/userguide/cli-configure-envvars.html)
         
         - Since our AWS Credentials files location is not as default please consider the below code before using the

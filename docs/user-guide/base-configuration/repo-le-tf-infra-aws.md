@@ -99,29 +99,35 @@ each account.
 - You are encouraged to inspect those Makefiles to understand what's going on.
 
 ## Terraform
-- Install terraform >= v0.12.20
+- Install terraform >= v0.12.28
   - Run `terraform version` to check
-  - NOTE: Most `Makefiles` already grant the recs via Dockerized cmds (https://hub.docker.com/repository/docker/binbash/terraform-resources)  
+  - **NOTE:** Most `Makefiles` already grant the recs via 
+  [Dockerized cmds](https://hub.docker.com/repository/docker/binbash/terraform-awscli)  
 
 ## Remote State
 In the `tf-backend` folder you should find all setup scripts or configuration files that need to be run before
  you can get to work with anything else.
 
-*IMPORTANT:* THIS IS ONLY NEEDED IF THE BACKEND WAS NOT CREATED YET. IF THE BACKEND ALREADY EXISTS YOU JUST USE IT.
+**IMPORTANT:** THIS IS ONLY NEEDED IF THE BACKEND WAS NOT CREATED YET. IF THE BACKEND ALREADY EXISTS YOU JUST USE IT.
 
+!!! info "Read More"
+    * [x] [Terraform - S3 & DynamoDB for Remote State Storage & Locking](./repo-le-tf-infra-aws-tf-state.md)
+ 
 ## Configuration
 - Config files can be found in under each 'config' folder.
 - File `backend.config` contains TF variables that are mainly used to configure TF backend but since
  `profile` and `region` are defined there, we also use them to inject those values into other TF commands.
-- File `base.config` contains TF variables that we inject to TF commands such as plan or apply and which 
-cannot be stored in `backend.config` due to TF restrictions.
-- File `extra.config` similar to `base.config` but variables declared here are not used by all sub-directories.
-
+    - eg: [le-tf-infra-aws/config/common.config](https://github.com/binbashar/le-tf-infra-aws/blob/master/config/common.config)
+- File `/config/common.config` contains global context TF variables that we inject to TF commands which are used by all
+  sub-directories such as plan or apply and which cannot be stored in `backend.config` due to TF.
+    - eg: [le-tf-infra-aws/shared/config/backend.config](https://github.com/binbashar/le-tf-infra-aws/blob/master/shared/config/backend.config)
+  
 ## AWS Profile
 - File `backend.config` will inject the profile name that TF will use to make changes on AWS.
 - Such profile is usually one that relies on another profile to assume a role to get access to each corresponding account.
-- File `@doc/binbash-aws-org-config` will be considered to be appended to your `.aws/config` file 
-note that `.aws/config` will depend on the IAM profiles declared at your `.aws/credentials` 
-- Read the following page to understand how to set up a profile to assume 
-a role => https://docs.aws.amazon.com/cli/latest/userguide/cli-roles.html
+- Please follow to correctly setup your AWS Credentials
+    - [user-guide/identities](../identities/identities.md)
+    - [user-guide/identities/credentials](../identities/credentials.md) 
+- Read the following page leverage doc to understand [how to set up a profile to assume 
+a role](https://docs.aws.amazon.com/cli/latest/userguide/cli-roles.html)
 

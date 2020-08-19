@@ -37,3 +37,10 @@
     instance type is not used. More aggressive Reservation strategies can be implemented to further reduce costs, these
     will have to be analyzed by business in conjunction with operations.
 
+
+## Read more
+
+!!! info "Reference links"
+    Consider the following extra links as reference:
+         
+    - :orange_book: [AWS Ramp-Up Guide: Cost Management](https://d1.awsstatic.com/training-and-certification/ramp-up_guides/Ramp-Up_Guide_Cost_Management.pdf)

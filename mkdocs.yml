@@ -17,7 +17,7 @@ theme:
   name: material
   custom_dir: material
   language: en
-  icon: # https://iconify.design/icon-sets/mdi/
+  icon: # https://www.materialpalette.com/icons
     logo: material/book-open-page-variant
 
   favicon: assets/images/logos/favicon.ico
@@ -27,7 +27,7 @@ theme:
   features:
     - tabs
     - instant
-  palette:
+  palette: # https://www.materialpalette.com/colors
     scheme: preference
     #primary: "teal" # comment to replace by /docs/assets/stylesheets
     accent: "deep purple"
@@ -108,8 +108,9 @@ nav:
       - Specifications: "how-it-works/code-library/code-library-specs.md"
       - Modules per Tech: "how-it-works/code-library/modules-library-per-tech.md"
     - AWS Organization:
-      - Organizaion: "how-it-works/organization/organization.md"
+      - Organization: "how-it-works/organization/organization.md"
       - Accounts: "how-it-works/organization/accounts.md"
+      - Billing: "how-it-works/organization/billing.md"
     - Identities: "how-it-works/identities/identities.md"
     - Security:
       - VPN: "how-it-works/security/vpn.md"
@@ -153,6 +154,7 @@ nav:
       - Overview: "user-guide/base-configuration/overview.md"
       - Repos:
         - Terraform Infra: "user-guide/base-configuration/repo-le-tf-infra-aws.md"
+        - Terraform Infra State: "user-guide/base-configuration/repo-le-tf-infra-aws-tf-state.md"
         - Ansible Infra: "user-guide/base-configuration/repo-le-ansible-infra.md"
         - Helm Infra: "user-guide/base-configuration/repo-le-helm-infra.md"
     - Workflow:

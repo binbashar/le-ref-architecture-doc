@@ -8,14 +8,14 @@
     - [x] Dockerfiles
     - [x] Helm Charts
         
-!!! important ":checkered_flag: **"Stop reinventing the wheel, automated and fully as code**"
+!!! important ":checkered_flag: **Stop reinventing the wheel, automated and fully as code**"
     - :fast_forward: automated (executable from a single source).
     - :fast_forward: as code.
     - :fast_forward: parameterized
         - variables
         - input parameters
         - return / output parameters
-    - :fast_forward: "stop reinventing the wheel"
+    - :fast_forward: _"Stop reinventing the wheel"_
         - avoid re-building the same things more than X times.
         - avoid wasting time.
         - not healthy, not secure and slows us down.
@@ -80,8 +80,8 @@
     
         *   [x] Develop a wrapper/jobs together with specific testing tools in order to grant the modules are working as expected.
         *   [x] Ansible: 
-            *   [https://www.jeffgeerling.com/blog/2018/testing-your-ansible-roles-molecule](https://www.jeffgeerling.com/blog/2018/testing-your-ansible-roles-molecule)
-            *   [https://www.digitalocean.com/community/tutorials/how-to-test-ansible-roles-with-molecule-on-ubuntu-16-04](https://www.digitalocean.com/community/tutorials/how-to-test-ansible-roles-with-molecule-on-ubuntu-16-04)
+            *   [Testing your ansible roles w/ molecule](https://www.jeffgeerling.com/blog/2018/testing-your-ansible-roles-molecule)
+            *   [How to test ansible roles with molecule on ubuntu](https://www.digitalocean.com/community/tutorials/how-to-test-ansible-roles-with-molecule-on-ubuntu-16-04)
         *   [x] Terraform:
             *   [gruntwork-io/terratest](https://github.com/gruntwork-io/terratest)
     
@@ -102,4 +102,4 @@
     --help command, doc-string and in line comments.
      
 !!! important ":checkered_flag: **Supported  & Customizable**"      
-     Commercially maintained and supported by **_Binbash_**.
+     Commercially maintained and supported by [**_Binbash_**](../../support.md).

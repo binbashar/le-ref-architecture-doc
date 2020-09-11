@@ -19,7 +19,7 @@ jobs:
       - run:
           name: Initialize Repo Makefiles
           command: |
-            make make init-makefiles
+            make init-makefiles
             echo "Makefile" >> ./.gitignore
 
       - run:
@@ -46,7 +46,7 @@ jobs:
       - run:
           name: Initialize Repo Makefiles
           command: |
-            make make init-makefiles
+            make init-makefiles
             echo "Makefile" >> ./.gitignore
 
       - run:

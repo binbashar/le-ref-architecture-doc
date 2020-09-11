@@ -7,6 +7,17 @@ All notable changes to this project will be documented in this file.
 
 
 
+<a name="v0.1.13"></a>
+## [v0.1.13] - 2020-09-11
+
+- BBL-381 | ignoreing Makefile changes during release ci stage
+- BBL-381 | forgotten to comment Makefile lines as pre-req -> FIXED!
+- BBL-381 | ci job typo fix
+- BBL-381 | circleci job sintaxt indentation fixed
+- BBL-381 | fixing circleci config
+- BBL-381 | testing centralized makefile approach
+
+
 <a name="v0.1.12"></a>
 ## [v0.1.12] - 2020-08-19
 
@@ -429,7 +440,8 @@ All notable changes to this project will be documented in this file.
 - Deployed  with MkDocs version: 1.1.2
 
 
-[Unreleased]: https://github.com/binbashar/le-ref-architecture-doc/compare/v0.1.12...HEAD
+[Unreleased]: https://github.com/binbashar/le-ref-architecture-doc/compare/v0.1.13...HEAD
+[v0.1.13]: https://github.com/binbashar/le-ref-architecture-doc/compare/v0.1.12...v0.1.13
 [v0.1.12]: https://github.com/binbashar/le-ref-architecture-doc/compare/v0.1.11...v0.1.12
 [v0.1.11]: https://github.com/binbashar/le-ref-architecture-doc/compare/v0.1.10...v0.1.11
 [v0.1.10]: https://github.com/binbashar/le-ref-architecture-doc/compare/v0.1.9...v0.1.10

@@ -7,6 +7,12 @@ All notable changes to this project will be documented in this file.
 
 
 
+<a name="v0.1.16"></a>
+## [v0.1.16] - 2020-09-11
+
+- BBL-381 | re-organizing Makefile blocks
+
+
 <a name="v0.1.15"></a>
 ## [v0.1.15] - 2020-09-11
 
@@ -452,7 +458,8 @@ All notable changes to this project will be documented in this file.
 - Deployed  with MkDocs version: 1.1.2
 
 
-[Unreleased]: https://github.com/binbashar/le-ref-architecture-doc/compare/v0.1.15...HEAD
+[Unreleased]: https://github.com/binbashar/le-ref-architecture-doc/compare/v0.1.16...HEAD
+[v0.1.16]: https://github.com/binbashar/le-ref-architecture-doc/compare/v0.1.15...v0.1.16
 [v0.1.15]: https://github.com/binbashar/le-ref-architecture-doc/compare/v0.1.14...v0.1.15
 [v0.1.14]: https://github.com/binbashar/le-ref-architecture-doc/compare/v0.1.13...v0.1.14
 [v0.1.13]: https://github.com/binbashar/le-ref-architecture-doc/compare/v0.1.12...v0.1.13

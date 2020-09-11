@@ -16,7 +16,7 @@ jobs:
           name: Context Info Cmds
           command: pwd && ls -ltra && git branch
 
-     - run:
+      - run:
           name: Initialize Repo Makefiles
           command: |
             make make init-makefiles

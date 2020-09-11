@@ -20,7 +20,6 @@ jobs:
           name: Initialize Repo Makefiles
           command: |
             make init-makefiles
-            echo "Makefile" >> ./.gitignore
 
       - run:
           name: Deploy GitHub Pages Site w/ MkDocs
@@ -47,7 +46,7 @@ jobs:
           name: Initialize Repo Makefiles
           command: |
             make init-makefiles
-            echo "Makefile" >> ./.gitignore
+            git update-index --assume-unchanged "Makefile"
 
       - run:
           name: Release New Version

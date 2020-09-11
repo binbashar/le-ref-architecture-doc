@@ -1,15 +1,11 @@
 .PHONY: help
 SHELL                    := /bin/bash
-MAKEFILE_IMPORT_CIRCLECI := ./@bin/makefiles/circleci/Makefile.circleci
+MAKEFILE_PATH            := ./Makefile
+MAKEFILES_DIR            := ./@bin/makefiles
 
 LOCAL_OS_USER_ID         := $(shell id -u)
 LOCAL_OS_GROUP_ID        := $(shell id -g)
-MKDOCS_DOCKER_IMG        := squidfunk/mkdocs-material:5.5.6
-
-define MAKE_CIRCLECI
-make \
--f ${MAKEFILE_IMPORT_CIRCLECI}
-endef
+MKDOCS_DOCKER_IMG        := squidfunk/mkdocs-material:5.5.12
 
 help:
 	@echo 'Available Commands:'
@@ -43,7 +39,17 @@ docs-check-dead-links: ## Check if the documentation contains dead links.
 	rm -rf ab-results-*
 
 #==============================================================#
-# CIRCLECI                                                     #
+# INITIALIZATION                                               #
 #==============================================================#
-circleci-validate-config: ## Validate A CircleCI Config (https://circleci.com/docs/2.0/local-cli/)
-	${MAKE_CIRCLECI} circleci-validate-config
+init-makefiles: ## initialize makefiles
+	rm -rf ${MAKEFILES_DIR}
+	mkdir -p ${MAKEFILES_DIR}
+	git clone https://github.com/binbashar/le-dev-makefiles.git ${MAKEFILES_DIR}
+	echo "" >> ${MAKEFILE_PATH}
+	sed -i '/^#include.*/s/^#//' ${MAKEFILE_PATH}
+
+#
+## IMPORTANT: Automatically managed -> don't uncomment this line
+#
+include ./@bin/makefiles/circleci/circleci.mk
+include ./@bin/makefiles/release-mgmt/release.mk

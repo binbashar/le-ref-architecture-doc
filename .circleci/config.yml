@@ -16,6 +16,12 @@ jobs:
           name: Context Info Cmds
           command: pwd && ls -ltra && git branch
 
+     - run:
+          name: Initialize Repo Makefiles
+          command: |
+            make make init-makefiles
+            echo "Makefile" >> ./.gitignore
+
       - run:
           name: Deploy GitHub Pages Site w/ MkDocs
           command: make docs-deploy-gh
@@ -38,6 +44,12 @@ jobs:
           command: pwd && ls -ltra && git branch
 
       - run:
+          name: Initialize Repo Makefiles
+          command: |
+            make make init-makefiles
+            echo "Makefile" >> ./.gitignore
+
+      - run:
           name: Release New Version
           command: |
             if git status | grep 'nothing to commit, working tree clean'; then
@@ -46,8 +58,6 @@ jobs:
               echo "==============================================================================================="
               git config --global user.email "$GIT_USER_EMAIL"
               git config --global user.name "$GIT_USER_NAME"
-              make init-makefiles
-              echo "Makefile" >> ./.gitignore
               make release-$VERSION_NUMBER-with-changelog-circleci
             else
               echo "==============================================================================================="

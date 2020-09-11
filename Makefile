@@ -49,7 +49,8 @@ init-makefiles: ## initialize makefiles
 	sed -i '/^#include.*/s/^#//' ${MAKEFILE_PATH}
 
 #
-## IMPORTANT: Automatically managed -> don't uncomment this line
+## IMPORTANT: Automatically managed
+## Must NOT UNCOMMENT the #include lines below
 #
 #include ./@bin/makefiles/circleci/circleci.mk
 #include ./@bin/makefiles/release-mgmt/release.mk

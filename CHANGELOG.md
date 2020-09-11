@@ -7,6 +7,12 @@ All notable changes to this project will be documented in this file.
 
 
 
+<a name="v0.1.14"></a>
+## [v0.1.14] - 2020-09-11
+
+- BBL-381 | improving makefile inline comment
+
+
 <a name="v0.1.13"></a>
 ## [v0.1.13] - 2020-09-11
 
@@ -440,7 +446,8 @@ All notable changes to this project will be documented in this file.
 - Deployed  with MkDocs version: 1.1.2
 
 
-[Unreleased]: https://github.com/binbashar/le-ref-architecture-doc/compare/v0.1.13...HEAD
+[Unreleased]: https://github.com/binbashar/le-ref-architecture-doc/compare/v0.1.14...HEAD
+[v0.1.14]: https://github.com/binbashar/le-ref-architecture-doc/compare/v0.1.13...v0.1.14
 [v0.1.13]: https://github.com/binbashar/le-ref-architecture-doc/compare/v0.1.12...v0.1.13
 [v0.1.12]: https://github.com/binbashar/le-ref-architecture-doc/compare/v0.1.11...v0.1.12
 [v0.1.11]: https://github.com/binbashar/le-ref-architecture-doc/compare/v0.1.10...v0.1.11

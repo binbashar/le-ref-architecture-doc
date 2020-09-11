@@ -51,5 +51,5 @@ init-makefiles: ## initialize makefiles
 #
 ## IMPORTANT: Automatically managed -> don't uncomment this line
 #
-include ./@bin/makefiles/circleci/circleci.mk
-include ./@bin/makefiles/release-mgmt/release.mk
+#include ./@bin/makefiles/circleci/circleci.mk
+#include ./@bin/makefiles/release-mgmt/release.mk

@@ -7,6 +7,12 @@ All notable changes to this project will be documented in this file.
 
 
 
+<a name="v0.1.17"></a>
+## [v0.1.17] - 2020-09-22
+
+- BBL-381 | implementing mkdocs-material.mk Makefile
+
+
 <a name="v0.1.16"></a>
 ## [v0.1.16] - 2020-09-11
 
@@ -458,7 +464,8 @@ All notable changes to this project will be documented in this file.
 - Deployed  with MkDocs version: 1.1.2
 
 
-[Unreleased]: https://github.com/binbashar/le-ref-architecture-doc/compare/v0.1.16...HEAD
+[Unreleased]: https://github.com/binbashar/le-ref-architecture-doc/compare/v0.1.17...HEAD
+[v0.1.17]: https://github.com/binbashar/le-ref-architecture-doc/compare/v0.1.16...v0.1.17
 [v0.1.16]: https://github.com/binbashar/le-ref-architecture-doc/compare/v0.1.15...v0.1.16
 [v0.1.15]: https://github.com/binbashar/le-ref-architecture-doc/compare/v0.1.14...v0.1.15
 [v0.1.14]: https://github.com/binbashar/le-ref-architecture-doc/compare/v0.1.13...v0.1.14

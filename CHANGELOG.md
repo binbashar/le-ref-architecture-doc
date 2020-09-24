@@ -7,6 +7,13 @@ All notable changes to this project will be documented in this file.
 
 
 
+<a name="v0.1.19"></a>
+## [v0.1.19] - 2020-09-24
+
+- Merge branch 'master' of github.com:binbashar/le-ref-architecture-doc
+- BBL-381 | upgrading circleci vm executor
+
+
 <a name="v0.1.18"></a>
 ## [v0.1.18] - 2020-09-22
 
@@ -470,7 +477,8 @@ All notable changes to this project will be documented in this file.
 - Deployed  with MkDocs version: 1.1.2
 
 
-[Unreleased]: https://github.com/binbashar/le-ref-architecture-doc/compare/v0.1.18...HEAD
+[Unreleased]: https://github.com/binbashar/le-ref-architecture-doc/compare/v0.1.19...HEAD
+[v0.1.19]: https://github.com/binbashar/le-ref-architecture-doc/compare/v0.1.18...v0.1.19
 [v0.1.18]: https://github.com/binbashar/le-ref-architecture-doc/compare/v0.1.17...v0.1.18
 [v0.1.17]: https://github.com/binbashar/le-ref-architecture-doc/compare/v0.1.16...v0.1.17
 [v0.1.16]: https://github.com/binbashar/le-ref-architecture-doc/compare/v0.1.15...v0.1.16

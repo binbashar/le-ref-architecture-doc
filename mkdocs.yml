@@ -25,8 +25,8 @@ theme:
     text: Roboto
     code: Roboto Mono
   features:
-    - tabs
-    - instant
+    - navigation.tabs
+    - navigation.instant
   palette: # https://www.materialpalette.com/colors
     scheme: preference
     #primary: "teal" # comment to replace by /docs/assets/stylesheets
@@ -71,7 +71,7 @@ markdown_extensions:
 
 plugins:
   - search
-  - awesome-pages
+#  - awesome-pages
 
 extra_css:
     - assets/stylesheets/extra.css

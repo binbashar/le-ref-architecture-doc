@@ -7,6 +7,13 @@ All notable changes to this project will be documented in this file.
 
 
 
+<a name="v0.1.20"></a>
+## [v0.1.20] - 2020-10-02
+
+- BBL-381 | migrating mkdocs-material from 5.x to 6.x
+- BBL-381 | updating makefile include sintaxt + circleci sumologic integration
+
+
 <a name="v0.1.19"></a>
 ## [v0.1.19] - 2020-09-24
 
@@ -477,7 +484,8 @@ All notable changes to this project will be documented in this file.
 - Deployed  with MkDocs version: 1.1.2
 
 
-[Unreleased]: https://github.com/binbashar/le-ref-architecture-doc/compare/v0.1.19...HEAD
+[Unreleased]: https://github.com/binbashar/le-ref-architecture-doc/compare/v0.1.20...HEAD
+[v0.1.20]: https://github.com/binbashar/le-ref-architecture-doc/compare/v0.1.19...v0.1.20
 [v0.1.19]: https://github.com/binbashar/le-ref-architecture-doc/compare/v0.1.18...v0.1.19
 [v0.1.18]: https://github.com/binbashar/le-ref-architecture-doc/compare/v0.1.17...v0.1.18
 [v0.1.17]: https://github.com/binbashar/le-ref-architecture-doc/compare/v0.1.16...v0.1.17

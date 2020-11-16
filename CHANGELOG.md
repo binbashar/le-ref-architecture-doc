@@ -7,6 +7,14 @@ All notable changes to this project will be documented in this file.
 
 
 
+<a name="v0.1.21"></a>
+## [v0.1.21] - 2020-11-16
+
+- BBL-444 | circleci slack notif + latest makefile lib ver
+- Merge branch 'master' of github.com:binbashar/le-ref-architecture-doc
+- BBL-440 | improving Makefile init-makefiles w/ fixed version
+
+
 <a name="v0.1.20"></a>
 ## [v0.1.20] - 2020-10-02
 
@@ -484,7 +492,8 @@ All notable changes to this project will be documented in this file.
 - Deployed  with MkDocs version: 1.1.2
 
 
-[Unreleased]: https://github.com/binbashar/le-ref-architecture-doc/compare/v0.1.20...HEAD
+[Unreleased]: https://github.com/binbashar/le-ref-architecture-doc/compare/v0.1.21...HEAD
+[v0.1.21]: https://github.com/binbashar/le-ref-architecture-doc/compare/v0.1.20...v0.1.21
 [v0.1.20]: https://github.com/binbashar/le-ref-architecture-doc/compare/v0.1.19...v0.1.20
 [v0.1.19]: https://github.com/binbashar/le-ref-architecture-doc/compare/v0.1.18...v0.1.19
 [v0.1.18]: https://github.com/binbashar/le-ref-architecture-doc/compare/v0.1.17...v0.1.18

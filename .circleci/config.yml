@@ -24,6 +24,77 @@ jobs:
       - run:
           name: Deploy GitHub Pages Site w/ MkDocs
           command: make docs-deploy-gh
+
+      - slack/notify:
+          event: fail
+          mentions: '@leverage-support'
+          custom: |
+            {
+              "blocks": [
+                {
+                  "type": "header",
+                  "text": {
+                    "type": "plain_text",
+                    "text": "Failed Pipeline! :rotating_light::fire::bash-fire::bangbang::video-games-doom-mad::stopp:",
+                    "emoji": true
+                  }
+                },
+                {
+                  "type": "section",
+                  "text": {
+                    "type": "mrkdwn",
+                    "text": ":negative_squared_cross_mark: *Project*: $CIRCLE_PROJECT_REPONAME \n :negative_squared_cross_mark: *User*: $CIRCLE_USERNAME \n :negative_squared_cross_mark: *Job*: $CIRCLE_JOB in *repo* $CIRCLE_PROJECT_REPONAME \n :negative_squared_cross_mark: *Branch:* $CIRCLE_BRANCH \n :negative_squared_cross_mark: *PR:* $CIRCLE_PULL_REQUEST \n :negative_squared_cross_mark: *Last Commit:* $CIRCLE_SHA1"
+                  },
+                  "accessory": {
+                    "type": "button",
+                    "text": {
+                      "type": "plain_text",
+                      "text": ":arrow_forward: View Job in CircleCi",
+                      "emoji": true
+                    },
+                    "value": "click_me_123",
+                    "url": "$CIRCLE_BUILD_URL",
+                    "action_id": "button-action"
+                  }
+                }
+              ]
+            }
+          channel: 'tools-ci'
+      - slack/notify:
+          event: pass
+          custom: |
+            {
+              "blocks": [
+                {
+                  "type": "header",
+                  "text": {
+                    "type": "plain_text",
+                    "text": "Successful Pipeline! :checkered_flag: :video-games-star: :video-games-mario-luigi-dance: :tada: :binbash::bb-leverage: :heart: :open-source:",
+                    "emoji": true
+                  }
+                },
+                {
+                  "type": "section",
+                  "text": {
+                    "type": "mrkdwn",
+                    "text": ":heavy_check_mark: *Project*: $CIRCLE_PROJECT_REPONAME \n :heavy_check_mark: *User*: $CIRCLE_USERNAME \n :heavy_check_mark: *Job*: $CIRCLE_JOB in *repo* $CIRCLE_PROJECT_REPONAME \n :heavy_check_mark: *Branch:* $CIRCLE_BRANCH \n :heavy_check_mark: *PR:* $CIRCLE_PULL_REQUEST \n :heavy_check_mark: *Last Commit:* $CIRCLE_SHA1"
+                  },
+                  "accessory": {
+                    "type": "button",
+                    "text": {
+                      "type": "plain_text",
+                      "text": ":arrow_forward: View Job in CircleCi",
+                      "emoji": true
+                    },
+                    "value": "click_me_123",
+                    "url": "$CIRCLE_BUILD_URL",
+                    "action_id": "button-action"
+                  }
+                }
+              ]
+            }
+          channel: 'tools-ci'
+
   #
   # Release
   #
@@ -66,12 +137,83 @@ jobs:
               echo "==============================================================================================="
             fi
 
+      - slack/notify:
+          event: fail
+          mentions: '@leverage-support'
+          custom: |
+            {
+              "blocks": [
+                {
+                  "type": "header",
+                  "text": {
+                    "type": "plain_text",
+                    "text": "Failed Pipeline! :rotating_light::fire::bash-fire::bangbang::video-games-doom-mad::stopp:",
+                    "emoji": true
+                  }
+                },
+                {
+                  "type": "section",
+                  "text": {
+                    "type": "mrkdwn",
+                    "text": ":negative_squared_cross_mark: *Project*: $CIRCLE_PROJECT_REPONAME \n :negative_squared_cross_mark: *User*: $CIRCLE_USERNAME \n :negative_squared_cross_mark: *Job*: $CIRCLE_JOB in *repo* $CIRCLE_PROJECT_REPONAME \n :negative_squared_cross_mark: *Branch:* $CIRCLE_BRANCH \n :negative_squared_cross_mark: *PR:* $CIRCLE_PULL_REQUEST \n :negative_squared_cross_mark: *Last Commit:* $CIRCLE_SHA1"
+                  },
+                  "accessory": {
+                    "type": "button",
+                    "text": {
+                      "type": "plain_text",
+                      "text": ":arrow_forward: View Job in CircleCi",
+                      "emoji": true
+                    },
+                    "value": "click_me_123",
+                    "url": "$CIRCLE_BUILD_URL",
+                    "action_id": "button-action"
+                  }
+                }
+              ]
+            }
+          channel: 'tools-ci'
+      - slack/notify:
+          event: pass
+          custom: |
+            {
+              "blocks": [
+                {
+                  "type": "header",
+                  "text": {
+                    "type": "plain_text",
+                    "text": "Successful Pipeline! :checkered_flag: :video-games-star: :video-games-mario-luigi-dance: :tada: :binbash::bb-leverage: :heart: :open-source:",
+                    "emoji": true
+                  }
+                },
+                {
+                  "type": "section",
+                  "text": {
+                    "type": "mrkdwn",
+                    "text": ":heavy_check_mark: *Project*: $CIRCLE_PROJECT_REPONAME \n :heavy_check_mark: *User*: $CIRCLE_USERNAME \n :heavy_check_mark: *Job*: $CIRCLE_JOB in *repo* $CIRCLE_PROJECT_REPONAME \n :heavy_check_mark: *Branch:* $CIRCLE_BRANCH \n :heavy_check_mark: *PR:* $CIRCLE_PULL_REQUEST \n :heavy_check_mark: *Last Commit:* $CIRCLE_SHA1"
+                  },
+                  "accessory": {
+                    "type": "button",
+                    "text": {
+                      "type": "plain_text",
+                      "text": ":arrow_forward: View Job in CircleCi",
+                      "emoji": true
+                    },
+                    "value": "click_me_123",
+                    "url": "$CIRCLE_BUILD_URL",
+                    "action_id": "button-action"
+                  }
+                }
+              ]
+            }
+          channel: 'tools-ci'
+
 #
 # CircleCI orbs are open-source, shareable packages of parameterizable reusable
 # configuration elements, including jobs, commands, and executors.
 #
 orbs:
   sumologic: circleci/sumologic@1.0.6
+  slack: circleci/slack@4.1.1
 
 #
 # Jobs workflow
@@ -96,5 +238,3 @@ workflows:
                - master
       - sumologic/workflow-collector:
           context: binbashar-org-global-context
-          requires:
-            - release-version-with-changelog

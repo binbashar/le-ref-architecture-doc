@@ -20,7 +20,7 @@
     
     
       
-        <title>Identities - Binbash Leverage Reference Architecture</title>
+        <title>Overview - Binbash Leverage Reference Architecture</title>
       
     
     
@@ -101,7 +101,7 @@
           </span>
           <span class="md-header-nav__topic md-ellipsis">
             
-              Identities
+              Overview
             
           </span>
         </div>
@@ -636,6 +636,28 @@
   
 
 
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+    <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3-4" type="checkbox" id="nav-3-4" checked>
+    <label class="md-nav__link" for="nav-3-4">
+      Identities
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="Identities" data-md-level="2">
+      <label class="md-nav__title" for="nav-3-4">
+        <span class="md-nav__icon md-icon"></span>
+        Identities
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+  
+
+
   <li class="md-nav__item md-nav__item--active">
     
     <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
@@ -644,12 +666,12 @@
     
     
       <label class="md-nav__link md-nav__link--active" for="__toc">
-        Identities
+        Overview
         <span class="md-nav__icon md-icon"></span>
       </label>
     
     <a href="./" class="md-nav__link md-nav__link--active">
-      Identities
+      Overview
     </a>
     
       
@@ -683,6 +705,23 @@
   
 </nav>
     
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../roles/" class="md-nav__link">
+      IAM Roles
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
   </li>
 
         
@@ -761,8 +800,20 @@
 
 
   <li class="md-nav__item">
-    <a href="../../network/vpc/" class="md-nav__link">
-      VPC
+    <a href="../../network/vpc-topology/" class="md-nav__link">
+      VPC Topology
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../network/vpc-addressing/" class="md-nav__link">
+      VPC Adressing
     </a>
   </li>
 
@@ -1291,18 +1342,6 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../user-guide/base-configuration/repo-le-tf-infra-aws-tf-state/" class="md-nav__link">
-      Terraform Infra State
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
     <a href="../../../user-guide/base-configuration/repo-le-ansible-infra/" class="md-nav__link">
       Ansible Infra
     </a>
@@ -1377,8 +1416,32 @@
 
 
   <li class="md-nav__item">
+    <a href="../../../user-guide/base-workflow/repo-le-dev-makefiles/" class="md-nav__link">
+      Makefiles Lib
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
     <a href="../../../user-guide/base-workflow/repo-le-tf-infra-aws/" class="md-nav__link">
       Terraform Infra
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../user-guide/base-workflow/repo-le-tf-infra-aws-tf-state/" class="md-nav__link">
+      Terraform Infra State
     </a>
   </li>
 
@@ -1590,7 +1653,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../user-guide/network/vpc/" class="md-nav__link">
+    <a href="../../../user-guide/network/vpc-addressing/" class="md-nav__link">
       VPC
     </a>
   </li>
@@ -2159,7 +2222,13 @@ of AWS-based deployments, centralize security monitoring and management, manage 
 audit and compliance monitoring services</p>
 </div>
 <p><img alt="leverage-aws-iam" src="../../../assets/images/diagrams/aws-iam.png" style="width:600px" title="Leverage" /></p>
-<figcaption>**Figure:** AWS Organization Security account structure for managing multiple accounts (just as reference).</figcaption>
+<figcaption style="font-size:15px">
+<b>Figure:</b> AWS Organization Security account structure for managing multiple accounts (just as reference).
+(Source: Yoriyasu Yano, 
+<a href="https://blog.gruntwork.io/how-to-build-an-end-to-end-production-grade-architecture-on-aws-part-2-4f6e5dc30100">
+"How to Build an End to End Production-Grade Architecture on AWS Part 2"</a>,
+Gruntwork.io Blog, accessed November 18th 2020).
+</figcaption>
 
 <h2 id="iam-groups-roles-definition">IAM Groups &amp; Roles definition<a class="headerlink" href="#iam-groups-roles-definition" title="Permanent link"> ¶</a></h2>
 <p><strong>AWS Org member accounts IAM groups :</strong></p>
@@ -2344,13 +2413,13 @@ audit and compliance monitoring services</p>
           </a>
         
         
-          <a href="../../security/vpn/" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="../roles/" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-footer-nav__title">
               <div class="md-ellipsis">
                 <span class="md-footer-nav__direction">
                   Next
                 </span>
-                VPN
+                IAM Roles
               </div>
             </div>
             <div class="md-footer-nav__button md-icon">

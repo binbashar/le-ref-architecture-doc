@@ -634,10 +634,47 @@
           
 
 
+  <li class="md-nav__item md-nav__item--nested">
+    
+    <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3-4" type="checkbox" id="nav-3-4" >
+    <label class="md-nav__link" for="nav-3-4">
+      Identities
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="Identities" data-md-level="2">
+      <label class="md-nav__title" for="nav-3-4">
+        <span class="md-nav__icon md-icon"></span>
+        Identities
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
   <li class="md-nav__item">
     <a href="../../identities/identities/" class="md-nav__link">
-      Identities
+      Overview
     </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../identities/roles/" class="md-nav__link">
+      IAM Roles
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
   </li>
 
         
@@ -716,8 +753,20 @@
 
 
   <li class="md-nav__item">
-    <a href="../../network/vpc/" class="md-nav__link">
-      VPC
+    <a href="../../network/vpc-topology/" class="md-nav__link">
+      VPC Topology
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../network/vpc-addressing/" class="md-nav__link">
+      VPC Adressing
     </a>
   </li>
 
@@ -1293,18 +1342,6 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../user-guide/base-configuration/repo-le-tf-infra-aws-tf-state/" class="md-nav__link">
-      Terraform Infra State
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
     <a href="../../../user-guide/base-configuration/repo-le-ansible-infra/" class="md-nav__link">
       Ansible Infra
     </a>
@@ -1379,8 +1416,32 @@
 
 
   <li class="md-nav__item">
+    <a href="../../../user-guide/base-workflow/repo-le-dev-makefiles/" class="md-nav__link">
+      Makefiles Lib
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
     <a href="../../../user-guide/base-workflow/repo-le-tf-infra-aws/" class="md-nav__link">
       Terraform Infra
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../user-guide/base-workflow/repo-le-tf-infra-aws-tf-state/" class="md-nav__link">
+      Terraform Infra State
     </a>
   </li>
 
@@ -1592,7 +1653,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../user-guide/network/vpc/" class="md-nav__link">
+    <a href="../../../user-guide/network/vpc-addressing/" class="md-nav__link">
       VPC
     </a>
   </li>
@@ -2158,7 +2219,12 @@ and retention management. AWS Backup provides a fully managed, policy-based back
 backup management, enabling you to meet your business and regulatory backup compliance requirements.</p>
 </div>
 <p><img alt="leverage-aws-backup" src="../../../assets/images/diagrams/aws-backup.png" style="width:950px" title="Leverage" /></p>
-<figcaption>**Figure:** [AWS Backup](https://aws.amazon.com/backup/) service diagram (just as reference).</figcaption>
+<figcaption style="font-size:15px">
+<b>Figure:</b> AWS Backup service diagram (just as reference).
+(Source: AWS, 
+<a href="https://aws.amazon.com/backup/">"AWS Backup - Centrally manage and automate backups across AWS services"</a>,
+AWS Documentation, accessed November 18th 2020).
+</figcaption>
 
 <h2 id="s3-bucket-region-replication"><img alt="leverage-aws-s3" src="../../../assets/images/icons/aws-emojipack/Storage_AmazonS3.png" style="width:30px" title="Leverage" /> S3 bucket region replication<a class="headerlink" href="#s3-bucket-region-replication" title="Permanent link"> ¶</a></h2>
 <ul>

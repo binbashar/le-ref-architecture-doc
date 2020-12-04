@@ -634,10 +634,47 @@
           
 
 
+  <li class="md-nav__item md-nav__item--nested">
+    
+    <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3-4" type="checkbox" id="nav-3-4" >
+    <label class="md-nav__link" for="nav-3-4">
+      Identities
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="Identities" data-md-level="2">
+      <label class="md-nav__title" for="nav-3-4">
+        <span class="md-nav__icon md-icon"></span>
+        Identities
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
   <li class="md-nav__item">
     <a href="../../../how-it-works/identities/identities/" class="md-nav__link">
-      Identities
+      Overview
     </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../how-it-works/identities/roles/" class="md-nav__link">
+      IAM Roles
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
   </li>
 
         
@@ -716,8 +753,20 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../how-it-works/network/vpc/" class="md-nav__link">
-      VPC
+    <a href="../../../how-it-works/network/vpc-topology/" class="md-nav__link">
+      VPC Topology
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../how-it-works/network/vpc-addressing/" class="md-nav__link">
+      VPC Adressing
     </a>
   </li>
 
@@ -1248,18 +1297,6 @@
 
 
   <li class="md-nav__item">
-    <a href="../../base-configuration/repo-le-tf-infra-aws-tf-state/" class="md-nav__link">
-      Terraform Infra State
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
     <a href="../../base-configuration/repo-le-ansible-infra/" class="md-nav__link">
       Ansible Infra
     </a>
@@ -1338,8 +1375,32 @@
 
 
   <li class="md-nav__item">
+    <a href="../repo-le-dev-makefiles/" class="md-nav__link">
+      Makefiles Lib
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
     <a href="../repo-le-tf-infra-aws/" class="md-nav__link">
       Terraform Infra
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../repo-le-tf-infra-aws-tf-state/" class="md-nav__link">
+      Terraform Infra State
     </a>
   </li>
 
@@ -1358,45 +1419,9 @@
       
     
     
-      <label class="md-nav__link md-nav__link--active" for="__toc">
-        Ansible Infra
-        <span class="md-nav__icon md-icon"></span>
-      </label>
-    
     <a href="./" class="md-nav__link md-nav__link--active">
       Ansible Infra
     </a>
-    
-      
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#makefile" class="md-nav__link">
-    Makefile
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#ansible" class="md-nav__link">
-    Ansible
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
     
   </li>
 
@@ -1596,7 +1621,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../network/vpc/" class="md-nav__link">
+    <a href="../../network/vpc-addressing/" class="md-nav__link">
       VPC
     </a>
   </li>
@@ -2103,28 +2128,6 @@
     
   
   
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#makefile" class="md-nav__link">
-    Makefile
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#ansible" class="md-nav__link">
-    Ansible
-  </a>
-  
-</li>
-      
-    </ul>
-  
 </nav>
                   </div>
                 </div>
@@ -2141,12 +2144,15 @@
                 
                 
                 <h1 id="workflow">Workflow<a class="headerlink" href="#workflow" title="Permanent link"> ¶</a></h1>
-<h3 id="makefile">Makefile<a class="headerlink" href="#makefile" title="Permanent link"> ¶</a></h3>
+<div class="admonition info">
+<p class="admonition-title">Makefile</p>
 <ul>
 <li>We rely on <code>Makefiles</code> as a wrapper to run terraform commands that consistently use the same config files.</li>
 <li>You are encouraged to inspect those Makefiles to understand what's going on.</li>
 </ul>
-<h3 id="ansible">Ansible<a class="headerlink" href="#ansible" title="Permanent link"> ¶</a></h3>
+</div>
+<div class="admonition example">
+<p class="admonition-title"><img alt="leverage-ansible" src="../../../assets/images/logos/ansible.png" style="width:20px" title="Leverage" /> <a href="https://github.com/binbashar/le-ansible-infra">Ansible Infra</a></p>
 <ol>
 <li>Get into the folder that you need to work with (e.g. <code>ansible-playbook-vpn-pritunl</code>)</li>
 <li>Run <code>make init</code> to get all the necessary Ansible roles based on each <code>requirements.yml</code></li>
@@ -2155,6 +2161,7 @@
 <li>Run <code>make check</code> if you only mean to preview those changes</li>
 <li>Run <code>make apply</code> if you want to apply those changes</li>
 </ol>
+</div>
                 
               
               
@@ -2173,7 +2180,7 @@
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid" aria-label="Footer">
         
-          <a href="../repo-le-tf-infra-aws/" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href="../repo-le-tf-infra-aws-tf-state/" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-footer-nav__button md-icon">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
             </div>
@@ -2182,7 +2189,7 @@
                 <span class="md-footer-nav__direction">
                   Previous
                 </span>
-                Terraform Infra
+                Terraform Infra State
               </div>
             </div>
           </a>

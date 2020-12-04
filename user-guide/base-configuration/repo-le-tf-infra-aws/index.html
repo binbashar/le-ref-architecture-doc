@@ -634,10 +634,47 @@
           
 
 
+  <li class="md-nav__item md-nav__item--nested">
+    
+    <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3-4" type="checkbox" id="nav-3-4" >
+    <label class="md-nav__link" for="nav-3-4">
+      Identities
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="Identities" data-md-level="2">
+      <label class="md-nav__title" for="nav-3-4">
+        <span class="md-nav__icon md-icon"></span>
+        Identities
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
   <li class="md-nav__item">
     <a href="../../../how-it-works/identities/identities/" class="md-nav__link">
-      Identities
+      Overview
     </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../how-it-works/identities/roles/" class="md-nav__link">
+      IAM Roles
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
   </li>
 
         
@@ -716,8 +753,20 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../how-it-works/network/vpc/" class="md-nav__link">
-      VPC
+    <a href="../../../how-it-works/network/vpc-topology/" class="md-nav__link">
+      VPC Topology
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../how-it-works/network/vpc-addressing/" class="md-nav__link">
+      VPC Adressing
     </a>
   </li>
 
@@ -1261,18 +1310,6 @@
 
 
   <li class="md-nav__item">
-    <a href="../repo-le-tf-infra-aws-tf-state/" class="md-nav__link">
-      Terraform Infra State
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
     <a href="../repo-le-ansible-infra/" class="md-nav__link">
       Ansible Infra
     </a>
@@ -1347,8 +1384,32 @@
 
 
   <li class="md-nav__item">
+    <a href="../../base-workflow/repo-le-dev-makefiles/" class="md-nav__link">
+      Makefiles Lib
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
     <a href="../../base-workflow/repo-le-tf-infra-aws/" class="md-nav__link">
       Terraform Infra
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../base-workflow/repo-le-tf-infra-aws-tf-state/" class="md-nav__link">
+      Terraform Infra State
     </a>
   </li>
 
@@ -1560,7 +1621,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../network/vpc/" class="md-nav__link">
+    <a href="../../network/vpc-addressing/" class="md-nav__link">
       VPC
     </a>
   </li>
@@ -2104,58 +2165,96 @@ resources that belong to such environment.</p>
 <p>Under every account folder you will see a service layer structure similar to the following:
 <div class="highlight"><pre><span></span><code>.
 ├── apps-devstg
-│   ├── 10_databases_mysql --
-│   ├── 10_databases_pgsql --
-│   ├── 1_tf-backend
-│   ├── 2_identities
-│   ├── 3_network
-│   ├── 4_security
-│   ├── 4_security_compliance --
-│   ├── 5_dns
-│   ├── 6_notifications
-│   ├── 7_cloud-nuke
-│   ├── 8_k8s_eks --
-│   ├── 8_k8s_kops --
-│   ├── 9_backups --
-│   ├── 9_storage --
-│   └── config
+│   ├── backups --
+│   ├── base-identities
+│   ├── base-network
+│   ├── base-tf-backend
+│   ├── cdn-s3-frontend
+│   ├── config
+│   ├── databases-mysql --
+│   ├── databases-pgsql --
+│   ├── ec2-fleet-ansible --
+│   ├── k8s-eks --
+│   ├── k8s-kops --
+│   ├── notifications
+│   ├── security-audit
+│   ├── security-base
+│   ├── security-certs
+│   ├── security-compliance --
+│   ├── security-keys
+│   ├── security-keys-dr
+│   ├── storage
+│   └── tools-cloud-nuke
 ├── apps-prd
-│   ├── 1_tf-backend --
-│   ├── 2_identities --
-│   ├── 3_network --
-│   ├── 4_security --
-│   ├── 4_security_compliance --
-│   ├── 5_dns --
-│   ├── 6_notifications --
-│   ├── 9_backups --
-│   └── config
-├── root-org
-│   ├── 1_tf-backend
-│   ├── 2_identities
-│   ├── 3_organizations
-│   ├── 4_security
-│   ├── 4_security_compliance --
-│   ├── 5_cost-mgmt
-│   ├── 6_notifications
-│   └── config
+│   ├── backups --
+│   ├── base-identities
+│   ├── base-network
+│   ├── base-tf-backend
+│   ├── cdn-s3-frontend
+│   ├── config
+│   ├── ec2-fleet --
+│   ├── notifications
+│   ├── security-audit
+│   ├── security-base
+│   ├── security-certs
+│   ├── security-compliance --
+│   └── security-keys
+├── @bin
+│   ├── config
+│   ├── makefiles
+│   └── scripts
+├── CHANGELOG.md
+├── config
+│   └── common.config
+├── _config.yml
+├── @doc
+│   └── figures
+├── LICENSE.md
+├── Makefile
+├── README.md
+├── root
+│   ├── base-identities
+│   ├── base-tf-backend
+│   ├── config
+│   ├── cost-mgmt
+│   ├── notifications
+│   ├── organizations
+│   ├── security-audit
+│   ├── security-base
+│   ├── security-compliance --
+│   ├── security-keys
+│   ├── security-monitoring
+│   └── security-monitoring-dr --
 ├── security
-│   ├── 1_tf-backend
-│   ├── 2_identities
-│   ├── 4_security
-│   ├── 4_security_compliance --
-│   ├── 6_notifications
-│   └── config
+│   ├── base-identities
+│   ├── base-tf-backend
+│   ├── config
+│   ├── notifications
+│   ├── security-audit
+│   ├── security-base
+│   ├── security-compliance --
+│   ├── security-keys
+│   ├── security-monitoring
+│   └── security-monitoring-dr --
 └── shared
-    ├── 1_tf-backend
-    ├── 2_identities
-    ├── 3_network
-    ├── 4_security
-    ├── 4_security_compliance --
-    ├── 5_dns
-    ├── 6_notifications
-    ├── 7_vpn-server
-    ├── 8_container_registry
-    └── config
+    ├── base-dns
+    ├── base-identities
+    ├── base-network
+    ├── base-tf-backend
+    ├── config
+    ├── container-registry
+    ├── ec2-fleet --
+    ├── infra_prometheus
+    ├── notifications
+    ├── security-audit
+    ├── security-base
+    ├── security-compliance --
+    ├── security-keys
+    ├── storage
+    ├── tools-cloud-scheduler-stop-start
+    ├── tools-eskibana --
+    ├── tools-jenkins --
+    └── tools-vpn-server
 </code></pre></div></p>
 <p><strong>NOTE:</strong> As a convention folders with the <code>--</code> suffix reflect that the resources are not currently
 created in AWS, basically they've been destroyed or not yet exist. </p>
@@ -2173,10 +2272,8 @@ each account.</p>
 </ul>
 <h2 id="terraform">Terraform<a class="headerlink" href="#terraform" title="Permanent link"> ¶</a></h2>
 <ul>
-<li>Install terraform &gt;= v0.12.28</li>
-<li>Run <code>terraform version</code> to check</li>
-<li><strong>NOTE:</strong> Most <code>Makefiles</code> already grant the recs via 
-  <a href="https://hub.docker.com/repository/docker/binbash/terraform-awscli">Dockerized cmds</a>  </li>
+<li><a href="https://github.com/binbashar/le-dev-makefiles"><code>Makefiles</code></a> already grant the recs via 
+  <a href="https://hub.docker.com/repository/docker/binbash/terraform-awscli-slim">Dockerized Terraform cmds</a>  </li>
 </ul>
 <h2 id="remote-state">Remote State<a class="headerlink" href="#remote-state" title="Permanent link"> ¶</a></h2>
 <p>In the <code>tf-backend</code> folder you should find all setup scripts or configuration files that need to be run before
@@ -2185,23 +2282,30 @@ each account.</p>
 <div class="admonition info">
 <p class="admonition-title">Read More</p>
 <ul class="task-list">
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> <a href="../repo-le-tf-infra-aws-tf-state/">Terraform - S3 &amp; DynamoDB for Remote State Storage &amp; Locking</a></li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> <a href="../../base-workflow/repo-le-tf-infra-aws-tf-state/">Terraform - S3 &amp; DynamoDB for Remote State Storage &amp; Locking</a></li>
 </ul>
 </div>
 <h2 id="configuration">Configuration<a class="headerlink" href="#configuration" title="Permanent link"> ¶</a></h2>
+<div class="admonition tips">
+<p class="admonition-title">Config files can be found under each <code>config</code> folders</p>
 <ul>
-<li>Config files can be found in under each 'config' folder.</li>
-<li>File <code>backend.config</code> contains TF variables that are mainly used to configure TF backend but since
- <code>profile</code> and <code>region</code> are defined there, we also use them to inject those values into other TF commands.<ul>
-<li>eg: <a href="https://github.com/binbashar/le-tf-infra-aws/blob/master/config/common.config">le-tf-infra-aws/config/common.config</a></li>
+<li><img alt="📁" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f4c1.svg" title=":file_folder:" /> <strong>Global config file</strong> 
+<a href="https://github.com/binbashar/le-tf-infra-aws/blob/master/config/common.config"><code>/config/common.config</code></a> 
+contains global context TF variables that we inject to TF commands which are used by all sub-directories such as 
+<code>make plan</code> or <code>make apply</code> and which cannot be stored in <code>backend.config</code> due to TF.</li>
+<li><img alt="📁" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f4c1.svg" title=":file_folder:" /> <strong>Account config files</strong> <ul>
+<li><a href="https://github.com/binbashar/le-tf-infra-aws/blob/master/shared/config/backend.config"><code>backend.config</code></a>
+ contains TF variables that are mainly used to configure TF backend but since
+ <code>profile</code> and <code>region</code> are defined there, we also use them to inject those values into other TF commands.</li>
+<li><a href="https://github.com/binbashar/le-tf-infra-aws/blob/master/shared/config/account.config"><code>account.config</code></a>
+ contains TF variables that are specific to an AWS account.</li>
 </ul>
 </li>
-<li>File <code>/config/common.config</code> contains global context TF variables that we inject to TF commands which are used by all
-  sub-directories such as plan or apply and which cannot be stored in <code>backend.config</code> due to TF.<ul>
-<li>eg: <a href="https://github.com/binbashar/le-tf-infra-aws/blob/master/shared/config/backend.config">le-tf-infra-aws/shared/config/backend.config</a></li>
+<li><img alt="📁" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f4c1.svg" title=":file_folder:" /> <strong>Makefile config file</strong> 
+<a href="https://github.com/binbashar/le-tf-infra-aws/blob/master/%40bin/config/base.mk"><code>/@bin/config/base.mk</code></a> contains
+global <a href="https://github.com/binbashar/le-dev-makefiles">makefile-lib</a> variables </li>
 </ul>
-</li>
-</ul>
+</div>
 <h2 id="aws-profile">AWS Profile<a class="headerlink" href="#aws-profile" title="Permanent link"> ¶</a></h2>
 <ul>
 <li>File <code>backend.config</code> will inject the profile name that TF will use to make changes on AWS.</li>
@@ -2247,13 +2351,13 @@ a role</a></li>
           </a>
         
         
-          <a href="../repo-le-tf-infra-aws-tf-state/" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="../repo-le-ansible-infra/" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-footer-nav__title">
               <div class="md-ellipsis">
                 <span class="md-footer-nav__direction">
                   Next
                 </span>
-                Terraform Infra State
+                Ansible Infra
               </div>
             </div>
             <div class="md-footer-nav__button md-icon">

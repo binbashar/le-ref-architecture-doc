@@ -634,10 +634,47 @@
           
 
 
+  <li class="md-nav__item md-nav__item--nested">
+    
+    <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3-4" type="checkbox" id="nav-3-4" >
+    <label class="md-nav__link" for="nav-3-4">
+      Identities
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="Identities" data-md-level="2">
+      <label class="md-nav__title" for="nav-3-4">
+        <span class="md-nav__icon md-icon"></span>
+        Identities
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
   <li class="md-nav__item">
     <a href="../../identities/identities/" class="md-nav__link">
-      Identities
+      Overview
     </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../identities/roles/" class="md-nav__link">
+      IAM Roles
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
   </li>
 
         
@@ -716,8 +753,20 @@
 
 
   <li class="md-nav__item">
-    <a href="../../network/vpc/" class="md-nav__link">
-      VPC
+    <a href="../../network/vpc-topology/" class="md-nav__link">
+      VPC Topology
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../network/vpc-addressing/" class="md-nav__link">
+      VPC Adressing
     </a>
   </li>
 
@@ -1150,6 +1199,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#read-more" class="md-nav__link">
+    Read more
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1293,18 +1349,6 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../user-guide/base-configuration/repo-le-tf-infra-aws-tf-state/" class="md-nav__link">
-      Terraform Infra State
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
     <a href="../../../user-guide/base-configuration/repo-le-ansible-infra/" class="md-nav__link">
       Ansible Infra
     </a>
@@ -1379,8 +1423,32 @@
 
 
   <li class="md-nav__item">
+    <a href="../../../user-guide/base-workflow/repo-le-dev-makefiles/" class="md-nav__link">
+      Makefiles Lib
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
     <a href="../../../user-guide/base-workflow/repo-le-tf-infra-aws/" class="md-nav__link">
       Terraform Infra
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../user-guide/base-workflow/repo-le-tf-infra-aws-tf-state/" class="md-nav__link">
+      Terraform Infra State
     </a>
   </li>
 
@@ -1592,7 +1660,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../user-guide/network/vpc/" class="md-nav__link">
+    <a href="../../../user-guide/network/vpc-addressing/" class="md-nav__link">
       VPC
     </a>
   </li>
@@ -2119,6 +2187,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#read-more" class="md-nav__link">
+    Read more
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -2174,6 +2249,32 @@ eight hours, the DR process should restore the business process to the acceptabl
  between them in normal production status, you can adjust the DNS weighting and send all traffic to the AWS region
  that is available, this can even be performed automatically with Route53 or other DNS services that provide health
  check mechanisms as well as load balancing.</li>
+</ul>
+</div>
+<p><img alt="leverage-aws-dr" src="../../../assets/images/diagrams/aws-route53-dns-dr.png" style="width:800px" title="Leverage" /></p>
+<figcaption style="font-size:15px">
+<b>Figure:</b> 2 sets of app instances, each behind an elastic load balancer in two separate regions (just as reference).
+(Source: Randika Rathugamage, 
+<a href="https://medium.com/@randika/high-availability-with-route53-dns-failover-c13cb30cbe94">
+"High Availability with Route53 DNS Failover"</a>,
+Medium blogpost, accessed December 1st 2020).
+</figcaption>
+
+<p><img alt="leverage-aws-dr" src="../../../assets/images/diagrams/aws-route53-dns-health-checks.png" style="width:800px" title="Leverage" /></p>
+<figcaption style="font-size:15px">
+<b>Figure:</b> AWS calculated — or parent — health check, we can fail on any number of child health checks (just as reference).
+(Source: Simon Tabor, 
+<a href="https://medium.com/dazn-tech/how-to-implement-the-perfect-failover-strategy-using-amazon-route53-1cc4b19fa9c7">
+"How to implement the perfect failover strategy using Amazon Route53"</a>,
+Medium blogpost, accessed December 1st 2020).
+</figcaption>
+
+<h2 id="read-more">Read more<a class="headerlink" href="#read-more" title="Permanent link"> ¶</a></h2>
+<div class="admonition info">
+<p class="admonition-title">AWS reference links</p>
+<p>Consider the following AWS official links as reference:</p>
+<ul>
+<li><img alt="📙" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f4d9.svg" title=":orange_book:" /> <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover-configuring.html"><strong>AWS Documentation Amazon Route 53 Developer Guide | Configuring DNS failover</strong></a></li>
 </ul>
 </div>
                 

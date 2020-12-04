@@ -634,10 +634,47 @@
           
 
 
+  <li class="md-nav__item md-nav__item--nested">
+    
+    <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3-4" type="checkbox" id="nav-3-4" >
+    <label class="md-nav__link" for="nav-3-4">
+      Identities
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="Identities" data-md-level="2">
+      <label class="md-nav__title" for="nav-3-4">
+        <span class="md-nav__icon md-icon"></span>
+        Identities
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
   <li class="md-nav__item">
     <a href="../../identities/identities/" class="md-nav__link">
-      Identities
+      Overview
     </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../identities/roles/" class="md-nav__link">
+      IAM Roles
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
   </li>
 
         
@@ -716,8 +753,20 @@
 
 
   <li class="md-nav__item">
-    <a href="../../network/vpc/" class="md-nav__link">
-      VPC
+    <a href="../../network/vpc-topology/" class="md-nav__link">
+      VPC Topology
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../network/vpc-addressing/" class="md-nav__link">
+      VPC Adressing
     </a>
   </li>
 
@@ -931,6 +980,13 @@
         <li class="md-nav__item">
   <a href="#ebs-volumes" class="md-nav__link">
     EBS Volumes
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#read-more" class="md-nav__link">
+    Read more
   </a>
   
 </li>
@@ -1291,18 +1347,6 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../user-guide/base-configuration/repo-le-tf-infra-aws-tf-state/" class="md-nav__link">
-      Terraform Infra State
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
     <a href="../../../user-guide/base-configuration/repo-le-ansible-infra/" class="md-nav__link">
       Ansible Infra
     </a>
@@ -1377,8 +1421,32 @@
 
 
   <li class="md-nav__item">
+    <a href="../../../user-guide/base-workflow/repo-le-dev-makefiles/" class="md-nav__link">
+      Makefiles Lib
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
     <a href="../../../user-guide/base-workflow/repo-le-tf-infra-aws/" class="md-nav__link">
       Terraform Infra
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../user-guide/base-workflow/repo-le-tf-infra-aws-tf-state/" class="md-nav__link">
+      Terraform Infra State
     </a>
   </li>
 
@@ -1590,7 +1658,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../user-guide/network/vpc/" class="md-nav__link">
+    <a href="../../../user-guide/network/vpc-addressing/" class="md-nav__link">
       VPC
     </a>
   </li>
@@ -2117,6 +2185,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#read-more" class="md-nav__link">
+    Read more
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -2149,13 +2224,109 @@ As for EBS volumes, our recommendation is to create all encrypted by default. Ov
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> <strong>Replication to another region:</strong> TBD per bucket</li>
 </ul>
 </div>
-<h2 id="ebs-volumes"><img alt="leverage-aws-s3" src="../../../assets/images/icons/aws-emojipack/Storage_AmazonEBS.png" style="width:25px" title="Leverage" /> EBS Volumes<a class="headerlink" href="#ebs-volumes" title="Permanent link"> ¶</a></h2>
+<table>
+<thead>
+<tr>
+<th>Storage class</th>
+<th>Designed for</th>
+<th>Durability (designed for)</th>
+<th>Availability (designed for)</th>
+<th>Availability Zones</th>
+<th>Min storage duration</th>
+<th>Min billable object size</th>
+<th>Other considerations</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>S3 Standard</td>
+<td>Frequently accessed data</td>
+<td>99.999999999%</td>
+<td>99.99%</td>
+<td>&gt;= 3</td>
+<td>None</td>
+<td>None</td>
+<td>None</td>
+</tr>
+<tr>
+<td>S3 Standard-IA</td>
+<td>Long-lived, infrequently accessed data</td>
+<td>99.999999999%</td>
+<td>99.9%</td>
+<td>&gt;= 3</td>
+<td>30 days</td>
+<td>128 KB</td>
+<td>Per GB retrieval fees apply.</td>
+</tr>
+<tr>
+<td>S3 Intelligent-Tiering</td>
+<td>Long-lived data with changing or unknown access patterns</td>
+<td>99.999999999%</td>
+<td>99.9%</td>
+<td>&gt;= 3</td>
+<td>30 days</td>
+<td>None</td>
+<td>Monitoring and automation fees per object apply. No retrieval fees.</td>
+</tr>
+<tr>
+<td>S3 One Zone-IA</td>
+<td>Long-lived, infrequently accessed, non-critical data</td>
+<td>99.999999999%</td>
+<td>99.5%</td>
+<td>1</td>
+<td>30 days</td>
+<td>128 KB</td>
+<td>Per GB retrieval fees apply. Not resilient to the loss of the Availability Zone.</td>
+</tr>
+<tr>
+<td>S3 Glacier</td>
+<td>Long-term data archiving with retrieval times ranging from minutes to hours</td>
+<td>99.999999999%</td>
+<td>99.99% (after you restore objects)</td>
+<td>&gt;= 3</td>
+<td>90 days</td>
+<td>40 KB</td>
+<td>Per GB retrieval fees apply. You must first restore archived objects before you can access them. For more information, see Restoring archived objects.</td>
+</tr>
+<tr>
+<td>S3 Glacier Deep Archive</td>
+<td>Archiving rarely accessed data with a default retrieval time of 12 hours</td>
+<td>99.999999999%</td>
+<td>99.99% (after you restore objects)</td>
+<td>&gt;= 3</td>
+<td>180 days</td>
+<td>40 KB</td>
+<td>Per GB retrieval fees apply. You must first restore archived objects before you can access them. For more information, see Restoring archived objects.</td>
+</tr>
+<tr>
+<td>RRS (Not recommended)</td>
+<td>Frequently accessed, non-critical data</td>
+<td>99.99%</td>
+<td>99.99%</td>
+<td>&gt;= 3</td>
+<td>None</td>
+<td>None</td>
+<td>None</td>
+</tr>
+</tbody>
+</table>
+<h2 id="ebs-volumes"><img alt="leverage-aws-ebs" src="../../../assets/images/icons/aws-emojipack/Storage_AmazonEBS.png" style="width:25px" title="Leverage" /> EBS Volumes<a class="headerlink" href="#ebs-volumes" title="Permanent link"> ¶</a></h2>
 <div class="admonition important">
 <p class="admonition-title">Tech specs</p>
 <ul class="task-list">
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> <strong>Backups:</strong> Periodic EBS snapshots with retention policy</li>
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> <strong>Encryption:</strong> Yes (by default)</li>
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> <strong>Type:</strong> SSD (gp2) by default, Throughput Optimized HDD (st1) for some database workloads, if needed.</li>
+</ul>
+</div>
+<h2 id="read-more">Read more<a class="headerlink" href="#read-more" title="Permanent link"> ¶</a></h2>
+<div class="admonition info">
+<p class="admonition-title">Reference links</p>
+<p>Consider the following extra links as reference:</p>
+<ul>
+<li><img alt="📙" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f4d9.svg" title=":orange_book:" /> <a href="https://aws.amazon.com/s3/faqs/">Amazon S3 FAQs</a></li>
+<li><img alt="📙" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f4d9.svg" title=":orange_book:" /> <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/storage-class-intro.html">Amazon S3 storage classes - Developer Guide</a></li>
+<li><img alt="📙" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f4d9.svg" title=":orange_book:" /> <a href="https://aws.amazon.com/s3/storage-classes/">Amazon S3 Storage Classes</a></li>
 </ul>
 </div>
                 

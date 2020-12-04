@@ -634,10 +634,47 @@
           
 
 
+  <li class="md-nav__item md-nav__item--nested">
+    
+    <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3-4" type="checkbox" id="nav-3-4" >
+    <label class="md-nav__link" for="nav-3-4">
+      Identities
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="Identities" data-md-level="2">
+      <label class="md-nav__title" for="nav-3-4">
+        <span class="md-nav__icon md-icon"></span>
+        Identities
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
   <li class="md-nav__item">
     <a href="../../identities/identities/" class="md-nav__link">
-      Identities
+      Overview
     </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../identities/roles/" class="md-nav__link">
+      IAM Roles
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
   </li>
 
         
@@ -716,8 +753,20 @@
 
 
   <li class="md-nav__item">
-    <a href="../../network/vpc/" class="md-nav__link">
-      VPC
+    <a href="../../network/vpc-topology/" class="md-nav__link">
+      VPC Topology
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../network/vpc-addressing/" class="md-nav__link">
+      VPC Adressing
     </a>
   </li>
 
@@ -1320,18 +1369,6 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../user-guide/base-configuration/repo-le-tf-infra-aws-tf-state/" class="md-nav__link">
-      Terraform Infra State
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
     <a href="../../../user-guide/base-configuration/repo-le-ansible-infra/" class="md-nav__link">
       Ansible Infra
     </a>
@@ -1406,8 +1443,32 @@
 
 
   <li class="md-nav__item">
+    <a href="../../../user-guide/base-workflow/repo-le-dev-makefiles/" class="md-nav__link">
+      Makefiles Lib
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
     <a href="../../../user-guide/base-workflow/repo-le-tf-infra-aws/" class="md-nav__link">
       Terraform Infra
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../user-guide/base-workflow/repo-le-tf-infra-aws-tf-state/" class="md-nav__link">
+      Terraform Infra State
     </a>
   </li>
 
@@ -1619,7 +1680,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../user-guide/network/vpc/" class="md-nav__link">
+    <a href="../../../user-guide/network/vpc-addressing/" class="md-nav__link">
       VPC
     </a>
   </li>
@@ -2198,7 +2259,7 @@
 themselves trigger recovery is the way to move forward.</p>
 </div>
 <p><img alt="leverage-aws-reliability" src="../../../assets/images/diagrams/aws-reliability-ha-recovery-failure.png" style="width:750px" title="Leverage" /></p>
-<figcaption>**Figure:** AWS HA architecture diagrams (just as reference).</figcaption>
+<figcaption style="font-size:15px">Figure: AWS HA architecture diagrams (just as reference).</figcaption>
 
 <h2 id="recovery-procedures">Recovery Procedures<a class="headerlink" href="#recovery-procedures" title="Permanent link"> ¶</a></h2>
 <div class="admonition attention">
@@ -2209,7 +2270,7 @@ that can be done using these insights. Real points of failure are exploited and 
 the emergency shows just how reliable the system it.</p>
 </div>
 <p><img alt="leverage-aws-reliability" src="../../../assets/images/diagrams/aws-reliability-ha-recovery-procs.png" style="width:750px" title="Leverage" /></p>
-<figcaption>**Figure:** AWS HA architecture diagrams (just as reference).</figcaption>
+<figcaption style="font-size:15px">Figure: AWS HA architecture diagrams (just as reference).</figcaption>
 
 <h2 id="scalability-and-availability">Scalability and Availability<a class="headerlink" href="#scalability-and-availability" title="Permanent link"> ¶</a></h2>
 <div class="admonition attention">
@@ -2219,7 +2280,7 @@ measures. Of course, multiple redundancies require good management and maintenan
 the environment’s lifecycle.</p>
 </div>
 <p><img alt="leverage-aws-reliability" src="../../../assets/images/diagrams/aws-reliability-ha-recovery-scaling.png" style="width:750px" title="Leverage" /></p>
-<figcaption>**Figure:** AWS HA scalable architecture diagrams (just as reference).</figcaption>
+<figcaption style="font-size:15px">Figure: AWS HA scalable architecture diagrams (just as reference).</figcaption>
 
 <h2 id="helthchecks-self-healing">Helthchecks &amp; Self-healing<a class="headerlink" href="#helthchecks-self-healing" title="Permanent link"> ¶</a></h2>
 <h3 id="k8s-and-containers">K8s and containers<a class="headerlink" href="#k8s-and-containers" title="Permanent link"> ¶</a></h3>

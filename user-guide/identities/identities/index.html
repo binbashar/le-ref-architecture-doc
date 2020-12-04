@@ -634,10 +634,47 @@
           
 
 
+  <li class="md-nav__item md-nav__item--nested">
+    
+    <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3-4" type="checkbox" id="nav-3-4" >
+    <label class="md-nav__link" for="nav-3-4">
+      Identities
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="Identities" data-md-level="2">
+      <label class="md-nav__title" for="nav-3-4">
+        <span class="md-nav__icon md-icon"></span>
+        Identities
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
   <li class="md-nav__item">
     <a href="../../../how-it-works/identities/identities/" class="md-nav__link">
-      Identities
+      Overview
     </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../how-it-works/identities/roles/" class="md-nav__link">
+      IAM Roles
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
   </li>
 
         
@@ -716,8 +753,20 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../how-it-works/network/vpc/" class="md-nav__link">
-      VPC
+    <a href="../../../how-it-works/network/vpc-topology/" class="md-nav__link">
+      VPC Topology
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../how-it-works/network/vpc-addressing/" class="md-nav__link">
+      VPC Adressing
     </a>
   </li>
 
@@ -1248,18 +1297,6 @@
 
 
   <li class="md-nav__item">
-    <a href="../../base-configuration/repo-le-tf-infra-aws-tf-state/" class="md-nav__link">
-      Terraform Infra State
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
     <a href="../../base-configuration/repo-le-ansible-infra/" class="md-nav__link">
       Ansible Infra
     </a>
@@ -1334,8 +1371,32 @@
 
 
   <li class="md-nav__item">
+    <a href="../../base-workflow/repo-le-dev-makefiles/" class="md-nav__link">
+      Makefiles Lib
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
     <a href="../../base-workflow/repo-le-tf-infra-aws/" class="md-nav__link">
       Terraform Infra
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../base-workflow/repo-le-tf-infra-aws-tf-state/" class="md-nav__link">
+      Terraform Infra State
     </a>
   </li>
 
@@ -1490,6 +1551,13 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#recommended-post-task" class="md-nav__link">
+    Recommended post-task
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#next-steps" class="md-nav__link">
     Next Steps
   </a>
@@ -1600,7 +1668,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../network/vpc/" class="md-nav__link">
+    <a href="../../network/vpc-addressing/" class="md-nav__link">
       VPC
     </a>
   </li>
@@ -2122,6 +2190,13 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#recommended-post-task" class="md-nav__link">
+    Recommended post-task
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#next-steps" class="md-nav__link">
     Next Steps
   </a>
@@ -2196,6 +2271,27 @@ consider repeating step 3. but for the corresponding member accounts:<ul>
 </li>
 </ol>
 </div>
+<h3 id="recommended-post-task">Recommended post-task<a class="headerlink" href="#recommended-post-task" title="Permanent link"> ¶</a></h3>
+<div class="admonition attention">
+<p class="admonition-title">Deactivating AWS STS in not in use AWS Region</p>
+<p><em>When you activate STS endpoints for a Region, AWS STS can issue temporary credentials to users and roles in your
+account that make an AWS STS request. Those credentials can then be used in any Region that is enabled by default or
+is manually enabled. You must activate the Region in the account where the temporary credentials are generated. 
+It does not matter whether a user is signed into the same account or a different account when they make the request.</em></p>
+<p><em>To activate or deactivate AWS STS in a Region that is enabled by default (console)</em></p>
+<ol>
+<li><em>Sign in as a root user or an IAM user with permissions to perform IAM administration tasks.</em></li>
+<li><em>Open the IAM console and in the navigation pane choose Account settings.</em></li>
+<li><em>If necessary, expand Security Token Service (STS), find the Region that you want to activate, and then choose 
+Activate or Deactivate. For Regions that must be enabled, we activate STS automatically when you enable the Region. 
+After you enable a Region, AWS STS is always active for the Region and you cannot deactivate it. To learn how to 
+enable a Region, see Managing AWS Regions in the AWS General Reference.</em></li>
+</ol>
+<hr />
+<p><img alt="📒" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f4d2.svg" title=":ledger:" /> Source | <img alt="🌎" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f30e.svg" title=":earth_americas:" /> <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_enable-regions.html">AWS Documentation IAM User Guide | Activating and deactivating AWS STS in an AWS Region</a></p>
+</div>
+<p><img alt="leverage-aws-iam-roles" src="../../../assets/images/screenshots/aws-iam-sts-regions.png" style="width:900px" title="Leverage" /></p>
+<p><strong>Figure:</strong> <em>Deactivating AWS STS in not in use AWS Region. Only in used Regions must have STS activated.</em></p>
 <h3 id="next-steps">Next Steps<a class="headerlink" href="#next-steps" title="Permanent link"> ¶</a></h3>
 <p><img alt="📚" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f4da.svg" title=":books:" /> <a href="../credentials/">Setup your AWS Credentials</a></p>
                 

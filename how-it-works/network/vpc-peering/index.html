@@ -634,10 +634,47 @@
           
 
 
+  <li class="md-nav__item md-nav__item--nested">
+    
+    <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3-4" type="checkbox" id="nav-3-4" >
+    <label class="md-nav__link" for="nav-3-4">
+      Identities
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="Identities" data-md-level="2">
+      <label class="md-nav__title" for="nav-3-4">
+        <span class="md-nav__icon md-icon"></span>
+        Identities
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
   <li class="md-nav__item">
     <a href="../../identities/identities/" class="md-nav__link">
-      Identities
+      Overview
     </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../identities/roles/" class="md-nav__link">
+      IAM Roles
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
   </li>
 
         
@@ -718,8 +755,20 @@
 
 
   <li class="md-nav__item">
-    <a href="../vpc/" class="md-nav__link">
-      VPC
+    <a href="../vpc-topology/" class="md-nav__link">
+      VPC Topology
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../vpc-addressing/" class="md-nav__link">
+      VPC Adressing
     </a>
   </li>
 
@@ -1257,18 +1306,6 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../user-guide/base-configuration/repo-le-tf-infra-aws-tf-state/" class="md-nav__link">
-      Terraform Infra State
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
     <a href="../../../user-guide/base-configuration/repo-le-ansible-infra/" class="md-nav__link">
       Ansible Infra
     </a>
@@ -1343,8 +1380,32 @@
 
 
   <li class="md-nav__item">
+    <a href="../../../user-guide/base-workflow/repo-le-dev-makefiles/" class="md-nav__link">
+      Makefiles Lib
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
     <a href="../../../user-guide/base-workflow/repo-le-tf-infra-aws/" class="md-nav__link">
       Terraform Infra
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../user-guide/base-workflow/repo-le-tf-infra-aws-tf-state/" class="md-nav__link">
+      Terraform Infra State
     </a>
   </li>
 
@@ -1556,7 +1617,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../user-guide/network/vpc/" class="md-nav__link">
+    <a href="../../../user-guide/network/vpc-addressing/" class="md-nav__link">
       VPC
     </a>
   </li>
@@ -2080,12 +2141,22 @@
                 
                 <h1 id="diagram-network-service-cross-account-vpc-peering">Diagram: Network Service (cross-account <a href="https://docs.aws.amazon.com/vpc/latest/peering/what-is-vpc-peering.html">VPC peering</a>)<a class="headerlink" href="#diagram-network-service-cross-account-vpc-peering" title="Permanent link"> ¶</a></h1>
 <p><img alt="leverage-aws-vpc-peering" src="../../../assets/images/diagrams/aws-vpc-peering-1.png" style="width:300px" title="Leverage" /></p>
-<figcaption>**Figure:** AWS multi account Organization [VPC Peering](https://docs.aws.amazon.com/vpc/latest/peering/vpc-pg.pdf)
-topology (just as reference).</figcaption>
+<figcaption style="font-size:15px">
+<b>Figure:</b> AWS multi account Organization VPC peering diagram.
+(Source: AWS, 
+<a href="https://docs.aws.amazon.com/vpc/latest/peering/vpc-pg.pdf">
+"Amazon Virtual Private Cloud VPC Peering"</a>,
+AWS Documentation Amazon VPC User Guide, accessed November 18th 2020).
+</figcaption>
 
 <p><img alt="leverage-aws-vpc-peering" src="../../../assets/images/diagrams/aws-vpc-peering-2.png" style="width:300px" title="Leverage" /></p>
-<figcaption>**Figure:** AWS multi account Organization [VPC Peering](https://docs.aws.amazon.com/vpc/latest/peering/vpc-pg.pdf)
-routing (just as reference).</figcaption>
+<figcaption style="font-size:15px">
+<b>Figure:</b> AWS multi account Organization peering detailed diagram.
+(Source: AWS, 
+<a href="https://docs.aws.amazon.com/vpc/latest/peering/vpc-pg.pdf">
+"Amazon Virtual Private Cloud VPC Peering"</a>,
+AWS Documentation Amazon VPC User Guide, accessed November 18th 2020).
+</figcaption>
                 
               
               
@@ -2104,7 +2175,7 @@ routing (just as reference).</figcaption>
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid" aria-label="Footer">
         
-          <a href="../vpc/" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href="../vpc-addressing/" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-footer-nav__button md-icon">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
             </div>
@@ -2113,7 +2184,7 @@ routing (just as reference).</figcaption>
                 <span class="md-footer-nav__direction">
                   Previous
                 </span>
-                VPC
+                VPC Adressing
               </div>
             </div>
           </a>

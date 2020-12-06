@@ -16,4 +16,11 @@ The project describes itself as kubectl for clusters.
     - [x] Supports heterogeneous clusters by creating multiple instance groups
     
 ![leverage-aws-k8s-kops](../../assets/images/diagrams/aws-k8s-kops.png "Leverage"){: style="width:950px"}
-<figcaption>**Figure:** AWS K8s Kops architecture diagram (just as reference).</figcaption>
+
+<figcaption style="font-size:15px">
+<b>Figure:</b> AWS K8s Kops architecture diagram (just as reference).
+(Source: Carlos Rodriguez, 
+<a href="https://www.nclouds.com/blog/kubernetes-aws-terraform-kops/">
+"How to deploy a Kubernetes cluster on AWS with Terraform & kops"</a>,
+Nclouds.com Blog post, accessed November 18th 2020).
+</figcaption>

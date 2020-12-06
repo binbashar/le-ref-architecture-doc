@@ -16,9 +16,14 @@ Clusters will be provisioned with [**_Kops_**](https://github.com/kubernetes/kop
  compute engine in AWS. Whenever possible the initial version deployed will be the latest stable release.
 
 ![leverage-k8s-architecture](../../assets/images/diagrams/k8s-architecture.png "Leverage"){: style="width:700"}
-<figcaption>**Figure:** [Kubernetes high level components architecture](https://kubernetes.io/blog/2018/07/18/11-ways-not-to-get-hacked/).
-</figcaption>
 
+<figcaption style="font-size:15px">
+<b>Figure:</b> Kubernetes high level components architecture.
+(Source: Andrew Martin, 
+<a href="https://kubernetes.io/blog/2018/07/18/11-ways-not-to-get-hacked">
+"11 Ways (Not) to Get Hacked"</a>,
+Kubernetes.io Blog post, accessed November 18th 2020).
+</figcaption>
 
 ## Kubernetes addons 
 

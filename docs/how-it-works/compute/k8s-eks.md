@@ -13,4 +13,11 @@ to run **Kubernetes** on AWS without needing to install and operate your own Kub
      Kubernetes code base helping you take advantage of AWS services.
 
 ![leverage-aws-eks](../../assets/images/diagrams/aws-k8s-eks.png "Leverage"){: style="width:950px"}
-<figcaption>**Figure:** AWS K8s EKS architecture diagram (just as reference).</figcaption>
+
+<figcaption style="font-size:15px">
+<b>Figure:</b> AWS K8s EKS architecture diagram (just as reference).
+(Source: Jay McConnell, 
+<a href="https://aws.amazon.com/blogs/infrastructure-and-automation/a-tale-from-the-trenches-the-cloudbees-core-on-aws-quick-start/">
+"A tale from the trenches: The CloudBees Core on AWS Quick Start"</a>,
+AWS Infrastructure & Automation Blog post, accessed November 18th 2020).
+</figcaption>

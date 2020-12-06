@@ -6,15 +6,21 @@ Each month AWS charges your payer **Root Account** for all the linked accounts i
 The following illustration shows an example of a consolidated bill.
 
 ![leverage-aws-org](../../assets/images/diagrams/aws-organizations-scp.png "Leverage"){: style="width:750px"}
-<figcaption>
-**Figure:** AWS Organization Multi-Account structure(just as reference). 
-- [ :ledger: **Source:** cloudnout.io ](https://cloudonaut.io/images/2020/04/aws-organizations-1.png)
+<figcaption style="font-size:15px">
+<b>Figure:</b> AWS Organization Multi-Account structure (just as reference).
+(Source: Andreas Wittig, 
+<a href="https://cloudonaut.io/aws-account-structure-think-twice-before-using-aws-organizations/">
+"AWS Account Structure: Think twice before using AWS Organizations"</a>,
+Cloudonaut.io Blog, accessed November 18th 2020).
 </figcaption>
 
 ![leverage-aws-org](../../assets/images/diagrams/aws-organizations-billing.png "Leverage"){: style="width:750px"}
-<figcaption>
-**Figure:** AWS Organization Multi-Account structure(just as reference). 
-- [ :ledger: **Source:** docs.aws.amazon.com ](https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/useconsolidatedbilling-procedure.html)
+<figcaption style="font-size:15px">
+<b>Figure:</b> AWS Organization Multi-Account billing structure (just as reference).
+(Source: AWS, 
+<a href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/useconsolidatedbilling-procedure.html">
+"Consolidated billing process"</a>,
+AWS Documentation AWS Billing and Cost Management User Guide, accessed November 18th 2020).
 </figcaption>
 
 !!! info "Reference Architecture [**AWS Organizations**](https://aws.amazon.com/organizations/) features"

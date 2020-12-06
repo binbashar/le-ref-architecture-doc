@@ -37,3 +37,29 @@ After deciding RTO and RPO we have options available to achieve the time objecti
      between them in normal production status, you can adjust the DNS weighting and send all traffic to the AWS region
      that is available, this can even be performed automatically with Route53 or other DNS services that provide health
      check mechanisms as well as load balancing.
+
+![leverage-aws-dr](../../assets/images/diagrams/aws-route53-dns-dr.png "Leverage"){: style="width:800px"}
+<figcaption style="font-size:15px">
+<b>Figure:</b> 2 sets of app instances, each behind an elastic load balancer in two separate regions (just as reference).
+(Source: Randika Rathugamage, 
+<a href="https://medium.com/@randika/high-availability-with-route53-dns-failover-c13cb30cbe94">
+"High Availability with Route53 DNS Failover"</a>,
+Medium blogpost, accessed December 1st 2020).
+</figcaption>
+
+![leverage-aws-dr](../../assets/images/diagrams/aws-route53-dns-health-checks.png "Leverage"){: style="width:800px"}
+<figcaption style="font-size:15px">
+<b>Figure:</b> AWS calculated — or parent — health check, we can fail on any number of child health checks (just as reference).
+(Source: Simon Tabor, 
+<a href="https://medium.com/dazn-tech/how-to-implement-the-perfect-failover-strategy-using-amazon-route53-1cc4b19fa9c7">
+"How to implement the perfect failover strategy using Amazon Route53"</a>,
+Medium blogpost, accessed December 1st 2020).
+</figcaption>
+
+## Read more
+
+!!! info "AWS reference links"
+    Consider the following AWS official links as reference:
+        
+    - :orange_book: [**AWS Documentation Amazon Route 53 Developer Guide | Configuring DNS failover**](https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover-configuring.html)
+    

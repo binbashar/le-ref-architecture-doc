@@ -55,7 +55,7 @@ The following block provides a brief explanation of the chosen AWS Organization 
           and afterwards even imported into your [terraform code](https://www.terraform.io/docs/providers/aws/r/organizations_account.html#import).
     - [x] **Migration:** After having your baseline AWS Org reference cloud solutions architecture deployed
         (IAM, VPC, NACLS, VPC-Peering, DNS Cross-Org,
-        CloudTrail, etc.) you're ready to start progressively orchestrating new resources in order to segregate different
+        CloudTrail, etc) you're ready to start progressively orchestrating new resources in order to segregate different
         Environment and Services per account.
         This approach will allow you to start a **1 by 1 Blue/Green (Red/Black) migration without affecting any of your 
         services at all**. You would like to take advantage of an Active-Active DNS switchover approach (nice as DR exercise too). 

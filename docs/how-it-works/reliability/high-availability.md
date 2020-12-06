@@ -7,7 +7,7 @@
     themselves trigger recovery is the way to move forward.
 
 ![leverage-aws-reliability](../../assets/images/diagrams/aws-reliability-ha-recovery-failure.png "Leverage"){: style="width:750px"}
-<figcaption>**Figure:** AWS HA architecture diagrams (just as reference).</figcaption>
+<figcaption style="font-size:15px">Figure: AWS HA architecture diagrams (just as reference).</figcaption>
 
 ## Recovery Procedures 
 
@@ -18,7 +18,7 @@
     the emergency shows just how reliable the system it.
 
 ![leverage-aws-reliability](../../assets/images/diagrams/aws-reliability-ha-recovery-procs.png "Leverage"){: style="width:750px"}
-<figcaption>**Figure:** AWS HA architecture diagrams (just as reference).</figcaption>
+<figcaption style="font-size:15px">Figure: AWS HA architecture diagrams (just as reference).</figcaption>
 
 ## Scalability and Availability
 
@@ -28,7 +28,7 @@
     the environment’s lifecycle.
 
 ![leverage-aws-reliability](../../assets/images/diagrams/aws-reliability-ha-recovery-scaling.png "Leverage"){: style="width:750px"}
-<figcaption>**Figure:** AWS HA scalable architecture diagrams (just as reference).</figcaption>
+<figcaption style="font-size:15px">Figure: AWS HA scalable architecture diagrams (just as reference).</figcaption>
 
 ## Helthchecks & Self-healing
 

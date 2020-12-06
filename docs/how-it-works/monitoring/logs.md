@@ -11,7 +11,13 @@
     purpose, on the security account and given the need these can be streamed to Elasticsearch as well if needed.
 
 ![leverage-monitoring](../../assets/images/diagrams/monitoring-metrics-logs.png "Leverage"){: style="width:750px"}
-<figcaption>**Figure:** Monitoring metrics and log architecture diagram (just as reference).</figcaption>
+<figcaption style="font-size:15px">
+<b>Figure:</b> Monitoring metrics and log architecture diagram (just as reference).
+(Source: Binbash Leverage, 
+<a href="https://drive.google.com/file/d/1KYZC-wTXn2PSVIEtikx9PFOwK2SoCxD8/view?usp=sharing">
+"AWS Well Architected Reliability Report example"</a>,
+Binbash Leverage Doc, accessed November 18th 2020).
+</figcaption>
 
 !!! danger "Alerting based on Logs" 
     Certain features that were only available under licence were recently made available by Elastic, and included in the

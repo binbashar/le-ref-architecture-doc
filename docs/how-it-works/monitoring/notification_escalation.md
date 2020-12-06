@@ -200,4 +200,4 @@ Notify to Slack => engineering-alerts channel
     *   www.domain_3.com
 
     **Note:** a personal account has been set up for this. As a recommendation, an new account should be created using
-     an email account that belongs to Veev project.
+     an email account that belongs to your project.

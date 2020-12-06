@@ -5,7 +5,7 @@
     1. Make sure you've read and prepare your local development environment following the
     [Overview base-configurations](../base-configuration/overview.md) section.
     2. Review and assure you meet all the [pre-requisites](../base-configuration/repo-le-tf-infra-aws.md)  
-        - [x] [Remote State](../base-configuration/repo-le-tf-infra-aws-tf-state.md)
+        - [x] [Remote State](repo-le-tf-infra-aws-tf-state.md)
         - [x] Configuration files
         - [x] [AWS Profile and credentials](../identities/credentials.md)
     3. Get into the folder that you need to work with (e.g. `2_identities`)
@@ -23,7 +23,7 @@
 
 ## Running in Automation
 ![leverage-aws-terraform](../../assets/images/diagrams/aws-terraform-automation.png "Terraform"){: style="width:350"}
-<figcaption>**Figure:** Running terraform with AWS in automation (just as reference).</figcaption>
+<figcaption style="font-size:15px">Figure: Running terraform with AWS in automation (just as reference).</figcaption>
 
 ## Read More
 

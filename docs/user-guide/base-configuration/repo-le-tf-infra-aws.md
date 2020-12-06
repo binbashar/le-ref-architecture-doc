@@ -27,58 +27,96 @@ Under every account folder you will see a service layer structure similar to the
 ```
 .
 ├── apps-devstg
-│   ├── 10_databases_mysql --
-│   ├── 10_databases_pgsql --
-│   ├── 1_tf-backend
-│   ├── 2_identities
-│   ├── 3_network
-│   ├── 4_security
-│   ├── 4_security_compliance --
-│   ├── 5_dns
-│   ├── 6_notifications
-│   ├── 7_cloud-nuke
-│   ├── 8_k8s_eks --
-│   ├── 8_k8s_kops --
-│   ├── 9_backups --
-│   ├── 9_storage --
-│   └── config
+│   ├── backups --
+│   ├── base-identities
+│   ├── base-network
+│   ├── base-tf-backend
+│   ├── cdn-s3-frontend
+│   ├── config
+│   ├── databases-mysql --
+│   ├── databases-pgsql --
+│   ├── ec2-fleet-ansible --
+│   ├── k8s-eks --
+│   ├── k8s-kops --
+│   ├── notifications
+│   ├── security-audit
+│   ├── security-base
+│   ├── security-certs
+│   ├── security-compliance --
+│   ├── security-keys
+│   ├── security-keys-dr
+│   ├── storage
+│   └── tools-cloud-nuke
 ├── apps-prd
-│   ├── 1_tf-backend --
-│   ├── 2_identities --
-│   ├── 3_network --
-│   ├── 4_security --
-│   ├── 4_security_compliance --
-│   ├── 5_dns --
-│   ├── 6_notifications --
-│   ├── 9_backups --
-│   └── config
-├── root-org
-│   ├── 1_tf-backend
-│   ├── 2_identities
-│   ├── 3_organizations
-│   ├── 4_security
-│   ├── 4_security_compliance --
-│   ├── 5_cost-mgmt
-│   ├── 6_notifications
-│   └── config
+│   ├── backups --
+│   ├── base-identities
+│   ├── base-network
+│   ├── base-tf-backend
+│   ├── cdn-s3-frontend
+│   ├── config
+│   ├── ec2-fleet --
+│   ├── notifications
+│   ├── security-audit
+│   ├── security-base
+│   ├── security-certs
+│   ├── security-compliance --
+│   └── security-keys
+├── @bin
+│   ├── config
+│   ├── makefiles
+│   └── scripts
+├── CHANGELOG.md
+├── config
+│   └── common.config
+├── _config.yml
+├── @doc
+│   └── figures
+├── LICENSE.md
+├── Makefile
+├── README.md
+├── root
+│   ├── base-identities
+│   ├── base-tf-backend
+│   ├── config
+│   ├── cost-mgmt
+│   ├── notifications
+│   ├── organizations
+│   ├── security-audit
+│   ├── security-base
+│   ├── security-compliance --
+│   ├── security-keys
+│   ├── security-monitoring
+│   └── security-monitoring-dr --
 ├── security
-│   ├── 1_tf-backend
-│   ├── 2_identities
-│   ├── 4_security
-│   ├── 4_security_compliance --
-│   ├── 6_notifications
-│   └── config
+│   ├── base-identities
+│   ├── base-tf-backend
+│   ├── config
+│   ├── notifications
+│   ├── security-audit
+│   ├── security-base
+│   ├── security-compliance --
+│   ├── security-keys
+│   ├── security-monitoring
+│   └── security-monitoring-dr --
 └── shared
-    ├── 1_tf-backend
-    ├── 2_identities
-    ├── 3_network
-    ├── 4_security
-    ├── 4_security_compliance --
-    ├── 5_dns
-    ├── 6_notifications
-    ├── 7_vpn-server
-    ├── 8_container_registry
-    └── config
+    ├── base-dns
+    ├── base-identities
+    ├── base-network
+    ├── base-tf-backend
+    ├── config
+    ├── container-registry
+    ├── ec2-fleet --
+    ├── infra_prometheus
+    ├── notifications
+    ├── security-audit
+    ├── security-base
+    ├── security-compliance --
+    ├── security-keys
+    ├── storage
+    ├── tools-cloud-scheduler-stop-start
+    ├── tools-eskibana --
+    ├── tools-jenkins --
+    └── tools-vpn-server
 ```
 
 **NOTE:** As a convention folders with the `--` suffix reflect that the resources are not currently
@@ -99,10 +137,8 @@ each account.
 - You are encouraged to inspect those Makefiles to understand what's going on.
 
 ## Terraform
-- Install terraform >= v0.12.28
-  - Run `terraform version` to check
-  - **NOTE:** Most `Makefiles` already grant the recs via 
-  [Dockerized cmds](https://hub.docker.com/repository/docker/binbash/terraform-awscli)  
+- [`Makefiles`](https://github.com/binbashar/le-dev-makefiles) already grant the recs via 
+  [Dockerized Terraform cmds](https://hub.docker.com/repository/docker/binbash/terraform-awscli-slim)  
 
 ## Remote State
 In the `tf-backend` folder you should find all setup scripts or configuration files that need to be run before
@@ -111,17 +147,26 @@ In the `tf-backend` folder you should find all setup scripts or configuration fi
 **IMPORTANT:** THIS IS ONLY NEEDED IF THE BACKEND WAS NOT CREATED YET. IF THE BACKEND ALREADY EXISTS YOU JUST USE IT.
 
 !!! info "Read More"
-    * [x] [Terraform - S3 & DynamoDB for Remote State Storage & Locking](./repo-le-tf-infra-aws-tf-state.md)
+    * [x] [Terraform - S3 & DynamoDB for Remote State Storage & Locking](../base-workflow/repo-le-tf-infra-aws-tf-state.md)
  
 ## Configuration
-- Config files can be found in under each 'config' folder.
-- File `backend.config` contains TF variables that are mainly used to configure TF backend but since
- `profile` and `region` are defined there, we also use them to inject those values into other TF commands.
-    - eg: [le-tf-infra-aws/config/common.config](https://github.com/binbashar/le-tf-infra-aws/blob/master/config/common.config)
-- File `/config/common.config` contains global context TF variables that we inject to TF commands which are used by all
-  sub-directories such as plan or apply and which cannot be stored in `backend.config` due to TF.
-    - eg: [le-tf-infra-aws/shared/config/backend.config](https://github.com/binbashar/le-tf-infra-aws/blob/master/shared/config/backend.config)
-  
+
+!!! tips "Config files can be found under each `config` folders"
+    - :file_folder: **Global config file** 
+    [`/config/common.config`](https://github.com/binbashar/le-tf-infra-aws/blob/master/config/common.config) 
+    contains global context TF variables that we inject to TF commands which are used by all sub-directories such as 
+    `make plan` or `make apply` and which cannot be stored in `backend.config` due to TF.
+    - :file_folder: **Account config files** 
+        - [`backend.config`](https://github.com/binbashar/le-tf-infra-aws/blob/master/shared/config/backend.config)
+         contains TF variables that are mainly used to configure TF backend but since
+         `profile` and `region` are defined there, we also use them to inject those values into other TF commands.
+        - [`account.config`](https://github.com/binbashar/le-tf-infra-aws/blob/master/shared/config/account.config)
+         contains TF variables that are specific to an AWS account.
+    - :file_folder: **Makefile config file** 
+    [`/@bin/config/base.mk`](https://github.com/binbashar/le-tf-infra-aws/blob/master/%40bin/config/base.mk) contains
+    global [makefile-lib](https://github.com/binbashar/le-dev-makefiles) variables 
+    
+          
 ## AWS Profile
 - File `backend.config` will inject the profile name that TF will use to make changes on AWS.
 - Such profile is usually one that relies on another profile to assume a role to get access to each corresponding account.

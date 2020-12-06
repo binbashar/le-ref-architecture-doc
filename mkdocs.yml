@@ -111,12 +111,15 @@ nav:
       - Organization: "how-it-works/organization/organization.md"
       - Accounts: "how-it-works/organization/accounts.md"
       - Billing: "how-it-works/organization/billing.md"
-    - Identities: "how-it-works/identities/identities.md"
+    - Identities:
+      - Overview: "how-it-works/identities/identities.md"
+      - IAM Roles: "how-it-works/identities/roles.md"
     - Security:
       - VPN: "how-it-works/security/vpn.md"
       - Services: "how-it-works/security/services.md"
     - Network:
-      - VPC: "how-it-works/network/vpc.md"
+      - VPC Topology: "how-it-works/network/vpc-topology.md"
+      - VPC Adressing: "how-it-works/network/vpc-addressing.md"
       - VPC Peering: "how-it-works/network/vpc-peering.md"
       - DNS: "how-it-works/network/dns.md"
     - Compute:
@@ -154,12 +157,13 @@ nav:
       - Overview: "user-guide/base-configuration/overview.md"
       - Repos:
         - Terraform Infra: "user-guide/base-configuration/repo-le-tf-infra-aws.md"
-        - Terraform Infra State: "user-guide/base-configuration/repo-le-tf-infra-aws-tf-state.md"
         - Ansible Infra: "user-guide/base-configuration/repo-le-ansible-infra.md"
         - Helm Infra: "user-guide/base-configuration/repo-le-helm-infra.md"
     - Workflow:
       - Repos:
+        - Makefiles Lib: "user-guide/base-workflow/repo-le-dev-makefiles.md"
         - Terraform Infra: "user-guide/base-workflow/repo-le-tf-infra-aws.md"
+        - Terraform Infra State: "user-guide/base-workflow/repo-le-tf-infra-aws-tf-state.md"
         - Ansible Infra: "user-guide/base-workflow/repo-le-ansible-infra.md"
         - Helm Infra: "user-guide/base-workflow/repo-le-helm-infra.md"
     - AWS Organization:
@@ -172,7 +176,7 @@ nav:
       - VPN: "user-guide/security/vpn.md"
       - Services: "user-guide/security/services.md"
     - Network:
-      - VPC: "user-guide/network/vpc.md"
+      - VPC: "user-guide/network/vpc-addressing.md"
       - VPC Peering: "user-guide/network/vpc-peering.md"
       - DNS: "user-guide/network/dns.md"
     - Compute:

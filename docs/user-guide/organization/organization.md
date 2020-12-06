@@ -19,10 +19,10 @@ Instead, whenever possible, it should ideally be associated, with a **distributi
 **GSuite Group Email address:** `aws@domain.com` (to which admins / owners belong), and then using the `+` we generate
 the aliases automatically implicitly when running Terraform's Leverage code.
 
-* :e-mail: `aws+security@flexibility.com.ar`
-* :e-mail: `aws+shared@flexibility.com.ar`
-* :e-mail: `aws+apps-devstg@flexibility.com.ar`
-* :e-mail: `aws+apps-prd@flexibility.com.ar`
+* :e-mail: `aws+security@binbash.com.ar`
+* :e-mail: `aws+shared@binbash.com.ar`
+* :e-mail: `aws+apps-devstg@binbash.com.ar`
+* :e-mail: `aws+apps-prd@binbash.com.ar`
 
 !!! important Reference Code as example
     ```terraform

@@ -11,8 +11,8 @@
     4. Follow the cli workflow shown immediately below to get a better understanding
     
 ![leverage-aws-creds](../../assets/images/animations/aws-identities-credentials-setup.gif "Leverage"){: style="width:1000px"}
-<figcaption>
-**Figure:** AWS credentials automated setup. 
+<figcaption style="font-size:15px">
+Figure: AWS credentials automated setup. 
 </figcaption>
 
 ### Resulting Example for: `~/.aws/leverage/credentials`

@@ -1,7 +1,7 @@
 # Network Layer
 
 !!! help "How it works"
-    :books: [**documentation:** Networking](../../how-it-works/network/vpc.md)
+    :books: [**documentation:** Networking](../../how-it-works/network/vpc-addressing.md)
     
 ## User guide
 

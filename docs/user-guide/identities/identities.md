@@ -37,6 +37,29 @@ afterwards in your [`project-security`](https://github.com/binbashar/le-tf-infra
         - [apps-devstg/base-identities](https://github.com/binbashar/le-tf-infra-aws/tree/master/apps-devstg/base-identities)
         - [app-prd/base-identities](https://github.com/binbashar/le-tf-infra-aws/tree/master/apps-prd/base-identities)
 
+### Recommended post-task
+
+!!! attention "Deactivating AWS STS in not in use AWS Region"
+    *When you activate STS endpoints for a Region, AWS STS can issue temporary credentials to users and roles in your
+    account that make an AWS STS request. Those credentials can then be used in any Region that is enabled by default or
+    is manually enabled. You must activate the Region in the account where the temporary credentials are generated. 
+    It does not matter whether a user is signed into the same account or a different account when they make the request.*
+    
+    *To activate or deactivate AWS STS in a Region that is enabled by default (console)*
+    
+    1. *Sign in as a root user or an IAM user with permissions to perform IAM administration tasks.*
+    2. *Open the IAM console and in the navigation pane choose Account settings.*
+    3. *If necessary, expand Security Token Service (STS), find the Region that you want to activate, and then choose 
+    Activate or Deactivate. For Regions that must be enabled, we activate STS automatically when you enable the Region. 
+    After you enable a Region, AWS STS is always active for the Region and you cannot deactivate it. To learn how to 
+    enable a Region, see Managing AWS Regions in the AWS General Reference.*
+    
+    ---
+    :ledger: Source | :earth_americas: [AWS Documentation IAM User Guide | Activating and deactivating AWS STS in an AWS Region](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_enable-regions.html)
+
+![leverage-aws-iam-roles](../../assets/images/screenshots/aws-iam-sts-regions.png "Leverage"){: style="width:900px"}
+
+**Figure:** *Deactivating AWS STS in not in use AWS Region. Only in used Regions must have STS activated.*
 
 ### Next Steps
 

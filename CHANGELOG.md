@@ -7,6 +7,21 @@ All notable changes to this project will be documented in this file.
 
 
 
+<a name="v0.1.22"></a>
+## [v0.1.22] - 2020-12-08
+
+- BBL-445 | fixing typo
+- BBL-445 | updating home illustration icons
+- BBL-445 | mkdocs.yml updated with newest page tree structure
+- BBL-445 | user-guide multiple sections updated - compute, identities, network and organization
+- BBL-445 | user-guide base-configuration + base-workflow improved
+- BBL-445 | how-it-works multiple sections updated: organization, reliability, security and storage
+- BBL-445 | how-it-work sections updated and added - identities, monitoring and network
+- BBL-445 | how it works content and format updated - sections: cdn, ci-cd, code-library, compute and costs
+- BBL-445 | adding and updating figures and diagrams
+- BBL-445 | upgrading Makefile live to use the lastest stable ver including latest stable material-mkdocs image
+
+
 <a name="v0.1.21"></a>
 ## [v0.1.21] - 2020-11-16
 
@@ -492,7 +507,8 @@ All notable changes to this project will be documented in this file.
 - Deployed  with MkDocs version: 1.1.2
 
 
-[Unreleased]: https://github.com/binbashar/le-ref-architecture-doc/compare/v0.1.21...HEAD
+[Unreleased]: https://github.com/binbashar/le-ref-architecture-doc/compare/v0.1.22...HEAD
+[v0.1.22]: https://github.com/binbashar/le-ref-architecture-doc/compare/v0.1.21...v0.1.22
 [v0.1.21]: https://github.com/binbashar/le-ref-architecture-doc/compare/v0.1.20...v0.1.21
 [v0.1.20]: https://github.com/binbashar/le-ref-architecture-doc/compare/v0.1.19...v0.1.20
 [v0.1.19]: https://github.com/binbashar/le-ref-architecture-doc/compare/v0.1.18...v0.1.19

@@ -104,7 +104,7 @@ For example, for an IAM user to assume an IAM role, the workflow looks like this
 Gruntwork.io Production deployment guides, accessed November 17th 2020).
 </figcaption>
 
-!!! example "Basic AssumoRole workflow"
+!!! example "Basic AssumeRole workflow"
     1. Authenticate using the IAM user’s permanent AWS access keys
     2. Make the AssumeRole API call
     3. AWS sends back temporary access keys

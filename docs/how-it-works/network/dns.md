@@ -8,6 +8,10 @@
         (active-active hosted zones) is completely possible and achieviable with Leverage terraform code    
         
 ![leverage-aws-dns](../../assets/images/diagrams/aws-route53.png "Leverage"){: style="width:800px"}
-<figcaption>**Figure:** AWS multi account Organization 
-[Route53 Association](https://aws.amazon.com/blogs/security/how-to-centralize-dns-management-in-a-multi-account-environment/)
-topology (just as reference).</figcaption>
+<figcaption style="font-size:15px">
+<b>Figure:</b> AWS Organization shared account Route53 DNS diagram.
+(Source: Cristian Southall, 
+<a href="https://abstractable.io/aws/2019/09/20/cloudformation-custom-resources.html">
+"Using CloudFormation Custom Resources to Configure Route53 Aliases"</a>,
+Abstractable.io Blog post, accessed November 18th 2020).
+</figcaption>

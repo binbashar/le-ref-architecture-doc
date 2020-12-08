@@ -21,7 +21,14 @@ as reference  we've define a security account structure for managing multiple ac
     audit and compliance monitoring services
 
 ![leverage-aws-iam](../../assets/images/diagrams/aws-iam.png "Leverage"){: style="width:600px"}
-<figcaption>**Figure:** AWS Organization Security account structure for managing multiple accounts (just as reference).</figcaption>
+
+<figcaption style="font-size:15px">
+<b>Figure:</b> AWS Organization Security account structure for managing multiple accounts (just as reference).
+(Source: Yoriyasu Yano, 
+<a href="https://blog.gruntwork.io/how-to-build-an-end-to-end-production-grade-architecture-on-aws-part-2-4f6e5dc30100">
+"How to Build an End to End Production-Grade Architecture on AWS Part 2"</a>,
+Gruntwork.io Blog, accessed November 18th 2020).
+</figcaption>
 
 ## IAM Groups & Roles definition 
 

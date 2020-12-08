@@ -17,9 +17,14 @@ As stated by [AWS Serverless definitions](https://aws.amazon.com/serverless/)
     developers reclaim time and energy that can be spent on developing great products which scale and that are reliable.
 
 ![leverage-aws-serverless](../../assets/images/diagrams/aws-serverless.png "Leverage"){: style="width:950px"}
-<figcaption>**Figure:** AWS 
-[serverless architecture](https://medium.com/containers-on-aws/designing-a-modern-serverless-application-with-aws-lambda-and-aws-fargate-83f4c5fac573)
-(just as reference).</figcaption>
+
+<figcaption style="font-size:15px">
+<b>Figure:</b> AWS serverless architecture diagram (just as reference).
+(Source: Nathan Peck, 
+<a href="https://medium.com/containers-on-aws/designing-a-modern-serverless-application-with-aws-lambda-and-aws-fargate-83f4c5fac573">
+"Designing a modern serverless application with AWS Lambda and AWS Fargate"</a>,
+Containers-on-AWS Medium Blog post, accessed November 18th 2020).
+</figcaption>
 
 !!! info "Serverless Compute ![aws-service](../../assets/images/icons/aws-emojipack/General_AWScloud.png){: style="width:30px"} Services"
     * [x] [AWS Lambda](https://aws.amazon.com/lambda/) lets you run code without provisioning or managing servers. 

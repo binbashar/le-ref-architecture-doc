@@ -40,7 +40,7 @@
 
 #### Resulting Solutions Architecture
 ![leverage-aws-k8s-kops](../../assets/images/diagrams/aws-k8s-kops.png "Leverage"){: style="width:950px"}
-<figcaption>**Figure:** AWS K8s Kops architecture diagram (just as reference).</figcaption>
+<figcaption style="font-size:15px">Figure: AWS K8s Kops architecture diagram (just as reference).</figcaption>
 
 
 ### Why this workflow
@@ -59,7 +59,7 @@ fully customize any AWS component without having to alter our Kubernetes cluster
 the state of our cluster in YAML files fits **100% as code & GitOps** based approach.
 
 ![leverage-aws-k8s-kops](../../assets/images/diagrams/aws-k8s-kops-tf.png "Leverage"){: style="width:950px"}
-<figcaption>**Figure:** [Workflow diagram](https://medium.com/bench-engineering/deploying-kubernetes-clusters-with-kops-and-terraform-832b89250e8e).</figcaption>
+<figcaption style="font-size:15px">Figure: [Workflow diagram](https://medium.com/bench-engineering/deploying-kubernetes-clusters-with-kops-and-terraform-832b89250e8e).</figcaption>
 
 ## Kops Cluster Management
 The `2-kops` directory includes helper scripts and Terraform files in order to template our Kubernetes

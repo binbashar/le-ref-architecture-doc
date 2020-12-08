@@ -17,7 +17,13 @@ Prometheus and [AWS CloudWatch metrics](https://docs.aws.amazon.com/AmazonCloudW
     certain metrics about your own application, that we can graph or alert based on them.
 
 ![leverage-monitoring](../../assets/images/diagrams/monitoring-metrics-logs.png "Leverage"){: style="width:750px"}
-<figcaption>**Figure:** Monitoring metrics and log architecture diagram (just as reference).</figcaption>
+<figcaption style="font-size:15px">
+<b>Figure:</b> Monitoring metrics and log architecture diagram (just as reference).
+(Source: Binbash Leverage, 
+<a href="https://drive.google.com/file/d/1KYZC-wTXn2PSVIEtikx9PFOwK2SoCxD8/view?usp=sharing">
+"AWS Well Architected Reliability Report example"</a>,
+Binbash Leverage Doc, accessed November 18th 2020).
+</figcaption>
 
 !!! check "Graphing metrics" 
     Grafana is the standard open source visualization tool which can be used on top of a variety of different data
@@ -28,11 +34,22 @@ Prometheus and [AWS CloudWatch metrics](https://docs.aws.amazon.com/AmazonCloudW
     from multiple origins.
     
 ![leverage-monitoring](../../assets/images/screenshots/monitoring-metrics-k8s-cluster.png){: style="width:750px"}
-<figcaption>**Figure:** Grafana K8s cluster metrics monitoring dashboard [screenshot](https://grafana.com/grafana/plugins/devopsprodigy-kubegraf-app) (just as reference).</figcaption>
+<figcaption style="font-size:15px">
+<b>Figure:</b> Grafana K8s cluster metrics monitoring dashboard reference screenshot.
+(Source: DevOpsProdigy, 
+<a href="https://grafana.com/grafana/plugins/devopsprodigy-kubegraf-app">
+"Grafana DevOpsProdigy KubeGraf Plugin"</a>,
+Grafana plugins, accessed November 18th 2020).
+</figcaption>
 
 ![leverage-monitoring](../../assets/images/screenshots/monitoring-metrics-k8s-nodes.png "Leverage"){: style="width:750px"}
-<figcaption>**Figure:** Grafana K8s node metrics monitoring dashboard [screenshot](https://grafana.com/grafana/plugins/devopsprodigy-kubegraf-app) (just as reference).</figcaption>
-
+<figcaption style="font-size:15px">
+<b>Figure:</b> Grafana K8s cluster metrics monitoring dashboard reference screenshot.
+(Source: DevOpsProdigy, 
+<a href="https://grafana.com/grafana/plugins/devopsprodigy-kubegraf-app">
+"Grafana DevOpsProdigy KubeGraf Plugin"</a>,
+Grafana plugins, accessed November 18th 2020).
+</figcaption>
 
 !!! attention "Alerting based on metrics" 
     Although Grafana already has alerting capabilities built in, we rather (most of the times) have Prometheus alerting
@@ -40,4 +57,7 @@ Prometheus and [AWS CloudWatch metrics](https://docs.aws.amazon.com/AmazonCloudW
     extremely readable syntax. Example:
 
 ![leverage-monitoring](../../assets/images/screenshots/monitoring-metrics-alerts.png "Leverage"){: style="width:750px"}
-<figcaption>**Figure:** Prometheus Alert Manager `CriticalRamUsage` alert screenshot (just as reference).</figcaption>
+<figcaption style="font-size:15px">
+<b>Figure:</b> Prometheus Alert Manager `CriticalRamUsage` alert screenshot (just as reference).
+(Source: Binbash Leverage).
+</figcaption>

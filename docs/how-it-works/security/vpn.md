@@ -2,7 +2,6 @@
 
 ### To securely and scalable privately access AWS Cross Organization resources we’ll implement [Pritunl VPN Server](https://pritunl.com/)
 
-
 !!! danger "Security Directives"
     1. **Private HTTP endpoints** for Applications (FrontEnd + APIs), SSH, monitoring & logging (UI / Dashboards) among others. Eg: Jenkins, DroneCI, EFK, Prometheus, Spinnaker, Grafana.
     2. **K8s API via kubectl private endpoint** eg: avoiding emergency K8s API vulnerability patching. 
@@ -16,7 +15,13 @@
         3. Centralized access and audit logs.
    
 ![leverage-vpn](../../assets/images/diagrams/ref-architecture-vpn.png "Leverage"){: style="width:650px"}
-
+<figcaption style="font-size:15px">
+<b>Figure:</b> Securing access to a private network with Pritunl diagram.
+(Source: Pritunl, 
+<a href="https://docs.pritunl.com/docs/accessing-a-private-network">
+"Accessing a Private Network"</a>,
+Pritunl documentantion v1 Guides, accessed November 17th 2020).
+</figcaption>
 
 ### Read More
 - [x] [Pritunl - Open Source Enterprise Distributed OpenVPN, IPsec and WireGuard Server Specifications](https://drive.google.com/file/d/1piF0pZSTwcV4oHTIh_VsqZzEWTK5_zlv/view?usp=sharing) :cloud: :lock:

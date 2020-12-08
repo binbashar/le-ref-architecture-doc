@@ -36,10 +36,10 @@ This [official Migrating a hosted zone to a different AWS account - Amazon Route
 explains this procedure step by step:
 
 !!! example "AWS Route53 hosted zone migration steps" 
-    1. Create records in the new hosted zone (flex-shared)
-    2. Compare records in the old and new hosted zones (flex-legacy)
+    1. Create records in the new hosted zone (bb-shared)
+    2. Compare records in the old and new hosted zones (bb-legacy)
     3. Update the domain registration to use name servers for the new hosted zone (NIC updated to use both 
-    flex-legacy + flex-shared)
+    bb-legacy + bb-shared)
     4. Wait for DNS resolvers to start using the new hosted zone
-    5. (Optional) delete the old hosted zone (flex-legacy), remember you'll need to delete the ns delegation 
+    5. (Optional) delete the old hosted zone (bb-legacy), remember you'll need to delete the ns delegation 
     records from your domain registration (NIC) too.

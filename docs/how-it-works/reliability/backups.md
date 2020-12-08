@@ -21,7 +21,12 @@
     backup management, enabling you to meet your business and regulatory backup compliance requirements.
 
 ![leverage-aws-backup](../../assets/images/diagrams/aws-backup.png "Leverage"){: style="width:950px"}
-<figcaption>**Figure:** [AWS Backup](https://aws.amazon.com/backup/) service diagram (just as reference).</figcaption>
+<figcaption style="font-size:15px">
+<b>Figure:</b> AWS Backup service diagram (just as reference).
+(Source: AWS, 
+<a href="https://aws.amazon.com/backup/">"AWS Backup - Centrally manage and automate backups across AWS services"</a>,
+AWS Documentation, accessed November 18th 2020).
+</figcaption>
 
 ## ![leverage-aws-s3](../../assets/images/icons/aws-emojipack/Storage_AmazonS3.png "Leverage"){: style="width:30px"} S3 bucket region replication
 * ![leverage-aws-s3](../../assets/images/icons/aws-emojipack/Storage_AmazonS3_bucket.png "Leverage"){: style="width:20px"}

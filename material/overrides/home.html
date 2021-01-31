@@ -28,23 +28,11 @@ NOTE: At line 9 -> 'background:' has the current color for the botom part of the
 
     .tx-container {
         padding-top: 0rem;
-        padding-bottom: 0rem;
-        padding: 0rem;
-        margin-top: 0px;
-        margin-bottom: 0px;
-        background:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1123 258'><path d='M1124,2c0,0 0,256 0,256l-1125,0l0,-48c0,0 16,5 55,5c116,0 197,-92 325,-92c121,0 114,46 254,46c140,0 214,-167 572,-166Z' style='fill: white' /></svg>") no-repeat bottom,linear-gradient(to bottom,var(--md-primary-fg-color),#2a978d 99%,#fff 99%)}.tx-hero{margin:0 .8rem;color:var(--md-primary-bg-color)}.tx-hero h1{margin-bottom:1rem;color:currentColor;
+        background:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1123 258'><path d='M1124,2c0,0 0,256 0,256l-1125,0l0,-48c0,0 16,5 55,5c116,0 197,-92 325,-92c121,0 114,46 254,46c140,0 214,-167 572,-166Z' style='fill: white' /></svg>") no-repeat bottom,linear-gradient(to bottom,var(--md-primary-fg-color),#2a978d 99%,#fff 99%)
+        /*height: 700px;*/
     }
 
     .tx-hero {
-        padding-top: 0rem;
-        padding-bottom: 0rem;
-        padding-right: 0rem;
-        padding-left: 0rem;
-        margin: 0px 0rem;
-        margin-top: 0px;
-        margin-bottom: 0px;
-        margin-right: 0px;
-        margin-left: 0px;
         color: var(--md-primary-bg-color);
         justify-content: right;
     }
@@ -56,14 +44,14 @@ NOTE: At line 9 -> 'background:' has the current color for the botom part of the
     }
 
     .tx-hero__content {
-        padding-bottom: 9rem;
+        padding-bottom: 8rem;
         justify-content: left;
         padding-right: 3rem;
     }
 
     .tx-hero__image {
-        width:35rem;
-        height:35rem;
+        max-width:100%;
+        max-height:100%;
         order:1;
         padding-right: 2.5rem;
     }
@@ -88,18 +76,14 @@ NOTE: At line 9 -> 'background:' has the current color for the botom part of the
     }
 
     .tx-container-2 {
-        padding-top: 0rem;
-        padding-bottom: 0rem;
         padding: 0rem;
         background-color: white;
-        margin-top: 0px;
-        margin-bottom: 0px;
-        height: 550px;
+        margin-bottom: 50px;
     }
 
     .tx-hero__image-2 {
-        width:35rem;
-        height:35rem;
+        max-width:100%;
+        max-height:100%;
         order:1;
         padding-right: 0.5rem;
         padding-left: 0rem;
@@ -107,23 +91,17 @@ NOTE: At line 9 -> 'background:' has the current color for the botom part of the
     }
 
     .tx-hero__content-2 {
-        padding-top: 0rem;
-        padding-bottom: 0rem;
-        padding-right: 0rem;
-        padding-left: 0rem;
-        margin-top: 0px;
-        margin-bottom: 0px;
-        margin-right: 0px;
-        margin-left: 100px;
+        margin-left: 50px;
         justify-content: left;
         color: #2a978d;
         font-weight: 300;
         padding: 0 0px;
-        word-break: break-word
+        word-break: break-word;
         float: right;
     }
 
     .tx-hero__content-2 h1 {
+        margin-top: 50px;
         color: #2a978d;
         font-weight: 600;
         font-size: 38px;
@@ -131,8 +109,6 @@ NOTE: At line 9 -> 'background:' has the current color for the botom part of the
         overflow: hidden;
         text-overflow: ellipsis;
         line-height: normal;
-        margin-top: 0px;
-        margin-bottom: 0px;
         font-family: inherit;
     }
 
@@ -141,7 +117,6 @@ NOTE: At line 9 -> 'background:' has the current color for the botom part of the
         line-height: 1.8em;
         text-rendering: optimizeLegibility;
         color: black;
-        margin: 0 0 0px;
         display: block;
         font-family: inherit;
     }
@@ -155,42 +130,45 @@ NOTE: At line 9 -> 'background:' has the current color for the botom part of the
     }
 
     .tx-container-3 {
-        padding-top: 0rem;
-        padding-bottom: 0rem;
-        padding-right: 0rem;
-        padding-left: 0rem;
         margin: 0px 0rem;
-        margin-top: 0px;
-        margin-bottom: 0px;
-        margin-right: 0px;
-        margin-left: 0px;
-        height: 600px;
-        background: linear-gradient(to bottom,var(--md-primary-fg-color),#02162f 99%,#fff 99%)}.tx-hero{margin:0 .8rem;color:var(--md-primary-bg-color)}.tx-hero h1{margin-bottom:1rem;color:currentColor;
+        height: 590px;
+        background: linear-gradient(to bottom,var(--md-primary-fg-color),#02162f 99%,#fff 99%)
     }
 
     .tx-hero__image-3 {
-        width:40rem;
+        max-width:100%;
+        max-height:100%;
         order:1;
-        padding-top: 0rem;
-        padding-bottom: 0rem;
         padding-right: 2.5rem;
-        padding-left: 0rem;
-        margin-top: 0px;
-        margin-bottom: 0px;
-        margin-right: 0px;
-        margin-left: 0px;
     }
 
     .tx-footer {
-        padding-top: 0rem;
-        padding-bottom: 0rem;
-        padding: 0rem;
+        margin: 0px 0rem;
         background-color: white;
-        margin-top: 0px;
-        margin-bottom: 0px;
-        height: 100px;
+        height: 40px;
     }
 
+    .tx-hero__content-footer {
+        justify-content: left;
+        color: #2a978d;
+        font-weight: 300;
+        padding: 0 0px;
+        word-break: break-word;
+        float: left;
+    }
+
+    .tx-footer p {
+        font-size: 12px;
+        line-height: 1.8em;
+        text-rendering: optimizeLegibility;
+        color: black;
+        display: block;
+        font-family: inherit;
+    }
+
+    /**/
+    /*Adjusting Mobile UI */
+    /**/
     @media screen and (max-width:30em) {
         .tx-hero h1 {
             font-size: 1.4rem
@@ -218,47 +196,6 @@ NOTE: At line 9 -> 'background:' has the current color for the botom part of the
         }
     }
 
-    @media screen and (min-width:76.25em) {
-        .md-sidebar--primary {
-            display: none
-        }
-
-        .top-hr {
-            width: 100%;
-            display: flex;
-            max-width: 61rem;
-            margin-right: auto;
-            margin-left: auto;
-            padding: 0 .2rem;
-        }
-
-        .bottom-hr {
-            margin-top: 10px;
-            width: 100%;
-            display: flex;
-            max-width: 61rem;
-            margin-right: auto;
-            margin-left: auto;
-            padding: 0 .2rem;
-        }
-
-        .feature-item {
-            flex: 1;
-            min-width: 0;
-        }
-
-        .feature-item:hover {
-            background-color: #526cfe47;
-            border-radius: 3px;
-        }
-    }
-
-    .hr {
-        border-bottom: 1px solid #eee;
-        width: 100%;
-        margin: 20px 0;
-    }
-
     .text-center {
         text-align: center;
         padding-right: 15px;
@@ -270,6 +207,21 @@ NOTE: At line 9 -> 'background:' has the current color for the botom part of the
         font-size: 23px;
         font-weight: 300;
         padding-bottom: 10px;
+    }
+
+    .logos {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-flow: row wrap;
+        margin: 0 auto;
+    }
+
+    .logos img {
+        flex: 1 1 auto;
+        padding: 25px;
+        max-height: 130px;
+        vertical-align: middle;
     }
 </style>
 
@@ -348,7 +300,7 @@ NOTE: At line 9 -> 'background:' has the current color for the botom part of the
                 <img
                         src="assets/images/illustrations/home-section-2.png"
                         alt=""
-                        width="1000"
+                        width="800"
                         draggable="false"
                         align="left"
                 >
@@ -429,8 +381,13 @@ NOTE: At line 9 -> 'background:' has the current color for the botom part of the
     <div class="md-grid md-typeset">
         <div class="tx-hero">
             <!-- Hero content -->
-            <div class="tx-hero__content-2">
-                <h2>© 2021 <strong><a href="https://www.binbash.com.ar">Binbashar, Inc</a></strong>. All rights reserved</h2>
+            <div class="tx-hero__content-footer">
+                <p>
+                    © 2021
+                <strong>
+                    <a href="https://www.binbash.com.ar">Binbashar, Inc</a>
+                </strong>. All rights reserved
+                </p>
             </div>
         </div>
     </div>

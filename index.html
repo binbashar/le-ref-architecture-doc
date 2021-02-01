@@ -310,23 +310,277 @@
 
 <!-- Additional styles for landing page -->
 <style>
-    .md-header{position:initial}.md-main__inner{margin:0}.md-content{display:none}.tx-container{padding-top:1rem;
 
-    background:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1123 258'><path d='M1124,2c0,0 0,256 0,256l-1125,0l0,-48c0,0 16,5 55,5c116,0 197,-92 325,-92c121,0 114,46 254,46c140,0 214,-167 572,-166Z' style='fill: white' /></svg>") no-repeat bottom,linear-gradient(to bottom,var(--md-primary-fg-color),#2a978d 99%,#fff 99%)}.tx-hero{margin:0 .8rem;color:var(--md-primary-bg-color)}.tx-hero h1{margin-bottom:1rem;color:currentColor;
+    .md-header {
+        position:initial
+     }
 
-    font-weight:700}.tx-hero__content{padding-bottom:6rem}.tx-hero .md-button{margin-top:.5rem;margin-right:.5rem;
+    .md-main__inner {
+        margin:0
+    }
 
-    color:var(--md-primary-bg-color)}.tx-hero .md-button--primary{background-color:var(--md-primary-bg-color);color:hsla(280deg,37%,48%,1);
+    .md-footer-copyright {
+        display:none
+    }
 
-    border-color:var(--md-primary-bg-color)}.tx-hero .md-button:focus,.tx-hero .md-button:hover{background-color:var(--md-accent-fg-color);
+    .md-footer-nav__inner {
+        display:none
+    }
 
-    color:var(--md-default-bg-color);border-color:var(--md-accent-fg-color)}@media screen and (max-width:30em){.tx-hero h1{font-size:1.4rem}}@media screen and (min-width:60em){.md-sidebar--secondary{display:none}.tx-hero{display:flex;align-items:stretch}.tx-hero__content{max-width:19rem;margin-top:3.5rem;
+    .md-content {
+        display:none
+    }
 
-    padding-bottom:14vw}.tx-hero__image{width:38rem;order:1;transform:translateX(4rem)}}@media screen and (min-width:76.25em){.md-sidebar--primary{display:none}.tx-hero__image{transform:translateX(8rem)}}
+    .md-footer-meta__inner {
+        align-content: center;
+        display: flex;
+        align-items: center;
+        justify-content: center
+    }
 
+    .tx-container {
+        padding-top: 0rem;
+        background:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1123 258'><path d='M1124,2c0,0 0,256 0,256l-1125,0l0,-48c0,0 16,5 55,5c116,0 197,-92 325,-92c121,0 114,46 254,46c140,0 214,-167 572,-166Z' style='fill: white' /></svg>") no-repeat bottom,linear-gradient(to bottom,var(--md-primary-fg-color),#2a978d 99%,#fff 99%)
+    }
+
+    .tx-hero {
+        color: var(--md-primary-bg-color);
+        justify-content: right;
+    }
+
+    .tx-hero h1 {
+        margin-bottom: 0rem;
+        color: currentColor;
+        font-weight: 700
+    }
+
+    .tx-hero__content {
+        padding-bottom: 9rem;
+        justify-content: left;
+        padding-right: 3rem;
+    }
+
+    .tx-hero__image {
+        max-width:100%;
+        max-height:100%;
+        order:1;
+        padding-right: 2.5rem;
+    }
+
+    .tx-hero .md-button {
+        margin-top: .5rem;
+        margin-right: .5rem;
+        color: var(--md-primary-bg-color)
+    }
+
+    .tx-hero .md-button--primary {
+        background-color: var(--md-primary-bg-color);
+        color: hsla(280deg, 37%, 48%, 1);
+        border-color: var(--md-primary-bg-color)
+    }
+
+    .tx-hero .md-button:focus,
+    .tx-hero .md-button:hover {
+        background-color: var(--md-accent-fg-color);
+        color: var(--md-default-bg-color);
+        border-color: var(--md-accent-fg-color)
+    }
+
+    .tx-container-2 {
+        padding: 0rem;
+        background-color: white;
+        margin-bottom: 0px;
+    }
+
+    .tx-hero__image-2 {
+        max-width:100%;
+        max-height:100%;
+        order:1;
+        padding-right: 0.5rem;
+        padding-left: 0rem;
+        padding-bottom: 0px;
+        float: left;
+    }
+
+    .tx-hero__content-2 {
+        margin-left: 50px;
+        justify-content: left;
+        color: #2a978d;
+        font-weight: 300;
+        padding: 0 0px;
+        padding-bottom: 90px;
+        word-break: break-word;
+        float: right;
+    }
+
+    .tx-hero__content-2 h1 {
+        margin-top: 50px;
+        color: #2a978d;
+        font-weight: 600;
+        font-size: 36px;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        line-height: normal;
+        /*font-family: inherit;*/
+    }
+
+    .tx-hero__content-2 p {
+        font-size: 17px;
+        line-height: 1.8em;
+        text-rendering: optimizeLegibility;
+        color: black;
+        display: block;
+        /*font-family: inherit;*/
+    }
+
+    .tx-hero__content-2 a:link {
+        color: #2a978d;
+    }
+
+    .tx-hero__content-2 a:visited {
+        color: #2a978d;
+    }
+
+    .tx-container-3 {
+        height: 620px;
+        background: linear-gradient(to bottom,var(--md-primary-fg-color),#02162f 99%,#fff 99%);
+    }
+
+    .tx-hero__image-3 {
+        max-width:100%;
+        max-height:100%;
+        order:1;
+        padding-right: 2.5rem;
+    }
+
+    .tx-footer {
+        margin: 0px 0rem;
+        background-color: white;
+        height: 40px;
+        display: flex;
+        align-items: center;
+        justify-content: center
+    }
+
+    .tx-hero__content-footer {
+        justify-content: left;
+        color: #2a978d;
+        font-weight: 300;
+        padding: 0 0px;
+        word-break: break-word;
+        float: left;
+    }
+
+    .tx-footer p {
+        font-size: 12px;
+        line-height: 1.8em;
+        text-rendering: optimizeLegibility;
+        color: black;
+        display: block;
+        font-family: inherit;
+    }
+
+    /**/
+    /*Adjusting Mobile UI */
+    /**/
+    @media screen and (max-width:30em) {
+        .tx-hero h1 {
+            font-size: 1.4rem
+        }
+        .tx-hero__content {
+            margin-left: 20px;
+            margin-right: 20px;
+        }
+
+        .tx-hero__content-2 {
+            margin-left: 20px;
+            margin-right: 20px;
+        }
+
+        .tx-hero__content-3 {
+            margin-left: 20px;
+            margin-right: 20px;
+        }
+    }
+
+    @media screen and (min-width:60em) {
+        .md-sidebar--secondary {
+            display: none
+        }
+
+        .tx-hero {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .tx-hero__content {
+            max-width: 22rem;
+            margin-top: 3.5rem;
+            margin-bottom: 3.5rem;
+            margin-left: 1.0rem;
+            margin-right: 4.0rem;
+            align-items: center;
+        }
+    }
+
+    @media screen and (min-width:76.25em) {
+        .md-sidebar--primary {
+            display: none
+        }
+
+        .top-hr {
+            width: 100%;
+            display: flex;
+            max-width: 61rem;
+            margin-right: auto;
+            margin-left: auto;
+            padding: 0 .2rem;
+        }
+
+        .bottom-hr {
+            margin-top: 10px;
+            width: 100%;
+            display: flex;
+            max-width: 61rem;
+            margin-right: auto;
+            margin-left: auto;
+            padding: 0 .2rem;
+        }
+    }
+
+    .text-center {
+        text-align: center;
+        padding-right: 15px;
+        padding-left: 15px;
+        margin-right: auto;
+        margin-left: auto;
+        margin-top: 15px;
+        /*font-family: 'Lato', sans-serif;*/
+        font-size: 23px;
+        font-weight: 300;
+        padding-bottom: 10px;
+    }
+
+    .logos {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-flow: row wrap;
+        margin: 0 auto;
+    }
+
+    .logos img {
+        flex: 1 1 auto;
+        padding: 25px;
+        max-height: 130px;
+        vertical-align: middle;
+    }
 </style>
 
 <!-- Hero for landing page -->
+<!-- 1st Section -->
 <section class="tx-container">
     <div class="md-grid md-typeset">
         <div class="tx-hero">
@@ -344,18 +598,6 @@
             <!-- Hero content -->
             <div class="tx-hero__content">
                 <h1>Leverage Reference Architecture</h1>
-
-                  <style>
-                    a:link {
-                        color: white;
-                    }
-                    a:hover {
-                        color: #311b92;
-                    }
-                    a:visited {
-                        color: white;
-                    }
-                  </style>
 
                 <p>
                     Reference AWS Cloud Solutions architecture designed under optimal configs for the most popular
@@ -399,6 +641,106 @@
                 Go to GitHub
                 </a>
 
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- 2nd Section -->
+<!-- WHAT IS LEVERAGE? -->
+<section class="tx-container-2">
+    <div class="md-grid md-typeset">
+            <div class="tx-hero__image-2">
+                <img
+                        src="assets/images/illustrations/home-section-2.png"
+                        alt=""
+                        width="800"
+                        draggable="false"
+                        align="left"
+                >
+            </div>
+        <div class="tx-hero">
+            <!-- Hero content -->
+            <div class="tx-hero__content-2">
+                <h1>What is Leverage?</h1>
+
+                <p>
+                    Our focus is on creating reusable, high quality AWS Cloud Infrastructure code, such as our
+                    <strong>
+                        <a href="https://leverage.binbash.com.ar/how-it-works/">Reference AWS Cloud Solutions Architecture.</a>
+                    </strong>
+                     backed by our
+                    <strong>
+                        <a href="https://leverage.binbash.com.ar/how-it-works/code-library/code-library/">DevOps Automation Code Library.</a>
+                    </strong>
+                    Because all the code and modules are already built, we can get you up and running
+                    <strong> at least 2x faster </strong> 🚀 than a consulting company (✅ typically in just few months!) on top of code that is
+                    thoroughly documented, tested, and has been proven in production at dozens of other project
+                    deployments by our
+                    <strong>
+                        <a href="https://leverage.binbash.com.ar/support/">Engineering Support Team.</a>
+                    </strong>
+
+                </p>
+
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- 3rd Section -->
+<!-- WHY LEVERAGE? -->
+<section class="tx-container-3">
+       <div class="md-grid md-typeset">
+        <div class="tx-hero">
+
+            <!-- Hero image -->
+            <div class="tx-hero__image-3">
+                <img
+                        src="assets/images/illustrations/home-section-3.png"
+                        alt=""
+                        width="600"
+                        draggable="false"
+                >
+            </div>
+
+            <!-- Hero content -->
+            <div class="tx-hero__content">
+                <h1>Why Leverage?</h1>
+
+                <p>
+                    If you implement our
+                    <strong>
+                        <a href="https://leverage.binbash.com.ar/how-it-works/">Reference AWS Cloud Solutions Architecture</a>
+                    </strong> via our
+                    <strong>
+                        <a href="https://leverage.binbash.com.ar/how-it-works/code-library/code-library/">DevOps Automation Code Library</a>
+                    </strong>
+                    , you will get your entire Cloud Native Application Infra in few months. Leverage will solve your
+                    entire infrastructure and will grant you complete control of the source code, and of course you'll
+                    be able to run it without us.
+                </p>
+
+                <p>
+                    <i>Implement yourself or we implement it for you! 💪</i>
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Footer Section -->
+<section class="tx-footer">
+    <div class="md-grid md-typeset">
+        <div class="tx-hero">
+            <!-- Hero content -->
+            <div class="tx-hero__content-footer">
+                <p>
+                    © 2021
+                <strong>
+                    <a href="https://www.binbash.com.ar">Binbashar, Inc</a>
+                </strong>. All rights reserved
+                </p>
             </div>
         </div>
     </div>
@@ -2380,6 +2722,19 @@
           <div class="md-content">
             <article class="md-content__inner md-typeset">
               
+                
+                  <a href="https://github.com/binbashar/le-ref-architecture-doc/edit/master/docs/index.md" title="Edit this page" class="md-content__button md-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg>
+                  </a>
+                
+                
+                  <h1>Home</h1>
+                
+                
+                
+                  
+                
+              
               
                 
 
@@ -2389,6 +2744,115 @@
           </div>
         </div>
       </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid" aria-label="Footer">
+        
+        
+          <a href="welcome/" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-footer-nav__title">
+              <div class="md-ellipsis">
+                <span class="md-footer-nav__direction">
+                  Next
+                </span>
+                Welcome
+              </div>
+            </div>
+            <div class="md-footer-nav__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+          <div class="md-footer-copyright__highlight">
+            Copyright &copy; 2017-2021 <a href="https://www.binbash.com.ar">Binbash</a>
+          </div>
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs
+        </a>
+      </div>
+      
+  <div class="md-footer-social">
+    
+      
+      
+        
+        
+      
+      <a href="https://www.binbash.com.ar" target="_blank" rel="noopener" title="www.binbash.com.ar" class="md-footer-social__link">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8h5z"/></svg>
+      </a>
+    
+      
+      
+        
+        
+      
+      <a href="https://github.com/binbashar" target="_blank" rel="noopener" title="github.com" class="md-footer-social__link">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2A10 10 0 002 12c0 4.42 2.87 8.17 6.84 9.5.5.08.66-.23.66-.5v-1.69c-2.77.6-3.36-1.34-3.36-1.34-.46-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.87 1.52 2.34 1.07 2.91.83.09-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.92 0-1.11.38-2 1.03-2.71-.1-.25-.45-1.29.1-2.64 0 0 .84-.27 2.75 1.02.79-.22 1.65-.33 2.5-.33.85 0 1.71.11 2.5.33 1.91-1.29 2.75-1.02 2.75-1.02.55 1.35.2 2.39.1 2.64.65.71 1.03 1.6 1.03 2.71 0 3.82-2.34 4.66-4.57 4.91.36.31.69.92.69 1.85V21c0 .27.16.59.67.5C19.14 20.16 22 16.42 22 12A10 10 0 0012 2z"/></svg>
+      </a>
+    
+      
+      
+        
+        
+      
+      <a href="https://www.linkedin.com/company/binbash" target="_blank" rel="noopener" title="www.linkedin.com" class="md-footer-social__link">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 3a2 2 0 012 2v14a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h14m-.5 15.5v-5.3a3.26 3.26 0 00-3.26-3.26c-.85 0-1.84.52-2.32 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 011.4 1.4v4.93h2.79M6.88 8.56a1.68 1.68 0 001.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 00-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z"/></svg>
+      </a>
+    
+      
+      
+        
+        
+      
+      <a href="https://join.slack.com/t/binbashar/shared_invite/zt-fw1692b6-9k4ADsWJ47lKacszphXM1w" target="_blank" rel="noopener" title="join.slack.com" class="md-footer-social__link">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M6 15a2 2 0 01-2 2 2 2 0 01-2-2 2 2 0 012-2h2v2m1 0a2 2 0 012-2 2 2 0 012 2v5a2 2 0 01-2 2 2 2 0 01-2-2v-5m2-8a2 2 0 01-2-2 2 2 0 012-2 2 2 0 012 2v2H9m0 1a2 2 0 012 2 2 2 0 01-2 2H4a2 2 0 01-2-2 2 2 0 012-2h5m8 2a2 2 0 012-2 2 2 0 012 2 2 2 0 01-2 2h-2v-2m-1 0a2 2 0 01-2 2 2 2 0 01-2-2V5a2 2 0 012-2 2 2 0 012 2v5m-2 8a2 2 0 012 2 2 2 0 01-2 2 2 2 0 01-2-2v-2h2m0-1a2 2 0 01-2-2 2 2 0 012-2h5a2 2 0 012 2 2 2 0 01-2 2h-5z"/></svg>
+      </a>
+    
+      
+      
+        
+        
+      
+      <a href="https://medium.com/binbash-inc" target="_blank" rel="noopener" title="medium.com" class="md-footer-social__link">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M0 32v448h448V32H0zm372.2 106.1l-24 23c-2.1 1.6-3.1 4.2-2.7 6.7v169.3c-.4 2.6.6 5.2 2.7 6.7l23.5 23v5.1h-118V367l24.3-23.6c2.4-2.4 2.4-3.1 2.4-6.7V199.8l-67.6 171.6h-9.1L125 199.8v115c-.7 4.8 1 9.7 4.4 13.2l31.6 38.3v5.1H71.2v-5.1l31.6-38.3c3.4-3.5 4.9-8.4 4.1-13.2v-133c.4-3.7-1-7.3-3.8-9.8L75 138.1V133h87.3l67.4 148L289 133.1h83.2v5z"/></svg>
+      </a>
+    
+      
+      
+        
+        
+      
+      <a href="https://twitter.com/binbash_devops" target="_blank" rel="noopener" title="twitter.com" class="md-footer-social__link">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M22.46 6c-.77.35-1.6.58-2.46.69.88-.53 1.56-1.37 1.88-2.38-.83.5-1.75.85-2.72 1.05C18.37 4.5 17.26 4 16 4c-2.35 0-4.27 1.92-4.27 4.29 0 .34.04.67.11.98C8.28 9.09 5.11 7.38 3 4.79c-.37.63-.58 1.37-.58 2.15 0 1.49.75 2.81 1.91 3.56-.71 0-1.37-.2-1.95-.5v.03c0 2.08 1.48 3.82 3.44 4.21a4.22 4.22 0 01-1.93.07 4.28 4.28 0 004 2.98 8.521 8.521 0 01-5.33 1.84c-.34 0-.68-.02-1.02-.06C3.44 20.29 5.7 21 8.12 21 16 21 20.33 14.46 20.33 8.79c0-.19 0-.37-.01-.56.84-.6 1.56-1.36 2.14-2.23z"/></svg>
+      </a>
+    
+      
+      
+        
+        
+      
+      <a href="https://hub.docker.com/orgs/binbash" target="_blank" rel="noopener" title="hub.docker.com" class="md-footer-social__link">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21.81 10.25c-.06-.04-.56-.43-1.64-.43-.28 0-.56.03-.84.08-.21-1.4-1.38-2.11-1.43-2.14l-.29-.17-.18.27c-.24.36-.43.77-.51 1.19-.2.8-.08 1.56.33 2.21-.49.28-1.29.35-1.46.35H2.62c-.34 0-.62.28-.62.63 0 1.15.18 2.3.58 3.38.45 1.19 1.13 2.07 2 2.61.98.6 2.59.94 4.42.94.79 0 1.61-.07 2.42-.22 1.12-.2 2.2-.59 3.19-1.16A8.3 8.3 0 0016.78 16c1.05-1.17 1.67-2.5 2.12-3.65h.19c1.14 0 1.85-.46 2.24-.85.26-.24.45-.53.59-.87l.08-.24-.19-.14m-17.96.99h1.76c.08 0 .16-.07.16-.16V9.5c0-.08-.07-.16-.16-.16H3.85c-.09 0-.16.07-.16.16v1.58c.01.09.07.16.16.16m2.43 0h1.76c.08 0 .16-.07.16-.16V9.5c0-.08-.07-.16-.16-.16H6.28c-.09 0-.16.07-.16.16v1.58c.01.09.07.16.16.16m2.47 0h1.75c.1 0 .17-.07.17-.16V9.5c0-.08-.06-.16-.17-.16H8.75c-.08 0-.15.07-.15.16v1.58c0 .09.06.16.15.16m2.44 0h1.77c.08 0 .15-.07.15-.16V9.5c0-.08-.06-.16-.15-.16h-1.77c-.08 0-.15.07-.15.16v1.58c0 .09.07.16.15.16M6.28 9h1.76c.08 0 .16-.09.16-.18V7.25c0-.09-.07-.16-.16-.16H6.28c-.09 0-.16.06-.16.16v1.57c.01.09.07.18.16.18m2.47 0h1.75c.1 0 .17-.09.17-.18V7.25c0-.09-.06-.16-.17-.16H8.75c-.08 0-.15.06-.15.16v1.57c0 .09.06.18.15.18m2.44 0h1.77c.08 0 .15-.09.15-.18V7.25c0-.09-.07-.16-.15-.16h-1.77c-.08 0-.15.06-.15.16v1.57c0 .09.07.18.15.18m0-2.28h1.77c.08 0 .15-.07.15-.16V5c0-.1-.07-.17-.15-.17h-1.77c-.08 0-.15.06-.15.17v1.56c0 .08.07.16.15.16m2.46 4.52h1.76c.09 0 .16-.07.16-.16V9.5c0-.08-.07-.16-.16-.16h-1.76c-.08 0-.15.07-.15.16v1.58c0 .09.07.16.15.16"/></svg>
+      </a>
+    
+  </div>
+
+    </div>
+  </div>
+</footer>
       
     </div>
     

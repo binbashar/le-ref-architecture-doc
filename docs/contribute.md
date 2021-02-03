@@ -1,4 +1,4 @@
-# Developing for Binbash Leverage 
+# Contribute and Developing Binbash Leverage 
 
 This document explains how to get started with developing for **Leverage Reference Architecture**.
 It includes how to build, test, and [release](https://github.com/binbashar/le-tf-infra-aws/releases) new versions.
@@ -42,7 +42,6 @@ Please check the [deployment guide](./deploy/)
 To run tests, just run...
 
 ## Releasing
-
 ### CircleCi PR auto-release job
 
 ![circleci-logo](./assets/images/logos/circleci.png "CircleCI"){: style="width:150px"}

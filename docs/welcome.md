@@ -18,8 +18,8 @@ template: overrides/main.html
     production at dozens of other project deployments.
 
 !!! important "Why Leverage?"
-    You implement **Binbash Leverage Reference AWS Cloud Solutions Architecture** via our **DevOps Automation Code 
-    Library** and you get your entire Cloud Native Application Infra in few months. Leverage will solve your
+    If you implement the **Binbash Leverage Reference AWS Cloud Solutions Architecture** via our **DevOps Automation Code 
+    Library** you will get your entire Cloud Native Application Infra in few months. Leverage will solve your
     entire infrastructure and will grant you complete control of the source code, and of course you'll be able to
     run it without us.
      

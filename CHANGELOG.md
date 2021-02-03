@@ -7,6 +7,19 @@ All notable changes to this project will be documented in this file.
 
 
 
+<a name="v0.1.24"></a>
+## [v0.1.24] - 2021-02-01
+
+- BIZDEV-19 | rolling back latest css code segretation change
+- BIZDEV-19 | latest material mkdocs ver + landing updated and style moved to extra.css
+- BIZDEV-19 | centering components and fixing paddings
+- BIZDEV-19 | adding footer to landing
+- BIZDEV-19 | adjusting CSS for UI responsiveness,  landing to fit both desktop and mobile versions.
+- BIZDEV-19 | updating section 2 paragraph letter size
+- BIZDEV-19 | poiting makefile lib to its latest version
+- BIZDEV-19 | updating landing with 2 new leverage related sections
+
+
 <a name="v0.1.23"></a>
 ## [v0.1.23] - 2021-01-20
 
@@ -514,7 +527,8 @@ All notable changes to this project will be documented in this file.
 - Deployed  with MkDocs version: 1.1.2
 
 
-[Unreleased]: https://github.com/binbashar/le-ref-architecture-doc/compare/v0.1.23...HEAD
+[Unreleased]: https://github.com/binbashar/le-ref-architecture-doc/compare/v0.1.24...HEAD
+[v0.1.24]: https://github.com/binbashar/le-ref-architecture-doc/compare/v0.1.23...v0.1.24
 [v0.1.23]: https://github.com/binbashar/le-ref-architecture-doc/compare/v0.1.22...v0.1.23
 [v0.1.22]: https://github.com/binbashar/le-ref-architecture-doc/compare/v0.1.21...v0.1.22
 [v0.1.21]: https://github.com/binbashar/le-ref-architecture-doc/compare/v0.1.20...v0.1.21

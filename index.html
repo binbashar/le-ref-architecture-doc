@@ -312,23 +312,23 @@
 <style>
 
     .md-header {
-        position:initial
-     }
+        position: initial
+    }
 
     .md-main__inner {
-        margin:0
+        margin: 0
     }
 
     .md-footer-copyright {
-        display:none
+        display: none
     }
 
     .md-footer-nav__inner {
-        display:none
+        display: none
     }
 
     .md-content {
-        display:none
+        display: none
     }
 
     .md-footer-meta__inner {
@@ -340,7 +340,7 @@
 
     .tx-container {
         padding-top: 0rem;
-        background:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1123 258'><path d='M1124,2c0,0 0,256 0,256l-1125,0l0,-48c0,0 16,5 55,5c116,0 197,-92 325,-92c121,0 114,46 254,46c140,0 214,-167 572,-166Z' style='fill: white' /></svg>") no-repeat bottom,linear-gradient(to bottom,var(--md-primary-fg-color),#2a978d 99%,#fff 99%)
+        background: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1123 258'><path d='M1124,2c0,0 0,256 0,256l-1125,0l0,-48c0,0 16,5 55,5c116,0 197,-92 325,-92c121,0 114,46 254,46c140,0 214,-167 572,-166Z' style='fill: white' /></svg>") no-repeat bottom, linear-gradient(to bottom, var(--md-primary-fg-color), #2a978d 99%, #fff 99%)
     }
 
     .tx-hero {
@@ -361,9 +361,9 @@
     }
 
     .tx-hero__image {
-        max-width:100%;
-        max-height:100%;
-        order:1;
+        max-width: 100%;
+        max-height: 100%;
+        order: 1;
         padding-right: 2.5rem;
     }
 
@@ -393,9 +393,9 @@
     }
 
     .tx-hero__image-2 {
-        max-width:100%;
-        max-height:100%;
-        order:1;
+        max-width: 100%;
+        max-height: 100%;
+        order: 1;
         padding-right: 0.5rem;
         padding-left: 0rem;
         padding-bottom: 0px;
@@ -444,13 +444,13 @@
 
     .tx-container-3 {
         height: 620px;
-        background: linear-gradient(to bottom,var(--md-primary-fg-color),#02162f 99%,#fff 99%);
+        background: linear-gradient(to bottom, var(--md-primary-fg-color), #02162f 99%, #fff 99%);
     }
 
     .tx-hero__image-3 {
-        max-width:100%;
-        max-height:100%;
-        order:1;
+        max-width: 100%;
+        max-height: 100%;
+        order: 1;
         padding-right: 2.5rem;
     }
 
@@ -484,10 +484,11 @@
     /**/
     /*Adjusting Mobile UI */
     /**/
-    @media screen and (max-width:30em) {
+    @media screen and (max-width: 30em) {
         .tx-hero h1 {
             font-size: 1.4rem
         }
+
         .tx-hero__content {
             margin-left: 20px;
             margin-right: 20px;
@@ -504,7 +505,7 @@
         }
     }
 
-    @media screen and (min-width:60em) {
+    @media screen and (min-width: 60em) {
         .md-sidebar--secondary {
             display: none
         }
@@ -525,7 +526,7 @@
         }
     }
 
-    @media screen and (min-width:76.25em) {
+    @media screen and (min-width: 76.25em) {
         .md-sidebar--primary {
             display: none
         }
@@ -579,6 +580,231 @@
     }
 </style>
 
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
+    }
+
+    body {
+        background: #FFFFFF;
+        color: #FFF;
+        font-size: 62.5%;
+        font-family: 'Roboto', Arial, Helvetica, Sans-serif, Verdana;
+    }
+
+    ul {
+        list-style-type: none;
+    }
+
+    .pricing-table-title {
+        text-transform: uppercase;
+        font-weight: 700;
+        font-size: 2.6em;
+        color: #0a192f;
+        margin-top: 15px;
+        text-align: left;
+        margin-bottom: 25px;
+        text-shadow: 0 1px 1px rgba(0, 0, 0, 0.4);
+    }
+
+    .pricing-table-title a {
+        font-size: 0.6em;
+    }
+
+    .clearfix:after {
+        content: '';
+        display: block;
+        height: 0;
+        width: 0;
+        clear: both;
+    }
+
+    /** ========================
+     * Contenedor
+     ============================*/
+    .pricing-wrapper {
+        width: 960px;
+        padding-bottom: 40px;
+        margin: 40px auto 0;
+    }
+
+    .pricing-table {
+        margin: 0 10px;
+        text-align: center;
+        width: 300px;
+        float: left;
+        -webkit-box-shadow: 0 0 15px rgba(0, 0, 0, 0.4);
+        box-shadow: 0 0 15px rgba(0, 0, 0, 0.4);
+        -webkit-transition: all 0.25s ease;
+        -o-transition: all 0.25s ease;
+        transition: all 0.25s ease;
+    }
+
+    .pricing-table:hover {
+        -webkit-transform: scale(1.06);
+        -ms-transform: scale(1.06);
+        -o-transform: scale(1.06);
+        transform: scale(1.06);
+    }
+
+    .pricing-title {
+        color: #FFF;
+        background: #172a45;
+        padding: 20px 0;
+        font-size: 2em;
+        text-transform: uppercase;
+        text-shadow: 0 1px 1px rgba(0, 0, 0, 0.4);
+    }
+
+    .pricing-table.recommended .pricing-title {
+        background: #2a978d;
+    }
+
+    .pricing-table.recommended .pricing-action {
+        background: #2a978d;
+    }
+
+    .pricing-table .price {
+        background: #403e3d;
+        font-size: 3.4em;
+        font-weight: 700;
+        padding: 20px 0;
+        text-shadow: 0 1px 1px rgba(0, 0, 0, 0.4);
+    }
+
+    .pricing-table .price sup {
+        font-size: 0.4em;
+        position: relative;
+        left: 5px;
+    }
+
+    .table-list {
+        background: #FFF;
+        color: #403d3a;
+    }
+
+    .table-list li {
+        font-size: 1.4em;
+        font-weight: 700;
+        padding: 12px 8px;
+    }
+
+    .table-list li:before {
+        content: "\f00c";
+        font-family: 'FontAwesome';
+        color: #3fab91;
+        display: inline-block;
+        position: relative;
+        right: 5px;
+        font-size: 16px;
+    }
+
+    .table-list li span {
+        font-weight: 400;
+    }
+
+    .table-list li span.unlimited {
+        color: #FFF;
+        background: #172a45;
+        font-size: 0.9em;
+        padding: 5px 7px;
+        display: inline-block;
+        -webkit-border-radius: 38px;
+        -moz-border-radius: 38px;
+        border-radius: 38px;
+    }
+
+
+    .table-list li:nth-child(2n) {
+        background: #F0F0F0;
+    }
+
+    .table-buy {
+        background: #FFF;
+        padding: 15px;
+        text-align: left;
+        overflow: hidden;
+    }
+
+    .table-buy p {
+        float: left;
+        color: #37353a;
+        font-weight: 700;
+        font-size: 2.4em;
+    }
+
+    .table-buy p sup {
+        font-size: 0.5em;
+        position: relative;
+        left: 5px;
+    }
+
+    .table-buy .pricing-action {
+        float: right;
+        color: #FFF;
+        background: #172a45;
+        padding: 10px 16px;
+        -webkit-border-radius: 2px;
+        -moz-border-radius: 2px;
+        border-radius: 2px;
+        font-weight: 700;
+        font-size: 1.4em;
+        text-shadow: 0 1px 1px rgba(0, 0, 0, 0.4);
+        -webkit-transition: all 0.25s ease;
+        -o-transition: all 0.25s ease;
+        transition: all 0.25s ease;
+    }
+
+    .table-buy .pricing-action:hover {
+        background: #2a978d;
+    }
+
+    .recommended .table-buy .pricing-action:hover {
+        background: #172a45;
+    }
+
+    /** ================
+     * Responsive
+     ===================*/
+    @media only screen and (min-width: 768px) and (max-width: 959px) {
+        .pricing-wrapper {
+            width: 768px;
+        }
+
+        .pricing-table {
+            width: 236px;
+        }
+
+        .table-list li {
+            font-size: 1.3em;
+        }
+
+    }
+
+    @media only screen and (max-width: 767px) {
+        .pricing-wrapper {
+            width: 420px;
+        }
+
+        .pricing-table {
+            display: block;
+            float: none;
+            margin: 0 0 20px 0;
+            width: 100%;
+        }
+    }
+
+    @media only screen and (max-width: 479px) {
+        .pricing-wrapper {
+            width: 300px;
+        }
+    }
+</style>
+
 <!-- Hero for landing page -->
 <!-- 1st Section -->
 <section class="tx-container">
@@ -618,8 +844,8 @@
                     </strong>
                     to rapidly implement it,
                     <strong>
-                    <a href="https://leverage.binbash.com.ar/welcome/">Leverage
-                    </a>
+                        <a href="https://leverage.binbash.com.ar/welcome/">Leverage
+                        </a>
                     </strong>
                     will solve your entire infrastructure and will grant you complete control of the source code, and of
                     course
@@ -627,18 +853,18 @@
                 </p>
 
                 <a
-                href="welcome/"
-                title="Welcome"
-                class="md-button md-button--primary"
+                        href="welcome/"
+                        title="Welcome"
+                        class="md-button md-button--primary"
                 >
-                Get started
+                    Get started
                 </a>
 
                 <a
-                href="https://github.com/binbashar/le-ref-architecture-doc/"
-                title="Go to repository"
-                class="md-button">
-                Go to GitHub
+                        href="https://github.com/binbashar/le-ref-architecture-doc/"
+                        title="Go to repository"
+                        class="md-button">
+                    Go to GitHub
                 </a>
 
             </div>
@@ -650,15 +876,15 @@
 <!-- WHAT IS LEVERAGE? -->
 <section class="tx-container-2">
     <div class="md-grid md-typeset">
-            <div class="tx-hero__image-2">
-                <img
-                        src="assets/images/illustrations/home-section-2.png"
-                        alt=""
-                        width="800"
-                        draggable="false"
-                        align="left"
-                >
-            </div>
+        <div class="tx-hero__image-2">
+            <img
+                    src="assets/images/illustrations/home-section-2.png"
+                    alt=""
+                    width="800"
+                    draggable="false"
+                    align="left"
+            >
+        </div>
         <div class="tx-hero">
             <!-- Hero content -->
             <div class="tx-hero__content-2">
@@ -667,14 +893,17 @@
                 <p>
                     Our focus is on creating reusable, high quality AWS Cloud Infrastructure code, such as our
                     <strong>
-                        <a href="https://leverage.binbash.com.ar/how-it-works/">Reference AWS Cloud Solutions Architecture.</a>
+                        <a href="https://leverage.binbash.com.ar/how-it-works/">Reference AWS Cloud Solutions
+                            Architecture.</a>
                     </strong>
-                     backed by our
+                    backed by our
                     <strong>
-                        <a href="https://leverage.binbash.com.ar/how-it-works/code-library/code-library/">DevOps Automation Code Library.</a>
+                        <a href="https://leverage.binbash.com.ar/how-it-works/code-library/code-library/">DevOps
+                            Automation Code Library.</a>
                     </strong>
                     Because all the code and modules are already built, we can get you up and running
-                    <strong> at least 2x faster </strong> 🚀 than a consulting company (✅ typically in just few months!) on top of code that is
+                    <strong> at least 2x faster </strong> 🚀 than a consulting company (✅ typically in just few months!)
+                    on top of code that is
                     thoroughly documented, tested, and has been proven in production at dozens of other project
                     deployments by our
                     <strong>
@@ -691,7 +920,7 @@
 <!-- 3rd Section -->
 <!-- WHY LEVERAGE? -->
 <section class="tx-container-3">
-       <div class="md-grid md-typeset">
+    <div class="md-grid md-typeset">
         <div class="tx-hero">
 
             <!-- Hero image -->
@@ -711,10 +940,12 @@
                 <p>
                     If you implement our
                     <strong>
-                        <a href="https://leverage.binbash.com.ar/how-it-works/">Reference AWS Cloud Solutions Architecture</a>
+                        <a href="https://leverage.binbash.com.ar/how-it-works/">Reference AWS Cloud Solutions
+                            Architecture</a>
                     </strong> via our
                     <strong>
-                        <a href="https://leverage.binbash.com.ar/how-it-works/code-library/code-library/">DevOps Automation Code Library</a>
+                        <a href="https://leverage.binbash.com.ar/how-it-works/code-library/code-library/">DevOps
+                            Automation Code Library</a>
                     </strong>
                     , you will get your entire Cloud Native Application Infra in few months. Leverage will solve your
                     entire infrastructure and will grant you complete control of the source code, and of course you'll
@@ -729,6 +960,95 @@
     </div>
 </section>
 
+<section>
+    <!-- Contenedor -->
+    <div class="pricing-wrapper clearfix">
+        <!-- Titulo -->
+        <h1 class="pricing-table-title">Subscription Plans <a href="http://leverage.binbash.com.ar">leverage.binbash.com.ar</a>
+        </h1>
+
+        <div class="pricing-table">
+            <h3 class="pricing-title">Community (Free)</h3>
+            <div class="price">$0<sup>/ month</sup></div>
+            <!-- Lista de Caracteristicas / Propiedades -->
+            <ul class="table-list">
+                <li>AWS Reference Architecture <span>access</span></li>
+                <li>+120 Open Source modules <span>access</span> <span class="unlimited">unlimited</span></li>
+                <li>Documentation <span>access</span> <span class="unlimited">unlimited</span></li>
+                <li>Public Slack Channel <span>access</span></li>
+                <li>Community <span>support</span></li>
+            </ul>
+            <!-- Contratar / Contact Us -->
+            <div class="table-buy">
+                <p><sup> Open Source ❤️</sup></p>
+                <a href="https://github.com/binbashar"
+                   class="pricing-action">Free</a>
+            </div>
+        </div>
+
+        <div class="pricing-table recommended">
+            <h3 class="pricing-title">Premium</h3>
+            <div class="price">$5900<sup>/ month</sup></div>
+            <!-- Lista de Caracteristicas / Propiedades -->
+            <ul class="table-list">
+                <li>AWS Reference Architecture <span>access</span> <span class="unlimited">unlimited</span></li>
+                <li>+120 Open Source modules <span>access</span> <span class="unlimited">unlimited</span></li>
+                <li>Documentation <span>access</span> <span class="unlimited">unlimited</span></li>
+                <li>Public Slack Channel <span>access</span></li>
+                <li>Premium <span>support</span> <span  class="unlimited">limited</span> <br>
+                    <p style="text-align: left;">
+                        <small >
+                            ✅ 2 x repos feature reqs (SLA: 96hs)<br>
+                            ✅ 2 x issues reqs (SLA: 72hs)<br>
+                            ✅ 3 x imple support reqs (SLA: 72hs)<br>
+                            ✅ Notif (sec, updates, eol, releases)
+                        </small>
+                    </p>
+                </li>
+            </ul>
+
+            <!-- Contratar / Contact Us -->
+            <div class="table-buy">
+                <p>$5900<sup>/ month</sup></p>
+                <a href="https://mail.google.com/mail/?view=cm&fs=1&to=info@binbash.com.ar&su=Leverage Premium Subscription
+                &body=We're interested in the Leverage Premium Subscription"
+                   class="pricing-action">Contact Us</a>
+            </div>
+        </div>
+
+        <div class="pricing-table">
+            <h3 class="pricing-title">Business</h3>
+            <div class="price">$70<sup>/ hour</sup></div>
+            <!-- Lista de Caracteristicas / Propiedades -->
+            <ul class="table-list">
+                <li>AWS Reference Architecture <span>access</span> <span class="unlimited">unlimited</span></li>
+                <li>+120 Open Source modules <span>access</span> <span class="unlimited">unlimited</span></li>
+                <li>Documentation <span>access</span> <span class="unlimited">unlimited</span></li>
+                <li>Public & Private Slack Channel <span>access</span></li>
+                <li>Business <span>support</span> <span  class="unlimited">on-demand</span> <br>
+                    <p style="text-align: left;">
+                        <small >
+                            ✅ on-demand custom modules reqs<br>
+                            ✅ on-demand repos feature reqs<br>
+                            ✅ on-demand issues reqs<br>
+                            ✅ on-demand imple support reqs<br>
+                            ✅ Notif (sec, updates, eol, releases) <br>
+                            📒 SLA: Best Effort (prime time hours)
+                        </small>
+                    </p>
+                </li>
+            </ul>
+            <!-- Contratar / Contact Us -->
+            <div class="table-buy">
+                <p>$11200<sup>/ month (160hs)</sup></p>
+                <a href="https://mail.google.com/mail/?view=cm&fs=1&to=info@binbash.com.ar&su=Leverage Business Subscription
+                &body=We're interested in the Leverage Business Subscription"
+                   class="pricing-action">Contact Us</a>
+            </div>
+        </div>
+    </div>
+</section>
+
 <!-- Footer Section -->
 <section class="tx-footer">
     <div class="md-grid md-typeset">
@@ -737,9 +1057,9 @@
             <div class="tx-hero__content-footer">
                 <p>
                     © 2021
-                <strong>
-                    <a href="https://www.binbash.com.ar">Binbashar, Inc</a>
-                </strong>. All rights reserved
+                    <strong>
+                        <a href="https://www.binbash.com.ar">Binbashar, Inc</a>
+                    </strong>. All rights reserved
                 </p>
             </div>
         </div>

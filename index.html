@@ -355,7 +355,7 @@
     }
 
     .tx-container {
-        height: 900px;
+        height: fit-content;
         padding-top: 0rem;
         background: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1123 258'><path d='M1124,2c0,0 0,256 0,256l-1125,0l0,-48c0,0 16,5 55,5c116,0 197,-92 325,-92c121,0 114,46 254,46c140,0 214,-167 572,-166Z' style='fill: white' /></svg>") no-repeat bottom, linear-gradient(to bottom, var(--md-primary-fg-color), #2a978d 99%, #fff 99%)
     }
@@ -372,6 +372,12 @@
     }
 
     .tx-hero__content {
+        padding-bottom: 9rem;
+        justify-content: left;
+        padding-right: 3rem;
+    }
+
+    .tx-hero__content_small {
         padding-bottom: 0;
         margin-bottom: 0;
         justify-content: left;
@@ -551,10 +557,6 @@
     @media screen and (min-width: 76.25em) {
         .md-sidebar--primary {
             display: none
-        }
-
-        .tx-container {
-            height: 1100px;
         }
 
         .top-hr {
@@ -953,13 +955,13 @@
                 <img
                         src="assets/images/illustrations/home-section-3.png"
                         alt=""
-                        width="600"
+                        width="2800"
                         draggable="false"
                 >
             </div>
 
             <!-- Hero content -->
-            <div class="tx-hero__content">
+            <div class="tx-hero__content_small">
                 <h1 id="why-leverage">Why Leverage?</h1>
 
                 <p>
@@ -1002,7 +1004,7 @@
             </div>
 
             <!-- Hero content -->
-            <div class="tx-hero__content">
+            <div class="tx-hero__content_small">
                 <h1 id="leverage-work-with-us">Work with us?</h1>
                 <p>
                     <i>Implement yourself or we implement it for you! 💪</i><br>

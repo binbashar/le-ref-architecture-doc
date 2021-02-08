@@ -7,6 +7,20 @@ All notable changes to this project will be documented in this file.
 
 
 
+<a name="v0.1.25"></a>
+## [v0.1.25] - 2021-02-08
+
+- BIZDEV-19 | email contact section updated
+- BIZDEV-19 | contact section updated
+- BIZDEV-19 | Brand new Work with Us section added with carrers, contact, contribute, faqs and support.
+- BIZDEV-19 | how-it-works image links updated
+- BIZDEV-19 | reorganizing company related files in new work-with-us section
+- BIZDEV-19 | updating to latets makefiles lib ver + mkdocs.yaml tree struture updated
+- BIZDEV-19 | updating landing with new sections: Work with us + Subscription Plan & New images added.
+- Merge branch 'master' into feature/BIZDEV-19-target-audience
+- BIZDEV-19 | Adding carrers, contribute and faqs sections
+
+
 <a name="v0.1.24"></a>
 ## [v0.1.24] - 2021-02-01
 
@@ -527,7 +541,8 @@ All notable changes to this project will be documented in this file.
 - Deployed  with MkDocs version: 1.1.2
 
 
-[Unreleased]: https://github.com/binbashar/le-ref-architecture-doc/compare/v0.1.24...HEAD
+[Unreleased]: https://github.com/binbashar/le-ref-architecture-doc/compare/v0.1.25...HEAD
+[v0.1.25]: https://github.com/binbashar/le-ref-architecture-doc/compare/v0.1.24...v0.1.25
 [v0.1.24]: https://github.com/binbashar/le-ref-architecture-doc/compare/v0.1.23...v0.1.24
 [v0.1.23]: https://github.com/binbashar/le-ref-architecture-doc/compare/v0.1.22...v0.1.23
 [v0.1.22]: https://github.com/binbashar/le-ref-architecture-doc/compare/v0.1.21...v0.1.22

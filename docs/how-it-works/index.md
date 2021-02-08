@@ -28,7 +28,7 @@ Projects’s AWS infrastructure.
 ### Reference Architecture 
 
 Reference AWS Cloud Solutions architecture designed under optimal configs for the most
-popular modern web and mobile applications needs based on AWS [“Well Architected Framework”](../support.md).
+popular modern web and mobile applications needs based on AWS [“Well Architected Framework”](../work-with-us/support.md).
 With it's complete [**Leverage DevOps Automation Code Library**](./code-library/code-library.md) to rapidly implement it
 will solve your entire
 infrastructure and will grant you complete control of the source code and of course you'll

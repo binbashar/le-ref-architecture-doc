@@ -17,6 +17,7 @@ theme:
   name: material
   custom_dir: material
   language: en
+  #logo: assets/images/logos/binbash-icon.png
   icon: # https://www.materialpalette.com/icons
     logo: material/book-open-page-variant
 
@@ -92,8 +93,7 @@ nav:
     - First steps: "first-steps/index.md"
     - How it works: "how-it-works/index.md"
     - User guide: "user-guide/index.md"
-    - Support: "support.md"
-    - Development: "development.md"
+    - Work with us: "work-with-us/index.md"
     - License: "license.md"
 
   - First Steps:
@@ -211,4 +211,16 @@ nav:
       - AWS:
           - Organization: "examples/organization.md"
           - K8s Kops: "examples/k8s-kops.md"
+
+  - Work with us:
+      - Overview: "work-with-us/index.md"
+      - Support:
+          - Support: "work-with-us/support.md"
+          - Updates:
+              - January 2021: "work-with-us/updates/product-updates-01-2021.md"
+      - Contribute: "work-with-us/contribute.md"
+      - Carrers: "work-with-us/carrers.md"
+      - FAQs: "work-with-us/faqs.md"
+      - Contact: "work-with-us/contact.md"
+
 

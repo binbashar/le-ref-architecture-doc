@@ -12,13 +12,13 @@ All notable changes to this project will be documented in this file.
 
 - BIZDEV-19 | email contact section updated
 - BIZDEV-19 | contact section updated
-- BIZDEV-19 | Brand new Work with Us section added with carrers, contact, contribute, faqs and support.
+- BIZDEV-19 | Brand new Work with Us section added with Premium, contact, contribute, faqs and support.
 - BIZDEV-19 | how-it-works image links updated
 - BIZDEV-19 | reorganizing company related files in new work-with-us section
 - BIZDEV-19 | updating to latets makefiles lib ver + mkdocs.yaml tree struture updated
 - BIZDEV-19 | updating landing with new sections: Work with us + Subscription Plan & New images added.
 - Merge branch 'master' into feature/BIZDEV-19-target-audience
-- BIZDEV-19 | Adding carrers, contribute and faqs sections
+- BIZDEV-19 | Adding Premium, contribute and faqs sections
 
 
 <a name="v0.1.24"></a>

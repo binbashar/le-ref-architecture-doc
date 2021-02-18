@@ -219,6 +219,13 @@ nav:
           - Updates:
               - January 2021: "work-with-us/updates/product-updates-01-2021.md"
       - Contribute: "work-with-us/contribute.md"
+      - Roadmap:
+        - Overview: "work-with-us/roadmap/overview.md"
+        - Operational Excellence: "work-with-us/roadmap/operational-excellence.md"
+        - Reliability & Performance: "work-with-us/roadmap/reliability-performance.md"
+        - Security: "work-with-us/roadmap/security.md"
+        - Cost Optimization: "work-with-us/roadmap/cost-optimization.md"
+        - Demo Applications: "work-with-us/roadmap/demo-apps.md"
       - Careers: "work-with-us/careers.md"
       - FAQs: "work-with-us/faqs.md"
       - Contact: "work-with-us/contact.md"

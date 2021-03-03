@@ -51,6 +51,18 @@ extra:
     - icon: material/docker
       link: 'https://hub.docker.com/orgs/binbash'
 
+#  alternate:
+#
+#    # Switch to English
+#    - name: English
+#      link: https://leverage.binbash.com.ar
+#      lang: en
+#
+#    # Switch to Spanish
+#    - name: Spanish
+#      link: https://leverage.binbash.com.ar/es/
+#      lang: es
+
 #===================================================================================#
 # Mkdocs Markdown Extentions, Plugins & extras
 #===================================================================================#

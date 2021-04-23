@@ -114,6 +114,7 @@ nav:
   - How it works:
     - Desing:
         - Overview: "how-it-works/index.md"
+        - Why our stack?: "how-it-works/why.md"
         - Considerations: "how-it-works/considerations.md"
     - Leverage Code Library:
       - Overview: "how-it-works/code-library/code-library.md"

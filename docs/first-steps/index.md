@@ -3,7 +3,7 @@
 
 # First Steps
 
-The objective of this sections is to explain the [**Binbash Leverage Reference AWS Cloud Solutions Architecture**](https://drive.google.com/file/d/1Z7VfioV6txbisv70cFIif2j6AnQ__fAc/view?usp=sharing)
+The objective of this sections is to explain the [**Binbash Leverage Reference AWS Cloud Solutions Architecture**](../how-it-works/)
 first steps.
 
 ## Overview

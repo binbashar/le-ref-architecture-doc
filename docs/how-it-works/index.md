@@ -3,7 +3,7 @@
 
 # How it works
 
-The objective of this document is to explain how the [**Binbash Leverage Reference AWS Cloud Solutions Architecture**](https://drive.google.com/file/d/1Z7VfioV6txbisv70cFIif2j6AnQ__fAc/view?usp=sharing)
+The objective of this document is to explain how the **Binbash Leverage Reference AWS Cloud Solutions Architecture**
 works, in particular how the Reference Architecure model is built and why we need it.
 
 ## Overview

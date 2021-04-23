@@ -118,6 +118,7 @@ nav:
         - Considerations: "how-it-works/considerations.md"
     - Leverage Code Library:
       - Overview: "how-it-works/code-library/code-library.md"
+      - Forks workflow: "how-it-works/code-library/code-library-forks.md"
       - Specifications: "how-it-works/code-library/code-library-specs.md"
       - Modules per Tech: "how-it-works/code-library/modules-library-per-tech.md"
     - AWS Organization:

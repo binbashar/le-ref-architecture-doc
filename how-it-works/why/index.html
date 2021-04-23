@@ -2582,12 +2582,88 @@ partners to evaluate architectures, and implement designs that can scale over ti
 </div>
 <div class="admonition info">
 <p class="admonition-title">Why Infra as Code (IaC) &amp; Terraform❓</p>
+<ul class="task-list">
+<li class="task-list-item">
+<p><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> <strong>Confidence:</strong> A change breaks the env? Just roll it back. Still not working?
+Build a whole new env with a few keystrokes. IaC enables this.</p>
+</li>
+<li class="task-list-item">
+<p><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> <strong>Repeatability:</strong> Allows your infra to be automatically instantiated, making it
+easy to build multiple identical envs.</p>
+</li>
+<li class="task-list-item">
+<p><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> <strong>Troubleshooting:</strong> Check source control and see exactly what changed in the env. 
+As long as you are diligent and don’t make manual envs changes, then IaC can be a game
+changer.</p>
+</li>
+<li class="task-list-item">
+<p><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> <strong>DR:</strong> Require the ability to set up an alternate env in a different DC or Region.
+IaC makes this a much more manageable prospect.</p>
+</li>
+<li class="task-list-item">
+<p><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> <strong>Auditability:</strong>
+You will need to be able to audit both changes and access to an env, IaC gives you this
+right out of the box.</p>
+</li>
+<li class="task-list-item">
+<p><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> <strong>Visibility:</strong> As an env expands over time, is challenging to tell what has been
+provisioned. In the #cloud this can be a huge #cost issue. IaC allows tracking your
+resources.</p>
+</li>
+<li class="task-list-item">
+<p><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> <strong>Portability:</strong> Some IaC techs are #multicloud. Also, translating #Terraform from
+one cloud provider to another is considerably more simple than recreating your entire
+envs in a cloud-specific tool.</p>
+</li>
+<li class="task-list-item">
+<p><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> <strong>Security:</strong> See history of changes to your SG rules along with commit messages can
+do wonders for being confident about the security configs of your envs.</p>
+</li>
+</ul>
+<p><strong>Terraform</strong> allows to codify your application infrastructure, reduce human error and 
+increase automation by provisioning infrastructure as code.
+With TF we can manage infrastructure across clouds and provision infrastructure 
+across 300+ public clouds and services using a single workflow.
+Moreover it helps to create reproducible infrastructure and provision consistent testing,
+staging, and production environments with the same configuration.</p>
+<p><strong>Terraform</strong> has everything we expect from a IaC framework: open source, cloud-agnostic
+provisioning tool that supported immutable infrastructure, a declarative language, and
+a client-only architecture.</p>
+<p><img alt="📚" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f4da.svg" title=":books:" /> <strong>Read More</strong></p>
+<ul>
+<li><a href="https://www.simplethread.com/why-infrastructure-as-code/">Why Infrastructure as Code</a></li>
+<li><a href="https://blog.gruntwork.io/why-we-use-terraform-and-not-chef-puppet-ansible-saltstack-or-cloudformation-7989dad2865c">Why Terraform by Gruntwork</a></li>
+</ul>
 </div>
 <div class="admonition info">
 <p class="admonition-title">Why Organizations❓</p>
+<p>AWS Organizations helps you centrally manage and govern your environment as you grow
+and scale your AWS resources. Using AWS Organizations, you can programmatically create
+new AWS accounts and allocate resources, group accounts to organize your workflows,
+apply policies to accounts or groups for governance, and simplify billing by using a 
+single payment method for all of your accounts.</p>
+<p><img alt="📚" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f4da.svg" title=":books:" /> <strong>Read More</strong> </p>
+<ul>
+<li><a href="../../how-it-works/organization/organization/">How it works: AWS Organizations</a></li>
+<li><a href="https://aws.amazon.com/organizations/">AWS Organizations</a></li>
+</ul>
 </div>
 <div class="admonition info">
 <p class="admonition-title">Why AIM and roles❓</p>
+<p>AWS Identity and Access Management (IAM) enables you to manage access to AWS services
+and resources securely. Using IAM, you can create and manage AWS users and groups,
+and use permissions to allow and deny their access to AWS resources.</p>
+<ul>
+<li>Integration and Fine-grained access control with almost every AWS service and
+its resources.</li>
+<li>Multi-factor authentication for highly privileged users.</li>
+<li>Analyze, monitor and audit access.</li>
+</ul>
+<p><img alt="📚" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f4da.svg" title=":books:" /> <strong>Read More</strong> </p>
+<ul>
+<li><a href="how-it-works/identities/identities/">How it works: AWS IAM</a></li>
+<li><a href="https://aws.amazon.com/iam/">AWS Identity and Access Management (IAM)</a></li>
+</ul>
 </div>
 <div class="admonition info">
 <p class="admonition-title">Security: WAF, Cloud Trail, Config, Guarduty</p>

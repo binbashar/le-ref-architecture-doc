@@ -7,6 +7,14 @@ All notable changes to this project will be documented in this file.
 
 
 
+<a name="v0.1.31"></a>
+## [v0.1.31] - 2021-04-26
+
+- BIZDEV-26 | updating 1st landing section with cost optimization item
+- BIZDEV-26 | landing illustration minor visual fix
+- BIZDEV-26 | fixing table of conent menu color
+
+
 <a name="v0.1.30"></a>
 ## [v0.1.30] - 2021-04-23
 
@@ -577,7 +585,8 @@ All notable changes to this project will be documented in this file.
 - Deployed  with MkDocs version: 1.1.2
 
 
-[Unreleased]: https://github.com/binbashar/le-ref-architecture-doc/compare/v0.1.30...HEAD
+[Unreleased]: https://github.com/binbashar/le-ref-architecture-doc/compare/v0.1.31...HEAD
+[v0.1.31]: https://github.com/binbashar/le-ref-architecture-doc/compare/v0.1.30...v0.1.31
 [v0.1.30]: https://github.com/binbashar/le-ref-architecture-doc/compare/v0.1.29...v0.1.30
 [v0.1.29]: https://github.com/binbashar/le-ref-architecture-doc/compare/v0.1.28...v0.1.29
 [v0.1.28]: https://github.com/binbashar/le-ref-architecture-doc/compare/v0.1.27...v0.1.28

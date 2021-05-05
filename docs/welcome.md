@@ -45,7 +45,6 @@ An its compose of the following 3 main repos:
 
 - [x] [le-tf-infra-aws](https://github.com/binbashar/le-tf-infra-aws)
 - [x] [le-ansible-infra](https://github.com/binbashar/le-ansible-infra)
-- [x] [le-helm-infra](https://github.com/binbashar/le-helm-infra)
 
 ## Getting Started
 :books: See [**How it works**](./how-it-works/index.md) for a whirlwind tour that will get you started.

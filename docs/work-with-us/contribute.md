@@ -18,10 +18,6 @@ cd ..
 git clone git@github.com:binbashar/le-ansible-infra.git
 cd le-ansible-infra
 cd ..
-
-git clone git@github.com:binbashar/le-helm-infra
-cd le-helm-infra
-cd ..
 ```
 
 ### Initial developer environment build

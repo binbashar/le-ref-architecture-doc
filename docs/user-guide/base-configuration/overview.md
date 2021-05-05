@@ -14,6 +14,4 @@ Specific configuration per component could be found in the immediately following
 
 * [x] :gear: [**config** | le-tf-infra-aws](../../user-guide/base-configuration/repo-le-tf-infra-aws.md)
 * [x] :gear: [**config** | le-ansible-infra](../../user-guide/base-configuration/repo-le-ansible-infra.md)
-* [x] :gear: [**config** | le-helm-infra](../../user-guide/base-configuration/repo-le-helm-infra.md)
-
 

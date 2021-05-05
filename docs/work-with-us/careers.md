@@ -44,7 +44,7 @@
         
         Create a collection of reusable, tested, production-ready E2E AWS oriented infrastructure modules 
         (e.g., VPC, IAM, Kubernetes, Prometheus, Grafana, EFK, Consul, Vault, Jenkins, etc.) using several tool and 
-        languages: *Terraform, Ansible, Helm + Helmsman, Dockerfiles, Python, Bash and Makefiles*.
+        languages: *Terraform, Ansible, Helm, Dockerfiles, Python, Bash and Makefiles*.
            
     - [x] [**Reference Architecture**](../how-it-works/code-library/code-library.md)
         

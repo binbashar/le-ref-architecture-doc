@@ -8,9 +8,7 @@ Please start by reviewing the [pre-requisites](./base-configuration/overview.md)
 ## Configurations
 - [x] [le-tf-infra-aws](base-configuration/repo-le-tf-infra-aws.md)
 - [x] [le-ansible-infra](base-configuration/repo-le-ansible-infra.md)
-- [x] [le-helm-infra](base-configuration/repo-le-helm-infra.md)
 
 ## Workflow
 - [x] [le-tf-infra-aws](base-workflow/repo-le-tf-infra-aws.md)
 - [x] [le-ansible-infra](base-workflow/repo-le-ansible-infra.md)
-- [x] [le-helm-infra](base-workflow/repo-le-helm-infra.md)

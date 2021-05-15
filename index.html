@@ -481,6 +481,11 @@
         background: linear-gradient(to bottom, #2a978d, #02162f 99%, #fff 99%);
     }
 
+    .tx-container-testimonial {
+        height: auto;
+        background: #EDEFF0;
+    }
+
     .tx-hero__image-3 {
         max-width: 100%;
         max-height: 100%;
@@ -488,6 +493,15 @@
         padding-right: 2.5rem;
         padding-top: 30px;
         padding-bottom: 30px;
+    }
+
+    .tx-hero__image-4 {
+        max-width: 100%;
+        max-height: 100%;
+        order: 1;
+        padding-right: 2.5rem;
+        padding-top: 5px;
+        padding-bottom: 15px;
     }
 
     .tx-footer {
@@ -621,6 +635,140 @@
     }
 </style>
 
+<!-- Testimonial Section Style -->
+<style>
+    *{
+        box-sizing: border-box
+    }
+    body{
+        margin: 0;
+        padding: 0;
+        font-family: Helvetica;
+        font-weight: 100;
+        color: #777;
+    }
+    .container-testimonial{
+        background: rgb(237, 239, 240);
+        height: 50vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 30px;
+        margin-left: 150px;
+        margin-right: 150px;
+
+    }
+
+    .testimonial-header{
+        margin-top: 50px;
+        margin-bottom: 30px;
+        border-radius: 10px;
+        position: center;
+        justify-content:center;
+        font-size: 42px;
+        color: #2a978d;
+    }
+
+    .testimonial-card{
+        min-height: 400px;
+        width: 350px;
+        background-color: white;
+        border-radius: 10px;
+        box-shadow: 0 8px 30px rgba(0,0,0,.3);
+        display: flex;
+        flex-flow: column;
+        justify-content:space-between;
+        margin-left: 10px;
+    }
+
+    .text{
+        padding: 2em;
+        line-height: 1.7em;
+        position: relative;
+        font-size: 14px;
+        color: #0a192f;
+        margin-bottom: 50px;
+    }
+    .image{
+        background-color:tomato;
+        height: 120px;
+        width: 120px;
+        border-radius: 50%;
+        border: 5px solid white;
+        position: absolute;
+        top: -50%;
+        left: 50%;
+        transform: translateX(-50%);
+        display:flex;
+        justify-content:center;
+    }
+
+    .footer{
+        background: linear-gradient(90deg, #0a192f 0%, #2a978d 100%);
+        height: 160px;
+        border-radius: 0 0 10px 10px;
+        position:relative;
+    }
+
+    .quote{
+        font-size: 400%;
+        float: right;
+        opacity: .1;
+        transform: rotate(10deg) translate(-10px, -40px);
+        color:#4D3FA3;
+    }
+
+    .person{
+        color:white;
+        position: absolute;
+        margin-top: 10px;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -100%);
+        font-size: 1rem;
+        font-weight: 550;
+    }
+
+    .person-title{
+        color:white;
+        position: absolute;
+        margin-top: 10px;
+        top: 90%;
+        left: 50%;
+        transform: translate(-50%, -100%);
+        font-size:0.7rem;
+        font-weight: 300;
+    }
+
+    @media screen and (max-width: 30em) {
+        .container-testimonial{
+            background: rgb(237, 239, 240);
+            height: 50vh;
+            display: table;
+            align-items: center;
+            justify-content: left;
+            margin-bottom: 30px;
+            margin-left: 5px;
+            margin-right: 5px;
+        }
+
+        .testimonial-card {
+            min-height: 400px;
+            width: 350px;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 8px 30px rgb(0 0 0 / 30%);
+            display: flex;
+            flex-flow: column;
+            justify-content: space-between;
+            margin-left: 10px;
+            margin-bottom: 5px;
+    }
+    }
+
+</style>
+
+<!-- Subscription Section Style -->
 <style>
     * {
         margin: 0;
@@ -846,6 +994,7 @@
     }
 </style>
 
+<!-- Subscription Section Tooltip Style -->
 <style>
     /*
   You want a simple and fancy tooltip?
@@ -1066,8 +1215,7 @@
 
             <!-- Hero content -->
             <div class="tx-hero__content">
-                <h1  id="leverage-architecture">Leverage Reference Architecture</h1>
-
+                <h1  id="leverage-architecture">Leverage (Reference Architecture for AWS)</h1>
                 <p>
                     Reference AWS Cloud Solutions architecture designed under optimal configs for the most popular
                     modern web and mobile applications needs. <br> Its design is fully based on the
@@ -1113,7 +1261,7 @@
                 </a>
 
                 <a
-                        href="https://github.com/binbashar/le-ref-architecture-doc/"
+                        href="https://github.com/binbashar"
                         title="Go to repository"
                         class="md-button">
                     Go to GitHub
@@ -1190,6 +1338,7 @@
 
             <!-- Hero content -->
             <div class="tx-hero__content_small">
+                <br>
                 <h1 id="why-leverage">Why Leverage?</h1><br>
 
                 <p>
@@ -1219,10 +1368,26 @@
 
                 <p><br>
                     <h2>
-                <i>Implement yourself or we implement it for you! 💪</i>
+                <i>Implement Leverage with our support or we can deploy it for you! 💪</i>
             </h2>
-                    <br>
                 </p>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- CERTS & APN -->
+<section class="tx-container-3">
+    <div class="md-grid md-typeset">
+        <div class="tx-hero">
+
+            <!-- Hero image -->
+            <div class="tx-hero__image-4">
+                <img
+                        src="assets/images/illustrations/home-section-7.png"
+                        alt=""
+                        width="800"
+                        draggable="false"
+                >
             </div>
         </div>
     </div>
@@ -1244,7 +1409,7 @@
         <div class="tx-hero">
             <!-- Hero content -->
             <div class="tx-hero__content-2">
-                <h1 id="tech-stack">Our Tech Stack?</h1>
+                <h1 id="tech-stack">Our tech stack</h1>
                 <p><br>
                     ⛵ Opinionated reference AWS solutions composable architecture based in the AWS Well
                     Architected Framework with over 10 years of experience, Infra as code and best practices.
@@ -1311,6 +1476,13 @@
                         Action Plan
                     </a>
 
+                    <a
+                            href="../../work-with-us/team/"
+                            title="Go to repository"
+                            class="md-button">
+                        Our Team
+                    </a>
+
                 </p>
             </div>
         </div>
@@ -1318,6 +1490,104 @@
 </section>
 
 <!--     6th Section    -->
+<!--     TESTIMONIALS   -->
+<section class="tx-container-testimonial">
+
+    <div>
+        <!-- Titulo -->
+        <h1 class=testimonial-header id="leverage-testimonials" style="text-align: center">
+            Trusted by our customers
+        </h1>
+    </div>
+
+    <div class="container-testimonial">
+        <div class="testimonial-card">
+            <div class="text">
+                "Binbash provided us with cloud architecture consulting at a critical
+                time for our company. Prior to our production go-live they reviewed in-depth our application architecture.
+                Resulting in several optimization points, with focus on
+                response time, security, costs, monitoring, DB data sets, backups & restore.
+                They truly exceeded our expectations and provided support when e-valuados greatly needed it."
+            </div>
+
+            <div class="footer">
+                <div class="image" style=" background:no-repeat center/cover url(assets/images/testimonials/alejandro.parise.circle.png);">
+                </div>
+                <h3 class='person'>
+                    <a href="https://www.linkedin.com/in/aleparise/">Alejandro Parise</a>
+                    </h3>
+                <h5 class='person-title'>Founder & CEO <br> Latam & North America EdTech Industry</h5>
+
+            </div>
+        </div>
+
+        <div class="testimonial-card">
+            <div class="text">
+                "I've worked with Binbash for almost 3 years and my experience was absolutely positive.<br>
+                I found them to be very knowledgeable and reliable as well as open minded and willing to try new
+                technologies (but always considering trade-offs).<br>
+                Communication is excellent (even if things go wrong).<br>
+                Great Team of professionals!"
+            </div>
+
+            <div class="footer">
+                <div class="image" style="background:no-repeat center/cover url(assets/images/testimonials/max.ivanov.circle.png);">
+                </div>
+                <h3 class='person'> <a href="https://www.toptal.com/resume/max-ivanov">Max Ivanov</a>
+                </h3>
+                <h5 class='person-title'> Software Architect <br> US Media Streaming Industry </h5>
+
+            </div>
+        </div>
+
+        <div class="testimonial-card">
+            <div class="text">
+                "Binbash has a focused and highly productive professional team.<br>
+                They have exceptional tech skills and effectively transmit and implement their solutions, such as Leverage.
+                Thanks to their collaboration we managed to have a superlative product hosted in AWS.
+                It is undoubtedly a company with which I would like to work in any challenge that lies ahead"
+            </div>
+
+            <div class="footer">
+                <div class="image" style="background:no-repeat center/cover url(assets/images/testimonials/martin.vago.circle.png);">
+                </div>
+                <h3 class='person'> <a href="https://www.linkedin.com/in/mvago/">Martín Vago</a>
+                </h3>
+                <h5 class='person-title'> IT & CloudOps Manager <br> Latam Fintech Industry </h5>
+
+            </div>
+        </div>
+
+    </div><br>
+
+    <div class="tx-hero">
+        <!-- Hero content -->
+        <div class="tx-hero__content-2" style="float: left">
+            <a
+                    href="../../work-with-us/testimonials"
+                    title="Welcome"
+                    class="md-button md-button"
+                    style="
+                        font-size: 18px;
+                        font-family: Roboto;
+                        font-weight: 700;
+                        background: #172A45;
+                        padding-top: 1rem;
+                        padding-bottom: 1rem;
+                        padding-right: 2rem;
+                        padding-left: 2rem;
+                        border: 0.1rem solid;
+                        border-radius: .1rem;
+                          "
+            >
+                More testimonials
+            </a>
+        </div>
+    </div><br>
+
+</section>
+
+<!--     7th Section    -->
 <!-- SUBSCRIPTION PLANS -->
 <section>
     <!-- Contenedor -->
@@ -3630,6 +3900,30 @@
   
   
     <li class="md-nav__item">
+      <a href="work-with-us/team/" class="md-nav__link">
+        Team
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="work-with-us/testimonials/" class="md-nav__link">
+        Testimonials
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
       <a href="work-with-us/faqs/" class="md-nav__link">
         FAQs
       </a>
@@ -3802,7 +4096,7 @@
     <div class="md-dialog" data-md-component="dialog">
       <div class="md-dialog__inner md-typeset"></div>
     </div>
-    <script id="__config" type="application/json">{"base": ".", "features": ["navigation.tabs", "navigation.instant"], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing"}, "search": "assets/javascripts/workers/search.fe42c31b.min.js", "version": null}</script>
+    <script id="__config" type="application/json">{"base": ".", "features": ["navigation.tabs", "navigation.instant", "header.autohide"], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing"}, "search": "assets/javascripts/workers/search.fe42c31b.min.js", "version": null}</script>
     
     
       <script src="assets/javascripts/bundle.4ea5477f.min.js"></script>

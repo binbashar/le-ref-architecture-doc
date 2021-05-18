@@ -58,7 +58,7 @@
     compatibility with the tool's stardards we're using such as Terraform, Ansible and Helm. 
     The project planning and the work methodology helped us to strengthen our DevOps culture in the areas involved 
     such as loosely couple cloud architecture, development & CI/CD, monitoring, shift left on security and audit, 
-    adding important cultural values sauch as collaboration, continuous improvement and knowledge transfer."*
+    adding important cultural values such as collaboration, continuous improvement and knowledge transfer."*
 
 Translated with www.DeepL.com/Translator (free version)"*
 

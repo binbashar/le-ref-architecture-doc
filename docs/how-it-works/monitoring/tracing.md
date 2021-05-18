@@ -16,6 +16,6 @@ Binbash Leverage Doc, accessed November 18th 2020).
  
 ## Read more
  
-!!! info "Related sources"    
+!!! info "Related resources"    
     * :ledger: [Jaeger](https://www.jaegertracing.io/) 
     * :ledger: [Opensensus](https://opencensus.io/)

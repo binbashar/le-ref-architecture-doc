@@ -24,3 +24,14 @@ Binbash Leverage Doc, accessed November 18th 2020).
     open source project of Elasticsearch. [**Elastalert**](https://github.com/Yelp/elastalert) allow us to generate
     alerts based on certain log entries or even after counting a certain amount of a type of entry, providing great
     flexibility.
+
+--
+
+## Alternatives Comparison Table
+
+!!! info "Leverage Confluence Documentation"    
+    You'll find [**here**](https://binbash.atlassian.net/wiki/external/1789165573/NGE2N2M5YTVkNTYyNDFjYzljYTY3NjY4MWVmMTEyMWM?atlOrigin=eyJpIjoiYjVhZDJmMTZhNmQxNGQ5NzkyMThmNDg3ZDEyZGVkNzUiLCJwIjoiYyJ9
+    ) a detailed comparison table between **EC2 Self-hosted** and **AWS ElasticSearch** Elastic-Kibana Stack.
+
+
+

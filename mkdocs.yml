@@ -20,7 +20,6 @@ theme:
   #logo: assets/images/logos/binbash-icon.png
   icon: # https://www.materialpalette.com/icons
     logo: material/book-open-page-variant
-
   favicon: assets/images/logos/favicon.ico
   font:
     text: Roboto
@@ -28,6 +27,7 @@ theme:
   features:
     - navigation.tabs
     - navigation.instant
+    - header.autohide
   palette: # https://www.materialpalette.com/colors
     scheme: preference
     #primary: "teal" # comment to replace by /docs/assets/stylesheets
@@ -239,6 +239,8 @@ nav:
         - Cost Optimization: "work-with-us/roadmap/cost-optimization.md"
         - Demo Applications: "work-with-us/roadmap/demo-apps.md"
       - Careers: "work-with-us/careers.md"
+      - Team: "work-with-us/team.md"
+      - Testimonials: "work-with-us/testimonials.md"
       - FAQs: "work-with-us/faqs.md"
       - Contact: "work-with-us/contact.md"
 

@@ -7,6 +7,15 @@ All notable changes to this project will be documented in this file.
 
 
 
+<a name="v0.1.33"></a>
+## [v0.1.33] - 2021-05-18
+
+- BBL-192 | minor style and grammar fixes
+- BBL-192 | Updating landing background color + adding testimonial and team sections
+- BBL-192 | updating landing figures
+- BBL-192 | adding and updating landing, testimonial and team figures
+
+
 <a name="v0.1.32"></a>
 ## [v0.1.32] - 2021-05-05
 
@@ -592,7 +601,8 @@ All notable changes to this project will be documented in this file.
 - Deployed  with MkDocs version: 1.1.2
 
 
-[Unreleased]: https://github.com/binbashar/le-ref-architecture-doc/compare/v0.1.32...HEAD
+[Unreleased]: https://github.com/binbashar/le-ref-architecture-doc/compare/v0.1.33...HEAD
+[v0.1.33]: https://github.com/binbashar/le-ref-architecture-doc/compare/v0.1.32...v0.1.33
 [v0.1.32]: https://github.com/binbashar/le-ref-architecture-doc/compare/v0.1.31...v0.1.32
 [v0.1.31]: https://github.com/binbashar/le-ref-architecture-doc/compare/v0.1.30...v0.1.31
 [v0.1.30]: https://github.com/binbashar/le-ref-architecture-doc/compare/v0.1.29...v0.1.30

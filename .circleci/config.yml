@@ -228,13 +228,13 @@ workflows:
             branches:
              only: # only branches matching the below regex filters will run
                - master
-      - release-version-with-changelog:
-          context: binbashar-org-global-context
-          requires:
-            - build-and-deploy
-          filters:
-            branches:
-             only: # only branches matching the below regex filters will run
-               - master
+#      - release-version-with-changelog:
+#          context: binbashar-org-global-context
+#          requires:
+#            - build-and-deploy
+#          filters:
+#            branches:
+#             only: # only branches matching the below regex filters will run
+#               - master
       - sumologic/workflow-collector:
           context: binbashar-org-global-context

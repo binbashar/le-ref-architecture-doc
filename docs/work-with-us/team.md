@@ -25,8 +25,8 @@
     
         **Certifications**
     
-        - AWS Certified Cloud Solutions Architect Assosiate
-        - AWS Certified SysOps Administrator
+        - AWS Certified Cloud Solutions Architect - Assosiate
+        - AWS Certified SysOps Administrator - Associate
         - Certiprof DevOps Essentials Professional Certificate (DEPC)
         - Nokia Network Routing Specialist I (NRS I) - (4A0-100)
 

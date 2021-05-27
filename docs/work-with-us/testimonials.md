@@ -9,7 +9,10 @@
     - 🌎 **Company website:** [lifehousehotels.com](https://www.lifehousehotels.com/)
     - 🌎 **Company website:** [joinsprouttherapy.com](https://www.joinsprouttherapy.com/)
     
-    - [x] *"Awaiting the testimonial feedback"*
+    - [x] *"We utilized BinBash to help get our DevOps infrastructure launched and manage all aspects of our
+    AWS-based setup. Their security and compliance focus turned out to be a great fit for our HIPAA regulation needs. 
+    We’ve been very pleased with their responsiveness and thoroughness with regards to our technology needs and 
+    would be happy to work with them again in the future."*
 
 ## EdTech (Education)
 

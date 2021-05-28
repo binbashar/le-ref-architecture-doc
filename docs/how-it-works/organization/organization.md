@@ -79,6 +79,7 @@ The following block provides a brief explanation of the chosen AWS Organization 
 !!! info "AWS reference links"
     Consider the following AWS official links as reference:
         
+    - :orange_book: [**Why should I set up a multi-account AWS environment?**](https://aws.amazon.com/organizations/getting-started/best-practices/)       
     - :orange_book: [**AWS Multiple Account User Management Strategy**](https://docs.aws.amazon.com/IAM/latest/UserGuide/tutorial_cross-account-with-roles.html)
     - :orange_book: [**AWS Muttiple Account Security Strategy**](https://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-sharing-logs.html)
     - :orange_book: [**AWS Multiple Account Billing Strategy**](https://aws.amazon.com/answers/account-management/aws-multi-account-billing-strategy/)

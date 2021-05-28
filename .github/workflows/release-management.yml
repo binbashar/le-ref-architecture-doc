@@ -18,3 +18,11 @@ jobs:
       - uses: release-drafter/release-drafter@v5
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - uses: act10ns/slack@v1
+        with:
+          status: ${{ job.status }}
+          channel: $SLACK_CI_CHANNEL
+        env:
+          SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
+          SLACK_CI_CHANNEL: ${{ secrets.SLACK_CI_CHANNEL }}

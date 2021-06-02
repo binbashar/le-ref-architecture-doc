@@ -28,7 +28,7 @@
     response time, security, costs, monitoring, DB data sets, backups & restore.
     They truly exceeded our expectations and provided support when e-valuados greatly needed it."*
 
-## Fintech (Financial Services)
+## Banking, Fintech and Insurtech
 
 !!! info "[Martin Vago | IT & CloudOps Manager @ Latam Fintech Industry](https://www.linkedin.com/in/mvago/)"
 
@@ -42,15 +42,32 @@
     hosted in AWS. It is undoubtedly a company with which I would like to work in any
     challenge that lies ahead"*
 
-!!! info "[Juan Manuel Rodrigo | CTO @ Latam Fintech Industry](https://www.linkedin.com/in/jmrodrigopmp/)"
+!!! info "[Felipe Lerena | Software Architect & Dev Lead @ Latam Fintech Industry](https://www.linkedin.com/in/felipelerena/)"
+
+    ![testimonial](../assets/images/testimonials/felipe.lerena.bwc.png "Leverage-Testimonial"){: style="width:150px"}
+    
+    🌎 **Company website:**  [tunubi.com](https://www.tunubi.com/)
+
+    - [x] *"Binbash was fundamental in supporting us in building a scalable, high-performance and secure AWS Cloud
+    architecture, leveraging all of the industry leading DevOps concepts from the very start. Such us their main
+    product Leverage an its 100% Infra as Code approach.
+    Most significantly, their exceptional commitment to doing the right thing and always maintaining a positive
+    mindset is one of the key reasons why we love working with them. Binbash has not only earned our highest
+    endorsement, but also our complete trust."*
+
+!!! info "[Juan Manuel Rodrigo | CTO @ Latam Fintech / Banking / Insurtech Industries](https://www.linkedin.com/in/jmrodrigopmp/)"
 
     ![testimonial](../assets/images/testimonials/juan.manuel.rodrigo.bwc.png "Leverage-Testimonial"){: style="width:150px"}
     
     🌎 **Company website:**  [flexibility.com.ar](https://www.flexibility.com.ar/eng/home-us/)
 
-    - [x] *"Awaiting the testimonial feedback"*
+    - [x] *"We found the right AWS and DevOps technology partner at Binbash, who quickly interpreted our core 
+    business, and while working together we identified quick gains that helped us to significantly
+    differentiate our cloud native solution.
+    Moreover, their product, Leverage resulted in an AWS automation framework that accelerated our business roadmap, 
+    highlighting the technical talent of the Binbash team for its rapid and solid implementation."*
 
-!!! info "[Alejandro Creta | Infrastructure Architecture Lead @ Latam Fintech Industry](https://www.linkedin.com/in/alejandro-creta-24b7a917b/)"
+!!! info "[Alejandro Creta | Infrastructure Architecture Lead @ Latam Fintech / Banking / Insurtech Industries](https://www.linkedin.com/in/alejandro-creta-24b7a917b/)"
 
     ![testimonial](../assets/images/testimonials/alejandro.creta.bwc.png "Leverage-Testimonial"){: style="width:150px"}
     
@@ -63,8 +80,6 @@
     such as loosely couple cloud architecture, development & CI/CD, monitoring, shift left on security and audit, 
     adding important cultural values such as collaboration, continuous improvement and knowledge transfer."*
 
-Translated with www.DeepL.com/Translator (free version)"*
-
 ## Media & Entertainment (Streaming)
 
 !!! info "[Max Ivanov | Software Architect @ US Media Entertainment Industry](https://www.toptal.com/resume/max-ivanov)"
@@ -75,6 +90,38 @@ Translated with www.DeepL.com/Translator (free version)"*
     They have exceptional tech skills and effectively transmit and implement their solutions, such as Leverage.
     Thanks to their collaboration we managed to have a superlative product hosted in AWS.
     It is undoubtedly a company with which I would like to work in any challenge that lies ahead"*
+
+
+
+## Cyber Security & Risk Management
+
+!!! info "[Franco Gauchat | DevSecOps Engineer @ Cyber Security Industry](https://www.linkedin.com/in/gauchatfranco/)"
+
+    ![testimonial](../assets/images/testimonials/franco.gauchat.bwc.png "Leverage-Testimonial"){: style="width:150px"}
+    
+    🌎 **Company website:**  [btrconsulting.com](https://www.btrconsulting.com/) 
+
+    - [x] *"Binbash team is highly experienced and skilled in DevOps practices and AWS cloud solutions. 
+    I have worked very closely with them on a large scale Fintech project and have demonstrated a deep
+    understanding of our deployed AWS infrastructure. They collaborate with us to design and implement the best
+    possible course of action for each of our applications based on short and long term business and security goals. 
+    Including cloud architecture, security, audit, monitoring, centralized logs, deployments, infra as code, 
+    scalability and performance. 
+    Hope our paths cross again very soon."*
+
+!!! info "[Horacio G. de Oro | Head of DevOps @ Risk Management US Industry](https://www.linkedin.com/in/hgdeoro/)"
+
+    ![testimonial](../assets/images/testimonials/horacio.oro.bwc.png "Leverage-Testimonial"){: style="width:150px"}
+
+    🌎 **Company website:**  [thirdpartytrust.com](https://www.thirdpartytrust.com/) 
+
+    - [x] *"Binbash redesigned and help us to developed our entire AWS Cloud Solutions Architecture under a IaC
+    (InfraAsCode) best practice approach, and always taking care of the environment security. Including our new
+    AWS Organizations Multi-Account and Kubernetes deployment infrastructure. 
+    The Binbash team managed the entire engagement effectively and within budget. The team members are knowledgeable,
+    proactive, work collaboratively, offer solid and creative solutions, communicate well, and deliver timely and
+    high quality work products, such as Leverage. We highly recommend Binbash for your AWS cloud infrastructure
+    implementation."*
 
 ## Sports and Events
 

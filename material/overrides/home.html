@@ -240,6 +240,7 @@ Blue color variations
             margin-bottom: 50px;
             margin-left: 20px;
             margin-right: 20px;
+            font-size: 1.1rem;
         }
 
         .tx-hero__content-2 {
@@ -250,6 +251,10 @@ Blue color variations
         .tx-hero__content-3 {
             margin-left: 20px;
             margin-right: 20px;
+        }
+
+        .md-typeset .md-button {
+            font-size: 14px;
         }
     }
 
@@ -265,7 +270,7 @@ Blue color variations
         }
 
         .tx-hero__content {
-            max-width: 22rem;
+            max-width: 24rem;
             margin-top: 3.5rem;
             margin-bottom: 3.5rem;
             margin-left: 1.0rem;
@@ -583,7 +588,7 @@ Blue color variations
         padding: 12px 8px;
     }
 
-    .table-list li:before {
+/*    .table-list li:before {
         content: "\f00c";
         font-family: 'FontAwesome';
         color: #3fab91;
@@ -591,7 +596,7 @@ Blue color variations
         position: relative;
         right: 5px;
         font-size: 16px;
-    }
+    }*/
 
     .table-list li span {
         font-weight: 400;
@@ -918,7 +923,7 @@ Blue color variations
             <div class="tx-hero__content">
                 <h1  id="leverage-architecture">Leverage (Reference Architecture for AWS)</h1>
                 <p>
-                    Reference AWS Cloud Solutions architecture designed under optimal configs for the most popular
+                    Designed under optimal configs for the most popular
                     modern web and mobile applications needs. <br> Its design is fully based on the
                     <strong>
                         <a href="https://leverage.binbash.com.ar/work-with-us/support/#aws-well-architected-review">AWS
@@ -935,16 +940,16 @@ Blue color variations
                     Implement, reuse and scale faster
                 </strong> <br>
                     ⭐ <strong>
-                    Operate your production ready workloads
+                    Bootstrap your AWS Landing Zone
                 </strong> <br>
                     ⭐ <strong>
-                    Optimize your costs by design
+                    Proven libraries and modules
                 </strong> <br>
                     ⭐ <strong>
-                    Increase your deployment frequency
+                    Modern Terraform, Ansible, Helm, K8s Stack
                 </strong> <br>
                     ⭐ <strong>
-                    Reduce delivery time-to-market
+                    Optimize your cloud costs by design
                 </strong> <br>
                     ⭐ <strong>
                     Secure your cloud assets and prod workloads
@@ -959,13 +964,34 @@ Blue color variations
                         class="md-button md-button--primary"
                 >
                     Get started
-                </a>
+                </a><br>
 
                 <a
-                        href="https://github.com/binbashar"
-                        title="{{ lang.t('source.link.title') }}"
-                        class="md-button">
-                    Go to GitHub
+                    href="https://github.com/binbashar"
+                    title="{{ lang.t('source.link.title') }}"
+                    class="md-button">
+                    Contribute on GitHub
+                    <img
+                        class = icon
+                        src="assets/images/icons/github-white.svg"
+                        alt=""
+                        width="24"
+                        draggable="false"
+                    >
+                </a><br>
+
+                <a
+                    href="https://join.slack.com/t/binbashar/shared_invite/zt-fw1692b6-9k4ADsWJ47lKacszphXM1w"
+                    title="{{ page.next_page.title | e }}"
+                    class="md-button md-button--primary">
+                    Join us on Leverage Slack
+                    <img
+                            class = icon
+                            src="assets/images/logos/slack.png"
+                            alt=""
+                            width="22"
+                            draggable="false"
+                    >
                 </a>
 
             </div>
@@ -1057,7 +1083,7 @@ Blue color variations
                     ✅ We've built every component based on the best recommended practices mainly following the
                     <strong>
                         <a href="https://leverage.binbash.com.ar/work-with-us/support/#aws-well-architected-review">AWS
-                            WAF
+                            Well-Archiected Framework
                         </a>
                     </strong>,
                     granting you ownership to implement, reuse and scale your production workloads faster.<br><br>
@@ -1065,7 +1091,15 @@ Blue color variations
                     ✅ Leverage will solve your
                     entire infrastructure and will grant you complete control of the source code, and of course you'll
                     be able to run it without us.<br>
-                </p>
+                </p><br>
+
+                <a
+                        href="https://leverage.binbash.com.ar/work-with-us/faqs/#why-leverage"
+                        title="{{ page.next_page.title | e }}"
+                        class="md-button md-button--primary"
+                >
+                    Find out more 'Whys'
+                </a>
 
                 <p><br>
                     <h2>
@@ -1186,9 +1220,40 @@ Blue color variations
                             title="{{ lang.t('source.link.title') }}"
                             class="md-button">
                         Our Team
-                    </a>
+                    </a><br>
 
                 </p>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- BRAINTRUST AGENCY -->
+<section class="tx-container-2">
+    <div class="md-grid md-typeset">
+        <div class="tx-hero__image-2">
+            <img
+                    src="assets/images/logos/binbash-braintrust.png"
+                    alt=""
+                    width="800"
+                    draggable="false"
+                    align="left"
+            >
+        </div>
+        <div class="tx-hero">
+            <!-- Hero content -->
+            <div class="tx-hero__content-2">
+                <h1 id="braintrust-agency">Commercial Partner</h1>
+                <p><br>
+                    Commercial Partners with <b>Braintrust</b><br>
+                    <i>"Creating the future of work, to benefit enterprise and talent alike".</i>
+                </p>
+                <a
+                        href="https://app.usebraintrust.com/agency/432/"
+                        title="{{ page.next_page.title | e }}"
+                        class="md-button md-button"
+                >
+                    Hire us at Braintrust
+                </a>
             </div>
         </div>
     </div>

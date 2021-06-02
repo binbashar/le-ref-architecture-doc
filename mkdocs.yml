@@ -29,9 +29,19 @@ theme:
     - navigation.instant
     - header.autohide
   palette: # https://www.materialpalette.com/colors
-    scheme: preference
-    #primary: "teal" # comment to replace by /docs/assets/stylesheets
-    accent: "deep purple"
+    - scheme: default
+      #primary: "teal" # comment to replace by /docs/assets/stylesheets
+      accent: deep purple
+      toggle:
+        icon: material/toggle-switch-off-outline
+        name: Switch to dark mode
+    - scheme: slate
+      #primary: "teal" # comment to replace by /docs/assets/stylesheets
+      accent: teal
+      toggle:
+        icon: material/toggle-switch
+        name: Switch to light mode
+
   include_sidebar: true
 
 extra:
@@ -51,24 +61,31 @@ extra:
     - icon: material/docker
       link: 'https://hub.docker.com/orgs/binbash'
 
-#  alternate:
-#
-#    # Switch to English
-#    - name: English
-#      link: https://leverage.binbash.com.ar
-#      lang: en
-#
-#    # Switch to Spanish
-#    - name: Spanish
-#      link: https://leverage.binbash.com.ar/es/
-#      lang: es
+  alternate:
+
+    # Switch to English
+    - name: English
+      #link: https://leverage.binbash.com.ar
+      link: /
+      lang: en
+
+    # Switch to Spanish
+    - name: Spanish
+      #link: https://leverage.binbash.com.ar/es/
+      link: /es
+      lang: es
 
 #===================================================================================#
 # Mkdocs Markdown Extentions, Plugins & extras
 #===================================================================================#
 markdown_extensions:
   - admonition
+  - abbr
   - attr_list
+  - def_list
+  - footnotes
+  - meta
+  - md_in_html
   - codehilite
   - pymdownx.inlinehilite
   - pymdownx.tasklist:
@@ -77,7 +94,6 @@ markdown_extensions:
   - pymdownx.emoji:
       emoji_index: !!python/name:materialx.emoji.twemoji
       emoji_generator: !!python/name:materialx.emoji.to_svg
-  - meta
   - toc:
       # insert a blank space before the character
       permalink: " ¶"
@@ -92,7 +108,7 @@ extra_css:
 # Google Analytics (https://squidfunk.github.io/mkdocs-material/setup/setting-up-site-analytics/)
 #
 google_analytics:
-  - 'UA-172873342-1'
+  - !!python/object/apply:os.getenv ["GOOGLE_ANALYTICS_KEY"]
   - 'auto'
 
 #===================================================================================#

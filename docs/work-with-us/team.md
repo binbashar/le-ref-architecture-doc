@@ -1,97 +1,133 @@
-# Meet our Team
+---
+template: overrides/team.html
+title: Binbash Leverage
+---
 
-## Tech Team
-!!! info "[Marcos Pagnucco | Co-Founder & DevOps Cloud Engineer @ Binbash](https://www.linkedin.com/in/pagnucco/)"
+[comment]: <> (# Meet our Team)
 
-    ![team](../assets/images/team/marcos.pagnucco.bwc.png "Leverage-team"){: style="width:150px"}
+[comment]: <> (## Tech Team)
+
+[comment]: <> (!!! info "[Marcos Pagnucco | Co-Founder & DevOps Cloud Engineer @ Binbash]&#40;https://www.linkedin.com/in/pagnucco/&#41;")
+
+[comment]: <> (    ![team]&#40;../assets/images/team/marcos.pagnucco.bwc.png "Leverage-team"&#41;{: style="width:150px"})
     
-    - [x] Devops specialist and SRE with lots of experience on Cloud Infrastructure.
+[comment]: <> (    - [x] Devops specialist and SRE with lots of experience on Cloud Infrastructure.)
     
-        **Certifications**
+[comment]: <> (        **Certifications**)
     
-        - AWS Certified Cloud Solutions Architect - Professional
-        - AWS Certified SysOps Administrator - Associate
-        - AWS Certified Cloud Solutions Architect - Assosiate
-        - Sun Microsystems SCSA for Unix Solaris 10
-        - Cisco Certified Network Associate (CCNA)
+[comment]: <> (        - AWS Certified Cloud Solutions Architect - Professional)
 
-!!! info "[Exequiel Barrirero | Co-Founder & DevOps Cloud Engineer @ Binbash](https://www.linkedin.com/in/barrireroexequiel/)"
+[comment]: <> (        - AWS Certified SysOps Administrator - Associate)
 
-    ![team](../assets/images/team/exequiel.barrirero.bwc.png "Leverage-team"){: style="width:150px"}
+[comment]: <> (        - AWS Certified Cloud Solutions Architect - Assosiate)
+
+[comment]: <> (        - Sun Microsystems SCSA for Unix Solaris 10)
+
+[comment]: <> (        - Cisco Certified Network Associate &#40;CCNA&#41;)
+
+[comment]: <> (!!! info "[Exequiel Barrirero | Co-Founder & DevOps Cloud Engineer @ Binbash]&#40;https://www.linkedin.com/in/barrireroexequiel/&#41;")
+
+[comment]: <> (    ![team]&#40;../assets/images/team/exequiel.barrirero.bwc.png "Leverage-team"&#41;{: style="width:150px"})
     
-    - [x] IT passionate Telecommunications Engineer with over 10 years of
-    professional experience administering, configuring, monitoring and supporting IT
-    Production Infrastructures.
+[comment]: <> (    - [x] IT passionate Telecommunications Engineer with over 10 years of)
+
+[comment]: <> (    professional experience administering, configuring, monitoring and supporting IT)
+
+[comment]: <> (    Production Infrastructures.)
     
-        **Certifications**
+[comment]: <> (        **Certifications**)
     
-        - AWS Certified Cloud Solutions Architect - Assosiate
-        - AWS Certified SysOps Administrator - Associate
-        - Certiprof DevOps Essentials Professional Certificate (DEPC)
-        - Nokia Network Routing Specialist I (NRS I) - (4A0-100)
+[comment]: <> (        - AWS Certified Cloud Solutions Architect - Assosiate)
 
-!!! info "[Diego Armando Ojeda | DevOps Cloud Solutions & Software Architecture Consultant @ Binbash](https://www.linkedin.com/in/diegoaojeda/)"
+[comment]: <> (        - AWS Certified SysOps Administrator - Associate)
 
-    ![team](../assets/images/team/diego.ojeda.bwc.png "Leverage-team"){: style="width:150px"}
+[comment]: <> (        - Certiprof DevOps Essentials Professional Certificate &#40;DEPC&#41;)
+
+[comment]: <> (        - Nokia Network Routing Specialist I &#40;NRS I&#41; - &#40;4A0-100&#41;)
+
+[comment]: <> (!!! info "[Diego Armando Ojeda | DevOps Cloud Solutions & Software Architecture Consultant @ Binbash]&#40;https://www.linkedin.com/in/diegoaojeda/&#41;")
+
+[comment]: <> (    ![team]&#40;../assets/images/team/diego.ojeda.bwc.png "Leverage-team"&#41;{: style="width:150px"})
     
-    - [x] **DevOps Cloud Solutions:** plenty of experience with AWS, Kubernetes, Terraform, Ansible, Docker, Jenkins, 
-    Spinnaker, Helm, Python, Vagrant, CI/CD pipelines, testing pipelines.
+[comment]: <> (    - [x] **DevOps Cloud Solutions:** plenty of experience with AWS, Kubernetes, Terraform, Ansible, Docker, Jenkins, )
 
-    - [x] **Software Architect:** enterprise applications, service oriented applications, versioning, components design, 
-    best practices, documentation, processes definition, requirements estimation, code reviewing, testing, 
-    release management, deployment, automation, CI, CD, performance, Cloud services (AWS), serverless.
+[comment]: <> (    Spinnaker, Helm, Python, Vagrant, CI/CD pipelines, testing pipelines.)
 
-!!! info "[Luis Gallardo | Cloud Solutions Architect @ Binbash](https://www.linkedin.com/in/lgallard/)"
+[comment]: <> (    - [x] **Software Architect:** enterprise applications, service oriented applications, versioning, components design, )
 
-    ![team](../assets/images/team/luis.gallardo.bwc.png "Leverage-team"){: style="width:150px"}
+[comment]: <> (    best practices, documentation, processes definition, requirements estimation, code reviewing, testing, )
+
+[comment]: <> (    release management, deployment, automation, CI, CD, performance, Cloud services &#40;AWS&#41;, serverless.)
+
+[comment]: <> (!!! info "[Luis Gallardo | Cloud Solutions Architect @ Binbash]&#40;https://www.linkedin.com/in/lgallard/&#41;")
+
+[comment]: <> (    ![team]&#40;../assets/images/team/luis.gallardo.bwc.png "Leverage-team"&#41;{: style="width:150px"})
     
-    - [x] Teach Lead & Solutions Architect. Terraform expert, AWS & K8s Certified. Focus on integration of several
-    technologies and paradigms to obtain robust, reliable and easily maintainable solutions.
+[comment]: <> (    - [x] Teach Lead & Solutions Architect. Terraform expert, AWS & K8s Certified. Focus on integration of several)
+
+[comment]: <> (    technologies and paradigms to obtain robust, reliable and easily maintainable solutions.)
     
-        **Certifications**
+[comment]: <> (        **Certifications**)
     
-        - AWS Certified Cloud Solutions Architect - Professional
-        - AWS Certified DevOps Engineer - Professional
-        - AWS Certified Alexa Skill Builder – Specialty
-        - AWS Certified Cloud Solutions Architect - Assosiate
-        - AWS Certified SysOps Administrator - Associate
-        - AWS Certified Developer - Assosiate
-        - CNCF CKA: Certified Kubernetes Administrator 
-        - CNF CKAD: Certified Kubernetes Application Developer
-        - HashiCorp Certified: Terraform Associate
-        - CompTIA Linux+ powered by LPI
-        - LPIC-2: Advanced Level Linux Certification
-        - LPIC-1: Junior Level Linux Certification
+[comment]: <> (        - AWS Certified Cloud Solutions Architect - Professional)
 
-!!! info "[Angelo Fenoglio | Software Engineer @ Binbash](https://www.linkedin.com/in/angelofenoglio/)"
+[comment]: <> (        - AWS Certified DevOps Engineer - Professional)
 
-    ![team](../assets/images/team/angelo.fenoglio.bwc.png "Leverage-team"){: style="width:150px"}
+[comment]: <> (        - AWS Certified Alexa Skill Builder – Specialty)
+
+[comment]: <> (        - AWS Certified Cloud Solutions Architect - Assosiate)
+
+[comment]: <> (        - AWS Certified SysOps Administrator - Associate)
+
+[comment]: <> (        - AWS Certified Developer - Assosiate)
+
+[comment]: <> (        - CNCF CKA: Certified Kubernetes Administrator )
+
+[comment]: <> (        - CNF CKAD: Certified Kubernetes Application Developer)
+
+[comment]: <> (        - HashiCorp Certified: Terraform Associate)
+
+[comment]: <> (        - CompTIA Linux+ powered by LPI)
+
+[comment]: <> (        - LPIC-2: Advanced Level Linux Certification)
+
+[comment]: <> (        - LPIC-1: Junior Level Linux Certification)
+
+[comment]: <> (!!! info "[Angelo Fenoglio | Software Engineer @ Binbash]&#40;https://www.linkedin.com/in/angelofenoglio/&#41;")
+
+[comment]: <> (    ![team]&#40;../assets/images/team/angelo.fenoglio.bwc.png "Leverage-team"&#41;{: style="width:150px"})
     
-    - [x] Sofware Engineer. Senior Python developer. Cybersecurity and DevOps enthusiast.
+[comment]: <> (    - [x] Sofware Engineer. Senior Python developer. Cybersecurity and DevOps enthusiast.)
 
-## Business & Management Team
-!!! info "[Carolina Rey | Emotional Intelligence Coach @ Binbash](https://www.linkedin.com/in/caroreyp/)"
+[comment]: <> (## Business & Management Team)
 
-    ![team](../assets/images/team/carolina.rey.bwc.png "Leverage-team"){: style="width:140px"}
+[comment]: <> (!!! info "[Carolina Rey | Emotional Intelligence Coach @ Binbash]&#40;https://www.linkedin.com/in/caroreyp/&#41;")
+
+[comment]: <> (    ![team]&#40;../assets/images/team/carolina.rey.bwc.png "Leverage-team"&#41;{: style="width:140px"})
     
-    - [x] Emotional coaching to Binbash Leverage leadership team members.
-    Supporting the team to evolve and improve:
-        - Self-management 
-        - Self-awareness
-        - Social awareness
-        - Relationship management 
+[comment]: <> (    - [x] Emotional coaching to Binbash Leverage leadership team members.)
 
-!!! info "[Marcelo Beresvil | CFO & BizDev Manager @ Binbash](https://www.linkedin.com/in/marceloberesvil/)"
+[comment]: <> (    Supporting the team to evolve and improve:)
 
-    ![team](../assets/images/team/marcelo.beresvil.bwc.png "Leverage-team"){: style="width:150px"}
+[comment]: <> (        - Self-management )
+
+[comment]: <> (        - Self-awareness)
+
+[comment]: <> (        - Social awareness)
+
+[comment]: <> (        - Relationship management )
+
+[comment]: <> (!!! info "[Marcelo Beresvil | CFO & BizDev Manager @ Binbash]&#40;https://www.linkedin.com/in/marceloberesvil/&#41;")
+
+[comment]: <> (    ![team]&#40;../assets/images/team/marcelo.beresvil.bwc.png "Leverage-team"&#41;{: style="width:150px"})
     
-    - [x] Chief Financial Officer & Business Development Manager
+[comment]: <> (    - [x] Chief Financial Officer & Business Development Manager)
 
-!!! info "[Patricia Charlier | Project Manager @ Binbash](https://www.linkedin.com/in/patricia-charlier-653bb23b/)"
+[comment]: <> (!!! info "[Patricia Charlier | Project Manager @ Binbash]&#40;https://www.linkedin.com/in/patricia-charlier-653bb23b/&#41;")
 
-    ![team](../assets/images/team/patricia.charlier.bwc.png "Leverage-team"){: style="width:150px"}
+[comment]: <> (    ![team]&#40;../assets/images/team/patricia.charlier.bwc.png "Leverage-team"&#41;{: style="width:150px"})
     
-    - [x] Project Manager (PM)
+[comment]: <> (    - [x] Project Manager &#40;PM&#41;)
 
 
 

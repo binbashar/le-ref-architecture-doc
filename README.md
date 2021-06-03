@@ -3,7 +3,7 @@
     alt="binbash" width="250"/>
 </div>
 <div align="right">
-  <img src="./docs/assets/images/logos/binbash-leverage-terraform.png"
+  <img src="./docs/assets/images/logos/binbash-leverage.png"
   alt="leverage" width="130"/>
 </div>
 
@@ -36,7 +36,6 @@ via CircleCI job to the `gh-pages` branch (currently being built from this branc
     - It currently uses the `make docs-deploy-gh` cmd which could be locally executed if needed too.
 
 ### TODO
-1. Several sections needs completion or update. 
-2. Add figures caption and its sources cross doc.
+- Several sections needs completion or update. 
 
 

@@ -48,12 +48,10 @@
     
     🌎 **Company website:**  [tunubi.com](https://www.tunubi.com/)
 
-    - [x] *"Binbash was fundamental in supporting us in building a scalable, high-performance and secure AWS Cloud
-    architecture, leveraging all of the industry leading DevOps concepts from the very start. Such us their main
-    product Leverage an its 100% Infra as Code approach.
-    Most significantly, their exceptional commitment to doing the right thing and always maintaining a positive
-    mindset is one of the key reasons why we love working with them. Binbash has not only earned our highest
-    endorsement, but also our complete trust."*
+    - [x] *"Binbash helped us build a resilient, future-proof infrastructure in record time. 
+    They will not only do things for you, they will transfer all the knowledge and make you 
+    part of the decision. They are always thinking about re-usability, security and scale. 
+    The Binbash team is not only technically proficient but they are really nice human beings."*
 
 !!! info "[Juan Manuel Rodrigo | CTO @ Latam Fintech / Banking / Insurtech Industries](https://www.linkedin.com/in/jmrodrigopmp/)"
 

@@ -47,7 +47,7 @@
     
       
         
-<script>window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)},ga.l=+new Date,ga("create","OOGLE_ANALYTICS_KEY_LEVERAGE","auto"),ga("set","anonymizeIp",!0),ga("send","pageview"),document.addEventListener("DOMContentLoaded",function(){document.forms.search&&document.forms.search.query.addEventListener("blur",function(){var e;this.value&&(e=document.location.pathname,ga("send","pageview",e+"?q="+this.value))}),"undefined"!=typeof location$&&location$.subscribe(function(e){ga("send","pageview",e.pathname)})})</script>
+<script>window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)},ga.l=+new Date,ga("create","UA-172873342-1","auto"),ga("set","anonymizeIp",!0),ga("send","pageview"),document.addEventListener("DOMContentLoaded",function(){document.forms.search&&document.forms.search.query.addEventListener("blur",function(){var e;this.value&&(e=document.location.pathname,ga("send","pageview",e+"?q="+this.value))}),"undefined"!=typeof location$&&location$.subscribe(function(e){ga("send","pageview",e.pathname)})})</script>
 <script async src="https://www.google-analytics.com/analytics.js"></script>
       
     
@@ -846,6 +846,18 @@
   
 
           
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../security/iam-access-analyzer/" class="md-nav__link">
+        IAM Access Analyzer
+      </a>
+    </li>
+  
+
+          
         </ul>
       </nav>
     </li>
@@ -1000,9 +1012,39 @@
         
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          K8s EKS
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
         K8s EKS
       </a>
+      
+        
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#version-support-convention" class="md-nav__link">
+    Version support convention
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -2590,6 +2632,21 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#version-support-convention" class="md-nav__link">
+    Version support convention
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -2628,6 +2685,13 @@ to run <strong>Kubernetes</strong> on AWS without needing to install and operate
 "A tale from the trenches: The CloudBees Core on AWS Quick Start"</a>,
 AWS Infrastructure & Automation Blog post, accessed November 18th 2020).
 </figcaption>
+
+<h2 id="version-support-convention">Version support convention<a class="headerlink" href="#version-support-convention" title="Permanent link"> ¶</a></h2>
+<p>At Leverage we support the last 3 latest stable Kubernetes version releases
+https://docs.aws.amazon.com/eks/latest/userguide/kubernetes-versions.html</p>
+<p>We think this is a good balance between management overhead and an acceptable level of 
+supported versions. If your project have and older legacy version we could work along
+your CloudOps team to safely migrate it to a Leverage supported EKS version.</p>
                 
               
               

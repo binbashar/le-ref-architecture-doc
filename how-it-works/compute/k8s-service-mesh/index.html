@@ -13,14 +13,14 @@
         <meta name="author" content="Binbash">
       
       
-        <link rel="canonical" href="https://leverage.binbash.com.ar/how-it-works/costs/costs/">
+        <link rel="canonical" href="https://leverage.binbash.com.ar/how-it-works/compute/k8s-service-mesh/">
       
       <link rel="icon" href="../../../assets/images/logos/favicon.ico">
       <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-7.1.6">
     
     
       
-        <title>Costs - Binbash Leverage Reference Architecture</title>
+        <title>K8s Service Mesh - Binbash Leverage Reference Architecture</title>
       
     
     
@@ -75,7 +75,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#cost-estmation-optimization" class="md-skip">
+        <a href="#service-mesh" class="md-skip">
           Skip to content
         </a>
       
@@ -105,7 +105,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Costs
+              K8s Service Mesh
             
           </span>
         </div>
@@ -954,12 +954,14 @@
             
   
   
+    
+  
   
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_7" type="checkbox" id="__nav_3_7" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_7" type="checkbox" id="__nav_3_7" checked>
       
       <label class="md-nav__link" for="__nav_3_7">
         Compute
@@ -977,7 +979,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../compute/overview/" class="md-nav__link">
+      <a href="../overview/" class="md-nav__link">
         Overview
       </a>
     </li>
@@ -989,7 +991,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../compute/k8s-kops/" class="md-nav__link">
+      <a href="../k8s-kops/" class="md-nav__link">
         K8s Kops
       </a>
     </li>
@@ -1001,7 +1003,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../compute/k8s-eks/" class="md-nav__link">
+      <a href="../k8s-eks/" class="md-nav__link">
         K8s EKS
       </a>
     </li>
@@ -1011,11 +1013,85 @@
             
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="../../compute/k8s-service-mesh/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          K8s Service Mesh
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         K8s Service Mesh
       </a>
+      
+        
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#overview" class="md-nav__link">
+    Overview
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-it-works" class="md-nav__link">
+    How it works
+  </a>
+  
+    <nav class="md-nav" aria-label="How it works">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#architecture" class="md-nav__link">
+    Architecture
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dashboard" class="md-nav__link">
+    Dashboard
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#read-more" class="md-nav__link">
+    Read more
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -1025,7 +1101,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../compute/serverless/" class="md-nav__link">
+      <a href="../serverless/" class="md-nav__link">
         Serverless
       </a>
     </li>
@@ -1338,65 +1414,11 @@
             
   
   
-    
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          Costs
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../../costs/costs/" class="md-nav__link">
         Costs
       </a>
-      
-        
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#opportunity-to-optimize-resources" class="md-nav__link">
-    Opportunity to optimize resources
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#consideration" class="md-nav__link">
-    Consideration
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#read-more" class="md-nav__link">
-    Read more
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -2663,16 +2685,36 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#opportunity-to-optimize-resources" class="md-nav__link">
-    Opportunity to optimize resources
+  <a href="#overview" class="md-nav__link">
+    Overview
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#consideration" class="md-nav__link">
-    Consideration
+  <a href="#how-it-works" class="md-nav__link">
+    How it works
   </a>
+  
+    <nav class="md-nav" aria-label="How it works">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#architecture" class="md-nav__link">
+    Architecture
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dashboard" class="md-nav__link">
+    Dashboard
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -2695,72 +2737,50 @@
             <article class="md-content__inner md-typeset">
               
                 
-                  <a href="https://github.com/binbashar/le-ref-architecture-doc/edit/master/docs/how-it-works/costs/costs.md" title="Edit this page" class="md-content__button md-icon">
+                  <a href="https://github.com/binbashar/le-ref-architecture-doc/edit/master/docs/how-it-works/compute/k8s-service-mesh.md" title="Edit this page" class="md-content__button md-icon">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg>
                   </a>
                 
                 
-                <h1 id="cost-estmation-optimization">Cost Estmation &amp; Optimization<a class="headerlink" href="#cost-estmation-optimization" title="Permanent link"> ¶</a></h1>
-<h2 id="opportunity-to-optimize-resources">Opportunity to optimize resources<a class="headerlink" href="#opportunity-to-optimize-resources" title="Permanent link"> ¶</a></h2>
-<div class="admonition tip">
-<p class="admonition-title"><img alt="leverage-aws-ec2" src="../../../assets/images/icons/aws-emojipack/Compute_AmazonEC2.png" style="width:20px" title="Leverage" /> Compute</p>
-<ul>
-<li>Usage of reserved EC2 instances for stable workloads (AWS Cost Explorer Reserved Optimization | Compute 
-Optimizer - get a -$ of up to 42% vs On-Demand)</li>
-<li>Usage of Spot EC2 instances for fault-tolerant workloads (-$ by up to 90%).</li>
-<li>Use ASG to allow your EC2 fleet to +/- based on demand.</li>
-<li>Id EC2 w/ low-utiliz and -$ by stop / rightsize them.</li>
-<li>Compute Savings Plans to reduce EC2, Fargate and Lambda $ (Compute Savings Plans OK regardless of EC2 family,
- size, AZ, reg, OS or tenancy, OK for Fargate / Lambda too).</li>
-</ul>
+                <h1 id="service-mesh">Service Mesh<a class="headerlink" href="#service-mesh" title="Permanent link"> ¶</a></h1>
+<h2 id="overview">Overview<a class="headerlink" href="#overview" title="Permanent link"> ¶</a></h2>
+<p>Ultra light, ultra simple, ultra powerful. Linkerd adds security, observability, and 
+reliability to Kubernetes, without the complexity. CNCF-hosted and 100% open source.</p>
+<h2 id="how-it-works">How it works<a class="headerlink" href="#how-it-works" title="Permanent link"> ¶</a></h2>
+<div class="admonition summary">
+<p class="admonition-title">How Linkerd works</p>
+<p>Linkerd works by installing a set of ultralight, transparent proxies next to each
+service instance. These proxies automatically handle all traffic to and from the service.
+Because they’re transparent, these proxies act as highly instrumented out-of-process
+network stacks, sending telemetry to, and receiving control signals from, the control plane.
+This design allows Linkerd to measure and manipulate traffic to and from your service
+without introducing excessive latency.</p>
 </div>
-<div class="admonition tip">
-<p class="admonition-title"><img alt="leverage-aws-rds" src="../../../assets/images/icons/aws-emojipack/Database_AmazonRDS.png" style="width:20px" title="Leverage" /> Databases</p>
-<ul>
-<li>Usage of reserved RDS instances for stable workload databases.</li>
-</ul>
-</div>
-<div class="admonition tip">
-<p class="admonition-title"><img alt="leverage-aws-cw" src="../../../assets/images/icons/aws-emojipack/ManagementTools_AmazonCloudWatch.png" style="width:20px" title="Leverage" /> Monitoring &amp; Automation</p>
-<ul>
-<li>AWS billing alarms + AWS Budget (forecasted account cost / RI Coverage) Notifications to Slack</li>
-<li>Activate AWS Trusted Advisor cost related results<ul>
-<li>Id EBS w/ low-utiliz and -$ by snapshotting and then rm them</li>
-<li>Check underutilized EBS to be possibly shrinked or removed.</li>
-<li>Networking -&gt; deleting idle LB -&gt; Use LB check w/ RequestCount of &gt; 100 past 7d.</li>
-</ul>
-</li>
-<li>Setup Lambda nuke to automatically clean up AWS account resources.</li>
-<li>Setup lambda scheduler for stop and start resources on AWS (EC2, ASG &amp; RDS)</li>
-</ul>
-</div>
-<div class="admonition tip">
-<p class="admonition-title"><img alt="leverage-aws-s3" src="../../../assets/images/icons/aws-emojipack/Storage_AmazonS3.png" style="width:20px" title="Leverage" /> Storage &amp; Network Traffic</p>
-<ul>
-<li>Check S3 usage and -$ by leveraging lower $ storage tiers.</li>
-<li>Use S3 Analytics, or automate mv for these objects into lower $ storage tier w/ Life Cycle Policies or w/ S3
-Intelligent-Tiering.</li>
-<li>If DataTransferOut from EC2 to the public internet is significant $, consider implementing CloudFront.</li>
-</ul>
-</div>
-<h2 id="consideration">Consideration<a class="headerlink" href="#consideration" title="Permanent link"> ¶</a></h2>
-<div class="admonition check">
-<p class="admonition-title">Reserved Instances</p>
-<ul class="task-list">
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> <img alt="💰" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f4b0.svg" title=":moneybag:" /> Stable workloads will always run on reserved instances, the following calculation only considers 1yr. No Upfront mode,
-in which Client will not have to pay in advance but commits to this monthly usage and will be billed so, even if the
-instance type is not used. More aggressive Reservation strategies can be implemented to further reduce costs, these
-will have to be analyzed by business in conjunction with operations.</li>
-</ul>
-</div>
+<h3 id="architecture">Architecture<a class="headerlink" href="#architecture" title="Permanent link"> ¶</a></h3>
+<p><img alt="leverage-k8s-networking" src="../../../assets/images/diagrams/k8s-linkerd-control-plane.png" style="width:750px" title="Leverage" /></p>
+<figcaption style="font-size:15px">
+<b>Figure:</b> Figure: Linkerd v2.10 architecture diagram.
+(Source: Linkerd official documentation, 
+<a href="https://linkerd.io/2.10/reference/architecture/index.html">
+"High level Linkerd control plane and a data plane."</a>,
+Linkerd Doc, accessed June 14th 2021).
+</figcaption>
+
+<h3 id="dashboard">Dashboard<a class="headerlink" href="#dashboard" title="Permanent link"> ¶</a></h3>
+<p><img alt="leverage-k8s-networking" src="../../../assets/images/diagrams/k8s-linkerd-dashboard.png" style="width:750px" title="Leverage" /></p>
+<figcaption style="font-size:15px">
+<b>Figure:</b> Figure: Linkerd v2.10 dashboard.
+(Source: Linkerd official documentation, 
+<a href="https://linkerd.io/2.10/reference/architecture/index.html#dashboard">
+"Linkerd dashboard"</a>,
+Linkerd Doc, accessed June 14th 2021).
+</figcaption>
+
 <h2 id="read-more">Read more<a class="headerlink" href="#read-more" title="Permanent link"> ¶</a></h2>
 <div class="admonition info">
-<p class="admonition-title">Reference links</p>
-<p>Consider the following extra links as reference:</p>
+<p class="admonition-title">Related resources</p>
 <ul>
-<li><img alt="📙" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f4d9.svg" title=":orange_book:" /> <a href="https://d1.awsstatic.com/training-and-certification/ramp-up_guides/Ramp-Up_Guide_Cost_Management.pdf">AWS Ramp-Up Guide: Cost Management</a></li>
-<li><img alt="📚" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f4da.svg" title=":books:" /> <a href="https://www.hashicorp.com/blog/a-guide-to-cloud-cost-optimization-with-hashicorp-terraform">A Guide to Cloud Cost Optimization with HashiCorp Terraform</a></li>
-<li><img alt="📚" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f4da.svg" title=":books:" /> <a href="https://www.contino.io/insights/finops-cloud-finance-management">FinOps: How Cloud Finance Management Can Save Your Cloud Programme From Extinction</a></li>
+<li><img alt="📒" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f4d2.svg" title=":ledger:" /> <a href="hhttps://linkerd.io/2021/05/27/linkerd-vs-istio-benchmarks/">Linkerd vs Istio benchamrks</a></li>
 </ul>
 </div>
                 
@@ -2781,7 +2801,7 @@ will have to be analyzed by business in conjunction with operations.</li>
   
     <nav class="md-footer__inner md-grid" aria-label="Footer">
       
-        <a href="../../reliability/dr/" class="md-footer__link md-footer__link--prev" rel="prev">
+        <a href="../k8s-eks/" class="md-footer__link md-footer__link--prev" rel="prev">
           <div class="md-footer__button md-icon">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
           </div>
@@ -2790,19 +2810,19 @@ will have to be analyzed by business in conjunction with operations.</li>
               <span class="md-footer__direction">
                 Previous
               </span>
-              Disaster Recovery
+              K8s EKS
             </div>
           </div>
         </a>
       
       
-        <a href="../../read-more/" class="md-footer__link md-footer__link--next" rel="next">
+        <a href="../serverless/" class="md-footer__link md-footer__link--next" rel="next">
           <div class="md-footer__title">
             <div class="md-ellipsis">
               <span class="md-footer__direction">
                 Next
               </span>
-              Read More
+              Serverless
             </div>
           </div>
           <div class="md-footer__button md-icon">

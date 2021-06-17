@@ -13,14 +13,14 @@
         <meta name="author" content="Binbash">
       
       
-        <link rel="canonical" href="https://leverage.binbash.com.ar/user-guide/organization/organization/">
+        <link rel="canonical" href="https://leverage.binbash.com.ar/user-guide/organization/organization-init/">
       
       <link rel="icon" href="../../../assets/images/logos/favicon.ico">
       <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-7.1.6">
     
     
       
-        <title>Organization - Binbash Leverage Reference Architecture</title>
+        <title>Organization Init - Binbash Leverage Reference Architecture</title>
       
     
     
@@ -105,7 +105,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Organization
+              Organization Init
             
           </span>
         </div>
@@ -1631,12 +1631,12 @@
       
       
         <label class="md-nav__link md-nav__link--active" for="__toc">
-          Organization
+          Organization Init
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <a href="./" class="md-nav__link md-nav__link--active">
-        Organization
+        Organization Init
       </a>
       
         
@@ -1682,8 +1682,8 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#example" class="md-nav__link">
-    Example
+  <a href="#reference-aws-organization-init-workflow" class="md-nav__link">
+    Reference AWS Organization init workflow
   </a>
   
 </li>
@@ -1693,10 +1693,29 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#organization-setup-post-steps" class="md-nav__link">
+    Organization setup post-steps
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
       
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../organization-legacy-accounts/" class="md-nav__link">
+        Invite Legacy accounts
+      </a>
     </li>
   
 
@@ -2712,14 +2731,21 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#example" class="md-nav__link">
-    Example
+  <a href="#reference-aws-organization-init-workflow" class="md-nav__link">
+    Reference AWS Organization init workflow
   </a>
   
 </li>
         
       </ul>
     </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#organization-setup-post-steps" class="md-nav__link">
+    Organization setup post-steps
+  </a>
   
 </li>
       
@@ -2735,12 +2761,12 @@
             <article class="md-content__inner md-typeset">
               
                 
-                  <a href="https://github.com/binbashar/le-ref-architecture-doc/edit/master/docs/user-guide/organization/organization.md" title="Edit this page" class="md-content__button md-icon">
+                  <a href="https://github.com/binbashar/le-ref-architecture-doc/edit/master/docs/user-guide/organization/organization-init.md" title="Edit this page" class="md-content__button md-icon">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg>
                   </a>
                 
                 
-                <h1 id="reference-architecture-terraform-aws-organizations-account-baseline">Reference Architecture: Terraform AWS Organizations Account Baseline<a class="headerlink" href="#reference-architecture-terraform-aws-organizations-account-baseline" title="Permanent link"> ¶</a></h1>
+                <h1 id="reference-architecture-terraform-aws-organizations-account-baseline">Reference Architecture: Terraform AWS Organizations account baseline<a class="headerlink" href="#reference-architecture-terraform-aws-organizations-account-baseline" title="Permanent link"> ¶</a></h1>
 <div class="admonition help">
 <p class="admonition-title">How it works</p>
 <p><img alt="📚" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f4da.svg" title=":books:" /> <a href="../../../how-it-works/organization/organization/"><strong>documentation:</strong> organization</a></p>
@@ -2759,11 +2785,12 @@ the aliases automatically implicitly when running Terraform's Leverage code.</p>
 <ul>
 <li><img alt="📧" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f4e7.svg" title=":e-mail:" /> <code>aws+security@binbash.com.ar</code></li>
 <li><img alt="📧" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f4e7.svg" title=":e-mail:" /> <code>aws+shared@binbash.com.ar</code></li>
+<li><img alt="📧" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f4e7.svg" title=":e-mail:" /> <code>aws+network@binbash.com.ar</code></li>
 <li><img alt="📧" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f4e7.svg" title=":e-mail:" /> <code>aws+apps-devstg@binbash.com.ar</code></li>
 <li><img alt="📧" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f4e7.svg" title=":e-mail:" /> <code>aws+apps-prd@binbash.com.ar</code></li>
 </ul>
-<div class="admonition important reference code as example">
-<p class="admonition-title">Important</p>
+<div class="admonition important">
+<p class="admonition-title">Reference Code as example</p>
 <div class="highlight"><pre><span></span><code><span class="c1">#</span>
 <span class="c1"># Project Prd: services and resources related to production are placed and</span>
 <span class="c1">#  maintained here.</span>
@@ -2775,37 +2802,119 @@ the aliases automatically implicitly when running Terraform's Leverage code.</p>
 <span class="p">}</span>
 </code></pre></div>
 </div>
-<h3 id="example">Example<a class="headerlink" href="#example" title="Permanent link"> ¶</a></h3>
+<h3 id="reference-aws-organization-init-workflow">Reference AWS Organization init workflow<a class="headerlink" href="#reference-aws-organization-init-workflow" title="Permanent link"> ¶</a></h3>
 <div class="admonition example">
-<p class="admonition-title">Steps</p>
+<p class="admonition-title">Steps for initial AWS Orgnization setup</p>
 <ol>
-<li>Create a brand <a href="https://aws.amazon.com/premiumsupport/knowledge-center/create-and-activate-aws-account/">new AWS Account</a>,
- intended to be our AWS Organization Root Account  </li>
-<li>Via AWS Web Console: in <code>project-root</code> create the <code>root-org</code> IAM user with Admin privileges, which will be use
- for the initial AWS Org bootstrapping. After it’s 1st execution only nominated Org admin users will persist in the
- <code>project-root</code> account.</li>
-<li>The AWS Org will be orchestrated -&gt; <a href="https://github.com/binbashar/le-tf-infra-aws/tree/master/root/organizations">Leverage Ref Code</a></li>
-<li>Via AWS Web Console: from your <code>project-root</code> acconunt
- <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_invites.html">invite</a> the 
-pre-existing <code>project-legacy</code> (1 to n accounts).</li>
-<li>Via AWS Web Console: in <code>project-legacy</code> create the <code>OrganizationAccountAccessRole</code> IAM Role with Admin
- permissions.<ul>
-<li><img alt="📙" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f4d9.svg" title=":orange_book:" /> Should follow
-<a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_access.html">Creating the OrganizationAccountAccessRole in an invited member account</a>
-section.</li>
+<li>
+<p>Create a brand <a href="https://aws.amazon.com/premiumsupport/knowledge-center/create-and-activate-aws-account/">new AWS Account</a>,
+ intended to be our AWS Organization Management (root) Account</p>
+<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> <strong>Name:</strong> <code>project_name-management</code>, eg: <code>leverage-management</code></li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> <strong>MFA:</strong> <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_root-user.html#id_root-user_manage_mfa">Enable MFA for your root user</a></li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> <strong>Billing:</strong> review billing setup as pre-requisite to deploy the AWS Org. 
+  At your <a href="https://console.aws.amazon.com/billing/home?#/account">Management account billing setup</a> 
+  check<ul>
+<li>Activate IAM User and Role Access to Billing Information</li>
+<li>If needed Update Alternate Contacts </li>
 </ul>
 </li>
-<li>Import your <code>project-legacy</code> account as code.<ul>
-<li>Update the following variables in <code>./@bin/makefiles/terraform12/Makefile.terraform12-import-rm</code>
-<div class="highlight"><pre><span></span><code>TF_IMPORT_RESOURCE                := &quot;aws_organizations_organizational_unit.bbl_apps_devstg&quot;
-TF_IMPORT_RESOURCE_ID             := &quot;ou-oz9d-yl3npduj&quot;
-TF_RM_RESOURCE                    := &quot;aws_organizations_organizational_unit.bbl_apps_devstg&quot;
-</code></pre></div></li>
-<li>Then from the root context -&gt; <code>cd ./root/organizaton make import</code></li>
 </ul>
 </li>
-<li>Recommended following configurations <a href="../../identities/identities/">Identities</a></li>
-<li>Switch to the <code>project-security</code> account for consolidated and centralized User Mgmt and access to the AWS Org.</li>
+<li>
+<p>Via AWS Web Console: in <code>project_name-management</code> previously created account (eg, name: <code>leverage-management</code>,
+email: <code>aws@binbash.com.ar</code>) <a href="https://docs.aws.amazon.com/mediapackage/latest/ug/setting-up-create-iam-user.html">create the <code>mgmt-org-admin</code> IAM user with Admin privileges</a>
+(admin IAM policy attached), which will be use for the initial AWS Org bootstrapping.</p>
+<ul>
+<li><img alt="📒" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f4d2.svg" title=":ledger:" /> <strong>NOTE:</strong> After it’s 1st execution only nominated Org admin users will persist in the <code>project-mgmt</code> account.</li>
+</ul>
+</li>
+<li>
+<p>Via AWS Web Console: in <code>project-management</code> account create <code>mgmt-org-admin</code> IAM user AWS ACCESS KEYS</p>
+<ul>
+<li><img alt="📒" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f4d2.svg" title=":ledger:" /> <strong>NOTE:</strong> This could be created all in one in the previous step (Nº 2).</li>
+</ul>
+<p><img alt="leverage-org" src="../../../assets/images/screenshots/aws-iam-org-mgmt-admin-user-permissions.png" style="width:950px" title="Leverage" />
+<figcaption style="font-size:15px">
+<b>Figure:</b> AWS Web Console screenshot.
+(Source: Binbash, "AWs Organization management account init IAM admin user", accessed June 16th 2021).
+</figcaption></p>
+<p><img alt="leverage-org" src="../../../assets/images/screenshots/aws-iam-org-mgmt-admin-user-keys.png" style="width:950px" title="Leverage" />
+<figcaption style="font-size:15px">
+<b>Figure:</b> AWS Web Console screenshot.
+(Source: Binbash, "AWs Organization management account init IAM admin user", accessed June 16th 2021).
+</figcaption></p>
+</li>
+<li>
+<p>Set your IAM credentials in the machine your're going to exec the <code>leverage cli</code> (remember this are the 
+<code>mgmt-org-admin</code> temporary user credentials shown in the screenshot immediately above).</p>
+</li>
+<li>
+<p>Set up your Leverage reference architecture configs in order to work with your new account and 
+`org-mgmt-admin IAM user</p>
+<ul>
+<li><a href="https://github.com/binbashar/le-tf-infra-aws/blob/master/config/common.config.example">common config</a></li>
+<li><a href="https://github.com/binbashar/le-tf-infra-aws/tree/master/root/config">account configs</a></li>
+</ul>
+</li>
+<li>
+<p>Setup and create the <strong>terraform remote state</strong> for the new AWS Org Management account</p>
+<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> <a href="https://leverage.binbash.com.ar/user-guide/base-configuration/repo-le-tf-infra-aws/#remote-state">terraform remote state config</a></li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> <a href="https://leverage.binbash.com.ar/user-guide/base-workflow/repo-le-tf-infra-aws-tf-state/">terraform remote state workflow</a></li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> <a href="https://github.com/binbashar/le-tf-infra-aws/tree/master/root/base-tf-backend">terraform remote state ref code</a></li>
+<li><img alt="📒" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f4d2.svg" title=":ledger:" /> You'll 1st get a local state and then you'll need to move your tf state to s3; validate it and finally delete local state files</li>
+</ul>
+</li>
+<li>
+<p>The AWS Organization from the Reference Architecture 
+<a href="https://github.com/binbashar/le-tf-infra-aws/tree/master/root/organizations">/le-tf-infra-aws/root/organizations</a> 
+will be orchestrated using the <code>leverage cli</code> following the 
+<a href="../../base-workflow/repo-le-tf-infra-aws/#steps">standard workflow</a>.</p>
+<ul>
+<li><img alt="📒" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f4d2.svg" title=":ledger:" /> the Management account has to be imported into de the code.</li>
+</ul>
+</li>
+</ol>
+</div>
+<h2 id="organization-setup-post-steps">Organization setup post-steps<a class="headerlink" href="#organization-setup-post-steps" title="Permanent link"> ¶</a></h2>
+<div class="admonition example">
+<p class="admonition-title">AWS Organization setup post-steps</p>
+<ol>
+<li>
+<p>Following the <a href="../../identities/identities/">doc</a> orchestrate vía the <code>leverage cli</code> workflow the Mgmt 
+Account IAM layer (<code>base-identities</code>) with the admin IAM Users (consider this/these users will have admin privileges over the 
+<a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_access.html">entire AWS Org assuming the <code>OrganizationAccountAccessRole</code></a>)
+-&gt; <a href="https://github.com/binbashar/le-tf-infra-aws/tree/master/root/base-identities">le-tf-infra-aws/root/base-identities</a></p>
+<ul>
+<li><img alt="📒" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f4d2.svg" title=":ledger:" /> The IAM role: <code>OrganizationAccessAccountRole</code> =&gt; does not exist in the initial Management (root)
+account, this will be created by the code in this layer.</li>
+</ul>
+</li>
+<li>
+<p>Mgmt account admin user permanent credentials set up =&gt; 
+<a href="../../identities/identities/">setup in your workstation the AWS credentials</a>)
+for the <code>OrganizationAccountAccessRole</code> IAM role (<code>project_short-root-oaar</code>, eg: <code>bb-root-oaar</code>).
+Then validate within each initial mgmt account layer that the profile <code>bb-root-oaar</code> is correcly configured 
+at the below presented config files, as well as any other necessary setup.</p>
+<ul>
+<li><a href="https://github.com/binbashar/le-tf-infra-aws/blob/master/config/common.config.example"><code>/config/common.config</code></a> </li>
+<li><a href="https://github.com/binbashar/le-tf-infra-aws/blob/master/root/config/account.config">/root/config/account.config</a></li>
+<li><a href="https://github.com/binbashar/le-tf-infra-aws/blob/master/root/config/backend.config">/root/config/backend.config</a></li>
+</ul>
+</li>
+<li>
+<p>Setup (code and config files) and Orchestrate the 
+<a href="https://github.com/binbashar/le-tf-infra-aws/tree/master/security/base-identities"><code>/security/base-identities</code></a> 
+layer via <code>leverage cli</code> on your security account
+for consolidated and centralized User Mgmt and access to the AWS Org.    </p>
+</li>
+<li>
+<p><a href="../organization-legacy-accounts/">AWS Organizations: invite pre-existing (legacy) accounts</a></p>
+</li>
+<li>
+<p><img alt="📒" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f4d2.svg" title=":ledger:" /> Pending to document the debug mode for the mfa script</p>
+</li>
 </ol>
 </div>
                 
@@ -2841,13 +2950,13 @@ TF_RM_RESOURCE                    := &quot;aws_organizations_organizational_unit
         </a>
       
       
-        <a href="../../identities/gpg/" class="md-footer__link md-footer__link--next" rel="next">
+        <a href="../organization-legacy-accounts/" class="md-footer__link md-footer__link--next" rel="next">
           <div class="md-footer__title">
             <div class="md-ellipsis">
               <span class="md-footer__direction">
                 Next
               </span>
-              gpg
+              Invite Legacy accounts
             </div>
           </div>
           <div class="md-footer__button md-icon">

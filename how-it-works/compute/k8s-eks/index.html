@@ -560,13 +560,13 @@
         <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_1" type="checkbox" id="__nav_3_1" >
       
       <label class="md-nav__link" for="__nav_3_1">
-        Desing
+        Design
         <span class="md-nav__icon md-icon"></span>
       </label>
-      <nav class="md-nav" aria-label="Desing" data-md-level="2">
+      <nav class="md-nav" aria-label="Design" data-md-level="2">
         <label class="md-nav__title" for="__nav_3_1">
           <span class="md-nav__icon md-icon"></span>
-          Desing
+          Design
         </label>
         <ul class="md-nav__list" data-md-scrollfix>
           
@@ -1580,8 +1580,20 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../user-guide/base-workflow/repo-le-dev-makefiles/" class="md-nav__link">
+      <a href="../../../user-guide/base-workflow/repo-le-dev-makefiles.md" class="md-nav__link">
         Makefiles Lib
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../user-guide/base-workflow/repo-leverage-cli/" class="md-nav__link">
+        Leverage CLI
       </a>
     </li>
   
@@ -2711,10 +2723,13 @@ AWS Infrastructure & Automation Blog post, accessed November 18th 2020).
 </figcaption>
 
 <h2 id="version-support-convention">Version support convention<a class="headerlink" href="#version-support-convention" title="Permanent link"> ¶</a></h2>
-<p>At Leverage we support the last 3 latest stable Kubernetes version releases
-https://docs.aws.amazon.com/eks/latest/userguide/kubernetes-versions.html</p>
+<p>At Leverage we support the last 3 latest stable 
+<a href="https://docs.aws.amazon.com/eks/latest/userguide/kubernetes-versions.html">Kubernetes version</a> releases (at best effort)
+within our
+<a href="https://github.com/binbashar/le-tf-infra-aws/tree/master/apps-devstg/k8s-eks">Reference Architecture EKS layer</a> 
+and <a href="https://github.com/binbashar/terraform-aws-eks">IaC Library EKS module</a></p>
 <p>We think this is a good balance between management overhead and an acceptable level of 
-supported versions. If your project have and older legacy version we could work along
+supported versions (at best effort). If your project have and older legacy version we could work along
 your CloudOps team to safely migrate it to a Leverage supported EKS version.</p>
                 
               

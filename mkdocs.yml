@@ -147,6 +147,7 @@ nav:
     - Security:
       - VPN: "how-it-works/security/vpn.md"
       - Services: "how-it-works/security/services.md"
+      - IAM Access Analyzer: "how-it-works/security/iam-access-analyzer.md"
     - Network:
       - VPC Topology: "how-it-works/network/vpc-topology.md"
       - VPC Adressing: "how-it-works/network/vpc-addressing.md"
@@ -157,6 +158,7 @@ nav:
       - Overview: "how-it-works/compute/overview.md"
       - K8s Kops: "how-it-works/compute/k8s-kops.md"
       - K8s EKS: "how-it-works/compute/k8s-eks.md"
+      - K8s Service Mesh: "how-it-works/compute/k8s-service-mesh.md"
       - Serverless: "how-it-works/compute/serverless.md"
     - Database:
        - Databases: "how-it-works/database/database.md"
@@ -196,7 +198,8 @@ nav:
         - Terraform Infra State: "user-guide/base-workflow/repo-le-tf-infra-aws-tf-state.md"
         - Ansible Infra: "user-guide/base-workflow/repo-le-ansible-infra.md"
     - AWS Organization:
-      - Organization: "user-guide/organization/organization.md"
+      - Organization Init: "user-guide/organization/organization-init.md"
+      - Invite Legacy accounts: "user-guide/organization/organization-legacy-accounts.md"
     - Identities:
       - gpg: "user-guide/identities/gpg.md"
       - identities: "user-guide/identities/identities.md"

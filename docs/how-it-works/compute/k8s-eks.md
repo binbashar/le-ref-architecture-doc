@@ -21,3 +21,11 @@ to run **Kubernetes** on AWS without needing to install and operate your own Kub
 "A tale from the trenches: The CloudBees Core on AWS Quick Start"</a>,
 AWS Infrastructure & Automation Blog post, accessed November 18th 2020).
 </figcaption>
+
+## Version support convention
+At Leverage we support the last 3 latest stable Kubernetes version releases
+https://docs.aws.amazon.com/eks/latest/userguide/kubernetes-versions.html
+
+We think this is a good balance between management overhead and an acceptable level of 
+supported versions. If your project have and older legacy version we could work along
+your CloudOps team to safely migrate it to a Leverage supported EKS version.

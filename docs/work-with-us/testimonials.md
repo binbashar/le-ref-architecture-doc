@@ -113,12 +113,14 @@
 
     🌎 **Company website:**  [thirdpartytrust.com](https://www.thirdpartytrust.com/) 
 
-    - [x] *"Binbash redesigned and help us to developed our entire AWS Cloud Solutions Architecture under a IaC
-    (InfraAsCode) best practice approach, and always taking care of the environment security. Including our new
-    AWS Organizations Multi-Account and Kubernetes deployment infrastructure. 
-    The Binbash team managed the entire engagement effectively and within budget. The team members are knowledgeable,
-    proactive, work collaboratively, offer solid and creative solutions, communicate well, and deliver timely and
-    high quality work products, such as Leverage. We highly recommend Binbash for your AWS cloud infrastructure
+    - [x] *"Binbash redesigned and helped us to develop our entire AWS Cloud Solutions
+    Architecture under a IaC (InfraAsCode) best practice approach, and always taking care of
+    the environment security. Including our new AWS Organizations Multi-Account and Kubernetes
+    deployment infrastructure.
+    The Binbash team managed the entire engagement effectively and within budget. 
+    The team members are knowledgeable, proactive, work collaboratively, offer solid and
+    creative solutions, communicate well, and deliver timely and high quality work products,
+    such as Leverage. We highly recommend Binbash for your AWS cloud infrastructure
     implementation."*
 
 ## Sports and Events

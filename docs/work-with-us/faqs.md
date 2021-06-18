@@ -6,7 +6,7 @@
     - [x] Leverage Reference Architecture is mainly oriented to :earth_americas: Latam, North America and :earth_africa:
     European **startup's CTOs, VPEs and/or engineering team leads (Software Architects / DevOps Engineers / Cloud Engineers)** 
     looking to rapidly set and host their modern web and mobile applications and systems in 
-    [**Amazon Web Services**](https://aws.amazon.com/) (✅ typically in just few months!). 
+    [**Amazon Web Services**](https://aws.amazon.com/) (✅ typically in just few weeks!). 
     
     - [x] Oriented to Development leads or teams looking to solve their current AWS infrastructure and software delivery 
     business needs in a securely and reliably maner, under the most modern best practices.
@@ -27,6 +27,22 @@
     **_And remember you could implement yourself or we could implement it for you!_** 💪
 
 ## Why Leverage?
+
+### The problem
+![leverage-why](../assets/images/diagrams/leverage-why-problem.png "Leverage"){: style="width:950px"}
+<figcaption style="font-size:15px">
+<b>Figure:</b> Why Leverage? The problem.
+(Source: Binbash, "Leverage Presentation: Why you should use Leverage?", accessed June 15th 2021).
+</figcaption>
+
+### Our solution
+![leverage-why](../assets/images/diagrams/leverage-why-solution.png "Leverage"){: style="width:950px"}
+<figcaption style="font-size:15px">
+<b>Figure:</b> Why Leverage? The solution.
+(Source: Binbash, "Leverage Presentation: Why you should use Leverage?", accessed June 15th 2021).
+</figcaption>
+
+### Why Leverage for CIOs, CTOs and VPs of Engineering?
 
 !!! question "Why Leverage for CIOs, CTOs and VPs of Engineering?"
     - [x] **Accelerate development and optimize costs:**
@@ -80,13 +96,15 @@
     The `leverage cli` allows to build repeatable and immutable infrastructure. So your cloud development, staging and 
     production environments will consistently be the same.
 
+### Why Leverage for DevOps Engineers, Cloud Architects and Software Engineers?
 !!! question "Why Leverage for DevOps Engineers, Cloud Architects and Software Engineers?"
     - [x] **Provisioning infrastructure as code (Iac):** 
     Instead of manually provisioning infrastructure, the real benefits of cloud adoption come from orchestrating 
     infrastructure through code. However, this is really challenging to achieve, there are literally thousands of 
     tiny things and configs to consider and they all seem to take forever. Our experience is that it can take teams
-    up to 24 months to achieve a desired infra state in AWS. By using ***Leverage*** you could get your entire 
-    AWS Well-Architected based cloud solution within 3 to 6 months.
+    up to 24 months to achieve a desired infra state in AWS. 
+    By using ***Leverage*** you could get your AWS Landing-Zone in few weeks, or your entire 
+    AWS Well-Architected based cloud solution within 1 to 3 months (depending on your project complexity needs).
     
     - [x] **We've done it before (don't reinvent the wheel):**
     Often, development teams have similar and recurring requests such as: iam, networking, security, storage, 

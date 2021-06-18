@@ -1,4 +1,4 @@
-# DevOps Code Automation Library Modules
+# Infrastructure as Code (IaC) library modules
 
 ## **Open Source Modules Repos**
 

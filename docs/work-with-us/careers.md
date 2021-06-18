@@ -40,7 +40,7 @@
 ## Leverage Software / DevOps Engineer Profile
 
 !!! info "What You'll Work On (our tech stack) :man_technologist: :woman_technologist: :rocket:"
-    - [x] [**DevOps Automation Code Library**](../how-it-works/index.md)
+    - [x] [**Infrastructure as Code (IaC) Library**](../how-it-works/index.md)
         
         Create a collection of reusable, tested, production-ready E2E AWS oriented infrastructure modules 
         (e.g., VPC, IAM, Kubernetes, Prometheus, Grafana, EFK, Consul, Vault, Jenkins, etc.) using several tool and 

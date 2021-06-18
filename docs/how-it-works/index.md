@@ -29,7 +29,7 @@ Projects’s AWS infrastructure.
 
 Reference AWS Cloud Solutions architecture designed under optimal configs for the most
 popular modern web and mobile applications needs based on AWS [“Well Architected Framework”](../work-with-us/support.md).
-With it's complete [**Leverage DevOps Automation Code Library**](./code-library/code-library.md) to rapidly implement it
+With it's complete [**Infrastructure as Code (IaC) Library**](./code-library/code-library.md) to rapidly implement it
 will solve your entire
 infrastructure and will grant you complete control of the source code and of course you'll
 be able to run it without us. 

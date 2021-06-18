@@ -3,7 +3,7 @@
 ## Overview
 
 In order to get the full automated potential of the
-[Binbash Leverage DevOps Automation Code Library](https://leverage.binbash.com.ar/how-it-works/code-library/code-library/) 
+[Binbash Leverage Infrastructure as Code (IaC) Library](https://leverage.binbash.com.ar/how-it-works/code-library/code-library/) 
 you should initialize all the necessary helper **Makefiles**.
 
 !!! faq "How?"

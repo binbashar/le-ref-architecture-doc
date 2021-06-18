@@ -12,21 +12,21 @@ template: overrides/main.html
     ![leverage-aws](./assets/images/icons/aws-emojipack/General_AWScloud.png "AWS"){: style="width:30px"} 
     Cloud Infrastructure code, such as our
     [**Reference AWS Cloud Solutions Architecture**](how-it-works/index.md) backed by our 
-    [**DevOps Automation Code Library**](how-it-works/code-library/code-library.md). Because all the code and modules 
+    [**Infrastructure as Code (IaC) Library**](how-it-works/code-library/code-library.md). Because all the code and modules 
     are already built, we can get you up and running **at least 2x faster** :rocket: than a consulting company 
-    (:white_check_mark: *typically in just few months!*) on top of code that is thoroughly documented, tested, and has been proven in 
+    (:white_check_mark: *typically in just few weeks!*) on top of code that is thoroughly documented, tested, and has been proven in 
     production at dozens of other project deployments.
 
 !!! important "Why Leverage?"
-    If you implement the **Binbash Leverage Reference AWS Cloud Solutions Architecture** via our **DevOps Automation Code 
-    Library** you will get your entire Cloud Native Application Infra in few months. Leverage will solve your
+    If you implement the **Binbash Leverage Reference AWS Cloud Solutions Architecture** via our **Infrastructure as Code (IaC) Library** 
+    you will get your entire Cloud Native Application Infra in few weeks (depending on your project complexity needs). Leverage will solve your
     entire infrastructure and will grant you complete control of the source code, and of course you'll be able to
     run it without us.
      
     *Implement yourself or we implement it for you!* :muscle:
      
 !!! important "Core Features"
-    - [x] [**DevOps Automation Code Library**](how-it-works/index.md):
+    - [x] [**Infrastructure as Code (IaC) Library**](how-it-works/index.md):
         A collection of reusable, tested, production-ready E2E AWS Cloud infrastructure as code solutions, leveraged by
         modules written in: *Terraform, Ansible, Helm charts, Dockerfiles and Makefiles*.
 

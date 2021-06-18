@@ -1,3 +1,17 @@
+# Deprecated approach 
+### please refer to [leverage cli](./leverage-cli.md) workflow.
+
+---
+
+# Makefiles used to operate Binbash Leverage repositories.
+
+## Overview
+
+In order to get the full automated potential of the
+[Binbash Leverage Infrastructure as Code (IaC) Library](https://leverage.binbash.com.ar/how-it-works/code-library/code-library/)
+you should initialize all the necessary helper **Makefiles**.
+
+---
 # Makefiles used to operate Binbash Leverage repositories.
 
 ## Overview

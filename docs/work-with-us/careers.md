@@ -48,7 +48,7 @@
            
     - [x] [**Reference Architecture**](../how-it-works/code-library/code-library.md)
         
-        Improve, maintain, extend and update our reference architecture, which has been desingned under optimal configs 
+        Improve, maintain, extend and update our reference architecture, which has been designed under optimal configs 
         for the most popular modern web and mobile applications needs. Its design is fully based on the 
         [**AWS Well Architected Framework**](https://leverage.binbash.com.ar/support/#aws-well-architected-review).
     

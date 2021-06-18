@@ -10,30 +10,42 @@ template: overrides/main.html
 !!! important "What's Leverage?"
     Our focus is on creating reusable, high quality 
     ![leverage-aws](./assets/images/icons/aws-emojipack/General_AWScloud.png "AWS"){: style="width:30px"} 
-    Cloud Infrastructure code, such as our
-    [**Reference AWS Cloud Solutions Architecture**](how-it-works/index.md) backed by our 
-    [**Infrastructure as Code (IaC) Library**](how-it-works/code-library/code-library.md). Because all the code and modules 
-    are already built, we can get you up and running **at least 2x faster** :rocket: than a consulting company 
-    (:white_check_mark: *typically in just few weeks!*) on top of code that is thoroughly documented, tested, and has been proven in 
-    production at dozens of other project deployments.
+    Cloud Infrastructure code, through our core components:
+
+    - [x] [**Reference AWS Cloud Solutions Architecture**](how-it-works/index.md)
+    - [x] [**Infrastructure as Code (IaC) Library**](how-it-works/code-library/code-library.md)
+    - [x] [**Leverage CLI**](https://github.com/binbashar/leverage)
+
+    Because all the code and modules are already built, we can get you up and running **at least 2x faster** :rocket: 
+    than a consulting company (:white_check_mark: *typically in just few weeks!*). On top of code that is thoroughly 
+    documented, tested, and has been proven in production at dozens of other project deployments.
 
 !!! important "Why Leverage?"
-    If you implement the **Binbash Leverage Reference AWS Cloud Solutions Architecture** via our **Infrastructure as Code (IaC) Library** 
-    you will get your entire Cloud Native Application Infra in few weeks (depending on your project complexity needs). Leverage will solve your
-    entire infrastructure and will grant you complete control of the source code, and of course you'll be able to
-    run it without us.
-     
-    *Implement yourself or we implement it for you!* :muscle:
-     
+    If you implement our **Reference AWS Cloud Solutions Architecture** and the 
+    **Infrastructure as Code (IaC) Library** via Leverage CLI , you will get your entire Cloud Native 
+    Application Infra in few weeks.
+
+    *Implement Leverage yourself or we can deploy it for you!* :muscle:
+
+        
+    :books: **Read More:** 
+
+    - [Why our stack?](./how-it-works/why.md)
+    - [Why Leverage?](./work-with-us/faqs/#why-leverage)
+
 !!! important "Core Features"
+    - [x] [**Reference Architecture**](how-it-works/code-library/code-library.md):
+    Designed under optimal configs for the most popular modern web and mobile applications needs.
+    Its design is fully based on the
+    [**AWS Well Architected Framework**](https://leverage.binbash.com.ar/support/#aws-well-architected-review).
+
     - [x] [**Infrastructure as Code (IaC) Library**](how-it-works/index.md):
         A collection of reusable, tested, production-ready E2E AWS Cloud infrastructure as code solutions, leveraged by
         modules written in: *Terraform, Ansible, Helm charts, Dockerfiles and Makefiles*.
 
-    - [x] [**Reference Architecture**](how-it-works/code-library/code-library.md):
-        Designed under optimal configs for the most popular modern web and mobile applications needs.
-        Its design is fully based on the 
-        [**AWS Well Architected Framework**](https://leverage.binbash.com.ar/support/#aws-well-architected-review).
+    - [x] [**Leverage CLI**](https://github.com/binbashar/leverage): projects' command line tool.
+    Provides the means to interact and deploy Leverage Reference Architecture on AWS and if needed
+    it allows you to define custom tasks to run.
 
 # Welcome
 This is the documentation for the **Leverage Reference Architecture**.

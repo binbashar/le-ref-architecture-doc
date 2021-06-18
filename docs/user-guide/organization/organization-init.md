@@ -10,7 +10,7 @@
 ### Pre-requisites
 
 You'll need an email to [create and register your AWS Organization Root Account](https://aws.amazon.com/premiumsupport/knowledge-center/create-and-activate-aws-account/).
-For this purpose we recommend to avoid using an individual nominated email user. 
+For this purpose we recommend to avoid using a personal email account. 
 Instead, whenever possible, it should ideally be associated, with a **distribution list email** such as a 
 [**GSuite Group**](https://support.google.com/a/answer/2727156?hl=en) to ensure the proper admins member's team 
 (DevOps | SecOps | Cloud Engineering Team) to manage its notifications avoiding a single point of contact (constraint).

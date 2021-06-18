@@ -40,7 +40,7 @@
 ## Leverage Software / DevOps Engineer Profile
 
 !!! info "What You'll Work On (our tech stack) :man_technologist: :woman_technologist: :rocket:"
-    - [x] [**DevOps Automation Code Library**](../how-it-works/index.md)
+    - [x] [**Infrastructure as Code (IaC) Library**](../how-it-works/index.md)
         
         Create a collection of reusable, tested, production-ready E2E AWS oriented infrastructure modules 
         (e.g., VPC, IAM, Kubernetes, Prometheus, Grafana, EFK, Consul, Vault, Jenkins, etc.) using several tool and 
@@ -48,7 +48,7 @@
            
     - [x] [**Reference Architecture**](../how-it-works/code-library/code-library.md)
         
-        Improve, maintain, extend and update our reference architecture, which has been desingned under optimal configs 
+        Improve, maintain, extend and update our reference architecture, which has been designed under optimal configs 
         for the most popular modern web and mobile applications needs. Its design is fully based on the 
         [**AWS Well Architected Framework**](https://leverage.binbash.com.ar/support/#aws-well-architected-review).
     

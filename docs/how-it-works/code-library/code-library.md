@@ -1,4 +1,4 @@
-# Leverage DevOps Automation Code Library
+# Leverage Infrastructure as Code (IaC) Library
 
 ## Overview
 A collection of reusable, tested, production-ready E2E
@@ -23,7 +23,7 @@ High level summary of the the code reusability efficiency
     - :cloud: :lock: [AWS GDPR Reference article](https://aws.amazon.com/compliance/gdpr-center/)
 
 ### Modules
-DevOps Automation Code Library development and implementation workflow  
+Infrastructure as Code (IaC) Library development and implementation workflow  
 ![code-library](../../assets/images/diagrams/code-library-workflow.png "Leverage"){: style="width:850px"}
 
 

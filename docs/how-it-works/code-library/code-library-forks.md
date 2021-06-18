@@ -1,7 +1,7 @@
 # Leverage Open Source Modules management.
 
 
-!!! info "We’ll fork every DevOps Automation Code Library dependency repo, why?"
+!!! info "We’ll fork every Infrastructure as Code (IaC) Library dependency repo, why?"
     **Grant full governance over the lib repositories**
 
     - [x] **Availability:** Since  our project resilience and continuity

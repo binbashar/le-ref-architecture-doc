@@ -54,6 +54,8 @@ extra:
       link: 'https://www.linkedin.com/company/binbash'
     - icon: material/slack
       link: 'https://join.slack.com/t/binbashar/shared_invite/zt-fw1692b6-9k4ADsWJ47lKacszphXM1w'
+    - icon: material/youtube
+      link: 'https://www.youtube.com/channel/UCUjQ3duzxQB_VtNsKNqPwDA/playlists'
     - icon: fontawesome/brands/medium
       link: 'https://medium.com/binbash-inc'
     - icon: material/twitter

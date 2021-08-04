@@ -6,12 +6,12 @@
     - [x] Leverage Reference Architecture is mainly oriented to :earth_americas: Latam, North America and :earth_africa:
     European **startup's CTOs, VPEs and/or engineering team leads (Software Architects / DevOps Engineers / Cloud Engineers)** 
     looking to rapidly set and host their modern web and mobile applications and systems in 
-    [**Amazon Web Services**](https://aws.amazon.com/) (✅ typically in just few weeks!). 
+    [**Amazon Web Services**](https://aws.amazon.com/) (✅ typically in just a few weeks!). 
     
     - [x] Oriented to Development leads or teams looking to solve their current AWS infrastructure and software delivery 
     business needs in a securely and reliably maner, under the most modern best practices.
     
-    - [x] Your Entire AWS Cloud solutions based on DevOps practices journey will be achieved:
+    - [x] Your Entire AWS Cloud solutions based on DevOps practices will be achieved:
         - :star: Containerization
         - :star: Infrastructure as Code
         - :star: Container Orchestration (K8s) & Application Services
@@ -41,6 +41,9 @@
 <b>Figure:</b> Why Leverage? The solution.
 (Source: Binbash, "Leverage Presentation: Why you should use Leverage?", accessed June 15th 2021).
 </figcaption>
+
+#### The problem & our solution intro video
+<iframe width="560" height="315" src="https://www.youtube.com/embed/-vb9Qtz6mLs" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 ### Why Leverage for CIOs, CTOs and VPs of Engineering?
 
@@ -118,9 +121,9 @@
 
     - [x] **On-demand infra deployment:**
     ***Leverage*** provides your DevOps, Cloud, SRE and Development teams with the ability to provision on-demand
-    granting that it will meet the rigorous security requirements of the modern cloud native best practices. 
-    It fully implements AWS Well-Architected Framework (WAF) and best DevOps practices, including release management,
-    testing and validation and configuration.
+    infrastructure, granting that it will meet the rigorous security requirements of modern cloud native best practices. 
+    It fully implements AWS Well-Architected Framework (WAF) and best DevOps practices, including practices, including
+    collaboration, version control, CI/CD, continuous testing, cloud infrastructure and losely couple architectures.
 
     - [x] **Easier to support and maintain:**
     ***Leverage*** IaC approach significantly reduce your AWS infra deployment, config and support burden and reduce risk. 
@@ -150,3 +153,49 @@
     environments on demand and tear them down when all your testing is complete. ***Leverage*** takes all the pain
     out of maintaining production-like environments, with stable infra releases. It eliminates the unpredictability
     of wondering if what actually worked in your development envs will work in production.
+
+## Agreement and statement of work
+
+### Project Kick-Off
+!!! question ":rocket: Project Kick-Off"
+    Once the **agreement contract** and **NDA** are signed we estimate 15 days to have the team ready to start
+    the project following the proposed Roadmap (“Statement of work”) that describes at length exactly
+    what you'll receive.
+
+### Assignments and Delivery
+!!! question ":card_index_dividers: Assignments and Delivery"
+    After gathering all the customer project requirements and specifications we'll adjust the Reference
+    Architecture based on your needs. As a result we'll develop and present the Leverage Reference
+    Architecture for AWS implementation Roadmap. 
+
+    A typical **Roadmap (“Statement of Work”)** includes a set number of Iterations (sprints). 
+    We try to keep a narrow scope for each Iteration so that we can tightly control how hours get spent to
+    avoid overruns. We typically avoid adding tasks to a running Iteration so that the scope does not grow. 
+    That's also why we have an allocation for to specific long lived tasks:
+    
+    - **General-Task-1:** DevOps and Solutions Architecture challenge, definitions, tasks (PM), reviews, issues and audit.
+    - **General-Task-2:** WEEKLY FOLLOW-UP Meeting, 
+
+    Which is work that falls outside of the current Iteration specific tasks. This is for special
+    requests, meetings, pair programming sessions, extra documentation, etc.
+
+    Binbash will participate and review the planned tasks along the customer:
+
+    - [x] planned roadmap features
+    - [x] bug fixes
+    - [x] Implementation support
+    
+    Using the relevant ticketing system ([Jira](https://www.atlassian.com/software/jira)) to prioritize and plan the corresponding work plan.
+
+### Reports and Invoicing
+!!! question ":bar_chart: Reports and Invoicing"
+    Weekly task reports and tasks management agile metrics.
+    We use [Toggl](https://toggl.com) to track all our time by client, project, sprint, and developer.
+    We then import these hours into [Quickbooks](https://quickbooks.intuit.com/) for invoicing.
+
+### Billing
+!!! question ":moneybag: Billing"
+    The Customer will be billed every month.
+    Invoices are due within 15 days of issue.
+    We accept payments via US Bank ACH, [Bill.com](https://bill.com), and [Payoneer](https://payoneer.com).
+    Rates include all applicable taxes and duties as required by law.

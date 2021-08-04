@@ -13,14 +13,14 @@
         <meta name="author" content="Binbash">
       
       
-        <link rel="canonical" href="https://leverage.binbash.com.ar/how-it-works/network/vpc-topology/">
+        <link rel="canonical" href="https://leverage.binbash.com.ar/how-it-works/ci-cd/k8s-argocd/">
       
       <link rel="icon" href="../../../assets/images/logos/favicon.ico">
       <meta name="generator" content="mkdocs-1.2.2, mkdocs-material-7.2.2">
     
     
       
-        <title>VPC Topology - Binbash Leverage Reference Architecture</title>
+        <title>ArgoCD - Binbash Leverage Reference Architecture</title>
       
     
     
@@ -81,7 +81,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#network-layer" class="md-skip">
+        <a href="#argocd" class="md-skip">
           Skip to content
         </a>
       
@@ -111,7 +111,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              VPC Topology
+              ArgoCD
             
           </span>
         </div>
@@ -928,14 +928,12 @@
             
   
   
-    
-  
   
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_7" type="checkbox" id="__nav_3_7" checked>
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_7" type="checkbox" id="__nav_3_7" >
       
       <label class="md-nav__link" for="__nav_3_7">
         Network
@@ -951,58 +949,11 @@
             
   
   
-    
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          VPC Topology
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../../network/vpc-topology/" class="md-nav__link">
         VPC Topology
       </a>
-      
-        
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#network-topology" class="md-nav__link">
-    Network Topology
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#read-more" class="md-nav__link">
-    Read more
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -1012,7 +963,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../vpc-addressing/" class="md-nav__link">
+      <a href="../../network/vpc-addressing/" class="md-nav__link">
         VPC Adressing
       </a>
     </li>
@@ -1024,7 +975,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../vpc-peering/" class="md-nav__link">
+      <a href="../../network/vpc-peering/" class="md-nav__link">
         VPC Peering
       </a>
     </li>
@@ -1036,7 +987,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../tgw-topology/" class="md-nav__link">
+      <a href="../../network/tgw-topology/" class="md-nav__link">
         TGW Topology
       </a>
     </li>
@@ -1048,7 +999,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../vpc-traffic-out/" class="md-nav__link">
+      <a href="../../network/vpc-traffic-out/" class="md-nav__link">
         VPC Outbound Traffic
       </a>
     </li>
@@ -1060,7 +1011,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../dns/" class="md-nav__link">
+      <a href="../../network/dns/" class="md-nav__link">
         DNS
       </a>
     </li>
@@ -1250,12 +1201,14 @@
             
   
   
+    
+  
   
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_12" type="checkbox" id="__nav_3_12" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_12" type="checkbox" id="__nav_3_12" checked>
       
       <label class="md-nav__link" for="__nav_3_12">
         CI/CD
@@ -1273,7 +1226,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../ci-cd/ci-cd/" class="md-nav__link">
+      <a href="../ci-cd/" class="md-nav__link">
         Overview
       </a>
     </li>
@@ -1283,11 +1236,60 @@
             
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="../../ci-cd/k8s-argocd/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          ArgoCD
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         ArgoCD
       </a>
+      
+        
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#argocd" class="md-nav__link">
+    ArgoCD
+  </a>
+  
+    <nav class="md-nav" aria-label="ArgoCD">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#aws-apps-services-k8s-eks-accounts-diagram" class="md-nav__link">
+    AWS Apps &amp; Services K8s EKS accounts diagram
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -2784,8 +2786,6 @@
   
   
   
-    
-  
   
     <label class="md-nav__title" for="__toc">
       <span class="md-nav__icon md-icon"></span>
@@ -2794,16 +2794,22 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#network-topology" class="md-nav__link">
-    Network Topology
+  <a href="#argocd" class="md-nav__link">
+    ArgoCD
+  </a>
+  
+    <nav class="md-nav" aria-label="ArgoCD">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#aws-apps-services-k8s-eks-accounts-diagram" class="md-nav__link">
+    AWS Apps &amp; Services K8s EKS accounts diagram
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#read-more" class="md-nav__link">
-    Read more
-  </a>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -2819,75 +2825,25 @@
             <article class="md-content__inner md-typeset">
               
                 
-                  <a href="https://github.com/binbashar/le-ref-architecture-doc/edit/master/docs/how-it-works/network/vpc-topology.md" title="Edit this page" class="md-content__button md-icon">
+                  <a href="https://github.com/binbashar/le-ref-architecture-doc/edit/master/docs/how-it-works/ci-cd/k8s-argocd.md" title="Edit this page" class="md-content__button md-icon">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg>
                   </a>
                 
                 
-                <h1 id="network-layer">Network Layer<a class="headerlink" href="#network-layer" title="Permanent link"> ¶</a></h1>
-<h2 id="network-topology">Network Topology<a class="headerlink" href="#network-topology" title="Permanent link"> ¶</a></h2>
-<div class="admonition summary">
-<p class="admonition-title">VPC with public and private subnets (NAT)</p>
-<ul class="task-list">
-<li class="task-list-item">
-<p><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> The configuration for this scenario includes a virtual private cloud (VPC) with public subnets and a private 
-subnets (it's number will change depending on our specific needs). We recommend this scenario if you want 
-to run a public-facing web application, while maintaining back-end servers that aren't publicly accessible. 
-A common example is a multi-tier website, with a Load Balancer (ALB | NLB) in a public subnet, or other public
-facing routing service like AWS CloudFront or Api Gateway, and our web servers (Lambda, EKS, ECS, EC2) and 
-database (RDS, DynamoDB, etc) servers in private subnets. You can set up security (SGs, ACLs, WAF) and routing 
-so that the web servers can communicate internally (even between VPC accounts or VPN Endpoints) with all necessary 
-services and components such as databases, cache, queues, among others.</p>
-</li>
-<li class="task-list-item">
-<p><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> The services running in the public subnet, like an ALB or NLB can send outbound traffic directly to the Internet, 
-whereas the instances in the private subnet can't. Instead, the instances in the private subnet can access the 
-Internet by using a network address translation (NAT) gateway that resides in the public subnet. The database 
-servers can connect to the Internet for software updates using the NAT gateway (if using RDS this is transparently
-provided by AWS), but the Internet cannot establish connections to the database servers.</p>
-</li>
-<li class="task-list-item">
-<p><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> So, whenever possible all our AWS resources like EC2, EKS, RDS, Lambda, SQS will be deployed in VPC private
- subnets and we'll use a NAT device (Nat Gateway) to enable instances in a private subnet to connect to the 
- internet (for example, for software updates) or other AWS services, but prevent the internet from initiating
- connections with the instances. </p>
-</li>
-<li class="task-list-item">
-<p><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> A NAT device forwards traffic from the instances in the private subnet to the internet (via the VPC Internet
-Gateway) or other AWS services, and then sends the response back to the instances. When traffic goes to the 
-internet, the source IPv4 address is replaced with the NAT device’s address and similarly, when the response
-traffic goes to those instances, the NAT device translates the address back to those instances’ private IPv4
-addresses.</p>
-</li>
-</ul>
-</div>
-<p><img alt="leverage-aws-vpc-ngw" src="../../../assets/images/diagrams/aws-vpc-nat-gateway.png" style="width:900px" title="Leverage" /></p>
+                  <h1>ArgoCD</h1>
+                
+                <h2 id="argocd">ArgoCD<a class="headerlink" href="#argocd" title="Permanent link"> ¶</a></h2>
+<h4 id="aws-apps-services-k8s-eks-accounts-diagram">AWS Apps &amp; Services K8s EKS accounts diagram<a class="headerlink" href="#aws-apps-services-k8s-eks-accounts-diagram" title="Permanent link"> ¶</a></h4>
+<p>The below diagram is based on our 
+<a href="https://binbash.atlassian.net/wiki/external/1962410007/YWMxMmY1NzM4MmIyNDRmMDkxMDIwNDY3OWU4ZDYwZjA">Binbash Leverage Reference Architecture CI-CD official documentation</a></p>
+<p><img alt="leverage-aws-demoapps" src="../../../assets/images/diagrams/aws-k8s-eks-ci-cd-argocd.png" style="width:750px" title="Leverage" /></p>
 <figcaption style="font-size:15px">
-<b>Figure:</b> VPC topology diagram.
-(Source: AWS, 
-<a href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Scenario2.html">
-"VPC with public and private subnets (NAT)"</a>,
-AWS Documentation Amazon VPC User Guide, accessed November 18th 2020).
+<b>Figure:</b> K8S reference architecture CI/CD with ArgoCD diagram.
+(Source: Binbash Leverage Confluence Doc, 
+<a href="https://binbash.atlassian.net/wiki/external/2001403925/ZjY5ZGU3NDYyODNhNDQzYTkxZDdkYTliNzczODRkY2M?atlOrigin=eyJpIjoiYjNmMzYwMTg2YmMyNDc3ODg4YTAwNDM5MjBiYWQ5ZGUiLCJwIjoiYyJ9">
+"Implementation Diagrams"</a>,
+Binbash Leverage Doc, accessed August 4th 2021).
 </figcaption>
-
-<p><img alt="leverage-aws-vpc-ngw-ha" src="../../../assets/images/diagrams/aws-vpc-nat-gateway-ha.png" style="width:900px" title="Leverage" /></p>
-<figcaption style="font-size:15px">
-<b>Figure:</b> VPC topology diagram with mutiple Nat Gateways for HA.
-(Source: Andreas Wittig, 
-<a href="https://cloudonaut.io/advanved-aws-networking-pitfalls-that-you-should-avoid/">
-"Advanced AWS Networking: Pitfalls That You Should Avoid"</a>,
-Cloudonaut.io Blog, accessed November 18th 2020).
-</figcaption>
-
-<h2 id="read-more">Read more<a class="headerlink" href="#read-more" title="Permanent link"> ¶</a></h2>
-<div class="admonition info">
-<p class="admonition-title">AWS reference links</p>
-<p>Consider the following AWS official links as reference:</p>
-<ul>
-<li><img alt="📙" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f4d9.svg" title=":orange_book:" /> <a href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Scenario2.html"><strong>VPC with public and private subnets (NAT)</strong></a></li>
-<li><img alt="📙" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f4d9.svg" title=":orange_book:" /> <a href="https://aws.amazon.com/elasticloadbalancing"><strong>AWS Elastic Load Balancing</strong></a></li>
-</ul>
-</div>
                 
               
               
@@ -2907,7 +2863,7 @@ Cloudonaut.io Blog, accessed November 18th 2020).
     <nav class="md-footer__inner md-grid" aria-label="Footer">
       
         
-        <a href="../../security/iam-access-analyzer/" class="md-footer__link md-footer__link--prev" aria-label="Previous: IAM Access Analyzer" rel="prev">
+        <a href="../ci-cd/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Overview" rel="prev">
           <div class="md-footer__button md-icon">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
           </div>
@@ -2916,20 +2872,20 @@ Cloudonaut.io Blog, accessed November 18th 2020).
               <span class="md-footer__direction">
                 Previous
               </span>
-              IAM Access Analyzer
+              Overview
             </div>
           </div>
         </a>
       
       
         
-        <a href="../vpc-addressing/" class="md-footer__link md-footer__link--next" aria-label="Next: VPC Adressing" rel="next">
+        <a href="../../tools/tools/" class="md-footer__link md-footer__link--next" aria-label="Next: Tools" rel="next">
           <div class="md-footer__title">
             <div class="md-ellipsis">
               <span class="md-footer__direction">
                 Next
               </span>
-              VPC Adressing
+              Tools
             </div>
           </div>
           <div class="md-footer__button md-icon">

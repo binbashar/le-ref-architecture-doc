@@ -172,7 +172,9 @@ nav:
        - PostgresSQL: "how-it-works/database/postgres.md"
     - Storage: "how-it-works/storage/storage.md"
     - CDN: "how-it-works/cdn/cdn.md"
-    - CI/CD: "how-it-works/ci-cd/ci-cd.md"
+    - CI/CD:
+       - Overview: "how-it-works/ci-cd/ci-cd.md"
+       - ArgoCD: "how-it-works/ci-cd/k8s-argocd.md"
     - Tools: "how-it-works/tools/tools.md"
     - Monitoring:
       - Monitoring: "how-it-works/monitoring/monitoring.md"

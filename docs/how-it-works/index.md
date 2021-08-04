@@ -49,7 +49,24 @@ code and of course you'll be able to run it without us.
 
 ### Reference Architecture Design
 
+#### AWS Organizations multi-account diagram
 ![leverage-aws-org](../assets/images/diagrams/aws-organizations.png "Leverage"){: style="width:750px"}
+<figcaption style="font-size:15px">
+<b>Figure:</b> AWS Organization multi-account archiecture diagram.
+(Source: Binbash Leverage,
+"Lereverage Reference Architecture components",
+Binbash Leverage Doc, accessed August 4th 2021).
+</figcaption>
+
+#### AWS Apps & Services K8s EKS accounts diagram
+![leverage-aws-demoapps](../assets/images/diagrams/aws-k8s-eks-demoapps-components.png "Leverage"){: style="width:750px"}
+<figcaption style="font-size:15px">
+<b>Figure:</b> K8S EKS reference architecture components diagram.
+(Source: Binbash Leverage Confluence Doc, 
+<a href="https://binbash.atlassian.net/wiki/external/2001403925/ZjY5ZGU3NDYyODNhNDQzYTkxZDdkYTliNzczODRkY2M?atlOrigin=eyJpIjoiYjNmMzYwMTg2YmMyNDc3ODg4YTAwNDM5MjBiYWQ5ZGUiLCJwIjoiYyJ9">
+"Implementation Diagrams"</a>,
+Binbash Leverage Doc, accessed August 4th 2021).
+</figcaption>
 
 #### DevOps Workflow model
 

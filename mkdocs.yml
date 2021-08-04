@@ -157,6 +157,7 @@ nav:
       - VPC Topology: "how-it-works/network/vpc-topology.md"
       - VPC Adressing: "how-it-works/network/vpc-addressing.md"
       - VPC Peering: "how-it-works/network/vpc-peering.md"
+      - TGW Topology: "how-it-works/network/tgw-topology.md"
       - VPC Outbound Traffic: "how-it-works/network/vpc-traffic-out.md"
       - DNS: "how-it-works/network/dns.md"
     - Compute:

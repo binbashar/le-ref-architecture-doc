@@ -1,12 +1,14 @@
 ![binbash-logo](../../assets/images/logos/binbash.png "Binbash"){: style="width:250px"}
 ![binbash-leverage-tf](../../assets/images/logos/binbash-leverage.png#right "Leverage"){: style="width:130px"}
 
-[BinBash Inc](https://github.com/binbashar)
-
 # Leverage CLI
 BinBash Leverage projects' command line tool.
 
 Provides the means to interact with your Leverage project and allows you to define custom tasks to run.
+
+## Sources
+- [x] [leverage-cli github](https://github.com/binbashar/leverage)
+- [x] [leverage-cli pypi](https://pypi.org/project/leverage/)
 
 ## Features
 * Easy to learn.

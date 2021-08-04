@@ -139,6 +139,8 @@ nav:
       - Forks workflow: "how-it-works/code-library/code-library-forks.md"
       - Specifications: "how-it-works/code-library/code-library-specs.md"
       - Modules per Tech: "how-it-works/code-library/modules-library-per-tech.md"
+    - Leverage CLI:
+        - Overview: "how-it-works/leverage-cli/index.md"
     - AWS Organization:
       - Organization: "how-it-works/organization/organization.md"
       - Accounts: "how-it-works/organization/accounts.md"
@@ -149,6 +151,7 @@ nav:
     - Security:
       - VPN: "how-it-works/security/vpn.md"
       - Services: "how-it-works/security/services.md"
+      - Certificates: "how-it-works/security/certificates.md"
       - IAM Access Analyzer: "how-it-works/security/iam-access-analyzer.md"
     - Network:
       - VPC Topology: "how-it-works/network/vpc-topology.md"

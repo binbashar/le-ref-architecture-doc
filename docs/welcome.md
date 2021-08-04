@@ -17,7 +17,7 @@ template: overrides/main.html
     - [x] [**Leverage CLI**](https://github.com/binbashar/leverage)
 
     Because all the code and modules are already built, we can get you up and running **at least 2x faster** :rocket: 
-    than a consulting company (:white_check_mark: *typically in just few weeks!*). On top of code that is thoroughly 
+    than a consulting company (:white_check_mark: *typically in just a few weeks!*). On top of code that is thoroughly 
     documented, tested, and has been proven in production at dozens of other project deployments.
 
 !!! important "Why Leverage?"

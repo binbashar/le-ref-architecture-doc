@@ -11,7 +11,7 @@ from the VPN.
 `vault_address = "https://vault.aws.binbash.com.ar:8200"`
 
 ### HCP Vault private API endpoint
-`vault_address = "https://bb-le-shared-vault-cluster.private.vault.xxxxxxxxxx.aws.hashicorp.cloud:8200"
+`vault_address = "https://bb-le-shared-vault-cluster.private.vault.xxxxxxxxxx.aws.hashicorp.cloud:8200"`
 
 ## Hashicorp Vault token
 

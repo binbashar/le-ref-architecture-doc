@@ -197,13 +197,15 @@ nav:
     - Configuration:
       - Overview: "user-guide/base-configuration/overview.md"
       - Repos:
-        - Terraform Infra: "user-guide/base-configuration/repo-le-tf-infra-aws.md"
+        - Terraform AWS Infra: "user-guide/base-configuration/repo-le-tf-infra-aws.md"
+        - Terraform Vault: "user-guide/base-configuration/repo-le-tf-vault.md"
         - Ansible Infra: "user-guide/base-configuration/repo-le-ansible-infra.md"
     - Workflow:
       - Leverage CLI: "user-guide/base-workflow/leverage-cli.md"
       - Repos:
         - Makefiles Lib: "user-guide/base-workflow/repo-le-dev-makefiles.md"
-        - Terraform Infra: "user-guide/base-workflow/repo-le-tf-infra-aws.md"
+        - Terraform AWS Infra: "user-guide/base-workflow/repo-le-tf-infra-aws.md"
+        - Terraform Vault: "user-guide/base-workflow/repo-le-tf-vault.md"
         - Terraform Infra State: "user-guide/base-workflow/repo-le-tf-infra-aws-tf-state.md"
         - Ansible Infra: "user-guide/base-workflow/repo-le-ansible-infra.md"
     - AWS Organization:

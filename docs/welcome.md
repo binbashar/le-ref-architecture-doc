@@ -56,6 +56,7 @@ It is built around the [AWS Well Architected Framework](https://aws.amazon.com/a
 An its compose of the following 3 main repos:
 
 - [x] [le-tf-infra-aws](https://github.com/binbashar/le-tf-infra-aws)
+- [x] [le-tf-vault](https://github.com/binbashar/le-tf-vault)
 - [x] [le-ansible-infra](https://github.com/binbashar/le-ansible-infra)
 
 ## Getting Started

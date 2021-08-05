@@ -52,7 +52,7 @@ code and of course you'll be able to run it without us.
 #### AWS Organizations multi-account diagram
 ![leverage-aws-org](../assets/images/diagrams/aws-organizations.png "Leverage"){: style="width:750px"}
 <figcaption style="font-size:15px">
-<b>Figure:</b> AWS Organization multi-account archiecture diagram.
+<b>Figure:</b> AWS Organization multi-account architecture diagram.
 (Source: Binbash Leverage,
 "Lereverage Reference Architecture components",
 Binbash Leverage Doc, accessed August 4th 2021).

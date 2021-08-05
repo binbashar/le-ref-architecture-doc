@@ -10,4 +10,7 @@
 ## Customer Support workflow  
 ![leverage-support](../assets/images/diagrams/ref-architecture-support.png "Leverage"){: style="width:1200px"}
 
+## Read More
 
+!!! info "Related articles"
+    * :ledger: [FAQs | Agreement and statement of work](./work-with-us/faqs/#agreement-and-statement-of-work)

@@ -1572,7 +1572,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../base-configuration/repo-le-tf-infra-aws/" class="md-nav__link">
+      <a href="../../base-configuration/repo-le-tf-infra.md" class="md-nav__link">
         Terraform AWS Infra
       </a>
     </li>
@@ -1674,32 +1674,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../../base-workflow/repo-le-dev-makefiles/" class="md-nav__link">
-        Makefiles Lib
-      </a>
-    </li>
-  
-
-          
-            
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../base-workflow/repo-le-tf-infra-aws/" class="md-nav__link">
-        Terraform AWS Infra
-      </a>
-    </li>
-  
-
-          
-            
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../base-workflow/repo-le-tf-vault/" class="md-nav__link">
-        Terraform Vault
+      <a href="../../base-workflow/repo-le-tf-infra/" class="md-nav__link">
+        Terraform Infra
       </a>
     </li>
   
@@ -1831,7 +1807,7 @@
   
     <li class="md-nav__item">
       <a href="../../identities/identities/" class="md-nav__link">
-        identities
+        Identities
       </a>
     </li>
   
@@ -1843,7 +1819,19 @@
   
     <li class="md-nav__item">
       <a href="../../identities/credentials/" class="md-nav__link">
-        credentials
+        Credentials
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../identities/credentials-vault/" class="md-nav__link">
+        Credentials Vault
       </a>
     </li>
   
@@ -2870,7 +2858,7 @@
 <p class="admonition-title">pre-requisites</p>
 <ul>
 <li><img alt="⚙" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/2699.svg" title=":gear:" /> Review &amp; update <a href="../../base-configuration/repo-le-tf-infra-aws/"><strong>configs</strong></a> </li>
-<li><img alt="⚙" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/2699.svg" title=":gear:" /> Review &amp; understand the <a href="../../base-workflow/repo-le-tf-infra-aws/"><strong>workflow</strong></a> </li>
+<li><img alt="⚙" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/2699.svg" title=":gear:" /> Review &amp; understand the <a href="../../base-workflow/repo-le-tf-infra/"><strong>workflow</strong></a> </li>
 </ul>
 </div>
 <div class="admonition example">
@@ -2878,7 +2866,7 @@
 <ol>
 <li><strong>DNS</strong> service has to be orchestrated from 
 <a href="https://github.com/binbashar/le-tf-infra-aws/tree/master/shared/base-dns"><code>/shared/base-dns</code></a> layer 
-following the standard <a href="../../base-workflow/repo-le-tf-infra-aws/">workflow</a></li>
+following the standard <a href="../../base-workflow/repo-le-tf-infra/">workflow</a></li>
 <li>To associate AWS Org Member accounts to your DNS Private Hosted Zones eg: <code>*.aws.domain.com</code> 
 (previously deployed) proceed applying the corresponding layers<ol>
 <li><a href="https://github.com/binbashar/le-tf-infra-aws/tree/master/apps-devstg/base-dns">apps-devstg/base-dns</a></li>

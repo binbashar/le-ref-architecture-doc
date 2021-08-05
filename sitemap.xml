@@ -331,22 +331,12 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://leverage.binbash.com.ar/user-guide/base-workflow/repo-le-dev-makefiles/</loc>
-         <lastmod>2021-08-05</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
          <loc>https://leverage.binbash.com.ar/user-guide/base-workflow/repo-le-tf-infra-aws-tf-state/</loc>
          <lastmod>2021-08-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://leverage.binbash.com.ar/user-guide/base-workflow/repo-le-tf-infra-aws/</loc>
-         <lastmod>2021-08-05</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://leverage.binbash.com.ar/user-guide/base-workflow/repo-le-tf-vault/</loc>
+         <loc>https://leverage.binbash.com.ar/user-guide/base-workflow/repo-le-tf-infra/</loc>
          <lastmod>2021-08-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
@@ -397,6 +387,11 @@
     </url>
     <url>
          <loc>https://leverage.binbash.com.ar/user-guide/database/postgres/</loc>
+         <lastmod>2021-08-05</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://leverage.binbash.com.ar/user-guide/identities/credentials-vault/</loc>
          <lastmod>2021-08-05</lastmod>
          <changefreq>daily</changefreq>
     </url>

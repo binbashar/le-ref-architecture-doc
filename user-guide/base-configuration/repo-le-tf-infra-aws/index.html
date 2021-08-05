@@ -20,7 +20,7 @@
     
     
       
-        <title>Terraform Infra - Binbash Leverage Reference Architecture</title>
+        <title>Terraform AWS Infra - Binbash Leverage Reference Architecture</title>
       
     
     
@@ -111,7 +111,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Terraform Infra
+              Terraform AWS Infra
             
           </span>
         </div>
@@ -1586,9 +1586,21 @@
       
       
       <a href="./" class="md-nav__link md-nav__link--active">
-        Terraform Infra
+        Terraform AWS Infra
       </a>
       
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../repo-le-tf-vault/" class="md-nav__link">
+        Terraform Vault
+      </a>
     </li>
   
 
@@ -1689,7 +1701,19 @@
   
     <li class="md-nav__item">
       <a href="../../base-workflow/repo-le-tf-infra-aws/" class="md-nav__link">
-        Terraform Infra
+        Terraform AWS Infra
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../base-workflow/repo-le-tf-vault/" class="md-nav__link">
+        Terraform Vault
       </a>
     </li>
   
@@ -2779,64 +2803,81 @@
     ...
 + shared/          (resources for the shared account)
     ...
++ network/          (resources for the centralized network account)
+    ...
 </code></pre></div>
-<p>Configuration files are organized by environments (e.g. dev, stg) and service type (identities, sec, 
-network, etc) to keep any changes made to them separate.
+<p>Configuration files are organized by environments (e.g. dev, stg, prd) and service type, which we
+call "layers" (identities, sec, network, etc) to keep any changes made to them separate.
 Within each of those folders you should find the Terraform files that are used to define all the 
-resources that belong to such environment.</p>
+resources that belong to such account environment and specific layer.</p>
 <p><img alt="binbash-logo" src="../../../assets/images/diagrams/aws-organizations.png" style="width:650px" title="Binbash" /></p>
-<p><strong>figure 1:</strong> AWS Organization Architecture Diagram (just as reference).</p>
+<figcaption style="font-size:15px">
+<b>Figure:</b> AWS Organization multi-account architecture diagram.
+(Source: Binbash Leverage,
+"Lereverage Reference Architecture components",
+Binbash Leverage Doc, accessed August 4th 2021).
+</figcaption>
+
 <p>Under every account folder you will see a service layer structure similar to the following:
-<div class="highlight"><pre><span></span><code>.
+<div class="highlight"><pre><span></span><code>...
 ├── apps-devstg
-│   ├── backups --
+│   ├── backups\ --
+│   ├── base-certificates
 │   ├── base-identities
 │   ├── base-network
 │   ├── base-tf-backend
 │   ├── cdn-s3-frontend
 │   ├── config
-│   ├── databases-mysql --
-│   ├── databases-pgsql --
-│   ├── ec2-fleet-ansible --
-│   ├── k8s-eks --
-│   ├── k8s-kops --
+│   ├── databases-aurora
+│   ├── databases-mysql\ --
+│   ├── databases-pgsql\ --
+│   ├── ec2-fleet-ansible\ --
+│   ├── k8s-eks
+│   ├── k8s-eks-demoapps
+│   ├── k8s-kind
+│   ├── k8s-kops\ --
 │   ├── notifications
 │   ├── security-audit
 │   ├── security-base
 │   ├── security-certs
-│   ├── security-compliance --
+│   ├── security-compliance\ --
+│   ├── security-firewall\ --
 │   ├── security-keys
 │   ├── security-keys-dr
 │   ├── storage
 │   └── tools-cloud-nuke
 ├── apps-prd
-│   ├── backups --
+│   ├── backups\ --
 │   ├── base-identities
 │   ├── base-network
 │   ├── base-tf-backend
 │   ├── cdn-s3-frontend
 │   ├── config
-│   ├── ec2-fleet --
+│   ├── ec2-fleet\ --
+│   ├── k8s-eks
 │   ├── notifications
 │   ├── security-audit
 │   ├── security-base
 │   ├── security-certs
-│   ├── security-compliance --
+│   ├── security-compliance\ --
 │   └── security-keys
-├── @bin
-│   ├── config
-│   ├── makefiles
-│   └── scripts
-├── CHANGELOG.md
+├── build.env
+├── build.py
 ├── config
-│   └── common.config
-├── _config.yml
-├── @doc
-│   └── figures
-├── LICENSE.md
-├── Makefile
-├── README.md
+│   ├── common.config
+│   └── common.config.example
+├── network
+│   ├── base-identities
+│   ├── base-network
+│   ├── base-tf-backend
+│   ├── config
+│   ├── network-firewall
+│   ├── notifications
+│   ├── security-audit
+│   ├── security-base
+│   └── security-keys
 ├── root
+│   ├── backups
 │   ├── base-identities
 │   ├── base-tf-backend
 │   ├── config
@@ -2845,10 +2886,10 @@ resources that belong to such environment.</p>
 │   ├── organizations
 │   ├── security-audit
 │   ├── security-base
-│   ├── security-compliance --
+│   ├── security-compliance\ --
 │   ├── security-keys
 │   ├── security-monitoring
-│   └── security-monitoring-dr --
+│   └── security-monitoring-dr\ --
 ├── security
 │   ├── base-identities
 │   ├── base-tf-backend
@@ -2856,47 +2897,57 @@ resources that belong to such environment.</p>
 │   ├── notifications
 │   ├── security-audit
 │   ├── security-base
-│   ├── security-compliance --
+│   ├── security-compliance\ --
 │   ├── security-keys
 │   ├── security-monitoring
-│   └── security-monitoring-dr --
+│   └── security-monitoring-dr\ --
 └── shared
+    ├── backups
     ├── base-dns
     ├── base-identities
     ├── base-network
     ├── base-tf-backend
     ├── config
     ├── container-registry
-    ├── ec2-fleet --
-    ├── infra_prometheus
+    ├── ec2-fleet\ --
+    ├── k8s-eks
+    ├── k8s-eks-demoapps
+    ├── k8s-eks-prd
     ├── notifications
     ├── security-audit
     ├── security-base
-    ├── security-compliance --
+    ├── security-compliance\ --
     ├── security-keys
+    ├── security-keys-dr
     ├── storage
     ├── tools-cloud-scheduler-stop-start
-    ├── tools-eskibana --
-    ├── tools-jenkins --
-    └── tools-vpn-server
+    ├── tools-eskibana
+    ├── tools-github-selfhosted-runners
+    ├── tools-jenkins\ --
+    ├── tools-managedeskibana
+    ├── tools-prometheus
+    ├── tools-vault
+    ├── tools-vpn-server
+    └── tools-webhooks\ --
 </code></pre></div></p>
 <p><strong>NOTE:</strong> As a convention folders with the <code>--</code> suffix reflect that the resources are not currently
 created in AWS, basically they've been destroyed or not yet exist. </p>
-<p>Such separation is meant to avoid situations in which a single folder contains a lot of resources. 
-That is important to avoid because at some point, running <code>terraform plan or apply</code> stats taking too long and that 
-becomes a problem.</p>
+<p>Such layer separation is meant to avoid situations in which a single folder contains a lot of resources. 
+That is important to avoid because at some point, running <code>leverage terraform plan / apply</code> starts taking 
+too long and that becomes a problem.</p>
 <p>This organization also provides a layout that is easier to navigate and discover. 
 You simply start with the accounts at the top level and then you get to explore the resource categories within 
 each account.</p>
 <h1 id="pre-requisites">Pre-requisites<a class="headerlink" href="#pre-requisites" title="Permanent link"> ¶</a></h1>
 <h2 id="makefile">Makefile<a class="headerlink" href="#makefile" title="Permanent link"> ¶</a></h2>
 <ul>
-<li>We rely on <code>Makefiles</code> as a wrapper to run terraform commands that consistently use the same config files.</li>
-<li>You are encouraged to inspect those Makefiles to understand what's going on.</li>
+<li>We rely on the <a href="../../../how-it-works/leverage-cli/"><code>leverage cli</code></a> as a wrapper to run terraform 
+  commands that consistently use the same config files.</li>
+<li>You are encouraged to inspect our open source <code>leverage cli</code> to understand what's going on.</li>
 </ul>
 <h2 id="terraform">Terraform<a class="headerlink" href="#terraform" title="Permanent link"> ¶</a></h2>
 <ul>
-<li><a href="https://github.com/binbashar/le-dev-makefiles"><code>Makefiles</code></a> already grant the recs via 
+<li><a href="https://github.com/binbashar/leverage"><code>leverage cli</code></a> already grant the recs via 
   <a href="https://hub.docker.com/repository/docker/binbash/terraform-awscli-slim">Dockerized Terraform cmds</a>  </li>
 </ul>
 <h2 id="remote-state">Remote State<a class="headerlink" href="#remote-state" title="Permanent link"> ¶</a></h2>
@@ -2925,9 +2976,6 @@ contains global context TF variables that we inject to TF commands which are use
  contains TF variables that are specific to an AWS account.</li>
 </ul>
 </li>
-<li><img alt="📁" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f4c1.svg" title=":file_folder:" /> <strong>Makefile config file</strong> 
-<a href="https://github.com/binbashar/le-tf-infra-aws/blob/master/%40bin/config/base.mk"><code>/@bin/config/base.mk</code></a> contains
-global <a href="https://github.com/binbashar/le-dev-makefiles">makefile-lib</a> variables </li>
 </ul>
 </div>
 <h2 id="aws-profile">AWS Profile<a class="headerlink" href="#aws-profile" title="Permanent link"> ¶</a></h2>
@@ -2977,13 +3025,13 @@ a role</a></li>
       
       
         
-        <a href="../repo-le-ansible-infra/" class="md-footer__link md-footer__link--next" aria-label="Next: Ansible Infra" rel="next">
+        <a href="../repo-le-tf-vault/" class="md-footer__link md-footer__link--next" aria-label="Next: Terraform Vault" rel="next">
           <div class="md-footer__title">
             <div class="md-ellipsis">
               <span class="md-footer__direction">
                 Next
               </span>
-              Ansible Infra
+              Terraform Vault
             </div>
           </div>
           <div class="md-footer__button md-icon">

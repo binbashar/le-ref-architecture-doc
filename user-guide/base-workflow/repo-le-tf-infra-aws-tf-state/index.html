@@ -1573,7 +1573,19 @@
   
     <li class="md-nav__item">
       <a href="../../base-configuration/repo-le-tf-infra-aws/" class="md-nav__link">
-        Terraform Infra
+        Terraform AWS Infra
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../base-configuration/repo-le-tf-vault/" class="md-nav__link">
+        Terraform Vault
       </a>
     </li>
   
@@ -1679,7 +1691,19 @@
   
     <li class="md-nav__item">
       <a href="../repo-le-tf-infra-aws/" class="md-nav__link">
-        Terraform Infra
+        Terraform AWS Infra
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../repo-le-tf-vault/" class="md-nav__link">
+        Terraform Vault
       </a>
     </li>
   
@@ -2871,7 +2895,7 @@ Terraform modules registry, accessed December 3rd 2020).
 <div class="admonition example">
 <p class="admonition-title">Terraform repo structure + state backend initialization</p>
 <ol>
-<li>Ensure you have <code>make</code> installed in your system</li>
+<li>Ensure you have <a href="../../../how-it-works/leverage-cli/"><code>leverage cli</code></a> installed in your system</li>
 <li>Refer to <a href="../../base-configuration/repo-le-tf-infra-aws/">Configuration Pre-requisites</a> to understand how to set up the
   configuration files required for this layer. Where you must build your
   <a href="../../../how-it-works/organization/organization/">Terraform Reference Architecture account structure</a></li>
@@ -2890,19 +2914,11 @@ Terraform modules registry, accessed December 3rd 2020).
 <div class="admonition example">
 <p class="admonition-title">Steps to initialize your tf-backend</p>
 <ol>
-<li>At the root context of the <em>Terraform Reference Architecture account structure</em> run <code>make init-makefiles</code>
-    <div class="highlight"><pre><span></span><code>╭─delivery at delivery-ops in ~/Binbash/repos/Leverage/ref-architecture/le-tf-infra-aws on master✘✘✘ 20-12-02 - 10:30:31
-╰─⠠⠵ make init-makefiles 
-...
-mkdir -p ./@bin/makefiles
-git clone https://github.com/binbashar/le-dev-makefiles.git ./@bin/makefiles -q
-cd ./@bin/makefiles &amp;&amp; git checkout v0.1.7 -q
-</code></pre></div></li>
 <li>At the corresponding account dir, 
   eg: <a href="https://github.com/binbashar/le-tf-infra-aws/tree/master/shared/base-tf-backend">/shared/base-tf-backend</a> then,</li>
-<li>Run <code>make init</code></li>
-<li>Run <code>make plan</code>, review the output to understand the expected changes</li>
-<li>Run <code>make apply</code>, review the output once more and type <code>yes</code> if you are okay with that</li>
+<li>Run <code>leverage terraform init</code></li>
+<li>Run <code>leverage terraform plan</code>, review the output to understand the expected changes</li>
+<li>Run <code>leverage terraform apply</code>, review the output once more and type <code>yes</code> if you are okay with that</li>
 <li>
 <p>This should create a <code>terraform.tfstate</code> file in this directory but we don't want to push that to the repository so 
   let's push the state to the backend we just created</p>
@@ -2912,14 +2928,15 @@ cd ./@bin/makefiles &amp;&amp; git checkout v0.1.7 -q
   #   key = &quot;root/tf-backend/terraform.tfstate&quot;
   # }
 </code></pre></div></li>
-<li>Run <code>make init</code> and type <code>yes</code> when Terraform asks if you want to import the state to the S3 backend</li>
+<li>Run <code>leverage terraform init</code> and type <code>yes</code> when Terraform asks if you want to import the state to the S3 backend</li>
 <li>Done. You can remove <code>terraform.tfstate</code> now (and also <code>terraform.tfstate.backup</code> if available)</li>
 </ul>
 </li>
 </ol>
 </div>
 <h2 id="expected-workflow-after-set-up">Expected workflow after set up<a class="headerlink" href="#expected-workflow-after-set-up" title="Permanent link"> ¶</a></h2>
-<p><a href="https://asciinema.org/a/377220"><img alt="asciicast" src="https://asciinema.org/a/377220.svg" /></a></p>
+<p><img alt="⚠" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/26a0.svg" title=":warning:" /> this tape must be updated
+<a href="https://asciinema.org/a/377220"><img alt="asciicast" src="https://asciinema.org/a/377220.svg" /></a></p>
                 
               
               
@@ -2939,7 +2956,7 @@ cd ./@bin/makefiles &amp;&amp; git checkout v0.1.7 -q
     <nav class="md-footer__inner md-grid" aria-label="Footer">
       
         
-        <a href="../repo-le-tf-infra-aws/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Terraform Infra" rel="prev">
+        <a href="../repo-le-tf-vault/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Terraform Vault" rel="prev">
           <div class="md-footer__button md-icon">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
           </div>
@@ -2948,7 +2965,7 @@ cd ./@bin/makefiles &amp;&amp; git checkout v0.1.7 -q
               <span class="md-footer__direction">
                 Previous
               </span>
-              Terraform Infra
+              Terraform Vault
             </div>
           </div>
         </a>

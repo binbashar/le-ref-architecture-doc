@@ -13,21 +13,21 @@
         <meta name="author" content="Binbash">
       
       
-        <link rel="canonical" href="https://leverage.binbash.com.ar/welcome/">
+        <link rel="canonical" href="https://leverage.binbash.com.ar/user-guide/base-workflow/repo-le-tf-vault/">
       
-      <link rel="icon" href="../assets/images/logos/favicon.ico">
+      <link rel="icon" href="../../../assets/images/logos/favicon.ico">
       <meta name="generator" content="mkdocs-1.2.2, mkdocs-material-7.2.2">
     
     
       
-        <title>Welcome - Binbash Leverage Reference Architecture</title>
+        <title>Terraform Vault - Binbash Leverage Reference Architecture</title>
       
     
     
-      <link rel="stylesheet" href="../assets/stylesheets/main.1118c9be.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.1118c9be.min.css">
       
         
-        <link rel="stylesheet" href="../assets/stylesheets/palette.ba0d045b.min.css">
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.ba0d045b.min.css">
         
       
     
@@ -42,7 +42,7 @@
     
     
     
-      <link rel="stylesheet" href="../assets/stylesheets/extra.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/extra.css">
     
     
       
@@ -58,35 +58,6 @@
 
     
     
-
-  <!-- Determine title -->
-  
-  
-    
-  
-
-  <!-- The image needs to have an absolute URL -->
-  
-
-  <!-- Open graph meta tags -->
-  <meta property="og:type" content="website" />
-  <meta property="og:title" content="Binbash Leverage Reference Architecture - Welcome" />
-  <meta property="og:description" content="Binbash Leverage Reference Architecture Documentation" />
-  <meta property="og:url" content="https://leverage.binbash.com.ar/welcome/" />
-  <meta property="og:image" content="https://leverage.binbash.com.ar/assets/images/illustrations/banner.png" />
-  <meta property="og:image:type" content="image/png" />
-  <meta property="og:image:width" content="1080" />
-  <meta property="og:image:height" content="568" />
-
-  <!-- google-site-verification meta-tag -->
-  <meta name="google-site-verification" content="-Rj8YMCn9uu5IwOFdC-WfAzXp4ZOMJtYKxU40ZgcJIU" />
-
-<!-- Extra stylesheets -->
-<!--  <link
-    rel="stylesheet"
-    href="../assets/stylesheets/overrides.css"
-  />-->
-
   </head>
   
   
@@ -100,7 +71,7 @@
     <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="" data-md-color-accent="deep-purple">
   
     
-    <script>function __prefix(e){return new URL("..",location).pathname+"."+e}function __get(e,t=localStorage){return JSON.parse(t.getItem(__prefix(e)))}</script>
+    <script>function __prefix(e){return new URL("../../..",location).pathname+"."+e}function __get(e,t=localStorage){return JSON.parse(t.getItem(__prefix(e)))}</script>
     
       <script>var palette=__get("__palette");if(null!==palette&&"object"==typeof palette.color)for(var key in palette.color)document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
     
@@ -110,42 +81,18 @@
     <div data-md-component="skip">
       
         
-        <a href="#about-leverage" class="md-skip">
+        <a href="#workflow" class="md-skip">
           Skip to content
         </a>
       
     </div>
     <div data-md-component="announce">
       
-        <aside class="md-announce">
-          <div class="md-announce__inner md-grid md-typeset">
-            
-  <!-- Extra stylesing -->
-  <style>
-      .md-announce a,
-      .md-announce a:focus,
-      .md-announce a:hover{color:currentColor}.md-announce
-      strong{white-space:nowrap}.md-announce
-  </style>
-
-<a href="https://www.linkedin.com/company/binbash">
-    For updates follow <strong style="color: #2a978d">@Binbash</strong> on
-    <span class="twemoji linkedin" style="color: #0e76a8">
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M100.28 448H7.4V148.9h92.88zM53.79 108.1C24.09 108.1 0 83.5 0 53.8a53.79 53.79 0 0 1 107.58 0c0 29.7-24.1 54.3-53.79 54.3zM447.9 448h-92.68V302.4c0-34.7-.7-79.2-48.29-79.2-48.29 0-55.69 37.7-55.69 76.7V448h-92.78V148.9h89.08v40.8h1.3c12.4-23.5 42.69-48.3 87.88-48.3 94 0 111.28 61.9 111.28 142.3V448z"/></svg>
-    </span>
-
-    <strong style="color: white">LinkedIn</strong>
-  </a>
-
-
-          </div>
-        </aside>
-      
     </div>
     
       <header class="md-header" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href=".." title="Binbash Leverage Reference Architecture" class="md-header__button md-logo" aria-label="Binbash Leverage Reference Architecture" data-md-component="logo">
+    <a href="../../.." title="Binbash Leverage Reference Architecture" class="md-header__button md-logo" aria-label="Binbash Leverage Reference Architecture" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m19 2-5 4.5v11l5-4.5V2M6.5 5C4.55 5 2.45 5.4 1 6.5v14.66c0 .25.25.5.5.5.1 0 .15-.07.25-.07 1.35-.65 3.3-1.09 4.75-1.09 1.95 0 4.05.4 5.5 1.5 1.35-.85 3.8-1.5 5.5-1.5 1.65 0 3.35.31 4.75 1.06.1.05.15.03.25.03.25 0 .5-.25.5-.5V6.5c-.6-.45-1.25-.75-2-1V19c-1.1-.35-2.3-.5-3.5-.5-1.7 0-4.15.65-5.5 1.5V6.5C10.55 5.4 8.45 5 6.5 5z"/></svg>
@@ -164,7 +111,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Welcome
+              Terraform Vault
             
           </span>
         </div>
@@ -284,15 +231,13 @@
         
   
   
-    
-  
 
 
   
   
   
     <li class="md-tabs__item">
-      <a href=".." class="md-tabs__link md-tabs__link--active">
+      <a href="../../.." class="md-tabs__link">
         Home
       </a>
     </li>
@@ -308,7 +253,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../first-steps/" class="md-tabs__link">
+      <a href="../../../first-steps/" class="md-tabs__link">
         First Steps
       </a>
     </li>
@@ -329,7 +274,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../how-it-works/" class="md-tabs__link">
+      <a href="../../../how-it-works/" class="md-tabs__link">
         How it works
       </a>
     </li>
@@ -341,13 +286,15 @@
         
   
   
+    
+  
 
 
   
   
   
     <li class="md-tabs__item">
-      <a href="../user-guide/" class="md-tabs__link">
+      <a href="../../" class="md-tabs__link md-tabs__link--active">
         User guide
       </a>
     </li>
@@ -363,7 +310,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../examples/" class="md-tabs__link">
+      <a href="../../../examples/" class="md-tabs__link">
         Examples
       </a>
     </li>
@@ -379,7 +326,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../work-with-us/" class="md-tabs__link">
+      <a href="../../../work-with-us/" class="md-tabs__link">
         Work with us
       </a>
     </li>
@@ -406,7 +353,7 @@
 
 <nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href=".." title="Binbash Leverage Reference Architecture" class="md-nav__button md-logo" aria-label="Binbash Leverage Reference Architecture" data-md-component="logo">
+    <a href="../../.." title="Binbash Leverage Reference Architecture" class="md-nav__button md-logo" aria-label="Binbash Leverage Reference Architecture" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m19 2-5 4.5v11l5-4.5V2M6.5 5C4.55 5 2.45 5.4 1 6.5v14.66c0 .25.25.5.5.5.1 0 .15-.07.25-.07 1.35-.65 3.3-1.09 4.75-1.09 1.95 0 4.05.4 5.5 1.5 1.35-.85 3.8-1.5 5.5-1.5 1.65 0 3.35.31 4.75 1.06.1.05.15.03.25.03.25 0 .5-.25.5-.5V6.5c-.6-.45-1.25-.75-2-1V19c-1.1-.35-2.3-.5-3.5-.5-1.7 0-4.15.65-5.5 1.5V6.5C10.55 5.4 8.45 5 6.5 5z"/></svg>
@@ -436,14 +383,12 @@
 
   
   
-    
-  
   
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_1" type="checkbox" id="__nav_1" checked>
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_1" type="checkbox" id="__nav_1" >
       
       <label class="md-nav__link" for="__nav_1">
         Home
@@ -461,7 +406,7 @@
   
   
     <li class="md-nav__item">
-      <a href=".." class="md-nav__link">
+      <a href="../../.." class="md-nav__link">
         Home
       </a>
     </li>
@@ -471,21 +416,11 @@
             
   
   
-    
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../../../welcome/" class="md-nav__link">
         Welcome
       </a>
-      
     </li>
   
 
@@ -495,7 +430,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../first-steps/" class="md-nav__link">
+      <a href="../../../first-steps/" class="md-nav__link">
         First steps
       </a>
     </li>
@@ -507,7 +442,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../how-it-works/" class="md-nav__link">
+      <a href="../../../how-it-works/" class="md-nav__link">
         How it works
       </a>
     </li>
@@ -519,7 +454,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../user-guide/" class="md-nav__link">
+      <a href="../../" class="md-nav__link">
         User guide
       </a>
     </li>
@@ -531,7 +466,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../work-with-us/" class="md-nav__link">
+      <a href="../../../work-with-us/" class="md-nav__link">
         Work with us
       </a>
     </li>
@@ -543,7 +478,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../license/" class="md-nav__link">
+      <a href="../../../license/" class="md-nav__link">
         License
       </a>
     </li>
@@ -585,7 +520,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../first-steps/" class="md-nav__link">
+      <a href="../../../first-steps/" class="md-nav__link">
         Overview
       </a>
     </li>
@@ -648,7 +583,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../how-it-works/" class="md-nav__link">
+      <a href="../../../how-it-works/" class="md-nav__link">
         Overview
       </a>
     </li>
@@ -660,7 +595,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../how-it-works/why/" class="md-nav__link">
+      <a href="../../../how-it-works/why/" class="md-nav__link">
         Why our stack?
       </a>
     </li>
@@ -672,7 +607,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../how-it-works/considerations/" class="md-nav__link">
+      <a href="../../../how-it-works/considerations/" class="md-nav__link">
         Considerations
       </a>
     </li>
@@ -711,7 +646,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../how-it-works/code-library/code-library/" class="md-nav__link">
+      <a href="../../../how-it-works/code-library/code-library/" class="md-nav__link">
         Overview
       </a>
     </li>
@@ -723,7 +658,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../how-it-works/code-library/code-library-forks/" class="md-nav__link">
+      <a href="../../../how-it-works/code-library/code-library-forks/" class="md-nav__link">
         Forks workflow
       </a>
     </li>
@@ -735,7 +670,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../how-it-works/code-library/code-library-specs/" class="md-nav__link">
+      <a href="../../../how-it-works/code-library/code-library-specs/" class="md-nav__link">
         Specifications
       </a>
     </li>
@@ -747,7 +682,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../how-it-works/code-library/modules-library-per-tech/" class="md-nav__link">
+      <a href="../../../how-it-works/code-library/modules-library-per-tech/" class="md-nav__link">
         Modules per Tech
       </a>
     </li>
@@ -786,7 +721,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../how-it-works/leverage-cli/" class="md-nav__link">
+      <a href="../../../how-it-works/leverage-cli/" class="md-nav__link">
         Overview
       </a>
     </li>
@@ -825,7 +760,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../how-it-works/organization/organization/" class="md-nav__link">
+      <a href="../../../how-it-works/organization/organization/" class="md-nav__link">
         Organization
       </a>
     </li>
@@ -837,7 +772,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../how-it-works/organization/accounts/" class="md-nav__link">
+      <a href="../../../how-it-works/organization/accounts/" class="md-nav__link">
         Accounts
       </a>
     </li>
@@ -849,7 +784,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../how-it-works/organization/billing/" class="md-nav__link">
+      <a href="../../../how-it-works/organization/billing/" class="md-nav__link">
         Billing
       </a>
     </li>
@@ -888,7 +823,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../how-it-works/identities/identities/" class="md-nav__link">
+      <a href="../../../how-it-works/identities/identities/" class="md-nav__link">
         Overview
       </a>
     </li>
@@ -900,7 +835,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../how-it-works/identities/roles/" class="md-nav__link">
+      <a href="../../../how-it-works/identities/roles/" class="md-nav__link">
         IAM Roles
       </a>
     </li>
@@ -939,7 +874,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../how-it-works/security/vpn/" class="md-nav__link">
+      <a href="../../../how-it-works/security/vpn/" class="md-nav__link">
         VPN
       </a>
     </li>
@@ -951,7 +886,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../how-it-works/security/services/" class="md-nav__link">
+      <a href="../../../how-it-works/security/services/" class="md-nav__link">
         Services
       </a>
     </li>
@@ -963,7 +898,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../how-it-works/security/certificates/" class="md-nav__link">
+      <a href="../../../how-it-works/security/certificates/" class="md-nav__link">
         Certificates
       </a>
     </li>
@@ -975,7 +910,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../how-it-works/security/iam-access-analyzer/" class="md-nav__link">
+      <a href="../../../how-it-works/security/iam-access-analyzer/" class="md-nav__link">
         IAM Access Analyzer
       </a>
     </li>
@@ -1014,7 +949,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../how-it-works/network/vpc-topology/" class="md-nav__link">
+      <a href="../../../how-it-works/network/vpc-topology/" class="md-nav__link">
         VPC Topology
       </a>
     </li>
@@ -1026,7 +961,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../how-it-works/network/vpc-addressing/" class="md-nav__link">
+      <a href="../../../how-it-works/network/vpc-addressing/" class="md-nav__link">
         VPC Adressing
       </a>
     </li>
@@ -1038,7 +973,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../how-it-works/network/vpc-peering/" class="md-nav__link">
+      <a href="../../../how-it-works/network/vpc-peering/" class="md-nav__link">
         VPC Peering
       </a>
     </li>
@@ -1050,7 +985,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../how-it-works/network/tgw-topology/" class="md-nav__link">
+      <a href="../../../how-it-works/network/tgw-topology/" class="md-nav__link">
         TGW Topology
       </a>
     </li>
@@ -1062,7 +997,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../how-it-works/network/vpc-traffic-out/" class="md-nav__link">
+      <a href="../../../how-it-works/network/vpc-traffic-out/" class="md-nav__link">
         VPC Outbound Traffic
       </a>
     </li>
@@ -1074,7 +1009,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../how-it-works/network/dns/" class="md-nav__link">
+      <a href="../../../how-it-works/network/dns/" class="md-nav__link">
         DNS
       </a>
     </li>
@@ -1113,7 +1048,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../how-it-works/compute/overview/" class="md-nav__link">
+      <a href="../../../how-it-works/compute/overview/" class="md-nav__link">
         Overview
       </a>
     </li>
@@ -1125,7 +1060,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../how-it-works/compute/k8s-kops/" class="md-nav__link">
+      <a href="../../../how-it-works/compute/k8s-kops/" class="md-nav__link">
         K8s Kops
       </a>
     </li>
@@ -1137,7 +1072,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../how-it-works/compute/k8s-eks/" class="md-nav__link">
+      <a href="../../../how-it-works/compute/k8s-eks/" class="md-nav__link">
         K8s EKS
       </a>
     </li>
@@ -1149,7 +1084,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../how-it-works/compute/k8s-service-mesh/" class="md-nav__link">
+      <a href="../../../how-it-works/compute/k8s-service-mesh/" class="md-nav__link">
         K8s Service Mesh
       </a>
     </li>
@@ -1161,7 +1096,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../how-it-works/compute/serverless/" class="md-nav__link">
+      <a href="../../../how-it-works/compute/serverless/" class="md-nav__link">
         Serverless
       </a>
     </li>
@@ -1200,7 +1135,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../how-it-works/database/database/" class="md-nav__link">
+      <a href="../../../how-it-works/database/database/" class="md-nav__link">
         Databases
       </a>
     </li>
@@ -1212,7 +1147,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../how-it-works/database/mysql/" class="md-nav__link">
+      <a href="../../../how-it-works/database/mysql/" class="md-nav__link">
         MySQL
       </a>
     </li>
@@ -1224,7 +1159,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../how-it-works/database/postgres/" class="md-nav__link">
+      <a href="../../../how-it-works/database/postgres/" class="md-nav__link">
         PostgresSQL
       </a>
     </li>
@@ -1242,7 +1177,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../how-it-works/storage/storage/" class="md-nav__link">
+      <a href="../../../how-it-works/storage/storage/" class="md-nav__link">
         Storage
       </a>
     </li>
@@ -1254,7 +1189,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../how-it-works/cdn/cdn/" class="md-nav__link">
+      <a href="../../../how-it-works/cdn/cdn/" class="md-nav__link">
         CDN
       </a>
     </li>
@@ -1287,7 +1222,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../how-it-works/ci-cd/ci-cd/" class="md-nav__link">
+      <a href="../../../how-it-works/ci-cd/ci-cd/" class="md-nav__link">
         Overview
       </a>
     </li>
@@ -1299,7 +1234,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../how-it-works/ci-cd/k8s-argocd/" class="md-nav__link">
+      <a href="../../../how-it-works/ci-cd/k8s-argocd/" class="md-nav__link">
         ArgoCD
       </a>
     </li>
@@ -1317,7 +1252,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../how-it-works/tools/tools/" class="md-nav__link">
+      <a href="../../../how-it-works/tools/tools/" class="md-nav__link">
         Tools
       </a>
     </li>
@@ -1350,7 +1285,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../how-it-works/monitoring/monitoring/" class="md-nav__link">
+      <a href="../../../how-it-works/monitoring/monitoring/" class="md-nav__link">
         Monitoring
       </a>
     </li>
@@ -1362,7 +1297,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../how-it-works/monitoring/metrics/" class="md-nav__link">
+      <a href="../../../how-it-works/monitoring/metrics/" class="md-nav__link">
         Metrics
       </a>
     </li>
@@ -1374,7 +1309,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../how-it-works/monitoring/logs/" class="md-nav__link">
+      <a href="../../../how-it-works/monitoring/logs/" class="md-nav__link">
         Logs
       </a>
     </li>
@@ -1386,7 +1321,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../how-it-works/monitoring/tracing/" class="md-nav__link">
+      <a href="../../../how-it-works/monitoring/tracing/" class="md-nav__link">
         Tracing
       </a>
     </li>
@@ -1398,7 +1333,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../how-it-works/monitoring/apm/" class="md-nav__link">
+      <a href="../../../how-it-works/monitoring/apm/" class="md-nav__link">
         APM
       </a>
     </li>
@@ -1410,7 +1345,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../how-it-works/monitoring/notification_escalation/" class="md-nav__link">
+      <a href="../../../how-it-works/monitoring/notification_escalation/" class="md-nav__link">
         Notifications
       </a>
     </li>
@@ -1428,7 +1363,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../how-it-works/secrets/secrets/" class="md-nav__link">
+      <a href="../../../how-it-works/secrets/secrets/" class="md-nav__link">
         Secrets
       </a>
     </li>
@@ -1461,7 +1396,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../how-it-works/reliability/backups/" class="md-nav__link">
+      <a href="../../../how-it-works/reliability/backups/" class="md-nav__link">
         Backups
       </a>
     </li>
@@ -1473,7 +1408,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../how-it-works/reliability/high-availability/" class="md-nav__link">
+      <a href="../../../how-it-works/reliability/high-availability/" class="md-nav__link">
         High Availability
       </a>
     </li>
@@ -1485,7 +1420,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../how-it-works/reliability/health-checks/" class="md-nav__link">
+      <a href="../../../how-it-works/reliability/health-checks/" class="md-nav__link">
         Health Checks
       </a>
     </li>
@@ -1497,7 +1432,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../how-it-works/reliability/dr/" class="md-nav__link">
+      <a href="../../../how-it-works/reliability/dr/" class="md-nav__link">
         Disaster Recovery
       </a>
     </li>
@@ -1515,7 +1450,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../how-it-works/costs/costs/" class="md-nav__link">
+      <a href="../../../how-it-works/costs/costs/" class="md-nav__link">
         Costs
       </a>
     </li>
@@ -1527,7 +1462,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../how-it-works/read-more/" class="md-nav__link">
+      <a href="../../../how-it-works/read-more/" class="md-nav__link">
         Read More
       </a>
     </li>
@@ -1546,12 +1481,14 @@
 
   
   
+    
+  
   
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" type="checkbox" id="__nav_4" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" type="checkbox" id="__nav_4" checked>
       
       <label class="md-nav__link" for="__nav_4">
         User guide
@@ -1569,7 +1506,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../user-guide/" class="md-nav__link">
+      <a href="../../" class="md-nav__link">
         Basic usage
       </a>
     </li>
@@ -1602,7 +1539,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../user-guide/base-configuration/overview/" class="md-nav__link">
+      <a href="../../base-configuration/overview/" class="md-nav__link">
         Overview
       </a>
     </li>
@@ -1635,7 +1572,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../user-guide/base-configuration/repo-le-tf-infra-aws/" class="md-nav__link">
+      <a href="../../base-configuration/repo-le-tf-infra-aws/" class="md-nav__link">
         Terraform AWS Infra
       </a>
     </li>
@@ -1647,7 +1584,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../user-guide/base-configuration/repo-le-tf-vault/" class="md-nav__link">
+      <a href="../../base-configuration/repo-le-tf-vault/" class="md-nav__link">
         Terraform Vault
       </a>
     </li>
@@ -1659,7 +1596,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../user-guide/base-configuration/repo-le-ansible-infra/" class="md-nav__link">
+      <a href="../../base-configuration/repo-le-ansible-infra/" class="md-nav__link">
         Ansible Infra
       </a>
     </li>
@@ -1681,12 +1618,14 @@
             
   
   
+    
+  
   
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_3" type="checkbox" id="__nav_4_3" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_3" type="checkbox" id="__nav_4_3" checked>
       
       <label class="md-nav__link" for="__nav_4_3">
         Workflow
@@ -1704,7 +1643,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../user-guide/base-workflow/leverage-cli/" class="md-nav__link">
+      <a href="../leverage-cli/" class="md-nav__link">
         Leverage CLI
       </a>
     </li>
@@ -1714,12 +1653,14 @@
             
   
   
+    
+  
   
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_3_2" type="checkbox" id="__nav_4_3_2" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_3_2" type="checkbox" id="__nav_4_3_2" checked>
       
       <label class="md-nav__link" for="__nav_4_3_2">
         Repos
@@ -1737,7 +1678,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../user-guide/base-workflow/repo-le-dev-makefiles/" class="md-nav__link">
+      <a href="../repo-le-dev-makefiles/" class="md-nav__link">
         Makefiles Lib
       </a>
     </li>
@@ -1749,7 +1690,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../user-guide/base-workflow/repo-le-tf-infra-aws/" class="md-nav__link">
+      <a href="../repo-le-tf-infra-aws/" class="md-nav__link">
         Terraform AWS Infra
       </a>
     </li>
@@ -1759,11 +1700,65 @@
             
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="../user-guide/base-workflow/repo-le-tf-vault/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Terraform Vault
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         Terraform Vault
       </a>
+      
+        
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#steps" class="md-nav__link">
+    Steps
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#running-in-automation" class="md-nav__link">
+    Running in Automation
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#read-more" class="md-nav__link">
+    Read More
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -1773,7 +1768,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../user-guide/base-workflow/repo-le-tf-infra-aws-tf-state/" class="md-nav__link">
+      <a href="../repo-le-tf-infra-aws-tf-state/" class="md-nav__link">
         Terraform Infra State
       </a>
     </li>
@@ -1785,7 +1780,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../user-guide/base-workflow/repo-le-ansible-infra/" class="md-nav__link">
+      <a href="../repo-le-ansible-infra/" class="md-nav__link">
         Ansible Infra
       </a>
     </li>
@@ -1830,7 +1825,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../user-guide/organization/organization-init/" class="md-nav__link">
+      <a href="../../organization/organization-init/" class="md-nav__link">
         Organization Init
       </a>
     </li>
@@ -1842,7 +1837,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../user-guide/organization/organization-legacy-accounts/" class="md-nav__link">
+      <a href="../../organization/organization-legacy-accounts/" class="md-nav__link">
         Invite Legacy accounts
       </a>
     </li>
@@ -1881,7 +1876,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../user-guide/identities/gpg/" class="md-nav__link">
+      <a href="../../identities/gpg/" class="md-nav__link">
         gpg
       </a>
     </li>
@@ -1893,7 +1888,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../user-guide/identities/identities/" class="md-nav__link">
+      <a href="../../identities/identities/" class="md-nav__link">
         identities
       </a>
     </li>
@@ -1905,7 +1900,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../user-guide/identities/credentials/" class="md-nav__link">
+      <a href="../../identities/credentials/" class="md-nav__link">
         credentials
       </a>
     </li>
@@ -1944,7 +1939,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../user-guide/security/vpn/" class="md-nav__link">
+      <a href="../../security/vpn/" class="md-nav__link">
         VPN
       </a>
     </li>
@@ -1956,7 +1951,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../user-guide/security/services/" class="md-nav__link">
+      <a href="../../security/services/" class="md-nav__link">
         Services
       </a>
     </li>
@@ -1995,7 +1990,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../user-guide/network/vpc-addressing/" class="md-nav__link">
+      <a href="../../network/vpc-addressing/" class="md-nav__link">
         VPC
       </a>
     </li>
@@ -2007,7 +2002,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../user-guide/network/vpc-peering/" class="md-nav__link">
+      <a href="../../network/vpc-peering/" class="md-nav__link">
         VPC Peering
       </a>
     </li>
@@ -2019,7 +2014,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../user-guide/network/dns/" class="md-nav__link">
+      <a href="../../network/dns/" class="md-nav__link">
         DNS
       </a>
     </li>
@@ -2058,7 +2053,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../user-guide/compute/overview/" class="md-nav__link">
+      <a href="../../compute/overview/" class="md-nav__link">
         Overview
       </a>
     </li>
@@ -2070,7 +2065,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../user-guide/compute/k8s-kops/" class="md-nav__link">
+      <a href="../../compute/k8s-kops/" class="md-nav__link">
         K8s Kops
       </a>
     </li>
@@ -2082,7 +2077,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../user-guide/compute/k8s-eks/" class="md-nav__link">
+      <a href="../../compute/k8s-eks/" class="md-nav__link">
         K8s EKS
       </a>
     </li>
@@ -2094,7 +2089,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../user-guide/compute/serverless/" class="md-nav__link">
+      <a href="../../compute/serverless/" class="md-nav__link">
         Serverless
       </a>
     </li>
@@ -2133,7 +2128,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../user-guide/database/database/" class="md-nav__link">
+      <a href="../../database/database/" class="md-nav__link">
         Databases
       </a>
     </li>
@@ -2145,7 +2140,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../user-guide/database/mysql/" class="md-nav__link">
+      <a href="../../database/mysql/" class="md-nav__link">
         MySQL
       </a>
     </li>
@@ -2157,7 +2152,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../user-guide/database/postgres/" class="md-nav__link">
+      <a href="../../database/postgres/" class="md-nav__link">
         PostgresSQL
       </a>
     </li>
@@ -2175,7 +2170,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../user-guide/storage/storage/" class="md-nav__link">
+      <a href="../../storage/storage/" class="md-nav__link">
         Storage
       </a>
     </li>
@@ -2187,7 +2182,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../user-guide/cdn/cdn/" class="md-nav__link">
+      <a href="../../cdn/cdn/" class="md-nav__link">
         CDN
       </a>
     </li>
@@ -2199,7 +2194,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../user-guide/ci-cd/ci-cd/" class="md-nav__link">
+      <a href="../../ci-cd/ci-cd/" class="md-nav__link">
         CI/CD
       </a>
     </li>
@@ -2211,7 +2206,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../user-guide/tools/tools/" class="md-nav__link">
+      <a href="../../tools/tools/" class="md-nav__link">
         Tools
       </a>
     </li>
@@ -2244,7 +2239,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../user-guide/monitoring/monitoring/" class="md-nav__link">
+      <a href="../../monitoring/monitoring/" class="md-nav__link">
         Monitoring
       </a>
     </li>
@@ -2256,7 +2251,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../user-guide/monitoring/metrics/" class="md-nav__link">
+      <a href="../../monitoring/metrics/" class="md-nav__link">
         Metrics
       </a>
     </li>
@@ -2268,7 +2263,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../user-guide/monitoring/logs/" class="md-nav__link">
+      <a href="../../monitoring/logs/" class="md-nav__link">
         Logs
       </a>
     </li>
@@ -2280,7 +2275,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../user-guide/monitoring/tracing/" class="md-nav__link">
+      <a href="../../monitoring/tracing/" class="md-nav__link">
         Tracing
       </a>
     </li>
@@ -2292,7 +2287,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../user-guide/monitoring/apm/" class="md-nav__link">
+      <a href="../../monitoring/apm/" class="md-nav__link">
         APM
       </a>
     </li>
@@ -2310,7 +2305,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../user-guide/secrets/secrets/" class="md-nav__link">
+      <a href="../../secrets/secrets/" class="md-nav__link">
         Secrets
       </a>
     </li>
@@ -2343,7 +2338,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../user-guide/reliability/backups/" class="md-nav__link">
+      <a href="../../reliability/backups/" class="md-nav__link">
         Backups
       </a>
     </li>
@@ -2355,7 +2350,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../user-guide/reliability/dr/" class="md-nav__link">
+      <a href="../../reliability/dr/" class="md-nav__link">
         Disaster Recovery
       </a>
     </li>
@@ -2367,7 +2362,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../user-guide/reliability/health-checks/" class="md-nav__link">
+      <a href="../../reliability/health-checks/" class="md-nav__link">
         Health Checks
       </a>
     </li>
@@ -2385,7 +2380,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../user-guide/costs/costs/" class="md-nav__link">
+      <a href="../../costs/costs/" class="md-nav__link">
         Costs
       </a>
     </li>
@@ -2427,7 +2422,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../examples/" class="md-nav__link">
+      <a href="../../../examples/" class="md-nav__link">
         Introduction
       </a>
     </li>
@@ -2439,7 +2434,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../examples/PREREQUISITES/" class="md-nav__link">
+      <a href="../../../examples/PREREQUISITES/" class="md-nav__link">
         Prerequisites
       </a>
     </li>
@@ -2472,7 +2467,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../examples/organization/" class="md-nav__link">
+      <a href="../../../examples/organization/" class="md-nav__link">
         Organization
       </a>
     </li>
@@ -2484,7 +2479,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../examples/k8s-kops/" class="md-nav__link">
+      <a href="../../../examples/k8s-kops/" class="md-nav__link">
         K8s Kops
       </a>
     </li>
@@ -2532,7 +2527,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../work-with-us/" class="md-nav__link">
+      <a href="../../../work-with-us/" class="md-nav__link">
         Overview
       </a>
     </li>
@@ -2565,7 +2560,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../work-with-us/support/" class="md-nav__link">
+      <a href="../../../work-with-us/support/" class="md-nav__link">
         Support
       </a>
     </li>
@@ -2598,7 +2593,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../work-with-us/updates/product-updates-01-2021/" class="md-nav__link">
+      <a href="../../../work-with-us/updates/product-updates-01-2021/" class="md-nav__link">
         January 2021
       </a>
     </li>
@@ -2622,7 +2617,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../work-with-us/subscription-plans/" class="md-nav__link">
+      <a href="../../../work-with-us/subscription-plans/" class="md-nav__link">
         Subscription Plans
       </a>
     </li>
@@ -2634,7 +2629,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../work-with-us/contribute/" class="md-nav__link">
+      <a href="../../../work-with-us/contribute/" class="md-nav__link">
         Contribute
       </a>
     </li>
@@ -2667,7 +2662,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../work-with-us/roadmap/overview/" class="md-nav__link">
+      <a href="../../../work-with-us/roadmap/overview/" class="md-nav__link">
         Overview
       </a>
     </li>
@@ -2679,7 +2674,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../work-with-us/roadmap/operational-excellence/" class="md-nav__link">
+      <a href="../../../work-with-us/roadmap/operational-excellence/" class="md-nav__link">
         Operational Excellence
       </a>
     </li>
@@ -2691,7 +2686,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../work-with-us/roadmap/reliability-performance/" class="md-nav__link">
+      <a href="../../../work-with-us/roadmap/reliability-performance/" class="md-nav__link">
         Reliability & Performance
       </a>
     </li>
@@ -2703,7 +2698,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../work-with-us/roadmap/security/" class="md-nav__link">
+      <a href="../../../work-with-us/roadmap/security/" class="md-nav__link">
         Security
       </a>
     </li>
@@ -2715,7 +2710,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../work-with-us/roadmap/cost-optimization/" class="md-nav__link">
+      <a href="../../../work-with-us/roadmap/cost-optimization/" class="md-nav__link">
         Cost Optimization
       </a>
     </li>
@@ -2727,7 +2722,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../work-with-us/roadmap/demo-apps/" class="md-nav__link">
+      <a href="../../../work-with-us/roadmap/demo-apps/" class="md-nav__link">
         Demo Applications
       </a>
     </li>
@@ -2745,7 +2740,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../work-with-us/careers/" class="md-nav__link">
+      <a href="../../../work-with-us/careers/" class="md-nav__link">
         Careers
       </a>
     </li>
@@ -2757,7 +2752,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../work-with-us/team/" class="md-nav__link">
+      <a href="../../../work-with-us/team/" class="md-nav__link">
         Team
       </a>
     </li>
@@ -2769,7 +2764,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../work-with-us/testimonials/" class="md-nav__link">
+      <a href="../../../work-with-us/testimonials/" class="md-nav__link">
         Testimonials
       </a>
     </li>
@@ -2781,7 +2776,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../work-with-us/faqs/" class="md-nav__link">
+      <a href="../../../work-with-us/faqs/" class="md-nav__link">
         FAQs
       </a>
     </li>
@@ -2793,7 +2788,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../work-with-us/contact/" class="md-nav__link">
+      <a href="../../../work-with-us/contact/" class="md-nav__link">
         Contact
       </a>
     </li>
@@ -2825,6 +2820,35 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#steps" class="md-nav__link">
+    Steps
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#running-in-automation" class="md-nav__link">
+    Running in Automation
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#read-more" class="md-nav__link">
+    Read More
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -2835,76 +2859,50 @@
             <article class="md-content__inner md-typeset">
               
                 
-                  <a href="https://github.com/binbashar/le-ref-architecture-doc/edit/master/docs/welcome.md" title="Edit this page" class="md-content__button md-icon">
+                  <a href="https://github.com/binbashar/le-ref-architecture-doc/edit/master/docs/user-guide/base-workflow/repo-le-tf-vault.md" title="Edit this page" class="md-content__button md-icon">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg>
                   </a>
                 
                 
-                <p><img alt="binbash-logo" src="../assets/images/logos/binbash.png" style="width:250px" title="Binbash" />
-<img alt="binbash-leverage-tf" src="../assets/images/logos/binbash-leverage.png#right" style="width:130px" title="Leverage" /></p>
-<h1 id="about-leverage">About Leverage<a class="headerlink" href="#about-leverage" title="Permanent link"> ¶</a></h1>
-<div class="admonition important">
-<p class="admonition-title">What's Leverage?</p>
-<p>Our focus is on creating reusable, high quality 
-<img alt="leverage-aws" src="../assets/images/icons/aws-emojipack/General_AWScloud.png" style="width:30px" title="AWS" /> 
-Cloud Infrastructure code, through our core components:</p>
-<ul class="task-list">
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> <a href="../how-it-works/"><strong>Reference AWS Cloud Solutions Architecture</strong></a></li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> <a href="../how-it-works/code-library/code-library/"><strong>Infrastructure as Code (IaC) Library</strong></a></li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> <a href="https://github.com/binbashar/leverage"><strong>Leverage CLI</strong></a></li>
+                <h1 id="workflow">Workflow<a class="headerlink" href="#workflow" title="Permanent link"> ¶</a></h1>
+<h2 id="steps">Steps<a class="headerlink" href="#steps" title="Permanent link"> ¶</a></h2>
+<div class="admonition check">
+<p class="admonition-title">Terraform Workflow</p>
+<ol>
+<li>Make sure you've read and prepare your local development environment following the
+<a href="../../base-configuration/overview/">Overview base-configurations</a> section.</li>
+<li>Review and assure you meet all the <a href="../../base-configuration/repo-le-tf-vault/">pre-requisites</a>  <ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> <a href="../repo-le-tf-infra-aws-tf-state/">Remote State</a></li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Configuration files</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> <a href="../../identities/credentials/">AWS Profile and credentials</a></li>
 </ul>
-<p>Because all the code and modules are already built, we can get you up and running <strong>at least 2x faster</strong> <img alt="🚀" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f680.svg" title=":rocket:" /> 
-than a consulting company (<img alt="✅" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/2705.svg" title=":white_check_mark:" /> <em>typically in just a few weeks!</em>). On top of code that is thoroughly 
-documented, tested, and has been proven in production at dozens of other project deployments.</p>
+</li>
+<li>Get into the folder that you need to work with (e.g. <code>2_identities</code>)</li>
+<li>Run <code>leverage terraform init</code></li>
+<li>Make whatever changes you need to make</li>
+<li>Run <code>leverage terraform plan</code> if you only mean to preview those changes</li>
+<li>Run <code>leverage terraform apply</code> if you want to review and likely apply those changes</li>
+</ol>
 </div>
-<div class="admonition important">
-<p class="admonition-title">Why Leverage?</p>
-<p>If you implement our <strong>Reference AWS Cloud Solutions Architecture</strong> and the 
-<strong>Infrastructure as Code (IaC) Library</strong> via Leverage CLI , you will get your entire Cloud Native 
-Application Infra in few weeks.</p>
-<p><em>Implement Leverage yourself or we can deploy it for you!</em> <img alt="💪" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f4aa.svg" title=":muscle:" /></p>
-<p><img alt="📚" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f4da.svg" title=":books:" /> <strong>Read More:</strong> </p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>If desired at step <strong>#5</strong> you could submit a PR, allowing you and the rest of the team to 
+understand and review what changes would be made to your AWS Cloud Architecture components before executing 
+<code>leverage terraform apply</code> (<code>terraform apply</code>). This brings the huge benefit of treating changes with a <strong>GitOps</strong> oriented 
+approach, basically as we should treat any other code &amp; infrastructure change, and integrate it with the 
+rest of our tools and practices like CI/CD, in</p>
+</div>
+<h2 id="running-in-automation">Running in Automation<a class="headerlink" href="#running-in-automation" title="Permanent link"> ¶</a></h2>
+<p><img alt="leverage-aws-terraform" src="../../../assets/images/diagrams/aws-terraform-automation.png" style="width:350" title="Terraform" /></p>
+<figcaption style="font-size:15px">Figure: Running terraform with AWS in automation (just as reference).</figcaption>
+
+<h2 id="read-more">Read More<a class="headerlink" href="#read-more" title="Permanent link"> ¶</a></h2>
+<div class="admonition info">
+<p class="admonition-title">Extra resources</p>
 <ul>
-<li><a href="../how-it-works/why/">Why our stack?</a></li>
-<li><a href="./work-with-us/faqs/#why-leverage">Why Leverage?</a></li>
+<li><img alt="📒" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f4d2.svg" title=":ledger:" /> <a href="https://learn.hashicorp.com/terraform/development/running-terraform-in-automation">Running Terraform in automation</a></li>
 </ul>
 </div>
-<div class="admonition important">
-<p class="admonition-title">Core Features</p>
-<ul class="task-list">
-<li class="task-list-item">
-<p><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> <a href="../how-it-works/code-library/code-library/"><strong>Reference Architecture</strong></a>:
-Designed under optimal configs for the most popular modern web and mobile applications needs.
-Its design is fully based on the
-<a href="https://leverage.binbash.com.ar/support/#aws-well-architected-review"><strong>AWS Well Architected Framework</strong></a>.</p>
-</li>
-<li class="task-list-item">
-<p><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> <a href="../how-it-works/"><strong>Infrastructure as Code (IaC) Library</strong></a>:
-    A collection of reusable, tested, production-ready E2E AWS Cloud infrastructure as code solutions, leveraged by
-    modules written in: <em>Terraform, Ansible, Helm charts, Dockerfiles and Makefiles</em>.</p>
-</li>
-<li class="task-list-item">
-<p><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> <a href="https://github.com/binbashar/leverage"><strong>Leverage CLI</strong></a>: projects' command line tool.
-Provides the means to interact and deploy Leverage Reference Architecture on AWS and if needed
-it allows you to define custom tasks to run.</p>
-</li>
-</ul>
-</div>
-<h1 id="welcome">Welcome<a class="headerlink" href="#welcome" title="Permanent link"> ¶</a></h1>
-<p>This is the documentation for the <strong>Leverage Reference Architecture</strong>.</p>
-<p>It is built around the <a href="https://aws.amazon.com/architecture/well-architected/">AWS Well Architected Framework</a>
-, using a <a href="https://www.terraform.io/">Terraform</a>, <a href="https://www.ansible.com/">Ansible</a> and <a href="https://helm.sh/">Helm</a>.</p>
-<p>An its compose of the following 3 main repos:</p>
-<ul class="task-list">
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> <a href="https://github.com/binbashar/le-tf-infra-aws">le-tf-infra-aws</a></li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> <a href="https://github.com/binbashar/le-tf-vault">le-tf-vault</a></li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> <a href="https://github.com/binbashar/le-ansible-infra">le-ansible-infra</a></li>
-</ul>
-<h2 id="getting-started">Getting Started<a class="headerlink" href="#getting-started" title="Permanent link"> ¶</a></h2>
-<p><img alt="📚" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f4da.svg" title=":books:" /> See <a href="../how-it-works/"><strong>How it works</strong></a> for a whirlwind tour that will get you started.</p>
-<p><img alt="📚" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f4da.svg" title=":books:" /> See <a href="../user-guide/"><strong>User guide</strong></a> for a hands on help.</p>
-                
-                  
                 
               
               
@@ -2924,7 +2922,7 @@ it allows you to define custom tasks to run.</p>
     <nav class="md-footer__inner md-grid" aria-label="Footer">
       
         
-        <a href=".." class="md-footer__link md-footer__link--prev" aria-label="Previous: Home" rel="prev">
+        <a href="../repo-le-tf-infra-aws/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Terraform AWS Infra" rel="prev">
           <div class="md-footer__button md-icon">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
           </div>
@@ -2933,20 +2931,20 @@ it allows you to define custom tasks to run.</p>
               <span class="md-footer__direction">
                 Previous
               </span>
-              Home
+              Terraform AWS Infra
             </div>
           </div>
         </a>
       
       
         
-        <a href="../first-steps/" class="md-footer__link md-footer__link--next" aria-label="Next: First steps" rel="next">
+        <a href="../repo-le-tf-infra-aws-tf-state/" class="md-footer__link md-footer__link--next" aria-label="Next: Terraform Infra State" rel="next">
           <div class="md-footer__title">
             <div class="md-ellipsis">
               <span class="md-footer__direction">
                 Next
               </span>
-              First steps
+              Terraform Infra State
             </div>
           </div>
           <div class="md-footer__button md-icon">
@@ -3055,10 +3053,10 @@ it allows you to define custom tasks to run.</p>
     <div class="md-dialog" data-md-component="dialog">
       <div class="md-dialog__inner md-typeset"></div>
     </div>
-    <script id="__config" type="application/json">{"base": "..", "features": ["navigation.tabs", "navigation.instant", "header.autohide"], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../assets/javascripts/workers/search.709b4209.min.js", "version": null}</script>
+    <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.tabs", "navigation.instant", "header.autohide"], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../../../assets/javascripts/workers/search.709b4209.min.js", "version": null}</script>
     
     
-      <script src="../assets/javascripts/bundle.2b46852b.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.2b46852b.min.js"></script>
       
     
   </body>

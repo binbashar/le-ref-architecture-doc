@@ -316,6 +316,11 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://leverage.binbash.com.ar/user-guide/base-configuration/repo-le-tf-vault/</loc>
+         <lastmod>2021-08-05</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://leverage.binbash.com.ar/user-guide/base-workflow/leverage-cli/</loc>
          <lastmod>2021-08-05</lastmod>
          <changefreq>daily</changefreq>
@@ -337,6 +342,11 @@
     </url>
     <url>
          <loc>https://leverage.binbash.com.ar/user-guide/base-workflow/repo-le-tf-infra-aws/</loc>
+         <lastmod>2021-08-05</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://leverage.binbash.com.ar/user-guide/base-workflow/repo-le-tf-vault/</loc>
          <lastmod>2021-08-05</lastmod>
          <changefreq>daily</changefreq>
     </url>

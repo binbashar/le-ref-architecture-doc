@@ -4,10 +4,13 @@
 !!! check "Terraform Workflow"
     1. Make sure you've read and prepare your local development environment following the
     [Overview base-configurations](../base-configuration/overview.md) section.
-    2. Review and assure you meet all the [pre-requisites](../base-configuration/repo-le-tf-infra-aws.md)  
+    2. Depending in which Terraform Ref Architecture repo you are working please review and assure you meet
+    all the [terraform aws pre-requisites](../base-configuration/repo-le-tf-infra-aws.md) or 
+    [terraform vault pre-requisites](../base-configuration/repo-le-tf-vault.md)  
         - [x] [Remote State](repo-le-tf-infra-aws-tf-state.md)
         - [x] Configuration files
         - [x] [AWS Profile and credentials](../identities/credentials.md)
+        - [x] [Vault token secret](../identities/credentials-vault.md)
     3. Get into the folder that you need to work with (e.g. `2_identities`)
     4. Run `leverage terraform init`
     5. Make whatever changes you need to make

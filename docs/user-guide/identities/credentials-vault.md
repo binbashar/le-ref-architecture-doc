@@ -64,7 +64,7 @@ Terraform Leverage Reference architecture for:
     ...
     ```
     4. input your GH personal access token
-    5. Set the returned `token` in step 4) into `/config/common.config` -> `vault_token="s.PNAXXXXXXXXXXXXXXXXXXX.hbtct"
+    5. Set the returned `token` in step 4) into `/config/common.config` -> `vault_token="s.PNAXXXXXXXXXXXXXXXXXXX.hbtct"`
     
     :ledger: **NOTE:** the admin token from https://portal.cloud.hashicorp.com/ will always work
     but it's use is defavoured for the nominated GH personal access token for

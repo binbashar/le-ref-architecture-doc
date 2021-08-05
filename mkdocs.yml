@@ -197,14 +197,13 @@ nav:
     - Configuration:
       - Overview: "user-guide/base-configuration/overview.md"
       - Repos:
-        - Terraform AWS Infra: "user-guide/base-configuration/repo-le-tf-infra-aws.md"
+        - Terraform AWS Infra: "user-guide/base-configuration/repo-le-tf-infra.md"
         - Terraform Vault: "user-guide/base-configuration/repo-le-tf-vault.md"
         - Ansible Infra: "user-guide/base-configuration/repo-le-ansible-infra.md"
     - Workflow:
       - Leverage CLI: "user-guide/base-workflow/leverage-cli.md"
       - Repos:
-        - Terraform AWS Infra: "user-guide/base-workflow/repo-le-tf-infra-aws.md"
-        - Terraform Vault: "user-guide/base-workflow/repo-le-tf-vault.md"
+        - Terraform Infra: "user-guide/base-workflow/repo-le-tf-infra.md"
         - Terraform Infra State: "user-guide/base-workflow/repo-le-tf-infra-aws-tf-state.md"
         - Ansible Infra: "user-guide/base-workflow/repo-le-ansible-infra.md"
     - AWS Organization:
@@ -212,8 +211,9 @@ nav:
       - Invite Legacy accounts: "user-guide/organization/organization-legacy-accounts.md"
     - Identities:
       - gpg: "user-guide/identities/gpg.md"
-      - identities: "user-guide/identities/identities.md"
-      - credentials: "user-guide/identities/credentials.md"
+      - Identities: "user-guide/identities/identities.md"
+      - Credentials: "user-guide/identities/credentials.md"
+      - Credentials Vault: "user-guide/identities/credentials-vault.md"
     - Security:
       - VPN: "user-guide/security/vpn.md"
       - Services: "user-guide/security/services.md"

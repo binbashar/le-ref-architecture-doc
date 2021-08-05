@@ -1,5 +1,8 @@
 # AWS Credentials
 
+## :warning: Below setup has been deprecated favoured for the new `leverage cli` >= v1.0.0
+---
+
 ## Setup
 
 !!! done "Automated AWS Credentials setup"

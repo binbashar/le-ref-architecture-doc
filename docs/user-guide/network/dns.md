@@ -7,13 +7,13 @@
 
 !!! done "pre-requisites"
     * :gear: Review & update [**configs**](../../user-guide/base-configuration/repo-le-tf-infra-aws.md) 
-    * :gear: Review & understand the [**workflow**](../../user-guide/base-workflow/repo-le-tf-infra-aws.md) 
+    * :gear: Review & understand the [**workflow**](../base-workflow/repo-le-tf-infra.md) 
 
 
 !!! example "Steps"
     1. **DNS** service has to be orchestrated from 
     [`/shared/base-dns`](https://github.com/binbashar/le-tf-infra-aws/tree/master/shared/base-dns) layer 
-    following the standard [workflow](../../user-guide/base-workflow/repo-le-tf-infra-aws.md)
+    following the standard [workflow](../base-workflow/repo-le-tf-infra.md)
     2. To associate AWS Org Member accounts to your DNS Private Hosted Zones eg: `*.aws.domain.com` 
     (previously deployed) proceed applying the corresponding layers
         1. [apps-devstg/base-dns](https://github.com/binbashar/le-tf-infra-aws/tree/master/apps-devstg/base-dns)

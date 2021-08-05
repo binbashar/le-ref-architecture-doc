@@ -35,8 +35,12 @@ The following block provides a brief explanation of the chosen AWS Organization 
 ```
 
 ![leverage-aws-org](../../assets/images/diagrams/aws-organizations.png "Leverage"){: style="width:750px"}
-
-**NOTE:** *Image just as reference*
+<figcaption style="font-size:15px">
+<b>Figure:</b> AWS Organization multi-account architecture diagram (just as reference).
+(Source: Binbash Leverage,
+"Lereverage Reference Architecture components",
+Binbash Leverage Doc, accessed August 4th 2021).
+</figcaption>
 
 !!! important "Benefits of [**AWS Organizations**](https://aws.amazon.com/organizations/)"
     - [x] **Billing:** Consolidated billing for all your accounts within organization, enhanced per account cost 

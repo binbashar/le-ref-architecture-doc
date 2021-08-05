@@ -41,15 +41,32 @@ code and of course you'll be able to run it without us.
 !!! check "Strengths"
     - [x] Faster updates (new features and bug fixes).
     - [x] Better code quality and modules maturity (proven and tested).
-    - [x] Supported by Binbash, and Open ones even by Binbash + 1000’s of top talented Open Source community contributors.
-    - [x] Development cost savings.
-    - [x] Client keeps full rights to all commercial, modification, distribution, and private use of the code (No Lock-In) through forks inside their own Projects repos (open-source and commercially reusable via license MIT and Apache 2.0 - https://choosealicense.com/licenses/).
-    - [x] Documented.
-    - [x] Reusable, Supported  & Customizable.
+    - [x] Supported by Binbash, and public modules even by 1000's of top talented Open Source community 
+        contributors.
+    - [x] Increase development cost savings.
+    - [x] Clients keep full rights to all commercial, modification, distribution, and private use of the code 
+        (No Lock-In) through forks inside their own projects repos (open-source and commercially reusable via license MIT and Apache 2.0 https://lnkd.in/davBQD5).
 
 ### Reference Architecture Design
 
+#### AWS Organizations multi-account diagram
 ![leverage-aws-org](../assets/images/diagrams/aws-organizations.png "Leverage"){: style="width:750px"}
+<figcaption style="font-size:15px">
+<b>Figure:</b> AWS Organization multi-account architecture diagram.
+(Source: Binbash Leverage,
+"Lereverage Reference Architecture components",
+Binbash Leverage Doc, accessed August 4th 2021).
+</figcaption>
+
+#### AWS Apps & Services K8s EKS accounts diagram
+![leverage-aws-demoapps](../assets/images/diagrams/aws-k8s-eks-demoapps-components.png "Leverage"){: style="width:750px"}
+<figcaption style="font-size:15px">
+<b>Figure:</b> K8S EKS reference architecture components diagram.
+(Source: Binbash Leverage Confluence Doc, 
+<a href="https://binbash.atlassian.net/wiki/external/2001403925/ZjY5ZGU3NDYyODNhNDQzYTkxZDdkYTliNzczODRkY2M?atlOrigin=eyJpIjoiYjNmMzYwMTg2YmMyNDc3ODg4YTAwNDM5MjBiYWQ5ZGUiLCJwIjoiYyJ9">
+"Implementation Diagrams"</a>,
+Binbash Leverage Doc, accessed August 4th 2021).
+</figcaption>
 
 #### DevOps Workflow model
 

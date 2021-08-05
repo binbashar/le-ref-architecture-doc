@@ -35,3 +35,14 @@ Buckets that hold data critical to business or to application operation can be r
 * ![leverage-aws-s3](../../assets/images/icons/aws-emojipack/Storage_AmazonS3_bucket.png "Leverage"){: style="width:20px"}
 This can be setup on request to increase durability and along with database backup can constitute the base for a
  Business Continuity strategy.
+
+## Comparison of the backup and retention policies strategies
+
+In this sub-section you'll find the resources to review and adjust your backup retention policies to 
+adhere to compliance rules that govern your specific institutions regulations. This post is a summarised
+write-up of how we approached this sensitive task, the alternatives we analysed and the recommended 
+solutions we provided in order to meet the requirements. We hope it can be useful for others as well.
+
+!!! info "Leverage Confluence Documentation"    
+You'll find [**here**](https://binbash.atlassian.net/wiki/external/2055536653/OTdjZDZlNmI4NDE4NGQzMjg4ZWQzMzZkYjczMWM2NjA?atlOrigin=eyJpIjoiODRjZmQyNzQ2YjRlNDAzNTk4YTYyMzE0MDU1MjYyMWYiLCJwIjoiYyJ9)
+a detailed comparison including the alternative product and solution types, pricing model, features, pros & cons.

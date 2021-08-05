@@ -20,6 +20,20 @@
     
     - 2 DataTransfer costs will be incurred in all options
 
+
+### Dedicated Network NAT-GW + Network Firewall Account
+
+[Centralized Network Firewall deployment model](https://aws.amazon.com/blogs/networking-and-content-delivery/deployment-models-for-aws-network-firewall/),
+North-South: Centralized internet egress (VPC to internet via Transit Gateway) and NAT gateway.
+
+![leverage-aws-tgw](../../assets/images/diagrams/aws-tgw-nfw.png "Leverage"){: style="width:1600px"}
+<figcaption style="font-size:15px">
+<b>Figure:</b> Multi-account dedicated network transit gateway + network firewall architecture diagram.
+(Source: Binbash Leverage,
+"Lereverage Reference Architecture dedicated network account TGW + NFW implementation",
+Binbash Leverage Doc, accessed August 4th 2021).
+</figcaption>
+
 ## Comparison of the alternatives analysed
 
 !!! info "Leverage Confluence Documentation"    

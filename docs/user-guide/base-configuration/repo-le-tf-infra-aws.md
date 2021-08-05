@@ -12,69 +12,84 @@ The following block provides a brief explanation of the chosen files/folders lay
     ...
 + shared/          (resources for the shared account)
     ...
++ network/          (resources for the centralized network account)
+    ...
 ```
 
-Configuration files are organized by environments (e.g. dev, stg) and service type (identities, sec, 
-network, etc) to keep any changes made to them separate.
+Configuration files are organized by environments (e.g. dev, stg, prd) and service type, which we
+call "layers" (identities, sec, network, etc) to keep any changes made to them separate.
 Within each of those folders you should find the Terraform files that are used to define all the 
-resources that belong to such environment.
+resources that belong to such account environment and specific layer.
 
 ![binbash-logo](../../assets/images/diagrams/aws-organizations.png "Binbash"){: style="width:650px"}
-
-**figure 1:** AWS Organization Architecture Diagram (just as reference).
+<figcaption style="font-size:15px">
+<b>Figure:</b> AWS Organization multi-account architecture diagram.
+(Source: Binbash Leverage,
+"Lereverage Reference Architecture components",
+Binbash Leverage Doc, accessed August 4th 2021).
+</figcaption>
 
 Under every account folder you will see a service layer structure similar to the following:
 ```
-.
+...
 ├── apps-devstg
-│   ├── backups --
+│   ├── backups\ --
+│   ├── base-certificates
 │   ├── base-identities
 │   ├── base-network
 │   ├── base-tf-backend
 │   ├── cdn-s3-frontend
 │   ├── config
-│   ├── databases-mysql --
-│   ├── databases-pgsql --
-│   ├── ec2-fleet-ansible --
-│   ├── k8s-eks --
-│   ├── k8s-kops --
+│   ├── databases-aurora
+│   ├── databases-mysql\ --
+│   ├── databases-pgsql\ --
+│   ├── ec2-fleet-ansible\ --
+│   ├── k8s-eks
+│   ├── k8s-eks-demoapps
+│   ├── k8s-kind
+│   ├── k8s-kops\ --
 │   ├── notifications
 │   ├── security-audit
 │   ├── security-base
 │   ├── security-certs
-│   ├── security-compliance --
+│   ├── security-compliance\ --
+│   ├── security-firewall\ --
 │   ├── security-keys
 │   ├── security-keys-dr
 │   ├── storage
 │   └── tools-cloud-nuke
 ├── apps-prd
-│   ├── backups --
+│   ├── backups\ --
 │   ├── base-identities
 │   ├── base-network
 │   ├── base-tf-backend
 │   ├── cdn-s3-frontend
 │   ├── config
-│   ├── ec2-fleet --
+│   ├── ec2-fleet\ --
+│   ├── k8s-eks
 │   ├── notifications
 │   ├── security-audit
 │   ├── security-base
 │   ├── security-certs
-│   ├── security-compliance --
+│   ├── security-compliance\ --
 │   └── security-keys
-├── @bin
-│   ├── config
-│   ├── makefiles
-│   └── scripts
-├── CHANGELOG.md
+├── build.env
+├── build.py
 ├── config
-│   └── common.config
-├── _config.yml
-├── @doc
-│   └── figures
-├── LICENSE.md
-├── Makefile
-├── README.md
+│   ├── common.config
+│   └── common.config.example
+├── network
+│   ├── base-identities
+│   ├── base-network
+│   ├── base-tf-backend
+│   ├── config
+│   ├── network-firewall
+│   ├── notifications
+│   ├── security-audit
+│   ├── security-base
+│   └── security-keys
 ├── root
+│   ├── backups
 │   ├── base-identities
 │   ├── base-tf-backend
 │   ├── config
@@ -83,10 +98,10 @@ Under every account folder you will see a service layer structure similar to the
 │   ├── organizations
 │   ├── security-audit
 │   ├── security-base
-│   ├── security-compliance --
+│   ├── security-compliance\ --
 │   ├── security-keys
 │   ├── security-monitoring
-│   └── security-monitoring-dr --
+│   └── security-monitoring-dr\ --
 ├── security
 │   ├── base-identities
 │   ├── base-tf-backend
@@ -94,37 +109,46 @@ Under every account folder you will see a service layer structure similar to the
 │   ├── notifications
 │   ├── security-audit
 │   ├── security-base
-│   ├── security-compliance --
+│   ├── security-compliance\ --
 │   ├── security-keys
 │   ├── security-monitoring
-│   └── security-monitoring-dr --
+│   └── security-monitoring-dr\ --
 └── shared
+    ├── backups
     ├── base-dns
     ├── base-identities
     ├── base-network
     ├── base-tf-backend
     ├── config
     ├── container-registry
-    ├── ec2-fleet --
-    ├── infra_prometheus
+    ├── ec2-fleet\ --
+    ├── k8s-eks
+    ├── k8s-eks-demoapps
+    ├── k8s-eks-prd
     ├── notifications
     ├── security-audit
     ├── security-base
-    ├── security-compliance --
+    ├── security-compliance\ --
     ├── security-keys
+    ├── security-keys-dr
     ├── storage
     ├── tools-cloud-scheduler-stop-start
-    ├── tools-eskibana --
-    ├── tools-jenkins --
-    └── tools-vpn-server
+    ├── tools-eskibana
+    ├── tools-github-selfhosted-runners
+    ├── tools-jenkins\ --
+    ├── tools-managedeskibana
+    ├── tools-prometheus
+    ├── tools-vault
+    ├── tools-vpn-server
+    └── tools-webhooks\ --
 ```
 
 **NOTE:** As a convention folders with the `--` suffix reflect that the resources are not currently
 created in AWS, basically they've been destroyed or not yet exist. 
 
-Such separation is meant to avoid situations in which a single folder contains a lot of resources. 
-That is important to avoid because at some point, running `terraform plan or apply` stats taking too long and that 
-becomes a problem.
+Such layer separation is meant to avoid situations in which a single folder contains a lot of resources. 
+That is important to avoid because at some point, running `leverage terraform plan / apply` starts taking 
+too long and that becomes a problem.
 
 This organization also provides a layout that is easier to navigate and discover. 
 You simply start with the accounts at the top level and then you get to explore the resource categories within 
@@ -133,11 +157,12 @@ each account.
 # Pre-requisites
 
 ## Makefile
-- We rely on `Makefiles` as a wrapper to run terraform commands that consistently use the same config files.
-- You are encouraged to inspect those Makefiles to understand what's going on.
+- We rely on the [`leverage cli`](../../how-it-works/leverage-cli/index.md) as a wrapper to run terraform 
+  commands that consistently use the same config files.
+- You are encouraged to inspect our open source `leverage cli` to understand what's going on.
 
 ## Terraform
-- [`Makefiles`](https://github.com/binbashar/le-dev-makefiles) already grant the recs via 
+- [`leverage cli`](https://github.com/binbashar/leverage) already grant the recs via 
   [Dockerized Terraform cmds](https://hub.docker.com/repository/docker/binbash/terraform-awscli-slim)  
 
 ## Remote State
@@ -162,10 +187,6 @@ In the `tf-backend` folder you should find all setup scripts or configuration fi
          `profile` and `region` are defined there, we also use them to inject those values into other TF commands.
         - [`account.config`](https://github.com/binbashar/le-tf-infra-aws/blob/master/shared/config/account.config)
          contains TF variables that are specific to an AWS account.
-    - :file_folder: **Makefile config file** 
-    [`/@bin/config/base.mk`](https://github.com/binbashar/le-tf-infra-aws/blob/master/%40bin/config/base.mk) contains
-    global [makefile-lib](https://github.com/binbashar/le-dev-makefiles) variables 
-    
           
 ## AWS Profile
 - File `backend.config` will inject the profile name that TF will use to make changes on AWS.

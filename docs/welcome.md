@@ -17,7 +17,7 @@ template: overrides/main.html
     - [x] [**Leverage CLI**](https://github.com/binbashar/leverage)
 
     Because all the code and modules are already built, we can get you up and running **at least 2x faster** :rocket: 
-    than a consulting company (:white_check_mark: *typically in just few weeks!*). On top of code that is thoroughly 
+    than a consulting company (:white_check_mark: *typically in just a few weeks!*). On top of code that is thoroughly 
     documented, tested, and has been proven in production at dozens of other project deployments.
 
 !!! important "Why Leverage?"
@@ -56,6 +56,7 @@ It is built around the [AWS Well Architected Framework](https://aws.amazon.com/a
 An its compose of the following 3 main repos:
 
 - [x] [le-tf-infra-aws](https://github.com/binbashar/le-tf-infra-aws)
+- [x] [le-tf-vault](https://github.com/binbashar/le-tf-vault)
 - [x] [le-ansible-infra](https://github.com/binbashar/le-ansible-infra)
 
 ## Getting Started

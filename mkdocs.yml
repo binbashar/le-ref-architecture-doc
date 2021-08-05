@@ -54,6 +54,8 @@ extra:
       link: 'https://www.linkedin.com/company/binbash'
     - icon: material/slack
       link: 'https://join.slack.com/t/binbashar/shared_invite/zt-fw1692b6-9k4ADsWJ47lKacszphXM1w'
+    - icon: material/youtube
+      link: 'https://www.youtube.com/channel/UCUjQ3duzxQB_VtNsKNqPwDA/playlists'
     - icon: fontawesome/brands/medium
       link: 'https://medium.com/binbash-inc'
     - icon: material/twitter
@@ -137,6 +139,8 @@ nav:
       - Forks workflow: "how-it-works/code-library/code-library-forks.md"
       - Specifications: "how-it-works/code-library/code-library-specs.md"
       - Modules per Tech: "how-it-works/code-library/modules-library-per-tech.md"
+    - Leverage CLI:
+        - Overview: "how-it-works/leverage-cli/index.md"
     - AWS Organization:
       - Organization: "how-it-works/organization/organization.md"
       - Accounts: "how-it-works/organization/accounts.md"
@@ -147,11 +151,13 @@ nav:
     - Security:
       - VPN: "how-it-works/security/vpn.md"
       - Services: "how-it-works/security/services.md"
+      - Certificates: "how-it-works/security/certificates.md"
       - IAM Access Analyzer: "how-it-works/security/iam-access-analyzer.md"
     - Network:
       - VPC Topology: "how-it-works/network/vpc-topology.md"
       - VPC Adressing: "how-it-works/network/vpc-addressing.md"
       - VPC Peering: "how-it-works/network/vpc-peering.md"
+      - TGW Topology: "how-it-works/network/tgw-topology.md"
       - VPC Outbound Traffic: "how-it-works/network/vpc-traffic-out.md"
       - DNS: "how-it-works/network/dns.md"
     - Compute:
@@ -166,7 +172,9 @@ nav:
        - PostgresSQL: "how-it-works/database/postgres.md"
     - Storage: "how-it-works/storage/storage.md"
     - CDN: "how-it-works/cdn/cdn.md"
-    - CI/CD: "how-it-works/ci-cd/ci-cd.md"
+    - CI/CD:
+       - Overview: "how-it-works/ci-cd/ci-cd.md"
+       - ArgoCD: "how-it-works/ci-cd/k8s-argocd.md"
     - Tools: "how-it-works/tools/tools.md"
     - Monitoring:
       - Monitoring: "how-it-works/monitoring/monitoring.md"
@@ -189,13 +197,13 @@ nav:
     - Configuration:
       - Overview: "user-guide/base-configuration/overview.md"
       - Repos:
-        - Terraform Infra: "user-guide/base-configuration/repo-le-tf-infra-aws.md"
+        - Terraform AWS Infra: "user-guide/base-configuration/repo-le-tf-infra.md"
+        - Terraform Vault: "user-guide/base-configuration/repo-le-tf-vault.md"
         - Ansible Infra: "user-guide/base-configuration/repo-le-ansible-infra.md"
     - Workflow:
       - Leverage CLI: "user-guide/base-workflow/leverage-cli.md"
       - Repos:
-        - Makefiles Lib: "user-guide/base-workflow/repo-le-dev-makefiles.md"
-        - Terraform Infra: "user-guide/base-workflow/repo-le-tf-infra-aws.md"
+        - Terraform Infra: "user-guide/base-workflow/repo-le-tf-infra.md"
         - Terraform Infra State: "user-guide/base-workflow/repo-le-tf-infra-aws-tf-state.md"
         - Ansible Infra: "user-guide/base-workflow/repo-le-ansible-infra.md"
     - AWS Organization:
@@ -203,8 +211,9 @@ nav:
       - Invite Legacy accounts: "user-guide/organization/organization-legacy-accounts.md"
     - Identities:
       - gpg: "user-guide/identities/gpg.md"
-      - identities: "user-guide/identities/identities.md"
-      - credentials: "user-guide/identities/credentials.md"
+      - Identities: "user-guide/identities/identities.md"
+      - Credentials: "user-guide/identities/credentials.md"
+      - Credentials Vault: "user-guide/identities/credentials-vault.md"
     - Security:
       - VPN: "user-guide/security/vpn.md"
       - Services: "user-guide/security/services.md"

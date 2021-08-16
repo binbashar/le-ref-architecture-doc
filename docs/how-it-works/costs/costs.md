@@ -44,5 +44,6 @@
     Consider the following extra links as reference:
          
     - :orange_book: [AWS Ramp-Up Guide: Cost Management](https://d1.awsstatic.com/training-and-certification/ramp-up_guides/Ramp-Up_Guide_Cost_Management.pdf)
+    - :orange_book: [How is the pricing benefit of a RI applied across an organization's consolidated bill?](https://aws.amazon.com/premiumsupport/knowledge-center/ec2-ri-consolidated-billing/)
     - :books: [A Guide to Cloud Cost Optimization with HashiCorp Terraform](https://www.hashicorp.com/blog/a-guide-to-cloud-cost-optimization-with-hashicorp-terraform)
     - :books: [FinOps: How Cloud Finance Management Can Save Your Cloud Programme From Extinction](https://www.contino.io/insights/finops-cloud-finance-management)

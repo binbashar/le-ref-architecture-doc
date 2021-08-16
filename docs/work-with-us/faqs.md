@@ -193,7 +193,21 @@
     We use [Toggl](https://toggl.com) to track all our time by client, project, sprint, and developer.
     We then import these hours into [Quickbooks](https://quickbooks.intuit.com/) for invoicing.
 
-### Billing
+### Rates and Billing
+!!! question ":credit_card: Rates and pricing plans"
+    
+    - [x] **Pre-paid package subscriptions:** A number of prepaid hours is agreed according to the needs 
+    of the project. It could be a [**"Basic Plan"**](https://leverage.binbash.com.ar/work-with-us/subscription-plans/)
+    of 40 hours per month. Or a [**"Premium Plan"**](https://leverage.binbash.com.ar/work-with-us/subscription-plans/)
+    of a minimum of 80 hours per month (if more hours are needed it could be reviewed). When buying in 
+    bulk there is a discount on the value of the hour. When you pay for the package you start discounting
+    the hours from the total as they are used, and if there are unused hours left, consider that maximum 20% 
+    could be transferred for the next month.
+
+    - [x] [**On-demand Business Subscription**](https://leverage.binbash.com.ar/work-with-us/subscription-plans/): There are
+    a certain number of hours tracked each month, as planned tasks are demanded. The total spent hours will be reported 
+    each month. There is a monthly minimum of 40 hours per month.
+
 !!! question ":moneybag: Billing"
     The Customer will be billed every month.
     Invoices are due within 15 days of issue.

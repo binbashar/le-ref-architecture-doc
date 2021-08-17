@@ -3,8 +3,9 @@
 ## Target audience
 
 !!! question "Who is Leverage's target audience?"
-    - [x] Leverage Reference Architecture is mainly oriented to :earth_americas: Latam, North America and :earth_africa:
-    European **startup's CTOs, VPEs and/or engineering team leads (Software Architects / DevOps Engineers / Cloud Engineers)** 
+    - [x] Leverage is mainly oriented to :earth_americas: Latam, North America and :earth_africa:
+    European **startup's CTOs, VPEs, Engineering Managers and/or team leads 
+    (Software Architects / DevOps Engineers / Cloud Solutions Architects)** 
     looking to rapidly set and host their modern web and mobile applications and systems in 
     [**Amazon Web Services**](https://aws.amazon.com/) (✅ typically in just a few weeks!). 
     
@@ -199,14 +200,16 @@
     - [x] **Pre-paid package subscriptions:** A number of prepaid hours is agreed according to the needs 
     of the project. It could be a [**"Basic Plan"**](https://leverage.binbash.com.ar/work-with-us/subscription-plans/)
     of 40 hours per month. Or a [**"Premium Plan"**](https://leverage.binbash.com.ar/work-with-us/subscription-plans/)
-    of a minimum of 80 hours per month (if more hours are needed it could be reviewed). When buying in 
+    of 80 hours per month (if more hours are needed it could be reviewed). When buying in 
     bulk there is a discount on the value of the hour. When you pay for the package you start discounting
     the hours from the total as they are used, and if there are unused hours left, consider that maximum 20% 
     could be transferred for the next month.
 
     - [x] [**On-demand Business Subscription**](https://leverage.binbash.com.ar/work-with-us/subscription-plans/): There are
     a certain number of hours tracked each month, as planned tasks are demanded. The total spent hours will be reported 
-    each month. There is a monthly minimum of 40 hours per month.
+    each month. There is a monthly minimum of 40 hours per month. Support tasks maximum estimated effort should
+    be between 80 and 120 hs / month.
+
 
 !!! question ":moneybag: Billing"
     The Customer will be billed every month.

@@ -13,7 +13,7 @@
        Reference Architecture feasibility assessment.
     - [x] **2nd Stage:** Leverage Reference Architecture Review
         1. If we can contribute, we'll execute a Mutual NDA (ours or yours), then walk your through to complete our
-       with you on our [Binbash Leverage due diligence for Reference Architecture form](https://docs.google.com/forms/d/e/1FAIpQLSf4wfZI54v9yWmQBq53NPQVvipBCKHiBvAz4A0as6_mdeeGDQ/viewform?usp=sf_link).
+        [Binbash Leverage due diligence for Reference Architecture form](https://docs.google.com/forms/d/e/1FAIpQLSf4wfZI54v9yWmQBq53NPQVvipBCKHiBvAz4A0as6_mdeeGDQ/viewform?usp=sf_link).
         2. Once we completely understand your requirements we'll prepare a comprehensive proposal including the complete
        [**"Leverage Implementation Action Plan Roadmap"**](./faqs/#assignments-and-delivery) (also known as Statement 
        of Work - SOW) detailing every task for the entire project. 
@@ -22,7 +22,7 @@
     - [x] **3rd Stage:** Leverage Ref Architecture Implementation 
         1. The Roadmap (SOW) is executed, we'll send an invoice for the deposit and first Sprint starts.
     - [x] **4rth Stage:** Binbash Leverage Support
-        1. During and after finishing the complete Road we'll provide commercial support, maintenance
+        1. During and after finishing the complete Roadmap we'll provide commercial support, maintenance
            and upgrades for our work over the long term.
        
 ### Work methodology intro video

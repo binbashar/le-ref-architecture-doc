@@ -28,6 +28,7 @@ theme:
     - navigation.tabs
     - navigation.instant
     - header.autohide
+    #- content.tabs.link #Insiders only so far
   palette: # https://www.materialpalette.com/colors
     - scheme: default
       #primary: "teal" # comment to replace by /docs/assets/stylesheets
@@ -89,7 +90,10 @@ markdown_extensions:
   - meta
   - md_in_html
   - codehilite
+  - pymdownx.tabbed
+  - pymdownx.details
   - pymdownx.inlinehilite
+  - pymdownx.smartsymbols
   - pymdownx.tasklist:
       custom_checkbox: true
   - pymdownx.superfences
@@ -126,8 +130,7 @@ nav:
     - Work with us: "work-with-us/index.md"
     - License: "license.md"
 
-  - First Steps:
-    - Overview: "first-steps/index.md"
+  - First Steps: "first-steps/index.md"
 
   - How it works:
     - Design:

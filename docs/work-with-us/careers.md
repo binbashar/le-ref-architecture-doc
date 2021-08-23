@@ -31,7 +31,7 @@
     - A flexible vacation policy where you could take 3 weeks per year away from the keyboard. If more time is needed
       we could always try to arrange it for you. 
     - No ON-CALL rotation. We only offer support contracts with SLAs of responses on prime time business days hours
-      exlusively.
+      exclusively.
     - You will take on big challenges, but the hours are reasonable.
     - Everyone is treated fairly and with respect, but where disagreement and feedback is always welcome.
     - That is welcoming, safe, and inclusive for people of all cultures, genders, and races.

@@ -18,7 +18,7 @@
     * AWS billing alarms + AWS Budget (forecasted account cost / RI Coverage) Notifications to Slack
     * Activate AWS Trusted Advisor cost related results
         * Id EBS w/ low-utiliz and -$ by snapshotting and then rm them
-        * Check underutilized EBS to be possibly shrinked or removed.
+        * Check underutilized EBS to be possibly shrunk or removed.
         * Networking -> deleting idle LB -> Use LB check w/ RequestCount of > 100 past 7d.
     * Setup Lambda nuke to automatically clean up AWS account resources.
     * Setup lambda scheduler for stop and start resources on AWS (EC2, ASG & RDS)

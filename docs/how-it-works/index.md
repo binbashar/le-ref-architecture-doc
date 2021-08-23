@@ -4,13 +4,13 @@
 # How it works
 
 The objective of this document is to explain how the **Binbash Leverage Reference AWS Cloud Solutions Architecture**
-works, in particular how the Reference Architecure model is built and why we need it.
+works, in particular how the Reference Architecture model is built and why we need it.
 
 ## Overview
 
 This documentation contains all the guidelines to create Binbash 
 Leverage Reference AWS Cloud Solutions Architecture that will be implemented on the 
-Projects’s AWS infrastructure.
+Projects’ AWS infrastructure.
 
 !!! check "Our Purpose"
     * [x] **Democratize advanced technologies:** As complex as it may sound, the basic idea behind this design principle is 
@@ -45,7 +45,7 @@ code and of course you'll be able to run it without us.
         contributors.
     - [x] Increase development cost savings.
     - [x] Clients keep full rights to all commercial, modification, distribution, and private use of the code 
-        (No Lock-In) through forks inside their own projects repos (open-source and commercially reusable via license MIT and Apache 2.0 https://lnkd.in/davBQD5).
+        (No Lock-In) through forks inside their own projects' repositories (open-source and commercially reusable via license MIT and Apache 2.0 https://lnkd.in/davBQD5).
 
 ### Reference Architecture Design
 

@@ -2,9 +2,9 @@
 
 ## Steps 
 !!! check "Terraform Workflow"
-    1. Make sure you've read and prepare your local development environment following the
+    1. Make sure you've read and prepared your local development environment following the
     [Overview base-configurations](../base-configuration/overview.md) section.
-    2. Depending in which Terraform Ref Architecture repo you are working please review and assure you meet
+    2. Depending in which Terraform Ref Architecture repo you are working, please review and assure you meet
     all the [terraform aws pre-requisites](../base-configuration/repo-le-tf-infra-aws.md) or 
     [terraform vault pre-requisites](../base-configuration/repo-le-tf-vault.md)  
         - [x] [Remote State](repo-le-tf-infra-aws-tf-state.md)
@@ -18,7 +18,7 @@
     7. Run `leverage terraform apply` if you want to review and likely apply those changes
 
 !!! note 
-    If desired at step **#5** you could submit a PR, allowing you and the rest of the team to 
+    If desired, at step **#5** you could submit a PR, allowing you and the rest of the team to 
     understand and review what changes would be made to your AWS Cloud Architecture components before executing 
     `leverage terraform apply` (`terraform apply`). This brings the huge benefit of treating changes with a **GitOps** oriented 
     approach, basically as we should treat any other code & infrastructure change, and integrate it with the 

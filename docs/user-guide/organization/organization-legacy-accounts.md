@@ -30,5 +30,5 @@ described in the [/user-guide/organization/organization-init](./organization-ini
         TF_IMPORT_RESOURCE_ID             := "ou-oz9d-yl3npduj"
         TF_RM_RESOURCE                    := "aws_organizations_organizational_unit.bbl_apps_devstg"
         ```   
-        - Then from the root context -> `cd ./root/organizaton make import`
+        - Then from the root context -> `cd ./root/organization make import`
         - :ledger: **TODO** THIS STEP MUST BE UPDATED WITH THE `leverage cli` WORKFLOW

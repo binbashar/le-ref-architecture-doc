@@ -7,6 +7,6 @@
 <figcaption style="font-size:15px">
 <b>Figure:</b> Multi-account dedicated network transit gateway architecture diagram.
 (Source: Binbash Leverage,
-"Lereverage Reference Architecture dedicated network account TGW implementation",
+"Leverage Reference Architecture dedicated network account TGW implementation",
 Binbash Leverage Doc, accessed August 4th 2021).
 </figcaption>

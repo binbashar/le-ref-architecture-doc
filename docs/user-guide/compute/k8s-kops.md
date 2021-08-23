@@ -85,7 +85,7 @@ This workflow is a little different to the typical Terraform workflows we use. T
     4. Run `make plan`
        * To preview any infrastructure changes that Terraform will make.
        * If desired we could submit a PR, allowing you and the rest of the team to understand and review what changes would
-       be made to the Kubernetes cluster before excecuting `make apply` (`terraform apply`). This brings the huge benefit
+       be made to the Kubernetes cluster before executing `make apply` (`terraform apply`). This brings the huge benefit
        of treating changes to our Kubernetes clusters with a GitOps oriented approach, basically like we treat any other
        code & infrastructure change, and integrate it with the rest of our tools and practices like CI/CD, integration
        testing, replicate environments and so on.
@@ -101,19 +101,19 @@ This workflow is a little different to the typical Terraform workflows we use. T
     To clean-up any resources created for your K8s cluster, you should run:
     
     1. At `2-kops` folder context run `make destroy`
-       * This will excecute a `terraform destroy` of all the `kubernets.tf` declared AWS resources.
+       * This will execute a `terraform destroy` of all the `kubernets.tf` declared AWS resources.
     2. At `2-kops` folder context run `cluster-destroy`
        * Will run Kops `destroy cluster` -- only dry run, no changes will be applied
     3. Exec `cluster-destroy-yes`
         * Kops will effectively destroy all the remaining cluster resources.
     4. Finally if at `1-prerequisites` exec `make destroy`
-        * This will remove Kops state S3 bucket + any other extra resources you've provsioned for your
+        * This will remove Kops state S3 bucket + any other extra resources you've provisioned for your
         cluster.
 
-### Tipical Workflow
+### Typical Workflow
 The workflow may look complicated at first but generally it boils down to these simplified steps:
 1. Modify `cluster-template.yml`
-2. Run `make cluste-update`
+2. Run `make cluster-update`
 3. Run `make apply`
 4. Run `make cluster-rolling-update-yes`
 

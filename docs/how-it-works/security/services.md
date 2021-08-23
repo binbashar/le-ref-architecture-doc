@@ -25,7 +25,7 @@
     - [x] ![aws-service](../../assets/images/icons/aws-emojipack/SecurityIdentityCompliance_AWSWAF.png){: style="width:30px"}
         **AWS Web Application Firewall:** Optional but if not used, it is recommended that a similar service is used,
          such as Cloudflare. When paired to an Application Load Balancer or Cloudfront distribution, it checks incoming
-          requests to detect and block OWAPS Top10 attacks, such as SQL injection, XSS and others. 
+          requests to detect and block OWASP Top10 attacks, such as SQL injection, XSS and others. 
     - [x] ![aws-service](../../assets/images/icons/aws-emojipack/SecurityIdentityCompliance_AmazonInspector.png){: style="width:30px"} 
         **AWS Inspector:**  Is an automated security assessment service that helps improve the security and compliance
          of infrastructure and applications deployed on AWS. 

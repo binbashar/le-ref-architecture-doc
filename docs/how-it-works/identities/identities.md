@@ -52,7 +52,7 @@ Gruntwork.io Blog, accessed November 18th 2020).
    </td>
   </tr>
   <tr>
-   <td><strong>project-root</strong>
+   <td><strong>project-management</strong>
    </td>
    <td>x
    </td>
@@ -100,7 +100,7 @@ Gruntwork.io Blog, accessed November 18th 2020).
    </td>
   </tr>
   <tr>
-   <td><strong>project-root</strong>
+   <td><strong>project-management</strong>
    </td>
    <td>
    </td>

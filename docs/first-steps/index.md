@@ -26,7 +26,7 @@ To be able to interact with the AWS environment we will need a special IAM user.
 
 Lastly we'll generate programmatic access keys for the `mgmt-org-admin` user, and then either copy them to a secure location or download the `.csv` file that AWS generates for us.
 
-!!! info "More information regarding the AWS account creation and naming conventions used: [:books: Organization account setup guide](../user-guide/features/organization/organization-init#user-guide)."
+!!! info "More information regarding the AWS account creation and naming conventions used: [:books: Organization account setup guide](../user-guide/organization/organization-init#user-guide)."
 
 ### Install [Leverage CLI](../how-it-works/leverage-cli/index.md)
 Now, to manage our Leverage project and operate the whole Leverage stack we'll need to install Leverage CLI, on a shell we run:
@@ -34,7 +34,7 @@ Now, to manage our Leverage project and operate the whole Leverage stack we'll n
 ``` bash
 pip3 install leverage
 ```
-!!! info "More information regarding [Leverage CLI installation](../user-guide/base-workflow/leverage-cli/install-leverage-cli.md) and [shell autocompletion](../user-guide/base-workflow/leverage-cli/install-leverage-cli#shell-completion)."
+!!! info "More information regarding [Leverage CLI installation](../user-guide/base-workflow/leverage-cli/install-leverage-cli/) and [shell autocompletion](../user-guide/base-workflow/leverage-cli/install-leverage-cli#shell-completion)."
 
 ### Create the project's directory
 Each Leverage project must be in its own working directory. So, we create one named `awesome` for it.
@@ -149,7 +149,7 @@ leverage credentials create
 [09:37:18.477] INFO     Configuring default profile information.
 [09:37:20.424] INFO     Default profile configured in: /home/user/.aws/aw/config
 [09:37:20.426] INFO     Configuring bootstrap credentials.
-> Select the means by which you'll provide the programatic keys: Manually
+> Select the means by which you'll provide the programmatic keys: Manually
 > Key: AKIAU1OF18IXH2EXAMPLE
 > Secret: ****************************************
 [09:37:51.638] INFO     Bootstrap credentials configured in: /home/user/.aws/aw/credentials
@@ -302,7 +302,7 @@ We end up with something that looks like this:
     ```
 A structure comprised mainly of directories for each account containing all the definitions for each of the accounts respective layers.
 
-!!! info "[:books: Accounts description and purpose.](../how-it-works/organization/accounts)"
+!!! info "[:books: Accounts description and purpose.](../how-it-works/organization/accounts/)"
 
 ## Architecture orchestration
 ---
@@ -361,7 +361,7 @@ leverage terraform init
 
 To securely manage the users credentials, all members of the organization that are bound to interact with the AWS environment, and are therefore listed in the `project.yaml` configuration file, should create GPG keys of their own. Then, they should export them and share their public key files with us so we can create their respective IAM users in this step.
 
-!!! info "[:books: How to create and manage GPG keys](../user-guide/features/identities/gpg.md)"
+!!! info "[:books: How to create and manage GPG keys](../user-guide/identities/gpg/)"
 
 Once we get hold of the keys files we copy them to the `keys` subdirectory, respecting their configured name. In this case we need the keys for `kit.walker` and `natasha.romanoff`.
 
@@ -599,7 +599,7 @@ leverage terraform apply
 leverage terraform output
 ```
 
-We extract the value of the password field form the output and [decrypt it](../user-guide/features/identities/gpg/#how-to-manage-your-gpg-keys).
+We extract the value of the password field form the output and [decrypt it](../user-guide/identities/gpg#how-to-manage-your-gpg-keys).
 
 Now we log in the [AWS Console](https://console.aws.amazon.com/) using the `management` account id: `000123456789`, which can be extracted from the `project.yaml` file, our IAM user name: `natasha.romanoff`, and our recently decrypted password. This password should be changed during this procedure.
 
@@ -616,7 +616,7 @@ leverage credentials update --profile [management | security] # Choose the corre
 ```
 [12:25:57.502] INFO     Loading configuration file.
 [12:25:59.343] INFO     Configuring management credentials.
-> Select the means by which you'll provide the programatic keys: Manually
+> Select the means by which you'll provide the programmatic keys: Manually
 > Key: AKIAUH0FAB7QVEXAMPLE
 > Secret: ****************************************
 [12:26:20.566] INFO     Management credentials configured in: /home/user/.aws/aw/credentials

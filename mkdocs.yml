@@ -250,13 +250,6 @@ nav:
       - Health Checks: "user-guide/reliability/health-checks.md"
     - Costs: "user-guide/costs/costs.md"
 
-  - Examples:
-      - Introduction: "examples/index.md"
-      - Prerequisites: "examples/PREREQUISITES.md"
-      - AWS:
-          - Organization: "examples/organization.md"
-          - K8s Kops: "examples/k8s-kops.md"
-
   - Work with us:
       - Overview: "work-with-us/index.md"
       - Support:

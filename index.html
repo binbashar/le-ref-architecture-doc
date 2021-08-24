@@ -709,6 +709,118 @@
     }
 </style>
 
+<!-- Table Style -->
+<style>
+    .table-wrapper{
+        margin: 10px 70px 70px;
+        box-shadow: 0px 35px 50px rgba( 0, 0, 0, 0.2 );
+    }
+
+    .fl-table {
+        border-radius: 5px;
+        font-size: 16px;
+        font-weight: normal;
+        border: none;
+        border-collapse: collapse;
+        width: 100%;
+        max-width: 100%;
+        white-space: nowrap;
+        background-color: white;
+    }
+
+    .fl-table td, .fl-table th {
+        text-align: left;
+        padding: 8px;
+    }
+
+    .fl-table td {
+        border-right: 1px solid #f8f8f8;
+        font-size: 16px;
+    }
+
+    .fl-table thead th {
+        color: #ffffff;
+        background: #4FC3A1;
+    }
+
+
+    .fl-table thead th:nth-child(odd) {
+        color: #ffffff;
+        background: #324960;
+    }
+
+    .fl-table tr:nth-child(even) {
+        background: #F8F8F8;
+    }
+
+    /* Responsive */
+
+    @media (max-width: 767px) {
+        .fl-table {
+            display: block;
+            width: 100%;
+        }
+        .table-wrapper:before{
+            content: "Scroll horizontally >";
+            display: block;
+            text-align: right;
+            font-size: 11px;
+            color: white;
+            padding: 0 0 10px;
+        }
+        .fl-table thead, .fl-table tbody, .fl-table thead th {
+            display: block;
+        }
+        .fl-table thead th:last-child{
+            border-bottom: none;
+        }
+        .fl-table thead {
+            float: left;
+        }
+        .fl-table tbody {
+            width: auto;
+            position: relative;
+            overflow-x: auto;
+        }
+        .fl-table td, .fl-table th {
+            padding: 20px .625em .625em .625em;
+            height: 60px;
+            vertical-align: middle;
+            box-sizing: border-box;
+            overflow-x: hidden;
+            overflow-y: auto;
+            width: 120px;
+            font-size: 13px;
+            text-overflow: ellipsis;
+        }
+        .fl-table thead th {
+            text-align: left;
+            border-bottom: 1px solid #f7f7f9;
+        }
+        .fl-table tbody tr {
+            display: table-cell;
+        }
+        .fl-table tbody tr:nth-child(odd) {
+            background: none;
+        }
+        .fl-table tr:nth-child(even) {
+            background: transparent;
+        }
+        .fl-table tr td:nth-child(odd) {
+            background: #F8F8F8;
+            border-right: 1px solid #E6E4E4;
+        }
+        .fl-table tr td:nth-child(even) {
+            border-right: 1px solid #E6E4E4;
+        }
+        .fl-table tbody td {
+            display: block;
+            text-align: center;
+        }
+    }
+
+</style>
+
 <!-- Testimonial Section Style -->
 <style>
     *{
@@ -1347,7 +1459,7 @@
                     Optimize your cloud costs by design
                 </strong> <br>
                     ⭐ <strong>
-                    Secure your cloud assets and prod workloads
+                    Secure your cloud assets and production workloads
                 </strong> <br>
                     ⭐ <strong>
                     Achieve compliance in AWS
@@ -1638,37 +1750,6 @@
         </div>
     </div>
 </section>
-<!-- BRAINTRUST AGENCY -->
-<!--<section class="tx-container-2">
-    <div class="md-grid md-typeset">
-        <div class="tx-hero__image-2">
-            <img
-                    src="assets/images/logos/binbash-braintrust.png"
-                    alt=""
-                    width="800"
-                    draggable="false"
-                    align="left"
-            >
-        </div>
-        <div class="tx-hero">
-            &lt;!&ndash; Hero content &ndash;&gt;
-            <div class="tx-hero__content-2">
-                <h1 id="braintrust-agency">Commercial Partner</h1>
-                <p><br>
-                    Commercial Partners with <b>Braintrust</b><br>
-                    <i>"Creating the future of work, to benefit enterprise and talent alike".</i>
-                </p>
-                <a
-                        href="https://app.usebraintrust.com/agency/432/"
-                        title="Welcome"
-                        class="md-button md-button"
-                >
-                    Hire us at Braintrust
-                </a>
-            </div>
-        </div>
-    </div>
-</section>-->
 
 <!--  6th Section  -->
 <!--  TESTIMONIALS -->
@@ -1769,6 +1850,160 @@
         </div>
     </div><br>
 
+</section>
+
+<!-- COMPARISON TABLE -->
+<section class="tx-container-2">
+    <div class="md-grid md-typeset">
+        <br>
+        <h1 id="comparison-table"
+            style="text-align: center; color: #2a978d; font-weight: 600">
+            Leverage competitive advantages
+        </h1>
+
+        <h4
+            style="text-align: left; color: #0a192f; font-weight: 300; margin-left: 60px">
+            ✅ Reduce the staff/skilling issue gap <br>
+
+            ✅ Avoid from scratch and custom solutions hidden costs
+            (in many cases hundreds of thousands of dollars to implement)<br>
+
+            ✅ Leverage reference architecture It’s several orders of
+            magnitude less expensive (either time, money and risk) to
+            implement than a custom solution for your business<br>
+        </h4>
+
+
+        <div class="table-wrapper" style="color: #0a192f">
+            <table class="fl-table">
+                <thead>
+                <tr>
+                    <th style="text-align: center">FEATURE</th>
+                    <th style="text-align: center">DO IT YOURSELF (in house)</th>
+                    <th style="text-align: center">EXTERNAL CONSULTANT / <br>
+                        CONSULTING FIRM</th>
+                    <th style="text-align: center"><strong>BINBASH LEVERAGE</strong></th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td><strong>STARTING POINT</strong></td>
+                    <td>From scratch</td>
+                    <td>From scratch</td>
+                    <td><a href="https://github.com/binbashar">
+                        ✅ Leverage 5+ years and 130+ Open Source<br>
+                        repos of production ready code
+                    </a></td>
+                </tr>
+                <tr>
+                    <td><strong>INCENTIVES</strong></td>
+                    <td>Minimize investment of time</td>
+                    <td>Maximize billable hours</td>
+                    <td><a href="https://leverage.binbash.com.ar/#tech-stack">
+                        ✅ Maximize utility w/ reusable components<br>
+                        (IaC library) + Cross project reference<br>
+                        architecture under best practices
+                    </a></td>
+                </tr>
+                <tr>
+                    <td><strong>SCOPE OF WORK</strong></td>
+                    <td>Varies depending on team knowledge<br>
+                        and time available</td>
+                    <td>Varies depending on consultant<br>
+                        knowledge and budget available</td>
+                    <td><a href="https://leverage.binbash.com.ar/how-it-works/">
+                        ✅ End-to-end, modular architecture that<br>
+                        fulfills a production-ready solution<br>
+                        roadmap fully based on the<br>
+                        AWS Well-Architected Framework
+                    </a></td>
+                </tr>
+                <tr>
+                    <td><strong>TIME TO LAUNCH & PROD GO LIVE!</strong></td>
+                    <td>3 – 12 months (highly variable)</td>
+                    <td>3 – 12 months (highly variable)</td>
+                    <td><a href="https://leverage.binbash.com.ar/work-with-us/">
+                        ✅ 1 – 3 months (highly predictable<br>
+                        depending on your project complexity needs)
+                    </a></td>
+                </tr>
+                <tr>
+                    <td><strong>MONTHLY COST</strong></td>
+                    <td>$14,000 – $32,000 per month<br>
+                        (2 Sr DevOps Engineers / SRE / Cloud<br>
+                        Architects, $80k–$150k /year)</td>
+                    <td>$32,000 – $64,000 per month<br>
+                        (2 Sr DevOps, SRE or Cloud Consultants,<br>
+                        $100–$200 /hour)</td>
+                    <td>✅ $0 – $10,800 per month<br>
+                        (Leverage Support team, $80 – 90 / hour)<br>
+                        <a href="https://leverage.binbash.com.ar/work-with-us/subscription-plans/">
+                            - Subscription Plans</a><br>
+                        <a href="https://leverage.binbash.com.ar/work-with-us/faqs/#rates-and-billing">
+                            - Rates and Billing</a>
+                        </a></td>
+                </tr>
+                <tr>
+                    <td><strong>DOCS & TESTS</strong></td>
+                    <td>❌ None</td>
+                    <td>❌️ None</td>
+                    <td><a href="https://leverage.binbash.com.ar">
+                        ✅ Complete documentation and automated tests<br>
+                        Better code quality and modules library<br>
+                        maturity (proven and tested).
+                    </a></td>
+                </tr>
+                <tr>
+                    <td><strong>AUTOMATED DEPLOYMENT</strong></td>
+                    <td>❌ None</td>
+                    <td>❌ None</td>
+                    <td>✅ <a href="https://github.com/binbashar/leverage">
+                        Leverage CLI (Command Line Interface)</a>
+                    </td>
+                </tr>
+                <tr>
+                    <td><strong>SECURITY & BEST PRACTICES</strong></td>
+                    <td>Varies depending on team knowledge<br>
+                        and time available</td>
+                    <td>Varies depending on consultant
+                        <br> knowledge and budget available</td>
+                    <td>✅ Security by design based on: <br>
+                        <a href="https://docs.aws.amazon.com/prescriptive-guidance/latest/security-reference-architecture/architecture.html">
+                            - AWS Security Reference Architecture</a><br>
+                        <a href="https://aws.amazon.com/architecture/well-architected/">
+                            - AWS Well-Architected Framework</a>
+                    </td>
+                </tr>
+                <tr>
+                    <td><strong>CONFIGURABLE BEHAVIOUR</strong></td>
+                    <td>❌ None</td>
+                    <td>❌ None</td>
+                    <td>Composable, extensible & customizable <br>
+                        (Provides reasonable defaults, but it’s<br>
+                        very configurable in case you need more control)</td>
+                </tr>
+                <tr>
+                    <td><strong>INFRA AS CODE (IAC) & VERSIONING</strong></td>
+                    <td>Varies depending on team knowledge<br>
+                        and time available</td>
+                    <td>Varies depending on consultant<br>
+                        knowledge and budget available</td>
+                    <td>100% Infra as Code (IaC) versioned approach</td>
+                </tr>
+                <tr>
+                    <td><strong>SUPPORT & MAINTENANCE</strong></td>
+                    <td>❌ None</td>
+                    <td>❌️ None (or paying even more money)</td>
+                    <td>
+                        ✅ On-going maintenance, continuous updates<br>
+                        and improvements, version upgrades and<br>
+                        security patches
+                    </td>
+                </tr>
+                <tbody>
+            </table>
+        </div>
+    </div>
 </section>
 
 <!--     7th Section    -->

@@ -89,6 +89,7 @@ markdown_extensions:
   - meta
   - md_in_html
   - codehilite
+  - pymdownx.details
   - pymdownx.inlinehilite
   - pymdownx.tasklist:
       custom_checkbox: true
@@ -132,7 +133,9 @@ nav:
   - How it works:
     - Design:
         - Overview: "how-it-works/index.md"
-        - Why our stack?: "how-it-works/why.md"
+        - General concepts:
+          - Why Leverage?: "how-it-works/general-concepts/why-leverage.md"
+          - Why our stack?: "how-it-works/general-concepts/why-tech-stack.md"
         - Considerations: "how-it-works/considerations.md"
     - Leverage Code Library:
       - Overview: "how-it-works/code-library/code-library.md"
@@ -259,16 +262,19 @@ nav:
       - Support:
           - Support: "work-with-us/support.md"
           - Updates:
-              - January 2021: "work-with-us/updates/product-updates-01-2021.md"
+              - August 2021: "work-with-us/updates/product-updates-08-2021.md"
+      - Leverage vs Competition: "work-with-us/leverage-vs-competition.md"
       - Subscription Plans: "work-with-us/subscription-plans.md"
       - Contribute: "work-with-us/contribute.md"
       - Roadmap:
-        - Overview: "work-with-us/roadmap/overview.md"
-        - Operational Excellence: "work-with-us/roadmap/operational-excellence.md"
-        - Reliability & Performance: "work-with-us/roadmap/reliability-performance.md"
-        - Security: "work-with-us/roadmap/security.md"
-        - Cost Optimization: "work-with-us/roadmap/cost-optimization.md"
-        - Demo Applications: "work-with-us/roadmap/demo-apps.md"
+        - Reference Architecture:
+          - Overview: "work-with-us/roadmap/ref-arch/overview.md"
+          - Operational Excellence: "work-with-us/roadmap/ref-arch/operational-excellence.md"
+          - Reliability & Performance: "work-with-us/roadmap/ref-arch/reliability-performance.md"
+          - Security: "work-with-us/roadmap/ref-arch/security.md"
+          - Cost Optimization: "work-with-us/roadmap/ref-arch/cost-optimization.md"
+          - Demo Applications: "work-with-us/roadmap/ref-arch/demo-apps.md"
+        - Leverage CLI: "work-with-us/roadmap/leverage-cli/overview.md"
       - Careers: "work-with-us/careers.md"
       - Team: "work-with-us/team.md"
       - Testimonials: "work-with-us/testimonials.md"

@@ -1,5 +1,5 @@
 ---
-template: overrides/team.html
+template: overrides/work-with-us/team.html
 title: Binbash Leverage
 ---
 

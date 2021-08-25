@@ -73,7 +73,7 @@
 ??? important ":checkered_flag: **Updated**"      
     Continually make updates, additions, and fixes to the libraries and modules. 
 
-??? important ":checkered_flag: **Orchestrated in automation"         
+??? important ":checkered_flag: **Orchestrated in automation**"         
     We use the [leverage-cli](../leverage-cli/index.md) for this purpose 
         
 ??? important ":checkered_flag: **Proven & Tested**"      

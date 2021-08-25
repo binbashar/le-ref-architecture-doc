@@ -30,7 +30,7 @@ template: overrides/main.html
         
     :books: **Read More:** 
 
-    - [Why our stack?](./how-it-works/why.md)
+    - [Why our stack?](./how-it-works/general-concepts/why-tech-stack.md)
     - [Why Leverage?](./work-with-us/faqs/#why-leverage)
 
 !!! important "Core Features"

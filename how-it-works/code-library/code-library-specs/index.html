@@ -2896,54 +2896,43 @@
 </li>
 </ul>
 </details>
-<details class="important"><summary><img alt="🏁" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f3c1.svg" title=":checkered_flag:" /> <strong>DoD of a highly reusable, configurable, and composible sub-modules which will be 100%</strong></summary><ul>
-<li><img alt="⏩" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/23e9.svg" title=":fast_forward:" /> modular <ul>
-<li>equivalent to other programming languages functions - Example for terraform -
- <a href="https://www.terraform.io/docs/modules/usage.html">https://www.terraform.io/docs/modules/usage.html</a> (but can be propagated for other languages and tools):<ol>
-<li><strong>inputs, outputs parameters.</strong></li>
-<li><strong>code reuse (reusable):</strong> consider tf modules and sub-modules approach.</li>
-<li><strong>testable</strong> by module / function.<ol>
-<li>Since TF it's oriented to work through 3rd party API calls, then tests are more likely to be
- <code>integration tests</code> rather than <code>unit tests</code>. If we don't allow integration for terraform then we
-  can't work at all.<ol>
-<li>This has to be analyzed for every language we'll be using and how we implement it (terraform,
- cloudformation, ansible, python, bash, docker, kops and k8s kubeclt cmds)</li>
-</ol>
-</li>
-</ol>
-</li>
-<li><strong>composition</strong> (composible): have multiple functions and use it together<ol>
-<li><strong>eg:</strong> <code>def_add(x,y){return x+y} ; def_sub(x,y){return x-y}; sub(add(3,4), add(7,5))</code></li>
-</ol>
-</li>
-<li><strong>abstraction</strong> (abstract away complexity): we have a very complex function but we only expose it's
- definition to the API, <strong>eg:</strong> <code>def_ai_processing(data_set){very complex algorithm here};
-  ai_processing([our_data_set_here])</code></li>
-<li><strong>Avoid inline: </strong>blocks The configuration for some Terraform resources can be defined either as
- inline blocks or as separate resources. When creating a module, you should always use a separate
-  resource. For example, the <a href="https://www.terraform.io/docs/providers/aws/r/route_table.html">aws_route_table</a> 
-  resource allows you to define routes via inline blocks. Otherwise, your module will be less 
-  flexible and configurable. So If you try to use a mix of both inline blocks <em>and</em> separate resources,
-   you run into bugs where they will conflict and overwrite each other. Therefore, you must use one or
-    the other (ref: <a href="https://blog.gruntwork.io/how-to-create-reusable-infrastructure-with-terraform-modules-25526d65f73d">https://blog.gruntwork.io/how-to-create-reusable-infrastructure-with-terraform-modules-25526d65f73d</a>))</li>
-<li><strong>Use module-relative paths: </strong>The catch is that the file path you use has to be relative
- (since you could run Terraform on many different computers) — but what is it relative to? By default,
-  Terraform interprets the path relative to the working directory. That’s a good default for normal
-   Terraform templates, but it won’t work if the file is part of a module. To solve this issue, always
-    use a <a href="https://www.terraform.io/docs/configuration/interpolation.html#path-variables">path variable</a>
-    in file paths.
-    eg: 
-    <div class="highlight"><pre><span></span><code>resource &quot;aws_instance&quot; &quot;example&quot; {
+<details class="important"><summary><img alt="🏁" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f3c1.svg" title=":checkered_flag:" /> <strong>DoD of a highly reusable, configurable, and composible sub-modules</strong></summary><p>Which will be 100%
+- <img alt="⏩" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/23e9.svg" title=":fast_forward:" /> modular 
+    - equivalent to other programming languages functions - Example for terraform -
+     <a href="https://www.terraform.io/docs/modules/usage.html">https://www.terraform.io/docs/modules/usage.html</a> (but can be propagated for other languages and tools):
+        1. <strong>inputs, outputs parameters.</strong>
+        2. <strong>code reuse (reusable):</strong> consider tf modules and sub-modules approach.
+        3. <strong>testable</strong> by module / function.
+            1. Since TF it's oriented to work through 3rd party API calls, then tests are more likely to be
+             <code>integration tests</code> rather than <code>unit tests</code>. If we don't allow integration for terraform then we
+              can't work at all.
+                1. This has to be analyzed for every language we'll be using and how we implement it (terraform,
+                 cloudformation, ansible, python, bash, docker, kops and k8s kubeclt cmds)
+        4. <strong>composition</strong> (composible): have multiple functions and use it together
+            2. <strong>eg:</strong> <code>def_add(x,y){return x+y} ; def_sub(x,y){return x-y}; sub(add(3,4), add(7,5))</code>
+        5. <strong>abstraction</strong> (abstract away complexity): we have a very complex function but we only expose it's
+         definition to the API, <strong>eg:</strong> <code>def_ai_processing(data_set){very complex algorithm here};
+          ai_processing([our_data_set_here])</code>
+        6. <strong>Avoid inline: </strong>blocks The configuration for some Terraform resources can be defined either as
+         inline blocks or as separate resources. When creating a module, you should always use a separate
+          resource. For example, the <a href="https://www.terraform.io/docs/providers/aws/r/route_table.html">aws_route_table</a> 
+          resource allows you to define routes via inline blocks. Otherwise, your module will be less 
+          flexible and configurable. So If you try to use a mix of both inline blocks <em>and</em> separate resources,
+           you run into bugs where they will conflict and overwrite each other. Therefore, you must use one or
+            the other (ref: <a href="https://blog.gruntwork.io/how-to-create-reusable-infrastructure-with-terraform-modules-25526d65f73d">https://blog.gruntwork.io/how-to-create-reusable-infrastructure-with-terraform-modules-25526d65f73d</a>))
+        7. <strong>Use module-relative paths: </strong>The catch is that the file path you use has to be relative
+         (since you could run Terraform on many different computers) — but what is it relative to? By default,
+          Terraform interprets the path relative to the working directory. That’s a good default for normal
+           Terraform templates, but it won’t work if the file is part of a module. To solve this issue, always
+            use a <a href="https://www.terraform.io/docs/configuration/interpolation.html#path-variables">path variable</a>
+            in file paths.
+            eg: 
+            <div class="highlight"><pre><span></span><code>resource &quot;aws_instance&quot; &quot;example&quot; {
   ami = &quot;ami-2d39803a&quot;
   instance_type = &quot;t2.micro&quot;
   user_data = &quot;${file(&quot;${path.module}/user-data.sh&quot;)}&quot;
 }
-</code></pre></div></li>
-</ol>
-</li>
-</ul>
-</li>
-</ul>
+</code></pre></div></p>
 </details>
 <details class="important"><summary><img alt="🏁" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f3c1.svg" title=":checkered_flag:" /> <strong>Solutions must be versioned</strong></summary><p>So as to be able to manage them as a software product with releases and change log. 
 In this way we'll be able to know which version is currently deployed in a certain client and consider it's upgrade.</p>

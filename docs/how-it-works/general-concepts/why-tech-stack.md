@@ -1,6 +1,6 @@
 ## Why we choose our tech stack
 
-!!! info "Why AWS❓"
+??? info "Why AWS❓"
     Amazon Web Services (AWS) is the world’s most comprehensive and broadly adopted 
     cloud platform, offering over 200 fully featured services from data centers globally.
     Millions of customers—including the fastest-growing startups, largest enterprises,
@@ -13,7 +13,7 @@
     
     :books: **Read More:** [What is AWS](https://aws.amazon.com/what-is-aws/)
 
-!!! info "Why WAF (Well Architected Framework)❓"
+??? info "Why WAF (Well Architected Framework)❓"
     AWS Well-Architected helps cloud architects to build secure, high-performing, resilient,
     and efficient infrastructure for their applications and workloads. Based on five pillars
     — operational excellence, security, reliability, performance efficiency, and cost
@@ -22,7 +22,7 @@
     
     :books: **Read More:** [AWS Well-architected](https://aws.amazon.com/architecture/well-architected)
 
-!!! info "Why Infra as Code (IaC) & Terraform❓"
+??? info "Why Infra as Code (IaC) & Terraform❓"
 
     - [x] **Confidence:** A change breaks the env? Just roll it back. Still not working?
     Build a whole new env with a few keystrokes. IaC enables this.
@@ -68,7 +68,7 @@
     - [Why Infrastructure as Code](https://www.simplethread.com/why-infrastructure-as-code/)
     - [Why Terraform by Gruntwork](https://blog.gruntwork.io/why-we-use-terraform-and-not-chef-puppet-ansible-saltstack-or-cloudformation-7989dad2865c)
 
-!!! info "Why Organizations❓"
+??? info "Why Organizations❓"
     AWS Organizations helps you centrally manage and govern your environment as you grow
     and scale your AWS resources. Using AWS Organizations, you can programmatically create
     new AWS accounts and allocate resources, group accounts to organize your workflows,
@@ -80,7 +80,7 @@
     - [How it works: AWS Organizations](../../how-it-works/organization/organization/)
     - [AWS Organizations](https://aws.amazon.com/organizations/)
 
-!!! info "Why AIM and roles❓"
+??? info "Why AIM and roles❓"
     AWS Identity and Access Management (IAM) enables you to manage access to AWS services
     and resources securely. Using IAM, you can create and manage AWS users and groups,
     and use permissions to allow and deny their access to AWS resources.
@@ -95,7 +95,7 @@
     - [How it works: AWS IAM](../../how-it-works/identities/identities/)
     - [AWS Identity and Access Management (IAM)](https://aws.amazon.com/iam/)
 
-!!! info "Security | Why Web Application Firewall (WAF), Cloud Trail, Config, Guarduty❓"
+??? info "Security | Why Web Application Firewall (WAF), Cloud Trail, Config, Guarduty❓"
     Raise your security posture with AWS infrastructure and services.
     Using AWS, you will gain the control and confidence you need to securely run your
     business with the most flexible and secure cloud computing environment available today.
@@ -110,7 +110,7 @@
     - [How it works: AWS Security](../../how-it-works/security/services/)
     - [AWS Cloud Security](https://aws.amazon.com/security/)
 
-!!! info "Why VPC❓"
+??? info "Why VPC❓"
     Amazon Virtual Private Cloud (Amazon VPC) is a service that lets you launch AWS
     resources in a logically isolated virtual network that you define. You have complete
     control over your virtual networking environment, including selection of your own IP
@@ -123,7 +123,7 @@
     - [How it works: AWS Networking](../../how-it-works/network/vpc-topology)
     - [AWS Virtual Private Cloud](https://aws.amazon.com/vpc)
 
-!!! info "Why Kubernetes (K8s) & AWS EKS❓"
+??? info "Why Kubernetes (K8s) & AWS EKS❓"
     **Kubernetes**, also known as K8s, is an open-source system for automating deployment,
     scaling, and management of containerized applications.
     It groups containers that make up an application into logical units for easy management
@@ -147,7 +147,7 @@
     - [AWS EKS](https://aws.amazon.com/eks)
     - [Kubernetes](https://kubernetes.io/)
 
-!!! info "Why S3❓"
+??? info "Why S3❓"
     **Amazon Simple Storage Service (Amazon S3)** is an object storage service that offers
     industry-leading scalability, data availability, security, and performance. 
     This means customers of all sizes and industries can use it to store and protect
@@ -164,7 +164,7 @@
     - [How it works: AWS Storage](../../how-it-works/storage/storage)
     - [AWS S3](https://aws.amazon.com/s3)
 
-!!! info "Why RDS❓"
+??? info "Why RDS❓"
     **Amazon Relational Database Service (Amazon RDS)** makes it easy to set up, operate,
     and scale a relational database in the cloud. It provides cost-efficient and resizable
     capacity while automating time-consuming administration tasks such as hardware
@@ -183,7 +183,7 @@
     - [How it works: AWS Databases](../../how-it-works/database/database/)
     - [AWS RDS](https://aws.amazon.com/rds)
 
-!!! info "Why Hashicorp Vault❓"
+??? info "Why Hashicorp Vault❓"
     As many organizations migrate to the public cloud, a major concern has been how to
     best secure data, preventing it from unauthorized access or exfiltration.
 

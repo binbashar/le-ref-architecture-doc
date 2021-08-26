@@ -31,7 +31,7 @@ A Reference AWS Cloud Solutions Architecture designed under optimal configs for 
 popular modern web and mobile applications needs. 
 Its design is fully based on AWS [“Well Architected Framework”](../work-with-us/support.md).
 
-Reusing the [**Leverage Infrastructure as Code (IaC) Library**](./code-library/code-library.md) via 
+Reusing the [**Leverage Infrastructure as Code (IaC) Library**](code-library/code-library.md) via 
 [**leverage cli**](https://github.com/binbashar/leverage) to rapidly implement it. 
 
 It will solve your entire infrastructure and will grant you complete control of the source 

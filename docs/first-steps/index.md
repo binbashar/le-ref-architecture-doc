@@ -13,14 +13,15 @@ We'll walk through all steps involved, from initial considerations, to post depl
 
 ## Preparation and initial considerations
 ---
-For this guide's purposes let's image we are part of an organization called *AwesomeCorp* and we are in charge of creating and deploying the infrastructure for our *Awesome* product.
+For this guide's purposes we'll be in charge of creating and deploying the infrastructure for an *Example* product.
 
 ### Create an AWS account
 First and foremost we need to [create an AWS account](https://aws.amazon.com/premiumsupport/knowledge-center/create-and-activate-aws-account/) for our project's deployment.
 
-This will be the management (root) account for our project, so we'll call it `awesome-management` and we'll register it using our *AwesomeCorp*'s company email, under `awesome-aws@awesomecorp.com`. To protect this account, [enabling Multi Factor Authentication](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_root-user.html#id_root-user_manage_mfa) is **highly** encouraged, and reviewing the [account's billing setup](https://console.aws.amazon.com/billing/home?#/account) is always a good idea before proceeding.
+This will be the management (root) account for our project, so we'll call it `example-management` and register it under `example-aws@example.com`. To protect this account, [enabling Multi Factor Authentication](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_root-user.html#id_root-user_manage_mfa) is **highly** encouraged, also, reviewing the [account's billing setup](https://console.aws.amazon.com/billing/home?#/account) is always a good idea before proceeding.
 
-!!! note "The reason behind de name choice for the account will become apparent further down the line."
+!!! note
+    The reason behind de name choice for the account will become apparent further down the line.
 
 To be able to interact with the AWS environment we will need a special IAM user. For this, we'll log in the [AWS Web Console](https://console.aws.amazon.com/) with our recently created account and we'll [create the `mgmt-org-admin` IAM user](https://docs.aws.amazon.com/mediapackage/latest/ug/setting-up-create-iam-user.html) giving it admin privileges by attaching the `AdministratorAccess` policy to it.
 
@@ -37,11 +38,11 @@ pip3 install leverage
 !!! info "More information regarding [Leverage CLI installation](../user-guide/base-workflow/leverage-cli/install-leverage-cli/) and [shell autocompletion](../user-guide/base-workflow/leverage-cli/install-leverage-cli#shell-completion)."
 
 ### Create the project's directory
-Each Leverage project must be in its own working directory. So, we create one named `awesome` for it.
+Each Leverage project must be in its own working directory. So, we create one named `example` for it.
 
 ``` bash
-mkdir awesome
-cd awesome
+mkdir example
+cd example
 ```
 
 ## Project setup
@@ -69,13 +70,13 @@ Once the project is initialized we need to fill in the correct information in th
 
 After filling in the data we will end up with a configuration file similar to this one:
 
-???+ note "`project.yaml` for *Awesome* project"
+???+ note "`project.yaml` for *Example* project"
     ```yaml
     meta:
       enable_mfa: false
 
-    project_name: awesome
-    short_name: aw
+    project_name: example
+    short_name: ex
 
     primary_region: us-east-1
     secondary_region: us-west-2
@@ -83,11 +84,11 @@ After filling in the data we will end up with a configuration file similar to th
     organization:
       accounts:
       - name: management
-        email: awesome-aws@awesomecorp.com
+        email: example-aws@example.com
       - name: security
-        email: awesome-aws+security@awesomecorp.com
+        email: example-aws+security@example.com
       - name: shared
-        email: awesome-aws+shared@awesomecorp.com
+        email: example-aws+shared@example.com
       organizational_units:
       - name: security
         policy:
@@ -147,12 +148,12 @@ leverage credentials create
 ```
 [09:37:17.530] INFO     Loading configuration file.
 [09:37:18.477] INFO     Configuring default profile information.
-[09:37:20.424] INFO     Default profile configured in: /home/user/.aws/aw/config
+[09:37:20.424] INFO     Default profile configured in: /home/user/.aws/ex/config
 [09:37:20.426] INFO     Configuring bootstrap credentials.
 > Select the means by which you'll provide the programmatic keys: Manually
 > Key: AKIAU1OF18IXH2EXAMPLE
 > Secret: ****************************************
-[09:37:51.638] INFO     Bootstrap credentials configured in: /home/user/.aws/aw/credentials
+[09:37:51.638] INFO     Bootstrap credentials configured in: /home/user/.aws/ex/credentials
 [09:37:53.497] INFO     Fetching management account id.
 [09:37:55.344] INFO     Updating project configuration file.
 [09:37:55.351] INFO     Finished setting up bootstrap credentials.
@@ -201,10 +202,10 @@ In this step, the directory structure for the project and all definition files a
 
 We end up with something that looks like this:
 
-???+ note "*Awesome* project file structure"
+???+ note "*Example* project file structure"
     <!--- TODO: Prettyfy --->
     ```
-    awesome
+    example
     ├── build.env
     ├── config
     │   └── common.tfvars
@@ -310,6 +311,9 @@ Finally we reach the point in which we'll get to actually create the infrastruct
 
 The correct deployment order is as shown below.
 
+!!! success "Basic Landing Zone AWS Expenses"
+    By default this AWS Reference Architecture configuration should not incur in any costs.
+
 ### Management account
 ---
 We begin with the `management` account.
@@ -394,7 +398,7 @@ Grab the management account id that previously was automatically filled in for u
 organization:
   accounts:
     - name: management
-      email: awesome-aws@awesomecorp.com
+      email: example-aws@example.com
       id: '000123456789'
 ...
 ```
@@ -619,28 +623,33 @@ leverage credentials update --profile [management | security] # Choose the corre
 > Select the means by which you'll provide the programmatic keys: Manually
 > Key: AKIAUH0FAB7QVEXAMPLE
 > Secret: ****************************************
-[12:26:20.566] INFO     Management credentials configured in: /home/user/.aws/aw/credentials
+[12:26:20.566] INFO     Management credentials configured in: /home/user/.aws/ex/credentials
 [12:26:24.418] INFO     Configuring accounts' profiles.
 [12:26:24.420] INFO     Fetching organization accounts.
 [12:26:26.234] INFO     Fetching MFA device serial.
 [12:26:28.265] INFO     Backing up account profiles file.
-[12:26:28.849] INFO     Account profiles configured in: /home/user/.aws/aw/config
+[12:26:28.849] INFO     Account profiles configured in: /home/user/.aws/ex/config
 [12:26:28.856] INFO     Updating project configuration file.
 [12:26:28.877] INFO     Loading configuration file.
 [12:26:28.907] INFO     Finished updating management credentials.
 ```
 
+!!! note
+    Both of these credentials require an MFA device to be enabled. Once of them are configured, the next step ([Enable MFA](#enable-mfa)) becomes mandatory. If the enabling of MFA is not performed any action on the project will be executed using the bootstrap credentials.
+
 ### Enable MFA
 The last step is to enable Multi Factor Authentication locally. The procedure is slightly different for Natasha's `management` IAM user and `security` IAM user, so we'll walk through both of them.
 
 #### Management user
-To enable MFA for a `management` account user, we move into the account's identities layer, that is:
+To enable MFA for a `management` account user, we need to enable this feature individually for the role `OrganizationAccountAccessRole` in all accounts of the infrastructure. So first, we'll take care of the `management` account:
+
+We move into the account's identities layer:
 
 ``` bash
 cd management/base-identities
 ```
 
-We change the value for `role_requires_mfa` for the role `iam_assumable_role_oaar` in `roles.tf` to `true` which is disabled by default.
+We change the value for `role_requires_mfa` for the role `iam_assumable_role_oaar` in `roles.tf` to `true`. By default this value is `false`, that is to say, MFA is disabled for the role.
 
 ``` terraform
 module "iam_assumable_role_oaar" {
@@ -659,7 +668,9 @@ And run:
 leverage terraform apply
 ```
 
-Then, in `management/config/backend.tfvars` we change the value of `profile`
+We now the need to repeat the previous steps for the remaining accounts, in this guide's case, the `security` and `shared` accounts.
+
+Once the change is applied in all layers, we change the value of `profile` in `management/config/backend.tfvars`
 
 ``` terraform
 #
@@ -667,13 +678,15 @@ Then, in `management/config/backend.tfvars` we change the value of `profile`
 #
 
 # AWS Profile (required by the backend but also used for other resources)
-profile = "aw-bootstrap"
+profile = "ex-bootstrap"
 ...
 ```
 
 To `<short project name>-management-oaar`, which in the case of this guide, would result in:
 
-* `aw-bootstrap` --> `aw-management-oaar`
+* `ex-bootstrap` --> `ex-management-oaar`
+
+By doing this, we are switching from using the bootstrap credentials, to the management credentials profile for this specific account.
 
 Lastly we set `MFA_ENABLED` in the file `build.env`, located in the project's root directory, to `true`.
 
@@ -682,11 +695,20 @@ To enable MFA for a `security` account user, we have to make changes in all acco
 
 We set `profile` in `config/backend.tfvars` for each account to `<short project name>-<account>-devops`. That is:
 
-* `aw-security-oaar` --> `aw-security-devops` for the `security` account
-* `aw-shared-oaar` --> `aw-shared-devops` for the `shared` account
+* `ex-security-oaar` --> `ex-security-devops` for the `security` account
+* `ex-shared-oaar` --> `ex-shared-devops` for the `shared` account
+
+Similarly to the management user's MFA enabling step, we are switching from using bootstrap credentials to the respective profile for each account of the security credentials.
 
 As a last step we need to make sure that `MFA_ENABLED` is set to `true` in the `build.env` file.
 
-End result
+## End result
 ---
 Now we have a fully functional deployment of a basic landing zone ready to be used. We have gained an understanding of the structure and functionalities provided by Leverage as well as familiarity with the Leverage workflow.
+
+</br></br>
+## Next steps
+To learn more about Leverage's inner workings, check out the following links:
+
+- [X] [:books: How it works](../how-it-works/index.md)
+- [X] [:books: User Guide](../user-guide/)

@@ -144,8 +144,7 @@ nav:
       - Forks workflow: "how-it-works/code-library/code-library-forks.md"
       - Specifications: "how-it-works/code-library/code-library-specs.md"
       - Modules per Tech: "how-it-works/code-library/modules-library-per-tech.md"
-    - Leverage CLI:
-        - Overview: "how-it-works/leverage-cli/index.md"
+    - Leverage CLI: "how-it-works/leverage-cli/index.md"
     - AWS Organization:
       - Organization: "how-it-works/organization/organization.md"
       - Accounts: "how-it-works/organization/accounts.md"
@@ -206,7 +205,16 @@ nav:
         - Terraform Vault: "user-guide/base-configuration/repo-le-tf-vault.md"
         - Ansible Infra: "user-guide/base-configuration/repo-le-ansible-infra.md"
     - Workflow:
-      - Leverage CLI: "user-guide/base-workflow/leverage-cli.md"
+      - Leverage CLI:
+        - Install Leverage CLI: "user-guide/base-workflow/leverage-cli/install-leverage-cli.md"
+        - Reference:
+          - Basic features: "user-guide/base-workflow/leverage-cli/reference/basic-features.md"
+          - Commands:
+            - project: "user-guide/base-workflow/leverage-cli/reference/project.md"
+            - credentials: "user-guide/base-workflow/leverage-cli/reference/credentials.md"
+            - terraform: "user-guide/base-workflow/leverage-cli/reference/terraform.md"
+            - run: "user-guide/base-workflow/leverage-cli/reference/run.md"
+        - Custom tasks: "user-guide/base-workflow/leverage-cli/tasks.md"
       - Repos:
         - Terraform Infra: "user-guide/base-workflow/repo-le-tf-infra.md"
         - Terraform Infra State: "user-guide/base-workflow/repo-le-tf-infra-aws-tf-state.md"

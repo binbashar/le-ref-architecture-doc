@@ -14,7 +14,7 @@ user's password and user's secret key.
     in state file.
 
 !!! check "Keybase pre-requisites"
-    When `pgp_key` is specified as `keybase:username`, make sure that the user public key has already been uploaded to 
+    When `gpg_key` is specified as `keybase:username`, make sure that the user public key has already been uploaded to 
     the [Reference Architecture base-identities layer `keys` folder](https://github.com/binbashar/le-tf-infra-aws/tree/master/security/base-identities/keys) 
 
 ## How to manage your GPG keys?

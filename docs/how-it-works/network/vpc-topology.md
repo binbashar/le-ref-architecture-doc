@@ -40,7 +40,7 @@ AWS Documentation Amazon VPC User Guide, accessed November 18th 2020).
 
 ![leverage-aws-vpc-ngw-ha](../../assets/images/diagrams/aws-vpc-nat-gateway-ha.png "Leverage"){: style="width:900px"}
 <figcaption style="font-size:15px">
-<b>Figure:</b> VPC topology diagram with mutiple Nat Gateways for HA.
+<b>Figure:</b> VPC topology diagram with multiple Nat Gateways for HA.
 (Source: Andreas Wittig, 
 <a href="https://cloudonaut.io/advanved-aws-networking-pitfalls-that-you-should-avoid/">
 "Advanced AWS Networking: Pitfalls That You Should Avoid"</a>,

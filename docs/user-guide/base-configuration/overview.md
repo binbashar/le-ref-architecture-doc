@@ -2,13 +2,10 @@
 
 ## Pre-requisites
 
-!!! done "Local env pre-requeried packages"
-    * [x] **GNU Make** `>= 3.8` (check via `make --version`)
+!!! done "Local env pre-required packages"
     * [x] **Docker engine** `>= 20.x.y`(check via `docker --version`) 
     * [x] **Python** `>= 3.8` (check via `python3 --version` || `python3.8 --version`)
-    * [x] **leverage cli** `>= 1.0.9` (check via `leverage --version`)
-    * [x] **jq** `>= jq-1.6` (check via `jq --version`)
-    * [x] **aws-cli** `>= 1.19.0` (check via `aws --version`)  
+    * [x] **leverage cli** `>= 1.0.0` (check via `leverage --version`)
 
 ## Configurations
 Specific configuration per component could be found in the immediately following entries

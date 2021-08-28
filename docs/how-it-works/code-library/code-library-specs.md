@@ -34,7 +34,7 @@
                   can't work at all.
                     1. This has to be analyzed for every language we'll be using and how we implement it (terraform,
                      cloudformation, ansible, python, bash, docker, kops and k8s kubeclt cmds)
-            4. **composition** (composible): have multiple functions and use it together
+            4. **composition** (composable): have multiple functions and use it together
                 2. **eg:** `def_add(x,y){return x+y} ; def_sub(x,y){return x-y}; sub(add(3,4), add(7,5))`
             5. **abstraction** (abstract away complexity): we have a very complex function but we only expose it's
              definition to the API, **eg:** `def_ai_processing(data_set){very complex algorithm here};
@@ -66,8 +66,8 @@
     In this way we'll be able to know which version is currently deployed in a certain client and consider it's upgrade.
   
 
-??? important ":checkered_flag: **Env Parity**"      
-    Promote inmutable, versioned infra modules based across envs. 
+!!! important ":checkered_flag: **Env Parity**"      
+    Promote immutable, versioned infra modules based across envs. 
      
 
 ??? important ":checkered_flag: **Updated**"      
@@ -90,7 +90,7 @@
     The architecture for our Library / Code Modules helps an organization to analyze its current IT and DevSecOps
     Cloud strategy and identify areas where changes could lead to cost savings. For instance, the architecture may show
     that multiple database systems could be changed so only one product is used, reducing software and support costs.
-    Provides a basis for reuse.The process of architecting can support both the use and creation of reusable assets.
+    Provides a basis for reuse. The process of architecting can support both the use and creation of reusable assets.
     Reusable assets are beneficial to an organization, since they can reduce the overall cost of a system and also
     improve its quality, given that a reusable asset has already been proven.
     

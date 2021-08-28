@@ -10,7 +10,7 @@
     [**Amazon Web Services**](https://aws.amazon.com/) (✅ typically in just a few weeks!). 
     
     - [x] Oriented to Development leads or teams looking to solve their current AWS infrastructure and software delivery 
-    business needs in a securely and reliably maner, under the most modern best practices.
+    business needs in a securely and reliably manner, under the most modern best practices.
     
     - [x] Your Entire AWS Cloud solutions based on DevOps practices will be achieved:
         - :star: Containerization
@@ -18,7 +18,7 @@
         - :star: Container Orchestration (K8s) & Application Services
         - :star: CI / CD
         - :star: Security, Compliance & Reliability
-        - :star: Cost Optimization & Performance Effiency
+        - :star: Cost Optimization & Performance Efficiency
         - :star: Observability & Monitoring
     
     - [x] Moreover, if you are looking to have the complete control of the source code, and of course be able to run it

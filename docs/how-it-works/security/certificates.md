@@ -33,7 +33,7 @@
 <b>Figure:</b> AWS certificate manager (ACM) service integration diagram.
 (Source: AWS, 
 <a href="http://docs.aws.amazon.com/acm/latest/userguide/images/acm_intro.png">
-"Amazon Certifica Manager intro diagram"</a>,
+"Amazon Certificate Manager intro diagram"</a>,
 AWS Documentation Amazon ACM User Guide, accessed August 4th 2021).
 </figcaption>
 

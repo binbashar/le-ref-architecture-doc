@@ -20,7 +20,7 @@
 (Source: Pritunl, 
 <a href="https://docs.pritunl.com/docs/accessing-a-private-network">
 "Accessing a Private Network"</a>,
-Pritunl documentantion v1 Guides, accessed November 17th 2020).
+Pritunl documentation v1 Guides, accessed November 17th 2020).
 </figcaption>
 
 ### Read More

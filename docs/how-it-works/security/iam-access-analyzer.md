@@ -40,7 +40,7 @@ AWS Documentation, accessed June 11th 2021).
 
 ## Reference Architecture implementation code
 !!! summary "Reference Architecture Code: [le-tf-infra-aws/security/security-base/iam_access_analizer.tf](https://github.com/binbashar/le-tf-infra-aws/blob/03b282c483eb65eab05912adc98744415e83aa00/security/security-base/iam_access_analizer.tf)"
-
+    <!-- TODO: Update -->
     ```
     resource "aws_accessanalyzer_analyzer" "default" {
         analyzer_name = "ConsoleAnalyzer-bc3bc4d6-09cb-XXXX-XXXX-XXXXXXXXXX"

@@ -12,8 +12,8 @@ template: overrides/main.html
     ![leverage-aws](./assets/images/icons/aws-emojipack/General_AWScloud.png "AWS"){: style="width:30px"} 
     Cloud Infrastructure code, through our core components:
 
-    - [x] [**Reference AWS Cloud Solutions Architecture**](how-it-works/index.md)
-    - [x] [**Infrastructure as Code (IaC) Library**](how-it-works/code-library/code-library.md)
+    - [x] [**Reference Architecture for AWS**](how-it-works/index.md)
+    - [x] [**Infrastructure as Code (IaC) Library**](how-it-works/infra-as-code-library/infra-as-code-library.md)
     - [x] [**Leverage CLI**](https://github.com/binbashar/leverage)
 
     Because all the code and modules are already built, we can get you up and running **at least 2x faster** :rocket: 
@@ -21,7 +21,7 @@ template: overrides/main.html
     documented, tested, and has been proven in production at dozens of other project deployments.
 
 !!! important "Why Leverage?"
-    If you implement our **Reference AWS Cloud Solutions Architecture** and the 
+    If you implement our **Reference Architecture for AWS** and the 
     **Infrastructure as Code (IaC) Library** via Leverage CLI , you will get your entire Cloud Native 
     Application Infra in few weeks.
 
@@ -34,7 +34,7 @@ template: overrides/main.html
     - [Why Leverage?](./work-with-us/faqs/#why-leverage)
 
 !!! important "Core Features"
-    - [x] [**Reference Architecture**](how-it-works/code-library/code-library.md):
+    - [x] [**Reference Architecture**](how-it-works/infra-as-code-library/infra-as-code-library.md):
     Designed under optimal configs for the most popular modern web and mobile applications needs.
     Its design is fully based on the
     [**AWS Well Architected Framework**](https://leverage.binbash.com.ar/support/#aws-well-architected-review).

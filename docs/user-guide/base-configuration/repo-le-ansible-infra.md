@@ -2,7 +2,7 @@
 
 ## Overview
 This repository contains all the Ansible Playbooks configuration files used to create 
-Binbash Leverage Reference AWS Cloud Solutions Architecture.
+Binbash Leverage Reference Architecture for AWS.
 
 ## Ansible Playbook Documentation
 Check out the README.md under contained under each repo

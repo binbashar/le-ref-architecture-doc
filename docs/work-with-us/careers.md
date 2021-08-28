@@ -46,7 +46,7 @@
         (e.g., VPC, IAM, Kubernetes, Prometheus, Grafana, EFK, Consul, Vault, Jenkins, etc.) using several tool and 
         languages: *Terraform, Ansible, Helm, Dockerfiles, Python, Bash and Makefiles*.
            
-    - [x] [**Reference Architecture**](../how-it-works/code-library/code-library.md)
+    - [x] [**Reference Architecture**](../how-it-works/infra-as-code-library/infra-as-code-library.md)
         
         Improve, maintain, extend and update our reference architecture, which has been designed under optimal configs 
         for the most popular modern web and mobile applications needs. Its design is fully based on the 
@@ -55,7 +55,7 @@
     - [x] **Open Source & Leverage DevOps Tools** 
         
         Contribute to our open source projects to continue building a fundamentally better DevOps experience, including
-        our [open source modules](../how-it-works/code-library/modules-library-per-tech.md), 
+        our [open source modules](../how-it-works/infra-as-code-library/modules-library-per-tech.md), 
         [leverage python CLI](https://github.com/binbashar/leverage), 
         [Makefiles Lib](https://github.com/binbashar/le-dev-makefiles) among others.        
     

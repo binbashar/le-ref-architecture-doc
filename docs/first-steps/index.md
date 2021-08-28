@@ -7,7 +7,7 @@ hide:
 
 # First Steps
 
-The objective of this guide is to introduce the user to our [**Binbash Leverage Reference AWS Cloud Solutions Architecture**](../how-it-works/) workflow through the complete deployment of a basic landing zone configuration.
+The objective of this guide is to introduce the user to our [**Binbash Leverage Reference Architecture for AWS**](../how-it-works/) workflow through the complete deployment of a basic landing zone configuration.
 
 We'll walk through all steps involved, from initial considerations, to post deployment access credentials configuration, ending up with a fully usable Leverage Reference Architecture deployment. The user will gain an understanding of the structure of a Leverage project as well as familiarity with the tooling used to manage it.
 

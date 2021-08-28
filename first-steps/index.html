@@ -20,7 +20,7 @@
     
     
       
-        <title>Overview - Binbash Leverage Reference Architecture</title>
+        <title>First Steps - Binbash Leverage Reference Architecture</title>
       
     
     
@@ -54,9 +54,6 @@
   
 
 
-
-  <script>window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)},ga.l=+new Date,ga("create","UA-172873342-1","auto"),ga("set","anonymizeIp",!0),ga("send","pageview"),document.addEventListener("DOMContentLoaded",function(){document.forms.search&&document.forms.search.query.addEventListener("blur",function(){var e;this.value&&(e=document.location.pathname,ga("send","pageview",e+"?q="+this.value))}),"undefined"!=typeof location$&&location$.subscribe(function(e){ga("send","pageview",e.pathname)})})</script>
-  <script async src="https://www.google-analytics.com/analytics.js"></script>
 
 
     
@@ -114,7 +111,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Overview
+              First Steps
             
           </span>
         </div>
@@ -254,15 +251,11 @@
   
 
 
-  
-  
-  
-    <li class="md-tabs__item">
-      <a href="./" class="md-tabs__link md-tabs__link--active">
-        First Steps
-      </a>
-    </li>
-  
+  <li class="md-tabs__item">
+    <a href="./" class="md-tabs__link md-tabs__link--active">
+      First Steps
+    </a>
+  </li>
 
       
         
@@ -313,22 +306,6 @@
   
   
     <li class="md-tabs__item">
-      <a href="../examples/" class="md-tabs__link">
-        Examples
-      </a>
-    </li>
-  
-
-      
-        
-  
-  
-
-
-  
-  
-  
-    <li class="md-tabs__item">
       <a href="../work-with-us/" class="md-tabs__link">
         Work with us
       </a>
@@ -346,7 +323,9 @@
           
             
               
-              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" hidden>
                 <div class="md-sidebar__scrollwrap">
                   <div class="md-sidebar__inner">
                     
@@ -503,29 +482,6 @@
     
   
   
-    
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
-      
-      
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" checked>
-      
-      <label class="md-nav__link" for="__nav_2">
-        First Steps
-        <span class="md-nav__icon md-icon"></span>
-      </label>
-      <nav class="md-nav" aria-label="First Steps" data-md-level="1">
-        <label class="md-nav__title" for="__nav_2">
-          <span class="md-nav__icon md-icon"></span>
-          First Steps
-        </label>
-        <ul class="md-nav__list" data-md-scrollfix>
-          
-            
-  
-  
-    
-  
-  
     <li class="md-nav__item md-nav__item--active">
       
       <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
@@ -535,12 +491,12 @@
       
       
         <label class="md-nav__link md-nav__link--active" for="__toc">
-          Overview
+          First Steps
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <a href="./" class="md-nav__link md-nav__link--active">
-        Overview
+        First Steps
       </a>
       
         
@@ -558,8 +514,266 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#overview" class="md-nav__link">
-    Overview
+  <a href="#preparation-and-initial-considerations" class="md-nav__link">
+    Preparation and initial considerations
+  </a>
+  
+    <nav class="md-nav" aria-label="Preparation and initial considerations">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#create-an-aws-account" class="md-nav__link">
+    Create an AWS account
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#install-leverage-cli" class="md-nav__link">
+    Install Leverage CLI
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#create-the-projects-directory" class="md-nav__link">
+    Create the project's directory
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#project-setup" class="md-nav__link">
+    Project setup
+  </a>
+  
+    <nav class="md-nav" aria-label="Project setup">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#initialize-the-project" class="md-nav__link">
+    Initialize the project
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#set-up-bootstrap-credentials" class="md-nav__link">
+    Set up bootstrap credentials
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#create-the-configured-project" class="md-nav__link">
+    Create the configured project
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#architecture-orchestration" class="md-nav__link">
+    Architecture orchestration
+  </a>
+  
+    <nav class="md-nav" aria-label="Architecture orchestration">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#management-account" class="md-nav__link">
+    Management account
+  </a>
+  
+    <nav class="md-nav" aria-label="Management account">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#terraform-backend-layer" class="md-nav__link">
+    Terraform backend layer
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#identities-layer" class="md-nav__link">
+    Identities layer
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#organizations-layer" class="md-nav__link">
+    Organizations layer
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#security-layer" class="md-nav__link">
+    Security layer
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#security-account" class="md-nav__link">
+    Security account
+  </a>
+  
+    <nav class="md-nav" aria-label="Security account">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#terraform-backend-layer_1" class="md-nav__link">
+    Terraform backend layer
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#identities-layer_1" class="md-nav__link">
+    Identities layer
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#security-layer_1" class="md-nav__link">
+    Security layer
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#shared-account" class="md-nav__link">
+    Shared account
+  </a>
+  
+    <nav class="md-nav" aria-label="Shared account">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#terraform-backend-layer_2" class="md-nav__link">
+    Terraform backend layer
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#identities-layer_2" class="md-nav__link">
+    Identities layer
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#security-layer_2" class="md-nav__link">
+    Security layer
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#network-layer" class="md-nav__link">
+    Network layer
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#post-deployment-steps" class="md-nav__link">
+    Post-deployment steps
+  </a>
+  
+    <nav class="md-nav" aria-label="Post-deployment steps">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#get-the-temporary-password-to-access-aws-console" class="md-nav__link">
+    Get the temporary password to access AWS console
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#configure-the-new-credentials" class="md-nav__link">
+    Configure the new credentials
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#enable-mfa" class="md-nav__link">
+    Enable MFA
+  </a>
+  
+    <nav class="md-nav" aria-label="Enable MFA">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#management-user" class="md-nav__link">
+    Management user
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#security-user" class="md-nav__link">
+    Security user
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#end-result" class="md-nav__link">
+    End result
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#next-steps" class="md-nav__link">
+    Next steps
   </a>
   
 </li>
@@ -568,12 +782,6 @@
   
 </nav>
       
-    </li>
-  
-
-          
-        </ul>
-      </nav>
     </li>
   
 
@@ -730,7 +938,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../how-it-works/code-library/code-library/" class="md-nav__link">
+      <a href="../how-it-works/infra-as-code-library/infra-as-code-library/" class="md-nav__link">
         Overview
       </a>
     </li>
@@ -742,7 +950,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../how-it-works/code-library/code-library-forks/" class="md-nav__link">
+      <a href="../how-it-works/infra-as-code-library/infra-as-code-library-forks/" class="md-nav__link">
         Forks workflow
       </a>
     </li>
@@ -754,7 +962,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../how-it-works/code-library/code-library-specs/" class="md-nav__link">
+      <a href="../how-it-works/infra-as-code-library/infra-as-code-library-specs/" class="md-nav__link">
         Specifications
       </a>
     </li>
@@ -766,7 +974,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../how-it-works/code-library/modules-library-per-tech/" class="md-nav__link">
+      <a href="../how-it-works/infra-as-code-library/modules-library-per-tech/" class="md-nav__link">
         Modules per Tech
       </a>
     </li>
@@ -783,37 +991,10 @@
   
   
   
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-      
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_3" type="checkbox" id="__nav_3_3" >
-      
-      <label class="md-nav__link" for="__nav_3_3">
-        Leverage CLI
-        <span class="md-nav__icon md-icon"></span>
-      </label>
-      <nav class="md-nav" aria-label="Leverage CLI" data-md-level="2">
-        <label class="md-nav__title" for="__nav_3_3">
-          <span class="md-nav__icon md-icon"></span>
-          Leverage CLI
-        </label>
-        <ul class="md-nav__list" data-md-scrollfix>
-          
-            
-  
-  
-  
     <li class="md-nav__item">
       <a href="../how-it-works/leverage-cli/" class="md-nav__link">
-        Overview
+        Leverage CLI
       </a>
-    </li>
-  
-
-          
-        </ul>
-      </nav>
     </li>
   
 
@@ -829,11 +1010,32 @@
         <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_4" type="checkbox" id="__nav_3_4" >
       
       <label class="md-nav__link" for="__nav_3_4">
+        Features
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Features" data-md-level="2">
+        <label class="md-nav__title" for="__nav_3_4">
+          <span class="md-nav__icon md-icon"></span>
+          Features
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_4_1" type="checkbox" id="__nav_3_4_1" >
+      
+      <label class="md-nav__link" for="__nav_3_4_1">
         AWS Organization
         <span class="md-nav__icon md-icon"></span>
       </label>
-      <nav class="md-nav" aria-label="AWS Organization" data-md-level="2">
-        <label class="md-nav__title" for="__nav_3_4">
+      <nav class="md-nav" aria-label="AWS Organization" data-md-level="3">
+        <label class="md-nav__title" for="__nav_3_4_1">
           <span class="md-nav__icon md-icon"></span>
           AWS Organization
         </label>
@@ -889,14 +1091,14 @@
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_5" type="checkbox" id="__nav_3_5" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_4_2" type="checkbox" id="__nav_3_4_2" >
       
-      <label class="md-nav__link" for="__nav_3_5">
+      <label class="md-nav__link" for="__nav_3_4_2">
         Identities
         <span class="md-nav__icon md-icon"></span>
       </label>
-      <nav class="md-nav" aria-label="Identities" data-md-level="2">
-        <label class="md-nav__title" for="__nav_3_5">
+      <nav class="md-nav" aria-label="Identities" data-md-level="3">
+        <label class="md-nav__title" for="__nav_3_4_2">
           <span class="md-nav__icon md-icon"></span>
           Identities
         </label>
@@ -940,14 +1142,14 @@
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_6" type="checkbox" id="__nav_3_6" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_4_3" type="checkbox" id="__nav_3_4_3" >
       
-      <label class="md-nav__link" for="__nav_3_6">
+      <label class="md-nav__link" for="__nav_3_4_3">
         Security
         <span class="md-nav__icon md-icon"></span>
       </label>
-      <nav class="md-nav" aria-label="Security" data-md-level="2">
-        <label class="md-nav__title" for="__nav_3_6">
+      <nav class="md-nav" aria-label="Security" data-md-level="3">
+        <label class="md-nav__title" for="__nav_3_4_3">
           <span class="md-nav__icon md-icon"></span>
           Security
         </label>
@@ -1015,14 +1217,14 @@
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_7" type="checkbox" id="__nav_3_7" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_4_4" type="checkbox" id="__nav_3_4_4" >
       
-      <label class="md-nav__link" for="__nav_3_7">
+      <label class="md-nav__link" for="__nav_3_4_4">
         Network
         <span class="md-nav__icon md-icon"></span>
       </label>
-      <nav class="md-nav" aria-label="Network" data-md-level="2">
-        <label class="md-nav__title" for="__nav_3_7">
+      <nav class="md-nav" aria-label="Network" data-md-level="3">
+        <label class="md-nav__title" for="__nav_3_4_4">
           <span class="md-nav__icon md-icon"></span>
           Network
         </label>
@@ -1114,14 +1316,14 @@
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_8" type="checkbox" id="__nav_3_8" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_4_5" type="checkbox" id="__nav_3_4_5" >
       
-      <label class="md-nav__link" for="__nav_3_8">
+      <label class="md-nav__link" for="__nav_3_4_5">
         Compute
         <span class="md-nav__icon md-icon"></span>
       </label>
-      <nav class="md-nav" aria-label="Compute" data-md-level="2">
-        <label class="md-nav__title" for="__nav_3_8">
+      <nav class="md-nav" aria-label="Compute" data-md-level="3">
+        <label class="md-nav__title" for="__nav_3_4_5">
           <span class="md-nav__icon md-icon"></span>
           Compute
         </label>
@@ -1201,14 +1403,14 @@
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_9" type="checkbox" id="__nav_3_9" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_4_6" type="checkbox" id="__nav_3_4_6" >
       
-      <label class="md-nav__link" for="__nav_3_9">
+      <label class="md-nav__link" for="__nav_3_4_6">
         Database
         <span class="md-nav__icon md-icon"></span>
       </label>
-      <nav class="md-nav" aria-label="Database" data-md-level="2">
-        <label class="md-nav__title" for="__nav_3_9">
+      <nav class="md-nav" aria-label="Database" data-md-level="3">
+        <label class="md-nav__title" for="__nav_3_4_6">
           <span class="md-nav__icon md-icon"></span>
           Database
         </label>
@@ -1288,14 +1490,14 @@
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_12" type="checkbox" id="__nav_3_12" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_4_9" type="checkbox" id="__nav_3_4_9" >
       
-      <label class="md-nav__link" for="__nav_3_12">
+      <label class="md-nav__link" for="__nav_3_4_9">
         CI/CD
         <span class="md-nav__icon md-icon"></span>
       </label>
-      <nav class="md-nav" aria-label="CI/CD" data-md-level="2">
-        <label class="md-nav__title" for="__nav_3_12">
+      <nav class="md-nav" aria-label="CI/CD" data-md-level="3">
+        <label class="md-nav__title" for="__nav_3_4_9">
           <span class="md-nav__icon md-icon"></span>
           CI/CD
         </label>
@@ -1351,14 +1553,14 @@
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_14" type="checkbox" id="__nav_3_14" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_4_11" type="checkbox" id="__nav_3_4_11" >
       
-      <label class="md-nav__link" for="__nav_3_14">
+      <label class="md-nav__link" for="__nav_3_4_11">
         Monitoring
         <span class="md-nav__icon md-icon"></span>
       </label>
-      <nav class="md-nav" aria-label="Monitoring" data-md-level="2">
-        <label class="md-nav__title" for="__nav_3_14">
+      <nav class="md-nav" aria-label="Monitoring" data-md-level="3">
+        <label class="md-nav__title" for="__nav_3_4_11">
           <span class="md-nav__icon md-icon"></span>
           Monitoring
         </label>
@@ -1462,14 +1664,14 @@
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_16" type="checkbox" id="__nav_3_16" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_4_13" type="checkbox" id="__nav_3_4_13" >
       
-      <label class="md-nav__link" for="__nav_3_16">
+      <label class="md-nav__link" for="__nav_3_4_13">
         Reliability
         <span class="md-nav__icon md-icon"></span>
       </label>
-      <nav class="md-nav" aria-label="Reliability" data-md-level="2">
-        <label class="md-nav__title" for="__nav_3_16">
+      <nav class="md-nav" aria-label="Reliability" data-md-level="3">
+        <label class="md-nav__title" for="__nav_3_4_13">
           <span class="md-nav__icon md-icon"></span>
           Reliability
         </label>
@@ -1537,6 +1739,12 @@
       <a href="../how-it-works/costs/costs/" class="md-nav__link">
         Costs
       </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
     </li>
   
 
@@ -1722,10 +1930,163 @@
   
   
   
-    <li class="md-nav__item">
-      <a href="../user-guide/base-workflow/leverage-cli/" class="md-nav__link">
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_3_1" type="checkbox" id="__nav_4_3_1" >
+      
+      <label class="md-nav__link" for="__nav_4_3_1">
         Leverage CLI
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Leverage CLI" data-md-level="3">
+        <label class="md-nav__title" for="__nav_4_3_1">
+          <span class="md-nav__icon md-icon"></span>
+          Leverage CLI
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../user-guide/base-workflow/leverage-cli/install-leverage-cli/" class="md-nav__link">
+        Install Leverage CLI
       </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_3_1_2" type="checkbox" id="__nav_4_3_1_2" >
+      
+      <label class="md-nav__link" for="__nav_4_3_1_2">
+        Reference
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Reference" data-md-level="4">
+        <label class="md-nav__title" for="__nav_4_3_1_2">
+          <span class="md-nav__icon md-icon"></span>
+          Reference
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../user-guide/base-workflow/leverage-cli/reference/basic-features/" class="md-nav__link">
+        Basic features
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_3_1_2_2" type="checkbox" id="__nav_4_3_1_2_2" >
+      
+      <label class="md-nav__link" for="__nav_4_3_1_2_2">
+        Commands
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Commands" data-md-level="5">
+        <label class="md-nav__title" for="__nav_4_3_1_2_2">
+          <span class="md-nav__icon md-icon"></span>
+          Commands
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../user-guide/base-workflow/leverage-cli/reference/project/" class="md-nav__link">
+        project
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../user-guide/base-workflow/leverage-cli/reference/credentials/" class="md-nav__link">
+        credentials
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../user-guide/base-workflow/leverage-cli/reference/terraform/" class="md-nav__link">
+        terraform
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../user-guide/base-workflow/leverage-cli/reference/run/" class="md-nav__link">
+        run
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../user-guide/base-workflow/leverage-cli/tasks/" class="md-nav__link">
+        Custom tasks
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
     </li>
   
 
@@ -1810,11 +2171,32 @@
         <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_4" type="checkbox" id="__nav_4_4" >
       
       <label class="md-nav__link" for="__nav_4_4">
+        Features
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Features" data-md-level="2">
+        <label class="md-nav__title" for="__nav_4_4">
+          <span class="md-nav__icon md-icon"></span>
+          Features
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_4_1" type="checkbox" id="__nav_4_4_1" >
+      
+      <label class="md-nav__link" for="__nav_4_4_1">
         AWS Organization
         <span class="md-nav__icon md-icon"></span>
       </label>
-      <nav class="md-nav" aria-label="AWS Organization" data-md-level="2">
-        <label class="md-nav__title" for="__nav_4_4">
+      <nav class="md-nav" aria-label="AWS Organization" data-md-level="3">
+        <label class="md-nav__title" for="__nav_4_4_1">
           <span class="md-nav__icon md-icon"></span>
           AWS Organization
         </label>
@@ -1858,14 +2240,14 @@
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_5" type="checkbox" id="__nav_4_5" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_4_2" type="checkbox" id="__nav_4_4_2" >
       
-      <label class="md-nav__link" for="__nav_4_5">
+      <label class="md-nav__link" for="__nav_4_4_2">
         Identities
         <span class="md-nav__icon md-icon"></span>
       </label>
-      <nav class="md-nav" aria-label="Identities" data-md-level="2">
-        <label class="md-nav__title" for="__nav_4_5">
+      <nav class="md-nav" aria-label="Identities" data-md-level="3">
+        <label class="md-nav__title" for="__nav_4_4_2">
           <span class="md-nav__icon md-icon"></span>
           Identities
         </label>
@@ -1933,14 +2315,14 @@
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_6" type="checkbox" id="__nav_4_6" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_4_3" type="checkbox" id="__nav_4_4_3" >
       
-      <label class="md-nav__link" for="__nav_4_6">
+      <label class="md-nav__link" for="__nav_4_4_3">
         Security
         <span class="md-nav__icon md-icon"></span>
       </label>
-      <nav class="md-nav" aria-label="Security" data-md-level="2">
-        <label class="md-nav__title" for="__nav_4_6">
+      <nav class="md-nav" aria-label="Security" data-md-level="3">
+        <label class="md-nav__title" for="__nav_4_4_3">
           <span class="md-nav__icon md-icon"></span>
           Security
         </label>
@@ -1984,14 +2366,14 @@
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_7" type="checkbox" id="__nav_4_7" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_4_4" type="checkbox" id="__nav_4_4_4" >
       
-      <label class="md-nav__link" for="__nav_4_7">
+      <label class="md-nav__link" for="__nav_4_4_4">
         Network
         <span class="md-nav__icon md-icon"></span>
       </label>
-      <nav class="md-nav" aria-label="Network" data-md-level="2">
-        <label class="md-nav__title" for="__nav_4_7">
+      <nav class="md-nav" aria-label="Network" data-md-level="3">
+        <label class="md-nav__title" for="__nav_4_4_4">
           <span class="md-nav__icon md-icon"></span>
           Network
         </label>
@@ -2047,14 +2429,14 @@
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_8" type="checkbox" id="__nav_4_8" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_4_5" type="checkbox" id="__nav_4_4_5" >
       
-      <label class="md-nav__link" for="__nav_4_8">
+      <label class="md-nav__link" for="__nav_4_4_5">
         Compute
         <span class="md-nav__icon md-icon"></span>
       </label>
-      <nav class="md-nav" aria-label="Compute" data-md-level="2">
-        <label class="md-nav__title" for="__nav_4_8">
+      <nav class="md-nav" aria-label="Compute" data-md-level="3">
+        <label class="md-nav__title" for="__nav_4_4_5">
           <span class="md-nav__icon md-icon"></span>
           Compute
         </label>
@@ -2122,14 +2504,14 @@
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_9" type="checkbox" id="__nav_4_9" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_4_6" type="checkbox" id="__nav_4_4_6" >
       
-      <label class="md-nav__link" for="__nav_4_9">
+      <label class="md-nav__link" for="__nav_4_4_6">
         Database
         <span class="md-nav__icon md-icon"></span>
       </label>
-      <nav class="md-nav" aria-label="Database" data-md-level="2">
-        <label class="md-nav__title" for="__nav_4_9">
+      <nav class="md-nav" aria-label="Database" data-md-level="3">
+        <label class="md-nav__title" for="__nav_4_4_6">
           <span class="md-nav__icon md-icon"></span>
           Database
         </label>
@@ -2233,14 +2615,14 @@
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_14" type="checkbox" id="__nav_4_14" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_4_11" type="checkbox" id="__nav_4_4_11" >
       
-      <label class="md-nav__link" for="__nav_4_14">
+      <label class="md-nav__link" for="__nav_4_4_11">
         Monitoring
         <span class="md-nav__icon md-icon"></span>
       </label>
-      <nav class="md-nav" aria-label="Monitoring" data-md-level="2">
-        <label class="md-nav__title" for="__nav_4_14">
+      <nav class="md-nav" aria-label="Monitoring" data-md-level="3">
+        <label class="md-nav__title" for="__nav_4_4_11">
           <span class="md-nav__icon md-icon"></span>
           Monitoring
         </label>
@@ -2332,14 +2714,14 @@
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_16" type="checkbox" id="__nav_4_16" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_4_13" type="checkbox" id="__nav_4_4_13" >
       
-      <label class="md-nav__link" for="__nav_4_16">
+      <label class="md-nav__link" for="__nav_4_4_13">
         Reliability
         <span class="md-nav__icon md-icon"></span>
       </label>
-      <nav class="md-nav" aria-label="Reliability" data-md-level="2">
-        <label class="md-nav__title" for="__nav_4_16">
+      <nav class="md-nav" aria-label="Reliability" data-md-level="3">
+        <label class="md-nav__title" for="__nav_4_4_13">
           <span class="md-nav__icon md-icon"></span>
           Reliability
         </label>
@@ -2404,6 +2786,12 @@
     </li>
   
 
+          
+        </ul>
+      </nav>
+    </li>
+  
+
     
       
       
@@ -2419,116 +2807,11 @@
         <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5" type="checkbox" id="__nav_5" >
       
       <label class="md-nav__link" for="__nav_5">
-        Examples
-        <span class="md-nav__icon md-icon"></span>
-      </label>
-      <nav class="md-nav" aria-label="Examples" data-md-level="1">
-        <label class="md-nav__title" for="__nav_5">
-          <span class="md-nav__icon md-icon"></span>
-          Examples
-        </label>
-        <ul class="md-nav__list" data-md-scrollfix>
-          
-            
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../examples/" class="md-nav__link">
-        Introduction
-      </a>
-    </li>
-  
-
-          
-            
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../examples/PREREQUISITES/" class="md-nav__link">
-        Prerequisites
-      </a>
-    </li>
-  
-
-          
-            
-  
-  
-  
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-      
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5_3" type="checkbox" id="__nav_5_3" >
-      
-      <label class="md-nav__link" for="__nav_5_3">
-        AWS
-        <span class="md-nav__icon md-icon"></span>
-      </label>
-      <nav class="md-nav" aria-label="AWS" data-md-level="2">
-        <label class="md-nav__title" for="__nav_5_3">
-          <span class="md-nav__icon md-icon"></span>
-          AWS
-        </label>
-        <ul class="md-nav__list" data-md-scrollfix>
-          
-            
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../examples/organization/" class="md-nav__link">
-        Organization
-      </a>
-    </li>
-  
-
-          
-            
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../examples/k8s-kops/" class="md-nav__link">
-        K8s Kops
-      </a>
-    </li>
-  
-
-          
-        </ul>
-      </nav>
-    </li>
-  
-
-          
-        </ul>
-      </nav>
-    </li>
-  
-
-    
-      
-      
-      
-
-  
-  
-  
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-      
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6" type="checkbox" id="__nav_6" >
-      
-      <label class="md-nav__link" for="__nav_6">
         Work with us
         <span class="md-nav__icon md-icon"></span>
       </label>
       <nav class="md-nav" aria-label="Work with us" data-md-level="1">
-        <label class="md-nav__title" for="__nav_6">
+        <label class="md-nav__title" for="__nav_5">
           <span class="md-nav__icon md-icon"></span>
           Work with us
         </label>
@@ -2554,14 +2837,14 @@
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6_2" type="checkbox" id="__nav_6_2" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5_2" type="checkbox" id="__nav_5_2" >
       
-      <label class="md-nav__link" for="__nav_6_2">
+      <label class="md-nav__link" for="__nav_5_2">
         Support
         <span class="md-nav__icon md-icon"></span>
       </label>
       <nav class="md-nav" aria-label="Support" data-md-level="2">
-        <label class="md-nav__title" for="__nav_6_2">
+        <label class="md-nav__title" for="__nav_5_2">
           <span class="md-nav__icon md-icon"></span>
           Support
         </label>
@@ -2587,14 +2870,14 @@
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6_2_2" type="checkbox" id="__nav_6_2_2" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5_2_2" type="checkbox" id="__nav_5_2_2" >
       
-      <label class="md-nav__link" for="__nav_6_2_2">
+      <label class="md-nav__link" for="__nav_5_2_2">
         Updates
         <span class="md-nav__icon md-icon"></span>
       </label>
       <nav class="md-nav" aria-label="Updates" data-md-level="3">
-        <label class="md-nav__title" for="__nav_6_2_2">
+        <label class="md-nav__title" for="__nav_5_2_2">
           <span class="md-nav__icon md-icon"></span>
           Updates
         </label>
@@ -2668,14 +2951,14 @@
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6_6" type="checkbox" id="__nav_6_6" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5_6" type="checkbox" id="__nav_5_6" >
       
-      <label class="md-nav__link" for="__nav_6_6">
+      <label class="md-nav__link" for="__nav_5_6">
         Roadmap
         <span class="md-nav__icon md-icon"></span>
       </label>
       <nav class="md-nav" aria-label="Roadmap" data-md-level="2">
-        <label class="md-nav__title" for="__nav_6_6">
+        <label class="md-nav__title" for="__nav_5_6">
           <span class="md-nav__icon md-icon"></span>
           Roadmap
         </label>
@@ -2689,14 +2972,14 @@
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6_6_1" type="checkbox" id="__nav_6_6_1" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5_6_1" type="checkbox" id="__nav_5_6_1" >
       
-      <label class="md-nav__link" for="__nav_6_6_1">
+      <label class="md-nav__link" for="__nav_5_6_1">
         Reference Architecture
         <span class="md-nav__icon md-icon"></span>
       </label>
       <nav class="md-nav" aria-label="Reference Architecture" data-md-level="3">
-        <label class="md-nav__title" for="__nav_6_6_1">
+        <label class="md-nav__title" for="__nav_5_6_1">
           <span class="md-nav__icon md-icon"></span>
           Reference Architecture
         </label>
@@ -2872,6 +3155,8 @@
             
             
               
+                
+              
               <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
                 <div class="md-sidebar__scrollwrap">
                   <div class="md-sidebar__inner">
@@ -2890,8 +3175,266 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#overview" class="md-nav__link">
-    Overview
+  <a href="#preparation-and-initial-considerations" class="md-nav__link">
+    Preparation and initial considerations
+  </a>
+  
+    <nav class="md-nav" aria-label="Preparation and initial considerations">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#create-an-aws-account" class="md-nav__link">
+    Create an AWS account
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#install-leverage-cli" class="md-nav__link">
+    Install Leverage CLI
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#create-the-projects-directory" class="md-nav__link">
+    Create the project's directory
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#project-setup" class="md-nav__link">
+    Project setup
+  </a>
+  
+    <nav class="md-nav" aria-label="Project setup">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#initialize-the-project" class="md-nav__link">
+    Initialize the project
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#set-up-bootstrap-credentials" class="md-nav__link">
+    Set up bootstrap credentials
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#create-the-configured-project" class="md-nav__link">
+    Create the configured project
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#architecture-orchestration" class="md-nav__link">
+    Architecture orchestration
+  </a>
+  
+    <nav class="md-nav" aria-label="Architecture orchestration">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#management-account" class="md-nav__link">
+    Management account
+  </a>
+  
+    <nav class="md-nav" aria-label="Management account">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#terraform-backend-layer" class="md-nav__link">
+    Terraform backend layer
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#identities-layer" class="md-nav__link">
+    Identities layer
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#organizations-layer" class="md-nav__link">
+    Organizations layer
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#security-layer" class="md-nav__link">
+    Security layer
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#security-account" class="md-nav__link">
+    Security account
+  </a>
+  
+    <nav class="md-nav" aria-label="Security account">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#terraform-backend-layer_1" class="md-nav__link">
+    Terraform backend layer
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#identities-layer_1" class="md-nav__link">
+    Identities layer
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#security-layer_1" class="md-nav__link">
+    Security layer
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#shared-account" class="md-nav__link">
+    Shared account
+  </a>
+  
+    <nav class="md-nav" aria-label="Shared account">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#terraform-backend-layer_2" class="md-nav__link">
+    Terraform backend layer
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#identities-layer_2" class="md-nav__link">
+    Identities layer
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#security-layer_2" class="md-nav__link">
+    Security layer
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#network-layer" class="md-nav__link">
+    Network layer
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#post-deployment-steps" class="md-nav__link">
+    Post-deployment steps
+  </a>
+  
+    <nav class="md-nav" aria-label="Post-deployment steps">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#get-the-temporary-password-to-access-aws-console" class="md-nav__link">
+    Get the temporary password to access AWS console
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#configure-the-new-credentials" class="md-nav__link">
+    Configure the new credentials
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#enable-mfa" class="md-nav__link">
+    Enable MFA
+  </a>
+  
+    <nav class="md-nav" aria-label="Enable MFA">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#management-user" class="md-nav__link">
+    Management user
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#security-user" class="md-nav__link">
+    Security user
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#end-result" class="md-nav__link">
+    End result
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#next-steps" class="md-nav__link">
+    Next steps
   </a>
   
 </li>
@@ -2916,10 +3459,580 @@
                 <p><img alt="binbash-logo" src="../assets/images/logos/binbash.png" style="width:250px" title="Binbash" />
 <img alt="binbash-leverage-tf" src="../assets/images/logos/binbash-leverage-terraform.png#right" style="width:130px" title="Leverage" /></p>
 <h1 id="first-steps">First Steps<a class="headerlink" href="#first-steps" title="Permanent link"> ¶</a></h1>
-<p>The objective of this sections is to explain the <a href="../how-it-works/"><strong>Binbash Leverage Reference AWS Cloud Solutions Architecture</strong></a>
-first steps.</p>
-<h2 id="overview">Overview<a class="headerlink" href="#overview" title="Permanent link"> ¶</a></h2>
-<p>TODO</p>
+<p>The objective of this guide is to introduce the user to our <a href="../how-it-works/"><strong>Binbash Leverage Reference Architecture for AWS</strong></a> workflow through the complete deployment of a basic landing zone configuration.</p>
+<p>We'll walk through all steps involved, from initial considerations, to post deployment access credentials configuration, ending up with a fully usable Leverage Reference Architecture deployment. The user will gain an understanding of the structure of a Leverage project as well as familiarity with the tooling used to manage it.</p>
+<h2 id="preparation-and-initial-considerations">Preparation and initial considerations<a class="headerlink" href="#preparation-and-initial-considerations" title="Permanent link"> ¶</a></h2>
+<hr />
+<p>For this guide's purposes we'll be in charge of creating and deploying the infrastructure for an <em>Example</em> product.</p>
+<h3 id="create-an-aws-account">Create an AWS account<a class="headerlink" href="#create-an-aws-account" title="Permanent link"> ¶</a></h3>
+<p>First and foremost we need to <a href="https://aws.amazon.com/premiumsupport/knowledge-center/create-and-activate-aws-account/">create an AWS account</a> for our project's deployment.</p>
+<p>This will be the management (root) account for our project, so we'll call it <code>example-management</code> and register it under <code>example-aws@example.com</code>. To protect this account, <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_root-user.html#id_root-user_manage_mfa">enabling Multi Factor Authentication</a> is <strong>highly</strong> encouraged, also, reviewing the <a href="https://console.aws.amazon.com/billing/home?#/account">account's billing setup</a> is always a good idea before proceeding.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The reason behind de name choice for the account will become apparent further down the line.</p>
+</div>
+<p>To be able to interact with the AWS environment we will need a special IAM user. For this, we'll log in the <a href="https://console.aws.amazon.com/">AWS Web Console</a> with our recently created account and we'll <a href="https://docs.aws.amazon.com/mediapackage/latest/ug/setting-up-create-iam-user.html">create the <code>mgmt-org-admin</code> IAM user</a> giving it admin privileges by attaching the <code>AdministratorAccess</code> policy to it.</p>
+<p>Lastly we'll generate programmatic access keys for the <code>mgmt-org-admin</code> user, and then either copy them to a secure location or download the <code>.csv</code> file that AWS generates for us.</p>
+<div class="admonition info">
+<p class="admonition-title">More information regarding the AWS account creation and naming conventions used: <a href="../user-guide/organization/organization-init#user-guide"><img alt="📚" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f4da.svg" title=":books:" /> Organization account setup guide</a>.</p>
+</div>
+<h3 id="install-leverage-cli">Install <a href="../how-it-works/leverage-cli/">Leverage CLI</a><a class="headerlink" href="#install-leverage-cli" title="Permanent link"> ¶</a></h3>
+<p>Now, to manage our Leverage project and operate the whole Leverage stack we'll need to install Leverage CLI, on a shell we run:</p>
+<div class="highlight"><pre><span></span><code>pip3 install leverage
+</code></pre></div>
+<div class="admonition info">
+<p class="admonition-title">More information regarding <a href="../user-guide/base-workflow/leverage-cli/install-leverage-cli/">Leverage CLI installation</a> and <a href="../user-guide/base-workflow/leverage-cli/install-leverage-cli#shell-completion">shell autocompletion</a>.</p>
+</div>
+<h3 id="create-the-projects-directory">Create the project's directory<a class="headerlink" href="#create-the-projects-directory" title="Permanent link"> ¶</a></h3>
+<p>Each Leverage project must be in its own working directory. So, we create one named <code>example</code> for it.</p>
+<div class="highlight"><pre><span></span><code>mkdir example
+<span class="nb">cd</span> example
+</code></pre></div>
+<h2 id="project-setup">Project setup<a class="headerlink" href="#project-setup" title="Permanent link"> ¶</a></h2>
+<hr />
+<p>Up until now we don't have any infrastructure to orchestrate in our project, it is empty. Let's take care of that.</p>
+<h3 id="initialize-the-project">Initialize the project<a class="headerlink" href="#initialize-the-project" title="Permanent link"> ¶</a></h3>
+<p>When setting up a Leverage project we first need to initialize the directory where it will reside.</p>
+<div class="highlight"><pre><span></span><code>leverage project init
+</code></pre></div>
+<!--
+NOTE: Custom coloring and formatting in a code block can be achieved by using pure html instead of relying in the triple backtick notation.
+e.g:
+<pre><code>This is normal text.
+<b>This is bold text.</b>
+<i><span style="color:blue;">This is blue italic text.</span></i>
+</code></pre>
+-->
+<div class="highlight"><pre><span></span><code>[09:30:54.027] INFO     No .leverage directory found in user&#39;s home. Creating.
+[09:30:54.030] INFO     No project template found. Cloning template.
+[09:30:54.978] INFO     Finished cloning template.
+[09:30:54.981] INFO     Initializing git repository in project directory.
+[09:30:54.990] INFO     No project configuration file found. Creating an example config.
+</code></pre></div>
+<div class="admonition info">
+<p class="admonition-title">More information on <a href="../user-guide/base-workflow/leverage-cli/reference/project#init"><code>project init</code></a></p>
+</div>
+<p>Initializing a project creates the global configurations directory for Leverage CLI and downloads the templates used to generate the project's files structure. It then initializes a <code>git</code> repository in the working directory, and creates a file called <code>project.yaml</code>. Leverage projects are by design repositories to leverage some of the capabilities of <code>git</code> and because it is assumed that the code in the project will be versioned.</p>
+<p>Once the project is initialized we need to fill in the correct information in the configuration file. That is to say, the project name, a two-letter-long short version of the project name, users that will be registered, groups and so on.</p>
+<p>After filling in the data we will end up with a configuration file similar to this one:</p>
+<details class="note" open="open"><summary><code>project.yaml</code> for <em>Example</em> project</summary><div class="highlight"><pre><span></span><code><span class="nt">meta</span><span class="p">:</span>
+  <span class="nt">enable_mfa</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">false</span>
+
+<span class="nt">project_name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">example</span>
+<span class="nt">short_name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">ex</span>
+
+<span class="nt">primary_region</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">us-east-1</span>
+<span class="nt">secondary_region</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">us-west-2</span>
+
+<span class="nt">organization</span><span class="p">:</span>
+  <span class="nt">accounts</span><span class="p">:</span>
+  <span class="p p-Indicator">-</span> <span class="nt">name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">management</span>
+    <span class="nt">email</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">example-aws@example.com</span>
+  <span class="p p-Indicator">-</span> <span class="nt">name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">security</span>
+    <span class="nt">email</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">example-aws+security@example.com</span>
+  <span class="p p-Indicator">-</span> <span class="nt">name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">shared</span>
+    <span class="nt">email</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">example-aws+shared@example.com</span>
+  <span class="nt">organizational_units</span><span class="p">:</span>
+  <span class="p p-Indicator">-</span> <span class="nt">name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">security</span>
+    <span class="nt">policy</span><span class="p">:</span>
+    <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">aws_organizations_policy.default</span>
+    <span class="nt">accounts</span><span class="p">:</span>
+    <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">security</span>
+  <span class="p p-Indicator">-</span> <span class="nt">name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">shared</span>
+    <span class="nt">policy</span><span class="p">:</span>
+    <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">aws_organizations_policy.standard</span>
+    <span class="nt">accounts</span><span class="p">:</span>
+    <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">shared</span>
+
+<span class="nt">accounts</span><span class="p">:</span>
+  <span class="nt">management</span><span class="p">:</span>
+    <span class="nt">groups</span><span class="p">:</span>
+    <span class="p p-Indicator">-</span> <span class="nt">name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">admins</span>
+      <span class="nt">users</span><span class="p">:</span>
+      <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">kit.walker</span>
+      <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">natasha.romanoff</span>
+      <span class="nt">policies</span><span class="p">:</span>
+      <span class="p p-Indicator">-</span> <span class="s">&#39;&quot;arn:aws:iam::aws:policy/AdministratorAccess&quot;&#39;</span>
+  <span class="nt">security</span><span class="p">:</span>
+    <span class="nt">groups</span><span class="p">:</span>
+    <span class="p p-Indicator">-</span> <span class="nt">name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">admins</span>
+      <span class="nt">users</span><span class="p">:</span>
+      <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">natasha.romanoff</span>
+    <span class="p p-Indicator">-</span> <span class="nt">name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">auditors</span>
+      <span class="nt">users</span><span class="p">:</span>
+      <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">kit.walker</span>
+      <span class="nt">policies</span><span class="p">:</span>
+      <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">aws_iam_policy.assume_auditor_role.arn</span>
+    <span class="p p-Indicator">-</span> <span class="nt">name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">devops</span>
+      <span class="nt">users</span><span class="p">:</span>
+      <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">natasha.romanoff</span>
+      <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">edward.stark</span>
+      <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">john.wick</span>
+      <span class="nt">policies</span><span class="p">:</span>
+      <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">aws_iam_policy.assume_devops_role.arn</span>
+  <span class="nt">shared</span><span class="p">:</span>
+    <span class="nt">networks</span><span class="p">:</span>
+    <span class="p p-Indicator">-</span> <span class="nt">cidr_block</span><span class="p">:</span> <span class="s">&quot;172.18.0.0/20&quot;</span>
+      <span class="nt">availability_zones</span><span class="p">:</span> <span class="p p-Indicator">[</span><span class="nv">a</span><span class="p p-Indicator">,</span><span class="nv">b</span><span class="p p-Indicator">]</span>
+      <span class="nt">private_subnets</span><span class="p">:</span>
+      <span class="p p-Indicator">-</span> <span class="s">&quot;172.18.0.0/23&quot;</span>
+      <span class="p p-Indicator">-</span> <span class="s">&quot;172.18.2.0/23&quot;</span>
+      <span class="nt">public_subnets</span><span class="p">:</span>
+      <span class="p p-Indicator">-</span> <span class="s">&quot;172.18.6.0/23&quot;</span>
+      <span class="p p-Indicator">-</span> <span class="s">&quot;172.18.8.0/23&quot;</span>
+</code></pre></div>
+</details>
+<h3 id="set-up-bootstrap-credentials">Set up bootstrap credentials<a class="headerlink" href="#set-up-bootstrap-credentials" title="Permanent link"> ¶</a></h3>
+<p>To be able to interact with our AWS environment we first need to configure the credentials to enable AWS CLI to do so. Using the keys obtained in the previous <a href="#create-an-aws-account">account creation step</a> we run:</p>
+<p><div class="highlight"><pre><span></span><code>leverage credentials create
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>[09:37:17.530] INFO     Loading configuration file.
+[09:37:18.477] INFO     Configuring default profile information.
+[09:37:20.424] INFO     Default profile configured in: /home/user/.aws/ex/config
+[09:37:20.426] INFO     Configuring bootstrap credentials.
+&gt; Select the means by which you&#39;ll provide the programmatic keys: Manually
+&gt; Key: AKIAU1OF18IXH2EXAMPLE
+&gt; Secret: ****************************************
+[09:37:51.638] INFO     Bootstrap credentials configured in: /home/user/.aws/ex/credentials
+[09:37:53.497] INFO     Fetching management account id.
+[09:37:55.344] INFO     Updating project configuration file.
+[09:37:55.351] INFO     Finished setting up bootstrap credentials.
+</code></pre></div></p>
+<div class="admonition info">
+<p class="admonition-title">More information on <a href="../user-guide/base-workflow/leverage-cli/reference/credentials#create"><code>credentials create</code></a></p>
+</div>
+<p>And provide the key and secret when prompted. We could also provide a path to the access keys file with the <code>--file</code> option in case we would like to avoid the interactive bits.</p>
+<p>During the credentials setup, the AWS account id is filled in for us in the project configuration file.</p>
+<h3 id="create-the-configured-project">Create the configured project<a class="headerlink" href="#create-the-configured-project" title="Permanent link"> ¶</a></h3>
+<p>Now we will finally create all the infrastructure definition in our project, for that we run:</p>
+<p><div class="highlight"><pre><span></span><code>leverage project create
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>[09:40:54.934] INFO     Loading configuration file.
+[09:40:54.950] INFO     Creating project directory structure.
+[09:40:54.957] INFO     Finished creating directory structure.
+[09:40:54.958] INFO     Setting up common base files.
+[09:40:54.964] INFO     Account: Setting up management.
+[09:40:54.965] INFO             Layer: Setting up config.
+[09:40:54.968] INFO             Layer: Setting up base-tf-backend.
+[09:40:54.969] INFO             Layer: Setting up base-identities.
+[09:40:54.984] INFO             Layer: Setting up organizations.
+[09:40:54.989] INFO             Layer: Setting up security-base.
+[09:40:54.990] INFO     Account: Setting up security.
+[09:40:54.991] INFO             Layer: Setting up config.
+[09:40:54.994] INFO             Layer: Setting up base-tf-backend.
+[09:40:54.995] INFO             Layer: Setting up base-identities.
+[09:40:55.001] INFO             Layer: Setting up security-base.
+[09:40:55.002] INFO     Account: Setting up shared.
+[09:40:55.003] INFO             Layer: Setting up config.
+[09:40:55.006] INFO             Layer: Setting up base-tf-backend.
+[09:40:55.007] INFO             Layer: Setting up base-identities.
+[09:40:55.008] INFO             Layer: Setting up security-base.
+[09:40:55.009] INFO             Layer: Setting up base-network.
+[09:40:55.013] INFO     Project configuration finished.
+               INFO     Reformatting terraform configuration to the standard style.
+[09:40:55.743] INFO     Finished setting up project.
+</code></pre></div></p>
+<div class="admonition info">
+<p class="admonition-title">More information on <a href="../user-guide/base-workflow/leverage-cli/reference/project#create"><code>project create</code></a></p>
+</div>
+<p>In this step, the directory structure for the project and all definition files are created using the information from the <code>project.yaml</code> file and checked for correct formatting.</p>
+<p>We end up with something that looks like this:</p>
+<details class="note" open="open"><summary><em>Example</em> project file structure</summary><p><!--- TODO: Prettyfy --->
+<div class="highlight"><pre><span></span><code>example
+├── build.env
+├── config
+│   └── common.tfvars
+├── management
+│   ├── base-identities
+│   │   ├── account.tf
+│   │   ├── config.tf
+│   │   ├── groups.tf
+│   │   ├── keys
+│   │   ├── locals.tf
+│   │   ├── outputs.tf
+│   │   ├── roles.tf
+│   │   ├── users.tf
+│   │   └── variables.tf
+│   ├── base-tf-backend
+│   │   ├── config.tf
+│   │   ├── locals.tf
+│   │   ├── main.tf
+│   │   └── variables.tf
+│   ├── config
+│   │   ├── account.tfvars
+│   │   └── backend.tfvars
+│   ├── organizations
+│   │   ├── accounts.tf
+│   │   ├── config.tf
+│   │   ├── delegated_administrator.tf
+│   │   ├── locals.tf
+│   │   ├── organizational_units.tf
+│   │   ├── organization.tf
+│   │   ├── policies_scp.tf
+│   │   ├── policy_scp_attachments.tf
+│   │   ├── service_linked_roles.tf
+│   │   └── variables.tf
+│   └── security-base
+│       ├── account.tf
+│       ├── config.tf
+│       └── variables.tf
+├── project.yaml
+├── security
+│   ├── base-identities
+│   │   ├── account.tf
+│   │   ├── config.tf
+│   │   ├── groups_policies.tf
+│   │   ├── groups.tf
+│   │   ├── keys
+│   │   ├── locals.tf
+│   │   ├── outputs.tf
+│   │   ├── role_policies.tf
+│   │   ├── roles.tf
+│   │   ├── users.tf
+│   │   └── variables.tf
+│   ├── base-tf-backend
+│   │   ├── config.tf
+│   │   ├── locals.tf
+│   │   ├── main.tf
+│   │   └── variables.tf
+│   ├── config
+│   │   ├── account.tfvars
+│   │   └── backend.tfvars
+│   └── security-base
+│       ├── account.tf
+│       ├── config.tf
+│       ├── iam_access_analizer.tf
+│       ├── locals.tf
+│       └── variables.tf
+└── shared
+    ├── base-identities
+    │   ├── account.tf
+    │   ├── config.tf
+    │   ├── locals.tf
+    │   ├── policies.tf
+    │   ├── roles.tf
+    │   ├── service_linked_roles.tf
+    │   └── variables.tf
+    ├── base-network
+    │   ├── account.tf
+    │   ├── config.tf
+    │   ├── locals.tf
+    │   ├── network.tf
+    │   ├── network_vpc_flow_logs.tf
+    │   ├── outputs.tf
+    │   └── variables.tf
+    ├── base-tf-backend
+    │   ├── config.tf
+    │   ├── locals.tf
+    │   ├── main.tf
+    │   └── variables.tf
+    ├── config
+    │   ├── account.tfvars
+    │   └── backend.tfvars
+    ├─── security-base
+    |   ├── account.tf
+    |   ├── config.tf
+    └── variables.tf
+</code></pre></div></p>
+</details>
+<p>A structure comprised mainly of directories for each account containing all the definitions for each of the accounts respective layers.</p>
+<div class="admonition info">
+<p class="admonition-title"><a href="../how-it-works/organization/accounts/"><img alt="📚" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f4da.svg" title=":books:" /> Accounts description and purpose.</a></p>
+</div>
+<h2 id="architecture-orchestration">Architecture orchestration<a class="headerlink" href="#architecture-orchestration" title="Permanent link"> ¶</a></h2>
+<hr />
+<p>Finally we reach the point in which we'll get to actually create the infrastructure in our AWS environment. Some accounts and layers rely on other accounts/layers being already deployed, creating dependencies between each other and establishing an order in which all layers should be deployed.</p>
+<p>The correct deployment order is as shown below.</p>
+<div class="admonition success">
+<p class="admonition-title">Basic Landing Zone AWS Expenses</p>
+<p>By default this AWS Reference Architecture configuration should not incur in any costs.</p>
+</div>
+<h3 id="management-account">Management account<a class="headerlink" href="#management-account" title="Permanent link"> ¶</a></h3>
+<hr />
+<p>We begin with the <code>management</code> account.
+<div class="highlight"><pre><span></span><code><span class="nb">cd</span> management
+</code></pre></div></p>
+<h4 id="terraform-backend-layer">Terraform backend layer<a class="headerlink" href="#terraform-backend-layer" title="Permanent link"> ¶</a></h4>
+<p>We move into the <code>base-tf-backend</code> directory and run:</p>
+<div class="highlight"><pre><span></span><code>leverage terraform init
+leverage terraform apply
+</code></pre></div>
+<div class="admonition info">
+<p class="admonition-title">More information on <a href="../user-guide/base-workflow/leverage-cli/reference/terraform#init"><code>terraform init</code></a> and <a href="../user-guide/base-workflow/leverage-cli/reference/terraform#apply"><code>terraform apply</code></a></p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The <code>apply</code> command may result in an error similar to:</p>
+<div class="highlight"><pre><span></span><code>Error: error creating public access block policy for S3 bucket (ex-security-terraform-backend): 
+OperationAborted: A conflicting conditional operation is currently in progress against this resource. 
+Please try again.
+</code></pre></div>
+<p>If this happens, please re-run the command.</p>
+</div>
+<p>Now, to push the local <code>.tfstate</code> to the bucket, we uncomment the <code>backend</code> section for the <code>terraform</code> configuration in <code>management/base-tf-backend/config.tf</code></p>
+<div class="highlight"><pre><span></span><code>  <span class="kr">backend</span> <span class="nv">&quot;s3&quot;</span> <span class="p">{</span>
+    <span class="na">key</span> <span class="o">=</span> <span class="s2">&quot;management/tf-backend/terraform.tfstate&quot;</span>
+  <span class="p">}</span>
+</code></pre></div>
+<p>And run once more:</p>
+<div class="highlight"><pre><span></span><code>leverage terraform init
+</code></pre></div>
+<p>Now we can safely remove the <code>terraform.tfstate</code> and <code>terraform.tfstate.backup</code> files created during the <code>apply</code> step.</p>
+<h4 id="identities-layer">Identities layer<a class="headerlink" href="#identities-layer" title="Permanent link"> ¶</a></h4>
+<p>Now we move into the <code>base-identities</code> directory:</p>
+<div class="highlight"><pre><span></span><code>leverage terraform init
+</code></pre></div>
+<p>To securely manage the users credentials, all members of the organization that are bound to interact with the AWS environment, and are therefore listed in the <code>project.yaml</code> configuration file, should create GPG keys of their own. Then, they should export them and share their public key files with us so we can create their respective IAM users in this step.</p>
+<div class="admonition info">
+<p class="admonition-title"><a href="../user-guide/identities/gpg/"><img alt="📚" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f4da.svg" title=":books:" /> How to create and manage GPG keys</a></p>
+</div>
+<p>Once we get hold of the keys files we copy them to the <code>keys</code> subdirectory, respecting their configured name. In this case we need the keys for <code>kit.walker</code> and <code>natasha.romanoff</code>.</p>
+<p>Finally, we run:</p>
+<div class="highlight"><pre><span></span><code>leverage terraform apply
+</code></pre></div>
+<h4 id="organizations-layer">Organizations layer<a class="headerlink" href="#organizations-layer" title="Permanent link"> ¶</a></h4>
+<p>Next, we move into the <code>organizations</code> directory:</p>
+<div class="highlight"><pre><span></span><code>leverage terraform init
+leverage terraform apply
+</code></pre></div>
+<p>The AWS account we created manually is the <code>management</code> account itself, so to prevent Terraform from trying to create it and error out, this account definition is commented by default in the code. Now we need to make the Terraform state aware of the link between the two. For that, we uncomment the <code>management</code> organizations account resource in <code>accounts.tf</code></p>
+<div class="highlight"><pre><span></span><code><span class="kr">resource</span> <span class="nc">&quot;aws_organizations_account&quot;</span> <span class="nv">&quot;management&quot;</span> <span class="p">{</span>
+  <span class="na">name</span>  <span class="o">=</span> <span class="s2">&quot;${var.project_long}-management&quot;</span>
+  <span class="na">email</span> <span class="o">=</span> <span class="nv">local.management_account.email</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>Grab the management account id that previously was automatically filled in for us in the <code>project.yaml</code> file
+<div class="highlight"><pre><span></span><code><span class="nn">...</span>
+<span class="nt">organization</span><span class="p">:</span>
+  <span class="nt">accounts</span><span class="p">:</span>
+    <span class="p p-Indicator">-</span> <span class="nt">name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">management</span>
+      <span class="nt">email</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">example-aws@example.com</span>
+      <span class="nt">id</span><span class="p">:</span> <span class="s">&#39;000123456789&#39;</span>
+<span class="nn">...</span>
+</code></pre></div></p>
+<p>And run:</p>
+<div class="highlight"><pre><span></span><code>leverage terraform import aws_organizations_account.management <span class="m">000123456789</span>
+</code></pre></div>
+<div class="admonition info">
+<p class="admonition-title">More information on <a href="../user-guide/base-workflow/leverage-cli/reference/terraform#import"><code>terraform import</code></a></p>
+</div>
+<h4 id="security-layer">Security layer<a class="headerlink" href="#security-layer" title="Permanent link"> ¶</a></h4>
+<p>The last layer for the <code>management</code> account is the security layer, so we move into the <code>security-base</code> directory:</p>
+<div class="highlight"><pre><span></span><code>leverage terraform init
+leverage terraform apply
+</code></pre></div>
+<h3 id="security-account">Security account<a class="headerlink" href="#security-account" title="Permanent link"> ¶</a></h3>
+<hr />
+<p>Before proceeding to deploy any of the remaining accounts we first need to update the credentials for the bootstrap process. This will fetch the organizations structure from the AWS environment and create individual profiles associated with each account for the AWS CLI to use. So we run:</p>
+<p><div class="highlight"><pre><span></span><code>leverage credentials update --profile bootstrap --only-accounts-profiles
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>[10:24:36.030] INFO     Loading configuration file.
+[10:24:40.265] INFO     Configuring accounts&#39; profiles.
+[10:24:40.268] INFO     Fetching organization accounts.
+[10:24:42.383] INFO     Backing up account profiles file.
+[10:24:43.278] INFO     Account profiles configured in: /home/user/.aws/aw/config
+[10:24:43.281] INFO     Updating project configuration file.
+[10:24:43.345] INFO     Finished updating bootstrap credentials.
+</code></pre></div></p>
+<div class="admonition info">
+<p class="admonition-title">More information on <a href="../user-guide/base-workflow/leverage-cli/reference/credentials#update"><code>credentials update</code></a></p>
+</div>
+<p>Now we can proceed with the <code>security</code> account.
+<div class="highlight"><pre><span></span><code><span class="nb">cd</span> security
+</code></pre></div></p>
+<h4 id="terraform-backend-layer_1">Terraform backend layer<a class="headerlink" href="#terraform-backend-layer_1" title="Permanent link"> ¶</a></h4>
+<p>We move into the <code>base-tf-backend</code> directory and run:</p>
+<div class="highlight"><pre><span></span><code>leverage terraform init
+leverage terraform apply
+</code></pre></div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The <code>apply</code> command may result in an error similar to:</p>
+<div class="highlight"><pre><span></span><code>Error: error creating public access block policy for S3 bucket (ex-security-terraform-backend): 
+OperationAborted: A conflicting conditional operation is currently in progress against this resource. 
+Please try again.
+</code></pre></div>
+<p>If this happens, please re-run the command.</p>
+</div>
+<p>Now, to push the local <code>.tfstate</code> to the bucket, we uncomment the <code>backend</code> section for the <code>terraform</code> configuration in <code>security/base-tf-backend/config.tf</code></p>
+<div class="highlight"><pre><span></span><code>  <span class="kr">backend</span> <span class="nv">&quot;s3&quot;</span> <span class="p">{</span>
+    <span class="na">key</span> <span class="o">=</span> <span class="s2">&quot;security/tf-backend/terraform.tfstate&quot;</span>
+  <span class="p">}</span>
+</code></pre></div>
+<p>And run again:</p>
+<div class="highlight"><pre><span></span><code>leverage terraform init
+</code></pre></div>
+<p>Now we can safely remove the <code>terraform.tfstate</code> and <code>terraform.tfstate.backup</code> files created during the <code>apply</code> step.</p>
+<h4 id="identities-layer_1">Identities layer<a class="headerlink" href="#identities-layer_1" title="Permanent link"> ¶</a></h4>
+<p>Now we move into the <code>base-identities</code> directory:</p>
+<div class="highlight"><pre><span></span><code>leverage terraform init
+</code></pre></div>
+<p>Now we need to copy the keys files for <code>natasha.romanoff</code>, <code>kit.walker</code>, <code>edward.stark</code> and <code>john.wick</code> into the <code>keys</code> subdirectory.</p>
+<p>To prevent Terraform from erroring out we need to import the role <code>OrganizationAccountAccessRole</code> that was already created in the <code>management</code>'s account identities layer before deploying this layer, so we run:</p>
+<div class="highlight"><pre><span></span><code>leverage terraform import module.iam_assumable_role_oaar.aws_iam_role.this<span class="o">[</span><span class="m">0</span><span class="o">]</span> OrganizationAccountAccessRole
+leverage terraform apply
+</code></pre></div>
+<div class="admonition info">
+<p class="admonition-title">zsh globbing</p>
+<p>Zsh users may need to prepend <code>noglob</code> to the import command for it to be recognized correctly, as an alternative, square brackets can be escaped as <code>\[\]</code></p>
+</div>
+<h4 id="security-layer_1">Security layer<a class="headerlink" href="#security-layer_1" title="Permanent link"> ¶</a></h4>
+<p>The last layer for the <code>security</code> account is the security layer, so we move into the <code>security-base</code> directory:</p>
+<div class="highlight"><pre><span></span><code>leverage terraform init
+leverage terraform apply
+</code></pre></div>
+<h3 id="shared-account">Shared account<a class="headerlink" href="#shared-account" title="Permanent link"> ¶</a></h3>
+<hr />
+<p>Our last account in this deployment is the <code>shared</code> account.</p>
+<div class="highlight"><pre><span></span><code><span class="nb">cd</span> shared
+</code></pre></div>
+<h4 id="terraform-backend-layer_2">Terraform backend layer<a class="headerlink" href="#terraform-backend-layer_2" title="Permanent link"> ¶</a></h4>
+<p>We move into the <code>base-tf-backend</code> directory and run:</p>
+<div class="highlight"><pre><span></span><code>leverage terraform init
+leverage terraform apply
+</code></pre></div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The <code>apply</code> command may result in an error similar to:</p>
+<div class="highlight"><pre><span></span><code>Error: error creating public access block policy for S3 bucket (ex-security-terraform-backend): 
+OperationAborted: A conflicting conditional operation is currently in progress against this resource. 
+Please try again.
+</code></pre></div>
+<p>If this happens, please re-run the command.</p>
+</div>
+<p>Now, to push the local <code>.tfstate</code> to the bucket, we uncomment the <code>backend</code> section for the <code>terraform</code> configuration in <code>shared/base-tf-backend/config.tf</code></p>
+<div class="highlight"><pre><span></span><code>  <span class="kr">backend</span> <span class="nv">&quot;s3&quot;</span> <span class="p">{</span>
+    <span class="na">key</span> <span class="o">=</span> <span class="s2">&quot;shared/tf-backend/terraform.tfstate&quot;</span>
+  <span class="p">}</span>
+</code></pre></div>
+<p>And run a second time:</p>
+<div class="highlight"><pre><span></span><code>leverage terraform init
+</code></pre></div>
+<p>Now we can safely remove the <code>terraform.tfstate</code> and <code>terraform.tfstate.backup</code> files created during the <code>apply</code> step.</p>
+<h4 id="identities-layer_2">Identities layer<a class="headerlink" href="#identities-layer_2" title="Permanent link"> ¶</a></h4>
+<p>Now we move into the <code>base-identities</code> directory:</p>
+<div class="highlight"><pre><span></span><code>leverage terraform init
+</code></pre></div>
+<p>We also need to import the role <code>OrganizationAccountAccessRole</code> in this layer, so we run:</p>
+<div class="highlight"><pre><span></span><code>leverage terraform import module.iam_assumable_role_oaar.aws_iam_role.this<span class="o">[</span><span class="m">0</span><span class="o">]</span> OrganizationAccountAccessRole
+leverage terraform apply
+</code></pre></div>
+<div class="admonition info">
+<p class="admonition-title">zsh globbing</p>
+<p>Zsh users may need to prepend <code>noglob</code> to the import command for it to be recognized correctly, as an alternative, square brackets can be escaped as <code>\[\]</code></p>
+</div>
+<h4 id="security-layer_2">Security layer<a class="headerlink" href="#security-layer_2" title="Permanent link"> ¶</a></h4>
+<p>Next, we move into the <code>security-base</code> directory:</p>
+<div class="highlight"><pre><span></span><code>leverage terraform init
+leverage terraform apply
+</code></pre></div>
+<h4 id="network-layer">Network layer<a class="headerlink" href="#network-layer" title="Permanent link"> ¶</a></h4>
+<p>The last layer for the <code>shared</code> account is the network layer, so we move into the <code>base-network</code> directory:</p>
+<div class="highlight"><pre><span></span><code>leverage terraform init
+leverage terraform apply
+</code></pre></div>
+<h2 id="post-deployment-steps">Post-deployment steps<a class="headerlink" href="#post-deployment-steps" title="Permanent link"> ¶</a></h2>
+<hr />
+<p>The whole landing zone is already deployed and with it, all defined users were created. From now on, each user should generate their personal programmatic keys and enable Multi Factor Authentication for their interactions with the AWS environment.</p>
+<p>We'll take the place of <code>natasha.romanoff</code> to exemplify the process.</p>
+<h3 id="get-the-temporary-password-to-access-aws-console">Get the temporary password to access AWS console<a class="headerlink" href="#get-the-temporary-password-to-access-aws-console" title="Permanent link"> ¶</a></h3>
+<p>When Natasha's user was created, an initial random password was also created alongside it. That password was encrypted using her GPG key, as we already saw previously.</p>
+<p>Now we need to access that password so that she can create her programmatic keys to interact with the environment through Leverage.</p>
+<p>First, for the <code>management</code> account, we change the value <code>sensitive</code> to <code>true</code> in the output block <code>user_natasha_romanoff_login_profile_encrypted_password</code> of <code>management/base-identities/outputs.tf</code>:</p>
+<div class="highlight"><pre><span></span><code><span class="kr">output</span> <span class="nv">&quot;user_natasha_romanoff_login_profile_encrypted_password&quot;</span> <span class="p">{</span>
+  <span class="na">description</span> <span class="o">=</span> <span class="s2">&quot;The encrypted password, base64 encoded&quot;</span>
+  <span class="na">value</span>       <span class="o">=</span> <span class="nv">module.user</span><span class="p">[</span><span class="s2">&quot;natasha.romanoff&quot;</span><span class="p">].</span><span class="err">iam_user_login_profile_encrypted_password</span>
+  <span class="na">sensitive</span>   <span class="o">=</span> <span class="no">true</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>While in the <code>base-identities</code> directory, we run:</p>
+<div class="highlight"><pre><span></span><code>leverage terraform apply
+leverage terraform output
+</code></pre></div>
+<p>We extract the value of the password field form the output and <a href="../user-guide/identities/gpg#how-to-manage-your-gpg-keys">decrypt it</a>.</p>
+<p>Now we log in the <a href="https://console.aws.amazon.com/">AWS Console</a> using the <code>management</code> account id: <code>000123456789</code>, which can be extracted from the <code>project.yaml</code> file, our IAM user name: <code>natasha.romanoff</code>, and our recently decrypted password. This password should be changed during this procedure.</p>
+<p>We proceed to <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_mfa_enable_virtual.html#enable-virt-mfa-for-iam-user">enable a virtual MFA device for the user</a>, and <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_access-keys.html#Using_CreateAccessKey">generate programmatic keys for it</a>. Make sure to not keep these keys in a safe location.</p>
+<p>As Natasha also has an IAM user for the <code>security</code> account besides the one in <code>management</code>, these steps should be repeated for that account, making sure of logging in the AWS console with the proper account id. These are <strong>two different IAM users</strong> in <strong>two different accounts</strong>, so their credentials <strong>are not interchangeable</strong>.</p>
+<h3 id="configure-the-new-credentials">Configure the new credentials<a class="headerlink" href="#configure-the-new-credentials" title="Permanent link"> ¶</a></h3>
+<p>To be able to use the generated programmatic keys, we need to configure them in our local environment. For that we run:</p>
+<p><div class="highlight"><pre><span></span><code>leverage credentials update --profile <span class="o">[</span>management <span class="p">|</span> security<span class="o">]</span> <span class="c1"># Choose the correct one</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>[12:25:57.502] INFO     Loading configuration file.
+[12:25:59.343] INFO     Configuring management credentials.
+&gt; Select the means by which you&#39;ll provide the programmatic keys: Manually
+&gt; Key: AKIAUH0FAB7QVEXAMPLE
+&gt; Secret: ****************************************
+[12:26:20.566] INFO     Management credentials configured in: /home/user/.aws/ex/credentials
+[12:26:24.418] INFO     Configuring accounts&#39; profiles.
+[12:26:24.420] INFO     Fetching organization accounts.
+[12:26:26.234] INFO     Fetching MFA device serial.
+[12:26:28.265] INFO     Backing up account profiles file.
+[12:26:28.849] INFO     Account profiles configured in: /home/user/.aws/ex/config
+[12:26:28.856] INFO     Updating project configuration file.
+[12:26:28.877] INFO     Loading configuration file.
+[12:26:28.907] INFO     Finished updating management credentials.
+</code></pre></div></p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Both of these credentials require an MFA device to be enabled. Once of them are configured, the next step (<a href="#enable-mfa">Enable MFA</a>) becomes mandatory. If the enabling of MFA is not performed any action on the project will be executed using the bootstrap credentials.</p>
+</div>
+<h3 id="enable-mfa">Enable MFA<a class="headerlink" href="#enable-mfa" title="Permanent link"> ¶</a></h3>
+<p>The last step is to enable Multi Factor Authentication locally. The procedure is slightly different for Natasha's <code>management</code> IAM user and <code>security</code> IAM user, so we'll walk through both of them.</p>
+<h4 id="management-user">Management user<a class="headerlink" href="#management-user" title="Permanent link"> ¶</a></h4>
+<p>To enable MFA for a <code>management</code> account user, we need to enable this feature individually for the role <code>OrganizationAccountAccessRole</code> in all accounts of the infrastructure. So first, we'll take care of the <code>management</code> account:</p>
+<p>We move into the account's identities layer:</p>
+<div class="highlight"><pre><span></span><code><span class="nb">cd</span> management/base-identities
+</code></pre></div>
+<p>We change the value for <code>role_requires_mfa</code> for the role <code>iam_assumable_role_oaar</code> in <code>roles.tf</code> to <code>true</code>. By default this value is <code>false</code>, that is to say, MFA is disabled for the role.</p>
+<div class="highlight"><pre><span></span><code><span class="kr">module</span> <span class="nv">&quot;iam_assumable_role_oaar&quot;</span> <span class="p">{</span>
+  <span class="p">...</span><span class="c1"></span>
+<span class="c1">  #</span>
+<span class="c1">  # MFA setup</span>
+<span class="c1">  #</span>
+  <span class="na">role_requires_mfa</span>    <span class="o">=</span> <span class="no">false</span> <span class="err">-&gt;</span> <span class="no">true</span>
+  <span class="p">...</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>And run:</p>
+<div class="highlight"><pre><span></span><code>leverage terraform apply
+</code></pre></div>
+<p>We now the need to repeat the previous steps for the remaining accounts, in this guide's case, the <code>security</code> and <code>shared</code> accounts.</p>
+<p>Once the change is applied in all layers, we change the value of <code>profile</code> in <code>management/config/backend.tfvars</code></p>
+<div class="highlight"><pre><span></span><code><span class="c1">#</span>
+<span class="c1"># Backend Configuration</span>
+<span class="c1">#</span>
+
+<span class="c1"># AWS Profile (required by the backend but also used for other resources)</span>
+<span class="na">profile</span> <span class="o">=</span> <span class="s2">&quot;ex-bootstrap&quot;</span>
+<span class="p">...</span>
+</code></pre></div>
+<p>To <code>&lt;short project name&gt;-management-oaar</code>, which in the case of this guide, would result in:</p>
+<ul>
+<li><code>ex-bootstrap</code> &rarr; <code>ex-management-oaar</code></li>
+</ul>
+<p>By doing this, we are switching from using the bootstrap credentials, to the management credentials profile for this specific account.</p>
+<p>Lastly we set <code>MFA_ENABLED</code> in the file <code>build.env</code>, located in the project's root directory, to <code>true</code>.</p>
+<h4 id="security-user">Security user<a class="headerlink" href="#security-user" title="Permanent link"> ¶</a></h4>
+<p>To enable MFA for a <code>security</code> account user, we have to make changes in all accounts <strong>but <code>management</code></strong>. In the case of this guide, we need to make changes in the <code>security</code> account as well as in the <code>shared</code> account.</p>
+<p>We set <code>profile</code> in <code>config/backend.tfvars</code> for each account to <code>&lt;short project name&gt;-&lt;account&gt;-devops</code>. That is:</p>
+<ul>
+<li><code>ex-security-oaar</code> &rarr; <code>ex-security-devops</code> for the <code>security</code> account</li>
+<li><code>ex-shared-oaar</code> &rarr; <code>ex-shared-devops</code> for the <code>shared</code> account</li>
+</ul>
+<p>Similarly to the management user's MFA enabling step, we are switching from using bootstrap credentials to the respective profile for each account of the security credentials.</p>
+<p>As a last step we need to make sure that <code>MFA_ENABLED</code> is set to <code>true</code> in the <code>build.env</code> file.</p>
+<h2 id="end-result">End result<a class="headerlink" href="#end-result" title="Permanent link"> ¶</a></h2>
+<hr />
+<p>Now we have a fully functional deployment of a basic landing zone ready to be used. We have gained an understanding of the structure and functionalities provided by Leverage as well as familiarity with the Leverage workflow.</p>
+<p></br></br></p>
+<h2 id="next-steps">Next steps<a class="headerlink" href="#next-steps" title="Permanent link"> ¶</a></h2>
+<p>To learn more about Leverage's inner workings, check out the following links:</p>
+<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> <a href="../how-it-works/"><img alt="📚" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f4da.svg" title=":books:" /> How it works</a></li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> <a href="../user-guide/"><img alt="📚" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f4da.svg" title=":books:" /> User Guide</a></li>
+</ul>
+                
+                  
                 
               
               

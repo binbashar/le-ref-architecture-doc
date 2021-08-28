@@ -30,7 +30,7 @@ North-South: Centralized internet egress (VPC to internet via Transit Gateway) a
 <figcaption style="font-size:15px">
 <b>Figure:</b> Multi-account dedicated network transit gateway + network firewall architecture diagram.
 (Source: Binbash Leverage,
-"Lereverage Reference Architecture dedicated network account TGW + NFW implementation",
+"Leverage Reference Architecture dedicated network account TGW + NFW implementation",
 Binbash Leverage Doc, accessed August 4th 2021).
 </figcaption>
 

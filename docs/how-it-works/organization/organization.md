@@ -24,7 +24,7 @@ The following block provides a brief explanation of the chosen AWS Organization 
     ...
 + prod/            (resources for prod apps/services account)
     ...
-+ root/            (resources for the root-org account)
++ management/      (resources for the management account)
     ...
 + security/        (resources for the security + users account)
     ...
@@ -38,7 +38,7 @@ The following block provides a brief explanation of the chosen AWS Organization 
 <figcaption style="font-size:15px">
 <b>Figure:</b> AWS Organization multi-account architecture diagram (just as reference).
 (Source: Binbash Leverage,
-"Lereverage Reference Architecture components",
+"Leverage Reference Architecture components",
 Binbash Leverage Doc, accessed August 4th 2021).
 </figcaption>
 

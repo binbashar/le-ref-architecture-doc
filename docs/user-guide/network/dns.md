@@ -18,7 +18,7 @@
     (previously deployed) proceed applying the corresponding layers
         1. [apps-devstg/base-dns](https://github.com/binbashar/le-tf-infra-aws/tree/master/apps-devstg/base-dns)
         2. [apps-prd/base-dns](https://github.com/binbashar/le-tf-infra-aws/tree/master/apps-prd/base-dns)
-        3. repeat for every other necessary AWS Org Memeber account.
+        3. repeat for every other necessary AWS Organizations Member account.
         
 ### Migrated AWS Route53 Hosted Zones between AWS Accounts 
 

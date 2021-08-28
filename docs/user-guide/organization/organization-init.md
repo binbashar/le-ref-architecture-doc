@@ -40,7 +40,7 @@ the aliases automatically implicitly when running Terraform's Leverage code.
 
 ### Reference AWS Organization init workflow
 
-!!! example "Steps for initial AWS Orgnization setup"
+!!! example "Steps for initial AWS Organization setup"
     1. Create a brand [new AWS Account](https://aws.amazon.com/premiumsupport/knowledge-center/create-and-activate-aws-account/),
      intended to be our AWS Organization Management (root) Account
         - [x] **Name:** `project_name-management`, eg: `leverage-management`
@@ -54,7 +54,7 @@ the aliases automatically implicitly when running Terraform's Leverage code.
     2. Via AWS Web Console: in `project_name-management` previously created account (eg, name: `leverage-management`,
     email: `aws@binbash.com.ar`) [create the `mgmt-org-admin` IAM user with Admin privileges](https://docs.aws.amazon.com/mediapackage/latest/ug/setting-up-create-iam-user.html)
     (admin IAM policy attached), which will be use for the initial AWS Org bootstrapping.
-        - :ledger: **NOTE:** After it’s 1st execution only nominated Org admin users will persist in the `project-mgmt` account.
+        - :ledger: **NOTE:** After it’s 1st execution only nominated Org admin users will persist in the `project-management` account.
 
     3. Via AWS Web Console: in `project-management` account create `mgmt-org-admin` IAM user AWS ACCESS KEYS
         - :ledger: **NOTE:** This could be created all in one in the previous step (Nº 2).
@@ -88,7 +88,7 @@ the aliases automatically implicitly when running Terraform's Leverage code.
     7. The AWS Organization from the Reference Architecture 
     [/le-tf-infra-aws/root/organizations](https://github.com/binbashar/le-tf-infra-aws/tree/master/root/organizations) 
     will be orchestrated using the `leverage cli` following the 
-    [standard workflow](../../base-workflow/repo-le-tf-infra-aws/#steps).
+    [standard workflow](../../base-workflow/repo-le-tf-infra/#steps).
         - :ledger: the Management account has to be imported into de the code.
 
     8. Verify your Management account email address in order to invite existing (legacy) AWS accounts to 
@@ -107,7 +107,7 @@ the aliases automatically implicitly when running Terraform's Leverage code.
     2. Mgmt account admin user permanent credentials set up => 
     [setup in your workstation the AWS credentials](../identities/identities.md))
     for the `OrganizationAccountAccessRole` IAM role (`project_short-root-oaar`, eg: `bb-root-oaar`).
-    Then validate within each initial mgmt account layer that the profile `bb-root-oaar` is correcly configured 
+    Then validate within each initial mgmt account layer that the profile `bb-root-oaar` is correctly configured 
     at the below presented config files, as well as any other necessary setup.
         - [`/config/common.config`](https://github.com/binbashar/le-tf-infra-aws/blob/master/config/common.config.example) 
         - [`/root/config/account.config`](https://github.com/binbashar/le-tf-infra-aws/blob/master/root/config/account.config)

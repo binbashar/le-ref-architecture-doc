@@ -18,7 +18,7 @@ Check out the README.md under contained under each repo
     
     ![leverage-ansible](../../assets/images/logos/ansible.png "Leverage"){: style="width:20px"} **Monitoring & Alerting**    
     
-    - [x] [prometheus-grfana](https://github.com/binbashar/le-ansible-infra/blob/master/prometheus/README.md)
+    - [x] [prometheus-grafana](https://github.com/binbashar/le-ansible-infra/blob/master/prometheus/README.md)
     
     ![leverage-ansible](../../assets/images/logos/ansible.png "Leverage"){: style="width:20px"} **Centralized Logs**   
     

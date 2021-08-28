@@ -23,7 +23,7 @@ Terraform modules registry, accessed December 3rd 2020).
       [Terraform Reference Architecture account structure](../../how-it-works/organization/organization.md)
     3. Leveraged by the [Infrastructure as Code (IaC) Library](../../how-it-works/code-library/code-library.md) through the
      [terraform-aws-tfstate-backend module](https://registry.terraform.io/modules/binbashar/tfstate-backend/aws/latest)
-        - [/root/base-tf-backend](https://github.com/binbashar/le-tf-infra-aws/tree/master/root/base-tf-backend)
+        - [/management/base-tf-backend](https://github.com/binbashar/le-tf-infra-aws/tree/master/root/base-tf-backend)
         - [/security/base-tf-backend](https://github.com/binbashar/le-tf-infra-aws/tree/master/security/base-tf-backend)
         - [/shared/base-tf-backend](https://github.com/binbashar/le-tf-infra-aws/tree/master/shared/base-tf-backend)
         - [/apps-devstg/base-tf-backend](https://github.com/binbashar/le-tf-infra-aws/tree/master/apps-devstg/base-tf-backend)

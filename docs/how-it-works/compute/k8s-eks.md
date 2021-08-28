@@ -3,7 +3,7 @@
 [**Amazon Elastic Kubernetes Services** (EKS)](https://aws.amazon.com/eks/) is a managed service that makes it easy for you 
 to run **Kubernetes** on AWS without needing to install and operate your own Kubernetes control plane or worker nodes. 
 
-!!! check "Core Feautres"
+!!! check "Core Features"
     - [x] Highly Secure: EKS automatically applies the latest security patches to your cluster control plane. 
     - [x] Multiple Availability Zones: EKS auto-detects and replaces unhealthy control plane nodes and provides on-demand,
      zero downtime upgrades and patching.

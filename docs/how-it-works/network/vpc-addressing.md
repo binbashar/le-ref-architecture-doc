@@ -24,7 +24,7 @@
     netmask and subnets with /24 netmasks. The primary reason AWS customers select smaller VPC and 
     subnet sizes is to avoid overlapping network addresses with existing networks. 
 
-    So having [AWS single VPC Design](https://aws.amazon.com/answers/networking/aws-single-vpc-design/) we've choosen
+    So having [AWS single VPC Design](https://aws.amazon.com/answers/networking/aws-single-vpc-design/) we've chosen
     a Medium/Small VPC/Subnet addressing plan which would probably fit a broad range variety of
     use cases
 

@@ -4,7 +4,7 @@
 
 If you are on HCP, you can get this from the Admin UI. Otherwise, it will
 depend on how you set up DNS, TLS and port settings for your self-hosted
-installation. We always favours a private endpoint deployment only accesible
+installation. We always favours a private endpoint deployment only accessible
 from the VPN.
 
 ### AWS Self Hosted Vault Instance Endpoint
@@ -67,7 +67,7 @@ Terraform Leverage Reference architecture for:
     5. Set the returned `token` in step 4) into `/config/common.config` -> `vault_token="s.PNAXXXXXXXXXXXXXXXXXXX.hbtct"`
     
     :ledger: **NOTE:** the admin token from https://portal.cloud.hashicorp.com/ will always work
-    but it's use is defavoured for the nominated GH personal access token for
+    but it's use is discouraged for the nominated GH personal access token for
     security audit trail reasons
 
 ## Hashicorp Vault UI Auth
@@ -86,7 +86,7 @@ to login to your instance.
 <figcaption style="font-size:15px">
 <b>Figure:</b> Vault HCP UI user authentication screen.
 (Source: Binbash Leverage,
-"Lereverage Vault Reference Architecture auth method",
+"Leverage Vault Reference Architecture auth method",
 Binbash Leverage Doc, accessed August 5th 2021).
 </figcaption>
 

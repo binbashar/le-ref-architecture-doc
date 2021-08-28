@@ -3,13 +3,13 @@
 
 # How it works
 
-The objective of this document is to explain how the **Binbash Leverage Reference AWS Cloud Solutions Architecture**
+The objective of this document is to explain how the **Binbash Leverage Reference Architecture for AWS**
 works, in particular how the Reference Architecture model is built and why we need it.
 
 ## Overview
 
 This documentation contains all the guidelines to create Binbash 
-Leverage Reference AWS Cloud Solutions Architecture that will be implemented on the 
+Leverage Reference Architecture for AWS that will be implemented on the 
 Projects’ AWS infrastructure.
 
 !!! check "Our Purpose"
@@ -27,11 +27,11 @@ Projects’ AWS infrastructure.
 
 ### Reference Architecture 
 
-A Reference AWS Cloud Solutions Architecture designed under optimal configs for the most
+A Reference Architecture for AWS designed under optimal configs for the most
 popular modern web and mobile applications needs. 
 Its design is fully based on AWS [“Well Architected Framework”](../work-with-us/support.md).
 
-Reusing the [**Leverage Infrastructure as Code (IaC) Library**](code-library/code-library.md) via 
+Reusing the [**Leverage Infrastructure as Code (IaC) Library**](infra-as-code-library/infra-as-code-library.md) via 
 [**leverage cli**](https://github.com/binbashar/leverage) to rapidly implement it. 
 
 It will solve your entire infrastructure and will grant you complete control of the source 

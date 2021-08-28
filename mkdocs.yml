@@ -145,55 +145,56 @@ nav:
       - Specifications: "how-it-works/code-library/code-library-specs.md"
       - Modules per Tech: "how-it-works/code-library/modules-library-per-tech.md"
     - Leverage CLI: "how-it-works/leverage-cli/index.md"
-    - AWS Organization:
-      - Organization: "how-it-works/organization/organization.md"
-      - Accounts: "how-it-works/organization/accounts.md"
-      - Billing: "how-it-works/organization/billing.md"
-    - Identities:
-      - Overview: "how-it-works/identities/identities.md"
-      - IAM Roles: "how-it-works/identities/roles.md"
-    - Security:
-      - VPN: "how-it-works/security/vpn.md"
-      - Services: "how-it-works/security/services.md"
-      - Certificates: "how-it-works/security/certificates.md"
-      - IAM Access Analyzer: "how-it-works/security/iam-access-analyzer.md"
-    - Network:
-      - VPC Topology: "how-it-works/network/vpc-topology.md"
-      - VPC Adressing: "how-it-works/network/vpc-addressing.md"
-      - VPC Peering: "how-it-works/network/vpc-peering.md"
-      - TGW Topology: "how-it-works/network/tgw-topology.md"
-      - VPC Outbound Traffic: "how-it-works/network/vpc-traffic-out.md"
-      - DNS: "how-it-works/network/dns.md"
-    - Compute:
-      - Overview: "how-it-works/compute/overview.md"
-      - K8s Kops: "how-it-works/compute/k8s-kops.md"
-      - K8s EKS: "how-it-works/compute/k8s-eks.md"
-      - K8s Service Mesh: "how-it-works/compute/k8s-service-mesh.md"
-      - Serverless: "how-it-works/compute/serverless.md"
-    - Database:
-       - Databases: "how-it-works/database/database.md"
-       - MySQL: "how-it-works/database/mysql.md"
-       - PostgresSQL: "how-it-works/database/postgres.md"
-    - Storage: "how-it-works/storage/storage.md"
-    - CDN: "how-it-works/cdn/cdn.md"
-    - CI/CD:
-       - Overview: "how-it-works/ci-cd/ci-cd.md"
-       - ArgoCD: "how-it-works/ci-cd/k8s-argocd.md"
-    - Tools: "how-it-works/tools/tools.md"
-    - Monitoring:
-      - Monitoring: "how-it-works/monitoring/monitoring.md"
-      - Metrics: "how-it-works/monitoring/metrics.md"
-      - Logs: "how-it-works/monitoring/logs.md"
-      - Tracing: "how-it-works/monitoring/tracing.md"
-      - APM: "how-it-works/monitoring/apm.md"
-      - Notifications: "how-it-works/monitoring/notification_escalation.md"
-    - Secrets: "how-it-works/secrets/secrets.md"
-    - Reliability:
-      - Backups: "how-it-works/reliability/backups.md"
-      - High Availability: "how-it-works/reliability/high-availability.md"
-      - Health Checks: "how-it-works/reliability/health-checks.md"
-      - Disaster Recovery: "how-it-works/reliability/dr.md"
-    - Costs: "how-it-works/costs/costs.md"
+    - Features:
+      - AWS Organization:
+        - Organization: "how-it-works/organization/organization.md"
+        - Accounts: "how-it-works/organization/accounts.md"
+        - Billing: "how-it-works/organization/billing.md"
+      - Identities:
+        - Overview: "how-it-works/identities/identities.md"
+        - IAM Roles: "how-it-works/identities/roles.md"
+      - Security:
+        - VPN: "how-it-works/security/vpn.md"
+        - Services: "how-it-works/security/services.md"
+        - Certificates: "how-it-works/security/certificates.md"
+        - IAM Access Analyzer: "how-it-works/security/iam-access-analyzer.md"
+      - Network:
+        - VPC Topology: "how-it-works/network/vpc-topology.md"
+        - VPC Adressing: "how-it-works/network/vpc-addressing.md"
+        - VPC Peering: "how-it-works/network/vpc-peering.md"
+        - TGW Topology: "how-it-works/network/tgw-topology.md"
+        - VPC Outbound Traffic: "how-it-works/network/vpc-traffic-out.md"
+        - DNS: "how-it-works/network/dns.md"
+      - Compute:
+        - Overview: "how-it-works/compute/overview.md"
+        - K8s Kops: "how-it-works/compute/k8s-kops.md"
+        - K8s EKS: "how-it-works/compute/k8s-eks.md"
+        - K8s Service Mesh: "how-it-works/compute/k8s-service-mesh.md"
+        - Serverless: "how-it-works/compute/serverless.md"
+      - Database:
+        - Databases: "how-it-works/database/database.md"
+        - MySQL: "how-it-works/database/mysql.md"
+        - PostgresSQL: "how-it-works/database/postgres.md"
+      - Storage: "how-it-works/storage/storage.md"
+      - CDN: "how-it-works/cdn/cdn.md"
+      - CI/CD:
+        - Overview: "how-it-works/ci-cd/ci-cd.md"
+        - ArgoCD: "how-it-works/ci-cd/k8s-argocd.md"
+      - Tools: "how-it-works/tools/tools.md"
+      - Monitoring:
+        - Monitoring: "how-it-works/monitoring/monitoring.md"
+        - Metrics: "how-it-works/monitoring/metrics.md"
+        - Logs: "how-it-works/monitoring/logs.md"
+        - Tracing: "how-it-works/monitoring/tracing.md"
+        - APM: "how-it-works/monitoring/apm.md"
+        - Notifications: "how-it-works/monitoring/notification_escalation.md"
+      - Secrets: "how-it-works/secrets/secrets.md"
+      - Reliability:
+        - Backups: "how-it-works/reliability/backups.md"
+        - High Availability: "how-it-works/reliability/high-availability.md"
+        - Health Checks: "how-it-works/reliability/health-checks.md"
+        - Disaster Recovery: "how-it-works/reliability/dr.md"
+      - Costs: "how-it-works/costs/costs.md"
     - Read More: "how-it-works/read-more.md"
 
   - User guide:
@@ -219,46 +220,47 @@ nav:
         - Terraform Infra: "user-guide/base-workflow/repo-le-tf-infra.md"
         - Terraform Infra State: "user-guide/base-workflow/repo-le-tf-infra-aws-tf-state.md"
         - Ansible Infra: "user-guide/base-workflow/repo-le-ansible-infra.md"
-    - AWS Organization:
-      - Organization Init: "user-guide/organization/organization-init.md"
-      - Invite Legacy accounts: "user-guide/organization/organization-legacy-accounts.md"
-    - Identities:
-      - gpg: "user-guide/identities/gpg.md"
-      - Identities: "user-guide/identities/identities.md"
-      - Credentials: "user-guide/identities/credentials.md"
-      - Credentials Vault: "user-guide/identities/credentials-vault.md"
-    - Security:
-      - VPN: "user-guide/security/vpn.md"
-      - Services: "user-guide/security/services.md"
-    - Network:
-      - VPC: "user-guide/network/vpc-addressing.md"
-      - VPC Peering: "user-guide/network/vpc-peering.md"
-      - DNS: "user-guide/network/dns.md"
-    - Compute:
-      - Overview: "user-guide/compute/overview.md"
-      - K8s Kops: "user-guide/compute/k8s-kops.md"
-      - K8s EKS: "user-guide/compute/k8s-eks.md"
-      - Serverless: "user-guide/compute/serverless.md"
-    - Database:
-       - Databases: "user-guide/database/database.md"
-       - MySQL: "user-guide/database/mysql.md"
-       - PostgresSQL: "user-guide/database/postgres.md"
-    - Storage: "user-guide/storage/storage.md"
-    - CDN: "user-guide/cdn/cdn.md"
-    - CI/CD: "user-guide/ci-cd/ci-cd.md"
-    - Tools: "user-guide/tools/tools.md"
-    - Monitoring:
-      - Monitoring: "user-guide/monitoring/monitoring.md"
-      - Metrics: "user-guide/monitoring/metrics.md"
-      - Logs: "user-guide/monitoring/logs.md"
-      - Tracing: "user-guide/monitoring/tracing.md"
-      - APM: "user-guide/monitoring/apm.md"
-    - Secrets: "user-guide/secrets/secrets.md"
-    - Reliability:
-      - Backups: "user-guide/reliability/backups.md"
-      - Disaster Recovery: "user-guide/reliability/dr.md"
-      - Health Checks: "user-guide/reliability/health-checks.md"
-    - Costs: "user-guide/costs/costs.md"
+    - Features:
+      - AWS Organization:
+        - Organization Init: "user-guide/organization/organization-init.md"
+        - Invite Legacy accounts: "user-guide/organization/organization-legacy-accounts.md"
+      - Identities:
+        - gpg: "user-guide/identities/gpg.md"
+        - Identities: "user-guide/identities/identities.md"
+        - Credentials: "user-guide/identities/credentials.md"
+        - Credentials Vault: "user-guide/identities/credentials-vault.md"
+      - Security:
+        - VPN: "user-guide/security/vpn.md"
+        - Services: "user-guide/security/services.md"
+      - Network:
+        - VPC: "user-guide/network/vpc-addressing.md"
+        - VPC Peering: "user-guide/network/vpc-peering.md"
+        - DNS: "user-guide/network/dns.md"
+      - Compute:
+        - Overview: "user-guide/compute/overview.md"
+        - K8s Kops: "user-guide/compute/k8s-kops.md"
+        - K8s EKS: "user-guide/compute/k8s-eks.md"
+        - Serverless: "user-guide/compute/serverless.md"
+      - Database:
+        - Databases: "user-guide/database/database.md"
+        - MySQL: "user-guide/database/mysql.md"
+        - PostgresSQL: "user-guide/database/postgres.md"
+      - Storage: "user-guide/storage/storage.md"
+      - CDN: "user-guide/cdn/cdn.md"
+      - CI/CD: "user-guide/ci-cd/ci-cd.md"
+      - Tools: "user-guide/tools/tools.md"
+      - Monitoring:
+        - Monitoring: "user-guide/monitoring/monitoring.md"
+        - Metrics: "user-guide/monitoring/metrics.md"
+        - Logs: "user-guide/monitoring/logs.md"
+        - Tracing: "user-guide/monitoring/tracing.md"
+        - APM: "user-guide/monitoring/apm.md"
+      - Secrets: "user-guide/secrets/secrets.md"
+      - Reliability:
+        - Backups: "user-guide/reliability/backups.md"
+        - Disaster Recovery: "user-guide/reliability/dr.md"
+        - Health Checks: "user-guide/reliability/health-checks.md"
+      - Costs: "user-guide/costs/costs.md"
 
   - Work with us:
       - Overview: "work-with-us/index.md"

@@ -55,6 +55,14 @@ When setting up a Leverage project we first need to initialize the directory whe
 ``` bash
 leverage project init
 ```
+<!--
+NOTE: Custom coloring and formatting in a code block can be achieved by using pure html instead of relying in the triple backtick notation.
+e.g:
+<pre><code>This is normal text.
+<b>This is bold text.</b>
+<i><span style="color:blue;">This is blue italic text.</span></i>
+</code></pre>
+-->
 ```
 [09:30:54.027] INFO     No .leverage directory found in user's home. Creating.
 [09:30:54.030] INFO     No project template found. Cloning template.

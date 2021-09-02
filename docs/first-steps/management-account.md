@@ -132,16 +132,16 @@ This will fetch the organizations structure from the AWS environment and create 
 ``` bash
 leverage credentials update --profile bootstrap --only-accounts-profiles
 ```
-<pre><code><span style="color:grey;">[10:24:36.030]</span> INFO     Loading configuration file.
-<span style="color:grey;">[10:24:40.265]</span> INFO     Configuring accounts' profiles.
-<span style="color:grey;">[10:24:40.268]</span> INFO     Fetching organization accounts.
-<span style="color:grey;">[10:24:42.383]</span> INFO     Backing up account profiles file.
-<span style="color:grey;">[10:24:42.938]</span> INFO             Configuring profile <b>me-management-oaar</b>
-<span style="color:grey;">[10:24:45.051]</span> INFO             Configuring profile <b>me-security-oaar</b>
-<span style="color:grey;">[10:24:47.164]</span> INFO             Configuring profile <b>me-shared-oaar</b>
-<span style="color:grey;">[10:24:49.278]</span> INFO     <b>Account profiles configured in:</b> <span style="color:cornflowerblue;">/home/user/.aws/me/config</span>
-<span style="color:grey;">[10:24:49.281]</span> INFO     Updating project configuration file.
-<span style="color:grey;">[10:24:49.345]</span> INFO     Finished updating <b>bootstrap</b> credentials.
+<pre><code><span class="fsg-timestamp">[10:24:36.030]</span> INFO     Loading configuration file.
+<span class="fsg-timestamp">[10:24:40.265]</span> INFO     Configuring accounts' profiles.
+<span class="fsg-timestamp">[10:24:40.268]</span> INFO     Fetching organization accounts.
+<span class="fsg-timestamp">[10:24:42.383]</span> INFO     Backing up account profiles file.
+<span class="fsg-timestamp">[10:24:42.938]</span> INFO             Configuring profile <b>me-management-oaar</b>
+<span class="fsg-timestamp">[10:24:45.051]</span> INFO             Configuring profile <b>me-security-oaar</b>
+<span class="fsg-timestamp">[10:24:47.164]</span> INFO             Configuring profile <b>me-shared-oaar</b>
+<span class="fsg-timestamp">[10:24:49.278]</span> INFO     <b>Account profiles configured in:</b> <span class="fsg-path">/home/user/.aws/me/config</span>
+<span class="fsg-timestamp">[10:24:49.281]</span> INFO     Updating project configuration file.
+<span class="fsg-timestamp">[10:24:49.345]</span> INFO     Finished updating <b>bootstrap</b> credentials.
 </code></pre>
 
 !!! info "More information on [`credentials update`](../user-guide/base-workflow/leverage-cli/reference/credentials#update)"

@@ -48,20 +48,20 @@ To be able to use the generated programmatic keys, you need to configure them in
 ``` bash
 leverage credentials update --profile management # or `security` depending on the credentials to configured
 ```
-<pre><code><span style="color:grey;">[12:25:57.502]</span> INFO     Loading configuration file.
-<span style="color:grey;">[12:25:59.343]</span> INFO     Configuring <b>management</b> credentials.
-<span style="color:mediumseagreen;">></span> <b>Select the means by which you'll provide the programmatic keys: <span style="color:cornflowerblue;">Manually</span></b>
-<span style="color:mediumseagreen;">></span> <b>Key: <span style="color:cornflowerblue;">AKIAUH0FAB7QVEXAMPLE</span></b>
-<span style="color:mediumseagreen;">></span> <b>Secret: <span style="color:cornflowerblue;">****************************************</span></b>
-<span style="color:grey;">[12:26:20.566]</span> INFO     <b>Management credentials configured in:</b> /home/user/.aws/ex/credentials
-<span style="color:grey;">[12:26:24.418]</span> INFO     Configuring accounts' profiles.
-<span style="color:grey;">[12:26:24.420]</span> INFO     Fetching organization accounts.
-<span style="color:grey;">[12:26:26.234]</span> INFO     Fetching MFA device serial.
-<span style="color:grey;">[12:26:28.265]</span> INFO     Backing up account profiles file.
-<span style="color:grey;">[12:26:28.849]</span> INFO     <b>Account profiles configured in:</b> /home/user/.aws/ex/config
-<span style="color:grey;">[12:26:28.856]</span> INFO     Updating project configuration file.
-<span style="color:grey;">[12:26:28.877]</span> INFO     Loading configuration file.
-<span style="color:grey;">[12:26:28.907]</span> INFO     Finished updating <b>management</b> credentials.
+<pre><code><span class="fsg-timestamp">[12:25:57.502]</span> INFO     Loading configuration file.
+<span class="fsg-timestamp">[12:25:59.343]</span> INFO     Configuring <b>management</b> credentials.
+<span class="fsg-prompt">></span> <b>Select the means by which you'll provide the programmatic keys: <span class="fsg-userinput">Manually</span></b>
+<span class="fsg-prompt">></span> <b>Key: <span class="fsg-userinput">AKIAUH0FAB7QVEXAMPLE</span></b>
+<span class="fsg-prompt">></span> <b>Secret: <span class="fsg-userinput">****************************************</span></b>
+<span class="fsg-timestamp">[12:26:20.566]</span> INFO     <b>Management credentials configured in:</b> <span class="fsg-path">/home/user/.aws/me/credentials</span>
+<span class="fsg-timestamp">[12:26:24.418]</span> INFO     Configuring accounts' profiles.
+<span class="fsg-timestamp">[12:26:24.420]</span> INFO     Fetching organization accounts.
+<span class="fsg-timestamp">[12:26:26.234]</span> INFO     Fetching MFA device serial.
+<span class="fsg-timestamp">[12:26:28.265]</span> INFO     Backing up account profiles file.
+<span class="fsg-timestamp">[12:26:28.849]</span> INFO     <b>Account profiles configured in:</b> <span class="fsg-path">/home/user/.aws/me/config</span>
+<span class="fsg-timestamp">[12:26:28.856]</span> INFO     Updating project configuration file.
+<span class="fsg-timestamp">[12:26:28.877]</span> INFO     Loading configuration file.
+<span class="fsg-timestamp">[12:26:28.907]</span> INFO     Finished updating <b>management</b> credentials.
 </code></pre>
 
 !!! note

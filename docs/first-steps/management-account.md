@@ -46,6 +46,12 @@ leverage terraform init
 
 When prompted, answer `yes`. Now you can safely remove the `terraform.tfstate` and `terraform.tfstate.backup` files created during the `apply` step.
 
+!!! info "Terraform backend"
+    More information regarding what is the Terraform backend and Terraform state management:
+
+    * [Terraform backend](https://www.terraform.io/docs/language/settings/backends/index.html)
+    * [How to manage Terraform state](https://blog.gruntwork.io/how-to-manage-terraform-state-28f5697e68fa)
+
 ### Identities layer
 
 Move into the `base-identities` directory and run:

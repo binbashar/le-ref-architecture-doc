@@ -37,7 +37,6 @@ After filling in the data you will end up with a configuration file similar to t
 
 You can see in the global values, the project name and a short version of it, in the `organization` section, the emails for each account, and further down, in the `accounts` section, the different groups and users for each group in the `management` and `security` accounts.  
 
-!!! info "[:books: Email setup for a GSuite group using aliases](../user-guide/organization/organization-init/#email-setup-example)"
 
 ???+ note "`project.yaml` for *MyExample* project"
     ```yaml
@@ -177,7 +176,7 @@ Now you will finally create all the infrastructure definition in the project.
 ``` bash
 leverage project create
 ```
-<pre><code>pan style= class="fsg-timestamp">[09:40:54.934]</span> INFO     Loading configuration file.
+<pre><code><span class="fsg-timestamp">[09:40:54.934]</span> INFO     Loading configuration file.
 <span class="fsg-timestamp">[09:40:54.950]</span> INFO     Creating project directory structure.
 <span class="fsg-timestamp">[09:40:54.957]</span> INFO     Finished creating directory structure.
 <span class="fsg-timestamp">[09:40:54.958]</span> INFO     Setting up common base files.

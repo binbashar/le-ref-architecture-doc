@@ -45,3 +45,17 @@ Tables set to 100% width
 .md-typeset table:not([class]) {
     display: table;
 }
+
+/*
+Colors for First Steps
+custom code blocks coloring
+*/
+.fsg-timestamp {
+    color: grey;
+}
+.fsg-userinput {
+    color: cornflowerblue;
+}
+.fsg-path, .fsg-prompt {
+    color: mediumseagreen;
+}

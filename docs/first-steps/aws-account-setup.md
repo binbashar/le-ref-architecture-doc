@@ -1,7 +1,7 @@
 # Set Up your AWS Management account
 
 ## Create an AWS account
-First and foremost you'll need to [create an AWS account](../user-guide/features/organization/organization-init.md) for your project's deployment. This will become the management account of your [AWS Organization](https://docs.aws.amazon.com/organizations/latest/userguide/orgs_getting-started_concepts.html). During the creation of the AWS account, a user will be created for you, the [root user](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_root-user.html). This user will take the email and password you provided as login credentials and it will be the main access point of your account.<!--(you can see this user represented in the [architecture iagram]())-->
+First and foremost you'll need to [create an AWS account](../user-guide/features/organization/organization-init.md) for your project's deployment. This will become the management account of your [AWS Organization](https://docs.aws.amazon.com/organizations/latest/userguide/orgs_getting-started_concepts.html). During the creation of the AWS account, a user will be created for you, the [root user](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_root-user.html). This user will take the email and password you provided as login credentials and it will be the main access point of your account (you can see this user represented in the [architecture diagram](../introduction/#introduction)).
 
 The account's name will be given by your project's name followed by `-management`, since Leverage uses a suffix naming system to differentiate between the multiple accounts of a project. For this guide we'll stick to calling the project `MyExample` and so, the account name will be `myexample-management`. 
 

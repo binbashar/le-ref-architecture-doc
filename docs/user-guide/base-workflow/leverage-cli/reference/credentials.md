@@ -30,7 +30,7 @@ leverage credentials update [options]
 
 The `credentials update` subcommand is used to set up or update any of the credentials needed to interact with the AWS environment.
 
-It will try to fetch the structure of the organization in the architecture in order to generate all the [AWS CLI profiles required to interact with the environment](../../../identities/credentials.md) and update the `project.yaml` file with the id of all accounts.
+It will try to fetch the structure of the organization in the architecture in order to generate all the [AWS CLI profiles required to interact with the environment](../../../features/identities/credentials.md) and update the `project.yaml` file with the id of all accounts.
 
 This command will create backups of the previous credentials configuration before attempting to modify the current one.
 

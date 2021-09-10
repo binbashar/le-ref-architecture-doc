@@ -9,8 +9,8 @@
     [terraform vault pre-requisites](../base-configuration/repo-le-tf-vault.md)  
         - [x] [Remote State](repo-le-tf-infra-aws-tf-state.md)
         - [x] Configuration files
-        - [x] [AWS Profile and credentials](../identities/credentials.md)
-        - [x] [Vault token secret](../identities/credentials-vault.md)
+        - [x] [AWS Profile and credentials](../features/identities/credentials.md)
+        - [x] [Vault token secret](../features/identities/credentials-vault.md)
     3. Get into the folder that you need to work with (e.g. `2_identities`)
     4. Run `leverage terraform init`
     5. Make whatever changes you need to make

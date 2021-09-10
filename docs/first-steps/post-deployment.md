@@ -6,7 +6,7 @@ The whole landing zone is already deployed, and with it, all defined users were 
 
 We'll take the place of `natasha.romanoff` to exemplify the process.
 
-When Natasha's user was created, an initial random password was also created alongside it. That password was encrypted using her GPG key, as it was shown in the [management account's](../first-steps/management-account/#identities-layer) and in the [security account's](../first-steps/security-and-shared-accounts/#identities-layer) identities layers.
+When Natasha's user was created, an initial random password was also created alongside it. That password was encrypted using her GPG key, as it was shown in the [management account's](../management-account/#identities-layer) and in the [security account's](../security-and-shared-accounts/#identities-layer) identities layers.
 
 As Natasha, you need to access that password so that you can create your programmatic keys to interact with the environment through Leverage.
 
@@ -33,7 +33,7 @@ user_natasha_romanoff_name = "natasha.romanoff"
 ...
 ```
 
-Extract the value of the password field form the output and [decrypt it](../user-guide/identities/gpg#how-to-manage-your-gpg-keys).
+Extract the value of the password field form the output and [decrypt it](../../user-guide/features/identities/gpg#how-to-manage-your-gpg-keys).
 
 Now, log in the [AWS Console](https://console.aws.amazon.com/) using the `management` account id: `000123456789`, which can be extracted from the `project.yaml` file, your IAM user name: `natasha.romanoff`, and your recently decrypted password. This password should be changed during this procedure.
 

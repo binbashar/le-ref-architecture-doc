@@ -18,9 +18,9 @@ Terraform modules registry, accessed December 3rd 2020).
 
 !!! example "Terraform repo structure + state backend initialization"
     1. Ensure you have [`leverage cli`](../../how-it-works/leverage-cli/index.md) installed in your system
-    2. Refer to [Configuration Pre-requisites](../base-configuration/repo-le-tf-infra-aws.md) to understand how to set up the
+    2. Refer to [Configuration Pre-requisites](../../base-configuration/repo-le-tf-infra-aws/) to understand how to set up the
       configuration files required for this layer. Where you must build your
-      [Terraform Reference Architecture account structure](../../how-it-works/organization/organization.md)
+      [Terraform Reference Architecture account structure](../../how-it-works/features/organization/organization.md)
     3. Leveraged by the [Infrastructure as Code (IaC) Library](../../how-it-works/infra-as-code-library/infra-as-code-library.md) through the
      [terraform-aws-tfstate-backend module](https://registry.terraform.io/modules/binbashar/tfstate-backend/aws/latest)
         - [/management/base-tf-backend](https://github.com/binbashar/le-tf-infra-aws/tree/master/root/base-tf-backend)

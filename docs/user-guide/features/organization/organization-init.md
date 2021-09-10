@@ -82,8 +82,7 @@ the aliases automatically implicitly when running Terraform's Leverage code.
     6. Setup and create the **terraform remote state** for the new AWS Org Management account
         - [x] [terraform remote state config](https://leverage.binbash.com.ar/user-guide/base-configuration/repo-le-tf-infra-aws/#remote-state)
         <!-- NOTE: Where should this point to? -->
-        - [x] [terraform remote state workflow](https://leverage.binbash.com.ar/user-guide/base-workflow/repo-le-tf-infra-aws-tf-state/)
-        <!-- NOTE: Where should this point to? -->
+        - [x] [terraform remote state workflow](../../../base-workflow/repo-le-tf-infra-aws-tf-state/)
         - [x] [terraform remote state ref code](https://github.com/binbashar/le-tf-infra-aws/tree/master/root/base-tf-backend)
         - :ledger: You'll 1st get a local state and then you'll need to move your tf state to s3; validate it and finally delete local state files
 

@@ -93,7 +93,7 @@ the aliases automatically implicitly when running Terraform's Leverage code.
     [standard workflow](../../base-workflow/repo-le-tf-infra/#steps).
         - :ledger: the Management account has to be imported into de the code.
 
-    1. Verify your Management account email address in order to invite existing (legacy) AWS accounts to 
+    8. Verify your Management account email address in order to invite existing (legacy) AWS accounts to 
     join your organization.
 
 ## Organization setup post-steps

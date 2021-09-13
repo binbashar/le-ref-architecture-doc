@@ -66,7 +66,7 @@
     In this way we'll be able to know which version is currently deployed in a certain client and consider it's upgrade.
   
 
-!!! important ":checkered_flag: **Env Parity**"      
+??? important ":checkered_flag: **Env Parity**"      
     Promote immutable, versioned infra modules based across envs. 
      
 

@@ -28,7 +28,7 @@ leverage terraform apply
 
 All `apply` commands will prompt for confirmation, answer `yes` when this happens.
 
-!!! info "More information on [`terraform init`](../user-guide/base-workflow/leverage-cli/reference/terraform#init) and [`terraform apply`](../user-guide/base-workflow/leverage-cli/reference/terraform#apply)"
+!!! info "More information on [`terraform init`](../../user-guide/base-workflow/leverage-cli/reference/terraform#init) and [`terraform apply`](../../user-guide/base-workflow/leverage-cli/reference/terraform#apply)"
 !!! note
     The `apply` command may result in an error similar to:
 
@@ -72,7 +72,7 @@ leverage terraform init
 
 To securely manage the users credentials, all members of the organization that are bound to interact with the AWS environment, and are therefore listed in the `project.yaml` configuration file, should create GPG keys of their own. Then, they should export them and share their public key files with whoever is in charge of the project infrastructure in order to be able to create their respective IAM users. In this guide's case, that person it is you.
 
-!!! info "[:books: How to create and manage GPG keys](../user-guide/identities/gpg/)"
+!!! info "[:books: How to create and manage GPG keys](../../user-guide/features/identities/gpg/)"
 
 Once you get hold of the keys files, copy them to the `keys` subdirectory, respecting the user's configured name. For the `management` account in this guide, we need the keys for `kit.walker` and `natasha.romanoff`.
 
@@ -118,7 +118,7 @@ And run:
 leverage terraform import aws_organizations_account.management 000123456789
 ```
 
-!!! info "More information on [`terraform import`](../user-guide/base-workflow/leverage-cli/reference/terraform#import)"
+!!! info "More information on [`terraform import`](../../user-guide/base-workflow/leverage-cli/reference/terraform#import)"
 
 ### Security layer
 
@@ -150,7 +150,7 @@ leverage credentials update --profile bootstrap --only-accounts-profiles
 <span class="fsg-timestamp">[10:24:49.345]</span> INFO     Finished updating <b>bootstrap</b> credentials.
 </code></pre>
 
-!!! info "More information on [`credentials update`](../user-guide/base-workflow/leverage-cli/reference/credentials#update)"
+!!! info "More information on [`credentials update`](../../user-guide/base-workflow/leverage-cli/reference/credentials#update)"
 
 ## Next steps
 You have successfully orchestrated the `management` account for your project and configured the credentials for the following steps.

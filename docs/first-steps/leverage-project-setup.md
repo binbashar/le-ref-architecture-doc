@@ -25,7 +25,7 @@ leverage project init
 <span class="fsg-timestamp">[09:30:54.990]</span> INFO     No project configuration file found. Creating an example config.
 </code></pre>
 
-!!! info "More information on [`project init`](../user-guide/base-workflow/leverage-cli/reference/project#init)"
+!!! info "More information on [`project init`](../../user-guide/base-workflow/leverage-cli/reference/project#init)"
 
 Initializing a project creates the global configurations directory for Leverage CLI and downloads the templates used to generate the project's files structure. It then initializes a `git` repository in the working directory, and creates a file called `project.yaml`. Leverage projects are by design repositories to leverage some of the capabilities of `git` and because it is assumed that the code in the project will be versioned.
 
@@ -156,7 +156,7 @@ To be able to interact with your AWS environment you first need to configure the
     <span class="fsg-timestamp">[09:37:55.351]</span> INFO     Finished setting up <b>bootstrap</b> credentials.
     </code></pre>
 
-!!! info "More information on [`credentials create`](../user-guide/base-workflow/leverage-cli/reference/credentials#create)"
+!!! info "More information on [`credentials create`](../../user-guide/base-workflow/leverage-cli/reference/credentials#create)"
 
 During the credentials setup, the AWS account id is filled in for us in the project configuration file.
 
@@ -202,7 +202,7 @@ leverage project create
 <span class="fsg-timestamp">[09:40:55.743]</span> INFO     Finished setting up project.
 </code></pre>
 
-!!! info "More information on [`project create`](../user-guide/base-workflow/leverage-cli/reference/project#create)"
+!!! info "More information on [`project create`](../../user-guide/base-workflow/leverage-cli/reference/project#create)"
 
 In this step, the directory structure for the project and all definition files are created using the information from the `project.yaml` file and checked for correct formatting.
 

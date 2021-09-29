@@ -44,5 +44,5 @@ write-up of how we approached this sensitive task, the alternatives we analysed 
 solutions we provided in order to meet the requirements. We hope it can be useful for others as well.
 
 !!! info "Leverage Confluence Documentation"    
-You'll find [**here**](https://binbash.atlassian.net/wiki/external/2055536653/OTdjZDZlNmI4NDE4NGQzMjg4ZWQzMzZkYjczMWM2NjA?atlOrigin=eyJpIjoiODRjZmQyNzQ2YjRlNDAzNTk4YTYyMzE0MDU1MjYyMWYiLCJwIjoiYyJ9)
-a detailed comparison including the alternative product and solution types, pricing model, features, pros & cons.
+    You'll find [**here**](https://binbash.atlassian.net/wiki/external/2055536653/OTdjZDZlNmI4NDE4NGQzMjg4ZWQzMzZkYjczMWM2NjA?atlOrigin=eyJpIjoiODRjZmQyNzQ2YjRlNDAzNTk4YTYyMzE0MDU1MjYyMWYiLCJwIjoiYyJ9)
+    a detailed comparison including the alternative product and solution types, pricing model, features, pros & cons.

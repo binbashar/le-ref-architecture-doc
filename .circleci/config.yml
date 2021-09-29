@@ -23,9 +23,7 @@ jobs:
 
       - run:
           name: Deploy GitHub Pages Site w/ MkDocs
-          environment:
-            GOOGLE_ANALYTICS_KEY: $GOOGLE_ANALYTICS_KEY_LEVERAGE
-          command: make docs-deploy-gh
+          command: GOOGLE_ANALYTICS_KEY=$GOOGLE_ANALYTICS_KEY_LEVERAGE make docs-deploy-gh
 
       - slack/notify:
           event: fail

@@ -8,7 +8,7 @@ The objective of this guide is to introduce the user to our [**Binbash Leverage 
 The Leverage landing zone is the smallest possible fully functional configuration. It lays out the base infrastructure required to manage the environment: billing and financial management, user management, security enforcement, and shared services and resources. Always following the best practices layed out by the [AWS Well-Architected Framework](https://docs.aws.amazon.com/wellarchitected/latest/framework/welcome.html) to ensure quality and to provide a solid base to build upon. This is the starting point from which any Leverage user can and will develop all the features and capabilities they may require to satisfy their specific needs.
 
 </br>
-![leverage-landing-zone](../../assets/diagrams/leverage-landing-zone.png "Leverage Landing Zone"){: style="width: 650px"}
+![leverage-landing-zone](../assets/diagrams/leverage-landing-zone.png "Leverage Landing Zone"){: style="width: 650px"}
 <figcaption style="font-size:15px">
 <b>Figure:</b> Leverage Landing Zone configuration diagram.
 </figcaption>

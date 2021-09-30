@@ -51,3 +51,6 @@
     - [x] **Security Groups**: Use AWS Firewall Manager to create a common primary security group across your EC2 instances in your VPCs.
 
 ![Firewall Manager Service](../../../assets/images/diagrams/aws-fms.png)
+
+### Read More
+- [x] [AWS Firewall Manager](https://aws.amazon.com/firewall-manager/)

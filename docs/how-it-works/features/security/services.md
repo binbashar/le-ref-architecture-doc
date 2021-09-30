@@ -50,4 +50,4 @@
     - [x] **Audit Security Groups**: You can create policies to set guardrails that define what security groups are allowed/disallowed across your VPCs. AWS Firewall Manager continuously monitors security groups to detect overly permissive rules, and helps improve firewall posture. You can get notifications of accounts and resources that are non-compliant or allow AWS Firewall Manager to take action directly through auto-remediation.
     - [x] **Security Groups**: Use AWS Firewall Manager to create a common primary security group across your EC2 instances in your VPCs.
 
-![Firewall Manager Service](../../assets/images/diagrams/aws-fms.png)
+![Firewall Manager Service](../../../assets/images/diagrams/aws-fms.png)

@@ -3042,8 +3042,27 @@ in the proper git repo).</p>
        and potentially compromised instances or reconnaissance by attackers.</li>
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> <img alt="aws-service" src="../../../../assets/images/icons/aws-emojipack/ManagementTools_AmazonCloudWatch.png" style="width:30px" />
     <strong>AWS Security Logs</strong> Other access logs from client-facing resources will be stored in the Security account.</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> <img alt="aws-service" src="../../../../assets/images/icons/aws-emojipack/AWS_Firewall_Manager.png" style="width:30px" />
+    <strong>AWS Firewall Manager</strong> Is a security management service which allows you to centrally configure and manage firewall rules across your accounts and applications in AWS Organizations. This service lets you build firewall rules, create security policies, and enforce them in a consistent, hierarchical manner across your entire infrastructure, from a central administrator account.</li>
 </ul>
 </div>
+<h1 id="security-layer">Security Layer<a class="headerlink" href="#security-layer" title="Permanent link"> ¶</a></h1>
+<h2 id="aws-firewall-manager">AWS Firewall Manager<a class="headerlink" href="#aws-firewall-manager" title="Permanent link"> ¶</a></h2>
+<div class="admonition summary">
+<p class="admonition-title">Scenarios</p>
+<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> <strong>Network Firewall rules</strong>: Security administrators will be able to deploy firewall rules for AWS Network Firewall to control traffic leaving and entering your network across accounts and Amazon VPCs, from the Security account.</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> <strong>WAF &amp; WAF v2</strong>: Your security administrators will able to deploy WAF and WAF v2 rules, and Managed rules for WAF to be used on Application Load Balancers, API Gateways and Amazon CloudFront distributions.</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> <strong>Route 53 Resolver DNS Firewall rules</strong>: Deploy Route 53 Resolver DNS Firewall rules from the Security account to enforce firewall rules across your organization.</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> <strong>Audit Security Groups</strong>: You can create policies to set guardrails that define what security groups are allowed/disallowed across your VPCs. AWS Firewall Manager continuously monitors security groups to detect overly permissive rules, and helps improve firewall posture. You can get notifications of accounts and resources that are non-compliant or allow AWS Firewall Manager to take action directly through auto-remediation.</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> <strong>Security Groups</strong>: Use AWS Firewall Manager to create a common primary security group across your EC2 instances in your VPCs.</li>
+</ul>
+</div>
+<p><img alt="Firewall Manager Service" src="../../../../assets/images/diagrams/aws-fms.png" /></p>
+<h3 id="read-more">Read More<a class="headerlink" href="#read-more" title="Permanent link"> ¶</a></h3>
+<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> <a href="https://aws.amazon.com/firewall-manager/">AWS Firewall Manager</a></li>
+</ul>
                 
               
               

@@ -166,7 +166,7 @@ you can get to work with anything else.
 
 !!! tips "Config files can be found under each `config` folders"
     - :file_folder: **Global config file** 
-    [`/config/common.tfvars`](https://github.com/binbashar/le-tf-infra-aws/blob/master/config/common.config) 
+    [`/config/common.tfvars`](https://github.com/binbashar/le-tf-infra-aws/blob/master/config/common.config.example) 
     contains global context TF variables that we inject to TF commands which are used by all sub-directories such as 
     `make plan` or `make apply` and which cannot be stored in `backend.config` due to TF.
     - :file_folder: **Account config files** 

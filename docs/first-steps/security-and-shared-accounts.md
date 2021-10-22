@@ -14,7 +14,7 @@ cd security
 
 ### Terraform backend layer
 
-Move into the `base-tf-backend` directory and run:
+Move into the `us-east-1/base-tf-backend` directory and run:
 
 ``` bash
 leverage terraform init
@@ -52,7 +52,7 @@ Now you can safely remove the `terraform.tfstate` and `terraform.tfstate.backup`
 
 ### Identities layer
 
-Now, move into the `base-identities` directory and run:
+Now, move into the `global/base-identities` directory, and run:
 
 ``` bash
 leverage terraform init
@@ -72,7 +72,7 @@ leverage terraform apply
 
 ### Security layer
 
-The last layer for the `security` account is the security layer. Move into the `security-base` directory and run:
+The last layer for the `security` account is the security layer. Move into the `us-east-1/security-base` directory and run:
 
 ``` bash
 leverage terraform init
@@ -93,7 +93,7 @@ cd shared
 
 ### Terraform backend layer
 
-Move into the `base-tf-backend` directory and run:
+Move into the `us-east-1/base-tf-backend` directory and run:
 
 ``` bash
 leverage terraform init
@@ -131,7 +131,7 @@ Now you can safely remove the `terraform.tfstate` and `terraform.tfstate.backup`
 
 ### Identities layer
 
-Now move into the `base-identities` directory and run:
+Now move into the `global/base-identities` directory and run:
 
 ``` bash
 leverage terraform init
@@ -149,7 +149,7 @@ leverage terraform apply
 
 ### Security layer
 
-Next, move into the `security-base` directory:
+Next, move into the `us-east-1/security-base` directory:
 
 ``` bash
 leverage terraform init
@@ -158,7 +158,7 @@ leverage terraform apply
 
 ### Network layer
 
-The last layer for the `shared` account is the network layer, so move into the `base-network` directory and run:
+The last layer for the `shared` account is the network layer, so move into the `us-east-1/base-network` directory and run:
 
 ``` bash
 leverage terraform init

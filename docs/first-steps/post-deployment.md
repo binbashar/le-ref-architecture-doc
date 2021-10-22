@@ -10,7 +10,7 @@ When Natasha's user was created, an initial random password was also created alo
 
 As Natasha, you need to access that password so that you can create your programmatic keys to interact with the environment through Leverage.
 
-First, for the `management` account, change the value `sensitive` to `true` in the output block `user_natasha_romanoff_login_profile_encrypted_password` of `management/base-identities/outputs.tf`:
+First, for the `management` account, change the value `sensitive` to `true` in the output block `user_natasha_romanoff_login_profile_encrypted_password` of `management/global/base-identities/outputs.tf`:
 
 ``` terraform
 output "user_natasha_romanoff_login_profile_encrypted_password" {
@@ -20,7 +20,7 @@ output "user_natasha_romanoff_login_profile_encrypted_password" {
 }
 ```
 
-Then, in the `base-identities` directory, run:
+Then, in the `global/base-identities` directory, run:
 
 ``` bash
 leverage terraform apply
@@ -78,7 +78,7 @@ To enable MFA for a `management` account user, you need to enable this feature i
 Move into the account's identities layer:
 
 ``` bash
-cd management/base-identities
+cd management/global/base-identities
 ```
 
 Change the value `role_requires_mfa` for the role `iam_assumable_role_oaar` in `roles.tf` to `true`. By default this value is `false`, that is to say, MFA is disabled for the role.

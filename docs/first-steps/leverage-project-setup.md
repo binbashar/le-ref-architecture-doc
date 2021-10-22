@@ -40,9 +40,6 @@ You can see in the global values, the project name and a short version of it, in
 
 ???+ note "`project.yaml` for *MyExample* project"
     ```yaml
-    meta:
-      enable_mfa: false
-
     project_name: myexample # <--
     short_name: me # <--
 
@@ -99,12 +96,14 @@ You can see in the global values, the project name and a short version of it, in
         networks:
         - cidr_block: "172.18.0.0/20"
           availability_zones: [a,b]
+          private_subnets_cidr: "172.18.0.0/21"
           private_subnets:
           - "172.18.0.0/23"
           - "172.18.2.0/23"
+          public_subnets_cidr: "172.18.8.0/21"
           public_subnets:
-          - "172.18.6.0/23"
           - "172.18.8.0/23"
+          - "172.18.10.0/23"
     ```
 ## Set Up the bootstrap credentials
 To be able to interact with your AWS environment you first need to configure the credentials to enable AWS CLI to do so. Provide the keys obtained in the previous [account creation step](../aws-account-setup/) to the command by any of the available means.
@@ -211,102 +210,112 @@ You will end up with something that looks like this:
 ???+ note "*MyExample* project file structure"
     <pre><code>📂 <b>myexample</b>
     ├── 📄 build.env
+    ├── 📄 project.yaml
     ├── 📂 <b>config</b>
     │   └── 📄 common.tfvars
     ├── 📂 <b>management</b>
-    │   ├── 📂 <b>base-identities</b>
-    │   │   ├── 📄 account.tf
-    │   │   ├── 📄 config.tf
-    │   │   ├── 📄 groups.tf
-    │   │   ├── 📄 keys
-    │   │   ├── 📄 locals.tf
-    │   │   ├── 📄 outputs.tf
-    │   │   ├── 📄 roles.tf
-    │   │   ├── 📄 users.tf
-    │   │   └── 📄 variables.tf
-    │   ├── 📂 <b>base-tf-backend</b>
-    │   │   ├── 📄 config.tf
-    │   │   ├── 📄 locals.tf
-    │   │   ├── 📄 main.tf
-    │   │   └── 📄 variables.tf
     │   ├── 📂 <b>config</b>
     │   │   ├── 📄 account.tfvars
     │   │   └── 📄 backend.tfvars
-    │   ├── 📂 <b>organizations</b>
-    │   │   ├── 📄 accounts.tf
-    │   │   ├── 📄 config.tf
-    │   │   ├── 📄 delegated_administrator.tf
-    │   │   ├── 📄 locals.tf
-    │   │   ├── 📄 organizational_units.tf
-    │   │   ├── 📄 organization.tf
-    │   │   ├── 📄 policies_scp.tf
-    │   │   ├── 📄 policy_scp_attachments.tf
-    │   │   ├── 📄 service_linked_roles.tf
-    │   │   └── 📄 variables.tf
-    │   └── 📂 <b>security-base</b>
-    │       ├── 📄 account.tf
-    │       ├── 📄 config.tf
-    │       └── 📄 variables.tf
-    ├── 📄 project.yaml
+    |   ├── 📂 <b>global</b>
+    |   │   ├── 📂 <b>organizations</b>
+    |   │   │   ├── 📄 accounts.tf
+    |   │   │   ├── 📄 config.tf
+    |   │   │   ├── 📄 delegated_administrator.tf
+    |   │   │   ├── 📄 locals.tf
+    |   │   │   ├── 📄 organizational_units.tf
+    |   │   │   ├── 📄 organization.tf
+    |   │   │   ├── 📄 policies_scp.tf
+    |   │   │   ├── 📄 policy_scp_attachments.tf
+    |   │   │   ├── 📄 service_linked_roles.tf
+    |   │   │   └── 📄 variables.tf
+    |   │   └── 📂 <b>base-identities</b>
+    |   │       ├── 📄 account.tf
+    |   │       ├── 📄 config.tf
+    |   │       ├── 📄 groups.tf
+    |   │       ├── 📄 keys
+    |   │       ├── 📄 locals.tf
+    |   │       ├── 📄 outputs.tf
+    |   │       ├── 📄 roles.tf
+    |   │       ├── 📄 users.tf
+    |   │       └── 📄 variables.tf
+    |   └── 📂 <b>us-east-1</b>
+    |       ├── 📂 <b>base-tf-backend</b>
+    |       │   ├── 📄 config.tf
+    |       │   ├── 📄 locals.tf
+    |       │   ├── 📄 main.tf
+    |       │   └── 📄 variables.tf
+    |       └── 📂 <b>security-base</b>
+    |           ├── 📄 account.tf
+    |           ├── 📄 config.tf
+    |           └── 📄 variables.tf
     ├── 📂 <b>security</b>
-    │   ├── 📂 <b>base-identities</b>
-    │   │   ├── 📄 account.tf
-    │   │   ├── 📄 config.tf
-    │   │   ├── 📄 groups_policies.tf
-    │   │   ├── 📄 groups.tf
-    │   │   ├── 📄 keys
-    │   │   ├── 📄 locals.tf
-    │   │   ├── 📄 outputs.tf
-    │   │   ├── 📄 role_policies.tf
-    │   │   ├── 📄 roles.tf
-    │   │   ├── 📄 users.tf
-    │   │   └── 📄 variables.tf
-    │   ├── 📂 <b>base-tf-backend</b>
-    │   │   ├── 📄 config.tf
-    │   │   ├── 📄 locals.tf
-    │   │   ├── 📄 main.tf
-    │   │   └── 📄 variables.tf
     │   ├── 📂 <b>config</b>
     │   │   ├── 📄 account.tfvars
     │   │   └── 📄 backend.tfvars
-    │   └── 📂 <b>security-base</b>
-    │       ├── 📄 account.tf
-    │       ├── 📄 config.tf
-    │       ├── 📄 iam_access_analizer.tf
-    │       ├── 📄 locals.tf
-    │       └── 📄 variables.tf
+    │   ├── 📂 <b>global</b>
+    |   |   └── 📂 <b>base-identities</b>
+    |   │       ├── 📄 account.tf
+    |   │       ├── 📄 config.tf
+    |   │       ├── 📄 groups_policies.tf
+    |   │       ├── 📄 groups.tf
+    |   │       ├── 📄 keys
+    |   │       ├── 📄 locals.tf
+    |   │       ├── 📄 outputs.tf
+    |   │       ├── 📄 role_policies.tf
+    |   │       ├── 📄 roles.tf
+    |   │       ├── 📄 users.tf
+    |   │       └── 📄 variables.tf
+    │   └── 📂 <b>us-east-1</b>
+    |       ├── 📂 <b>base-tf-backend</b>
+    |       │   ├── 📄 config.tf
+    |       │   ├── 📄 locals.tf
+    |       │   ├── 📄 main.tf
+    |       │   └── 📄 variables.tf
+    |       └── 📂 <b>security-base</b>
+    |           ├── 📄 account.tf
+    |           ├── 📄 config.tf
+    |           ├── 📄 iam_access_analizer.tf
+    |           ├── 📄 locals.tf
+    │           └── 📄 variables.tf
     └── 📂 <b>shared</b>
-        ├── 📂 <b>base-identities</b>
-        │   ├── 📄 account.tf
-        │   ├── 📄 config.tf
-        │   ├── 📄 locals.tf
-        │   ├── 📄 policies.tf
-        │   ├── 📄 roles.tf
-        │   ├── 📄 service_linked_roles.tf
-        │   └── 📄 variables.tf
-        ├── 📂 <b>base-network</b>
-        │   ├── 📄 account.tf
-        │   ├── 📄 config.tf
-        │   ├── 📄 locals.tf
-        │   ├── 📄 network.tf
-        │   ├── 📄 network_vpc_flow_logs.tf
-        │   ├── 📄 outputs.tf
-        │   └── 📄 variables.tf
-        ├── 📂 <b>base-tf-backend</b>
-        │   ├── 📄 config.tf
-        │   ├── 📄 locals.tf
-        │   ├── 📄 main.tf
-        │   └── 📄 variables.tf
         ├── 📂 <b>config</b>
         │   ├── 📄 account.tfvars
         │   └── 📄 backend.tfvars
-        └── 📂 <b>security-base</b>
-            ├── 📄 account.tf
-            ├── 📄 config.tf
-            └── 📄 variables.tf
+        ├── 📂 <b>global</b>
+        |   └── 📂 <b>base-identities</b>
+        |       ├── 📄 account.tf
+        |       ├── 📄 config.tf
+        |       ├── 📄 locals.tf
+        |       ├── 📄 policies.tf
+        |       ├── 📄 roles.tf
+        |       ├── 📄 service_linked_roles.tf
+        |       └── 📄 variables.tf
+        └── 📂 <b>us-east-1</b>
+            ├── 📂 <b>base-network</b>
+            │   ├── 📄 account.tf
+            │   ├── 📄 config.tf
+            │   ├── 📄 locals.tf
+            │   ├── 📄 network.tf
+            │   ├── 📄 network_vpc_flow_logs.tf
+            │   ├── 📄 outputs.tf
+            │   └── 📄 variables.tf
+            ├── 📂 <b>base-tf-backend</b>
+            │   ├── 📄 config.tf
+            │   ├── 📄 locals.tf
+            │   ├── 📄 main.tf
+            │   └── 📄 variables.tf
+            └── 📂 <b>security-base</b>
+                ├── 📄 account.tf
+                ├── 📄 config.tf
+                └── 📄 variables.tf
     </pre></code>
 
 As you can see, it is a structure comprised of directories for each account containing all the definitions for each of the accounts respective layers.
+
+The layers themselves are also grouped based on the region in which they are deployed. The regions are configured through the `project.yaml` file. In the case of the Leverage landing zone, most layers are deployed in the primary region, so you can see the definition of these layers in a `us-east-1` directory, as per the example configuration.
+
+Some layers are not bound to a region because their definition is mainly comprised of resources for services that are global in nature, like IAM or Organizations. These kind of layers are kept in a `global` directory.
 
 ## Next steps
 You have now created the definition of all the infrastructure for your project and configured the credentials need to deploy such infrastructure in the AWS environment.

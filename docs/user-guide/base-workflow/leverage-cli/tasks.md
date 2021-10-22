@@ -42,7 +42,7 @@ Copying /path/to/foo to /path/to/bar
 Keyworded arguments are also supported.
 
 ``` bash
-$ leverage run copy_file["/path/to/foo", dst="/path/to/bar"]
+$ leverage run copy_file["/path/to/foo",dst="/path/to/bar"]
 ```
 
 

@@ -14,11 +14,6 @@
     1. **DNS** service has to be orchestrated from 
     [`/shared/global/base-dns`](https://github.com/binbashar/le-tf-infra-aws/tree/master/shared/global/base-dns) layer 
     following the standard [workflow](../../base-workflow/repo-le-tf-infra.md)
-    2. To associate AWS Org Member accounts to your DNS Private Hosted Zones eg: `*.aws.domain.com` 
-    (previously deployed) proceed applying the corresponding layers
-        1. [apps-devstg/global/base-dns](https://github.com/binbashar/le-tf-infra-aws/tree/master/apps-devstg/global/base-dns)
-        2. [apps-prd/global/base-dns](https://github.com/binbashar/le-tf-infra-aws/tree/master/apps-prd/global/base-dns)
-        3. repeat for every other necessary AWS Organizations Member account.
         
 ### Migrated AWS Route53 Hosted Zones between AWS Accounts 
 

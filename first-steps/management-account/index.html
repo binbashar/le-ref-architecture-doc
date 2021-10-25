@@ -3634,7 +3634,7 @@
 <div class="highlight"><pre><span></span><code><span class="nb">cd</span> management
 </code></pre></div>
 <h3 id="terraform-backend-layer">Terraform backend layer<a class="headerlink" href="#terraform-backend-layer" title="Permanent link"> ¶</a></h3>
-<p>Move into the <code>base-tf-backend</code> directory and run:</p>
+<p>Move into the <code>us-east-1/base-tf-backend</code> directory and run:</p>
 <div class="highlight"><pre><span></span><code>leverage terraform init
 leverage terraform apply
 </code></pre></div>
@@ -3669,7 +3669,7 @@ Please try again.
 </ul>
 </div>
 <h3 id="identities-layer">Identities layer<a class="headerlink" href="#identities-layer" title="Permanent link"> ¶</a></h3>
-<p>Move into the <code>base-identities</code> directory and run:</p>
+<p>The definition for the identities layer is located within the <code>global</code> directory. Move into the <code>global/base-identities</code> directory and run:</p>
 <div class="highlight"><pre><span></span><code>leverage terraform init
 </code></pre></div>
 <p>To securely manage the users credentials, all members of the organization that are bound to interact with the AWS environment, and are therefore listed in the <code>project.yaml</code> configuration file, should create GPG keys of their own. Then, they should export them and share their public key files with whoever is in charge of the project infrastructure in order to be able to create their respective IAM users. In this guide's case, that person it is you.</p>
@@ -3681,7 +3681,7 @@ Please try again.
 <div class="highlight"><pre><span></span><code>leverage terraform apply
 </code></pre></div>
 <h3 id="organizations-layer">Organizations layer<a class="headerlink" href="#organizations-layer" title="Permanent link"> ¶</a></h3>
-<p>Next, move into the <code>organizations</code> directory and run:</p>
+<p>Next, in the same fashion as in the previous layer, move into the <code>global/organizations</code> directory and run:</p>
 <div class="highlight"><pre><span></span><code>leverage terraform init
 leverage terraform apply
 </code></pre></div>
@@ -3707,7 +3707,7 @@ leverage terraform apply
 <p class="admonition-title">More information on <a href="../../user-guide/base-workflow/leverage-cli/reference/terraform#import"><code>terraform import</code></a></p>
 </div>
 <h3 id="security-layer">Security layer<a class="headerlink" href="#security-layer" title="Permanent link"> ¶</a></h3>
-<p>The last layer for the <code>management</code> account is the security layer. So, move into the <code>security-base</code> directory and run:</p>
+<p>The last layer for the <code>management</code> account is the security layer and its definition is located in <code>us-east-1</code>. So, move into the <code>us-east-1/security-base</code> directory and run:</p>
 <div class="highlight"><pre><span></span><code>leverage terraform init
 leverage terraform apply
 </code></pre></div>

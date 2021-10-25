@@ -3707,7 +3707,7 @@ Copying /path/to/foo to /path/to/bar
 <span class="o">[</span><span class="m">09</span>:25:59.005<span class="o">]</span> <span class="o">[</span> build.py - ✔ Completed task copy_file <span class="o">]</span>
 </code></pre></div>
 <p>Keyworded arguments are also supported.</p>
-<div class="highlight"><pre><span></span><code>$ leverage run copy_file<span class="o">[</span><span class="s2">&quot;/path/to/foo&quot;</span>, <span class="nv">dst</span><span class="o">=</span><span class="s2">&quot;/path/to/bar&quot;</span><span class="o">]</span>
+<div class="highlight"><pre><span></span><code>$ leverage run copy_file<span class="o">[</span><span class="s2">&quot;/path/to/foo&quot;</span>,dst<span class="o">=</span><span class="s2">&quot;/path/to/bar&quot;</span><span class="o">]</span>
 </code></pre></div>
 <h3 id="dependencies">Dependencies<a class="headerlink" href="#dependencies" title="Permanent link"> ¶</a></h3>
 <p>The <code>task</code> decorator allows for the definition of dependencies. These are defined as positional arguments in the decorator itself. Multiple dependencies can be defined for each task.</p>

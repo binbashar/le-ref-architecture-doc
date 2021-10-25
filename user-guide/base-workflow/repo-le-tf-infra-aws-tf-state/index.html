@@ -3594,11 +3594,11 @@ Terraform modules registry, accessed December 3rd 2020).
   <a href="../../../how-it-works/features/organization/organization/">Terraform Reference Architecture account structure</a></li>
 <li>Leveraged by the <a href="../../../how-it-works/infra-as-code-library/infra-as-code-library/">Infrastructure as Code (IaC) Library</a> through the
  <a href="https://registry.terraform.io/modules/binbashar/tfstate-backend/aws/latest">terraform-aws-tfstate-backend module</a><ul>
-<li><a href="https://github.com/binbashar/le-tf-infra-aws/tree/master/root/base-tf-backend">/management/base-tf-backend</a></li>
-<li><a href="https://github.com/binbashar/le-tf-infra-aws/tree/master/security/base-tf-backend">/security/base-tf-backend</a></li>
-<li><a href="https://github.com/binbashar/le-tf-infra-aws/tree/master/shared/base-tf-backend">/shared/base-tf-backend</a></li>
-<li><a href="https://github.com/binbashar/le-tf-infra-aws/tree/master/apps-devstg/base-tf-backend">/apps-devstg/base-tf-backend</a></li>
-<li><a href="https://github.com/binbashar/le-tf-infra-aws/tree/master/apps-prd/base-tf-backend">/apps-prd/base-tf-backend</a></li>
+<li><a href="https://github.com/binbashar/le-tf-infra-aws/tree/master/root/us-east-1/base-tf-backend">/management/base-tf-backend</a></li>
+<li><a href="https://github.com/binbashar/le-tf-infra-aws/tree/master/security/us-east-1/base-tf-backend">/security/base-tf-backend</a></li>
+<li><a href="https://github.com/binbashar/le-tf-infra-aws/tree/master/shared/us-east-1/base-tf-backend">/shared/base-tf-backend</a></li>
+<li><a href="https://github.com/binbashar/le-tf-infra-aws/tree/master/us-east-1/apps-devstg/base-tf-backend">/apps-devstg/base-tf-backend</a></li>
+<li><a href="https://github.com/binbashar/le-tf-infra-aws/tree/master/apps-prd/us-east-1/base-tf-backend">/apps-prd/base-tf-backend</a></li>
 </ul>
 </li>
 </ol>
@@ -3608,7 +3608,7 @@ Terraform modules registry, accessed December 3rd 2020).
 <p class="admonition-title">Steps to initialize your tf-backend</p>
 <ol>
 <li>At the corresponding account dir, 
-  eg: <a href="https://github.com/binbashar/le-tf-infra-aws/tree/master/shared/base-tf-backend">/shared/base-tf-backend</a> then,</li>
+  eg: <a href="https://github.com/binbashar/le-tf-infra-aws/tree/master/shared/us-east-1/base-tf-backend">/shared/base-tf-backend</a> then,</li>
 <li>Run <code>leverage terraform init</code></li>
 <li>Run <code>leverage terraform plan</code>, review the output to understand the expected changes</li>
 <li>Run <code>leverage terraform apply</code>, review the output once more and type <code>yes</code> if you are okay with that</li>

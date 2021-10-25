@@ -3622,10 +3622,7 @@
 <p>Once the project is initialized you need to fill in the correct information for the project in the configuration file.</p>
 <p>After filling in the data you will end up with a configuration file similar to the one below. Indicated by arrows are the fields that were modified.</p>
 <p>You can see in the global values, the project name and a short version of it, in the <code>organization</code> section, the emails for each account, and further down, in the <code>accounts</code> section, the different groups and users for each group in the <code>management</code> and <code>security</code> accounts.  </p>
-<details class="note" open="open"><summary><code>project.yaml</code> for <em>MyExample</em> project</summary><div class="highlight"><pre><span></span><code><span class="nt">meta</span><span class="p">:</span>
-  <span class="nt">enable_mfa</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">false</span>
-
-<span class="nt">project_name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">myexample</span> <span class="c1"># &lt;--</span>
+<details class="note" open="open"><summary><code>project.yaml</code> for <em>MyExample</em> project</summary><div class="highlight"><pre><span></span><code><span class="nt">project_name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">myexample</span> <span class="c1"># &lt;--</span>
 <span class="nt">short_name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">me</span> <span class="c1"># &lt;--</span>
 
 <span class="nt">primary_region</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">us-east-1</span>
@@ -3681,12 +3678,14 @@
     <span class="nt">networks</span><span class="p">:</span>
     <span class="p p-Indicator">-</span> <span class="nt">cidr_block</span><span class="p">:</span> <span class="s">&quot;172.18.0.0/20&quot;</span>
       <span class="nt">availability_zones</span><span class="p">:</span> <span class="p p-Indicator">[</span><span class="nv">a</span><span class="p p-Indicator">,</span><span class="nv">b</span><span class="p p-Indicator">]</span>
+      <span class="nt">private_subnets_cidr</span><span class="p">:</span> <span class="s">&quot;172.18.0.0/21&quot;</span>
       <span class="nt">private_subnets</span><span class="p">:</span>
       <span class="p p-Indicator">-</span> <span class="s">&quot;172.18.0.0/23&quot;</span>
       <span class="p p-Indicator">-</span> <span class="s">&quot;172.18.2.0/23&quot;</span>
+      <span class="nt">public_subnets_cidr</span><span class="p">:</span> <span class="s">&quot;172.18.8.0/21&quot;</span>
       <span class="nt">public_subnets</span><span class="p">:</span>
-      <span class="p p-Indicator">-</span> <span class="s">&quot;172.18.6.0/23&quot;</span>
       <span class="p p-Indicator">-</span> <span class="s">&quot;172.18.8.0/23&quot;</span>
+      <span class="p p-Indicator">-</span> <span class="s">&quot;172.18.10.0/23&quot;</span>
 </code></pre></div>
 </details>
 <h2 id="set-up-the-bootstrap-credentials">Set Up the bootstrap credentials<a class="headerlink" href="#set-up-the-bootstrap-credentials" title="Permanent link"> ¶</a></h2>
@@ -3785,102 +3784,110 @@
 <p>You will end up with something that looks like this:</p>
 <details class="note" open="open"><summary><em>MyExample</em> project file structure</summary><p><pre><code>📂 <b>myexample</b>
 ├── 📄 build.env
+├── 📄 project.yaml
 ├── 📂 <b>config</b>
 │   └── 📄 common.tfvars
 ├── 📂 <b>management</b>
-│   ├── 📂 <b>base-identities</b>
-│   │   ├── 📄 account.tf
-│   │   ├── 📄 config.tf
-│   │   ├── 📄 groups.tf
-│   │   ├── 📄 keys
-│   │   ├── 📄 locals.tf
-│   │   ├── 📄 outputs.tf
-│   │   ├── 📄 roles.tf
-│   │   ├── 📄 users.tf
-│   │   └── 📄 variables.tf
-│   ├── 📂 <b>base-tf-backend</b>
-│   │   ├── 📄 config.tf
-│   │   ├── 📄 locals.tf
-│   │   ├── 📄 main.tf
-│   │   └── 📄 variables.tf
 │   ├── 📂 <b>config</b>
 │   │   ├── 📄 account.tfvars
 │   │   └── 📄 backend.tfvars
-│   ├── 📂 <b>organizations</b>
-│   │   ├── 📄 accounts.tf
-│   │   ├── 📄 config.tf
-│   │   ├── 📄 delegated_administrator.tf
-│   │   ├── 📄 locals.tf
-│   │   ├── 📄 organizational_units.tf
-│   │   ├── 📄 organization.tf
-│   │   ├── 📄 policies_scp.tf
-│   │   ├── 📄 policy_scp_attachments.tf
-│   │   ├── 📄 service_linked_roles.tf
-│   │   └── 📄 variables.tf
-│   └── 📂 <b>security-base</b>
-│       ├── 📄 account.tf
-│       ├── 📄 config.tf
-│       └── 📄 variables.tf
-├── 📄 project.yaml
+|   ├── 📂 <b>global</b>
+|   │   ├── 📂 <b>organizations</b>
+|   │   │   ├── 📄 accounts.tf
+|   │   │   ├── 📄 config.tf
+|   │   │   ├── 📄 delegated_administrator.tf
+|   │   │   ├── 📄 locals.tf
+|   │   │   ├── 📄 organizational_units.tf
+|   │   │   ├── 📄 organization.tf
+|   │   │   ├── 📄 policies_scp.tf
+|   │   │   ├── 📄 policy_scp_attachments.tf
+|   │   │   ├── 📄 service_linked_roles.tf
+|   │   │   └── 📄 variables.tf
+|   │   └── 📂 <b>base-identities</b>
+|   │       ├── 📄 account.tf
+|   │       ├── 📄 config.tf
+|   │       ├── 📄 groups.tf
+|   │       ├── 📄 keys
+|   │       ├── 📄 locals.tf
+|   │       ├── 📄 outputs.tf
+|   │       ├── 📄 roles.tf
+|   │       ├── 📄 users.tf
+|   │       └── 📄 variables.tf
+|   └── 📂 <b>us-east-1</b>
+|       ├── 📂 <b>base-tf-backend</b>
+|       │   ├── 📄 config.tf
+|       │   ├── 📄 locals.tf
+|       │   ├── 📄 main.tf
+|       │   └── 📄 variables.tf
+|       └── 📂 <b>security-base</b>
+|           ├── 📄 account.tf
+|           ├── 📄 config.tf
+|           └── 📄 variables.tf
 ├── 📂 <b>security</b>
-│   ├── 📂 <b>base-identities</b>
-│   │   ├── 📄 account.tf
-│   │   ├── 📄 config.tf
-│   │   ├── 📄 groups_policies.tf
-│   │   ├── 📄 groups.tf
-│   │   ├── 📄 keys
-│   │   ├── 📄 locals.tf
-│   │   ├── 📄 outputs.tf
-│   │   ├── 📄 role_policies.tf
-│   │   ├── 📄 roles.tf
-│   │   ├── 📄 users.tf
-│   │   └── 📄 variables.tf
-│   ├── 📂 <b>base-tf-backend</b>
-│   │   ├── 📄 config.tf
-│   │   ├── 📄 locals.tf
-│   │   ├── 📄 main.tf
-│   │   └── 📄 variables.tf
 │   ├── 📂 <b>config</b>
 │   │   ├── 📄 account.tfvars
 │   │   └── 📄 backend.tfvars
-│   └── 📂 <b>security-base</b>
-│       ├── 📄 account.tf
-│       ├── 📄 config.tf
-│       ├── 📄 iam_access_analizer.tf
-│       ├── 📄 locals.tf
-│       └── 📄 variables.tf
+│   ├── 📂 <b>global</b>
+|   |   └── 📂 <b>base-identities</b>
+|   │       ├── 📄 account.tf
+|   │       ├── 📄 config.tf
+|   │       ├── 📄 groups_policies.tf
+|   │       ├── 📄 groups.tf
+|   │       ├── 📄 keys
+|   │       ├── 📄 locals.tf
+|   │       ├── 📄 outputs.tf
+|   │       ├── 📄 role_policies.tf
+|   │       ├── 📄 roles.tf
+|   │       ├── 📄 users.tf
+|   │       └── 📄 variables.tf
+│   └── 📂 <b>us-east-1</b>
+|       ├── 📂 <b>base-tf-backend</b>
+|       │   ├── 📄 config.tf
+|       │   ├── 📄 locals.tf
+|       │   ├── 📄 main.tf
+|       │   └── 📄 variables.tf
+|       └── 📂 <b>security-base</b>
+|           ├── 📄 account.tf
+|           ├── 📄 config.tf
+|           ├── 📄 iam_access_analizer.tf
+|           ├── 📄 locals.tf
+│           └── 📄 variables.tf
 └── 📂 <b>shared</b>
-    ├── 📂 <b>base-identities</b>
-    │   ├── 📄 account.tf
-    │   ├── 📄 config.tf
-    │   ├── 📄 locals.tf
-    │   ├── 📄 policies.tf
-    │   ├── 📄 roles.tf
-    │   ├── 📄 service_linked_roles.tf
-    │   └── 📄 variables.tf
-    ├── 📂 <b>base-network</b>
-    │   ├── 📄 account.tf
-    │   ├── 📄 config.tf
-    │   ├── 📄 locals.tf
-    │   ├── 📄 network.tf
-    │   ├── 📄 network_vpc_flow_logs.tf
-    │   ├── 📄 outputs.tf
-    │   └── 📄 variables.tf
-    ├── 📂 <b>base-tf-backend</b>
-    │   ├── 📄 config.tf
-    │   ├── 📄 locals.tf
-    │   ├── 📄 main.tf
-    │   └── 📄 variables.tf
     ├── 📂 <b>config</b>
     │   ├── 📄 account.tfvars
     │   └── 📄 backend.tfvars
-    └── 📂 <b>security-base</b>
-        ├── 📄 account.tf
-        ├── 📄 config.tf
-        └── 📄 variables.tf
+    ├── 📂 <b>global</b>
+    |   └── 📂 <b>base-identities</b>
+    |       ├── 📄 account.tf
+    |       ├── 📄 config.tf
+    |       ├── 📄 locals.tf
+    |       ├── 📄 policies.tf
+    |       ├── 📄 roles.tf
+    |       ├── 📄 service_linked_roles.tf
+    |       └── 📄 variables.tf
+    └── 📂 <b>us-east-1</b>
+        ├── 📂 <b>base-network</b>
+        │   ├── 📄 account.tf
+        │   ├── 📄 config.tf
+        │   ├── 📄 locals.tf
+        │   ├── 📄 network.tf
+        │   ├── 📄 network_vpc_flow_logs.tf
+        │   ├── 📄 outputs.tf
+        │   └── 📄 variables.tf
+        ├── 📂 <b>base-tf-backend</b>
+        │   ├── 📄 config.tf
+        │   ├── 📄 locals.tf
+        │   ├── 📄 main.tf
+        │   └── 📄 variables.tf
+        └── 📂 <b>security-base</b>
+            ├── 📄 account.tf
+            ├── 📄 config.tf
+            └── 📄 variables.tf
 </pre></code></p>
 </details>
 <p>As you can see, it is a structure comprised of directories for each account containing all the definitions for each of the accounts respective layers.</p>
+<p>The layers themselves are also grouped based on the region in which they are deployed. The regions are configured through the <code>project.yaml</code> file. In the case of the Leverage landing zone, most layers are deployed in the primary region, so you can see the definition of these layers in a <code>us-east-1</code> directory, as per the example configuration.</p>
+<p>Some layers are not bound to a region because their definition is mainly comprised of resources for services that are global in nature, like IAM or Organizations. These kind of layers are kept in a <code>global</code> directory.</p>
 <h2 id="next-steps">Next steps<a class="headerlink" href="#next-steps" title="Permanent link"> ¶</a></h2>
 <p>You have now created the definition of all the infrastructure for your project and configured the credentials need to deploy such infrastructure in the AWS environment.</p>
 <p>Next, you will orchestrate de first and main account of the project, the management account.</p>

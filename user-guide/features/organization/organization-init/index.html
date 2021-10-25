@@ -3706,13 +3706,13 @@ email: <code>aws@binbash.com.ar</code>) <a href="https://docs.aws.amazon.com/med
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> <a href="https://leverage.binbash.com.ar/user-guide/base-configuration/repo-le-tf-infra-aws/#remote-state">terraform remote state config</a>
 <!-- NOTE: Where should this point to? --></li>
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> <a href="../../../base-workflow/repo-le-tf-infra-aws-tf-state/">terraform remote state workflow</a></li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> <a href="https://github.com/binbashar/le-tf-infra-aws/tree/master/root/base-tf-backend">terraform remote state ref code</a></li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> <a href="https://github.com/binbashar/le-tf-infra-aws/tree/master/root/us-east-1/base-tf-backend">terraform remote state ref code</a></li>
 <li><img alt="📒" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f4d2.svg" title=":ledger:" /> You'll 1<sup>st</sup> get a local state and then you'll need to move your tf state to s3; validate it and finally delete local state files</li>
 </ul>
 </li>
 <li>
 <p>The AWS Organization from the Reference Architecture 
-<a href="https://github.com/binbashar/le-tf-infra-aws/tree/master/root/organizations">/le-tf-infra-aws/root/organizations</a> 
+<a href="https://github.com/binbashar/le-tf-infra-aws/tree/master/root/global/organizations">/le-tf-infra-aws/root/global/organizations</a> 
 will be orchestrated using the <code>leverage cli</code> following the 
 <a href="../../base-workflow/repo-le-tf-infra/#steps">standard workflow</a>.</p>
 <ul>
@@ -3733,7 +3733,7 @@ join your organization.</p>
 <p>Following the <a href="../../identities/identities/">doc</a> orchestrate vía the <code>leverage cli</code> workflow the Mgmt 
 Account IAM layer (<code>base-identities</code>) with the admin IAM Users (consider this/these users will have admin privileges over the 
 <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_access.html">entire AWS Org assuming the <code>OrganizationAccountAccessRole</code></a>)
--&gt; <a href="https://github.com/binbashar/le-tf-infra-aws/tree/master/root/base-identities">le-tf-infra-aws/root/base-identities</a></p>
+-&gt; <a href="https://github.com/binbashar/le-tf-infra-aws/tree/master/root/global/base-identities">le-tf-infra-aws/root/global/base-identities</a></p>
 <ul>
 <li><img alt="📒" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f4d2.svg" title=":ledger:" /> The IAM role: <code>OrganizationAccessAccountRole</code> =&gt; does not exist in the initial Management (root)
 account, this will be created by the code in this layer.</li>
@@ -3748,12 +3748,12 @@ at the below presented config files, as well as any other necessary setup.</p>
 <ul>
 <li><a href="https://github.com/binbashar/le-tf-infra-aws/blob/master/config/common.config.example"><code>/config/common.config</code></a> </li>
 <li><a href="https://github.com/binbashar/le-tf-infra-aws/blob/master/root/config/account.config"><code>/root/config/account.config</code></a></li>
-<li><a href="https://github.com/binbashar/le-tf-infra-aws/blob/master/root/config/backend.config">/root/config/backend.config`</a></li>
+<li><a href="https://github.com/binbashar/le-tf-infra-aws/blob/master/root/config/backend.config"><code>/root/config/backend.config</code></a></li>
 </ul>
 </li>
 <li>
 <p>Setup (code and config files) and Orchestrate the 
-<a href="https://github.com/binbashar/le-tf-infra-aws/tree/master/security/base-identities"><code>/security/base-identities</code></a> 
+<a href="https://github.com/binbashar/le-tf-infra-aws/tree/master/security/global/base-identities"><code>/security/global/base-identities</code></a> 
 layer via <code>leverage cli</code> on your security account
 for consolidated and centralized User Mgmt and access to the AWS Org.    </p>
 </li>

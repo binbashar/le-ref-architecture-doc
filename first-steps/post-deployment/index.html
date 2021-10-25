@@ -3613,14 +3613,14 @@
 <p>We'll take the place of <code>natasha.romanoff</code> to exemplify the process.</p>
 <p>When Natasha's user was created, an initial random password was also created alongside it. That password was encrypted using her GPG key, as it was shown in the <a href="../management-account/#identities-layer">management account's</a> and in the <a href="../security-and-shared-accounts/#identities-layer">security account's</a> identities layers.</p>
 <p>As Natasha, you need to access that password so that you can create your programmatic keys to interact with the environment through Leverage.</p>
-<p>First, for the <code>management</code> account, change the value <code>sensitive</code> to <code>true</code> in the output block <code>user_natasha_romanoff_login_profile_encrypted_password</code> of <code>management/base-identities/outputs.tf</code>:</p>
+<p>First, for the <code>management</code> account, change the value <code>sensitive</code> to <code>true</code> in the output block <code>user_natasha_romanoff_login_profile_encrypted_password</code> of <code>management/global/base-identities/outputs.tf</code>:</p>
 <div class="highlight"><pre><span></span><code><span class="kr">output</span> <span class="nv">&quot;user_natasha_romanoff_login_profile_encrypted_password&quot;</span> <span class="p">{</span>
   <span class="na">description</span> <span class="o">=</span> <span class="s2">&quot;The encrypted password, base64 encoded&quot;</span>
   <span class="na">value</span>       <span class="o">=</span> <span class="nv">module.user</span><span class="p">[</span><span class="s2">&quot;natasha.romanoff&quot;</span><span class="p">].</span><span class="err">iam_user_login_profile_encrypted_password</span>
   <span class="na">sensitive</span>   <span class="o">=</span> <span class="no">true</span>
 <span class="p">}</span>
 </code></pre></div>
-<p>Then, in the <code>base-identities</code> directory, run:</p>
+<p>Then, in the <code>global/base-identities</code> directory, run:</p>
 <p><div class="highlight"><pre><span></span><code>leverage terraform apply
 leverage terraform output
 </code></pre></div>
@@ -3662,7 +3662,7 @@ user_natasha_romanoff_name = &quot;natasha.romanoff&quot;
 <h3 id="management-user">Management user<a class="headerlink" href="#management-user" title="Permanent link"> ¶</a></h3>
 <p>To enable MFA for a <code>management</code> account user, you need to enable this feature individually for the role <code>OrganizationAccountAccessRole</code> in all accounts of the infrastructure. So first, we'll take care of the <code>management</code> account:</p>
 <p>Move into the account's identities layer:</p>
-<div class="highlight"><pre><span></span><code><span class="nb">cd</span> management/base-identities
+<div class="highlight"><pre><span></span><code><span class="nb">cd</span> management/global/base-identities
 </code></pre></div>
 <p>Change the value <code>role_requires_mfa</code> for the role <code>iam_assumable_role_oaar</code> in <code>roles.tf</code> to <code>true</code>. By default this value is <code>false</code>, that is to say, MFA is disabled for the role.</p>
 <div class="highlight"><pre><span></span><code><span class="kr">module</span> <span class="nv">&quot;iam_assumable_role_oaar&quot;</span> <span class="p">{</span>

@@ -3572,15 +3572,8 @@
 <p class="admonition-title">Steps</p>
 <ol>
 <li><strong>DNS</strong> service has to be orchestrated from 
-<a href="https://github.com/binbashar/le-tf-infra-aws/tree/master/shared/base-dns"><code>/shared/base-dns</code></a> layer 
+<a href="https://github.com/binbashar/le-tf-infra-aws/tree/master/shared/global/base-dns"><code>/shared/global/base-dns</code></a> layer 
 following the standard <a href="../../../base-workflow/repo-le-tf-infra/">workflow</a></li>
-<li>To associate AWS Org Member accounts to your DNS Private Hosted Zones eg: <code>*.aws.domain.com</code> 
-(previously deployed) proceed applying the corresponding layers<ol>
-<li><a href="https://github.com/binbashar/le-tf-infra-aws/tree/master/apps-devstg/base-dns">apps-devstg/base-dns</a></li>
-<li><a href="https://github.com/binbashar/le-tf-infra-aws/tree/master/apps-prd/base-dns">apps-prd/base-dns</a></li>
-<li>repeat for every other necessary AWS Organizations Member account.</li>
-</ol>
-</li>
 </ol>
 </div>
 <h3 id="migrated-aws-route53-hosted-zones-between-aws-accounts">Migrated AWS Route53 Hosted Zones between AWS Accounts<a class="headerlink" href="#migrated-aws-route53-hosted-zones-between-aws-accounts" title="Permanent link"> ¶</a></h3>

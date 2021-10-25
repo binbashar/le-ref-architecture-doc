@@ -3576,8 +3576,8 @@
 </div>
 <h2 id="user-guide">User guide<a class="headerlink" href="#user-guide" title="Permanent link"> ¶</a></h2>
 <p>Please follow the steps below to orchestrate your <code>base-identities</code> layer 1<sup>st</sup> in your
-<a href="https://github.com/binbashar/le-tf-infra-aws/tree/master/root/base-identities"><code>project-root</code></a> AWS account and
-afterwards in your <a href="https://github.com/binbashar/le-tf-infra-aws/tree/master/security/base-identities"><code>project-security</code></a> account.</p>
+<a href="https://github.com/binbashar/le-tf-infra-aws/tree/master/root/global/base-identities"><code>project-root</code></a> AWS account and
+afterwards in your <a href="https://github.com/binbashar/le-tf-infra-aws/tree/master/security/global/base-identities"><code>project-security</code></a> account.</p>
 <div class="admonition example">
 <p class="admonition-title">IAM user standard creation workflow</p>
 <ol>
@@ -3585,14 +3585,14 @@ afterwards in your <a href="https://github.com/binbashar/le-tf-infra-aws/tree/ma
 <li>For steps 3. and 4. consider following 
 <a href="../../../base-workflow/repo-le-tf-infra/">Leverage's Terraform workflow</a></li>
 <li>Update (add | remove) your IAM Users associated code and deploy 
-<a href="https://github.com/binbashibilitySRL/devops-tf-infra/blob/master/security/base-identities/users.tf">security/base-identities/users.tf</a><ul>
-<li><img alt="📁" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f4c1.svg" title=":file_folder:" /> Consider customizing your <a href="https://github.com/binbashar/le-tf-infra-aws/blob/master/security/base-identities/account.tf">account Alias and Password Policy</a></li>
+<a href="https://github.com/binbashar/le-tf-infra-aws/blob/master/security/global/base-identities/users.tf">security/global/base-identities/users.tf</a><ul>
+<li><img alt="📁" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f4c1.svg" title=":file_folder:" /> Consider customizing your <a href="https://github.com/binbashar/le-tf-infra-aws/blob/master/security/global/base-identities/account.tf">account Alias and Password Policy</a></li>
 </ul>
 </li>
 <li>Update (add | remove | edit) your IAM Groups associated code and deploy 
-<a href="https://github.com/binbashibilitySRL/devops-tf-infra/blob/master/security/base-identities/groups.tf">security/base-identities/groups.tf</a></li>
+<a href="https://github.com/binbashar/le-tf-infra-aws/blob/master/security/global/base-identities/groups.tf">security/global/base-identities/groups.tf</a></li>
 <li>Get and share the IAM Users AWS Console user id and its OTP associated password from the 
-<a href="https://github.com/binbashar/le-tf-infra-aws/blob/master/security/base-identities/outputs.tf"><code>make apply</code> outputs</a><ul>
+<a href="https://github.com/binbashar/le-tf-infra-aws/blob/master/security/global/base-identities/outputs.tf"><code>make apply</code> outputs</a><ul>
 <li><img alt="⚠" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/26a0.svg" title=":warning:" /> temporally set <code>sensitive   = false</code> to get the encrypted outputs in your prompt output.</li>
 </ul>
 </li>
@@ -3608,9 +3608,9 @@ if needed </li>
 <li>To allow users to 
 <a href="https://aws.amazon.com/premiumsupport/knowledge-center/organizations-member-account-access/">Access AWS Organization member account</a>      <br />
 consider repeating step 3. but for the corresponding member accounts:<ul>
-<li><a href="https://github.com/binbashar/le-tf-infra-aws/tree/master/shared/base-identities">shared/base-identities</a></li>
-<li><a href="https://github.com/binbashar/le-tf-infra-aws/tree/master/apps-devstg/base-identities">apps-devstg/base-identities</a></li>
-<li><a href="https://github.com/binbashar/le-tf-infra-aws/tree/master/apps-prd/base-identities">app-prd/base-identities</a></li>
+<li><a href="https://github.com/binbashar/le-tf-infra-aws/tree/master/shared/global/base-identities">shared/global/base-identities</a></li>
+<li><a href="https://github.com/binbashar/le-tf-infra-aws/tree/master/apps-devstg/global/base-identities">apps-devstg/global/base-identities</a></li>
+<li><a href="https://github.com/binbashar/le-tf-infra-aws/tree/master/apps-prd/global/base-identities">app-prd/global/base-identities</a></li>
 </ul>
 </li>
 </ol>

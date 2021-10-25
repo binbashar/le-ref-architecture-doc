@@ -3683,7 +3683,7 @@
 <div class="highlight"><pre><span></span><code><span class="nb">cd</span> security
 </code></pre></div>
 <h3 id="terraform-backend-layer">Terraform backend layer<a class="headerlink" href="#terraform-backend-layer" title="Permanent link"> ¶</a></h3>
-<p>Move into the <code>base-tf-backend</code> directory and run:</p>
+<p>Move into the <code>us-east-1/base-tf-backend</code> directory and run:</p>
 <div class="highlight"><pre><span></span><code>leverage terraform init
 leverage terraform apply
 </code></pre></div>
@@ -3707,7 +3707,7 @@ Please try again.
 <p>When prompted, answer <code>yes</code>.</p>
 <p>Now you can safely remove the <code>terraform.tfstate</code> and <code>terraform.tfstate.backup</code> files created during the <code>apply</code> step.</p>
 <h3 id="identities-layer">Identities layer<a class="headerlink" href="#identities-layer" title="Permanent link"> ¶</a></h3>
-<p>Now, move into the <code>base-identities</code> directory and run:</p>
+<p>Now, move into the <code>global/base-identities</code> directory, and run:</p>
 <div class="highlight"><pre><span></span><code>leverage terraform init
 </code></pre></div>
 <p>Copy the files fo this accounts' users into the <code>keys</code> subdirectoy. For this guide's case we need the keys files for <code>natasha.romanoff</code>, <code>kit.walker</code>, <code>edward.stark</code> and <code>john.wick</code>.</p>
@@ -3720,7 +3720,7 @@ leverage terraform apply
 <p>Zsh users may need to prepend <code>noglob</code> to the import command for it to be recognized correctly, as an alternative, square brackets can be escaped as <code>\[\]</code></p>
 </div>
 <h3 id="security-layer">Security layer<a class="headerlink" href="#security-layer" title="Permanent link"> ¶</a></h3>
-<p>The last layer for the <code>security</code> account is the security layer. Move into the <code>security-base</code> directory and run:</p>
+<p>The last layer for the <code>security</code> account is the security layer. Move into the <code>us-east-1/security-base</code> directory and run:</p>
 <div class="highlight"><pre><span></span><code>leverage terraform init
 leverage terraform apply
 </code></pre></div>
@@ -3731,7 +3731,7 @@ leverage terraform apply
 <div class="highlight"><pre><span></span><code><span class="nb">cd</span> shared
 </code></pre></div>
 <h3 id="terraform-backend-layer_1">Terraform backend layer<a class="headerlink" href="#terraform-backend-layer_1" title="Permanent link"> ¶</a></h3>
-<p>Move into the <code>base-tf-backend</code> directory and run:</p>
+<p>Move into the <code>us-east-1/base-tf-backend</code> directory and run:</p>
 <div class="highlight"><pre><span></span><code>leverage terraform init
 leverage terraform apply
 </code></pre></div>
@@ -3755,7 +3755,7 @@ Please try again.
 <p>When prompted, answer <code>yes</code>.</p>
 <p>Now you can safely remove the <code>terraform.tfstate</code> and <code>terraform.tfstate.backup</code> files created during the <code>apply</code> step.</p>
 <h3 id="identities-layer_1">Identities layer<a class="headerlink" href="#identities-layer_1" title="Permanent link"> ¶</a></h3>
-<p>Now move into the <code>base-identities</code> directory and run:</p>
+<p>Now move into the <code>global/base-identities</code> directory and run:</p>
 <div class="highlight"><pre><span></span><code>leverage terraform init
 </code></pre></div>
 <p>You also need to import the role <code>OrganizationAccountAccessRole</code> in this layer.</p>
@@ -3767,12 +3767,12 @@ leverage terraform apply
 <p>Zsh users may need to prepend <code>noglob</code> to the import command for it to be recognized correctly, as an alternative, square brackets can be escaped as <code>\[\]</code></p>
 </div>
 <h3 id="security-layer_1">Security layer<a class="headerlink" href="#security-layer_1" title="Permanent link"> ¶</a></h3>
-<p>Next, move into the <code>security-base</code> directory:</p>
+<p>Next, move into the <code>us-east-1/security-base</code> directory:</p>
 <div class="highlight"><pre><span></span><code>leverage terraform init
 leverage terraform apply
 </code></pre></div>
 <h3 id="network-layer">Network layer<a class="headerlink" href="#network-layer" title="Permanent link"> ¶</a></h3>
-<p>The last layer for the <code>shared</code> account is the network layer, so move into the <code>base-network</code> directory and run:</p>
+<p>The last layer for the <code>shared</code> account is the network layer, so move into the <code>us-east-1/base-network</code> directory and run:</p>
 <div class="highlight"><pre><span></span><code>leverage terraform init
 leverage terraform apply
 </code></pre></div>

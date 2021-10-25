@@ -3545,7 +3545,7 @@
                 
                 <h1 id="gpg-keys-helper">GPG keys helper<a class="headerlink" href="#gpg-keys-helper" title="Permanent link"> ¶</a></h1>
 <h2 id="why-to-use-gpg">Why to use GPG?<a class="headerlink" href="#why-to-use-gpg" title="Permanent link"> ¶</a></h2>
-<p>By default our <a href="https://github.com/binbashar/le-tf-infra-aws/blob/master/security/base-identities/users.tf">Leverage Reference Architectre base-identities layer</a> 
+<p>By default our <a href="https://github.com/binbashar/le-tf-infra-aws/blob/master/security/global/base-identities/users.tf">Leverage Reference Architectre base-identities layer</a> 
 approach is to use <a href="[https://github.com/binbashar/terraform-aws-iam/tree/master/modules/iam-user]">IAM module</a> 
 to manage AWS IAM Users credentials with <strong>encryption to grant strong security</strong>. </p>
 <p>This <strong>module</strong> outputs commands and GPG messages which can be decrypted either using command line to get AWS Web Console
@@ -3558,7 +3558,7 @@ in state file.</p>
 <div class="admonition check">
 <p class="admonition-title">Keybase pre-requisites</p>
 <p>When <code>gpg_key</code> is specified as <code>keybase:username</code>, make sure that the user public key has already been uploaded to 
-the <a href="https://github.com/binbashar/le-tf-infra-aws/tree/master/security/base-identities/keys">Reference Architecture base-identities layer <code>keys</code> folder</a> </p>
+the <a href="https://github.com/binbashar/le-tf-infra-aws/tree/master/security/global/base-identities/keys">Reference Architecture base-identities layer <code>keys</code> folder</a> </p>
 </div>
 <h2 id="how-to-manage-your-gpg-keys">How to manage your GPG keys?<a class="headerlink" href="#how-to-manage-your-gpg-keys" title="Permanent link"> ¶</a></h2>
 <div class="admonition info">

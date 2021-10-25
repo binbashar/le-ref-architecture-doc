@@ -23,17 +23,17 @@ Terraform modules registry, accessed December 3rd 2020).
       [Terraform Reference Architecture account structure](../../how-it-works/features/organization/organization.md)
     3. Leveraged by the [Infrastructure as Code (IaC) Library](../../how-it-works/infra-as-code-library/infra-as-code-library.md) through the
      [terraform-aws-tfstate-backend module](https://registry.terraform.io/modules/binbashar/tfstate-backend/aws/latest)
-        - [/management/base-tf-backend](https://github.com/binbashar/le-tf-infra-aws/tree/master/root/base-tf-backend)
-        - [/security/base-tf-backend](https://github.com/binbashar/le-tf-infra-aws/tree/master/security/base-tf-backend)
-        - [/shared/base-tf-backend](https://github.com/binbashar/le-tf-infra-aws/tree/master/shared/base-tf-backend)
-        - [/apps-devstg/base-tf-backend](https://github.com/binbashar/le-tf-infra-aws/tree/master/apps-devstg/base-tf-backend)
-        - [/apps-prd/base-tf-backend](https://github.com/binbashar/le-tf-infra-aws/tree/master/apps-prd/base-tf-backend)
+        - [/management/base-tf-backend](https://github.com/binbashar/le-tf-infra-aws/tree/master/root/us-east-1/base-tf-backend)
+        - [/security/base-tf-backend](https://github.com/binbashar/le-tf-infra-aws/tree/master/security/us-east-1/base-tf-backend)
+        - [/shared/base-tf-backend](https://github.com/binbashar/le-tf-infra-aws/tree/master/shared/us-east-1/base-tf-backend)
+        - [/apps-devstg/base-tf-backend](https://github.com/binbashar/le-tf-infra-aws/tree/master/us-east-1/apps-devstg/base-tf-backend)
+        - [/apps-prd/base-tf-backend](https://github.com/binbashar/le-tf-infra-aws/tree/master/apps-prd/us-east-1/base-tf-backend)
 
 ## Set up
 
 !!! example "Steps to initialize your tf-backend"
     1. At the corresponding account dir, 
-      eg: [/shared/base-tf-backend](https://github.com/binbashar/le-tf-infra-aws/tree/master/shared/base-tf-backend) then,
+      eg: [/shared/base-tf-backend](https://github.com/binbashar/le-tf-infra-aws/tree/master/shared/us-east-1/base-tf-backend) then,
     2. Run `leverage terraform init`
     3. Run `leverage terraform plan`, review the output to understand the expected changes
     4. Run `leverage terraform apply`, review the output once more and type `yes` if you are okay with that

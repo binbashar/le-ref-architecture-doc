@@ -19,7 +19,7 @@ cd management
 
 ### Terraform backend layer
 
-Move into the `base-tf-backend` directory and run:
+Move into the `us-east-1/base-tf-backend` directory and run:
 
 ``` bash
 leverage terraform init
@@ -64,7 +64,7 @@ When prompted, answer `yes`. Now you can safely remove the `terraform.tfstate` a
 
 ### Identities layer
 
-Move into the `base-identities` directory and run:
+The definition for the identities layer is located within the `global` directory. Move into the `global/base-identities` directory and run:
 
 ``` bash
 leverage terraform init
@@ -84,7 +84,7 @@ leverage terraform apply
 
 ### Organizations layer
 
-Next, move into the `organizations` directory and run:
+Next, in the same fashion as in the previous layer, move into the `global/organizations` directory and run:
 
 ``` bash
 leverage terraform init
@@ -122,7 +122,7 @@ leverage terraform import aws_organizations_account.management 000123456789
 
 ### Security layer
 
-The last layer for the `management` account is the security layer. So, move into the `security-base` directory and run:
+The last layer for the `management` account is the security layer and its definition is located in `us-east-1`. So, move into the `us-east-1/security-base` directory and run:
 
 ``` bash
 leverage terraform init

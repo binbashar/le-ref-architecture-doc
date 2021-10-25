@@ -83,11 +83,11 @@ the aliases automatically implicitly when running Terraform's Leverage code.
         - [x] [terraform remote state config](https://leverage.binbash.com.ar/user-guide/base-configuration/repo-le-tf-infra-aws/#remote-state)
         <!-- NOTE: Where should this point to? -->
         - [x] [terraform remote state workflow](../../../base-workflow/repo-le-tf-infra-aws-tf-state/)
-        - [x] [terraform remote state ref code](https://github.com/binbashar/le-tf-infra-aws/tree/master/root/base-tf-backend)
+        - [x] [terraform remote state ref code](https://github.com/binbashar/le-tf-infra-aws/tree/master/root/us-east-1/base-tf-backend)
         - :ledger: You'll 1st get a local state and then you'll need to move your tf state to s3; validate it and finally delete local state files
 
     7. The AWS Organization from the Reference Architecture 
-    [/le-tf-infra-aws/root/organizations](https://github.com/binbashar/le-tf-infra-aws/tree/master/root/organizations) 
+    [/le-tf-infra-aws/root/global/organizations](https://github.com/binbashar/le-tf-infra-aws/tree/master/root/global/organizations) 
     will be orchestrated using the `leverage cli` following the 
     [standard workflow](../../base-workflow/repo-le-tf-infra/#steps).
         - :ledger: the Management account has to be imported into de the code.
@@ -101,7 +101,7 @@ the aliases automatically implicitly when running Terraform's Leverage code.
     1. Following the [doc](../identities/identities.md) orchestrate vía the `leverage cli` workflow the Mgmt 
     Account IAM layer (`base-identities`) with the admin IAM Users (consider this/these users will have admin privileges over the 
     [entire AWS Org assuming the `OrganizationAccountAccessRole`](https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_access.html))
-    -> [le-tf-infra-aws/root/base-identities](https://github.com/binbashar/le-tf-infra-aws/tree/master/root/base-identities)
+    -> [le-tf-infra-aws/root/global/base-identities](https://github.com/binbashar/le-tf-infra-aws/tree/master/root/global/base-identities)
         - :ledger: The IAM role: `OrganizationAccessAccountRole` => does not exist in the initial Management (root)
     account, this will be created by the code in this layer.
 
@@ -112,9 +112,9 @@ the aliases automatically implicitly when running Terraform's Leverage code.
     at the below presented config files, as well as any other necessary setup.
         - [`/config/common.config`](https://github.com/binbashar/le-tf-infra-aws/blob/master/config/common.config.example) 
         - [`/root/config/account.config`](https://github.com/binbashar/le-tf-infra-aws/blob/master/root/config/account.config)
-        - [/root/config/backend.config`](https://github.com/binbashar/le-tf-infra-aws/blob/master/root/config/backend.config)
+        - [`/root/config/backend.config`](https://github.com/binbashar/le-tf-infra-aws/blob/master/root/config/backend.config)
     3. Setup (code and config files) and Orchestrate the 
-    [`/security/base-identities`](https://github.com/binbashar/le-tf-infra-aws/tree/master/security/base-identities) 
+    [`/security/global/base-identities`](https://github.com/binbashar/le-tf-infra-aws/tree/master/security/global/base-identities) 
     layer via `leverage cli` on your security account
     for consolidated and centralized User Mgmt and access to the AWS Org.    
     

@@ -276,7 +276,7 @@ nav:
           - Updates:
               - August 2021: "work-with-us/updates/product-updates-08-2021.md"
       - Leverage vs Competition: "work-with-us/leverage-vs-competition.md"
-      - Subscription Plans: "work-with-us/subscription-plans.md"
+      #- Subscription Plans: "work-with-us/subscription-plans.md"
       - Contribute: "work-with-us/contribute.md"
       - Roadmap:
         - Reference Architecture:
@@ -288,9 +288,8 @@ nav:
           - Demo Applications: "work-with-us/roadmap/ref-arch/demo-apps.md"
         - Leverage CLI: "work-with-us/roadmap/leverage-cli/overview.md"
       - Careers: "work-with-us/careers.md"
-      - Team: "work-with-us/team.md"
-      - Testimonials: "work-with-us/testimonials.md"
+      #- Team: "work-with-us/team.md"
+      #- Testimonials: "work-with-us/testimonials.md"
       - FAQs: "work-with-us/faqs.md"
-      - Contact: "work-with-us/contact.md"
-
+      - Contact Us: https://www.binbash.com.ar/contact
 

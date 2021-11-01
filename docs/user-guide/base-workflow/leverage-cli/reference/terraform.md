@@ -35,6 +35,20 @@ All arguments given are passed as received to Terraform.
 Can only be run at **layer** level.
 
 ---
+## `apply`
+
+### Usage
+``` bash
+leverage terraform apply [arguments]
+```
+
+Equivalent to `terraform apply`.
+
+All arguments given are passed as received to Terraform.
+
+Can only be run at **layer** level.
+
+---
 ## `destroy`
 
 ### Usage
@@ -60,7 +74,7 @@ Equivalent to `terraform output`.
 
 All arguments given are passed as received to Terraform.
 
-Can only be run at **layer** level. Doesn't require MFA.
+Can only be run at **layer** level.
 
 ---
 ## `version`

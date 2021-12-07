@@ -93,12 +93,13 @@ Print Terraform version.
 
 ### Usage
 ``` bash
-leverage terraform shell
+leverage terraform shell [option]
 ```
 
-Open a shell into the Terraform container in the current directory.
+Open a shell into the Terraform container in the current directory. An MFA-authenticated shell can only be opened at **layer** level.
 
-Does not require MFA.
+### Options
+* `--mfa`: Authenticate via MFA upon launching shell to allow for ease of use when MFA is required.
 
 ---
 ## `format`
@@ -150,10 +151,7 @@ Can only be run at **layer** level.
 
 ### Usage
 ``` bash
-leverage terraform aws [option] AWS_CLI_COMMAND
+leverage terraform aws AWS_CLI_COMMAND
 ```
 
 Utility command to run AWS CLI commands directly on the Terraform container. AWS_CLI_COMMAND takes the form of any arbitrary valid AWS CLI command without the executable name. For example for the command `aws --output json sts get-caller-identity`, AWS_CLI_COMMAND is `--output json sts get-caller-identity`.
-
-### Options
-* `--no-mfa`: ignore MFA for this command.

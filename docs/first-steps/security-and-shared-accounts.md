@@ -25,7 +25,7 @@ leverage terraform apply
     The `apply` command may result in an error similar to:
 
     ```
-    Error: error creating public access block policy for S3 bucket (ex-security-terraform-backend): 
+    Error: error creating public access block policy for S3 bucket (me-security-terraform-backend): 
     OperationAborted: A conflicting conditional operation is currently in progress against this resource. 
     Please try again.
     ```
@@ -104,7 +104,7 @@ leverage terraform apply
     The `apply` command may result in an error similar to:
 
     ```
-    Error: error creating public access block policy for S3 bucket (ex-security-terraform-backend): 
+    Error: error creating public access block policy for S3 bucket (me-security-terraform-backend): 
     OperationAborted: A conflicting conditional operation is currently in progress against this resource. 
     Please try again.
     ```

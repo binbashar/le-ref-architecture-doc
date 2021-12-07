@@ -2,39 +2,27 @@
 
 The `credentials` command is used to set up and manage the AWS CLI credentials required to interact with the AWS environment.
 
-All `credentials`'s subcommands feed off the `project.yaml` configuration file to obtain the information they need. In case this information is not found, or it is not provided explicitly through the available arguments, the subcommands will prompt the user for it.
+All `credentials`'s subcommands feed off the `project.yaml`, `build.env`, and Terraform configuration files to obtain the information they need. In case the basic required information is not found, the subcommands will prompt the user for it.
 
 ---
-## `create`
+## `configure`
 
 ### Usage
 ``` bash
-leverage credentials create [options]
+leverage credentials configure --type [BOOTSTRAP|MANAGEMENT|SECURITY] [options]
 ```
 
-The `credentials create` subcommand initializes the `bootstrap` credentials, required to perform the initial deployment of the architecture. It checks the credentials validity against AWS and updates the `project.yaml` file with the id of the main AWS account.
+The `credentials configure` command sets up the credentials needed to interact with the AWS environment, from the initial deployment process (`BOOTSTRAP`) to everyday management (`MANAGEMENT`) and development or use (`SECURITY`) of it.
 
-If the `bootstrap` credentials are already configured the command will prompt the user regarding whether the existing configuration should be overwritten or left as is.
+It attempts to retrieve the structure of the organization in order to generate all the [AWS CLI profiles required to interact with the environment](../../../features/identities/credentials.md) and update the terraform configuration with the id of all relevant accounts.
 
-### Options
-* `--file`: path to a `.csv` access keys file containing the credentials as produced by AWS console when generating the programmatic keys. If not given, the user will be prompted for the credentials.
-* `--force`: if `bootstrap` credentials are already configured, do not prompt the user, overwrite the existing configuration.
-
----
-## `update`
-
-### Usage
-``` bash
-leverage credentials update [options]
-```
-
-The `credentials update` subcommand is used to set up or update any of the credentials needed to interact with the AWS environment.
-
-It will try to fetch the structure of the organization in the architecture in order to generate all the [AWS CLI profiles required to interact with the environment](../../../features/identities/credentials.md) and update the `project.yaml` file with the id of all accounts.
-
-This command will create backups of the previous credentials configuration before attempting to modify the current one.
+Backups of the previous configured credentials files are always created when overwriting or updating the current ones.
 
 ### Options
-* `--profile`: credentials to be set/updated. It can take `boostrap`, `management` or `security`.
-* `--file`: path to a `.csv` access keys file containing the credentials as produced by AWS console when generating the programmatic keys. If not given, the user will be prompted for the credentials.
-* `--only-accounts-profiles`: skip credentials setting, only fetch the organization structure and update the required profiles for the accounts.
+* `--type`: Type of the credentials to set. Can be any of `BOOTSTRAP`, `MANAGEMENT` or `SECURITY`. This option is case insensitive. This option is required.
+* `--credentials-file`: Path to a `.csv` credentials file, as produced by the AWS Console, containing the user's programmatic access keys. If not given, the user will be prompted for the credentials.
+* `--overwrite-existing-credentials`: If the type of credentials being configured is already configured, overwrite current configuration. Mutually exclusive option with `--skip-access-keys-setup`.
+* `--skip-access-keys-setup`: Skip the access keys configuration step. Continue on to setting up the accounts profiles. Mutually exclusive option with `--overwrite-existing-credentials`.
+* `--skip-assumable-roles-setup`: Don't configure each account profile to assume their specific role.
+
+If neither of `--overwrite-existing-credentials` or `--skip-access-keys-setup` is given, the user will be prompted to choose between both actions when appropriate.

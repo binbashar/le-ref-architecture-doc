@@ -35,7 +35,7 @@ user_natasha_romanoff_name = "natasha.romanoff"
 
 Extract the value of the password field form the output and [decrypt it](../../user-guide/features/identities/gpg#how-to-manage-your-gpg-keys).
 
-Now, log in the [AWS Console](https://console.aws.amazon.com/) using the `management` account id: `000123456789`, which can be extracted from the `project.yaml` file, your IAM user name: `natasha.romanoff`, and your recently decrypted password. This password should be changed during this procedure.
+Now, log in the [AWS Console](https://console.aws.amazon.com/) using the `management` account id: `000123456789`, which can be extracted from the `project.yaml` or `config/common.tfvars` files, your IAM user name: `natasha.romanoff`, and your recently decrypted password. This password should be changed during this procedure.
 
 Proceed to [enable a virtual MFA device for your user](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_mfa_enable_virtual.html#enable-virt-mfa-for-iam-user), and [generate programmatic keys for it](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_access-keys.html#Using_CreateAccessKey). Make sure to keep these keys in a safe location.
 
@@ -46,22 +46,25 @@ As Natasha also has an IAM user for the `security` account besides the one in `m
 To be able to use the generated programmatic keys, you need to configure them in your local environment. To do that, run:
 
 ``` bash
-leverage credentials update --profile management # or `security` depending on the credentials to configured
+leverage credentials configure --type MANAGEMENT # or `SECURITY` depending on the credentials to configured
 ```
-<pre><code><span class="fsg-timestamp">[12:25:57.502]</span> INFO     Loading configuration file.
-<span class="fsg-timestamp">[12:25:59.343]</span> INFO     Configuring <b>management</b> credentials.
+<pre><code><span class="fsg-timestamp">[12:28:12.111]</span> INFO     Loading configuration file.
+<span class="fsg-timestamp">[12:28:12.132]</span> INFO     Loading project environment configuration file.
+<span class="fsg-timestamp">[12:28:12.139]</span> INFO     Loading Terraform common configuration.
+<span class="fsg-timestamp">[12:28:13.237]</span> INFO     Configuring management credentials.
 <span class="fsg-prompt">></span> <b>Select the means by which you'll provide the programmatic keys: <span class="fsg-userinput">Manually</span></b>
 <span class="fsg-prompt">></span> <b>Key: <span class="fsg-userinput">AKIAUH0FAB7QVEXAMPLE</span></b>
 <span class="fsg-prompt">></span> <b>Secret: <span class="fsg-userinput">****************************************</span></b>
-<span class="fsg-timestamp">[12:26:20.566]</span> INFO     <b>Management credentials configured in:</b> <span class="fsg-path">/home/user/.aws/me/credentials</span>
-<span class="fsg-timestamp">[12:26:24.418]</span> INFO     Configuring accounts' profiles.
-<span class="fsg-timestamp">[12:26:24.420]</span> INFO     Fetching organization accounts.
-<span class="fsg-timestamp">[12:26:26.234]</span> INFO     Fetching MFA device serial.
-<span class="fsg-timestamp">[12:26:28.265]</span> INFO     Backing up account profiles file.
-<span class="fsg-timestamp">[12:26:28.849]</span> INFO     <b>Account profiles configured in:</b> <span class="fsg-path">/home/user/.aws/me/config</span>
-<span class="fsg-timestamp">[12:26:28.856]</span> INFO     Updating project configuration file.
-<span class="fsg-timestamp">[12:26:28.877]</span> INFO     Loading configuration file.
-<span class="fsg-timestamp">[12:26:28.907]</span> INFO     Finished updating <b>management</b> credentials.
+<span class="fsg-timestamp">[12:28:30.739]</span> INFO     <b>Management credentials configured in:</b> <span class="fsg-path">/home/user/.aws/me/credentials</span>
+<span class="fsg-timestamp">[12:28:34.991]</span> INFO     Configuring assumable roles.
+<span class="fsg-timestamp">[12:28:34.993]</span> INFO     Fetching organization accounts.
+<span class="fsg-timestamp">[12:28:37.060]</span> INFO     Fetching MFA device serial.
+<span class="fsg-timestamp">[12:28:39.299]</span> INFO     Backing up account profiles file.
+<span class="fsg-timestamp">[12:28:39.941]</span> INFO             Configuring profile <b>me-management-oaar</b>
+<span class="fsg-timestamp">[12:28:45.205]</span> INFO             Configuring profile <b>me-security-oaar</b>
+<span class="fsg-timestamp">[12:28:50.526]</span> INFO             Configuring profile <b>me-shared-oaar</b>
+<span class="fsg-timestamp">[12:28:55.953]</span> INFO     <b>Account profiles configured in:</b> <span class="fsg-path">/home/user/.aws/me/config</span>
+<span class="fsg-timestamp">[12:28:55.956]</span> INFO     Updating project's Terraform common configuration.
 </code></pre>
 
 !!! note

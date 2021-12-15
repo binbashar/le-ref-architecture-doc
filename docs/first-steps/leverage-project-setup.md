@@ -18,11 +18,12 @@ When setting up a Leverage project the directory where it will reside needs to b
 ``` bash
 leverage project init
 ```
-<pre><code><span class="fsg-timestamp">[09:30:54.027]</span> INFO     No <b>.leverage</b> directory found in user's home. Creating.
+<pre><code><span class="fsg-timestamp">[09:30:54.027]</span> INFO     No <b>Leverage</b> directory found in user's home. Creating.
 <span class="fsg-timestamp">[09:30:54.030]</span> INFO     No project template found. Cloning template.
 <span class="fsg-timestamp">[09:30:54.978]</span> INFO     Finished cloning template.
 <span class="fsg-timestamp">[09:30:54.981]</span> INFO     Initializing git repository in project directory.
-<span class="fsg-timestamp">[09:30:54.990]</span> INFO     No project configuration file found. Creating an example config.
+<span class="fsg-timestamp">[09:30:54.990]</span> INFO     No project configuration file found. Dropping configuration template <b>project.yaml</b>.
+<span class="fsg-timestamp">[09:30:55.007]</span> INFO     Project initialization finished.
 </code></pre>
 
 !!! info "More information on [`project init`](../../user-guide/base-workflow/leverage-cli/reference/project#init)"
@@ -110,52 +111,49 @@ To be able to interact with your AWS environment you first need to configure the
 
 === "Manually"
     ``` bash
-    leverage credentials create
+    leverage credentials configure --type BOOTSTRAP
     ```
     <pre><code><span class="fsg-timestamp">[09:37:17.530]</span> INFO     Loading configuration file.
-    <span class="fsg-timestamp">[09:37:18.477]</span> INFO     Configuring default profile information.
-    <span class="fsg-timestamp">[09:37:20.424]</span> INFO     <b>Default profile configured in:</b> <span class="fsg-path">/home/user/.aws/me/config</span>
+    <span class="fsg-timestamp">[09:37:18.477]</span> INFO     Loading project environment configuration file.
     <span class="fsg-timestamp">[09:37:20.426]</span> INFO     Configuring <b>bootstrap</b> credentials.
     <span class="fsg-prompt">\></span> <b>Select the means by which you'll provide the programmatic keys: <span class="fsg-userinput">Manually</span></b>
     <span class="fsg-prompt">\></span> <b>Key: <span class="fsg-userinput">AKIAU1OF18IXH2EXAMPLE</span></b>
     <span class="fsg-prompt">\></span> <b>Secret: <span class="fsg-userinput">\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*</span></b>
     <span class="fsg-timestamp">[09:37:51.638]</span> INFO     <b>Bootstrap credentials configured in:</b> <span class="fsg-path">/home/user/.aws/me/credentials</span>
     <span class="fsg-timestamp">[09:37:53.497]</span> INFO     Fetching management account id.
-    <span class="fsg-timestamp">[09:37:55.344]</span> INFO     Updating project configuration file.
-    <span class="fsg-timestamp">[09:37:55.351]</span> INFO     Finished setting up <b>bootstrap</b> credentials.
+    <span class="fsg-timestamp">[09:37:53.792]</span> INFO     Updating project configuration file.
+    <span class="fsg-timestamp">[09:37:55.344]</span> INFO     Skipping assumable roles configuration.
     </code></pre>
 
 === "File selection"
     ``` bash
-    leverage credentials create
+    leverage credentials configure --type BOOTSTRAP
     ```
     <pre><code><span class="fsg-timestamp">[09:37:17.530]</span> INFO     Loading configuration file.
-    <span class="fsg-timestamp">[09:37:18.477]</span> INFO     Configuring default profile information.
-    <span class="fsg-timestamp">[09:37:20.424]</span> INFO     <b>Default profile configured in:</b> <span class="fsg-path">/home/user/.aws/me/config</span>
+    <span class="fsg-timestamp">[09:37:18.477]</span> INFO     Loading project environment configuration file.
     <span class="fsg-timestamp">[09:37:20.426]</span> INFO     Configuring <b>bootstrap</b> credentials.
     <span class="fsg-prompt">\></span> <b>Select the means by which you'll provide the programmatic keys: <span class="fsg-userinput">Path to an access keys file obtained from AWS</span></b>
     <span class="fsg-prompt">\></span> <b>Path to access keys file: <span class="fsg-userinput">../bootstrap_accessKeys.csv</span></b>
     <span class="fsg-timestamp">[09:37:51.638]</span> INFO     <b>Bootstrap credentials configured in:</b> <span class="fsg-path">/home/user/.aws/me/credentials</span>
     <span class="fsg-timestamp">[09:37:53.497]</span> INFO     Fetching management account id.
-    <span class="fsg-timestamp">[09:37:55.344]</span> INFO     Updating project configuration file.
-    <span class="fsg-timestamp">[09:37:55.351]</span> INFO     Finished setting up <b>bootstrap</b> credentials.
+    <span class="fsg-timestamp">[09:37:53.792]</span> INFO     Updating project configuration file.
+    <span class="fsg-timestamp">[09:37:55.344]</span> INFO     Skipping assumable roles configuration.
     </code></pre>
 
 === "Provide file in command"
     ``` bash
-    leverage credentials create --file ../bootstrap_accessKeys.csv
+    leverage credentials configure --type BOOTSTRAP --credentials-file ../bootstrap_accessKeys.csv
     ```
     <pre><code><span class="fsg-timestamp">[09:37:17.530]</span> INFO     Loading configuration file.
-    <span class="fsg-timestamp">[09:37:18.477]</span> INFO     Configuring default profile information.
-    <span class="fsg-timestamp">[09:37:20.424]</span> INFO     <b>Default profile configured in:</b> <span class="fsg-path">/home/user/.aws/me/config</span>
+    <span class="fsg-timestamp">[09:37:18.477]</span> INFO     Loading project environment configuration file.
     <span class="fsg-timestamp">[09:37:20.426]</span> INFO     Configuring <b>bootstrap</b> credentials.
     <span class="fsg-timestamp">[09:37:51.638]</span> INFO     <b>Bootstrap credentials configured in:</b> <span class="fsg-path">/home/user/.aws/me/credentials</span>
     <span class="fsg-timestamp">[09:37:53.497]</span> INFO     Fetching management account id.
-    <span class="fsg-timestamp">[09:37:55.344]</span> INFO     Updating project configuration file.
-    <span class="fsg-timestamp">[09:37:55.351]</span> INFO     Finished setting up <b>bootstrap</b> credentials.
+    <span class="fsg-timestamp">[09:37:53.792]</span> INFO     Updating project configuration file.
+    <span class="fsg-timestamp">[09:37:55.344]</span> INFO     Skipping assumable roles configuration.
     </code></pre>
 
-!!! info "More information on [`credentials create`](../../user-guide/base-workflow/leverage-cli/reference/credentials#create)"
+!!! info "More information on [`credentials configure`](../../user-guide/base-workflow/leverage-cli/reference/credentials#configure)"
 
 During the credentials setup, the AWS account id is filled in for us in the project configuration file.
 

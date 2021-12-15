@@ -33,7 +33,7 @@ All `apply` commands will prompt for confirmation, answer `yes` when this happen
     The `apply` command may result in an error similar to:
 
     ```
-    Error: error creating public access block policy for S3 bucket (ex-security-terraform-backend): 
+    Error: error creating public access block policy for S3 bucket (me-security-terraform-backend): 
     OperationAborted: A conflicting conditional operation is currently in progress against this resource. 
     Please try again.
     ```
@@ -136,21 +136,22 @@ Now that the `management` account has been deployed, and more specifically, all 
 This will fetch the organizations structure from the AWS environment and create individual profiles associated with each account for the AWS CLI to use. So, run:
 
 ``` bash
-leverage credentials update --profile bootstrap --only-accounts-profiles
+leverage credentials configure --type BOOTSTRAP --skip-access-keys-setup
 ```
-<pre><code><span class="fsg-timestamp">[10:24:36.030]</span> INFO     Loading configuration file.
-<span class="fsg-timestamp">[10:24:40.265]</span> INFO     Configuring accounts' profiles.
-<span class="fsg-timestamp">[10:24:40.268]</span> INFO     Fetching organization accounts.
-<span class="fsg-timestamp">[10:24:42.383]</span> INFO     Backing up account profiles file.
-<span class="fsg-timestamp">[10:24:42.938]</span> INFO             Configuring profile <b>me-management-oaar</b>
-<span class="fsg-timestamp">[10:24:45.051]</span> INFO             Configuring profile <b>me-security-oaar</b>
-<span class="fsg-timestamp">[10:24:47.164]</span> INFO             Configuring profile <b>me-shared-oaar</b>
-<span class="fsg-timestamp">[10:24:49.278]</span> INFO     <b>Account profiles configured in:</b> <span class="fsg-path">/home/user/.aws/me/config</span>
-<span class="fsg-timestamp">[10:24:49.281]</span> INFO     Updating project configuration file.
-<span class="fsg-timestamp">[10:24:49.345]</span> INFO     Finished updating <b>bootstrap</b> credentials.
+<pre><code><span class="fsg-timestamp">[09:08:44.762]</span> INFO     Loading configuration file.
+<span class="fsg-timestamp">[09:08:44.785]</span> INFO     Loading project environment configuration file.
+<span class="fsg-timestamp">[09:08:44.791]</span> INFO     Loading Terraform common configuration.
+<span class="fsg-timestamp">[09:08:53.247]</span> INFO     Configuring assumable roles.
+<span class="fsg-timestamp">[09:08:53.248]</span> INFO     Fetching organization accounts.
+<span class="fsg-timestamp">[09:08:55.193]</span> INFO     Backing up account profiles file.
+<span class="fsg-timestamp">[09:08:55.761]</span> INFO             Configuring profile <b>me-management-oaar</b>
+<span class="fsg-timestamp">[09:08:59.977]</span> INFO             Configuring profile <b>me-security-oaar</b>
+<span class="fsg-timestamp">[09:09:04.081]</span> INFO             Configuring profile <b>me-shared-oaar</b>
+<span class="fsg-timestamp">[09:09:08.305]</span> INFO     Account profiles configured in: <span class="fsg-path">/home/user/.aws/me/config</span>
+<span class="fsg-timestamp">[09:09:08.307]</span> INFO     Updating project's Terraform common configuration.
 </code></pre>
 
-!!! info "More information on [`credentials update`](../../user-guide/base-workflow/leverage-cli/reference/credentials#update)"
+!!! info "More information on [`credentials configure`](../../user-guide/base-workflow/leverage-cli/reference/credentials#configure)"
 
 ## Next steps
 You have successfully orchestrated the `management` account for your project and configured the credentials for the following steps.

@@ -2305,6 +2305,13 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#options" class="md-nav__link">
+    Options
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -2326,7 +2333,7 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#options" class="md-nav__link">
+  <a href="#options_1" class="md-nav__link">
     Options
   </a>
   
@@ -2388,13 +2395,6 @@
           <li class="md-nav__item">
   <a href="#usage_10" class="md-nav__link">
     Usage
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#options_1" class="md-nav__link">
-    Options
   </a>
   
 </li>
@@ -3833,6 +3833,13 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#options" class="md-nav__link">
+    Options
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -3854,7 +3861,7 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#options" class="md-nav__link">
+  <a href="#options_1" class="md-nav__link">
     Options
   </a>
   
@@ -3916,13 +3923,6 @@
           <li class="md-nav__item">
   <a href="#usage_10" class="md-nav__link">
     Usage
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#options_1" class="md-nav__link">
-    Options
   </a>
   
 </li>
@@ -4003,10 +4003,13 @@
 <hr />
 <h2 id="shell"><code>shell</code><a class="headerlink" href="#shell" title="Permanent link"> ¶</a></h2>
 <h3 id="usage_6">Usage<a class="headerlink" href="#usage_6" title="Permanent link"> ¶</a></h3>
-<div class="highlight"><pre><span></span><code>leverage terraform shell
+<div class="highlight"><pre><span></span><code>leverage terraform shell <span class="o">[</span>option<span class="o">]</span>
 </code></pre></div>
-<p>Open a shell into the Terraform container in the current directory.</p>
-<p>Does not require MFA.</p>
+<p>Open a shell into the Terraform container in the current directory. An MFA-authenticated shell can only be opened at <strong>layer</strong> level.</p>
+<h3 id="options">Options<a class="headerlink" href="#options" title="Permanent link"> ¶</a></h3>
+<ul>
+<li><code>--mfa</code>: Authenticate via MFA upon launching shell to allow for ease of use when MFA is required.</li>
+</ul>
 <hr />
 <h2 id="format"><code>format</code><a class="headerlink" href="#format" title="Permanent link"> ¶</a></h2>
 <h3 id="usage_7">Usage<a class="headerlink" href="#usage_7" title="Permanent link"> ¶</a></h3>
@@ -4015,7 +4018,7 @@
 <p>Equivalent to <code>terraform fmt -recursive</code>.</p>
 <p>Recursively format all files in the architecture to the Terraform code style.</p>
 <p>Does not require MFA.</p>
-<h3 id="options">Options<a class="headerlink" href="#options" title="Permanent link"> ¶</a></h3>
+<h3 id="options_1">Options<a class="headerlink" href="#options_1" title="Permanent link"> ¶</a></h3>
 <ul>
 <li><code>--check</code>: Only perform format checking, do not overwrite the files.</li>
 </ul>
@@ -4038,13 +4041,9 @@
 <hr />
 <h2 id="aws"><code>aws</code><a class="headerlink" href="#aws" title="Permanent link"> ¶</a></h2>
 <h3 id="usage_10">Usage<a class="headerlink" href="#usage_10" title="Permanent link"> ¶</a></h3>
-<div class="highlight"><pre><span></span><code>leverage terraform aws <span class="o">[</span>option<span class="o">]</span> AWS_CLI_COMMAND
+<div class="highlight"><pre><span></span><code>leverage terraform aws AWS_CLI_COMMAND
 </code></pre></div>
 <p>Utility command to run AWS CLI commands directly on the Terraform container. AWS_CLI_COMMAND takes the form of any arbitrary valid AWS CLI command without the executable name. For example for the command <code>aws --output json sts get-caller-identity</code>, AWS_CLI_COMMAND is <code>--output json sts get-caller-identity</code>.</p>
-<h3 id="options_1">Options<a class="headerlink" href="#options_1" title="Permanent link"> ¶</a></h3>
-<ul>
-<li><code>--no-mfa</code>: ignore MFA for this command.</li>
-</ul>
                 
               
               

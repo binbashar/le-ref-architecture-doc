@@ -40,7 +40,7 @@
 ## Leverage Software / DevOps Engineer Profile
 
 !!! info "What You'll Work On (our tech stack) :man_technologist: :woman_technologist: :rocket:"
-    - [x] [**Infrastructure as Code (IaC) Library**](../how-it-works/index.md)
+    - [x] [**Infrastructure as Code (IaC) Library**](../how-it-works/design/index.md)
         
         Create a collection of reusable, tested, production-ready E2E AWS oriented infrastructure modules 
         (e.g., VPC, IAM, Kubernetes, Prometheus, Grafana, EFK, Consul, Vault, Jenkins, etc.) using several tool and 
@@ -74,10 +74,10 @@
     - [x] **Role scope and extra points!**
     
         - Responsible for the development, maintenance, support and delivery of Binbash Leverage Products.
-    - Client side Leverage Reference Architecture solutions implementation, maintenance and support. 
-    - Client side cloud solutions & tech management (service delivery and project task management).
-    - Bring Leverage recs for re-engineering, bug fixes (issues) report and improvements based on real scenario implementations.
-    - Mentoring, KT, PRs and team tech follow up both internally and customer facing.   
+        - Client side Leverage Reference Architecture solutions implementation, maintenance and support. 
+        - Client side cloud solutions & tech management (service delivery and project task management).
+        - Bring Leverage recs for re-engineering, bug fixes (issues) report and improvements based on real scenario implementations.
+        - Mentoring, KT, PRs and team tech follow up both internally and customer facing.   
         
         Binbash is a small, distributed startup, so things are changing all the time, and from time to time we all wear 
         many hats. You should expect to write lot of code, but, depending on your interests, there will also be lot of 

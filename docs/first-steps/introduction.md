@@ -16,10 +16,9 @@ to ensure quality and to provide a solid base to build upon. This is the startin
 any Leverage user can and will develop all the features and capabilities they may require to satisfy
 their specific needs.
 
-</br>
-![leverage-landing-zone](../assets/images/diagrams/leverage-landing-zone.png "Leverage Landing Zone"){: style="width: 650px"}
+![leverage-landing-zone](../assets/images/diagrams/ref-architecture-aws-landing-zone.png "Leverage Landing Zone"){: style="width: 650px"}
 <figcaption style="font-size:15px">
-<b>Figure:</b> Leverage Landing Zone configuration diagram.
+<b>Figure:</b> Leverage Landing Zone architecture components diagram.
 </figcaption>
 
 On this guide you will learn how to:

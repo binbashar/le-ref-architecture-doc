@@ -2,13 +2,13 @@
 #===================================================================================#
 # Site Information
 #===================================================================================#
-site_name: Binbash Leverage Reference Architecture
+site_name: Binbash Leverage™
 repo_name: "binbashar/le-ref-architecture-doc"
 repo_url: https://github.com/binbashar/le-ref-architecture-doc
 site_url: https://leverage.binbash.com.ar/
 site_description: Binbash Leverage Reference Architecture Documentation
 site_author: Binbash
-copyright: Copyright &copy; 2017-2021 <a href="https://www.binbash.com.ar">Binbash</a>
+copyright: Copyright &copy; 2017-2022 <a href="https://www.binbash.com.ar">Binbash</a>
 
 #===================================================================================#
 # Mkdocs Theme (Material Mkdocs) + Extras
@@ -125,7 +125,7 @@ nav:
     - Home: "index.md"
     - Welcome: "welcome.md"
     - First steps: "first-steps/introduction.md"
-    - How it works: "how-it-works/index.md"
+    - How it works: "how-it-works/design/index.md"
     - User guide: "user-guide/index.md"
     - Work with us: "work-with-us/index.md"
     - License: "license.md"
@@ -141,11 +141,13 @@ nav:
 
   - How it works:
     - Design:
-        - Overview: "how-it-works/index.md"
+        - Overview: "how-it-works/design/index.md"
+        - Reference Architecture | AWS: "how-it-works/design/reference-architecture-aws.md"
+        - Reference Architecture | EKS: "how-it-works/design/reference-architecture-eks.md"
         - General concepts:
-          - Why Leverage?: "how-it-works/general-concepts/why-leverage.md"
-          - Why our stack?: "how-it-works/general-concepts/why-tech-stack.md"
-        - Considerations: "how-it-works/considerations.md"
+          - Why Leverage?: "how-it-works/design/general-concepts/why-leverage.md"
+          - Why our stack?: "how-it-works/design/general-concepts/why-tech-stack.md"
+        - Considerations: "how-it-works/design/considerations.md"
     - Leverage Code Library:
       - Overview: "how-it-works/infra-as-code-library/infra-as-code-library.md"
       - Forks workflow: "how-it-works/infra-as-code-library/infra-as-code-library-forks.md"
@@ -153,6 +155,7 @@ nav:
       - Modules per Tech: "how-it-works/infra-as-code-library/modules-library-per-tech.md"
     - Leverage CLI: "how-it-works/leverage-cli/index.md"
     - Features:
+      - Overview: "how-it-works/features/features-overview.md"
       - AWS Organization:
         - Organization: "how-it-works/features/organization/organization.md"
         - Accounts: "how-it-works/features/organization/accounts.md"
@@ -160,6 +163,8 @@ nav:
       - Identities:
         - Overview: "how-it-works/features/identities/identities.md"
         - IAM Roles: "how-it-works/features/identities/roles.md"
+      - SSO: "how-it-works/features/sso/sso.md"
+      - Costs: "how-it-works/features/costs/costs.md"
       - Security:
         - VPN: "how-it-works/features/security/vpn.md"
         - Services: "how-it-works/features/security/services.md"
@@ -172,12 +177,14 @@ nav:
         - TGW Topology: "how-it-works/features/network/tgw-topology.md"
         - VPC Outbound Traffic: "how-it-works/features/network/vpc-traffic-out.md"
         - DNS: "how-it-works/features/network/dns.md"
+      - Secrets: "how-it-works/features/secrets/secrets.md"
       - Compute:
         - Overview: "how-it-works/features/compute/overview.md"
         - K8s Kops: "how-it-works/features/compute/k8s-kops.md"
         - K8s EKS: "how-it-works/features/compute/k8s-eks.md"
         - K8s Service Mesh: "how-it-works/features/compute/k8s-service-mesh.md"
         - Serverless: "how-it-works/features/compute/serverless.md"
+        - Tools: "how-it-works/features/compute/tools.md"
       - Database:
         - Databases: "how-it-works/features/database/database.md"
         - MySQL: "how-it-works/features/database/mysql.md"
@@ -187,7 +194,6 @@ nav:
       - CI/CD:
         - Overview: "how-it-works/features/ci-cd/ci-cd.md"
         - ArgoCD: "how-it-works/features/ci-cd/k8s-argocd.md"
-      - Tools: "how-it-works/features/tools/tools.md"
       - Monitoring:
         - Monitoring: "how-it-works/features/monitoring/monitoring.md"
         - Metrics: "how-it-works/features/monitoring/metrics.md"
@@ -195,13 +201,11 @@ nav:
         - Tracing: "how-it-works/features/monitoring/tracing.md"
         - APM: "how-it-works/features/monitoring/apm.md"
         - Notifications: "how-it-works/features/monitoring/notification_escalation.md"
-      - Secrets: "how-it-works/features/secrets/secrets.md"
       - Reliability:
         - Backups: "how-it-works/features/reliability/backups.md"
         - High Availability: "how-it-works/features/reliability/high-availability.md"
         - Health Checks: "how-it-works/features/reliability/health-checks.md"
         - Disaster Recovery: "how-it-works/features/reliability/dr.md"
-      - Costs: "how-it-works/features/costs/costs.md"
     - Read More: "how-it-works/read-more.md"
 
   - User guide:
@@ -236,6 +240,8 @@ nav:
         - Identities: "user-guide/features/identities/identities.md"
         - Credentials: "user-guide/features/identities/credentials.md"
         - Credentials Vault: "user-guide/features/identities/credentials-vault.md"
+      - SSO: "user-guide/features/sso/sso.md"
+      - Costs: "user-guide/features/costs/costs.md"
       - Security:
         - VPN: "user-guide/features/security/vpn.md"
         - Services: "user-guide/features/security/services.md"
@@ -243,6 +249,7 @@ nav:
         - VPC: "user-guide/features/network/vpc-addressing.md"
         - VPC Peering: "user-guide/features/network/vpc-peering.md"
         - DNS: "user-guide/features/network/dns.md"
+      - Secrets: "user-guide/features/secrets/secrets.md"
       - Compute:
         - Overview: "user-guide/features/compute/overview.md"
         - K8s Kops: "user-guide/features/compute/k8s-kops.md"
@@ -255,19 +262,16 @@ nav:
       - Storage: "user-guide/features/storage/storage.md"
       - CDN: "user-guide/features/cdn/cdn.md"
       - CI/CD: "user-guide/features/ci-cd/ci-cd.md"
-      - Tools: "user-guide/features/tools/tools.md"
       - Monitoring:
         - Monitoring: "user-guide/features/monitoring/monitoring.md"
         - Metrics: "user-guide/features/monitoring/metrics.md"
         - Logs: "user-guide/features/monitoring/logs.md"
         - Tracing: "user-guide/features/monitoring/tracing.md"
         - APM: "user-guide/features/monitoring/apm.md"
-      - Secrets: "user-guide/features/secrets/secrets.md"
       - Reliability:
         - Backups: "user-guide/features/reliability/backups.md"
         - Disaster Recovery: "user-guide/features/reliability/dr.md"
         - Health Checks: "user-guide/features/reliability/health-checks.md"
-      - Costs: "user-guide/features/costs/costs.md"
 
   - Work with us:
       - Overview: "work-with-us/index.md"

@@ -1,14 +1,14 @@
 # Why Leverage?
 
 ## The problem
-![leverage-why](../../assets/images/diagrams/leverage-why-problem.png "Leverage"){: style="width:950px"}
+![leverage-why](../../../assets/images/diagrams/leverage-why-problem.png "Leverage"){: style="width:950px"}
 <figcaption style="font-size:15px">
 <b>Figure:</b> Why Leverage? The problem.
 (Source: Binbash, "Leverage Presentation: Why you should use Leverage?", accessed June 15th 2021).
 </figcaption>
 
 ## Our solution
-![leverage-why](../../assets/images/diagrams/leverage-why-solution.png "Leverage"){: style="width:950px"}
+![leverage-why](../../../assets/images/diagrams/leverage-why-solution.png "Leverage"){: style="width:950px"}
 <figcaption style="font-size:15px">
 <b>Figure:</b> Why Leverage? The solution.
 (Source: Binbash, "Leverage Presentation: Why you should use Leverage?", accessed June 15th 2021).

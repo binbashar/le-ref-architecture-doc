@@ -48,7 +48,7 @@ theme:
 extra:
   analytics:
     provider: google
-    property: !ENV GOOGLE_ANALYTICS_KEY_G4
+    property: !ENV GOOGLE_ANALYTICS_KEY
 
 ## Temporally only available for Insiders
 ## (https://squidfunk.github.io/mkdocs-material/setup/setting-up-site-analytics/#was-this-page-helpful)

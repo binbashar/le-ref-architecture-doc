@@ -12,7 +12,7 @@ template: overrides/main.html
     ![leverage-aws](./assets/images/icons/aws-emojipack/General_AWScloud.png "AWS"){: style="width:30px"} 
     Cloud Infrastructure code, through our core components:
 
-    - [x] [**Reference Architecture for AWS**](how-it-works/design/index.md)
+    - [x] [**Reference Architecture for AWS**](how-it-works/ref-architecture/index.md)
     - [x] [**Infrastructure as Code (IaC) Library**](how-it-works/infra-as-code-library/infra-as-code-library.md)
     - [x] [**Leverage CLI**](https://github.com/binbashar/leverage)
 
@@ -30,7 +30,7 @@ template: overrides/main.html
         
     :books: **Read More:** 
 
-    - [Why our stack?](./how-it-works/design/general-concepts/why-tech-stack.md)
+    - [Why our stack?](./how-it-works/ref-architecture/general-concepts/why-tech-stack.md)
     - [Why Leverage?](./work-with-us/faqs/#why-leverage)
 
 !!! important "Core Features"
@@ -39,7 +39,7 @@ template: overrides/main.html
     Its design is fully based on the
     [**AWS Well Architected Framework**](https://leverage.binbash.com.ar/support/#aws-well-architected-review).
 
-    - [x] [**Infrastructure as Code (IaC) Library**](how-it-works/design/index.md):
+    - [x] [**Infrastructure as Code (IaC) Library**](how-it-works/ref-architecture/index.md):
         A collection of reusable, tested, production-ready E2E AWS Cloud infrastructure as code solutions, leveraged by
         modules written in: *Terraform, Ansible, Helm charts, Dockerfiles and Makefiles*.
 
@@ -63,6 +63,6 @@ An its compose of the following 3 main repos:
 :books: See [**First Steps**](./first-steps/introduction.md) for an introduction to our Reference
 Architecture for AWS workflow through the complete deployment of a basic AWS Landing Zone.
 
-:books: See [**How it works**](how-it-works/design/index.md) for a whirlwind tour that will get you started.
+:books: See [**How it works**](how-it-works/ref-architecture/index.md) for a whirlwind tour that will get you started.
 
 :books: See [**User guide**](./user-guide/index.md) for a hands on help.

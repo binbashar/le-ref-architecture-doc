@@ -14,7 +14,7 @@ leverage credentials configure --type [BOOTSTRAP|MANAGEMENT|SECURITY] [options]
 
 The `credentials configure` command sets up the credentials needed to interact with the AWS environment, from the initial deployment process (`BOOTSTRAP`) to everyday management (`MANAGEMENT`) and development or use (`SECURITY`) of it.
 
-It attempts to retrieve the structure of the organization in order to generate all the [AWS CLI profiles required to interact with the environment](../../../features/identities/credentials.md) and update the terraform configuration with the id of all relevant accounts.
+It attempts to retrieve the structure of the organization in order to generate all the [AWS CLI profiles required to interact with the environment](../../features/identities/credentials.md) and update the terraform configuration with the id of all relevant accounts.
 
 Backups of the previous configured credentials files are always created when overwriting or updating the current ones.
 

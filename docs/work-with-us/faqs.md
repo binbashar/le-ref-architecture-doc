@@ -23,7 +23,7 @@
     
     - [x] Moreover, if you are looking to have the complete control of the source code, and of course be able to run it
     without us, such as building new Development environments and supporting your Production Cloud environments, 
-    you're a great fit for the [**Leverage AWS Cloud Solutions Reference Architecture**](../how-it-works/design/index.md) model.
+    you're a great fit for the [**Leverage AWS Cloud Solutions Reference Architecture**](../how-it-works/ref-architecture/index.md) model.
 
     **_And remember you could implement yourself or we could implement it for you!_** 💪
 

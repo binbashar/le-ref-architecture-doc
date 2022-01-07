@@ -46,6 +46,27 @@ theme:
   include_sidebar: true
 
 extra:
+  analytics:
+    provider: google
+    property: !ENV GOOGLE_ANALYTICS_KEY_G4
+
+## Temporally only available for Insiders
+## (https://squidfunk.github.io/mkdocs-material/setup/setting-up-site-analytics/#was-this-page-helpful)
+#    feedback:
+#      title: Was this page helpful?
+#      ratings:
+#        - icon: material/emoticon-happy-outline
+#          name: This page was helpful
+#          data: 1
+#          note: >-
+#            Thanks for your feedback!
+#        - icon: material/emoticon-sad-outline
+#          name: This page could be improved
+#          data: 0
+#          note: >-
+#            Thanks for your feedback! Help us improve this page by
+#            using our <a href="..." target=_blank>feedback form</a>.
+
   social:
     - icon: material/home
       link: 'https://www.binbash.com.ar'
@@ -65,7 +86,6 @@ extra:
       link: 'https://hub.docker.com/orgs/binbash'
 
   alternate:
-
     # Switch to English
     - name: English
       #link: https://leverage.binbash.com.ar
@@ -111,12 +131,6 @@ plugins:
 extra_css:
     - assets/stylesheets/extra.css
 
-# Google Analytics (https://squidfunk.github.io/mkdocs-material/setup/setting-up-site-analytics/)
-#
-google_analytics:
-  - !!python/object/apply:os.getenv ["GOOGLE_ANALYTICS_KEY"]
-  - 'auto'
-
 #===================================================================================#
 # Mkdocs Navigation Tree
 #===================================================================================#
@@ -125,7 +139,7 @@ nav:
     - Home: "index.md"
     - Welcome: "welcome.md"
     - First steps: "first-steps/introduction.md"
-    - How it works: "how-it-works/design/index.md"
+    - How it works: "how-it-works/ref-architecture/index.md"
     - User guide: "user-guide/index.md"
     - Work with us: "work-with-us/index.md"
     - License: "license.md"
@@ -140,15 +154,15 @@ nav:
     - Post-deployment: "first-steps/post-deployment.md"
 
   - How it works:
-    - Design:
-        - Overview: "how-it-works/design/index.md"
-        - Reference Architecture | AWS: "how-it-works/design/reference-architecture-aws.md"
-        - Reference Architecture | EKS: "how-it-works/design/reference-architecture-eks.md"
+    - Reference Architecture:
+        - Overview: "how-it-works/ref-architecture/index.md"
+        - Reference Architecture | AWS: "how-it-works/ref-architecture/ref-architecture-aws.md"
+        - Reference Architecture | EKS: "how-it-works/ref-architecture/ref-architecture-eks.md"
         - General concepts:
-          - Why Leverage?: "how-it-works/design/general-concepts/why-leverage.md"
-          - Why our stack?: "how-it-works/design/general-concepts/why-tech-stack.md"
-        - Considerations: "how-it-works/design/considerations.md"
-    - Leverage Code Library:
+          - Why Leverage?: "how-it-works/ref-architecture/general-concepts/why-leverage.md"
+          - Why our stack?: "how-it-works/ref-architecture/general-concepts/why-tech-stack.md"
+        - Considerations: "how-it-works/ref-architecture/considerations.md"
+    - Infra Code Library:
       - Overview: "how-it-works/infra-as-code-library/infra-as-code-library.md"
       - Forks workflow: "how-it-works/infra-as-code-library/infra-as-code-library-forks.md"
       - Specifications: "how-it-works/infra-as-code-library/infra-as-code-library-specs.md"
@@ -209,29 +223,34 @@ nav:
     - Read More: "how-it-works/read-more.md"
 
   - User guide:
-    - Basic usage: "user-guide/index.md"
-    - Configuration:
-      - Overview: "user-guide/base-configuration/overview.md"
-      - Repos:
-        - Terraform AWS Infra: "user-guide/base-configuration/repo-le-tf-infra-aws.md"
-        - Terraform Vault: "user-guide/base-configuration/repo-le-tf-vault.md"
-        - Ansible Infra: "user-guide/base-configuration/repo-le-ansible-infra.md"
-    - Workflow:
-      - Leverage CLI:
-        - Install Leverage CLI: "user-guide/base-workflow/leverage-cli/install-leverage-cli.md"
-        - Reference:
-          - Basic features: "user-guide/base-workflow/leverage-cli/reference/basic-features.md"
-          - Commands:
-            - project: "user-guide/base-workflow/leverage-cli/reference/project.md"
-            - credentials: "user-guide/base-workflow/leverage-cli/reference/credentials.md"
-            - terraform: "user-guide/base-workflow/leverage-cli/reference/terraform.md"
-            - run: "user-guide/base-workflow/leverage-cli/reference/run.md"
-        - Custom tasks: "user-guide/base-workflow/leverage-cli/tasks.md"
-      - Repos:
-        - Terraform Infra: "user-guide/base-workflow/repo-le-tf-infra.md"
-        - Terraform Infra State: "user-guide/base-workflow/repo-le-tf-infra-aws-tf-state.md"
-        - Ansible Infra: "user-guide/base-workflow/repo-le-ansible-infra.md"
+    - Pre-requisites: "user-guide/index.md"
+    - Reference Architecture | AWS:
+      - Project Structure: "user-guide/ref-architecture-aws/dir-structure.md"
+      - Configs: "user-guide/ref-architecture-aws/configs.md"
+      - Credentials: "user-guide/ref-architecture-aws/credentials.md"
+      - Terraform state setup: "user-guide/ref-architecture-aws/tf-state-setup.md"
+      - Terraform state workflow: "user-guide/ref-architecture-aws/tf-state-workflow.md"
+      - Workflow: "user-guide/ref-architecture-aws/workflow.md"
+    - Reference Architecture | Vault:
+      - Project Structure: "user-guide/ref-architecture-vault/dir-structure.md"
+      - Configs: "user-guide/ref-architecture-vault/configs.md"
+      - Terraform state workflow: "user-guide/ref-architecture-vault/tf-state-workflow.md"
+      - Workflow: "user-guide/ref-architecture-vault/workflow.md"
+    - Reference Architecture | Ansible:
+      - Configs: "user-guide/ref-architecture-ansible/configs.md"
+      - Ansible Infra: "user-guide/ref-architecture-ansible/workflow.md"
+    - Leverage CLI:
+      - Install Leverage CLI: "user-guide/leverage-cli/install-leverage-cli.md"
+      - Reference:
+        - Basic features: "user-guide/leverage-cli/reference/basic-features.md"
+        - Commands:
+          - project: "user-guide/leverage-cli/reference/project.md"
+          - credentials: "user-guide/leverage-cli/reference/credentials.md"
+          - terraform: "user-guide/leverage-cli/reference/terraform.md"
+          - run: "user-guide/leverage-cli/reference/run.md"
+      - Custom tasks: "user-guide/leverage-cli/tasks.md"
     - Features:
+      - Overview: "user-guide/features/features-overview.md"
       - AWS Organization:
         - Organization Init: "user-guide/features/organization/organization-init.md"
         - Invite Legacy accounts: "user-guide/features/organization/organization-legacy-accounts.md"
@@ -278,7 +297,7 @@ nav:
       - Support:
           - Support: "work-with-us/support.md"
           - Updates:
-              - August 2021: "work-with-us/updates/product-updates-08-2021.md"
+              - December 2021: "work-with-us/updates/product-updates-12-2021.md"
       - Leverage vs Competition: "work-with-us/leverage-vs-competition.md"
       #- Subscription Plans: "work-with-us/subscription-plans.md"
       - Contribute: "work-with-us/contribute.md"

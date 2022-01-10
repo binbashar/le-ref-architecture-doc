@@ -6,14 +6,14 @@
 ## User guide
 
 !!! done "pre-requisites"
-    * :gear: Review & update [**configs**](../../base-configuration/repo-le-tf-infra-aws.md) 
-    * :gear: Review & understand the [**workflow**](../../base-workflow/repo-le-tf-infra.md) 
+    * :gear: Review & update [**configs**](../../ref-architecture-aws/configs.md) 
+    * :gear: Review & understand the [**workflow**](../../ref-architecture-aws/workflow.md) 
 
 
 !!! example "Steps"
     1. **DNS** service has to be orchestrated from 
     [`/shared/global/base-dns`](https://github.com/binbashar/le-tf-infra-aws/tree/master/shared/global/base-dns) layer 
-    following the standard [workflow](../../base-workflow/repo-le-tf-infra.md)
+    following the standard [workflow](../../ref-architecture-aws/workflow.md)
         
 ### Migrated AWS Route53 Hosted Zones between AWS Accounts 
 

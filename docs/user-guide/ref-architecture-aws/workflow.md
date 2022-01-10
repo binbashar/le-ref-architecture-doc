@@ -3,11 +3,11 @@
 ## Steps 
 !!! check "Terraform Workflow"
     1. Make sure you've read and prepared your local development environment following the
-    [Overview base-configurations](../base-configuration/overview.md) section.
+    [Overview base-configurations](../index.md) section.
     2. Depending in which Terraform Ref Architecture repo you are working, please review and assure you meet
-    all the [terraform aws pre-requisites](../base-configuration/repo-le-tf-infra-aws.md) or 
-    [terraform vault pre-requisites](../base-configuration/repo-le-tf-vault.md)  
-        - [x] [Remote State](repo-le-tf-infra-aws-tf-state.md)
+    all the [terraform aws pre-requisites](./configs.md) or 
+    [terraform aws pre-requisites](./dir-structure.md)  
+        - [x] [Remote State](tf-state-workflow.md)
         - [x] Configuration files
         - [x] [AWS Profile and credentials](../features/identities/credentials.md)
         - [x] [Vault token secret](../features/identities/credentials-vault.md)

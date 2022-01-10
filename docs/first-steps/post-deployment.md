@@ -144,5 +144,5 @@ Now you not only have a fully functional landing zone configuration deployed, bu
 
 This concludes this first steps guide for the Leverage Reference Architecture for AWS. For more detailed information, visit the links below.
 
-- [X] :books: [How it works](../how-it-works/design/index.md)
+- [X] :books: [How it works](../how-it-works/ref-architecture/index.md)
 - [X] :books: [User guides](../user-guide/index.md)

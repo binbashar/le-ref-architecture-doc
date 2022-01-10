@@ -2,15 +2,14 @@
 ![binbash-leverage-tf](../assets/images/logos/binbash-leverage-terraform.png#right "Leverage"){: style="width:130px"}
 
 # Overview
+## Pre-requisites
 
-Please start by reviewing the [pre-requisites](./base-configuration/overview.md) 
+!!! done "Local env pre-required packages"
+* [x] **Docker engine** `>= 20.x.y`(check via `docker --version`)
+* [x] **Python** `>= 3.8` (check via `python3 --version` || `python3.8 --version`)
+* [x] **leverage cli** `>= 1.0.0` (check via `leverage --version`)
 
-## Configurations
-- [x] [le-tf-infra-aws](base-configuration/repo-le-tf-infra-aws.md)
-- [x] [le-tf-vault](base-configuration/repo-le-tf-vault.md)
-- [x] [le-ansible-infra](base-configuration/repo-le-ansible-infra.md)
-
-## Workflow
-- [x] [le-tf-infra-aws](base-workflow/repo-le-tf-infra.md)
-- [x] [le-tf-vault](base-workflow/repo-le-tf-infra.md)
-- [x] [le-ansible-infra](base-workflow/repo-le-ansible-infra.md)
+## Configurations & Workflow
+- [x] [le-tf-infra-aws](ref-architecture-aws/dir-structure.md)
+- [x] [le-tf-vault](ref-architecture-vault/dir-structure.md)
+- [x] [le-ansible-infra](ref-architecture-ansible/configs.md)

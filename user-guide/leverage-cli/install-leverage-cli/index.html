@@ -15,7 +15,7 @@
         <link rel="canonical" href="https://leverage.binbash.com.ar/user-guide/leverage-cli/install-leverage-cli/">
       
       <link rel="icon" href="../../../assets/images/logos/favicon.ico">
-      <meta name="generator" content="mkdocs-1.2.3, mkdocs-material-8.1.4">
+      <meta name="generator" content="mkdocs-1.2.3, mkdocs-material-8.1.8">
     
     
       
@@ -23,7 +23,7 @@
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/main.bb3983ee.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.6e60f8b8.min.css">
       
         
         <link rel="stylesheet" href="../../../assets/stylesheets/palette.e6a45f82.min.css">
@@ -72,7 +72,7 @@
   
     
     
-      <script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)</script>
+      <script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
     
     <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
@@ -3655,22 +3655,25 @@
 </ul>
 </div>
 <h3 id="install-pip">Install Pip<a class="headerlink" href="#install-pip" title="Permanent link"> ¶</a></h3>
-<div class="tabbed-set" data-tabs="1:4"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><label for="__tabbed_1_1">Ubuntu/Debian</label><div class="tabbed-content">
+<div class="tabbed-set tabbed-alternate" data-tabs="1:4"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><input id="__tabbed_1_3" name="__tabbed_1" type="radio" /><input id="__tabbed_1_4" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">Ubuntu/Debian</label><label for="__tabbed_1_2">CentOS/RHEL</label><label for="__tabbed_1_3">Fedora</label><label for="__tabbed_1_4">MacOS</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
 <div class="highlight"><pre><span></span><code>$ sudo apt install python3-pip
 </code></pre></div>
 </div>
-<input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><label for="__tabbed_1_2">CentOS/RHEL</label><div class="tabbed-content">
+<div class="tabbed-block">
 <div class="highlight"><pre><span></span><code>$ sudo yum install python3-pip
 </code></pre></div>
 </div>
-<input id="__tabbed_1_3" name="__tabbed_1" type="radio" /><label for="__tabbed_1_3">Fedora</label><div class="tabbed-content">
+<div class="tabbed-block">
 <div class="highlight"><pre><span></span><code>$ sudo dnf install python3-pip
 </code></pre></div>
 </div>
-<input id="__tabbed_1_4" name="__tabbed_1" type="radio" /><label for="__tabbed_1_4">MacOS</label><div class="tabbed-content">
+<div class="tabbed-block">
 <p>Pip should already be installed alongside your Python 3 installation. If for whatever reason this is not the case:
 <div class="highlight"><pre><span></span><code>$ brew install python3
 </code></pre></div></p>
+</div>
 </div>
 </div>
 <h3 id="install-leverage-cli_1">Install Leverage CLI<a class="headerlink" href="#install-leverage-cli_1" title="Permanent link"> ¶</a></h3>
@@ -3702,24 +3705,29 @@ Commands:
 <p>If you prefer not to install the Leverage package globally and would like to limit its influence to only the directory of your project, we recommend using tools like <a href="https://pipenv.pypa.io/en/latest/">Pipenv</a> or <a href="https://python-poetry.org/">Poetry</a>. These tools are commonly used when working with python applications and help manage common issues that may result from installing and using such applications globally.</p>
 <h2 id="shell-completion">Shell completion<a class="headerlink" href="#shell-completion" title="Permanent link"> ¶</a></h2>
 <p>To enable autocompletion for Leverage in your shell, do the following:</p>
-<div class="tabbed-set" data-tabs="2:3"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><label for="__tabbed_2_1">Bash</label><div class="tabbed-content">
+<div class="tabbed-set tabbed-alternate" data-tabs="2:3"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><input id="__tabbed_2_2" name="__tabbed_2" type="radio" /><input id="__tabbed_2_3" name="__tabbed_2" type="radio" /><div class="tabbed-labels"><label for="__tabbed_2_1">Bash</label><label for="__tabbed_2_2">Zsh</label><label for="__tabbed_2_3">Fish</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
 <p>Add to <code>~/.bashrc</code>:
 <div class="highlight"><pre><span></span><code><span class="nb">eval</span> <span class="s2">&quot;</span><span class="k">$(</span><span class="nv">_LEVERAGE_COMPLETE</span><span class="o">=</span>bash_source leverage<span class="k">)</span><span class="s2">&quot;</span>
 </code></pre></div></p>
 </div>
-<input id="__tabbed_2_2" name="__tabbed_2" type="radio" /><label for="__tabbed_2_2">Zsh</label><div class="tabbed-content">
+<div class="tabbed-block">
 <p>Add to <code>~/.zshrc</code>:
 <div class="highlight"><pre><span></span><code><span class="nb">eval</span> <span class="s2">&quot;</span><span class="k">$(</span><span class="nv">_LEVERAGE_COMPLETE</span><span class="o">=</span>zsh_source leverage<span class="k">)</span><span class="s2">&quot;</span>
 </code></pre></div></p>
 </div>
-<input id="__tabbed_2_3" name="__tabbed_2" type="radio" /><label for="__tabbed_2_3">Fish</label><div class="tabbed-content">
+<div class="tabbed-block">
 <p>Add to <code>~/.config/fish/completions/leverage.fish</code>:
 <div class="highlight"><pre><span></span><code><span class="nb">eval</span> <span class="o">(</span>env <span class="nv">_LEVERAGE_COMPLETE</span><span class="o">=</span>fish_source leverage<span class="o">)</span>
 </code></pre></div></p>
 </div>
 </div>
+</div>
 <p>Or to avoid invoking <code>eval</code> every time a shell starts:</p>
-<div class="tabbed-set" data-tabs="3:3"><input checked="checked" id="__tabbed_3_1" name="__tabbed_3" type="radio" /><label for="__tabbed_3_1">Bash</label><div class="tabbed-content">
+<div class="tabbed-set tabbed-alternate" data-tabs="3:3"><input checked="checked" id="__tabbed_3_1" name="__tabbed_3" type="radio" /><input id="__tabbed_3_2" name="__tabbed_3" type="radio" /><input id="__tabbed_3_3" name="__tabbed_3" type="radio" /><div class="tabbed-labels"><label for="__tabbed_3_1">Bash</label><label for="__tabbed_3_2">Zsh</label><label for="__tabbed_3_3">Fish</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
 <p>Save the script:
 <div class="highlight"><pre><span></span><code><span class="nv">_LEVERAGE_COMPLETE</span><span class="o">=</span>bash_source leverage &gt; ~/.leverage-complete.bash
 </code></pre></div>
@@ -3727,7 +3735,7 @@ Source the script in <code>~/.bashrc</code>:
 <div class="highlight"><pre><span></span><code>. ~/.leverage-complete.bash
 </code></pre></div></p>
 </div>
-<input id="__tabbed_3_2" name="__tabbed_3" type="radio" /><label for="__tabbed_3_2">Zsh</label><div class="tabbed-content">
+<div class="tabbed-block">
 <p>Save the script:
 <div class="highlight"><pre><span></span><code><span class="nv">_LEVERAGE_COMPLETE</span><span class="o">=</span>zsh_source leverage &gt; ~/.leverage-complete.zsh
 </code></pre></div>
@@ -3735,10 +3743,11 @@ Source the script in <code>~/.zshrc</code>:
 <div class="highlight"><pre><span></span><code>. ~/.leverage-complete.zsh
 </code></pre></div></p>
 </div>
-<input id="__tabbed_3_3" name="__tabbed_3" type="radio" /><label for="__tabbed_3_3">Fish</label><div class="tabbed-content">
+<div class="tabbed-block">
 <p>Save the script to <code>~/.config/fish/completions/leverage.fish</code>:
 <div class="highlight"><pre><span></span><code><span class="nv">_LEVERAGE_COMPLETE</span><span class="o">=</span>fish_source leverage &gt; ~/.config/fish/completions/leverage.fish
 </code></pre></div></p>
+</div>
 </div>
 </div>
 <p>Start a new shell in order to load any changes made to the shell config.</p>
@@ -3887,10 +3896,10 @@ Source the script in <code>~/.zshrc</code>:
     <div class="md-dialog" data-md-component="dialog">
       <div class="md-dialog__inner md-typeset"></div>
     </div>
-    <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.tabs", "navigation.instant", "header.autohide"], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../../../assets/javascripts/workers/search.361d90f1.min.js"}</script>
+    <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.tabs", "navigation.instant", "header.autohide"], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../../../assets/javascripts/workers/search.22074ed6.min.js"}</script>
     
     
-      <script src="../../../assets/javascripts/bundle.289a2a4b.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.960e086b.min.js"></script>
       
     
   </body>

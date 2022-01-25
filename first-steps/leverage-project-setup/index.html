@@ -15,7 +15,7 @@
         <link rel="canonical" href="https://leverage.binbash.com.ar/first-steps/leverage-project-setup/">
       
       <link rel="icon" href="../../assets/images/logos/favicon.ico">
-      <meta name="generator" content="mkdocs-1.2.3, mkdocs-material-8.1.4">
+      <meta name="generator" content="mkdocs-1.2.3, mkdocs-material-8.1.8">
     
     
       
@@ -23,7 +23,7 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.bb3983ee.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.6e60f8b8.min.css">
       
         
         <link rel="stylesheet" href="../../assets/stylesheets/palette.e6a45f82.min.css">
@@ -72,7 +72,7 @@
   
     
     
-      <script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)</script>
+      <script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
     
     <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
@@ -3754,7 +3754,9 @@
 </details>
 <h2 id="set-up-the-bootstrap-credentials">Set Up the bootstrap credentials<a class="headerlink" href="#set-up-the-bootstrap-credentials" title="Permanent link"> ¶</a></h2>
 <p>To be able to interact with your AWS environment you first need to configure the credentials to enable AWS CLI to do so. Provide the keys obtained in the previous <a href="../aws-account-setup/">account creation step</a> to the command by any of the available means.</p>
-<div class="tabbed-set" data-tabs="1:3"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><label for="__tabbed_1_1">Manually</label><div class="tabbed-content">
+<div class="tabbed-set tabbed-alternate" data-tabs="1:3"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><input id="__tabbed_1_3" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">Manually</label><label for="__tabbed_1_2">File selection</label><label for="__tabbed_1_3">Provide file in command</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
 <p><div class="highlight"><pre><span></span><code>leverage credentials configure --type BOOTSTRAP
 </code></pre></div>
 <pre><code><span class="fsg-timestamp">[09:37:17.530]</span> INFO     Loading configuration file.
@@ -3769,7 +3771,7 @@
 <span class="fsg-timestamp">[09:37:55.344]</span> INFO     Skipping assumable roles configuration.
 </code></pre></p>
 </div>
-<input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><label for="__tabbed_1_2">File selection</label><div class="tabbed-content">
+<div class="tabbed-block">
 <p><div class="highlight"><pre><span></span><code>leverage credentials configure --type BOOTSTRAP
 </code></pre></div>
 <pre><code><span class="fsg-timestamp">[09:37:17.530]</span> INFO     Loading configuration file.
@@ -3783,7 +3785,7 @@
 <span class="fsg-timestamp">[09:37:55.344]</span> INFO     Skipping assumable roles configuration.
 </code></pre></p>
 </div>
-<input id="__tabbed_1_3" name="__tabbed_1" type="radio" /><label for="__tabbed_1_3">Provide file in command</label><div class="tabbed-content">
+<div class="tabbed-block">
 <p><div class="highlight"><pre><span></span><code>leverage credentials configure --type BOOTSTRAP --credentials-file ../bootstrap_accessKeys.csv
 </code></pre></div>
 <pre><code><span class="fsg-timestamp">[09:37:17.530]</span> INFO     Loading configuration file.
@@ -3794,6 +3796,7 @@
 <span class="fsg-timestamp">[09:37:53.792]</span> INFO     Updating project configuration file.
 <span class="fsg-timestamp">[09:37:55.344]</span> INFO     Skipping assumable roles configuration.
 </code></pre></p>
+</div>
 </div>
 </div>
 <div class="admonition info">
@@ -4099,10 +4102,10 @@
     <div class="md-dialog" data-md-component="dialog">
       <div class="md-dialog__inner md-typeset"></div>
     </div>
-    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs", "navigation.instant", "header.autohide"], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../../assets/javascripts/workers/search.361d90f1.min.js"}</script>
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs", "navigation.instant", "header.autohide"], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../../assets/javascripts/workers/search.22074ed6.min.js"}</script>
     
     
-      <script src="../../assets/javascripts/bundle.289a2a4b.min.js"></script>
+      <script src="../../assets/javascripts/bundle.960e086b.min.js"></script>
       
     
   </body>

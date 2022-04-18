@@ -4,7 +4,7 @@
 # Introduction
 
 The objective of this guide is to introduce the user to our
-[**Binbash Leverage Reference Architecture for AWS**](../../how-it-works/) workflow 
+[**Binbash Leverage Reference Architecture for AWS**](../../how-it-works/ref-architecture/) workflow 
 through the complete deployment of a basic landing zone configuration.
 
 The Leverage landing zone is the smallest possible fully functional configuration. 

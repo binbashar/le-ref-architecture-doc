@@ -248,6 +248,7 @@ nav:
         - Commands:
           - project: "user-guide/leverage-cli/reference/project.md"
           - credentials: "user-guide/leverage-cli/reference/credentials.md"
+          - aws: "user-guide/leverage-cli/reference/aws.md"
           - terraform: "user-guide/leverage-cli/reference/terraform.md"
           - run: "user-guide/leverage-cli/reference/run.md"
       - Custom tasks: "user-guide/leverage-cli/tasks.md"

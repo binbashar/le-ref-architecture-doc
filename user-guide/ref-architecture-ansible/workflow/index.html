@@ -19,7 +19,7 @@
     
     
       
-        <title>Ansible Infra - Binbash Leverage™</title>
+        <title>Workflow - Binbash Leverage™</title>
       
     
     
@@ -113,7 +113,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Ansible Infra
+              Workflow
             
           </span>
         </div>
@@ -2154,7 +2154,7 @@
       
       
       <a href="./" class="md-nav__link md-nav__link--active">
-        Ansible Infra
+        Workflow
       </a>
       
     </li>
@@ -3544,21 +3544,27 @@
 
 <h1 id="workflow">Workflow<a class="headerlink" href="#workflow" title="Permanent link"> ¶</a></h1>
 <div class="admonition info">
-<p class="admonition-title">Makefile</p>
+<p class="admonition-title">Leverage CLI</p>
 <ul>
-<li>We rely on <code>Makefiles</code> as a wrapper to run terraform commands that consistently use the same config files.</li>
-<li>You are encouraged to inspect those Makefiles to understand what's going on.</li>
+<li>
+<p>We rely on the <a href="../../leverage-cli/install-leverage-cli/"><strong><code>leverage cli</code></strong></a> as a wrapper to run ansible commands
+that consistently use the same config files and secrets.</p>
+</li>
+<li>
+<p>You are encouraged to read more about our <a href="../../../how-it-works/leverage-cli/"><strong><code>leverage cli</code></strong> how it works</a> 
+section to better understand it.</p>
+</li>
 </ul>
 </div>
 <div class="admonition example">
 <p class="admonition-title"><img alt="leverage-ansible" src="../../../assets/images/logos/ansible.png" style="width:20px" title="Leverage" /> <a href="https://github.com/binbashar/le-ansible-infra">Ansible Infra</a></p>
 <ol>
 <li>Get into the folder that you need to work with (e.g. <code>ansible-playbook-vpn-pritunl</code>)</li>
-<li>Run <code>make init</code> to get all the necessary Ansible roles based on each <code>requirements.yml</code></li>
-<li>Run <code>init-ansible-py</code> (if necessary)</li>
+<li>Run <code>leverage run init</code> to get all the necessary Ansible roles based on each <code>requirements.yml</code></li>
 <li>Make whatever changes you need to make as stated in each Playbook Documentation (check Documentation section above)</li>
-<li>Run <code>make check</code> if you only mean to preview those changes</li>
-<li>Run <code>make apply</code> if you want to apply those changes</li>
+<li>For a dry run execution use <code>leverage run apply\[--check\]</code> if you only mean to preview those changes</li>
+<li>Run <code>leverage run apply</code> if you want to apply those changes</li>
+<li>Run <code>leverage run apply\["--tags","common"\]</code> if you want to target specific playbook tasks by tag (eg: common tag) </li>
 </ol>
 </div>
 

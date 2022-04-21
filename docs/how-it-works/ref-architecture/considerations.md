@@ -23,7 +23,7 @@
         - :ledger: **Consideration:** Note that any change manually performed will generate inconsistencies on the deployed resources 
           (which left them out of governance and support scope).
     *   [x] **Server OS provisioning**: Provisioning via **_Ansible_** for resources that need to be provisioned on an OS.
-    *   [x] **Containers Orchestration:** Orchestration via **_Terraform + Helm Charts** for resources that need to be 
+    *   [x] **Containers Orchestration:** Orchestration via **_Terraform + Helm Charts_** for resources that need to be 
         provisioned in Kubernetes (with **_Docker_** as preferred container engine).
     *   [x] **Pre-existing AWS Accounts:** All resources will be deployed in several new AWS accounts created inside the Client AWS Organization. 
         Except for the AWS Legacy Account invitation to the AWS Org and _OrganizationAccountAccessRole_ creation in it, 

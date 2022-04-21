@@ -240,7 +240,7 @@ nav:
       - Workflow: "user-guide/ref-architecture-vault/workflow.md"
     - Reference Architecture | Ansible:
       - Configs: "user-guide/ref-architecture-ansible/configs.md"
-      - Ansible Infra: "user-guide/ref-architecture-ansible/workflow.md"
+      - Workflow: "user-guide/ref-architecture-ansible/workflow.md"
     - Leverage CLI:
       - Install Leverage CLI: "user-guide/leverage-cli/install-leverage-cli.md"
       - Reference:

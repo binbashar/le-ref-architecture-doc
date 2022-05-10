@@ -87,7 +87,13 @@ In these cases, execute the following steps:
 docker run --rm -it --mount type=bind,src=/Users/username/.gnupg,dst=/root/.gnupg ubuntu:latest
 ```
 
-2. Generate the key as described in previous sections, running `gpg --gen-key`.
+2. Inside the container, install required packages.
+```bash
+apt update
+apt install gnupg
+```
+
+2. Generate the key as described in previous sections, running `gpg --gen-key` at the interactive console in the ubuntu container.
 
 3. To fix permissions in your gpg directory, run these commands at the interactive console in the ubuntu container.
 ```bash
@@ -95,4 +101,10 @@ find ~/.gnupg -type f -exec chmod 600 {} \;
 find ~/.gnupg -type d -exec chmod 700 {} \;
 ```
 
-4. Now, you should be able to export the gpg key and decode the password from your mac.
+4. Now you should be able to export the gpg key and decode the password from your mac, running `gpg --export "Your Name" | base64`.
+
+5. Finally, decrypt the password in your mac, executing:
+```bash
+echo "YOUR ENCRYPTED STRING PASSWORD HERE" | base64 --decode > a_file_with_your_pass
+gpg --decrypt a_file_with_your_pass
+```

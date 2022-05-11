@@ -62,3 +62,49 @@ user's password and user's secret key.
     :warning: Depending on your shell version an extra `%` character could appear as shown below, you must disregard this
     character since it's not part of the Initial (one time) AWS Web Console password. 
     4. If all went well, the decrypted password should be there
+
+## Workaround for Mac users
+
+There are some situations where gpg keys generated on Mac don't work properly, generating errors like the following:
+
+```bash
+╷
+│ Error: error encrypting password during IAM User Login Profile (user.lastname) creation: Error encrypting Password: error parsing given PGP key: openpgp: unsupported feature: unsupported oid: 2b060104019755010501
+│ 
+│   with module.user["user.lastname"].aws_iam_user_login_profile.this[0],
+│   on .terraform/modules/user/modules/iam-user/main.tf line 12, in resource "aws_iam_user_login_profile" "this":
+│   12: resource "aws_iam_user_login_profile" "this" {
+│
+```
+
+!!! info ":whale: Docker is required for this workaround."
+    If you don't have docker on your PC, don't worry. You can easily install it following the steps on the [official page](https://docs.docker.com/desktop/mac/install/).
+
+In these cases, execute the following steps:
+
+1. Run an interactive console into an ubuntu container mounting your gpg directory.
+```bash
+docker run --rm -it --mount type=bind,src=/Users/username/.gnupg,dst=/root/.gnupg ubuntu:latest
+```
+
+2. Inside the container, install required packages.
+```bash
+apt update
+apt install gnupg
+```
+
+2. Generate the key as described in previous sections, running `gpg --gen-key` at the interactive console in the ubuntu container.
+
+3. To fix permissions in your gpg directory, run these commands at the interactive console in the ubuntu container.
+```bash
+find ~/.gnupg -type f -exec chmod 600 {} \;
+find ~/.gnupg -type d -exec chmod 700 {} \;
+```
+
+4. Now you should be able to export the gpg key and decode the password from your mac, running `gpg --export "Your Name" | base64`.
+
+5. Finally, decrypt the password in your mac, executing:
+```bash
+echo "YOUR ENCRYPTED STRING PASSWORD HERE" | base64 --decode > a_file_with_your_pass
+gpg --decrypt a_file_with_your_pass
+```

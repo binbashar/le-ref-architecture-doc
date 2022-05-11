@@ -2538,6 +2538,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#workaround-for-mac-users" class="md-nav__link">
+    Workaround for Mac users
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -3587,6 +3594,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#workaround-for-mac-users" class="md-nav__link">
+    Workaround for Mac users
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -3676,6 +3690,52 @@ character since it's not part of the Initial (one time) AWS Web Console password
 <li>If all went well, the decrypted password should be there</li>
 </ol>
 </div>
+<h2 id="workaround-for-mac-users">Workaround for Mac users<a class="headerlink" href="#workaround-for-mac-users" title="Permanent link"> ¶</a></h2>
+<p>There are some situations where gpg keys generated on Mac don't work properly, generating errors like the following:</p>
+<div class="highlight"><pre><span></span><code>╷
+│ Error: error encrypting password during IAM User Login Profile <span class="o">(</span>user.lastname<span class="o">)</span> creation: Error encrypting Password: error parsing given PGP key: openpgp: unsupported feature: unsupported oid: 2b060104019755010501
+│ 
+│   with module.user<span class="o">[</span><span class="s2">&quot;user.lastname&quot;</span><span class="o">]</span>.aws_iam_user_login_profile.this<span class="o">[</span><span class="m">0</span><span class="o">]</span>,
+│   on .terraform/modules/user/modules/iam-user/main.tf line <span class="m">12</span>, <span class="k">in</span> resource <span class="s2">&quot;aws_iam_user_login_profile&quot;</span> <span class="s2">&quot;this&quot;</span>:
+│   <span class="m">12</span>: resource <span class="s2">&quot;aws_iam_user_login_profile&quot;</span> <span class="s2">&quot;this&quot;</span> <span class="o">{</span>
+│
+</code></pre></div>
+<div class="admonition info">
+<p class="admonition-title"><img alt="🐳" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f433.svg" title=":whale:" /> Docker is required for this workaround.</p>
+<p>If you don't have docker on your PC, don't worry. You can easily install it following the steps on the <a href="https://docs.docker.com/desktop/mac/install/">official page</a>.</p>
+</div>
+<p>In these cases, execute the following steps:</p>
+<ol>
+<li>
+<p>Run an interactive console into an ubuntu container mounting your gpg directory.
+<div class="highlight"><pre><span></span><code>docker run --rm -it --mount <span class="nv">type</span><span class="o">=</span>bind,src<span class="o">=</span>/Users/username/.gnupg,dst<span class="o">=</span>/root/.gnupg ubuntu:latest
+</code></pre></div></p>
+</li>
+<li>
+<p>Inside the container, install required packages.
+<div class="highlight"><pre><span></span><code>apt update
+apt install gnupg
+</code></pre></div></p>
+</li>
+<li>
+<p>Generate the key as described in previous sections, running <code>gpg --gen-key</code> at the interactive console in the ubuntu container.</p>
+</li>
+<li>
+<p>To fix permissions in your gpg directory, run these commands at the interactive console in the ubuntu container.
+<div class="highlight"><pre><span></span><code>find ~/.gnupg -type f -exec chmod <span class="m">600</span> <span class="o">{}</span> <span class="se">\;</span>
+find ~/.gnupg -type d -exec chmod <span class="m">700</span> <span class="o">{}</span> <span class="se">\;</span>
+</code></pre></div></p>
+</li>
+<li>
+<p>Now you should be able to export the gpg key and decode the password from your mac, running <code>gpg --export "Your Name" | base64</code>.</p>
+</li>
+<li>
+<p>Finally, decrypt the password in your mac, executing:
+<div class="highlight"><pre><span></span><code><span class="nb">echo</span> <span class="s2">&quot;YOUR ENCRYPTED STRING PASSWORD HERE&quot;</span> <span class="p">|</span> base64 --decode &gt; a_file_with_your_pass
+gpg --decrypt a_file_with_your_pass
+</code></pre></div></p>
+</li>
+</ol>
 
               
             </article>

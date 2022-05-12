@@ -33,7 +33,7 @@ Binbash Leverage Doc, accessed August 4th 2021).
 </figcaption>
 
 Under every account folder you will see a service layer structure similar to the following:
-???+ note "*MyExample* project file structure"
+???- note "*MyExample* project file structure"
     ```
     ...
     ├── 📂 apps-devstg

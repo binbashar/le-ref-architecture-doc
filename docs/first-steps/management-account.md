@@ -29,16 +29,6 @@ leverage terraform apply
 All `apply` commands will prompt for confirmation, answer `yes` when this happens.
 
 !!! info "More information on [`terraform init`](../../user-guide/base-workflow/leverage-cli/reference/terraform#init) and [`terraform apply`](../../user-guide/base-workflow/leverage-cli/reference/terraform#apply)"
-!!! note
-    The `apply` command may result in an error similar to:
-
-    ```
-    Error: error creating public access block policy for S3 bucket (me-security-terraform-backend): 
-    OperationAborted: A conflicting conditional operation is currently in progress against this resource. 
-    Please try again.
-    ```
-
-    If this happens, please re-run the command.
 
 Now, the infrastructure for the Terraform state management is created. The next step is to push the local `.tfstate` to the bucket. To do this, uncomment the `backend` section for the `terraform` configuration in `management/base-tf-backend/config.tf`
 

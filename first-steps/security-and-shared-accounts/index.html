@@ -3776,15 +3776,6 @@
 <div class="highlight"><pre><span></span><code>leverage terraform init
 leverage terraform apply
 </code></pre></div>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>The <code>apply</code> command may result in an error similar to:</p>
-<div class="highlight"><pre><span></span><code>Error: error creating public access block policy for S3 bucket (me-security-terraform-backend): 
-OperationAborted: A conflicting conditional operation is currently in progress against this resource. 
-Please try again.
-</code></pre></div>
-<p>If this happens, please re-run the command.</p>
-</div>
 <p>Now, to push the local <code>.tfstate</code> to the bucket, uncomment the <code>backend</code> section for the <code>terraform</code> configuration in <code>security/base-tf-backend/config.tf</code></p>
 <div class="highlight"><pre><span></span><code><span class="w">  </span><span class="kr">backend</span><span class="w"> </span><span class="nv">&quot;s3&quot;</span><span class="w"> </span><span class="p">{</span>
 <span class="w">    </span><span class="na">key</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;security/tf-backend/terraform.tfstate&quot;</span><span class="w"></span>
@@ -3824,15 +3815,6 @@ leverage terraform apply
 <div class="highlight"><pre><span></span><code>leverage terraform init
 leverage terraform apply
 </code></pre></div>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>The <code>apply</code> command may result in an error similar to:</p>
-<div class="highlight"><pre><span></span><code>Error: error creating public access block policy for S3 bucket (me-security-terraform-backend): 
-OperationAborted: A conflicting conditional operation is currently in progress against this resource. 
-Please try again.
-</code></pre></div>
-<p>If this happens, please re-run the command.</p>
-</div>
 <p>Now, to push the local <code>.tfstate</code> to the bucket, uncomment the <code>backend</code> section for the <code>terraform</code> configuration in <code>shared/base-tf-backend/config.tf</code></p>
 <div class="highlight"><pre><span></span><code><span class="w">  </span><span class="kr">backend</span><span class="w"> </span><span class="nv">&quot;s3&quot;</span><span class="w"> </span><span class="p">{</span>
 <span class="w">    </span><span class="na">key</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;shared/tf-backend/terraform.tfstate&quot;</span><span class="w"></span>

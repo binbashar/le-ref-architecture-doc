@@ -2,7 +2,9 @@
 
 The `terraform` command is a wrapper for a containerized installation of Terraform. It provides the Terraform executable with specific configuration values required by Leverage.
 
-It transparently handles MFA on behalf of the user in the commands that require it. Some commands can only be run at **layer** level and will not run anywhere else in the project.
+It transparently handles authentication whether it is Multi-Factor or via Single Sign-On on behalf of the user in the commands that require it. SSO Authentication takes precedence over MFA when both are active. 
+
+Some commands can only be run at **layer** level and will not run anywhere else in the project.
 
 The command can also be invoked via its shortened version `tf`.
 
@@ -96,10 +98,16 @@ Print Terraform version.
 leverage terraform shell [option]
 ```
 
-Open a shell into the Terraform container in the current directory. An MFA-authenticated shell can only be opened at **layer** level.
+Open a shell into the Terraform container in the current directory. An authenticated shell can only be opened at **layer** level.
+
+!!! info "[:books: Terraform shell environment documentation](../shell.md)"
 
 ### Options
-* `--mfa`: Authenticate via MFA upon launching shell to allow for ease of use when MFA is required.
+* `--mfa`: Authenticate via MFA upon launching shell.
+* `--sso`: Authenticate via SSO upon launching shell.
+
+_Note:_ When `--sso` flag is used, the `--mfa` flag status is ignored.
+
 
 ---
 ## `format`
@@ -112,8 +120,6 @@ leverage terraform format [option]
 Equivalent to `terraform fmt -recursive`.
 
 Recursively format all files in the architecture to the Terraform code style.
-
-Does not require MFA.
 
 ### Options
 * `--check`: Only perform format checking, do not overwrite the files.
@@ -130,8 +136,6 @@ Equivalent to `terraform validate`.
 
 Checks the infrastructure definition's consistency. 
 
-Does not require MFA.
-
 ---
 ## `import`
 
@@ -145,13 +149,3 @@ Equivalent to `terraform import`.
 Import the resource with the given ID into the Terraform state at the given ADDRESS. 
 
 Can only be run at **layer** level.
-
----
-## `aws`
-
-### Usage
-``` bash
-leverage terraform aws AWS_CLI_COMMAND
-```
-
-Utility command to run AWS CLI commands directly on the Terraform container. AWS_CLI_COMMAND takes the form of any arbitrary valid AWS CLI command without the executable name. For example for the command `aws --output json sts get-caller-identity`, AWS_CLI_COMMAND is `--output json sts get-caller-identity`.

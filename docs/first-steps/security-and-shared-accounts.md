@@ -21,17 +21,6 @@ leverage terraform init
 leverage terraform apply
 ```
 
-!!! note
-    The `apply` command may result in an error similar to:
-
-    ```
-    Error: error creating public access block policy for S3 bucket (me-security-terraform-backend): 
-    OperationAborted: A conflicting conditional operation is currently in progress against this resource. 
-    Please try again.
-    ```
-
-    If this happens, please re-run the command.
-
 Now, to push the local `.tfstate` to the bucket, uncomment the `backend` section for the `terraform` configuration in `security/base-tf-backend/config.tf`
 
 ``` terraform
@@ -99,17 +88,6 @@ Move into the `us-east-1/base-tf-backend` directory and run:
 leverage terraform init
 leverage terraform apply
 ```
-
-!!! note
-    The `apply` command may result in an error similar to:
-
-    ```
-    Error: error creating public access block policy for S3 bucket (me-security-terraform-backend): 
-    OperationAborted: A conflicting conditional operation is currently in progress against this resource. 
-    Please try again.
-    ```
-
-    If this happens, please re-run the command.
 
 Now, to push the local `.tfstate` to the bucket, uncomment the `backend` section for the `terraform` configuration in `shared/base-tf-backend/config.tf`
 

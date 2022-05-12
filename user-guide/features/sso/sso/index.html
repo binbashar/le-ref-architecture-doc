@@ -2297,6 +2297,20 @@
   
   
     <li class="md-nav__item">
+      <a href="../../../leverage-cli/reference/aws/" class="md-nav__link">
+        aws
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../../leverage-cli/reference/terraform/" class="md-nav__link">
         terraform
       </a>
@@ -2341,6 +2355,20 @@
     <li class="md-nav__item">
       <a href="../../../leverage-cli/tasks/" class="md-nav__link">
         Custom tasks
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../leverage-cli/shell/" class="md-nav__link">
+        Shell environment
       </a>
     </li>
   
@@ -2561,9 +2589,101 @@
         
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          SSO
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
         SSO
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#preparing-the-project-to-use-aws-sso" class="md-nav__link">
+    Preparing the project to use AWS SSO
+  </a>
+  
+    <nav class="md-nav" aria-label="Preparing the project to use AWS SSO">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#global-configuration" class="md-nav__link">
+    Global configuration
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#account-configuration" class="md-nav__link">
+    Account configuration
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#authentication-via-sso" class="md-nav__link">
+    Authentication via SSO
+  </a>
+  
+    <nav class="md-nav" aria-label="Authentication via SSO">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-configuring-aws-sso" class="md-nav__link">
+    1. Configuring AWS SSO
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-logging-in" class="md-nav__link">
+    2. Logging in
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-working-on-a-layer" class="md-nav__link">
+    3. Working on a layer
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-logging-out" class="md-nav__link">
+    4. Logging out
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -3527,6 +3647,82 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#preparing-the-project-to-use-aws-sso" class="md-nav__link">
+    Preparing the project to use AWS SSO
+  </a>
+  
+    <nav class="md-nav" aria-label="Preparing the project to use AWS SSO">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#global-configuration" class="md-nav__link">
+    Global configuration
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#account-configuration" class="md-nav__link">
+    Account configuration
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#authentication-via-sso" class="md-nav__link">
+    Authentication via SSO
+  </a>
+  
+    <nav class="md-nav" aria-label="Authentication via SSO">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-configuring-aws-sso" class="md-nav__link">
+    1. Configuring AWS SSO
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-logging-in" class="md-nav__link">
+    2. Logging in
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-working-on-a-layer" class="md-nav__link">
+    3. Working on a layer
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-logging-out" class="md-nav__link">
+    4. Logging out
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -3543,7 +3739,81 @@
 
 
 <h1 id="aws-sso">AWS SSO<a class="headerlink" href="#aws-sso" title="Permanent link"> ¶</a></h1>
-<p>TODO</p>
+<p>Before deploying your AWS SSO definition in the project, it will first have to be manually enabled in the AWS Management Console.</p>
+<div class="admonition note">
+<p class="admonition-title"><img alt="📚" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f4da.svg" title=":books:" /> <a href="https://docs.aws.amazon.com/singlesignon/latest/userguide/prereqs.html">Prerequisites</a></p>
+</div>
+<div class="admonition info">
+<p class="admonition-title"><img alt="📚" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f4da.svg" title=":books:" /> <a href="https://docs.aws.amazon.com/singlesignon/latest/userguide/step1.html">Enable AWS SSO</a></p>
+</div>
+<p>After that, choosing and configuring an Identity Provider (IdP) is the next step. For this we will make use of JumpCloud, as described in the <a href="../../../../how-it-works/features/sso/sso/">how it works</a> section. These resources point to all requirements and procedures to have your JumpCloud account setup and synched with AWS SSO:</p>
+<div class="admonition info">
+<p class="admonition-title"><img alt="📚" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f4da.svg" title=":books:" /> <a href="https://docs.aws.amazon.com/singlesignon/latest/userguide/jumpcloud-idp.html">AWS JumpCloud support guide</a></p>
+</div>
+<div class="admonition info">
+<p class="admonition-title"><img alt="📚" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f4da.svg" title=":books:" /> <a href="https://docs.aws.amazon.com/singlesignon/latest/userguide/jumpcloud-idp.html">JumpCloud guide on how to configure as IdP for AWS SSO</a></p>
+</div>
+<p>Once this is set up the SSO layer can be safely deployed.</p>
+<h2 id="preparing-the-project-to-use-aws-sso">Preparing the project to use AWS SSO<a class="headerlink" href="#preparing-the-project-to-use-aws-sso" title="Permanent link"> ¶</a></h2>
+<p>To implement SSO authentication in your IaC definition, some configuration values need to be present in your project.</p>
+<h3 id="global-configuration">Global configuration<a class="headerlink" href="#global-configuration" title="Permanent link"> ¶</a></h3>
+<p>In the global configuration file, or <code>common.tfvars</code>, found in the root of the project, under the <code>config</code> directory</p>
+<div class="admonition info">
+<div class="highlight"><pre><span></span><code>...
+├── 📂 config
+│   └── 📄 common.tfvars
+...
+</code></pre></div>
+</div>
+<p>Three values will govern the behavior of SSO:
+<div class="highlight"><pre><span></span><code><span class="c1"># AWS SSO</span>
+<span class="na">sso_enabled</span><span class="w">   </span><span class="o">=</span><span class="w"> </span><span class="no">true</span><span class="w"></span>
+<span class="na">sso_start_url</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;https://myexample.awsapps.com/start&quot;</span><span class="w"></span>
+<span class="na">sso_region</span><span class="w">    </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;us-east-1&quot;</span><span class="w"></span>
+</code></pre></div></p>
+<ul>
+<li><code>sso_enabled</code> determines whether leverage will attempt to use credentials obtained via SSO to authenticate against AWS</li>
+<li><code>sso_start_url</code> and <code>sso_region</code> are necessary to configure AWS CLI correctly in order to be able to get the credentials</li>
+</ul>
+<p>When configuring AWS CLI, a <code>default</code> profile is created containing region and output default settings. The region value is obtained from the previously mentioned <code>sso_region</code>, however, you can override this behavior by configuring a <code>region_primary</code> value in the same global configuration file, as so:
+<div class="highlight"><pre><span></span><code><span class="na">region_primary</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;us-west-2&quot;</span><span class="w"></span>
+</code></pre></div></p>
+<h3 id="account-configuration">Account configuration<a class="headerlink" href="#account-configuration" title="Permanent link"> ¶</a></h3>
+<p>In every account configuration file, namely <code>account.tfvars</code>, found in the <code>config</code> directory under the account's folder</p>
+<div class="admonition info">
+<div class="highlight"><pre><span></span><code>...
+├── 📂 account
+|   ├── 📂 config
+|   │   ├── 📄 account.tfvars
+|   │   └── 📄 backend.tfvars
+...
+</code></pre></div>
+</div>
+<p>The role to be assumed via SSO is configured:
+<div class="highlight"><pre><span></span><code><span class="c1"># SSO</span>
+<span class="na">sso_role</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;DevOps&quot;</span><span class="w"></span>
+</code></pre></div></p>
+<p>This is the role for which credentials will be obtained via SSO when operating in the current layer.</p>
+<h2 id="authentication-via-sso">Authentication via SSO<a class="headerlink" href="#authentication-via-sso" title="Permanent link"> ¶</a></h2>
+<h3 id="1-configuring-aws-sso">1. Configuring AWS SSO<a class="headerlink" href="#1-configuring-aws-sso" title="Permanent link"> ¶</a></h3>
+<p>Once the project has been set up to use SSO, the profiles that AWS CLI will use to authenticate against the service need to be created.</p>
+<p>To do this, simply run <code>leverage aws configure sso</code>.</p>
+<p>This step needs to be performed every time the user works in a new account that assumes a different role than the one that they are currently using. For example, if the user is working in the <code>security</code> account, assuming the <code>DevOps</code> role, but needs to operate on a layer of the <code>management</code> account which requires assuming an <code>Administrator</code> role, then SSO needs to be reconfigured.</p>
+<div class="admonition warning">
+<p class="admonition-title">Attention</p>
+<p>This step simply writes over the credentials files for AWS CLI without asking for confirmation from the user. So it's recommended to backup/wipe old credentials before executing this step in order to avoid loss of credentials or conflicts with profiles having similar names to the ones generated by Leverage. </p>
+</div>
+<h3 id="2-logging-in">2. Logging in<a class="headerlink" href="#2-logging-in" title="Permanent link"> ¶</a></h3>
+<p>Having SSO configured, the user will proceed to log in.</p>
+<p>This is achieved by running <code>leverage aws sso login</code>.</p>
+<p>In this step, the user is prompted to manually authorize the log in process via a web console.</p>
+<p>When logging in, Leverage obtains a token from SSO. This token is later used to obtain the credentials needed for the layer the user is working on. This token has a relatively short life span to strike a balance between security and convenience for the user.</p>
+<p>This step is executed as part of the previous one. So if the user has just configured SSO, this step is not required.</p>
+<h3 id="3-working-on-a-layer">3. Working on a layer<a class="headerlink" href="#3-working-on-a-layer" title="Permanent link"> ¶</a></h3>
+<p>When SSO is enabled in the project, Leverage will automatically figure out the required credentials for the current layer, and attempt to get them from AWS every time the user executes a command on it.</p>
+<p>These credentials are short lived (30 minutes) for security reasons, and will be refreshed automatically whenever they expire.</p>
+<h3 id="4-logging-out">4. Logging out<a class="headerlink" href="#4-logging-out" title="Permanent link"> ¶</a></h3>
+<p>When the user has finished working, running <code>leverage sso logout</code> wipes out all remaining valid credentials and voids the token obtained from logging in.</p>
 
               
             </article>

@@ -2301,6 +2301,20 @@
               
   
   
+  
+    <li class="md-nav__item">
+      <a href="../aws/" class="md-nav__link">
+        aws
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
     
   
   
@@ -2550,26 +2564,6 @@
   
 </li>
       
-        <li class="md-nav__item">
-  <a href="#aws" class="md-nav__link">
-    aws
-  </a>
-  
-    <nav class="md-nav" aria-label="aws">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#usage_10" class="md-nav__link">
-    Usage
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
     </ul>
   
 </nav>
@@ -2615,6 +2609,20 @@
     <li class="md-nav__item">
       <a href="../../tasks/" class="md-nav__link">
         Custom tasks
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../shell/" class="md-nav__link">
+        Shell environment
       </a>
     </li>
   
@@ -4009,26 +4017,6 @@
   
 </li>
       
-        <li class="md-nav__item">
-  <a href="#aws" class="md-nav__link">
-    aws
-  </a>
-  
-    <nav class="md-nav" aria-label="aws">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#usage_10" class="md-nav__link">
-    Usage
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
     </ul>
   
 </nav>
@@ -4048,7 +4036,8 @@
 
 <h1 id="command-terraform-tf">Command: <code>terraform</code> | <code>tf</code><a class="headerlink" href="#command-terraform-tf" title="Permanent link"> ¶</a></h1>
 <p>The <code>terraform</code> command is a wrapper for a containerized installation of Terraform. It provides the Terraform executable with specific configuration values required by Leverage.</p>
-<p>It transparently handles MFA on behalf of the user in the commands that require it. Some commands can only be run at <strong>layer</strong> level and will not run anywhere else in the project.</p>
+<p>It transparently handles authentication whether it is Multi-Factor or via Single Sign-On on behalf of the user in the commands that require it. SSO Authentication takes precedence over MFA when both are active. </p>
+<p>Some commands can only be run at <strong>layer</strong> level and will not run anywhere else in the project.</p>
 <p>The command can also be invoked via its shortened version <code>tf</code>.</p>
 <hr />
 <h2 id="init"><code>init</code><a class="headerlink" href="#init" title="Permanent link"> ¶</a></h2>
@@ -4102,11 +4091,16 @@
 <h3 id="usage_6">Usage<a class="headerlink" href="#usage_6" title="Permanent link"> ¶</a></h3>
 <div class="highlight"><pre><span></span><code>leverage terraform shell <span class="o">[</span>option<span class="o">]</span>
 </code></pre></div>
-<p>Open a shell into the Terraform container in the current directory. An MFA-authenticated shell can only be opened at <strong>layer</strong> level.</p>
+<p>Open a shell into the Terraform container in the current directory. An authenticated shell can only be opened at <strong>layer</strong> level.</p>
+<div class="admonition info">
+<p class="admonition-title"><a href="../../shell/"><img alt="📚" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f4da.svg" title=":books:" /> Terraform shell environment documentation</a></p>
+</div>
 <h3 id="options">Options<a class="headerlink" href="#options" title="Permanent link"> ¶</a></h3>
 <ul>
-<li><code>--mfa</code>: Authenticate via MFA upon launching shell to allow for ease of use when MFA is required.</li>
+<li><code>--mfa</code>: Authenticate via MFA upon launching shell.</li>
+<li><code>--sso</code>: Authenticate via SSO upon launching shell.</li>
 </ul>
+<p><em>Note:</em> When <code>--sso</code> flag is used, the <code>--mfa</code> flag status is ignored.</p>
 <hr />
 <h2 id="format"><code>format</code><a class="headerlink" href="#format" title="Permanent link"> ¶</a></h2>
 <h3 id="usage_7">Usage<a class="headerlink" href="#usage_7" title="Permanent link"> ¶</a></h3>
@@ -4114,7 +4108,6 @@
 </code></pre></div>
 <p>Equivalent to <code>terraform fmt -recursive</code>.</p>
 <p>Recursively format all files in the architecture to the Terraform code style.</p>
-<p>Does not require MFA.</p>
 <h3 id="options_1">Options<a class="headerlink" href="#options_1" title="Permanent link"> ¶</a></h3>
 <ul>
 <li><code>--check</code>: Only perform format checking, do not overwrite the files.</li>
@@ -4126,7 +4119,6 @@
 </code></pre></div>
 <p>Equivalent to <code>terraform validate</code>.</p>
 <p>Checks the infrastructure definition's consistency. </p>
-<p>Does not require MFA.</p>
 <hr />
 <h2 id="import"><code>import</code><a class="headerlink" href="#import" title="Permanent link"> ¶</a></h2>
 <h3 id="usage_9">Usage<a class="headerlink" href="#usage_9" title="Permanent link"> ¶</a></h3>
@@ -4135,12 +4127,6 @@
 <p>Equivalent to <code>terraform import</code>.</p>
 <p>Import the resource with the given ID into the Terraform state at the given ADDRESS. </p>
 <p>Can only be run at <strong>layer</strong> level.</p>
-<hr />
-<h2 id="aws"><code>aws</code><a class="headerlink" href="#aws" title="Permanent link"> ¶</a></h2>
-<h3 id="usage_10">Usage<a class="headerlink" href="#usage_10" title="Permanent link"> ¶</a></h3>
-<div class="highlight"><pre><span></span><code>leverage terraform aws AWS_CLI_COMMAND
-</code></pre></div>
-<p>Utility command to run AWS CLI commands directly on the Terraform container. AWS_CLI_COMMAND takes the form of any arbitrary valid AWS CLI command without the executable name. For example for the command <code>aws --output json sts get-caller-identity</code>, AWS_CLI_COMMAND is <code>--output json sts get-caller-identity</code>.</p>
 
               
             </article>
@@ -4154,7 +4140,7 @@
     <nav class="md-footer__inner md-grid" aria-label="Footer">
       
         
-        <a href="../credentials/" class="md-footer__link md-footer__link--prev" aria-label="Previous: credentials" rel="prev">
+        <a href="../aws/" class="md-footer__link md-footer__link--prev" aria-label="Previous: aws" rel="prev">
           <div class="md-footer__button md-icon">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
           </div>
@@ -4163,7 +4149,7 @@
               <span class="md-footer__direction">
                 Previous
               </span>
-              credentials
+              aws
             </div>
           </div>
         </a>

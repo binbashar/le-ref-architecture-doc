@@ -109,14 +109,10 @@ Open a shell into the Terraform container in the current directory. An authentic
 _Note:_ When `--sso` flag is used, the `--mfa` flag status is ignored.
 
 !!! example "What if I want to run a Terraform command that is not supported by the CLI?"
-
-
     One common error you could encounter is `"Error acquiring the state lock"`, where you might need to use `force-unlock`. You can do the following:
 
-    1 - `leverage terraform shell --sso` 
-
-    2 - Then from inside the container: `terraform force-unlock LOCK-ID`
-
+    1. `leverage terraform shell --sso`.       
+    2.  Then from inside the container: `terraform force-unlock LOCK-ID`.
 
 ---
 ## `format`

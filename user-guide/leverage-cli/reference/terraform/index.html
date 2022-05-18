@@ -4101,6 +4101,14 @@
 <li><code>--sso</code>: Authenticate via SSO upon launching shell.</li>
 </ul>
 <p><em>Note:</em> When <code>--sso</code> flag is used, the <code>--mfa</code> flag status is ignored.</p>
+<div class="admonition example">
+<p class="admonition-title">What if I want to run a Terraform command that is not supported by the CLI?</p>
+<p>One common error you could encounter is <code>"Error acquiring the state lock"</code>, where you might need to use <code>force-unlock</code>. You can do the following:</p>
+<ol>
+<li><code>leverage terraform shell --sso</code>.       </li>
+<li>Then from inside the container: <code>terraform force-unlock LOCK-ID</code>.</li>
+</ol>
+</div>
 <hr />
 <h2 id="format"><code>format</code><a class="headerlink" href="#format" title="Permanent link"> ¶</a></h2>
 <h3 id="usage_7">Usage<a class="headerlink" href="#usage_7" title="Permanent link"> ¶</a></h3>

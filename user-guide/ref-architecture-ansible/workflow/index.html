@@ -3592,10 +3592,12 @@ section to better understand it.</p>
 <li>Make whatever changes you need to make as stated in each Playbook Documentation (check Documentation section above)</li>
 <li>For a dry run execution use <code>leverage run apply\[--check\]</code> if you only mean to preview those changes</li>
 <li>Run <code>leverage run apply</code> if you want to apply those changes</li>
-<li>If you want to target specific playbook tasks by tag (eg: common tag) you can run one of the following options:      <br />
-    Opt-1:  <code>leverage run apply["--tags","common"]</code>   <br />
-    Opt-2:  <code>noglob leverage run apply["--tags","common"]</code>    <br />
-    Opt-3:  <code>leverage shell</code> and then <code>ansible-playbook setup.yml --tags common</code>  </li>
+<li>If you want to target specific playbook tasks by tag (eg: common tag) you can run one of the following options:        <ul>
+<li>Opt-1:  <code>leverage run apply["--tags","common"]</code>     </li>
+<li>Opt-2:  <code>noglob leverage run apply["--tags","common"]</code>      </li>
+<li>Opt-3:  <code>leverage shell</code> and then <code>ansible-playbook setup.yml --tags common</code>  </li>
+</ul>
+</li>
 </ol>
 </div>
 

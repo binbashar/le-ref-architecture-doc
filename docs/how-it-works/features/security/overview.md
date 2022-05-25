@@ -12,8 +12,8 @@
 ??? check "Certificates"
     - [x] [Certificates](./certificates.md)
 
-??? check "Audit | CloudTrail"
+??? check "Audit"
     - [x] [CloudTrail](./audit-cloudtrail.md)
 
-??? check "IAM Access Analyzer"
+??? check "Monitoring"
     - [x] [IAM Access Analyzer](./iam-access-analyzer.md)

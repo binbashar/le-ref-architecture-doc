@@ -182,9 +182,11 @@ nav:
       - SSO: "how-it-works/features/sso/sso.md"
       - Costs: "how-it-works/features/costs/costs.md"
       - Security:
+        - Overview: "how-it-works/features/security/overview.md"
         - VPN: "how-it-works/features/security/vpn.md"
         - Services: "how-it-works/features/security/services.md"
         - Certificates: "how-it-works/features/security/certificates.md"
+        - Audit | CloudTrail: "how-it-works/features/security/audit-cloudtrail.md"
         - IAM Access Analyzer: "how-it-works/features/security/iam-access-analyzer.md"
       - Network:
         - VPC Topology: "how-it-works/features/network/vpc-topology.md"

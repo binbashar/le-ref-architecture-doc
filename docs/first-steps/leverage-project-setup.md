@@ -273,7 +273,7 @@ You will end up with something that looks like this:
     |       └── 📂 <b>security-base</b>
     |           ├── 📄 account.tf
     |           ├── 📄 config.tf
-    |           ├── 📄 iam_access_analizer.tf
+    |           ├── 📄 iam_access_analyzer.tf
     |           ├── 📄 locals.tf
     │           └── 📄 variables.tf
     └── 📂 <b>shared</b>

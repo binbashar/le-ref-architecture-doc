@@ -2,7 +2,7 @@
 
 The `terraform` command is a wrapper for a containerized installation of Terraform. It provides the Terraform executable with specific configuration values required by Leverage.
 
-It transparently handles authentication whether it is Multi-Factor or via Single Sign-On on behalf of the user in the commands that require it. SSO Authentication takes precedence over MFA when both are active. 
+It transparently handles authentication, whether it is Multi-Factor or via Single Sign-On, on behalf of the user in the commands that require it. SSO Authentication takes precedence over MFA when both are active. 
 
 Some commands can only be run at **layer** level and will not run anywhere else in the project.
 
@@ -21,6 +21,8 @@ Equivalent to `terraform init`.
 All arguments given are passed as received to Terraform.
 
 Can only be run at **layer** level.
+
+[Layout validation](#validate-layout) is performed before actually initializing Terraform. 
 
 ---
 ## `plan`
@@ -119,15 +121,14 @@ _Note:_ When `--sso` flag is used, the `--mfa` flag status is ignored.
 
 ### Usage
 ``` bash
-leverage terraform format [option]
+leverage terraform format [arguments]
 ```
 
 Equivalent to `terraform fmt -recursive`.
 
 Recursively format all files in the architecture to the Terraform code style.
 
-### Options
-* `--check`: Only perform format checking, do not overwrite the files.
+All arguments given are passed as received to Terraform.
 
 ---
 ## `validate`
@@ -140,6 +141,25 @@ leverage terraform validate
 Equivalent to `terraform validate`.
 
 Checks the infrastructure definition's consistency. 
+
+---
+## `validate-layout`
+
+### Usage
+``` bash
+leverage terraform validate-layout
+```
+
+Check the Terraform backend configuration in the code definition.
+
+Values checked:
+
+* Environment name in account configuration
+* S3 bucket key
+* AWS CLI profile name prefix
+* S3 Bucket name prefix
+* DynamoDB locking table name prefix
+
 
 ---
 ## `import`

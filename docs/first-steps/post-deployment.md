@@ -46,7 +46,7 @@ As Natasha also has an IAM user for the `security` account besides the one in `m
 To be able to use the generated programmatic keys, you need to configure them in your local environment. To do that, run:
 
 ``` bash
-leverage credentials configure --type MANAGEMENT # or `SECURITY` depending on the credentials to configured
+leverage credentials configure --fetch-mfa-device --type MANAGEMENT # or `SECURITY` depending on the credentials to configured
 ```
 <pre><code><span class="fsg-timestamp">[12:28:12.111]</span> INFO     Loading configuration file.
 <span class="fsg-timestamp">[12:28:12.132]</span> INFO     Loading project environment configuration file.

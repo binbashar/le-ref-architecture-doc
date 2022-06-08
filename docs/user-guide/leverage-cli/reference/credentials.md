@@ -21,6 +21,7 @@ Backups of the previous configured credentials files are always created when ove
 ### Options
 * `--type`: Type of the credentials to set. Can be any of `BOOTSTRAP`, `MANAGEMENT` or `SECURITY`. This option is case insensitive. This option is required.
 * `--credentials-file`: Path to a `.csv` credentials file, as produced by the AWS Console, containing the user's programmatic access keys. If not given, the user will be prompted for the credentials.
+* `--fetch-mfa-device`: Retrieve an MFA device serial from AWS for the current user.
 * `--overwrite-existing-credentials`: If the type of credentials being configured is already configured, overwrite current configuration. Mutually exclusive option with `--skip-access-keys-setup`.
 * `--skip-access-keys-setup`: Skip the access keys configuration step. Continue on to setting up the accounts profiles. Mutually exclusive option with `--overwrite-existing-credentials`.
 * `--skip-assumable-roles-setup`: Don't configure each account profile to assume their specific role.

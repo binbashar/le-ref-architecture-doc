@@ -13,7 +13,7 @@ The command can also be invoked via its shortened version `tf`.
 
 ### Usage
 ``` bash
-leverage terraform init [arguments]
+leverage terraform init [option] [arguments]
 ```
 
 Equivalent to `terraform init`.
@@ -22,7 +22,11 @@ All arguments given are passed as received to Terraform.
 
 Can only be run at **layer** level.
 
-[Layout validation](#validate-layout) is performed before actually initializing Terraform. 
+[Layout validation](#validate-layout) is performed before actually initializing Terraform unless explicitly indicated against via the `--skip-validation` flag. 
+
+### Options
+* `--skip-validation`: Skips layout validation.
+
 
 ---
 ## `plan`

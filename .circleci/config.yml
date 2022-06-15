@@ -6,7 +6,7 @@ jobs:
   #
   build-and-deploy:
     machine:
-      image: ubuntu-1604:202007-01
+      image: ubuntu-2204:2022.04.1
       docker_layer_caching: false
 
     steps:

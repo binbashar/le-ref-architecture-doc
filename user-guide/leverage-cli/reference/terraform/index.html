@@ -2393,6 +2393,13 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#options" class="md-nav__link">
+    Options
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -2514,7 +2521,7 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#options" class="md-nav__link">
+  <a href="#options_1" class="md-nav__link">
     Options
   </a>
   
@@ -2536,13 +2543,6 @@
           <li class="md-nav__item">
   <a href="#usage_7" class="md-nav__link">
     Usage
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#options_1" class="md-nav__link">
-    Options
   </a>
   
 </li>
@@ -2573,6 +2573,26 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#validate-layout" class="md-nav__link">
+    validate-layout
+  </a>
+  
+    <nav class="md-nav" aria-label="validate-layout">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#usage_9" class="md-nav__link">
+    Usage
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#import" class="md-nav__link">
     import
   </a>
@@ -2581,7 +2601,7 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#usage_9" class="md-nav__link">
+  <a href="#usage_10" class="md-nav__link">
     Usage
   </a>
   
@@ -3846,6 +3866,13 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#options" class="md-nav__link">
+    Options
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -3967,7 +3994,7 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#options" class="md-nav__link">
+  <a href="#options_1" class="md-nav__link">
     Options
   </a>
   
@@ -3989,13 +4016,6 @@
           <li class="md-nav__item">
   <a href="#usage_7" class="md-nav__link">
     Usage
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#options_1" class="md-nav__link">
-    Options
   </a>
   
 </li>
@@ -4026,6 +4046,26 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#validate-layout" class="md-nav__link">
+    validate-layout
+  </a>
+  
+    <nav class="md-nav" aria-label="validate-layout">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#usage_9" class="md-nav__link">
+    Usage
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#import" class="md-nav__link">
     import
   </a>
@@ -4034,7 +4074,7 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#usage_9" class="md-nav__link">
+  <a href="#usage_10" class="md-nav__link">
     Usage
   </a>
   
@@ -4064,17 +4104,22 @@
 
 <h1 id="command-terraform-tf">Command: <code>terraform</code> | <code>tf</code><a class="headerlink" href="#command-terraform-tf" title="Permanent link"> ¶</a></h1>
 <p>The <code>terraform</code> command is a wrapper for a containerized installation of Terraform. It provides the Terraform executable with specific configuration values required by Leverage.</p>
-<p>It transparently handles authentication whether it is Multi-Factor or via Single Sign-On on behalf of the user in the commands that require it. SSO Authentication takes precedence over MFA when both are active. </p>
+<p>It transparently handles authentication, whether it is Multi-Factor or via Single Sign-On, on behalf of the user in the commands that require it. SSO Authentication takes precedence over MFA when both are active. </p>
 <p>Some commands can only be run at <strong>layer</strong> level and will not run anywhere else in the project.</p>
 <p>The command can also be invoked via its shortened version <code>tf</code>.</p>
 <hr />
 <h2 id="init"><code>init</code><a class="headerlink" href="#init" title="Permanent link"> ¶</a></h2>
 <h3 id="usage">Usage<a class="headerlink" href="#usage" title="Permanent link"> ¶</a></h3>
-<div class="highlight"><pre><span></span><code>leverage terraform init <span class="o">[</span>arguments<span class="o">]</span>
+<div class="highlight"><pre><span></span><code>leverage terraform init <span class="o">[</span>option<span class="o">]</span> <span class="o">[</span>arguments<span class="o">]</span>
 </code></pre></div>
 <p>Equivalent to <code>terraform init</code>.</p>
 <p>All arguments given are passed as received to Terraform.</p>
 <p>Can only be run at <strong>layer</strong> level.</p>
+<p><a href="#validate-layout">Layout validation</a> is performed before actually initializing Terraform unless explicitly indicated against via the <code>--skip-validation</code> flag. </p>
+<h3 id="options">Options<a class="headerlink" href="#options" title="Permanent link"> ¶</a></h3>
+<ul>
+<li><code>--skip-validation</code>: Skips layout validation.</li>
+</ul>
 <hr />
 <h2 id="plan"><code>plan</code><a class="headerlink" href="#plan" title="Permanent link"> ¶</a></h2>
 <h3 id="usage_1">Usage<a class="headerlink" href="#usage_1" title="Permanent link"> ¶</a></h3>
@@ -4123,7 +4168,7 @@
 <div class="admonition info">
 <p class="admonition-title"><a href="../../shell/"><img alt="📚" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f4da.svg" title=":books:" /> Terraform shell environment documentation</a></p>
 </div>
-<h3 id="options">Options<a class="headerlink" href="#options" title="Permanent link"> ¶</a></h3>
+<h3 id="options_1">Options<a class="headerlink" href="#options_1" title="Permanent link"> ¶</a></h3>
 <ul>
 <li><code>--mfa</code>: Authenticate via MFA upon launching shell.</li>
 <li><code>--sso</code>: Authenticate via SSO upon launching shell.</li>
@@ -4140,14 +4185,11 @@
 <hr />
 <h2 id="format"><code>format</code><a class="headerlink" href="#format" title="Permanent link"> ¶</a></h2>
 <h3 id="usage_7">Usage<a class="headerlink" href="#usage_7" title="Permanent link"> ¶</a></h3>
-<div class="highlight"><pre><span></span><code>leverage terraform format <span class="o">[</span>option<span class="o">]</span>
+<div class="highlight"><pre><span></span><code>leverage terraform format <span class="o">[</span>arguments<span class="o">]</span>
 </code></pre></div>
 <p>Equivalent to <code>terraform fmt -recursive</code>.</p>
 <p>Recursively format all files in the architecture to the Terraform code style.</p>
-<h3 id="options_1">Options<a class="headerlink" href="#options_1" title="Permanent link"> ¶</a></h3>
-<ul>
-<li><code>--check</code>: Only perform format checking, do not overwrite the files.</li>
-</ul>
+<p>All arguments given are passed as received to Terraform.</p>
 <hr />
 <h2 id="validate"><code>validate</code><a class="headerlink" href="#validate" title="Permanent link"> ¶</a></h2>
 <h3 id="usage_8">Usage<a class="headerlink" href="#usage_8" title="Permanent link"> ¶</a></h3>
@@ -4156,8 +4198,22 @@
 <p>Equivalent to <code>terraform validate</code>.</p>
 <p>Checks the infrastructure definition's consistency. </p>
 <hr />
-<h2 id="import"><code>import</code><a class="headerlink" href="#import" title="Permanent link"> ¶</a></h2>
+<h2 id="validate-layout"><code>validate-layout</code><a class="headerlink" href="#validate-layout" title="Permanent link"> ¶</a></h2>
 <h3 id="usage_9">Usage<a class="headerlink" href="#usage_9" title="Permanent link"> ¶</a></h3>
+<div class="highlight"><pre><span></span><code>leverage terraform validate-layout
+</code></pre></div>
+<p>Check the Terraform backend configuration in the code definition.</p>
+<p>Values checked:</p>
+<ul>
+<li>Environment name in account configuration</li>
+<li>S3 bucket key</li>
+<li>AWS CLI profile name prefix</li>
+<li>S3 Bucket name prefix</li>
+<li>DynamoDB locking table name prefix</li>
+</ul>
+<hr />
+<h2 id="import"><code>import</code><a class="headerlink" href="#import" title="Permanent link"> ¶</a></h2>
+<h3 id="usage_10">Usage<a class="headerlink" href="#usage_10" title="Permanent link"> ¶</a></h3>
 <div class="highlight"><pre><span></span><code>leverage terraform import ADDRESS ID
 </code></pre></div>
 <p>Equivalent to <code>terraform import</code>.</p>

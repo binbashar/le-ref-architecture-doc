@@ -3752,7 +3752,7 @@ user_natasha_romanoff_name = &quot;natasha.romanoff&quot;
 <p>As Natasha also has an IAM user for the <code>security</code> account besides the one in <code>management</code>, these steps should be repeated for that account, making sure of logging in the AWS console with the proper account id. Keep in mind that these are <strong>two different IAM users</strong> in <strong>two different accounts</strong>, so their credentials <strong>are not interchangeable</strong>.</p>
 <h2 id="configure-the-new-credentials">Configure the new credentials<a class="headerlink" href="#configure-the-new-credentials" title="Permanent link"> ¶</a></h2>
 <p>To be able to use the generated programmatic keys, you need to configure them in your local environment. To do that, run:</p>
-<div class="highlight"><pre><span></span><code>leverage credentials configure --type MANAGEMENT <span class="c1"># or `SECURITY` depending on the credentials to configured</span>
+<div class="highlight"><pre><span></span><code>leverage credentials configure --fetch-mfa-device --type MANAGEMENT <span class="c1"># or `SECURITY` depending on the credentials to configured</span>
 </code></pre></div>
 <pre><code><span class="fsg-timestamp">[12:28:12.111]</span> INFO     Loading configuration file.
 <span class="fsg-timestamp">[12:28:12.132]</span> INFO     Loading project environment configuration file.

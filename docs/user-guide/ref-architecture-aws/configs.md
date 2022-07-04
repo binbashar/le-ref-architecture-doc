@@ -2,14 +2,14 @@
 
 !!! tips "Config files can be found under each `config` folders"
     - :file_folder: **Global config file** 
-    [`/config/common.tfvars`](https://github.com/binbashar/le-tf-infra-aws/blob/master/config/common.config.example) 
+    [`/config/common.tfvars`](https://github.com/binbashar/le-tf-infra-aws/blob/master/config/common.tfvars.example) 
     contains global context TF variables that we inject to TF commands which are used by all sub-directories such as 
-    `make plan` or `make apply` and which cannot be stored in `backend.config` due to TF.
+    `leverage terraform plan` or `leverage terraform apply` and which cannot be stored in `backend.tfvars` due to TF.
     - :file_folder: **Account config files** 
-        - [`backend.tfvars`](https://github.com/binbashar/le-tf-infra-aws/blob/master/shared/config/backend.config)
+        - [`backend.tfvars`](https://github.com/binbashar/le-tf-infra-aws/blob/master/shared/config/backend.tfvars)
          contains TF variables that are mainly used to configure TF backend but since
          `profile` and `region` are defined there, we also use them to inject those values into other TF commands.
-        - [`account.tfvars`](https://github.com/binbashar/le-tf-infra-aws/blob/master/shared/config/account.config)
+        - [`account.tfvars`](https://github.com/binbashar/le-tf-infra-aws/blob/master/shared/config/account.tfvars)
          contains TF variables that are specific to an AWS account.
           
 ## AWS Profile

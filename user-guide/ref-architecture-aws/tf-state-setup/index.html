@@ -3673,14 +3673,14 @@ you can get to work with anything else.</p>
 <p class="admonition-title">Config files can be found under each <code>config</code> folders</p>
 <ul>
 <li><img alt="📁" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f4c1.svg" title=":file_folder:" /> <strong>Global config file</strong> 
-<a href="https://github.com/binbashar/le-tf-infra-aws/blob/master/config/common.config.example"><code>/config/common.tfvars</code></a> 
+<a href="https://github.com/binbashar/le-tf-infra-aws/blob/master/config/common.tfvars.example"><code>/config/common.tfvars</code></a> 
 contains global context TF variables that we inject to TF commands which are used by all sub-directories such as 
-<code>make plan</code> or <code>make apply</code> and which cannot be stored in <code>backend.config</code> due to TF.</li>
+<code>leverage terraform plan</code> or <code>leverage terraform apply</code> and which cannot be stored in <code>backend.config</code> due to TF.</li>
 <li><img alt="📁" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f4c1.svg" title=":file_folder:" /> <strong>Account config files</strong> <ul>
-<li><a href="https://github.com/binbashar/le-tf-infra-aws/blob/master/shared/config/backend.config"><code>backend.tfvars</code></a>
+<li><a href="https://github.com/binbashar/le-tf-infra-aws/blob/master/shared/config/backend.tfvars"><code>backend.tfvars</code></a>
  contains TF variables that are mainly used to configure TF backend but since
  <code>profile</code> and <code>region</code> are defined there, we also use them to inject those values into other TF commands.</li>
-<li><a href="https://github.com/binbashar/le-tf-infra-aws/blob/master/shared/config/account.config"><code>account.tfvars</code></a>
+<li><a href="https://github.com/binbashar/le-tf-infra-aws/blob/master/shared/config/account.tfvars"><code>account.tfvars</code></a>
  contains TF variables that are specific to an AWS account.</li>
 </ul>
 </li>

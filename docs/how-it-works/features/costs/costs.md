@@ -1,4 +1,4 @@
-# Cost Estmation & Optimization
+# Cost Estimation & Optimization
 
 ## Opportunity to optimize resources
 

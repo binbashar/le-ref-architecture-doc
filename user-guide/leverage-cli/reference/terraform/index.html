@@ -4219,6 +4219,13 @@
 <p>Equivalent to <code>terraform import</code>.</p>
 <p>Import the resource with the given ID into the Terraform state at the given ADDRESS. </p>
 <p>Can only be run at <strong>layer</strong> level.</p>
+<div class="admonition info">
+<p class="admonition-title">zsh globbing</p>
+<p>Zsh users may need to prepend <code>noglob</code> to the import command for it to be recognized correctly, as an alternative, square brackets can be escaped as <code>\[\]</code>
+<strong>Examples:</strong>
+- Opt-1:  <code>leverage tf import module.s3_bucket.aws_s3_bucket.this\[0\] s3-bag-data-bucket</code> 
+- Opt-2:  <code>noglob leverage tf import module.s3_bucket.aws_s3_bucket.this[0] s3-bag-data-bucket</code>  </p>
+</div>
 
               
             </article>

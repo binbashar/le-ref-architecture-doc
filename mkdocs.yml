@@ -110,6 +110,11 @@ markdown_extensions:
   - meta
   - md_in_html
   - codehilite
+  - pymdownx.critic
+  - pymdownx.caret
+  - pymdownx.keys
+  - pymdownx.mark
+  - pymdownx.tilde
   - pymdownx.tabbed
   - pymdownx.details
   - pymdownx.inlinehilite
@@ -302,8 +307,9 @@ nav:
       - Overview: "work-with-us/index.md"
       - Support:
           - Support: "work-with-us/support.md"
-          - Updates:
-              - December 2021: "work-with-us/updates/product-updates-12-2021.md"
+      - Releases:
+          - Releases and Versions: "work-with-us/releases/releases-and-versions.md"
+          - Versions compatibility matrix: "work-with-us/releases/versions-compatibility-matrix.md"
       - Leverage vs Competition: "work-with-us/leverage-vs-competition.md"
       #- Subscription Plans: "work-with-us/subscription-plans.md"
       - Contribute: "work-with-us/contribute.md"

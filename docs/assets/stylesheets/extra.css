@@ -9,6 +9,14 @@
 	}
 }
 
+* {
+    --md-primary-fg-color: #0a192f;
+    --md-primary-fg-color--light: #029c8e;
+    --md-primary-fg-color--dark:  #303C55;
+    --md-typeset-color:   var(--md-default-fg-color);
+    --md-typeset-a-color: var(--md-primary-fg-color--light);
+}
+
 :root {
     --md-primary-fg-color: #0a192f;
     --md-primary-fg-color--light: #029c8e;

@@ -5,12 +5,12 @@ Before deploying your AWS SSO definition in the project, it will first have to b
 !!! note ":books: [Prerequisites](https://docs.aws.amazon.com/singlesignon/latest/userguide/prereqs.html)"
 !!! info ":books: [Enable AWS SSO](https://docs.aws.amazon.com/singlesignon/latest/userguide/step1.html)"
 
-After that, choosing and configuring an Identity Provider (IdP) is the next step. For this we will make use of JumpCloud, as described in the [how it works](../../../how-it-works/features/sso/sso.md) section. These resources point to all requirements and procedures to have your JumpCloud account setup and synched with AWS SSO:
+After that, choosing and configuring an Identity Provider (IdP) is the next step. For this, we will make use of JumpCloud, as described in the [how it works](../../../how-it-works/features/sso/sso.md) section. These resources point to all requirements and procedures to have your JumpCloud account setup and synched with AWS SSO:
 
 !!! info ":books: [AWS JumpCloud support guide](https://docs.aws.amazon.com/singlesignon/latest/userguide/jumpcloud-idp.html)"
 !!! info ":books: [JumpCloud guide on how to configure as IdP for AWS SSO](https://docs.aws.amazon.com/singlesignon/latest/userguide/jumpcloud-idp.html)"
 
-Once this is set up the SSO layer can be safely deployed.
+Once this is set up, the SSO layer can be safely deployed.
 
 ## Preparing the project to use AWS SSO
 
@@ -81,6 +81,8 @@ This step needs to be performed every time the user works in a new account that 
 
 ### 2. Logging in
 
+This step is executed as part of the previous one. So if the user has just configured SSO, this step is not required.
+
 Having SSO configured, the user will proceed to log in.
 
 This is achieved by running `leverage aws sso login`.
@@ -88,8 +90,6 @@ This is achieved by running `leverage aws sso login`.
 In this step, the user is prompted to manually authorize the log in process via a web console.
 
 When logging in, Leverage obtains a token from SSO. This token is later used to obtain the credentials needed for the layer the user is working on. This token has a relatively short life span to strike a balance between security and convenience for the user.
-
-This step is executed as part of the previous one. So if the user has just configured SSO, this step is not required.
 
 ### 3. Working on a layer
 

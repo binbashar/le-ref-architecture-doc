@@ -2,7 +2,7 @@
 
 The `terraform` command is a wrapper for a containerized installation of Terraform. It provides the Terraform executable with specific configuration values required by Leverage.
 
-It transparently handles authentication whether it is Multi-Factor or via Single Sign-On on behalf of the user in the commands that require it. SSO Authentication takes precedence over MFA when both are active. 
+It transparently handles authentication, whether it is Multi-Factor or via Single Sign-On, on behalf of the user in the commands that require it. SSO Authentication takes precedence over MFA when both are active. 
 
 Some commands can only be run at **layer** level and will not run anywhere else in the project.
 
@@ -13,7 +13,7 @@ The command can also be invoked via its shortened version `tf`.
 
 ### Usage
 ``` bash
-leverage terraform init [arguments]
+leverage terraform init [option] [arguments]
 ```
 
 Equivalent to `terraform init`.
@@ -21,6 +21,12 @@ Equivalent to `terraform init`.
 All arguments given are passed as received to Terraform.
 
 Can only be run at **layer** level.
+
+[Layout validation](#validate-layout) is performed before actually initializing Terraform unless explicitly indicated against via the `--skip-validation` flag. 
+
+### Options
+* `--skip-validation`: Skips layout validation.
+
 
 ---
 ## `plan`
@@ -119,15 +125,14 @@ _Note:_ When `--sso` flag is used, the `--mfa` flag status is ignored.
 
 ### Usage
 ``` bash
-leverage terraform format [option]
+leverage terraform format [arguments]
 ```
 
 Equivalent to `terraform fmt -recursive`.
 
 Recursively format all files in the architecture to the Terraform code style.
 
-### Options
-* `--check`: Only perform format checking, do not overwrite the files.
+All arguments given are passed as received to Terraform.
 
 ---
 ## `validate`
@@ -142,6 +147,25 @@ Equivalent to `terraform validate`.
 Checks the infrastructure definition's consistency. 
 
 ---
+## `validate-layout`
+
+### Usage
+``` bash
+leverage terraform validate-layout
+```
+
+Check the Terraform backend configuration in the code definition.
+
+Values checked:
+
+* Environment name in account configuration
+* S3 bucket key
+* AWS CLI profile name prefix
+* S3 Bucket name prefix
+* DynamoDB locking table name prefix
+
+
+---
 ## `import`
 
 ### Usage
@@ -154,3 +178,12 @@ Equivalent to `terraform import`.
 Import the resource with the given ID into the Terraform state at the given ADDRESS. 
 
 Can only be run at **layer** level.
+
+!!! info "zsh globbing"
+    Zsh users may need to prepend `noglob` to the import command for it to be recognized correctly, as an alternative, square brackets can be escaped as `\[\]`
+    **Examples:**
+    - Opt-1:  `leverage tf import module.s3_bucket.aws_s3_bucket.this\[0\] s3-bag-data-bucket` 
+    - Opt-2:  `noglob leverage tf import module.s3_bucket.aws_s3_bucket.this[0] s3-bag-data-bucket`  
+
+
+

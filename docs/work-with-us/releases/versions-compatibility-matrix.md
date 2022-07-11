@@ -1,13 +1,13 @@
 
 # Leverage Releases & Versioning
 
-Binbash Leverage™ and its components intends to be backward compatible, but since the complex ecosystems of tools we 
+Binbash Leverage™ and its components intends to be backward compatible, but due to the complex ecosystems of tools we 
 manage this is not always possible. 
 
-Is always recommended using the latest version of the [Leverage cli](https://pypi.org/project/leverage/) with the latest versions of the 
+It is always recommended using the latest version of the [Leverage cli](https://pypi.org/project/leverage/) with the latest versions of the 
 [Reference Architecture for AWS](https://github.com/binbashar/le-tf-infra-aws/releases). In case that's 
-not possible we always recommend pinning versions to favor stability and doing controlled updates by component based
-on the below presented compatibility matrix table.
+not possible we always recommend pinning versions to favor stability and doing controlled updates 
+component by component based on the below presented compatibility matrix table.
 
 ## Compatibility Matrix
 

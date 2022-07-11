@@ -33,12 +33,12 @@ We're constantly kicking with a lot of improvements and some exciting new featur
     
     ![leverage-tf](../../../assets/images/logos/terraform.png "Terraform"){: style="width:25px"} **Releases | Terraform Community Forks Modules**:
     
-    - [terraform-aws-waf-owasp](https://github.com/binbashar/terraform-aws-waf-owasp/releases)
+    - [terraform-aws-sso]([terraform-aws-sso](https://github.com/binbashar/terraform-aws-sso/tags))
     - ...
     
     ![leverage-helm](../../../assets/images/logos/helm.png "Terraform"){: style="width:25px"} **Releases | Helm Leverage™ Charts**:
     
-    - [terraform-aws-sso](https://github.com/binbashar/terraform-aws-sso/tags)
+    - [helm-charts](https://github.com/binbashar/helm-charts/blob/master/index.yaml)
 
 ## Documentation
 

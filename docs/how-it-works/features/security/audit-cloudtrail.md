@@ -7,7 +7,7 @@ giving you control over storage, analysis, and remediation actions.
 
 !!! info "AWS CloudTrail overview"
     This service will be configured to enable auditing of all AWS services in all accounts.
-    Once enabled, as show in the below presented figure CloudTrail will deliver all events 
+    Once enabled, as shown in the below presented figure, CloudTrail will deliver all events 
     from all accounts to the Security account in order to have a centralized way to audit 
     operations on AWS resources.
     Audit events will be available from CloudTrail for 90 days but a longer retention 

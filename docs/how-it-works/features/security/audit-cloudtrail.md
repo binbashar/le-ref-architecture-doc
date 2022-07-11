@@ -7,17 +7,19 @@ giving you control over storage, analysis, and remediation actions.
 
 !!! info "AWS CloudTrail overview"
     This service will be configured to enable auditing of all AWS services in all accounts.
-    Once enabled, as show in the below presented figure CloudTrail will deliver all events 
+    Once enabled, as shown in the below presented figure, CloudTrail will deliver all events 
     from all accounts to the Security account in order to have a centralized way to audit 
     operations on AWS resources.
     Audit events will be available from CloudTrail for 90 days but a longer retention 
     time will be available through a centralized S3 bucket.
 
-![Cloudtrail Diagram](../../../assets/images/diagrams/aws-cloudtrail.svg)
-<figcaption style="font-size:15px">
-<b>Figure:</b> AWS CloudTrail components architecture diagram (just as reference).
-(Source: Binbash Leverage diagrams, accessed July 6th 2022).
-</figcaption>
+<figure markdown>
+  ![Cloudtrail Diagram](../../../assets/images/diagrams/aws-cloudtrail.svg){ width="600" }
+    <figcaption style="font-size:15px">
+    <b>Figure:</b> AWS CloudTrail components architecture diagram (just as reference).
+    (Source: Binbash Leverage diagrams, accessed July 6th 2022).
+    </figcaption>
+</figure>
 
 !!! example "![leverage-tf](../../../assets/images/logos/terraform.png "Terraform"){: style="width:25px"} IaC Terraform Codebase <>"
     - [x] `binbash-management` account | Audit: Cloudtrail

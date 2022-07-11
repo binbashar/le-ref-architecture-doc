@@ -23,7 +23,9 @@ jobs:
 
       - run:
           name: Deploy GitHub Pages Site w/ MkDocs
-          command: GOOGLE_ANALYTICS_KEY=$GOOGLE_ANALYTICS_KEY_LEVERAGE_G4 make docs-deploy-gh
+          command: | 
+            git config --global --add safe.directory /docs
+            GOOGLE_ANALYTICS_KEY=$GOOGLE_ANALYTICS_KEY_LEVERAGE_G4 make docs-deploy-gh
 
       - slack/notify:
           event: fail

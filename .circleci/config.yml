@@ -24,9 +24,8 @@ jobs:
       - run:
           name: Deploy GitHub Pages Site w/ MkDocs
           command: | 
+            git init
             git config --global --add safe.directory docs/
-            pwd
-            ls
             GOOGLE_ANALYTICS_KEY=$GOOGLE_ANALYTICS_KEY_LEVERAGE_G4 make docs-deploy-gh
 
       - slack/notify:

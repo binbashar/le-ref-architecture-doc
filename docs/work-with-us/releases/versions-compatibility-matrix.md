@@ -1,7 +1,7 @@
 
 # Leverage Releases & Versioning
 
-Binbash Leverage™ and its components intends to be backward compatible, but since the complex ecosystems of tools we 
+Binbash Leverage™ and its components intends to be backward compatible, but due to the complex ecosystems of tools we 
 manage this is not always possible. 
 
 Is always recommended using the latest version of the [Leverage cli](https://pypi.org/project/leverage/) with the latest versions of the 

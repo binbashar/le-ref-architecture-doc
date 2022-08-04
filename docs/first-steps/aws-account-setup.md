@@ -16,11 +16,10 @@ Along the same line, we'll use the `example.com` domain for the email address us
 ## Create an Admin user for the management account
 To be able to interact with and manage the AWS environment you will need an IAM user with administrator privileges.
 
-To accomplish this, sign in to the [IAM Console](https://console.aws.amazon.com/iam/) with your recently created account and [create a user](https://docs.aws.amazon.com/mediapackage/latest/ug/setting-up-create-iam-user.html) named `mgmt-org-admin`. Setting a password is not necessary, since you won't use this user to log into the web console. Give it admin privileges by attaching the `AdministratorAccess` policy to it, there's no need to add the user to any group.
-
+To accomplish this, sign in to the [IAM Console](https://console.aws.amazon.com/iam/) with your recently created account and create a user named `mgmt-org-admin` [following step 2 of this leverage doc](https://leverage.binbash.com.ar/user-guide/features/organization/organization-init/#reference-aws-organization-init-workflow). Setting a password is not necessary, since you won't use this user to log into the web console. Give it admin privileges by attaching the `AdministratorAccess` policy to it, there's no need to add the user to any group.
 
 ## Generate programmatic access keys for the Admin user
-Lastly, [generate programmatic access keys](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_access-keys.html#Using_CreateAccessKey) for the `mgmt-org-admin` user, and then either copy them or download the `.csv` file that AWS generates for you. In both cases, store the credentials in a secure location.
+Lastly, generate programmatic access keys [following step 3 of this leverage doc](https://leverage.binbash.com.ar/user-guide/features/organization/organization-init/#reference-aws-organization-init-workflow) for the `mgmt-org-admin` user, and then either copy them or download the `.csv` file that AWS generates for you. In both cases, store the credentials in a secure location.
 
 !!! info "For more detailed information on setting up your AWS account: [:books: Organization account setup guide](../../user-guide/features/organization/organization-init#user-guide)"
 

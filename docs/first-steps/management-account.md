@@ -22,7 +22,7 @@ cd management
 Move into the `us-east-1/base-tf-backend` directory and run:
 
 ``` bash
-leverage terraform init
+leverage terraform init --skip-validation
 leverage terraform apply
 ```
 

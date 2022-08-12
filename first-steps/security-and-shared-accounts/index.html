@@ -3818,7 +3818,7 @@
 </code></pre></div>
 <h3 id="terraform-backend-layer">Terraform backend layer<a class="headerlink" href="#terraform-backend-layer" title="Permanent link"> ¶</a></h3>
 <p>Move into the <code>us-east-1/base-tf-backend</code> directory and run:</p>
-<div class="highlight"><pre><span></span><code>leverage terraform init
+<div class="highlight"><pre><span></span><code>leverage terraform init --skip-validation
 leverage terraform apply
 </code></pre></div>
 <p>Now, to push the local <code>.tfstate</code> to the bucket, uncomment the <code>backend</code> section for the <code>terraform</code> configuration in <code>security/base-tf-backend/config.tf</code></p>
@@ -3857,7 +3857,7 @@ leverage terraform apply
 </code></pre></div>
 <h3 id="terraform-backend-layer_1">Terraform backend layer<a class="headerlink" href="#terraform-backend-layer_1" title="Permanent link"> ¶</a></h3>
 <p>Move into the <code>us-east-1/base-tf-backend</code> directory and run:</p>
-<div class="highlight"><pre><span></span><code>leverage terraform init
+<div class="highlight"><pre><span></span><code>leverage terraform init --skip-validation
 leverage terraform apply
 </code></pre></div>
 <p>Now, to push the local <code>.tfstate</code> to the bucket, uncomment the <code>backend</code> section for the <code>terraform</code> configuration in <code>shared/base-tf-backend/config.tf</code></p>

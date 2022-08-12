@@ -35,7 +35,7 @@ Terraform modules registry, accessed December 3rd 2020).
 !!! example "Steps to initialize your tf-backend"
     1. At the corresponding account dir, 
       eg: [/shared/base-tf-backend](https://github.com/binbashar/le-tf-infra-aws/tree/master/shared/us-east-1/base-tf-backend) then,
-    2. Run `leverage terraform init`
+    2. Run `leverage terraform init --skip-validation`
     3. Run `leverage terraform plan`, review the output to understand the expected changes
     4. Run `leverage terraform apply`, review the output once more and type `yes` if you are okay with that
     5. This should create a `terraform.tfstate` file in this directory but we don't want to push that to the repository so 

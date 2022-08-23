@@ -1,13 +1,9 @@
-<div align="center">
-    <img src="./docs/assets/images/logos/binbash.png" 
-    alt="binbash" width="250"/>
-</div>
-<div align="right">
-  <img src="./docs/assets/images/logos/binbash-leverage.png"
-  alt="leverage" width="130"/>
-</div>
+<a href="https://github.com/binbashar">
+    <img src="https://raw.githubusercontent.com/binbashar/le-ref-architecture-doc/master/docs/assets/images/logos/binbash-leverage-banner.png" width="1032" align="left" alt="Binbash"/>
+</a>
+<br clear="left"/>
 
-# Binbash Leverage Reference Architecture
+# Binbash Leverage™ Documentation
 
 ## Overview
 This repository contains all files used to create 

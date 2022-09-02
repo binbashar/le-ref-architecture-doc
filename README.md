@@ -20,8 +20,9 @@ Check it out [here](https://leverage.binbash.com.ar/).
 
 1. Clone the repo locally
 2. Config your MkDocs env including the navigation tree directory via `mkdocs.yml` file.
-3. Spin up your MkDocs local dev web server environment (`http://localhost:8000`) (real time updates we'll be shown) via `Makefile` cmd
+3. Spin up your MkDocs local dev web server environment (`http://localhost:8000`) (real time updates we'll be shown) (docker daemon needed) via `Makefile` cmd
 ```bash
+ make init-makefiles # needed only the first time
  make docs-live          
 ```
 4. Update necessary `*.md` files inside the `docs/` folder and check your updates through the local environment

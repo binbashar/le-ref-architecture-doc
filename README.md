@@ -35,4 +35,8 @@ via CircleCI job to the `gh-pages` branch (currently being built from this branc
 ### TODO
 - Several sections needs completion or update. 
 
+## About Diagrams
 
+Some of them have editable version under `docs/assets/diagrams/editable`.
+
+Others are directly exported from `https://docs.google.com/presentation/d/1t2SWgWlGvuIOqYHkpzxQSVLafI_MCsA3gNz6Kkyf6TE/edit#slide=id.p6`.

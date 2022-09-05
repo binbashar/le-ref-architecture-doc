@@ -79,7 +79,7 @@
     We use the [leverage-cli](../leverage-cli/index.md) for this purpose 
         
 ??? important ":checkered_flag: **Proven & Tested**"      
-    Customers & every commit goes through a suite of automated tests to grant code styling and functional testing.
+    Every commit goes through a suite of automated tests to grant code styling and functional testing.
 
     *   [x] Develop a wrapper/jobs together with specific testing tools in order to grant the modules are working as expected.
     *   [x] Ansible: 
@@ -97,8 +97,7 @@
     improve its quality, since a reusable asset has already been proven.
     
 ??? important ":checkered_flag: **Full Code Access & No Lock-In**"      
-    You get access to 100% of the code under Open Source license ([https://choosealicense.com/](https://choosealicense.com/)) 
-      so If you ever choose to cancel, you keep rights to all the code.
+    You get access to 100% of the code under [Open Source license](https://choosealicense.com/licenses/apache-2.0/), if you choose to discontinue the direct support of the Binbash Leverage team, you keep rights to all the code.
      
 ??? important ":checkered_flag: **Documented**"       
     Includes code examples, use cases and thorough documentation, such as README.md, 

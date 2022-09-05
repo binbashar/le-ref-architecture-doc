@@ -3620,17 +3620,17 @@
 <p class="admonition-title">We’ll fork every Infrastructure as Code (IaC) Library dependency repo, why?</p>
 <p><strong>Grant full governance over the lib repositories</strong></p>
 <ul class="task-list">
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> <strong>Availability:</strong> Since  our project resilience and continuity
-(including the clients) depends on this repositories (via requirement files or imports)
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> <strong>Availability:</strong> Because our project resilience and continuity
+(including the clients) depends on these repositories (via requirement files or imports)
 and we want and need total control over the repository used as a dependency.
 <strong>NOTE:</strong> There could be few exceptions when using official open source
-modules such as the ones shared and maintained by Nginx, Weave, Hashiport, etc.</li>
+modules makes sense, e.g. the ones shared and maintained by Nginx, Weave, Hashiport, etc.</li>
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> <strong>Reliability (Avoid unforeseen events):</strong> in the event that the original 
 project becomes discontinued while we are still working or depending on it
-(the owners, generally individual maintainers of the original repository might
-decide to move from github, ansible galaxy, etc or even close their repo for
+(the owners, generally individual maintainers of the original repository, might
+decide to move from github, ansible galaxy, etc. or even close their repo for
 personal reasons).</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> <strong>Stability:</strong> Our forks form modules (ansible roles / terraform / dockerfiles, etc)
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> <strong>Stability:</strong> Our forks form modules (ansible roles / terraform / dockerfiles, etc.)
 are always going to be locked to fixed versions for every client so no unexpected behavior will occur.</li>
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> <strong>Projects that don't tag versions:</strong> having the fork protects us against breaking
 changes.</li>
@@ -3639,17 +3639,17 @@ times that we can support, update, maintain, test, customize and release a new v
 of this component.</li>
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> <strong>Centralized Org source of truth:</strong> for improved customer experience and keeping
 dependencies consistently imported from binbash repos at <a href="https://github.com/binbashar">Leverage Github</a></li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> <strong>Scope:</strong> Binbash grants and responds for all this dependencies.</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> <strong>Scope:</strong> Binbash grants and responds for all these dependencies.</li>
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> <strong>Metrics:</strong>  Dashboards w/ internal measurements.</li>
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> <strong>Automation:</strong> We’ll maintain all this workflow cross-tech as standardized and
-automated as possible adding any extra validation like testing, security check, etc if
+automated as possible, adding any extra validation like testing, security check, etc., if
 needed -&gt; <a href="https://github.com/binbashar/le-dev-tools">Leverage dev-tools</a></li>
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> <strong>Licence &amp; Ownership:</strong> Since we fork open-source and commercially reusable
-components w/ <a href="https://choosealicense.com/licenses/">MIT and Apache 2.0 license</a>. 
+components w/ <a href="https://choosealicense.com/licenses/apache-2.0/">MIT and Apache 2.0 license</a>. 
 We keep full rights to all commercial, modification, distribution, and private use of
 the code (No Lock-In w/ owners) through forks inside our own Leverage Project repos. 
-As a result, when time comes, we can make our libs private at any moment if necessary 
-for the time being Open Source looks like the best option).</li>
+As a result, when time comes, we can make our libs private at any moment if necessary.
+(for the time being Open Source looks like the best option)</li>
 </ul>
 </div>
 <div class="admonition important">
@@ -3659,7 +3659,7 @@ for the time being Open Source looks like the best option).</li>
 collaboration of the open source community. </li>
 <li>Repos that are still <strong>private</strong> must not be forked by our internal collaborators
 till we've done a detailed and rigorous review in order to open source them.</li>
-<li>As a result any person looking forward to use, extend or update Leverage <strong>public repos</strong>
+<li>As a result any person looking forward to use, extend or update Leverage <strong>public repos</strong>,
 could also fork them in its personal or company Github account and create an upstream
 PR to contribute.</li>
 </ul>

@@ -3618,13 +3618,15 @@
 <h1 id="tech-specifications">Tech Specifications<a class="headerlink" href="#tech-specifications" title="Permanent link"> ¶</a></h1>
 <details class="important">
 <summary><img alt="🏁" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f3c1.svg" title=":checkered_flag:" /> <strong>As Code:</strong> Hundred of thousands lines of code</summary>
-<p>Written in:
-- [x] Terraform
-- [x] Groovy (Jenkinsfiles)
-- [x] Ansible
-- [x] Makefiles + Bash 
-- [x] Dockerfiles
-- [x] Helm Charts</p>
+<p>Written in:</p>
+<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Terraform</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Groovy (Jenkinsfiles)</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Ansible</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Makefiles + Bash </li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Dockerfiles</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Helm Charts</li>
+</ul>
 </details>
 <details class="important">
 <summary><img alt="🏁" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f3c1.svg" title=":checkered_flag:" /> <strong>Stop reinventing the wheel, automated and fully as code</strong></summary>
@@ -3647,48 +3649,60 @@
 </details>
 <details class="important">
 <summary><img alt="🏁" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f3c1.svg" title=":checkered_flag:" /> <strong>DoD of a highly reusable, configurable, and composible sub-modules</strong></summary>
-<p>Which will be 100%
-- <img alt="⏩" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/23e9.svg" title=":fast_forward:" /> modular 
-    - equivalent to other programming languages functions - Example for terraform -
-     <a href="https://www.terraform.io/docs/modules/usage.html">https://www.terraform.io/docs/modules/usage.html</a> (but can be propagated for other languages and tools):
-        1. <strong>inputs, outputs parameters.</strong>
-        2. <strong>code reuse (reusable):</strong> consider tf modules and sub-modules approach.
-        3. <strong>testable</strong> by module / function.
-            1. Since TF it's oriented to work through 3<sup>rd</sup> party API calls, then tests are more likely to be
-             <code>integration tests</code> rather than <code>unit tests</code>. If we don't allow integration for terraform then we
-              can't work at all.
-                1. This has to be analyzed for every language we'll be using and how we implement it (terraform,
-                 cloudformation, ansible, python, bash, docker, kops and k8s kubeclt cmds)
-        4. <strong>composition</strong> (composable): have multiple functions and use it together
-            2. <strong>eg:</strong> <code>def_add(x,y){return x+y} ; def_sub(x,y){return x-y}; sub(add(3,4), add(7,5))</code>
-        5. <strong>abstraction</strong> (abstract away complexity): we have a very complex function but we only expose it's
-         definition to the API, <strong>eg:</strong> <code>def_ai_processing(data_set){very complex algorithm here};
-          ai_processing([our_data_set_here])</code>
-        6. <strong>Avoid inline: </strong>blocks The configuration for some Terraform resources can be defined either as
-         inline blocks or as separate resources. When creating a module, you should always use a separate
-          resource. For example, the <a href="https://www.terraform.io/docs/providers/aws/r/route_table.html">aws_route_table</a> 
-          resource allows you to define routes via inline blocks. Otherwise, your module will be less 
-          flexible and configurable. So If you try to use a mix of both inline blocks <em>and</em> separate resources,
-           you run into bugs where they will conflict and overwrite each other. Therefore, you must use one or
-            the other (ref: <a href="https://blog.gruntwork.io/how-to-create-reusable-infrastructure-with-terraform-modules-25526d65f73d">https://blog.gruntwork.io/how-to-create-reusable-infrastructure-with-terraform-modules-25526d65f73d</a>))
-        7. <strong>Use module-relative paths: </strong>The catch is that the file path you use has to be relative
-         (since you could run Terraform on many different computers) — but what is it relative to? By default,
-          Terraform interprets the path relative to the working directory. That’s a good default for normal
-           Terraform templates, but it won’t work if the file is part of a module. To solve this issue, always
-            use a <a href="https://www.terraform.io/docs/configuration/interpolation.html#path-variables">path variable</a>
-            in file paths.
-            eg: 
-            <div class="highlight"><pre><span></span><code>resource &quot;aws_instance&quot; &quot;example&quot; {
+<p>Which will be 100%</p>
+<ul>
+<li><img alt="⏩" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/23e9.svg" title=":fast_forward:" /> modular <ul>
+<li>equivalent to other programming languages functions - Example for terraform -
+ <a href="https://www.terraform.io/docs/modules/usage.html">https://www.terraform.io/docs/modules/usage.html</a> (but can be propagated for other languages and tools):<ol>
+<li><strong>inputs, outputs parameters.</strong></li>
+<li><strong>code reuse (reusable):</strong> consider tf modules and sub-modules approach.</li>
+<li><strong>testable</strong> by module / function.<ol>
+<li>Since TF is oriented to work through 3<sup>rd</sup> party API calls, then tests are more likely to be
+ <code>integration tests</code> rather than <code>unit tests</code>. If we don't allow integration for terraform then we
+  can't work at all.<ol>
+<li>This has to be analyzed for every language we'll be using and how we implement it (terraform,
+ cloudformation, ansible, python, bash, docker, kops and k8s kubeclt cmds)</li>
+</ol>
+</li>
+</ol>
+</li>
+<li><strong>composition</strong> (composable): have multiple functions and use them together<ol>
+<li><strong>eg:</strong> <code>def_add(x,y){return x+y} ; def_sub(x,y){return x-y}; sub(add(3,4), add(7,5))</code></li>
+</ol>
+</li>
+<li><strong>abstraction</strong> (abstract away complexity): we have a very complex function but we only expose it's
+ definition to the API, <strong>eg:</strong> <code>def_ai_processing(data_set){very complex algorithm here};
+  ai_processing([our_data_set_here])</code></li>
+<li><strong>avoid inline blocks:</strong> The configuration for some Terraform resources can be defined either as
+ inline blocks or as separate resources. For example, the <a href="https://www.terraform.io/docs/providers/aws/r/route_table.html">aws_route_table</a> 
+  resource allows you to define routes via inline blocks. But by doing so, your module become less 
+  flexible and configurable. Also, if a mix of both, inline blocks <em>and</em> separate resources, is used,
+   errors may arise in which they conflict and overwrite each other. Therefore, you must use one or
+    the other (ref: <a href="https://blog.gruntwork.io/how-to-create-reusable-infrastructure-with-terraform-modules-25526d65f73d">https://blog.gruntwork.io/how-to-create-reusable-infrastructure-with-terraform-modules-25526d65f73d</a>)
+    <br />As a rule of thumb, when creating a module, separate resources should always be used.</li>
+<li><strong>use module-relative paths: </strong>The catch is that the used file path has to be relative
+ (since you could run Terraform on many different computers) — but relative to what? By default,
+  Terraform interprets the path as relative to the working directory. That’s a good default for normal
+   Terraform templates, but it won’t work if the file is part of a module. 
+   <br />To solve this issue, always use a <a href="https://www.terraform.io/docs/configuration/interpolation.html#path-information">path variable</a>
+    in file paths.
+    eg: 
+    <div class="highlight"><pre><span></span><code>resource &quot;aws_instance&quot; &quot;example&quot; {
   ami = &quot;ami-2d39803a&quot;
   instance_type = &quot;t2.micro&quot;
   user_data = &quot;${file(&quot;${path.module}/user-data.sh&quot;)}&quot;
 }
-</code></pre></div></p>
+</code></pre></div></li>
+</ol>
+</li>
+</ul>
+</li>
+</ul>
 </details>
 <details class="important">
 <summary><img alt="🏁" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f3c1.svg" title=":checkered_flag:" /> <strong>Solutions must be versioned</strong></summary>
 <p>So as to be able to manage them as a software product with releases and change log. 
-In this way we'll be able to know which version is currently deployed in a certain client and consider it's upgrade.</p>
+This way we'll be able to know which version is currently deployed in a given client and consider upgrading it.</p>
 </details>
 <details class="important">
 <summary><img alt="🏁" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f3c1.svg" title=":checkered_flag:" /> <strong>Env Parity</strong></summary>
@@ -3696,7 +3710,7 @@ In this way we'll be able to know which version is currently deployed in a certa
 </details>
 <details class="important">
 <summary><img alt="🏁" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f3c1.svg" title=":checkered_flag:" /> <strong>Updated</strong></summary>
-<p>Continually make updates, additions, and fixes to the libraries and modules. </p>
+<p>Continuously perform updates, additions, and fixes to libraries and modules. </p>
 </details>
 <details class="important">
 <summary><img alt="🏁" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f3c1.svg" title=":checkered_flag:" /> <strong>Orchestrated in automation</strong></summary>
@@ -3704,34 +3718,36 @@ In this way we'll be able to know which version is currently deployed in a certa
 </details>
 <details class="important">
 <summary><img alt="🏁" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f3c1.svg" title=":checkered_flag:" /> <strong>Proven &amp; Tested</strong></summary>
-<div class="codehilite"><pre><span></span><code><span class="n">Customers</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="k">every</span><span class="w"> </span><span class="k">commit</span><span class="w"> </span><span class="n">goes</span><span class="w"> </span><span class="n">through</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="n">suite</span><span class="w"> </span><span class="k">of</span><span class="w"> </span><span class="n">automated</span><span class="w"> </span><span class="n">tests</span><span class="w"> </span><span class="k">to</span><span class="w"> </span><span class="n">gran</span><span class="w"> </span><span class="n">code</span><span class="w"> </span><span class="n">styling</span><span class="w"> </span><span class="ow">and</span><span class="w"> </span><span class="n">functional</span><span class="w"> </span><span class="n">testing</span><span class="p">.</span><span class="w"></span>
-
-<span class="o">*</span><span class="w">   </span><span class="o">[</span><span class="n">x</span><span class="o">]</span><span class="w"> </span><span class="n">Develop</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="n">wrapper</span><span class="o">/</span><span class="n">jobs</span><span class="w"> </span><span class="n">together</span><span class="w"> </span><span class="k">with</span><span class="w"> </span><span class="k">specific</span><span class="w"> </span><span class="n">testing</span><span class="w"> </span><span class="n">tools</span><span class="w"> </span><span class="ow">in</span><span class="w"> </span><span class="k">order</span><span class="w"> </span><span class="k">to</span><span class="w"> </span><span class="k">grant</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">modules</span><span class="w"> </span><span class="k">are</span><span class="w"> </span><span class="n">working</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="n">expected</span><span class="p">.</span><span class="w"></span>
-<span class="o">*</span><span class="w">   </span><span class="o">[</span><span class="n">x</span><span class="o">]</span><span class="w"> </span><span class="nl">Ansible</span><span class="p">:</span><span class="w"> </span>
-<span class="w">    </span><span class="o">*</span><span class="w">   </span><span class="o">[</span><span class="n">Testing your ansible roles w/ molecule</span><span class="o">]</span><span class="p">(</span><span class="nl">https</span><span class="p">:</span><span class="o">//</span><span class="n">www</span><span class="p">.</span><span class="n">jeffgeerling</span><span class="p">.</span><span class="n">com</span><span class="o">/</span><span class="n">blog</span><span class="o">/</span><span class="mi">2018</span><span class="o">/</span><span class="n">testing</span><span class="o">-</span><span class="n">your</span><span class="o">-</span><span class="n">ansible</span><span class="o">-</span><span class="n">roles</span><span class="o">-</span><span class="n">molecule</span><span class="p">)</span><span class="w"></span>
-<span class="w">    </span><span class="o">*</span><span class="w">   </span><span class="o">[</span><span class="n">How to test ansible roles with molecule on ubuntu</span><span class="o">]</span><span class="p">(</span><span class="nl">https</span><span class="p">:</span><span class="o">//</span><span class="n">www</span><span class="p">.</span><span class="n">digitalocean</span><span class="p">.</span><span class="n">com</span><span class="o">/</span><span class="n">community</span><span class="o">/</span><span class="n">tutorials</span><span class="o">/</span><span class="n">how</span><span class="o">-</span><span class="k">to</span><span class="o">-</span><span class="n">test</span><span class="o">-</span><span class="n">ansible</span><span class="o">-</span><span class="n">roles</span><span class="o">-</span><span class="k">with</span><span class="o">-</span><span class="n">molecule</span><span class="o">-</span><span class="k">on</span><span class="o">-</span><span class="n">ubuntu</span><span class="o">-</span><span class="mi">16</span><span class="o">-</span><span class="mi">04</span><span class="p">)</span><span class="w"></span>
-<span class="o">*</span><span class="w">   </span><span class="o">[</span><span class="n">x</span><span class="o">]</span><span class="w"> </span><span class="nl">Terraform</span><span class="p">:</span><span class="w"></span>
-<span class="w">    </span><span class="o">*</span><span class="w">   </span><span class="o">[</span><span class="n">gruntwork-io/terratest</span><span class="o">]</span><span class="p">(</span><span class="nl">https</span><span class="p">:</span><span class="o">//</span><span class="n">github</span><span class="p">.</span><span class="n">com</span><span class="o">/</span><span class="n">gruntwork</span><span class="o">-</span><span class="n">io</span><span class="o">/</span><span class="n">terratest</span><span class="p">)</span><span class="w"></span>
-</code></pre></div>
-
+<p>Every commit goes through a suite of automated tests to grant code styling and functional testing.</p>
+<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Develop a wrapper/jobs together with specific testing tools in order to grant the modules are working as expected.</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Ansible: <ul>
+<li><a href="https://www.jeffgeerling.com/blog/2018/testing-your-ansible-roles-molecule">Testing your ansible roles w/ molecule</a></li>
+<li><a href="https://www.digitalocean.com/community/tutorials/how-to-test-ansible-roles-with-molecule-on-ubuntu-16-04">How to test ansible roles with molecule on ubuntu</a></li>
+</ul>
+</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Terraform:<ul>
+<li><a href="https://github.com/gruntwork-io/terratest">gruntwork-io/terratest</a></li>
+</ul>
+</li>
+</ul>
 </details>
 <details class="important">
 <summary><img alt="🏁" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f3c1.svg" title=":checkered_flag:" /> <strong>Cost savings by design</strong></summary>
 <p>The architecture for our Library / Code Modules helps an organization to analyze its current IT and DevSecOps
-Cloud strategy and identify areas where changes could lead to cost savings. For instance, the architecture may show
+Cloud strategy and identify areas where changes could lead to cost savings. <br />For instance, the architecture may show
 that multiple database systems could be changed so only one product is used, reducing software and support costs.
-Provides a basis for reuse. The process of architecting can support both the use and creation of reusable assets.
-Reusable assets are beneficial to an organization, since they can reduce the overall cost of a system and also
-improve its quality, given that a reusable asset has already been proven.</p>
+Provides a basis for reuse. <br />The process of architecting can support both the use and creation of reusable assets.
+Reusable assets are beneficial for an organization, since they can reduce the overall cost of a system and also
+improve its quality, since a reusable asset has already been proven.</p>
 </details>
 <details class="important">
 <summary><img alt="🏁" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f3c1.svg" title=":checkered_flag:" /> <strong>Full Code Access &amp; No Lock-In</strong></summary>
-<p>You get access to 100% of the code under Open Source license (<a href="https://choosealicense.com/">https://choosealicense.com/</a>) 
-  so If you ever choose to cancel, you keep rights to all the code.</p>
+<p>You get access to 100% of the code under <a href="https://choosealicense.com/licenses/apache-2.0/">Open Source license</a>, if you choose to discontinue the direct support of the Binbash Leverage team, you keep rights to all the code.</p>
 </details>
 <details class="important">
 <summary><img alt="🏁" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f3c1.svg" title=":checkered_flag:" /> <strong>Documented</strong></summary>
-<p>Includes example code, use case and thorough documentation, such as<a href="http://readme.md/"> README.md</a>, 
+<p>Includes code examples, use cases and thorough documentation, such as README.md, 
 --help command, doc-string and in line comments.</p>
 </details>
 <details class="important">

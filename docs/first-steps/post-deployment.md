@@ -46,7 +46,7 @@ As Natasha also has an IAM user for the `security` account besides the one in `m
 To be able to use the generated programmatic keys, you need to configure them in your local environment. To do that, run:
 
 ``` bash
-leverage credentials configure --fetch-mfa-device --type MANAGEMENT # or `SECURITY` depending on the credentials to configured
+leverage credentials configure --type MANAGEMENT # or `SECURITY` depending on the credentials to configured
 ```
 <pre><code><span class="fsg-timestamp">[12:28:12.111]</span> INFO     Loading configuration file.
 <span class="fsg-timestamp">[12:28:12.132]</span> INFO     Loading project environment configuration file.
@@ -57,8 +57,6 @@ leverage credentials configure --fetch-mfa-device --type MANAGEMENT # or `SECURI
 <span class="fsg-prompt">></span> <b>Secret: <span class="fsg-userinput">****************************************</span></b>
 <span class="fsg-timestamp">[12:28:30.739]</span> INFO     <b>Management credentials configured in:</b> <span class="fsg-path">/home/user/.aws/me/credentials</span>
 <span class="fsg-timestamp">[12:28:34.991]</span> INFO     Configuring assumable roles.
-<span class="fsg-timestamp">[12:28:34.993]</span> INFO     Fetching organization accounts.
-<span class="fsg-timestamp">[12:28:37.060]</span> INFO     Fetching MFA device serial.
 <span class="fsg-timestamp">[12:28:39.299]</span> INFO     Backing up account profiles file.
 <span class="fsg-timestamp">[12:28:39.941]</span> INFO             Configuring profile <b>me-management-oaar</b>
 <span class="fsg-timestamp">[12:28:45.205]</span> INFO             Configuring profile <b>me-security-oaar</b>
@@ -137,6 +135,32 @@ Set `profile` in `config/backend.tfvars` for each account to `<short project nam
 Similarly to the management user's MFA enabling step, you are switching from using bootstrap credentials to the respective profile for each account of the security credentials.
 
 As a last step you need to make sure that `MFA_ENABLED` is set to `true` in the `build.env` file.
+
+## Re-Configure profiles  MFA
+
+In order to everything works correctly, you need to set your aws config profiles with the correct mfa device configuration.
+
+Run again  `leverage credentials configure`  with the flag `--fetch-mfa-device` and select the option of `skip credentials configuration`.
+
+``` bash
+leverage credentials configure --fetch-mfa-device --type MANAGEMENT
+leverage credentials configure --fetch-mfa-device --type SECURITY
+```
+<pre><code>
+<span class="fsg-timestamp">[10:10:11.033]</span> INFO     Loading configuration file.
+<span class="fsg-timestamp">[10:10:11.092]</span> INFO     Loading project environment configuration file.
+<span class="fsg-timestamp">[10:10:11.093]</span> INFO     Loading Terraform common configuration.
+<span class="fsg-prompt">></span> <b> Credentials already configured for ld-management: <span class="fsg-userinput">Skip credentials configuration. Continue on with assumable roles setup.</span></b>
+<span class="fsg-timestamp">[10:10:30.345]</span> INFO     Attempting to fetch organization accounts.
+<span class="fsg-timestamp">[10:10:33.928]</span> INFO     Configuring assumable roles.
+<span class="fsg-timestamp">[10:10:33.932]</span> INFO     <b>Fetching MFA device serial.</b>
+<span class="fsg-timestamp">[10:10:37.473]</span> INFO     Backing up account profiles file.
+<span class="fsg-timestamp">[10:10:38.913]</span> INFO             Configuring profile <b>me-management-oaar</b>
+<span class="fsg-timestamp">[10:10:53.088]</span> INFO             Configuring profile <b>me-security-oaar</b>
+<span class="fsg-timestamp">[10:11:08.229]</span> INFO             Configuring profile <b>me-shared-oaar</b>
+<span class="fsg-timestamp">[10:11:23.185]</span> INFO     <b>Account profiles configured in:</b> <span class="fsg-path">/home/user/.aws/me/config</span>
+</code></pre>
+
 
 ## Next steps
 

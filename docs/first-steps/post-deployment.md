@@ -10,7 +10,7 @@ When Natasha's user was created, an initial random password was also created alo
 
 As Natasha, you need to access that password so that you can create your programmatic keys to interact with the environment through Leverage.
 
-First, for the `management` account, change the value `sensitive` to `true` in the output block `user_natasha_romanoff_login_profile_encrypted_password` of `management/global/base-identities/outputs.tf`:
+First, for the `management` account, check that the value `sensitive` is set to `true` in the output block `user_natasha_romanoff_login_profile_encrypted_password` of `management/global/base-identities/outputs.tf`:
 
 ``` terraform
 output "user_natasha_romanoff_login_profile_encrypted_password" {
@@ -20,16 +20,23 @@ output "user_natasha_romanoff_login_profile_encrypted_password" {
 }
 ```
 
-Then, in the `global/base-identities` directory, run:
+Then, in the `global/base-identities` directory, run the output command with the `--json` flag:
 
 ``` bash
-leverage terraform apply
-leverage terraform output
+leverage terraform output --json
 ```
 ```
 ...
-user_natasha_romanoff_login_profile_encrypted_password = "SipVOzVtNTI0Ml...EZmJFxxQSteYQ=="
-user_natasha_romanoff_name = "natasha.romanoff"
+"user_natasha_romanoff_name": {
+  "sensitive": false,
+  "type": "string",
+  "value": "natasha.romanoff"
+},
+"user_natasha_romanoff_login_profile_encrypted_password": {
+  "sensitive": true,
+  "type": "string",
+  "value": "wcDMAyRZJTaxw5v1AQwAy6c...............2mBIbNFxF1Tp/ilvyk8eEHvAA="
+}
 ...
 ```
 

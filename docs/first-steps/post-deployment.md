@@ -138,9 +138,11 @@ As a last step you need to make sure that `MFA_ENABLED` is set to `true` in the 
 
 ## Re-Configure profiles  MFA
 
-In order to everything works correctly, you need to set your aws config profiles with the correct mfa device configuration.
+For everything to work as expected, you need to set the aws configuration profiles to the corresponding mfa-device configuration.
 
-Run again  `leverage credentials configure`  with the flag `--fetch-mfa-device` and select the option of `skip credentials configuration`.
+Then run `leverage credentials configure` again with the `--fetch-mfa-device` flag and select the `skip credentials configuration` option.
+
+Also, the flag `--skip-access-keys-setup` could be used instead to avoid the interactive step!(https://leverage.binbash.com.ar/user-guide/leverage-cli/reference/credentials/#options)
 
 ``` bash
 leverage credentials configure --fetch-mfa-device --type MANAGEMENT
@@ -160,7 +162,6 @@ leverage credentials configure --fetch-mfa-device --type SECURITY
 <span class="fsg-timestamp">[10:11:08.229]</span> INFO             Configuring profile <b>me-shared-oaar</b>
 <span class="fsg-timestamp">[10:11:23.185]</span> INFO     <b>Account profiles configured in:</b> <span class="fsg-path">/home/user/.aws/me/config</span>
 </code></pre>
-
 
 ## Next steps
 

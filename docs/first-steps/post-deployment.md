@@ -20,10 +20,10 @@ output "user_natasha_romanoff_login_profile_encrypted_password" {
 }
 ```
 
-Then, in the `global/base-identities` directory, run the output command with the `--json` flag:
+Then, in the `global/base-identities` directory, run the output command with the `-json` flag:
 
 ``` bash
-leverage terraform output --json
+leverage terraform output -json
 ```
 ```
 ...

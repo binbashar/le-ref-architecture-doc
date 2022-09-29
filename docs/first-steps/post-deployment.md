@@ -46,7 +46,7 @@ As Natasha also has an IAM user for the `security` account besides the one in `m
 To be able to use the generated programmatic keys, you need to configure them in your local environment. To do that, run:
 
 ``` bash
-leverage credentials configure --type MANAGEMENT # or `SECURITY` depending on the credentials to configured
+leverage credentials configure --type MANAGEMENT # or `SECURITY` depending on the credentials to be configured
 ```
 <pre><code><span class="fsg-timestamp">[12:28:12.111]</span> INFO     Loading configuration file.
 <span class="fsg-timestamp">[12:28:12.132]</span> INFO     Loading project environment configuration file.
@@ -142,7 +142,7 @@ For everything to work as expected, you need to set the aws configuration profil
 
 Then run `leverage credentials configure` again with the `--fetch-mfa-device` flag and select the `skip credentials configuration` option.
 
-Also, the flag `--skip-access-keys-setup` could be used instead to avoid the interactive step!(https://leverage.binbash.com.ar/user-guide/leverage-cli/reference/credentials/#options)
+As an alternative, the flag [--skip-access-keys-setup](https://leverage.binbash.com.ar/user-guide/leverage-cli/reference/credentials/#options) could be used to avoid the interactive step.
 
 ``` bash
 leverage credentials configure --fetch-mfa-device --type MANAGEMENT

@@ -3761,20 +3761,27 @@
 <p>We'll take the place of <code>natasha.romanoff</code> to exemplify the process.</p>
 <p>When Natasha's user was created, an initial random password was also created alongside it. That password was encrypted using her GPG key, as it was shown in the <a href="../management-account/#identities-layer">management account's</a> and in the <a href="../security-and-shared-accounts/#identities-layer">security account's</a> identities layers.</p>
 <p>As Natasha, you need to access that password so that you can create your programmatic keys to interact with the environment through Leverage.</p>
-<p>First, for the <code>management</code> account, change the value <code>sensitive</code> to <code>true</code> in the output block <code>user_natasha_romanoff_login_profile_encrypted_password</code> of <code>management/global/base-identities/outputs.tf</code>:</p>
+<p>First, for the <code>management</code> account, check that the value <code>sensitive</code> is set to <code>true</code> in the output block <code>user_natasha_romanoff_login_profile_encrypted_password</code> of <code>management/global/base-identities/outputs.tf</code>:</p>
 <div class="highlight"><pre><span></span><code><span class="kr">output</span><span class="w"> </span><span class="nv">&quot;user_natasha_romanoff_login_profile_encrypted_password&quot;</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
 <span class="w">  </span><span class="na">description</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;The encrypted password, base64 encoded&quot;</span><span class="w"></span>
 <span class="w">  </span><span class="na">value</span><span class="w">       </span><span class="o">=</span><span class="w"> </span><span class="nv">module.user</span><span class="p">[</span><span class="s2">&quot;natasha.romanoff&quot;</span><span class="p">].</span><span class="err">iam_user_login_profile_encrypted_password</span><span class="w"></span>
 <span class="w">  </span><span class="na">sensitive</span><span class="w">   </span><span class="o">=</span><span class="w"> </span><span class="no">true</span><span class="w"></span>
 <span class="p">}</span><span class="w"></span>
 </code></pre></div>
-<p>Then, in the <code>global/base-identities</code> directory, run:</p>
-<p><div class="highlight"><pre><span></span><code>leverage terraform apply
-leverage terraform output
+<p>Then, in the <code>global/base-identities</code> directory, run the output command with the <code>-json</code> flag:</p>
+<p><div class="highlight"><pre><span></span><code>leverage terraform output -json
 </code></pre></div>
 <div class="highlight"><pre><span></span><code>...
-user_natasha_romanoff_login_profile_encrypted_password = &quot;SipVOzVtNTI0Ml...EZmJFxxQSteYQ==&quot;
-user_natasha_romanoff_name = &quot;natasha.romanoff&quot;
+&quot;user_natasha_romanoff_name&quot;: {
+  &quot;sensitive&quot;: false,
+  &quot;type&quot;: &quot;string&quot;,
+  &quot;value&quot;: &quot;natasha.romanoff&quot;
+},
+&quot;user_natasha_romanoff_login_profile_encrypted_password&quot;: {
+  &quot;sensitive&quot;: true,
+  &quot;type&quot;: &quot;string&quot;,
+  &quot;value&quot;: &quot;wcDMAyRZJTaxw5v1AQwAy6c...............2mBIbNFxF1Tp/ilvyk8eEHvAA=&quot;
+}
 ...
 </code></pre></div></p>
 <p>Extract the value of the password field form the output and <a href="../../user-guide/features/identities/gpg#how-to-manage-your-gpg-keys">decrypt it</a>.</p>

@@ -11,12 +11,70 @@ component by component based on the below presented compatibility matrix table.
 
 ## Compatibility Matrix
 
-| Leverage Ref Arch :construction_site: :cloud: version | Leverage Cli | Terraform | Terraform AWS provider | K8s EKS   |
-|-------------------------------------------------------|--------------|-----------|------------------------|-----------|
-| v1.8.1                                                | v1.7.2       | >= 1.1.9  | 3.27.x, 4.x.y          | 1.20-1.22 |
-| v1.7.2                                                | v1.6.2       | >= 1.1.3  | 3.27.x, 4.x.y          | 1.17-1.19 |
-| ~~v1.3.73~~                                           | v1.2.0       | 1.0.x     | 3.27.x                 | 1.17      |
-| ~~v1.3.25~~                                           | v1.0.10      | 0.14.x    | 3.27.x                 | 1.17      |
+<table>
+  <tr>
+    <th>Leverage Ref Arch :construction_site: :cloud: version</th>
+    <th>Leverage CLI</th>
+    <th>Leverage Toolbox<br /><small>image</small><br /><small>version</small></th>
+    <th>Terraform</th>
+    <th>Terraform AWS provider</th>
+    <th>K8s EKS</th>
+  </tr>
+  <tr>
+    <td rowspan="3">v1.11.0</td>
+    <td>v1.9.x</td>
+    <td>`binbash/leverage-toolbox`<br /> ==1.3.5-0.0.x</td>
+    <td>1.3.5</td>
+    <td>3.27.x, 4.x.y</td>
+    <td>1.20-1.22</td>
+  </tr>
+  <tr>
+    <td>v1.9.x</td>
+    <td>`binbash/leverage-toolbox`<br /> ==1.2.7-0.1.x</td>
+    <td>1.2.7</td>
+    <td>3.27.x, 4.x.y</td>
+    <td>1.20-1.22</td>
+  </tr>
+  <tr>
+    <td>v1.8.x</td>
+    <td>`binbash/leverage-toolbox`<br /> ==1.2.7-0.0.x</td>
+    <td>1.2.7</td>
+    <td>3.27.x, 4.x.y</td>
+    <td>1.20-1.22</td>
+  </tr>
+  <tr>
+    <td>v1.8.1</td>
+    <td>v1.7.2</td>
+    <td>`binbash/terraform-awscli-slim`<br /> >=1.1.9</td>
+    <td>1.1.9</td>
+    <td>3.27.x, 4.x.y</td>
+    <td>1.20-1.22</td>
+  </tr>
+  <tr>
+    <td>v1.7.2</td>
+    <td>v1.6.2</td>
+    <td>`binbash/terraform-awscli-slim`<br /> >=1.1.3</td>
+    <td>1.1.3</td>
+    <td>3.27.x, 4.x.y</td>
+    <td>1.17-1.19</td>
+  </tr>
+  <tr>
+    <td><del>v1.3.73</del></td>
+    <td>v1.2.0</td>
+    <td>`binbash/terraform-awscli-slim`<br /> >=1.0.x</td>
+    <td>1.0.x</td>
+    <td>3.27.x</td>
+    <td>1.17</td>
+  </tr>
+  <tr>
+    <td><del>v1.3.25</del></td>
+    <td>v1.0.10</td>
+    <td>`binbash/terraform-awscli-slim`<br /> >=0.14.x</td>
+    <td>0.14.x</td>
+    <td>3.27.x</td>
+    <td>1.17</td>
+  </tr>
+</table>
 
 Releases which are ~~crossed out~~ _should_ work, but are unlikely to get security or other fixes.
 We suggest they should be upgraded soon.

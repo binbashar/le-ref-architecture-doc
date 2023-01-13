@@ -257,7 +257,7 @@ nav:
           - credentials: "user-guide/leverage-cli/reference/credentials.md"
           - aws: "user-guide/leverage-cli/reference/aws.md"
           - terraform:
-              - terraform commands: "user-guide/leverage-cli/reference/terraform.md"
+              - commands: "user-guide/leverage-cli/reference/terraform.md"
               - layers: "user-guide/leverage-cli/reference/terraform/layers.md"
           - tfautomv: "user-guide/leverage-cli/reference/tfautomv.md"
           - run: "user-guide/leverage-cli/reference/run.md"

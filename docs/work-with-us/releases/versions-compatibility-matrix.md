@@ -13,7 +13,7 @@ component by component based on the below presented compatibility matrix table.
 
 <table>
   <tr>
-    <th>Leverage Ref Arch :construction_site: :cloud: version</th>
+    <th>Leverage Ref Arch version</th>
     <th>Leverage CLI</th>
     <th>Leverage Toolbox<br /><small>image</small><br /><small>version</small></th>
     <th>Terraform</th>
@@ -22,14 +22,13 @@ component by component based on the below presented compatibility matrix table.
   </tr>
   <tr>
     <td rowspan="3">v1.11.0</td>
-    <td>v1.9.x</td>
+    <td rowspan="2">v1.9.x</td>
     <td>`binbash/leverage-toolbox`<br /> ==1.3.5-0.0.x</td>
     <td>1.3.5</td>
     <td>3.27.x, 4.x.y</td>
     <td>1.20-1.22</td>
   </tr>
   <tr>
-    <td>v1.9.x</td>
     <td>`binbash/leverage-toolbox`<br /> ==1.2.7-0.1.x</td>
     <td>1.2.7</td>
     <td>3.27.x, 4.x.y</td>

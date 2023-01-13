@@ -2411,9 +2411,70 @@
   
   
   
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_5_2_2_4" type="checkbox" id="__nav_4_5_2_2_4" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4_5_2_2_4">
+          terraform
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="terraform" data-md-level="5">
+        <label class="md-nav__title" for="__nav_4_5_2_2_4">
+          <span class="md-nav__icon md-icon"></span>
+          terraform
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
     <li class="md-nav__item">
       <a href="../reference/terraform/" class="md-nav__link">
-        terraform
+        commands
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/terraform/layers/" class="md-nav__link">
+        layers
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/tfautomv/" class="md-nav__link">
+        tfautomv
       </a>
     </li>
   
@@ -3765,14 +3826,16 @@ Options:
   -l, --list-tasks     List available tasks to run.
   -v, --verbose        Increase output verbosity.
   --version            Show the version and exit.
-  -h, --help           Show this message and exit.
+  --help               Show this message and exit.
 
 Commands:
+  aws          Run AWS CLI commands <span class="k">in</span> a custom containerized environment.
   credentials  Manage AWS cli credentials.
   project      Manage a Leverage project.
   run          Perform specified task<span class="o">(</span>s<span class="o">)</span> and all of its dependencies.
   terraform    Run Terraform commands <span class="k">in</span> a custom containerized...
   tf           Run Terraform commands <span class="k">in</span> a custom containerized...
+  tfautomv     Run TFAutomv commands <span class="k">in</span> a custom containerized...
 </code></pre></div></p>
 <h2 id="installation-in-an-isolated-environment">Installation in an isolated environment<a class="headerlink" href="#installation-in-an-isolated-environment" title="Permanent link"> ¶</a></h2>
 <p>If you prefer not to install the Leverage package globally and would like to limit its influence to only the directory of your project, we recommend using tools like <a href="https://pipenv.pypa.io/en/latest/">Pipenv</a> or <a href="https://python-poetry.org/">Poetry</a>. These tools are commonly used when working with python applications and help manage common issues that may result from installing and using such applications globally.</p>

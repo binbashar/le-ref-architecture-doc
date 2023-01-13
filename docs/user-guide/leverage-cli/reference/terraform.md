@@ -20,13 +20,16 @@ Equivalent to `terraform init`.
 
 All arguments given are passed as received to Terraform.
 
-Can only be run at **layer** level.
+Can only be run at **layer** level if `--layers` is not set, or at **account** or **layers-container-directory** if it is.
 
 [Layout validation](#validate-layout) is performed before actually initializing Terraform unless explicitly indicated against via the `--skip-validation` flag. 
 
 ### Options
 * `--skip-validation`: Skips layout validation.
+* `--layers`: Applies command to layers listed in this option. (see more info [here](./layers))
 
+!!! info "Regarding S3 backend keys"
+    If the S3 backend block is set, and no key was defined, Leverage CLI will try to create a new one autoatically and store it in the `config.tf` file. It will be based on the layer path relative to the account.
 
 ---
 ## `plan`
@@ -40,7 +43,10 @@ Equivalent to `terraform plan`.
 
 All arguments given are passed as received to Terraform.
 
-Can only be run at **layer** level.
+Can only be run at **layer** level if `--layers` is not set, or at **account** or **layers-container-directory** if it is.
+
+### Options
+* `--layers`: Applies command to layers listed in this option. (see more info [here](./layers))
 
 ---
 ## `apply`
@@ -54,7 +60,10 @@ Equivalent to `terraform apply`.
 
 All arguments given are passed as received to Terraform.
 
-Can only be run at **layer** level.
+Can only be run at **layer** level if `--layers` is not set, or at **account** or **layers-container-directory** if it is.
+
+### Options
+* `--layers`: Applies command to layers listed in this option. (see more info [here](./layers))
 
 ---
 ## `destroy`
@@ -68,7 +77,10 @@ Equivalent to `terraform destroy`.
 
 All arguments given are passed as received to Terraform.
 
-Can only be run at **layer** level.
+Can only be run at **layer** level if `--layers` is not set, or at **account** or **layers-container-directory** if it is.
+
+### Options
+* `--layers`: Applies command to layers listed in this option. (see more info [here](./layers))
 
 ---
 ## `output`
@@ -82,7 +94,10 @@ Equivalent to `terraform output`.
 
 All arguments given are passed as received to Terraform.
 
-Can only be run at **layer** level.
+Can only be run at **layer** level if `--layers` is not set, or at **account** or **layers-container-directory** if it is.
+
+### Options
+* `--layers`: Applies command to layers listed in this option. (see more info [here](./layers))
 
 ---
 ## `version`

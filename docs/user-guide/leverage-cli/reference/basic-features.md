@@ -13,14 +13,16 @@ Options:
   -l, --list-tasks     List available tasks to run.
   -v, --verbose        Increase output verbosity.
   --version            Show the version and exit.
-  -h, --help           Show this message and exit.
+  --help               Show this message and exit.
 
 Commands:
+  aws          Run AWS CLI commands in a custom containerized environment.
   credentials  Manage AWS cli credentials.
   project      Manage a Leverage project.
   run          Perform specified task(s) and all of its dependencies.
   terraform    Run Terraform commands in a custom containerized...
   tf           Run Terraform commands in a custom containerized...
+  tfautomv     Run TFAutomv commands in a custom containerized...
 ```
 
 Similarly, subcommands provide further information by means of the `--help` flag. For example `leverage tf --help`.
@@ -39,5 +41,5 @@ Tasks in build file `build.py`:
   start_server  [Default]	Start the server
   stop_server            	
 
-Powered by Leverage 1.0.10
+Powered by Leverage 1.9.0
 ```

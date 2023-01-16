@@ -37,5 +37,5 @@ Linkerd Doc, accessed June 14th 2021).
 ## Read more
 
 !!! info "Related resources"    
-    * :ledger: [Linkerd vs Istio benchamrks](https://linkerd.io/2021/05/27/linkerd-vs-istio-benchmarks/)
+    * :ledger: [Linkerd vs Istio benchmarks](https://linkerd.io/2021/05/27/linkerd-vs-istio-benchmarks/)
 

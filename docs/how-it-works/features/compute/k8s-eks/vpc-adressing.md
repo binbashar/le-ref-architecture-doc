@@ -19,41 +19,72 @@
 
 ---
 
-## VPCs IP Addressing Plan (CIDR blocks sizing)
+# Network Layer
 
-```
-* Apps-DevStg
-  * us-east-1
-    * Main          172.18.32.0/20
-    * EKS-v1.17     10.0.0.0/16 => subnets /19
-    * EKS DemoApps  10.1.0.0/16 => subnets /19
-    * EKS           10.2.0.0/16 => subnets /19
-  * us-east-2
-    * Main          N/A
-    * EKS           10.10.0.0/16 => subnets /19
-* Apps-Prd
-  * us-east-1
-    * Main          172.18.64.0/20
-    * EKS           10.20.0/16 => subnets /19
-* Network
-  * us-east-1
-    * Main          172.20.0.0/20
-    * NFW           172.20.16.0/20
-* Shared
-  * us-east-1
-    * Main          172.18.0.0/20
-````
+!!! info "In this section we detail all the network design related specifications"
+    * [x] VPCs CIDR blocks
+    * [x] VPC Gateways:  Internet, NAT, VPN.
+    * [x] VPC Peerings
+    * [x] VPC DNS Private Hosted Zones Associations.
+    * [x] Network ACLS (NACLs)
 
-### EKS Clusters VPC CIDR Table
+### VPCs IP Addressing Plan (CIDR blocks sizing)
 
-* VPC CIDR: 10.0.0.0/16 (starts at /16 due to AWS VPC limits)
-* Subnetting to /19
+!!! summary "Introduction"
+    VPCs can vary in size from 16 addresses (/28 netmask) to 65,536 addresses (/16 netmask). 
+    In order to size a VPC correctly, it is important to understand the number, types, and sizes of workloads 
+    expected to run in it, as well as workload elasticity and load balancing requirements. 
+    
+    Keep in mind that there is no charge for using Amazon VPC (aside from EC2 charges), therefore cost 
+    should not be a factor when determining the appropriate size for your VPC, so make sure you size your 
+    VPC for growth.
+    
+    Moving workloads or AWS resources between networks is not a trivial task, so be generous in your 
+    IP address estimates to give yourself plenty of room to grow, deploy new workloads, or change your 
+    VPC design configuration from one to another. The majority of AWS customers use VPCs with a /16 
+    netmask and subnets with /24 netmasks. The primary reason AWS customers select smaller VPC and 
+    subnet sizes is to avoid overlapping network addresses with existing networks. 
 
-Which leaves us with this:
-* Number of subnets: 8
-* Number of available hosts: 8190
-* Number of available IPs (AWS): 8187
+    So having [AWS single VPC Design](https://aws.amazon.com/answers/networking/aws-single-vpc-design/) we've chosen
+    a Medium/Small VPC/Subnet addressing plan which would probably fit a broad range variety of
+    use cases
 
+## Networking - IP Addressing
+
+!!! example "Starting CIDR Segment (AWS Org)"
+    * [x] AWS Org IP Addressing calculation is presented below based on segment `10.0.0.0/16` (starts at /16 due to AWS VPC limits)
+    * [x] We started from `10.0.0.0/16` and subnetted to `/19`
+    * [x] Resulting in **Total Subnets: 8**
+        *   Number of available hosts for each subnet: 8190
+        *   Number of available IPs (AWS) for each subnet: 8187
+
+        <!-- *   2 x AWS Account with Hosts/SubNet: 4094
+        *   1ry VPC + 2ry VPC
+        *   1ry VPC DR + 2ry VPC DR -->
+
+!!! example "Individual CIDR Segments (VPCs)"
+    :fast_forward: Then each of these are /16 to /19
+    
+    *   [x] Considering the whole Starting CIDR Segment (AWS Org) before declared, we'll start at `10.0.0.0/16`
+        *   **apps-devstg**
+            *   1ry VPC CIDR: `10.0.0.0/16`
+            *   1ry VPC DR CIDR: `10.20.0.0/16`
+        *   **apps-prd**
+            *   1ry VPC CIDR: `10.10.0.0/16`
+            *   1ry VPC DR CIDR: `10.30.0.0/16`
+            
+    *   [x] Resulting in **Subnets: 4 x VPC**
+        *   VPC Subnets with Hosts/Net: 16.
+        *   Eg: apps-devstg account → us-east-1 w/ 3 AZs → 3 x Private Subnets /az + 3 x Public Subnets /az
+            *   1ry VPC CIDR: `10.0.0.0/16 `Subnets:
+                *   Private `10.0.0.0/19, 10.0.32.0/19 and 10.0.64.0/19`
+                *   Public `10.0.96.0/19, 10.0.128.0/19 and 10.0.160.0/19`
+
+## Planned VPCs 
+
+Having defined the initial VPC that will be created in the different accounts that were defined, we are going to create
+subnets in each of these VPCs defining Private and Public subnets split among different availability zones:
+    
 
 | Subnet address | Netmask       | Range of addresses          | Hosts | Assignment |
 | -------------- | ------------- | --------------------------- | ----- | ---------- |
@@ -66,8 +97,7 @@ Which leaves us with this:
 | 10.0.192.0/19  | 255.255.224.0 | 10.0.192.0 - 10.0.223.255   | 8190  |            |
 | 10.0.224.0/19  | 255.255.224.0 | 10.0.224.0 - 10.0.224.255   | 8190  |            |
 
-
 **Note:** Additional clusters can use their own available VPC space under 10.x.0.0/16.
 
-#### Ref 1: https://www.davidc.net/sites/default/subnets/subnets.html?network=10.0.0.0&mask=16&division=15.7231
-#### Ref 2: http://jodies.de/ipcalc?host=10.0.0.0&mask1=16&mask2=19
+- Ref 1: https://www.davidc.net/sites/default/subnets/subnets.html?network=10.0.0.0&mask=16&division=15.7231
+- Ref 2: http://jodies.de/ipcalc?host=10.0.0.0&mask1=16&mask2=19

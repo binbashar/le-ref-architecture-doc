@@ -88,4 +88,4 @@ subnets in each of these VPCs defining Private and Public subnets split among di
 
 ### Considerations
 
-- Kubernetes on EKS General Requirements for Network Layer: [**K8s EKS Networking | VPC Adressing**](../compute/k8s-eks/vpc-adressing.md) 
+- Kubernetes on EKS General Requirements for Network Layer: [**K8s EKS Networking | VPC Adressing**](../compute/k8s-eks/vpc-adressing.md)

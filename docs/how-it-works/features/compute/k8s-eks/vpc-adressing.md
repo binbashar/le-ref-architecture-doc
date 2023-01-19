@@ -4,17 +4,17 @@
 
 ## Considerations
 !!! attention "Design considerations"
-    * :ledger: **AWS EKS:** Docker runs in the 172.17.0.0/16 CIDR range in Amazon EKS clusters. 
-      We recommend that your cluster's VPC subnets do not overlap this range. Otherwise, you will 
+    * :ledger: **AWS EKS:** Docker runs in the 172.17.0.0/16 CIDR range in Amazon EKS clusters.
+      We recommend that your cluster's VPC subnets do not overlap this range. Otherwise, you will
       receive the following error:
       ```
-      Error: : error upgrading connection: error dialing backend: dial tcp 172.17.nn.nn:10250: 
+      Error: : error upgrading connection: error dialing backend: dial tcp 172.17.nn.nn:10250:
       getsockopt: no route to host
       ```
-      Read more: [AWS EKS network requirements](https://docs.aws.amazon.com/eks/latest/userguide/network_reqs.html)   
+      Read more: [AWS EKS network requirements](https://docs.aws.amazon.com/eks/latest/userguide/network_reqs.html)
     * :ledger: **Reserved IP Addresses**
-    The first four IP addresses and the last IP address in each subnet CIDR block are not available for you to use, 
-    and cannot be assigned to an instance. For example, in a subnet with CIDR block 10.0.0.0/24, the following five IP 
+    The first four IP addresses and the last IP address in each subnet CIDR block are not available for you to use,
+    and cannot be assigned to an instance. For example, in a subnet with CIDR block 10.0.0.0/24, the following five IP
     addresses are reserved. For more [AWS VPC Subnets IP addressing](https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Subnets.html#vpc-sizing-ipv4)
 
 ---
@@ -23,10 +23,7 @@
 
 !!! info "In this section we detail all the network design related specifications"
     * [x] VPCs CIDR blocks
-    * [x] VPC Gateways:  Internet, NAT, VPN.
-    * [x] VPC Peerings
-    * [x] VPC DNS Private Hosted Zones Associations.
-    * [x] Network ACLS (NACLs)
+    * [x] Private & Public Subnets IP Ranges
 
 ### VPCs IP Addressing Plan (CIDR blocks sizing)
 

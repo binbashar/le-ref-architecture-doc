@@ -98,6 +98,3 @@ subnets in each of these VPCs defining Private and Public subnets split among di
 | 10.0.224.0/19  | 255.255.224.0 | 10.0.224.0 - 10.0.224.255   | 8190  |            |
 
 **Note:** Additional clusters can use their own available VPC space under 10.x.0.0/16.
-
-- Ref 1: https://www.davidc.net/sites/default/subnets/subnets.html?network=10.0.0.0&mask=16&division=15.7231
-- Ref 2: http://jodies.de/ipcalc?host=10.0.0.0&mask1=16&mask2=19

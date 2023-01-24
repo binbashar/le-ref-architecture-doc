@@ -2,6 +2,10 @@
 
 # Network Layer: EKS Network Requirements
 
+!!! info "In this section we detail all the network design related specifications"
+    * [x] VPCs CIDR blocks
+    * [x] Private & Public Subnets IP Ranges
+
 ## Considerations
 !!! attention "Design considerations"
     * :ledger: **AWS EKS:** Docker runs in the 172.17.0.0/16 CIDR range in Amazon EKS clusters.
@@ -16,14 +20,7 @@
     The first four IP addresses and the last IP address in each subnet CIDR block are not available for you to use,
     and cannot be assigned to an instance. For example, in a subnet with CIDR block 10.0.0.0/24, the following five IP
     addresses are reserved. For more [AWS VPC Subnets IP addressing](https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Subnets.html#vpc-sizing-ipv4)
-
 ---
-
-# Network Layer
-
-!!! info "In this section we detail all the network design related specifications"
-    * [x] VPCs CIDR blocks
-    * [x] Private & Public Subnets IP Ranges
 
 ### VPCs IP Addressing Plan (CIDR blocks sizing)
 
@@ -52,13 +49,9 @@
     * [x] AWS Org IP Addressing calculation is presented below based on segment `10.0.0.0/16` (starts at /16 due to AWS VPC limits)
     * [x] We started from `10.0.0.0/16` and subnetted to `/19`
     * [x] Resulting in **Total Subnets: 8**
-        *   Number of available hosts for each subnet: 8190
-        *   Number of available IPs (AWS) for each subnet: 8187
-
-        <!-- *   2 x AWS Account with Hosts/SubNet: 4094
-        *   1ry VPC + 2ry VPC
-        *   1ry VPC DR + 2ry VPC DR -->
-
+      *   Number of available hosts for each subnet: 8190
+      *   Number of available IPs (AWS) for each subnet: 8187
+    
 !!! example "Individual CIDR Segments (VPCs)"
     :fast_forward: Then each of these are /16 to /19
     
@@ -77,21 +70,25 @@
                 *   Private `10.0.0.0/19, 10.0.32.0/19 and 10.0.64.0/19`
                 *   Public `10.0.96.0/19, 10.0.128.0/19 and 10.0.160.0/19`
 
-## Planned VPCs 
+## Planned Subnets per VPC
 
 Having defined the initial VPC that will be created in the different accounts that were defined, we are going to create
 subnets in each of these VPCs defining Private and Public subnets split among different availability zones:
     
 
-| Subnet address | Netmask       |     Range of addresses      | Hosts |                Assignment                |
-| -------------- | ------------- | :-------------------------: | :---: | :--------------------------------------: |
-| 10.0.0.0/19    | 255.255.224.0 |   10.0.0.0 - 10.0.31.255    | 8190  | 1ry VPC: apps-devstg<br/> AZ: us-east-1a |
-| 10.0.32.0/19   | 255.255.224.0 |   10.0.32.0 - 10.0.63.255   | 8190  | 1ry VPC: apps-devstg<br/> AZ: us-east-1b |
-| 10.0.64.0/19   | 255.255.224.0 |   10.0.64.0 - 10.0.95.255   | 8190  | 1ry VPC: apps-devstg<br/> AZ: us-east-1c |
-| 10.0.96.0/19   | 255.255.224.0 |  10.0.96.0 - 10.0.127.255   | 8190  | 1ry VPC: apps-devstg<br/> AZ: us-east-1a |
-| 10.0.128.0/19  | 255.255.224.0 |  10.0.128.0 - 10.0.159.255  | 8190  | 1ry VPC: apps-devstg<br/> AZ: us-east-1b |
-| 10.0.160.0/19  | 255.255.224.0 | 10.0.160.0 - 10.0.191.0/255 | 8190  | 1ry VPC: apps-devstg<br/> AZ: us-east-1c |
-| 10.0.192.0/19  | 255.255.224.0 |  10.0.192.0 - 10.0.223.255  | 8190  | 1ry VPC: apps-devstg<br/> AZ: us-east-1  |
-| 10.0.224.0/19  | 255.255.224.0 |  10.0.224.0 - 10.0.224.255  | 8190  | 1ry VPC: apps-devstg<br/> AZ: us-east-1  |
+| Subnet address |     Range of addresses      | Hosts |                Assignment                |
+| :------------: | :-------------------------: | :---: | :--------------------------------------: |
+|  10.0.0.0/19   |   10.0.0.0 - 10.0.31.255    | 8190  | 1ry VPC: apps-devstg<br/> AZ: us-east-1a |
+|  10.0.32.0/19  |   10.0.32.0 - 10.0.63.255   | 8190  | 1ry VPC: apps-devstg<br/> AZ: us-east-1b |
+|  10.0.64.0/19  |   10.0.64.0 - 10.0.95.255   | 8190  | 1ry VPC: apps-devstg<br/> AZ: us-east-1c |
+|  10.0.96.0/19  |  10.0.96.0 - 10.0.127.255   | 8190  | 1ry VPC: apps-devstg<br/> AZ: us-east-1a |
+| 10.0.128.0/19  |  10.0.128.0 - 10.0.159.255  | 8190  | 1ry VPC: apps-devstg<br/> AZ: us-east-1b |
+| 10.0.160.0/19  | 10.0.160.0 - 10.0.191.0/255 | 8190  | 1ry VPC: apps-devstg<br/> AZ: us-east-1c |
+| 10.0.192.0/19  |  10.0.192.0 - 10.0.223.255  | 8190  | 1ry VPC: apps-devstg<br/> AZ: us-east-1  |
+| 10.0.224.0/19  |  10.0.224.0 - 10.0.224.255  | 8190  | 1ry VPC: apps-devstg<br/> AZ: us-east-1  |
 
 **Note:** Additional clusters can use their own available VPC space under 10.x.0.0/16.
+
+- [Subnetting reference #1 | Visual Subnet Calculator (https://www.davidc.net/)](https://www.davidc.net/sites/default/subnets/subnets.html?network=10.0.0.0&mask=16&division=15.7231)
+
+- [Subnetting reference #2 | IP Calculator / IP Subnetting (https://jodies.de/)](http://jodies.de/ipcalc?host=10.0.0.0&mask1=16&mask2=19)

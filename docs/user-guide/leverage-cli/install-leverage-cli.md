@@ -40,6 +40,18 @@ To use Leverage CLI you need to install it from the Python Package Index (Pypi).
 $ pip3 install leverage
 ```
 
+###Update Leverage CLI from previous versions
+
+Upgrade to a specific [version](https://github.com/binbashar/leverage/releases).
+``` bash
+$ pip3 install -Iv leverage==1.9.1
+```
+
+Upgrade to the latest stable version
+``` bash
+$ pip3 install --upgrade leverage
+```
+
 ###Verify your Leverage installation
 
 Verify that your Leverage installation was successful by running

@@ -2,7 +2,7 @@
 
 The `terraform` command is a wrapper for a containerized installation of Terraform. It provides the Terraform executable with specific configuration values required by Leverage.
 
-It transparently handles authentication, whether it is Multi-Factor or via Single Sign-On, on behalf of the user in the commands that require it. SSO Authentication takes precedence over MFA when both are active. 
+It transparently handles authentication, whether it is Multi-Factor or via Single Sign-On, on behalf of the user in the commands that require it. SSO Authentication takes precedence over MFA when both are active.
 
 Some commands can only be run at **layer** level and will not run anywhere else in the project.
 
@@ -22,7 +22,7 @@ All arguments given are passed as received to Terraform.
 
 Can only be run at **layer** level if `--layers` is not set, or at **account** or **layers-container-directory** if it is.
 
-[Layout validation](#validate-layout) is performed before actually initializing Terraform unless explicitly indicated against via the `--skip-validation` flag. 
+[Layout validation](#validate-layout) is performed before actually initializing Terraform unless explicitly indicated against via the `--skip-validation` flag.
 
 ### Options
 * `--skip-validation`: Skips layout validation.
@@ -159,7 +159,7 @@ leverage terraform validate
 
 Equivalent to `terraform validate`.
 
-Checks the infrastructure definition's consistency. 
+Checks the infrastructure definition's consistency.
 
 ---
 ## `validate-layout`
@@ -170,6 +170,10 @@ leverage terraform validate-layout
 ```
 
 Check the Terraform backend configuration in the code definition.
+
+
+!!! info "When you first create the backend layer for the first time, the bucket does not exist yet. If the Leverage CLI is used with validations, it will find that the Key does not exist or cannot be created. Thus, there's a need to first create the bucket and then move the "tfstate" file to it using the mentioned flag.""
+
 
 Values checked:
 
@@ -190,17 +194,14 @@ leverage terraform import ADDRESS ID
 
 Equivalent to `terraform import`.
 
-Import the resource with the given ID into the Terraform state at the given ADDRESS. 
+Import the resource with the given ID into the Terraform state at the given ADDRESS.
 
 Can only be run at **layer** level.
 
 !!! info "zsh globbing"
     Zsh users may need to prepend `noglob` to the import command for it to be recognized correctly, as an alternative, square brackets can be escaped as `\[\]`
-    
+
     **Examples:**
-    
-    - Opt-1:  `leverage tf import module.s3_bucket.aws_s3_bucket.this\[0\] s3-bag-data-bucket` 
+
+    - Opt-1:  `leverage tf import module.s3_bucket.aws_s3_bucket.this\[0\] s3-bag-data-bucket`
     - Opt-2:  `noglob leverage tf import module.s3_bucket.aws_s3_bucket.this[0] s3-bag-data-bucket`  
-
-
-

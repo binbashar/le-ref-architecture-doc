@@ -4240,7 +4240,7 @@
 
 <h1 id="command-terraform-tf">Command: <code>terraform</code> | <code>tf</code><a class="headerlink" href="#command-terraform-tf" title="Permanent link"> ¶</a></h1>
 <p>The <code>terraform</code> command is a wrapper for a containerized installation of Terraform. It provides the Terraform executable with specific configuration values required by Leverage.</p>
-<p>It transparently handles authentication, whether it is Multi-Factor or via Single Sign-On, on behalf of the user in the commands that require it. SSO Authentication takes precedence over MFA when both are active. </p>
+<p>It transparently manages authentication, either Multi-Factor or Single Sign-On, on behalf of the user on commands that require it. SSO authentication takes precedence over MFA when both are active.</p>
 <p>Some commands can only be run at <strong>layer</strong> level and will not run anywhere else in the project.</p>
 <p>The command can also be invoked via its shortened version <code>tf</code>.</p>
 <hr />
@@ -4251,7 +4251,7 @@
 <p>Equivalent to <code>terraform init</code>.</p>
 <p>All arguments given are passed as received to Terraform.</p>
 <p>Can only be run at <strong>layer</strong> level if <code>--layers</code> is not set, or at <strong>account</strong> or <strong>layers-container-directory</strong> if it is.</p>
-<p><a href="#validate-layout">Layout validation</a> is performed before actually initializing Terraform unless explicitly indicated against via the <code>--skip-validation</code> flag. </p>
+<p><a href="#validate-layout">Layout validation</a> is performed before actually initializing Terraform unless explicitly indicated against via the <code>--skip-validation</code> flag.</p>
 <h3 id="options">Options<a class="headerlink" href="#options" title="Permanent link"> ¶</a></h3>
 <ul>
 <li><code>--skip-validation</code>: Skips layout validation.</li>
@@ -4353,13 +4353,16 @@
 <div class="highlight"><pre><span></span><code>leverage terraform validate
 </code></pre></div>
 <p>Equivalent to <code>terraform validate</code>.</p>
-<p>Checks the infrastructure definition's consistency. </p>
+<p>Check the infrastructure definition's consistency.</p>
 <hr />
 <h2 id="validate-layout"><code>validate-layout</code><a class="headerlink" href="#validate-layout" title="Permanent link"> ¶</a></h2>
 <h3 id="usage_9">Usage<a class="headerlink" href="#usage_9" title="Permanent link"> ¶</a></h3>
 <div class="highlight"><pre><span></span><code>leverage terraform validate-layout
 </code></pre></div>
 <p>Check the Terraform backend configuration in the code definition.</p>
+<div class="admonition info">
+<p class="admonition-title">When you are setting up the backend layer for the very first time, the S3 bucket does not yet exist. When running validations, Leverage CLI will detect that the S3 Key does not exist or cannot be generated. Therefore, it is necessary to first create the S3 bucket by using the init <code>--skip-validation</code> flag in the initialization process, and then move the "tfstate" file to it.</p>
+</div>
 <p>Values checked:</p>
 <ul>
 <li>Environment name in account configuration</li>
@@ -4374,14 +4377,14 @@
 <div class="highlight"><pre><span></span><code>leverage terraform import ADDRESS ID
 </code></pre></div>
 <p>Equivalent to <code>terraform import</code>.</p>
-<p>Import the resource with the given ID into the Terraform state at the given ADDRESS. </p>
+<p>Import the resource with the given ID into the Terraform state at the given ADDRESS.</p>
 <p>Can only be run at <strong>layer</strong> level.</p>
 <div class="admonition info">
 <p class="admonition-title">zsh globbing</p>
 <p>Zsh users may need to prepend <code>noglob</code> to the import command for it to be recognized correctly, as an alternative, square brackets can be escaped as <code>\[\]</code></p>
 <p><strong>Examples:</strong></p>
 <ul>
-<li>Opt-1:  <code>leverage tf import module.s3_bucket.aws_s3_bucket.this\[0\] s3-bag-data-bucket</code> </li>
+<li>Opt-1:  <code>leverage tf import module.s3_bucket.aws_s3_bucket.this\[0\] s3-bag-data-bucket</code></li>
 <li>Opt-2:  <code>noglob leverage tf import module.s3_bucket.aws_s3_bucket.this[0] s3-bag-data-bucket</code>  </li>
 </ul>
 </div>

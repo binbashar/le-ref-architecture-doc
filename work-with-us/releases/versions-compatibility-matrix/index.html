@@ -3751,11 +3751,11 @@
 
 
 <h1 id="leverage-releases-versioning">Leverage Releases &amp; Versioning<a class="headerlink" href="#leverage-releases-versioning" title="Permanent link"> ¶</a></h1>
-<p>Binbash Leverage™ and its components intends to be backward compatible, but due to the complex ecosystems of tools we 
-manage this is not always possible. </p>
-<p>It is always recommended using the latest version of the <a href="https://pypi.org/project/leverage/">Leverage cli</a> with the latest versions of the 
-<a href="https://github.com/binbashar/le-tf-infra-aws/releases">Reference Architecture for AWS</a>. In case that's 
-not possible we always recommend pinning versions to favor stability and doing controlled updates 
+<p>Binbash Leverage™ and its components intends to be backward compatible, but due to the complex ecosystems of tools we
+manage this is not always possible.</p>
+<p>It is always recommended using the latest version of the <a href="https://pypi.org/project/leverage/">Leverage CLI</a> with the latest versions of the
+<a href="https://github.com/binbashar/le-tf-infra-aws/releases">Reference Architecture for AWS</a>. In case that's
+not possible we always recommend pinning versions to favor stability and doing controlled updates
 component by component based on the below presented compatibility matrix table.</p>
 <h2 id="compatibility-matrix">Compatibility Matrix<a class="headerlink" href="#compatibility-matrix" title="Permanent link"> ¶</a></h2>
 <table>
@@ -3763,63 +3763,31 @@ component by component based on the below presented compatibility matrix table.<
     <th>Leverage Ref Arch version</th>
     <th>Leverage CLI</th>
     <th>Leverage Toolbox<br /><small>image</small><br /><small>version</small></th>
-    <th>Terraform</th>
-    <th>Terraform AWS provider</th>
-    <th>K8s EKS</th>
   </tr>
+
   <tr>
-    <td rowspan="3">v1.11.0</td>
+    <td rowspan="3">v1.12.0</td>
     <td rowspan="2">v1.9.x</td>
-    <td>`binbash/leverage-toolbox`<br /> ==1.3.5-0.0.x</td>
-    <td>1.3.5</td>
-    <td>3.27.x, 4.x.y</td>
-    <td>1.20-1.22</td>
+    <td>`binbash/leverage-toolbox`<br /> ==1.3.5-0.0.2</td>
   </tr>
   <tr>
-    <td>`binbash/leverage-toolbox`<br /> ==1.2.7-0.1.x</td>
-    <td>1.2.7</td>
-    <td>3.27.x, 4.x.y</td>
-    <td>1.20-1.22</td>
+    <td>`binbash/leverage-toolbox`<br /> ==1.2.7-0.1.1</td>
   </tr>
   <tr>
     <td>v1.8.x</td>
     <td>`binbash/leverage-toolbox`<br /> ==1.2.7-0.0.x</td>
-    <td>1.2.7</td>
-    <td>3.27.x, 4.x.y</td>
-    <td>1.20-1.22</td>
   </tr>
   <tr>
     <td>v1.8.1</td>
     <td>v1.7.2</td>
     <td>`binbash/terraform-awscli-slim`<br /> >=1.1.9</td>
-    <td>1.1.9</td>
-    <td>3.27.x, 4.x.y</td>
-    <td>1.20-1.22</td>
   </tr>
   <tr>
     <td>v1.7.2</td>
     <td>v1.6.2</td>
     <td>`binbash/terraform-awscli-slim`<br /> >=1.1.3</td>
-    <td>1.1.3</td>
-    <td>3.27.x, 4.x.y</td>
-    <td>1.17-1.19</td>
   </tr>
-  <tr>
-    <td><del>v1.3.73</del></td>
-    <td>v1.2.0</td>
-    <td>`binbash/terraform-awscli-slim`<br /> >=1.0.x</td>
-    <td>1.0.x</td>
-    <td>3.27.x</td>
-    <td>1.17</td>
-  </tr>
-  <tr>
-    <td><del>v1.3.25</del></td>
-    <td>v1.0.10</td>
-    <td>`binbash/terraform-awscli-slim`<br /> >=0.14.x</td>
-    <td>0.14.x</td>
-    <td>3.27.x</td>
-    <td>1.17</td>
-  </tr>
+
 </table>
 
 <p>Releases which are <del>crossed out</del> <em>should</em> work, but are unlikely to get security or other fixes.
@@ -3827,8 +3795,8 @@ We suggest they should be upgraded soon.</p>
 <h2 id="release-schedule">Release Schedule<a class="headerlink" href="#release-schedule" title="Permanent link"> ¶</a></h2>
 <p>This project does not follow the <strong>Terraform</strong> or other release schedule. Leverage aims to
 provide a reliable deployment and operations experience for the <a href="https://leverage.binbash.com.ar/how-it-works/ref-architecture/">Binbash Leverage™ Reference Architecture
-for AWS</a>, and typically releases about a quarter after 
-the corresponding Terraform release. This time allows for the Terraform project to resolve any issues introduced 
+for AWS</a>, and typically releases about a quarter after
+the corresponding Terraform release. This time allows for the Terraform project to resolve any issues introduced
 by the new version and ensures that we can support the latest features.</p>
 <h2 id="read-more">Read more<a class="headerlink" href="#read-more" title="Permanent link"> ¶</a></h2>
 <div class="admonition info">

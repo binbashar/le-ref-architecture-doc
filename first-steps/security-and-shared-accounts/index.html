@@ -3882,6 +3882,9 @@
 <div class="highlight"><pre><span></span><code>leverage terraform init --skip-validation
 leverage terraform apply
 </code></pre></div>
+<div class="admonition info">
+<p class="admonition-title">More information on <a href="../../user-guide/leverage-cli/reference/terraform#init"><code>terraform init</code></a> and <a href="../../user-guide/leverage-cli/reference/terraform#apply"><code>terraform apply</code></a></p>
+</div>
 <p>Now, to push the local <code>.tfstate</code> to the bucket, uncomment the <code>backend</code> section for the <code>terraform</code> configuration in <code>security/base-tf-backend/config.tf</code></p>
 <div class="highlight"><pre><span></span><code><span class="w">  </span><span class="kr">backend</span><span class="w"> </span><span class="nv">&quot;s3&quot;</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
 <span class="w">    </span><span class="na">key</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;security/tf-backend/terraform.tfstate&quot;</span><span class="w"></span>
@@ -3921,6 +3924,9 @@ leverage terraform apply
 <div class="highlight"><pre><span></span><code>leverage terraform init --skip-validation
 leverage terraform apply
 </code></pre></div>
+<div class="admonition info">
+<p class="admonition-title">More information on <a href="../../user-guide/leverage-cli/reference/terraform#init"><code>terraform init</code></a> and <a href="../../user-guide/leverage-cli/reference/terraform#apply"><code>terraform apply</code></a></p>
+</div>
 <p>Now, to push the local <code>.tfstate</code> to the bucket, uncomment the <code>backend</code> section for the <code>terraform</code> configuration in <code>shared/base-tf-backend/config.tf</code></p>
 <div class="highlight"><pre><span></span><code><span class="w">  </span><span class="kr">backend</span><span class="w"> </span><span class="nv">&quot;s3&quot;</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
 <span class="w">    </span><span class="na">key</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;shared/tf-backend/terraform.tfstate&quot;</span><span class="w"></span>

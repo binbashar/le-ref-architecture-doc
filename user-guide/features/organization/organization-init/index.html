@@ -3884,7 +3884,7 @@ email: <code>aws@binbash.com.ar</code>) <a href="https://docs.aws.amazon.com/med
 </figcaption></p>
 </li>
 <li>
-<p>Set your IAM credentials in the machine your're going to exec the <code>leverage cli</code> (remember this are the 
+<p>Set your IAM credentials in the machine your're going to exec the <code>Leverage CLI</code> (remember this are the
 <code>mgmt-org-admin</code> temporary user credentials shown in the screenshot immediately above).</p>
 </li>
 <li>
@@ -3906,9 +3906,9 @@ email: <code>aws@binbash.com.ar</code>) <a href="https://docs.aws.amazon.com/med
 </ul>
 </li>
 <li>
-<p>The AWS Organization from the Reference Architecture 
-<a href="https://github.com/binbashar/le-tf-infra-aws/tree/master/root/global/organizations">/le-tf-infra-aws/root/global/organizations</a> 
-will be orchestrated using the <code>leverage cli</code> following the 
+<p>The AWS Organization from the Reference Architecture
+<a href="https://github.com/binbashar/le-tf-infra-aws/tree/master/root/global/organizations">/le-tf-infra-aws/root/global/organizations</a>
+will be orchestrated using the <code>Leverage CLI</code> following the
 <a href="../../base-workflow/repo-le-tf-infra/#steps">standard workflow</a>.</p>
 <ul>
 <li><img alt="📒" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f4d2.svg" title=":ledger:" /> the Management account has to be imported into de the code.</li>
@@ -3925,8 +3925,8 @@ join your organization.</p>
 <p class="admonition-title">AWS Organization setup post-steps</p>
 <ol>
 <li>
-<p>Following the <a href="../../identities/identities/">doc</a> orchestrate vía the <code>leverage cli</code> workflow the Mgmt 
-Account IAM layer (<code>base-identities</code>) with the admin IAM Users (consider this/these users will have admin privileges over the 
+<p>Following the <a href="../../identities/identities/">doc</a> orchestrate vía the <code>Leverage CLI</code> workflow the Mgmt
+Account IAM layer (<code>base-identities</code>) with the admin IAM Users (consider this/these users will have admin privileges over the
 <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_access.html">entire AWS Org assuming the <code>OrganizationAccountAccessRole</code></a>)
 -&gt; <a href="https://github.com/binbashar/le-tf-infra-aws/tree/master/root/global/base-identities">le-tf-infra-aws/root/global/base-identities</a></p>
 <ul>
@@ -3947,9 +3947,9 @@ at the below presented config files, as well as any other necessary setup.</p>
 </ul>
 </li>
 <li>
-<p>Setup (code and config files) and Orchestrate the 
-<a href="https://github.com/binbashar/le-tf-infra-aws/tree/master/security/global/base-identities"><code>/security/global/base-identities</code></a> 
-layer via <code>leverage cli</code> on your security account
+<p>Setup (code and config files) and Orchestrate the
+<a href="https://github.com/binbashar/le-tf-infra-aws/tree/master/security/global/base-identities"><code>/security/global/base-identities</code></a>
+layer via <code>Leverage CLI</code> on your security account
 for consolidated and centralized User Mgmt and access to the AWS Org.    </p>
 </li>
 <li>

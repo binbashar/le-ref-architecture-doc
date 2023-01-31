@@ -3835,7 +3835,7 @@ leverage terraform apply
 </code></pre></div>
 <p>All <code>apply</code> commands will prompt for confirmation, answer <code>yes</code> when this happens.</p>
 <div class="admonition info">
-<p class="admonition-title">More information on <a href="../../user-guide/base-workflow/leverage-cli/reference/terraform#init"><code>terraform init</code></a> and <a href="../../user-guide/base-workflow/leverage-cli/reference/terraform#apply"><code>terraform apply</code></a></p>
+<p class="admonition-title">More information on <a href="../../user-guide/leverage-cli/reference/terraform#init"><code>terraform init</code></a> and <a href="../../user-guide/leverage-cli/reference/terraform#apply"><code>terraform apply</code></a></p>
 </div>
 <p>Now, the infrastructure for the Terraform state management is created. The next step is to push the local <code>.tfstate</code> to the bucket. To do this, uncomment the <code>backend</code> section for the <code>terraform</code> configuration in <code>management/base-tf-backend/config.tf</code></p>
 <div class="highlight"><pre><span></span><code><span class="w">  </span><span class="kr">backend</span><span class="w"> </span><span class="nv">&quot;s3&quot;</span><span class="w"> </span><span class="p">{</span><span class="w"></span>

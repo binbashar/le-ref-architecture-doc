@@ -31,4 +31,4 @@ described in the [/user-guide/features/organization/organization-init](./organiz
         TF_RM_RESOURCE                    := "aws_organizations_organizational_unit.bbl_apps_devstg"
         ```   
         - Then from the root context -> `cd ./root/organization make import`
-        - :ledger: **TODO** THIS STEP MUST BE UPDATED WITH THE `leverage cli` WORKFLOW
+        - :ledger: **TODO** THIS STEP MUST BE UPDATED WITH THE `Leverage CLI` WORKFLOW

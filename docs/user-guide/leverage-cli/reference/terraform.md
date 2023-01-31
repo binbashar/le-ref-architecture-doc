@@ -2,7 +2,7 @@
 
 The `terraform` command is a wrapper for a containerized installation of Terraform. It provides the Terraform executable with specific configuration values required by Leverage.
 
-It transparently handles authentication, whether it is Multi-Factor or via Single Sign-On, on behalf of the user in the commands that require it. SSO Authentication takes precedence over MFA when both are active.
+It transparently manages authentication, either Multi-Factor or Single Sign-On, on behalf of the user on commands that require it. SSO authentication takes precedence over MFA when both are active.
 
 Some commands can only be run at **layer** level and will not run anywhere else in the project.
 
@@ -159,7 +159,7 @@ leverage terraform validate
 
 Equivalent to `terraform validate`.
 
-Checks the infrastructure definition's consistency.
+Check the infrastructure definition's consistency.
 
 ---
 ## `validate-layout`
@@ -172,7 +172,7 @@ leverage terraform validate-layout
 Check the Terraform backend configuration in the code definition.
 
 
-!!! info "When you first create the backend layer for the first time, the bucket does not exist yet. If the Leverage CLI is used with validations, it will find that the Key does not exist or cannot be created. Thus, there's a need to first create the bucket and then move the "tfstate" file to it using the mentioned flag.""
+!!! info "When you are setting up the backend layer for the very first time, the S3 bucket does not yet exist. When running validations, Leverage CLI will detect that the S3 Key does not exist or cannot be generated. Therefore, it is necessary to first create the S3 bucket by using the init `--skip-validation` flag in the initialization process, and then move the "tfstate" file to it."
 
 
 Values checked:

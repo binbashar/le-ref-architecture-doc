@@ -7,11 +7,11 @@
     **Reference Architecture for AWS** has been designed under optimal configs for the most
     popular modern web and mobile applications needs. 
     Its design is fully based on AWS [“Well Architected Framework”](../../work-with-us/support.md).
-    
-    Reusing the [**Leverage Infrastructure as Code (IaC) Library**](../infra-as-code-library/infra-as-code-library.md) via 
-    [**leverage cli**](https://github.com/binbashar/leverage) to rapidly implement it. 
-    
-    It will solve your entire infrastructure and will grant you complete control of the source 
+
+    Reusing the [**Leverage Infrastructure as Code (IaC) Library**](../infra-as-code-library/infra-as-code-library.md) via
+    [**Leverage CLI**](https://github.com/binbashar/leverage) to rapidly implement it.
+
+    It will solve your entire infrastructure and will grant you complete control of the source
     code and of course you'll be able to run it without us.
 
 #### Structural concepts

@@ -1,10 +1,10 @@
 # Workflow
 
 !!! info "Leverage CLI"
-    - We rely on the [**`leverage cli`**](../leverage-cli/install-leverage-cli.md) as a wrapper to run ansible commands
+    - We rely on the [**`Leverage CLI`**](../leverage-cli/install-leverage-cli.md) as a wrapper to run ansible commands
     that consistently use the same config files and secrets.
-    
-    - You are encouraged to read more about our [**`leverage cli`** how it works](../../how-it-works/leverage-cli/index.md) 
+
+    - You are encouraged to read more about our [**`Leverage CLI`** how it works](../../how-it-works/leverage-cli/index.md)
     section to better understand it.
 
 !!! example "![leverage-ansible](../../assets/images/logos/ansible.png "Leverage"){: style="width:20px"} [Ansible Infra](https://github.com/binbashar/le-ansible-infra)"

@@ -31,8 +31,8 @@
 ## Networking - IP Addressing
 
 !!! example "Starting CIDR Segment (AWS Org)"
-    * [x] AWS Org IP Addressing calculation is presented below based on segment `172.16.0.0.0/12`
-    * [x] We started from `172.16.0.0.0/12` and subnetted to `/20`
+    * [x] AWS Org IP Addressing calculation is presented below based on segment `172.16.0.0/12`
+    * [x] We started from `172.16.0.0/12` and subnetted to `/20`
     * [x] Resulting in **Total Subnets: 256**
         *   2 x AWS Account with Hosts/SubNet: 4094
         *   1ry VPC + 2ry VPC
@@ -66,38 +66,26 @@
                 *   Private `172.18.64.0/24, 172.18.66.0/24 and 172.18.68.0/24`
                 *   Public `172.18.65.0/24, 172.18.67.0/24 and 172.18.69.0/24`
 
-## Planned VPCs 
+## Planned Subnets per VPC
 
 Having defined the initial VPC that will be created in the different accounts that were defined, we are going to create
 subnets in each of these VPCs defining Private and Public subnets split among different availability zones:
     
-| Subnet address   | Netmask       | Range of addresses             | Hosts | Assignment             |
-|------------------|---------------|--------------------------------|-------|------------------------|
-| 172.18.0.0/20    | 255.255.240.0 | 172.18.0.0  - 172.18.15.255    | 4094  | 1ry VPC: shared        |
-| 172.18.16.0/20   | 255.255.240.0 | 172.18.16.0  - 172.18.31.255   | 4094  | 2ry VPC: shared        |
-| 172.18.32.0/20   | 255.255.240.0 | 172.18.32.0  - 172.18.47.255   | 4094  | 1ry VPC DR: shared     |
-| 172.18.48.0/20   | 255.255.240.0 | 172.18.48.0  - 172.18.63.255   | 4094  | 2ry VPC DR: shared     |
-| 172.18.64.0/20   | 255.255.240.0 | 172.18.64.0  - 172.18.79.255   | 4094  | 1ry VPC: apps-devstg   |
-| 172.18.80.0/20   | 255.255.240.0 | 172.18.80.0  - 172.18.95.255   | 4094  | 2ry VPC: apps-devstg   |
-| 172.18.96.0/20   | 255.255.240.0 | 172.18.96.0  - 172.18.111.255  | 4094  | 1ry VPC DR: apps-devstg|
-| 172.18.112.0/20  | 255.255.240.0 | 172.18.112.0  - 172.18.127.255 | 4094  | 2ry VPC DR: apps-devstg|
-| 172.18.128.0/20  | 255.255.240.0 | 172.18.128.0  - 172.18.143.255 | 4094  | 1ry VPC: apps-prd      |
-| 172.18.144.0/20  | 255.255.240.0 | 172.18.144.0  - 172.18.159.255 | 4094  | 2ry VPC: apps-prd      |
-| 172.18.160.0/20  | 255.255.240.0 | 172.18.160.0  - 172.18.175.255 | 4094  | 1ry VPC DR: apps-prd   |
-| 172.18.176.0/20  | 255.255.240.0 | 172.18.176.0  - 172.18.191.255 | 4094  | 2ry VPC DR: apps-prd   |
+| Subnet address  |      Range of addresses       | Hosts |       Assignment        |
+| :-------------: | :---------------------------: | :---: | :---------------------: |
+|  172.18.0.0/20  |  172.18.0.0 - 172.18.15.255   | 4094  |     1ry VPC: shared     |
+| 172.18.16.0/20  |  172.18.16.0 - 172.18.31.255  | 4094  |     2ry VPC: shared     |
+| 172.18.32.0/20  |  172.18.32.0 - 172.18.47.255  | 4094  |   1ry VPC DR: shared    |
+| 172.18.48.0/20  |  172.18.48.0 - 172.18.63.255  | 4094  |   2ry VPC DR: shared    |
+| 172.18.64.0/20  |  172.18.64.0 - 172.18.79.255  | 4094  |  1ry VPC: apps-devstg   |
+| 172.18.80.0/20  |  172.18.80.0 - 172.18.95.255  | 4094  |  2ry VPC: apps-devstg   |
+| 172.18.96.0/20  | 172.18.96.0 - 172.18.111.255  | 4094  | 1ry VPC DR: apps-devstg |
+| 172.18.112.0/20 | 172.18.112.0 - 172.18.127.255 | 4094  | 2ry VPC DR: apps-devstg |
+| 172.18.128.0/20 | 172.18.128.0 - 172.18.143.255 | 4094  |    1ry VPC: apps-prd    |
+| 172.18.144.0/20 | 172.18.144.0 - 172.18.159.255 | 4094  |    2ry VPC: apps-prd    |
+| 172.18.160.0/20 | 172.18.160.0 - 172.18.175.255 | 4094  |  1ry VPC DR: apps-prd   |
+| 172.18.176.0/20 | 172.18.176.0 - 172.18.191.255 | 4094  |  2ry VPC DR: apps-prd   |
 
 ### Considerations
 
-!!! attention "Design considerations"
-    * :ledger: **AWS EKS:** Docker runs in the 172.17.0.0/16 CIDR range in Amazon EKS clusters. 
-      We recommend that your cluster's VPC subnets do not overlap this range. Otherwise, you will 
-      receive the following error:
-      ```
-      Error: : error upgrading connection: error dialing backend: dial tcp 172.17.nn.nn:10250: 
-      getsockopt: no route to host
-      ```
-      Read more: [AWS EKS network requirements](https://docs.aws.amazon.com/eks/latest/userguide/network_reqs.html)   
-    * :ledger: **Reserved IP Addresses**
-    The first four IP addresses and the last IP address in each subnet CIDR block are not available for you to use, 
-    and cannot be assigned to an instance. For example, in a subnet with CIDR block 10.0.0.0/24, the following five IP 
-    addresses are reserved. For more [AWS VPC Subnets IP addressing](https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Subnets.html#vpc-sizing-ipv4)
+- Kubernetes on EKS General Requirements for Network Layer: [**K8s EKS Networking | VPC Adressing**](../compute/k8s-eks/vpc-adressing.md)

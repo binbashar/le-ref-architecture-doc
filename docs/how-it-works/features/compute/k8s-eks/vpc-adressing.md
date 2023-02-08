@@ -45,8 +45,8 @@
 
 ## Networking - IP Addressing
 
-!!! example "Starting CIDR Segment (AWS Org)"
-    * [x] AWS Org IP Addressing calculation is presented below based on segment `10.0.0.0/16` (starts at /16 due to AWS VPC limits)
+!!! example "Starting CIDR Segment (AWS EKS clusters)"
+    * [x] AWS EKS clusters IP Addressing calculation is presented below based on segment `10.0.0.0/16` (starts at /16 due to AWS VPC limits)
     * [x] We started from `10.0.0.0/16` and subnetted to `/19`
     * [x] Resulting in **Total Subnets: 8**
       *   Number of available hosts for each subnet: 8190
@@ -55,7 +55,7 @@
 !!! example "Individual CIDR Segments (VPCs)"
     :fast_forward: Then each of these are /16 to /19
     
-    *   [x] Considering the whole Starting CIDR Segment (AWS Org) before declared, we'll start at `10.0.0.0/16`
+    *   [x] Considering the whole Starting CIDR Segment (AWS EKS clusters) before declared, we'll start at `10.0.0.0/16`
         *   **apps-devstg**
             *   1ry VPC CIDR: `10.0.0.0/16`
             *   1ry VPC DR CIDR: `10.20.0.0/16`

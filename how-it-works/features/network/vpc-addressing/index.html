@@ -1331,11 +1331,11 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#planned-vpcs" class="md-nav__link">
-    Planned VPCs
+  <a href="#planned-subnets-per-vpc" class="md-nav__link">
+    Planned Subnets per VPC
   </a>
   
-    <nav class="md-nav" aria-label="Planned VPCs">
+    <nav class="md-nav" aria-label="Planned Subnets per VPC">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -1495,10 +1495,57 @@
   
   
   
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_4_9_3" type="checkbox" id="__nav_3_4_9_3" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3_4_9_3">
+          K8s EKS
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="K8s EKS" data-md-level="4">
+        <label class="md-nav__title" for="__nav_3_4_9_3">
+          <span class="md-nav__icon md-icon"></span>
+          K8s EKS
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
     <li class="md-nav__item">
-      <a href="../../compute/k8s-eks/" class="md-nav__link">
-        K8s EKS
+      <a href="../../compute/k8s-eks/overview/" class="md-nav__link">
+        Overview
       </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../compute/k8s-eks/vpc-adressing/" class="md-nav__link">
+        VPC Adressing
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
     </li>
   
 
@@ -3741,11 +3788,11 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#planned-vpcs" class="md-nav__link">
-    Planned VPCs
+  <a href="#planned-subnets-per-vpc" class="md-nav__link">
+    Planned Subnets per VPC
   </a>
   
-    <nav class="md-nav" aria-label="Planned VPCs">
+    <nav class="md-nav" aria-label="Planned Subnets per VPC">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -3811,8 +3858,8 @@ use cases</p>
 <div class="admonition example">
 <p class="admonition-title">Starting CIDR Segment (AWS Org)</p>
 <ul class="task-list">
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> AWS Org IP Addressing calculation is presented below based on segment <code>172.16.0.0.0/12</code></li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> We started from <code>172.16.0.0.0/12</code> and subnetted to <code>/20</code></li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> AWS Org IP Addressing calculation is presented below based on segment <code>172.16.0.0/12</code></li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> We started from <code>172.16.0.0/12</code> and subnetted to <code>/20</code></li>
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Resulting in <strong>Total Subnets: 256</strong><ul>
 <li>2 x AWS Account with Hosts/SubNet: 4094</li>
 <li>1ry VPC + 2ry VPC</li>
@@ -3867,123 +3914,97 @@ use cases</p>
 </li>
 </ul>
 </div>
-<h2 id="planned-vpcs">Planned VPCs<a class="headerlink" href="#planned-vpcs" title="Permanent link"> ¶</a></h2>
+<h2 id="planned-subnets-per-vpc">Planned Subnets per VPC<a class="headerlink" href="#planned-subnets-per-vpc" title="Permanent link"> ¶</a></h2>
 <p>Having defined the initial VPC that will be created in the different accounts that were defined, we are going to create
 subnets in each of these VPCs defining Private and Public subnets split among different availability zones:</p>
 <table>
 <thead>
 <tr>
-<th>Subnet address</th>
-<th>Netmask</th>
-<th>Range of addresses</th>
-<th>Hosts</th>
-<th>Assignment</th>
+<th align="center">Subnet address</th>
+<th align="center">Range of addresses</th>
+<th align="center">Hosts</th>
+<th align="center">Assignment</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>172.18.0.0/20</td>
-<td>255.255.240.0</td>
-<td>172.18.0.0  - 172.18.15.255</td>
-<td>4094</td>
-<td>1ry VPC: shared</td>
+<td align="center">172.18.0.0/20</td>
+<td align="center">172.18.0.0 - 172.18.15.255</td>
+<td align="center">4094</td>
+<td align="center">1ry VPC: shared</td>
 </tr>
 <tr>
-<td>172.18.16.0/20</td>
-<td>255.255.240.0</td>
-<td>172.18.16.0  - 172.18.31.255</td>
-<td>4094</td>
-<td>2ry VPC: shared</td>
+<td align="center">172.18.16.0/20</td>
+<td align="center">172.18.16.0 - 172.18.31.255</td>
+<td align="center">4094</td>
+<td align="center">2ry VPC: shared</td>
 </tr>
 <tr>
-<td>172.18.32.0/20</td>
-<td>255.255.240.0</td>
-<td>172.18.32.0  - 172.18.47.255</td>
-<td>4094</td>
-<td>1ry VPC DR: shared</td>
+<td align="center">172.18.32.0/20</td>
+<td align="center">172.18.32.0 - 172.18.47.255</td>
+<td align="center">4094</td>
+<td align="center">1ry VPC DR: shared</td>
 </tr>
 <tr>
-<td>172.18.48.0/20</td>
-<td>255.255.240.0</td>
-<td>172.18.48.0  - 172.18.63.255</td>
-<td>4094</td>
-<td>2ry VPC DR: shared</td>
+<td align="center">172.18.48.0/20</td>
+<td align="center">172.18.48.0 - 172.18.63.255</td>
+<td align="center">4094</td>
+<td align="center">2ry VPC DR: shared</td>
 </tr>
 <tr>
-<td>172.18.64.0/20</td>
-<td>255.255.240.0</td>
-<td>172.18.64.0  - 172.18.79.255</td>
-<td>4094</td>
-<td>1ry VPC: apps-devstg</td>
+<td align="center">172.18.64.0/20</td>
+<td align="center">172.18.64.0 - 172.18.79.255</td>
+<td align="center">4094</td>
+<td align="center">1ry VPC: apps-devstg</td>
 </tr>
 <tr>
-<td>172.18.80.0/20</td>
-<td>255.255.240.0</td>
-<td>172.18.80.0  - 172.18.95.255</td>
-<td>4094</td>
-<td>2ry VPC: apps-devstg</td>
+<td align="center">172.18.80.0/20</td>
+<td align="center">172.18.80.0 - 172.18.95.255</td>
+<td align="center">4094</td>
+<td align="center">2ry VPC: apps-devstg</td>
 </tr>
 <tr>
-<td>172.18.96.0/20</td>
-<td>255.255.240.0</td>
-<td>172.18.96.0  - 172.18.111.255</td>
-<td>4094</td>
-<td>1ry VPC DR: apps-devstg</td>
+<td align="center">172.18.96.0/20</td>
+<td align="center">172.18.96.0 - 172.18.111.255</td>
+<td align="center">4094</td>
+<td align="center">1ry VPC DR: apps-devstg</td>
 </tr>
 <tr>
-<td>172.18.112.0/20</td>
-<td>255.255.240.0</td>
-<td>172.18.112.0  - 172.18.127.255</td>
-<td>4094</td>
-<td>2ry VPC DR: apps-devstg</td>
+<td align="center">172.18.112.0/20</td>
+<td align="center">172.18.112.0 - 172.18.127.255</td>
+<td align="center">4094</td>
+<td align="center">2ry VPC DR: apps-devstg</td>
 </tr>
 <tr>
-<td>172.18.128.0/20</td>
-<td>255.255.240.0</td>
-<td>172.18.128.0  - 172.18.143.255</td>
-<td>4094</td>
-<td>1ry VPC: apps-prd</td>
+<td align="center">172.18.128.0/20</td>
+<td align="center">172.18.128.0 - 172.18.143.255</td>
+<td align="center">4094</td>
+<td align="center">1ry VPC: apps-prd</td>
 </tr>
 <tr>
-<td>172.18.144.0/20</td>
-<td>255.255.240.0</td>
-<td>172.18.144.0  - 172.18.159.255</td>
-<td>4094</td>
-<td>2ry VPC: apps-prd</td>
+<td align="center">172.18.144.0/20</td>
+<td align="center">172.18.144.0 - 172.18.159.255</td>
+<td align="center">4094</td>
+<td align="center">2ry VPC: apps-prd</td>
 </tr>
 <tr>
-<td>172.18.160.0/20</td>
-<td>255.255.240.0</td>
-<td>172.18.160.0  - 172.18.175.255</td>
-<td>4094</td>
-<td>1ry VPC DR: apps-prd</td>
+<td align="center">172.18.160.0/20</td>
+<td align="center">172.18.160.0 - 172.18.175.255</td>
+<td align="center">4094</td>
+<td align="center">1ry VPC DR: apps-prd</td>
 </tr>
 <tr>
-<td>172.18.176.0/20</td>
-<td>255.255.240.0</td>
-<td>172.18.176.0  - 172.18.191.255</td>
-<td>4094</td>
-<td>2ry VPC DR: apps-prd</td>
+<td align="center">172.18.176.0/20</td>
+<td align="center">172.18.176.0 - 172.18.191.255</td>
+<td align="center">4094</td>
+<td align="center">2ry VPC DR: apps-prd</td>
 </tr>
 </tbody>
 </table>
 <h3 id="considerations">Considerations<a class="headerlink" href="#considerations" title="Permanent link"> ¶</a></h3>
-<div class="admonition attention">
-<p class="admonition-title">Design considerations</p>
 <ul>
-<li><img alt="📒" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f4d2.svg" title=":ledger:" /> <strong>AWS EKS:</strong> Docker runs in the 172.17.0.0/16 CIDR range in Amazon EKS clusters. 
-  We recommend that your cluster's VPC subnets do not overlap this range. Otherwise, you will 
-  receive the following error:
-  <div class="highlight"><pre><span></span><code>Error: : error upgrading connection: error dialing backend: dial tcp 172.17.nn.nn:10250: 
-getsockopt: no route to host
-</code></pre></div>
-  Read more: <a href="https://docs.aws.amazon.com/eks/latest/userguide/network_reqs.html">AWS EKS network requirements</a>   </li>
-<li><img alt="📒" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f4d2.svg" title=":ledger:" /> <strong>Reserved IP Addresses</strong>
-The first four IP addresses and the last IP address in each subnet CIDR block are not available for you to use, 
-and cannot be assigned to an instance. For example, in a subnet with CIDR block 10.0.0.0/24, the following five IP 
-addresses are reserved. For more <a href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Subnets.html#vpc-sizing-ipv4">AWS VPC Subnets IP addressing</a></li>
+<li>Kubernetes on EKS General Requirements for Network Layer: <a href="../../compute/k8s-eks/vpc-adressing/"><strong>K8s EKS Networking | VPC Adressing</strong></a></li>
 </ul>
-</div>
 
               
             </article>

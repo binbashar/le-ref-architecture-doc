@@ -92,3 +92,7 @@ subnets in each of these VPCs defining Private and Public subnets split among di
 - [Subnetting reference #1 | Visual Subnet Calculator (https://www.davidc.net/)](https://www.davidc.net/sites/default/subnets/subnets.html?network=10.0.0.0&mask=16&division=15.7231)
 
 - [Subnetting reference #2 | IP Calculator / IP Subnetting (https://jodies.de/)](http://jodies.de/ipcalc?host=10.0.0.0&mask1=16&mask2=19)
+
+## Read More
+!!! info "EKS Reference Architecture Specs" 
+    In case you would like to further understand the different tech specs and configs for this Ref Arch you could find some details like at the [Features/Compute/K8s EKS](./overview.md)

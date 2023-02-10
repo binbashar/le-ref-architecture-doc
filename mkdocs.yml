@@ -204,7 +204,9 @@ nav:
       - Compute:
         - Overview: "how-it-works/features/compute/overview.md"
         - K8s Kops: "how-it-works/features/compute/k8s-kops.md"
-        - K8s EKS: "how-it-works/features/compute/k8s-eks.md"
+        - K8s EKS:
+          - Overview: "how-it-works/features/compute/k8s-eks/overview.md"
+          - VPC Adressing: "how-it-works/features/compute/k8s-eks/vpc-adressing.md"
         - K8s Service Mesh: "how-it-works/features/compute/k8s-service-mesh.md"
         - Serverless: "how-it-works/features/compute/serverless.md"
         - Tools: "how-it-works/features/compute/tools.md"
@@ -256,7 +258,10 @@ nav:
           - project: "user-guide/leverage-cli/reference/project.md"
           - credentials: "user-guide/leverage-cli/reference/credentials.md"
           - aws: "user-guide/leverage-cli/reference/aws.md"
-          - terraform: "user-guide/leverage-cli/reference/terraform.md"
+          - terraform:
+              - commands: "user-guide/leverage-cli/reference/terraform.md"
+              - layers: "user-guide/leverage-cli/reference/terraform/layers.md"
+          - tfautomv: "user-guide/leverage-cli/reference/tfautomv.md"
           - run: "user-guide/leverage-cli/reference/run.md"
       - Extending Leverage:
         - Overview: "user-guide/leverage-cli/extending-leverage/extending.md"

@@ -40,6 +40,18 @@ To use Leverage CLI you need to install it from the Python Package Index (Pypi).
 $ pip3 install leverage
 ```
 
+###Update Leverage CLI from previous versions
+
+Upgrade to a specific [version](https://github.com/binbashar/leverage/releases).
+``` bash
+$ pip3 install -Iv leverage==1.9.1
+```
+
+Upgrade to the latest stable version
+``` bash
+$ pip3 install --upgrade leverage
+```
+
 ###Verify your Leverage installation
 
 Verify that your Leverage installation was successful by running
@@ -55,14 +67,16 @@ Options:
   -l, --list-tasks     List available tasks to run.
   -v, --verbose        Increase output verbosity.
   --version            Show the version and exit.
-  -h, --help           Show this message and exit.
+  --help               Show this message and exit.
 
 Commands:
+  aws          Run AWS CLI commands in a custom containerized environment.
   credentials  Manage AWS cli credentials.
   project      Manage a Leverage project.
   run          Perform specified task(s) and all of its dependencies.
   terraform    Run Terraform commands in a custom containerized...
   tf           Run Terraform commands in a custom containerized...
+  tfautomv     Run TFAutomv commands in a custom containerized...
 ```
 
 ##Installation in an isolated environment

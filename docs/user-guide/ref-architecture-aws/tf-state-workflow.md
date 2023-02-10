@@ -17,7 +17,7 @@ Terraform modules registry, accessed December 3rd 2020).
 ## Prerequisites
 
 !!! example "Terraform repo structure + state backend initialization"
-    1. Ensure you have [`leverage cli`](../../how-it-works/leverage-cli/index.md) installed in your system
+    1. Ensure you have [`Leverage CLI`](../../how-it-works/leverage-cli/index.md) installed in your system
     2. Refer to [Configuration Pre-requisites](./configs.md) to understand how to set up the
       configuration files required for this layer. Where you must build your
       [Terraform Reference Architecture account structure](../../how-it-works/features/organization/organization.md)

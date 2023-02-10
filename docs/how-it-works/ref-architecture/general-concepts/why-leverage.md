@@ -42,12 +42,12 @@
 ??? question "**Hours or days, not weeks or months**"
     ***Leverage*** implements infrastructure as code at all times. We have rolled this out using Terraform, and has been
     fully proven in AWS and other Terraform providers that are part of our reference architecture like Kubernetes,
-    Helm and Hashicorp Vault. By using the `leverage cli`, our binary will help you to quickly bootstrap your AWS
+    Helm and Hashicorp Vault. By using the `Leverage CLI`, our binary will help you to quickly bootstrap your AWS
     Landing Zone in a matter of hours (or at most a few days).
 
 ??? question "**It's not just a pile of scripts**"
     It's not just another layer of untested, one time and stand-alone developed scripts. The code is modularized
-    and well designed under best practices, our `leverage cli` has both unit and integration tests. While our
+    and well designed under best practices, our `Leverage CLI` has both unit and integration tests. While our
     Terraform code has been extensively E2E tested. Moreover, 100% of the code is yours (to modify, extend,
     reuse, etc), with no vendor locking and vendor licensing fees. We use the MIT license, so you can take the
     code, modify it and use it as your private code. All we ask in return is a friendly greeting and that
@@ -60,14 +60,14 @@
     most important aspects of DevOps practices. We continue to apply these methodologies to achieve a DevOps first
     culture. We have experienced and demonstrated their potential and have practiced them in dozens of projects over
     the past 5 years. The ***Leverage reference architecture for AWS*** combines a set of application best practices,
-    technology patterns and a common CI/CD deployment approach through `leverage cli` for all your application 
+    technology patterns and a common CI/CD deployment approach through `Leverage CLI` for all your application
     environments. As a result, we are pursuing a world-class software delivery performance through optimized
     collaboration, communication, reliability, stability, scalability and security at ever-decreasing cost and effort.
 
 ??? question "**Repeatable, composable and extensible immutable infrastructure**"
     The best high-performance development teams create and recreate their development and production environments
     using infrastructure as code (IaC) as part of their daily development processes.
-    The `leverage cli` allows to build repeatable and immutable infrastructure. So your cloud development, staging and 
+    The `Leverage CLI` allows to build repeatable and immutable infrastructure. So your cloud development, staging and
     production environments will consistently be the same.
 
 ## Why Leverage for DevOps Engineers, Cloud Architects and Software Engineers?

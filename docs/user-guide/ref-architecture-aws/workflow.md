@@ -17,6 +17,11 @@
     6. Run `leverage terraform plan` if you only mean to preview those changes
     7. Run `leverage terraform apply` if you want to review and likely apply those changes
 
+!!! info
+    Please note you can make use of the `--layers` parameter to apply Terraform commands to more than one layer. 
+
+    For more information see [here](../leverage-cli/reference/terraform/layers.md)
+
 !!! note 
     If desired, at step **#5** you could submit a PR, allowing you and the rest of the team to 
     understand and review what changes would be made to your AWS Cloud Architecture components before executing 

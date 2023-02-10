@@ -2,8 +2,7 @@
 template: overrides/main.html
 ---
 
-![binbash-logo](./assets/images/logos/binbash.png "Binbash"){: style="width:250px"}
-![binbash-leverage-tf](./assets/images/logos/binbash-leverage.png#right "Leverage"){: style="width:130px"}
+![binbash-logo](./assets/images/logos/binbash-leverage-header.png "Binbash"){: style="width:800px"}
 
 # About Leverage
 
@@ -16,7 +15,7 @@ template: overrides/main.html
     - [x] [**Infrastructure as Code (IaC) Library**](how-it-works/infra-as-code-library/infra-as-code-library.md)
     - [x] [**Leverage CLI**](https://github.com/binbashar/leverage)
 
-    Because all the code and modules are already built, we can get you up and running **at least 2x faster** :rocket: 
+    Because all the code and modules are already built, we can get you up and running **up to 10x faster** :rocket: 
     than a consulting company (:white_check_mark: *typically in just a few weeks!*). On top of code that is thoroughly 
     documented, tested, and has been proven in production at dozens of other project deployments.
 

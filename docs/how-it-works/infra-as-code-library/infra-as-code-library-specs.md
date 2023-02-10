@@ -22,7 +22,7 @@
         - avoid wasting time.
         - not healthy, not secure and slows us down.
 
-??? important ":checkered_flag: **DoD of a highly reusable, configurable, and composible sub-modules**"      
+??? important ":checkered_flag: **DoD of a highly reusable, configurable, and composable sub-modules**"      
     Which will be 100%
 
     - :fast_forward: modular 

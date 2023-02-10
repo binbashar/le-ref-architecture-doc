@@ -11,6 +11,13 @@
          `profile` and `region` are defined there, we also use them to inject those values into other TF commands.
         - [`account.tfvars`](https://github.com/binbashar/le-tf-infra-aws/blob/master/shared/config/account.tfvars)
          contains TF variables that are specific to an AWS account.
+    - :file_folder: **Global `common-variables.tf` file**
+    [`/config/common-variables.tfvars`](https://github.com/binbashar/le-tf-infra-aws/blob/master/config/common-variables.tf)
+    contains global context TF variables that we symlink to all terraform layers code e.g. [shared/us-east-1/tools-vpn-server/common-variables.tf](https://github.com/binbashar/le-tf-infra-aws/blob/master/shared/us-east-1/tools-vpn-server/common-variables.tf).
+    - :file_folder: **`build.env` file**
+        - By utilizing the [`build.env`](https://github.com/binbashar/le-tf-infra-aws/blob/master/build.env) capability,
+          you can easily change some default behaviors of the CLI. Read more in its dedicated
+          ["Override defaults via `build.env` file" section](../leverage-cli/extending-leverage/build.env.md).
           
 ## AWS Profile
 - File `backend.tfvars` will inject the profile name that TF will use to make changes on AWS.

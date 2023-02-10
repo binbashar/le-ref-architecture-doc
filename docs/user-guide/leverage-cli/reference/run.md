@@ -2,7 +2,7 @@
 
 The `run` command is used to execute user defined tasks and all of their dependencies.
 
-!!! info "[:books: Custom tasks documentation](../tasks.md)"
+!!! info "[:books: Custom tasks documentation](../extending-leverage/tasks.md)"
 
 ### Usage
 ``` bash

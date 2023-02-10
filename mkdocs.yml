@@ -258,7 +258,10 @@ nav:
           - aws: "user-guide/leverage-cli/reference/aws.md"
           - terraform: "user-guide/leverage-cli/reference/terraform.md"
           - run: "user-guide/leverage-cli/reference/run.md"
-      - Custom tasks: "user-guide/leverage-cli/tasks.md"
+      - Extending Leverage:
+        - Overview: "user-guide/leverage-cli/extending-leverage/extending.md"
+        - build.env : "user-guide/leverage-cli/extending-leverage/build.env.md"
+        - Custom tasks: "user-guide/leverage-cli/extending-leverage/tasks.md"
       - Shell environment: "user-guide/leverage-cli/shell.md"
     - Features:
       - Overview: "user-guide/features/features-overview.md"

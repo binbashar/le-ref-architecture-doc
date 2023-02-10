@@ -11,10 +11,3 @@ Our default AWS Organizations terraform layout solution includes `5 accounts + 1
 | Legacy                      | Your pre existing AWS Accounts to be invited as members of the new AWS Organization, probably several services and workloads are going to be progressively migrated to your new Accounts.                                                                                                  |
 | Apps DevStg                 | Host your DEV, QA and STG environment workloads Compute / Web App Servers (K8s Clusters and Lambda Functions), Load Balancers, DB Servers, Caching Services, Job queues & Servers, Data, Storage, CDN                                                                                      |
 | Apps Prod                   | Host your PROD environment workloads Compute / Web App Servers (K8s Clusters and Lambda Functions), Load Balancers, DB Servers, Caching Services, Job queues & Servers, Data, Storage, CDN                                                                                                 |
-
-## Account: Shared Services | Resources 
-![leverage-aws-org](../../../assets/images/diagrams/aws-acct-shared.png "Leverage"){: style="width:750px"}
-
-
-## Account: Apps DevStg | Prod 
-![leverage-aws-org](../../../assets/images/diagrams/aws-acct-apps-prd.png "Leverage"){: style="width:750px"}

@@ -3,7 +3,7 @@
 ## Override defaults via `build.env` file
 By utilizing the [`build.env` capability](https://github.com/binbashar/leverage/blob/master/leverage/conf.py), you can
 easily change some default behaviors of the CLI. This allows you to specify several configurations for the CLI, 
-like the
+such as the
 [Leverage-Toolbox-Image](https://hub.docker.com/repository/docker/binbash/leverage-toolbox/general) that you want to
 use, ensuring that you are using the latest version or a specific version that you prefer based on your [compatibility
 requirements](https://leverage.binbash.com.ar/work-with-us/releases/versions-compatibility-matrix/#compatibility-matrix). 

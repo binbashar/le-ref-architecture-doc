@@ -3,7 +3,7 @@ By utilizing the [`build.env` capability](https://github.com/binbashar/leverage/
 easily change some default behaviors of the CLI. In the **binbash Leverage™ Ref
 Architecture** you will find the following
 [`build.env` example](https://github.com/binbashar/le-tf-infra-aws/blob/master/build.env) as an example. 
-This allows you to specify several configurations for the CLI, like the
+This allows you to specify several configurations for the CLI, such as the
 [Leverage-Toolbox-Image](https://hub.docker.com/repository/docker/binbash/leverage-toolbox/general) that you want to
 use, ensuring that you are using the latest version or a specific version that you prefer based on your [compatibility
 requirements](https://leverage.binbash.com.ar/work-with-us/releases/versions-compatibility-matrix/#compatibility-matrix).

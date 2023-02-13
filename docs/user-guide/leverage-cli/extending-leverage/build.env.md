@@ -37,6 +37,6 @@ the current directory an all of its parents up to the repository root directory,
 Files are traversed from parent to child as to allow values in deeper directories to override possible
 previously existing values.
 Consider all files must bear the same name, which in our case defaults to `"build.env"`. So you can have multiple 
-`build.env` files that we'll be processed by the `leverage` CLI in the context of a specific layer of a 
+`build.env` files that will be processed by the `leverage` CLI in the context of a specific layer of a 
 Reference Architecture project. 
 For example the [/le-tf-infra-aws/apps-devstg/us-east-1/k8s-kind/k8s-resources/build.env](https://github.com/binbashar/le-tf-infra-aws/blob/master/apps-devstg/us-east-1/k8s-kind/k8s-resources/build.env) file. 

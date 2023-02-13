@@ -22,7 +22,7 @@ Working in the open means that it is impossible to hide things. And yet, sometim
 to work on some changes to the code in private, for example when fixing a security vulnerability.
 
 Working on a fix in the open might allow attackers to reverse engineer the bug and attack our users.
-Since GitHub provides a mechanism to easily create a private fork of our repo, please use this
+Since GitHub provides a mechanism to easily create a private fork of our repo, please use these
 private forks to collaborate on a security fix.
 
 ### Publish maintainer advisories for security fixes

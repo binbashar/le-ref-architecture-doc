@@ -19,7 +19,7 @@ Please note we have a code of conduct, please follow it in all your interactions
 ### Collaborate on fixes for security vulnerabilities in private forks
 
 Working in the open means that it is impossible to hide things. And yet, sometimes you will want
-to work on some changes in the code in private, for example when fixing a security vulnerability.
+to work on some changes to the code in private, for example when fixing a security vulnerability.
 
 Working on a fix in the open might allow attackers to reverse engineer the bug and attack our users.
 Since GitHub provides a mechanism to easily create a private fork of our repo, please use this

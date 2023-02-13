@@ -25,7 +25,7 @@ your configuration, reducing the risk of misconfigurations or errors.
     [.tfvars configs](../../ref-architecture-aws/configs.md) entry.
 
 ## Custom tasks with build.py 
-Leverage CLI has a native mechanism to allow yo customizing your workflow. With the custom tasks feature using `build.py`,
+Leverage CLI has a native mechanism to allow customizing your workflow. With the custom tasks feature using `build.py`,
 you can write your own tasks using Python, tailoring the CLI to fit your specific workflow. This allows you to automate
 and streamline your infrastructure deployments, reducing the time and effort required to manage your infrastructure. 
 You can also easily integrate other tools and services into your workflow to further improve your productivity.

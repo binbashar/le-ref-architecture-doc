@@ -4,7 +4,7 @@ easily change some default behaviors of the CLI. In the **binbash Leverage™ Re
 Architecture** you will find the following
 [`build.env` example](https://github.com/binbashar/le-tf-infra-aws/blob/master/build.env) as an example. 
 This allows you to specify several configurations for the CLI, such as the
-[Leverage-Toolbox-Image](https://hub.docker.com/repository/docker/binbash/leverage-toolbox/general) that you want to
+[Leverage-Toolbox-Image](https://hub.docker.com/repository/docker/binbash/leverage-toolbox/general) you want to
 use, ensuring that you are using the latest version or a specific version that you prefer based on your [compatibility
 requirements](https://leverage.binbash.com.ar/work-with-us/releases/versions-compatibility-matrix/#compatibility-matrix).
 This helps you avoid compatibility issues and ensures that your infrastructure deployments go smoothly.

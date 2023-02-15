@@ -19,22 +19,24 @@ This repository contains all Terraform configuration files used to create Binbas
 
 ## AWS Organization Accounts Layout
 The following block provides a brief explanation of the chosen AWS Organization Accounts layout:
-```
-+ devstg/          (resources for dev apps/services account)
-    ...
-+ prod/            (resources for prod apps/services account)
-    ...
-+ management/      (resources for the management account)
-    ...
-+ security/        (resources for the security + users account)
-    ...
-+ shared/          (resources for the shared account)
-    ...
-+ legacy/          (resources for the legacy/pre-existing account)
-    ...
-```
 
-![leverage-aws-org](../../../assets/images/diagrams/aws-organizations.png "Leverage"){: style="width:750px"}
+???+ note "*MyExample* project file structure"
+    ```
+        +📂 management/      (resources for the management account)
+        ...
+        +📂 security/        (resources for the security + users account)
+        ...
+        +📂 shared/          (resources for the shared account)
+        ...
+        +📂 network/         (resources for the centralized network account)
+        ...
+        +📂 apps-devstg/     (resources for apps dev & stg account)
+        ...
+        +📂 apps-prd/        (resources for apps prod account)
+        ...
+    ```
+
+![leverage-aws-org](../../../assets/images/diagrams/ref-architecture-aws-landing-zone-full.png "Leverage"){: style="width:750px"}
 <figcaption style="font-size:15px">
 <b>Figure:</b> AWS Organization multi-account architecture diagram (just as reference).
 (Source: Binbash Leverage,

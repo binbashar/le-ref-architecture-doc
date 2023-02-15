@@ -2533,10 +2533,71 @@
   
   
   
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_5_3" type="checkbox" id="__nav_4_5_3" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4_5_3">
+          Extending Leverage
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Extending Leverage" data-md-level="3">
+        <label class="md-nav__title" for="__nav_4_5_3">
+          <span class="md-nav__icon md-icon"></span>
+          Extending Leverage
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
     <li class="md-nav__item">
-      <a href="../../leverage-cli/tasks/" class="md-nav__link">
+      <a href="../../leverage-cli/extending-leverage/extending/" class="md-nav__link">
+        Overview
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../leverage-cli/extending-leverage/build.env/" class="md-nav__link">
+        build.env
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../leverage-cli/extending-leverage/tasks/" class="md-nav__link">
         Custom tasks
       </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
     </li>
   
 
@@ -3771,155 +3832,127 @@
 
 <h1 id="project-structure">Project Structure<a class="headerlink" href="#project-structure" title="Permanent link"> ¶</a></h1>
 <h2 id="filesfolders-organization">Files/Folders Organization<a class="headerlink" href="#filesfolders-organization" title="Permanent link"> ¶</a></h2>
-<p>The following block provides a brief explanation of the chosen files/folders layout:</p>
-<details class="note" open="open">
-<summary><em>MyExample</em> project file structure</summary>
-<div class="highlight"><pre><span></span><code>+📂 management/      (resources for the management account)
-    ...
-+📂 security/        (resources for the security + users account)
-    ...
-+📂 shared/          (resources for the shared account)
-    ...
-+📂 network/         (resources for the centralized network account)
-    ...
-+📂 apps-devstg/     (resources for apps dev &amp; stg account)
-    ...
-+📂 apps-prd/        (resources for apps prod account)
-    ...
-</code></pre></div>
-</details>
-<p>Configuration files are organized by environments (e.g. dev, stg, prd), and service type,
-which we call <strong>layers</strong> (identities, organizations, storage, etc) to keep any changes made to them separate.
-Within each of those folders you should find the Terraform files that are used to define all the 
-resources that belong to such account environment and specific layer.</p>
-<p><img alt="binbash-logo" src="../../assets/images/diagrams/aws-organizations.png" style="width:650px" title="Binbash" /></p>
-<figcaption style="font-size:15px">
-<b>Figure:</b> AWS Organization multi-account architecture diagram.
-(Source: Binbash Leverage,
-"Leverage Reference Architecture components",
-Binbash Leverage Doc, accessed August 4th 2021).
-</figcaption>
-
-<p>Under every account folder you will see a service layer structure similar to the following:</p>
+<p>The following block provides a brief explanation of the chosen files/folders layout, under every account (<code>management</code>, 
+<code>shared</code>, <code>security</code>, etc) folder you will see a service layer structure similar to the following:</p>
 <details class="- note">
 <summary><em>MyExample</em> project file structure</summary>
-<div class="highlight"><pre><span></span><code>...
-├── 📂 apps-devstg
-│   ├── 📂 config
-|   │   ├── 📄 account.tfvars
-|   │   └── 📄 backend.tfvars
-|   ├── 📂 global
-|   │   └── 📂 base-identities
-|   ├── 📂 us-east-1
-|   │   ├── 📂 backups --
-|   │   ├── 📂 base-certificates
-|   │   ├── 📂 base-network
-|   │   ├── 📂 base-tf-backend
-|   │   ├── 📂 cdn-s3-frontend
-|   │   ├── 📂 databases-aurora
-|   │   ├── 📂 databases-mysql --
-|   │   ├── 📂 databases-pgsql --
-|   │   ├── 📂 ec2-fleet-ansible --
-|   │   ├── 📂 k8s-eks-demoapps
-|   │   ├── 📂 k8s-kind
-|   │   ├── 📂 k8s-kops --
-|   │   ├── 📂 notifications
-|   │   ├── 📂 security-audit
-|   │   ├── 📂 security-base
-|   │   ├── 📂 security-certs
-|   │   ├── 📂 security-firewall --
-|   │   ├── 📂 security-keys-dr
-|   │   ├── 📂 storage
-|   │   └── 📂 tools-cloud-nuke
-|   └── 📂 us-east-2
-|       ├── 📂 k8s-eks
-|       ├── 📂 security-compliance --
-|       └── 📂 security-keys
-├── 📂 apps-prd
-│   ├── 📂 config
-|   │   ├── 📄 account.tfvars
-|   │   └── 📄 backend.tfvars
-│   ├── 📂 global
-|   │   └── 📂 base-identities
-│   └── 📂 us-east-1
-|       ├── 📂 backups --
-|       ├── 📂 base-network
-|       ├── 📂 base-tf-backend
-|       ├── 📂 cdn-s3-frontend
-|       ├── 📂 ec2-fleet --
-|       ├── 📂 k8s-eks
-|       ├── 📂 notifications
-|       ├── 📂 security-audit
-|       ├── 📂 security-base
-|       ├── 📂 security-certs
-|       ├── 📂 security-compliance --
-|       └── 📂 security-keys
-├── 📄 build.env
-├── 📄 build.py
-├── 📂 config
-│   └── 📄 common.tfvars
-├── 📂 management
-│   ├── 📂 config
-|   │   ├── 📄 account.tfvars
-|   │   └── 📄 backend.tfvars
-│   ├── 📂 global
-|   │   ├── 📂 base-identities
-|   │   ├── 📂 cost-mgmt
-|   │   ├── 📂 organizations
-|   │   └── 📂 sso
-│   ├── 📂 us-east-1
-|   │   ├── 📂 backups
-|   │   ├── 📂 base-tf-backend
-|   │   ├── 📂 notifications
-|   │   ├── 📂 security-audit
-|   │   ├── 📂 security-base
-|   │   ├── 📂 security-compliance --
-|   │   ├── 📂 security-keys
-|   │   └── 📂 security-monitoring-dr --
-│   └── 📂 us-east-2
-|       └── 📂 security-monitoring
-├── 📂 network
-│   ├── 📂 config
-|   │   ├── 📄 account.tfvars
-|   │   └── 📄 backend.tfvars
-│   ├── 📂 global
-|   │   └── 📂 base-identities
-│   ├── 📂 us-east-1
-|   │   ├── 📂 base-network
-|   │   ├── 📂 base-tf-backend
-|   │   ├── 📂 network-firewall
-|   │   ├── 📂 notifications
-|   │   ├── 📂 security-audit
-|   │   ├── 📂 security-base
-|   │   ├── 📂 security-compliance --
-|   │   ├── 📂 security-keys
-|   │   └── 📂 transit-gateway
-│   └── 📂 us-east-2
-|       ├── 📂 base-network
-|       ├── 📂 network-firewall
-|       ├── 📂 security-compliance --
-|       ├── 📂 security-keys
-|       └── 📂 transit-gateway
-├── 📂 security
-│   ├── 📂 config
-|   │   ├── 📄 account.tfvars
-|   │   └── 📄 backend.tfvars
-│   ├── 📂 global
-|   │   └── 📂 base-identities
-│   ├── 📂 us-east-1
-|   │   ├── 📂 base-tf-backend
-|   │   ├── 📂 firewall-manager
-|   │   ├── 📂 notifications
-|   │   ├── 📂 security-audit
-|   │   ├── 📂 security-base
-|   │   ├── 📂 security-compliance --
-|   │   ├── 📂 security-keys
-|   │   └── 📂 security-monitoring
-│   └── 📂 us-east-2
-|       ├── 📂 security-audit
-|       ├── 📂 security-compliance --
-|       └── 📂 security-monitoring --
-└── 📂 shared
+<div class="highlight"><pre><span></span><code>    ...
+    ├── 📂 apps-devstg
+    │   ├── 📂 config
+    |   │   ├── 📄 account.tfvars
+    |   │   └── 📄 backend.tfvars
+    |   ├── 📂 global
+    |   │   └── 📂 base-identities
+    |   ├── 📂 us-east-1
+    |   │   ├── 📂 backups --
+    |   │   ├── 📂 base-certificates
+    |   │   ├── 📂 base-network
+    |   │   ├── 📂 base-tf-backend
+    |   │   ├── 📂 cdn-s3-frontend
+    |   │   ├── 📂 databases-aurora
+    |   │   ├── 📂 databases-mysql --
+    |   │   ├── 📂 databases-pgsql --
+    |   │   ├── 📂 ec2-fleet-ansible --
+    |   │   ├── 📂 k8s-eks-demoapps
+    |   │   ├── 📂 k8s-kind
+    |   │   ├── 📂 k8s-kops --
+    |   │   ├── 📂 notifications
+    |   │   ├── 📂 security-audit
+    |   │   ├── 📂 security-base
+    |   │   ├── 📂 security-certs
+    |   │   ├── 📂 security-firewall --
+    |   │   ├── 📂 security-keys-dr
+    |   │   ├── 📂 storage
+    |   │   └── 📂 tools-cloud-nuke
+    |   └── 📂 us-east-2
+    |       ├── 📂 k8s-eks
+    |       ├── 📂 security-compliance --
+    |       └── 📂 security-keys
+    ├── 📂 apps-prd
+    │   ├── 📂 config
+    |   │   ├── 📄 account.tfvars
+    |   │   └── 📄 backend.tfvars
+    │   ├── 📂 global
+    |   │   └── 📂 base-identities
+    │   └── 📂 us-east-1
+    |       ├── 📂 backups --
+    |       ├── 📂 base-network
+    |       ├── 📂 base-tf-backend
+    |       ├── 📂 cdn-s3-frontend
+    |       ├── 📂 ec2-fleet --
+    |       ├── 📂 k8s-eks
+    |       ├── 📂 notifications
+    |       ├── 📂 security-audit
+    |       ├── 📂 security-base
+    |       ├── 📂 security-certs
+    |       ├── 📂 security-compliance --
+    |       └── 📂 security-keys
+    ├── 📄 build.env
+    ├── 📄 build.py
+    ├── 📂 config
+    │   └── 📄 common.tfvars
+    ├── 📂 management
+    │   ├── 📂 config
+    |   │   ├── 📄 account.tfvars
+    |   │   └── 📄 backend.tfvars
+    │   ├── 📂 global
+    |   │   ├── 📂 base-identities
+    |   │   ├── 📂 cost-mgmt
+    |   │   ├── 📂 organizations
+    |   │   └── 📂 sso
+    │   ├── 📂 us-east-1
+    |   │   ├── 📂 backups
+    |   │   ├── 📂 base-tf-backend
+    |   │   ├── 📂 notifications
+    |   │   ├── 📂 security-audit
+    |   │   ├── 📂 security-base
+    |   │   ├── 📂 security-compliance --
+    |   │   ├── 📂 security-keys
+    |   │   └── 📂 security-monitoring-dr --
+    │   └── 📂 us-east-2
+    |       └── 📂 security-monitoring
+    ├── 📂 network
+    │   ├── 📂 config
+    |   │   ├── 📄 account.tfvars
+    |   │   └── 📄 backend.tfvars
+    │   ├── 📂 global
+    |   │   └── 📂 base-identities
+    │   ├── 📂 us-east-1
+    |   │   ├── 📂 base-network
+    |   │   ├── 📂 base-tf-backend
+    |   │   ├── 📂 network-firewall
+    |   │   ├── 📂 notifications
+    |   │   ├── 📂 security-audit
+    |   │   ├── 📂 security-base
+    |   │   ├── 📂 security-compliance --
+    |   │   ├── 📂 security-keys
+    |   │   └── 📂 transit-gateway
+    │   └── 📂 us-east-2
+    |       ├── 📂 base-network
+    |       ├── 📂 network-firewall
+    |       ├── 📂 security-compliance --
+    |       ├── 📂 security-keys
+    |       └── 📂 transit-gateway
+    ├── 📂 security
+    │   ├── 📂 config
+    |   │   ├── 📄 account.tfvars
+    |   │   └── 📄 backend.tfvars
+    │   ├── 📂 global
+    |   │   └── 📂 base-identities
+    │   ├── 📂 us-east-1
+    |   │   ├── 📂 base-tf-backend
+    |   │   ├── 📂 firewall-manager
+    |   │   ├── 📂 notifications
+    |   │   ├── 📂 security-audit
+    |   │   ├── 📂 security-base
+    |   │   ├── 📂 security-compliance --
+    |   │   ├── 📂 security-keys
+    |   │   └── 📂 security-monitoring
+    │   └── 📂 us-east-2
+    |       ├── 📂 security-audit
+    |       ├── 📂 security-compliance --
+    |       └── 📂 security-monitoring --
+    └── 📂 shared
     ├── 📂 config
     │   ├── 📄 account.tfvars
     │   └── 📄 backend.tfvars
@@ -3949,15 +3982,34 @@ Binbash Leverage Doc, accessed August 4th 2021).
     |   ├── 📂 tools-vault
     |   ├── 📂 tools-vpn-server
     |   └── 📂 tools-webhooks --
-    └── 📂 us-east-2
-        ├── 📂 base-network
-        ├── 📂 container-registry
-        ├── 📂 security-compliance --
-        ├── 📂 security-keys
-        ├── 📂 tools-eskibana
-        └── 📂 tools-prometheus
+       └── 📂 us-east-2
+    ├── 📂 base-network
+    ├── 📂 container-registry
+    ├── 📂 security-compliance --
+    ├── 📂 security-keys
+    ├── 📂 tools-eskibana
+    └── 📂 tools-prometheus
 </code></pre></div>
 </details>
+<p><a href="../configs/">Configuration files</a> are organized by environments (e.g. dev, stg, prd), and service type,
+which we call <strong>layers</strong> (identities, organizations, storage, etc) to keep any changes made to them separate.
+Within each of those <strong>layers</strong> folders you should find the Terraform files that are used to define all the 
+resources that belong to such account environment and specific layer.</p>
+<div class="admonition info">
+<p class="admonition-title">Project file structure </p>
+<p>An extended project file structure could be found 
+<a href="../../../first-steps/leverage-project-setup/#create-the-configured-project">here</a>
+While some other basic concepts and naming conventions in the context of Leverage like "project" and "layer" 
+<a href="../../../how-it-works/ref-architecture/ref-architecture-aws/#structural-concepts">here</a></p>
+</div>
+<p><img alt="binbash-logo" src="../../../assets/images/diagrams/ref-architecture-aws.png" style="width:950px" title="Binbash" /></p>
+<figcaption style="font-size:15px">
+<b>Figure:</b> AWS Organization multi-account architecture diagram.
+(Source: Binbash Leverage,
+"Leverage Reference Architecture components",
+Binbash Leverage Doc, accessed August 4th 2021).
+</figcaption>
+
 <p><strong>NOTE:</strong> As a convention folders with the <code>--</code> suffix reflect that the resources are not currently
 created in AWS, basically they've been destroyed or not yet exist. </p>
 <p>Such layer separation is meant to avoid situations in which a single folder contains a lot of resources. 

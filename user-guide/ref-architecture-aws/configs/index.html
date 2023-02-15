@@ -2533,10 +2533,71 @@
   
   
   
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_5_3" type="checkbox" id="__nav_4_5_3" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4_5_3">
+          Extending Leverage
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Extending Leverage" data-md-level="3">
+        <label class="md-nav__title" for="__nav_4_5_3">
+          <span class="md-nav__icon md-icon"></span>
+          Extending Leverage
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
     <li class="md-nav__item">
-      <a href="../../leverage-cli/tasks/" class="md-nav__link">
+      <a href="../../leverage-cli/extending-leverage/extending/" class="md-nav__link">
+        Overview
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../leverage-cli/extending-leverage/build.env/" class="md-nav__link">
+        build.env
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../leverage-cli/extending-leverage/tasks/" class="md-nav__link">
         Custom tasks
       </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
     </li>
   
 
@@ -3783,6 +3844,15 @@ contains global context TF variables that we inject to TF commands which are use
  <code>profile</code> and <code>region</code> are defined there, we also use them to inject those values into other TF commands.</li>
 <li><a href="https://github.com/binbashar/le-tf-infra-aws/blob/master/shared/config/account.tfvars"><code>account.tfvars</code></a>
  contains TF variables that are specific to an AWS account.</li>
+</ul>
+</li>
+<li><img alt="📁" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f4c1.svg" title=":file_folder:" /> <strong>Global <code>common-variables.tf</code> file</strong>
+<a href="https://github.com/binbashar/le-tf-infra-aws/blob/master/config/common-variables.tf"><code>/config/common-variables.tfvars</code></a>
+contains global context TF variables that we symlink to all terraform layers code e.g. <a href="https://github.com/binbashar/le-tf-infra-aws/blob/master/shared/us-east-1/tools-vpn-server/common-variables.tf">shared/us-east-1/tools-vpn-server/common-variables.tf</a>.</li>
+<li><img alt="📁" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f4c1.svg" title=":file_folder:" /> <strong><code>build.env</code> file</strong><ul>
+<li>By utilizing the <a href="https://github.com/binbashar/le-tf-infra-aws/blob/master/build.env"><code>build.env</code></a> capability,
+  you can easily change some default behaviors of the CLI. Read more in its dedicated
+  <a href="../../leverage-cli/extending-leverage/build.env/">"Override defaults via <code>build.env</code> file" section</a>.</li>
 </ul>
 </li>
 </ul>

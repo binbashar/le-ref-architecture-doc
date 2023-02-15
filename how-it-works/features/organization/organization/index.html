@@ -2549,10 +2549,71 @@
   
   
   
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_5_3" type="checkbox" id="__nav_4_5_3" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4_5_3">
+          Extending Leverage
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Extending Leverage" data-md-level="3">
+        <label class="md-nav__title" for="__nav_4_5_3">
+          <span class="md-nav__icon md-icon"></span>
+          Extending Leverage
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
     <li class="md-nav__item">
-      <a href="../../../../user-guide/leverage-cli/tasks/" class="md-nav__link">
+      <a href="../../../../user-guide/leverage-cli/extending-leverage/extending/" class="md-nav__link">
+        Overview
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../user-guide/leverage-cli/extending-leverage/build.env/" class="md-nav__link">
+        build.env
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../user-guide/leverage-cli/extending-leverage/tasks/" class="md-nav__link">
         Custom tasks
       </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
     </li>
   
 
@@ -3817,21 +3878,24 @@ the ‘Legacy’ account should be decommissioned. This account will remain with
 services, such as DNS, among others. </p>
 </div>
 <h2 id="aws-organization-accounts-layout">AWS Organization Accounts Layout<a class="headerlink" href="#aws-organization-accounts-layout" title="Permanent link"> ¶</a></h2>
-<p>The following block provides a brief explanation of the chosen AWS Organization Accounts layout:
-<div class="highlight"><pre><span></span><code>+ devstg/          (resources for dev apps/services account)
+<p>The following block provides a brief explanation of the chosen AWS Organization Accounts layout:</p>
+<details class="note" open="open">
+<summary><em>MyExample</em> project file structure</summary>
+<div class="highlight"><pre><span></span><code>    +📂 management/      (resources for the management account)
     ...
-+ prod/            (resources for prod apps/services account)
+    +📂 security/        (resources for the security + users account)
     ...
-+ management/      (resources for the management account)
+    +📂 shared/          (resources for the shared account)
     ...
-+ security/        (resources for the security + users account)
+    +📂 network/         (resources for the centralized network account)
     ...
-+ shared/          (resources for the shared account)
+    +📂 apps-devstg/     (resources for apps dev &amp; stg account)
     ...
-+ legacy/          (resources for the legacy/pre-existing account)
+    +📂 apps-prd/        (resources for apps prod account)
     ...
-</code></pre></div></p>
-<p><img alt="leverage-aws-org" src="../../../assets/images/diagrams/aws-organizations.png" style="width:750px" title="Leverage" /></p>
+</code></pre></div>
+</details>
+<p><img alt="leverage-aws-org" src="../../../../assets/images/diagrams/ref-architecture-aws-landing-zone-full.png" style="width:750px" title="Leverage" /></p>
 <figcaption style="font-size:15px">
 <b>Figure:</b> AWS Organization multi-account architecture diagram (just as reference).
 (Source: Binbash Leverage,

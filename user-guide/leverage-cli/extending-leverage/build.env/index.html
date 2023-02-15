@@ -12,14 +12,14 @@
         <meta name="author" content="Binbash">
       
       
-        <link rel="canonical" href="https://leverage.binbash.com.ar/user-guide/features/monitoring/apm/">
+        <link rel="canonical" href="https://leverage.binbash.com.ar/user-guide/leverage-cli/extending-leverage/build.env/">
       
       <link rel="icon" href="../../../../assets/images/logos/favicon.ico">
       <meta name="generator" content="mkdocs-1.3.0, mkdocs-material-8.3.9">
     
     
       
-        <title>APM - Binbash Leverage™</title>
+        <title>build.env - Binbash Leverage™</title>
       
     
     
@@ -82,7 +82,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#application-performance-monitoring-apm-and-business-performance" class="md-skip">
+        <a href="#override-defaults-via-buildenv-file" class="md-skip">
           Skip to content
         </a>
       
@@ -115,7 +115,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              APM
+              build.env
             
           </span>
         </div>
@@ -2238,12 +2238,14 @@
               
   
   
+    
+  
   
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_5" type="checkbox" id="__nav_4_5" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_5" type="checkbox" id="__nav_4_5" checked>
       
       
       
@@ -2266,7 +2268,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../leverage-cli/install-leverage-cli/" class="md-nav__link">
+      <a href="../../install-leverage-cli/" class="md-nav__link">
         Install Leverage CLI
       </a>
     </li>
@@ -2306,7 +2308,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../leverage-cli/reference/basic-features/" class="md-nav__link">
+      <a href="../../reference/basic-features/" class="md-nav__link">
         Basic features
       </a>
     </li>
@@ -2346,7 +2348,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../leverage-cli/reference/project/" class="md-nav__link">
+      <a href="../../reference/project/" class="md-nav__link">
         project
       </a>
     </li>
@@ -2360,7 +2362,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../leverage-cli/reference/credentials/" class="md-nav__link">
+      <a href="../../reference/credentials/" class="md-nav__link">
         credentials
       </a>
     </li>
@@ -2374,7 +2376,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../leverage-cli/reference/aws/" class="md-nav__link">
+      <a href="../../reference/aws/" class="md-nav__link">
         aws
       </a>
     </li>
@@ -2414,7 +2416,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../leverage-cli/reference/terraform/" class="md-nav__link">
+      <a href="../../reference/terraform/" class="md-nav__link">
         commands
       </a>
     </li>
@@ -2428,7 +2430,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../leverage-cli/reference/terraform/layers/" class="md-nav__link">
+      <a href="../../reference/terraform/layers/" class="md-nav__link">
         layers
       </a>
     </li>
@@ -2449,7 +2451,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../leverage-cli/reference/tfautomv/" class="md-nav__link">
+      <a href="../../reference/tfautomv/" class="md-nav__link">
         tfautomv
       </a>
     </li>
@@ -2463,7 +2465,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../leverage-cli/reference/run/" class="md-nav__link">
+      <a href="../../reference/run/" class="md-nav__link">
         run
       </a>
     </li>
@@ -2489,12 +2491,14 @@
               
   
   
+    
+  
   
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_5_3" type="checkbox" id="__nav_4_5_3" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_5_3" type="checkbox" id="__nav_4_5_3" checked>
       
       
       
@@ -2517,7 +2521,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../leverage-cli/extending-leverage/extending/" class="md-nav__link">
+      <a href="../extending/" class="md-nav__link">
         Overview
       </a>
     </li>
@@ -2529,11 +2533,68 @@
               
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="../../../leverage-cli/extending-leverage/build.env/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          build.env
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         build.env
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#override-defaults-via-buildenv-file" class="md-nav__link">
+    Override defaults via build.env file
+  </a>
+  
+    <nav class="md-nav" aria-label="Override defaults via build.env file">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#buildenv-file-format" class="md-nav__link">
+    build.env file format
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#working-principle-multiple-buildenv-precedence" class="md-nav__link">
+    Working principle &amp; multiple build.env precedence
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -2545,7 +2606,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../leverage-cli/extending-leverage/tasks/" class="md-nav__link">
+      <a href="../tasks/" class="md-nav__link">
         Custom tasks
       </a>
     </li>
@@ -2566,7 +2627,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../leverage-cli/shell/" class="md-nav__link">
+      <a href="../../shell/" class="md-nav__link">
         Shell environment
       </a>
     </li>
@@ -2585,14 +2646,12 @@
               
   
   
-    
-  
   
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_6" type="checkbox" id="__nav_4_6" checked>
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_6" type="checkbox" id="__nav_4_6" >
       
       
       
@@ -2615,7 +2674,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../features-overview/" class="md-nav__link">
+      <a href="../../../features/features-overview/" class="md-nav__link">
         Overview
       </a>
     </li>
@@ -2655,7 +2714,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../organization/organization-init/" class="md-nav__link">
+      <a href="../../../features/organization/organization-init/" class="md-nav__link">
         Organization Init
       </a>
     </li>
@@ -2669,7 +2728,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../organization/organization-legacy-accounts/" class="md-nav__link">
+      <a href="../../../features/organization/organization-legacy-accounts/" class="md-nav__link">
         Invite Legacy accounts
       </a>
     </li>
@@ -2716,7 +2775,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../identities/gpg/" class="md-nav__link">
+      <a href="../../../features/identities/gpg/" class="md-nav__link">
         gpg
       </a>
     </li>
@@ -2730,7 +2789,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../identities/identities/" class="md-nav__link">
+      <a href="../../../features/identities/identities/" class="md-nav__link">
         Identities
       </a>
     </li>
@@ -2744,7 +2803,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../identities/credentials/" class="md-nav__link">
+      <a href="../../../features/identities/credentials/" class="md-nav__link">
         Credentials
       </a>
     </li>
@@ -2758,7 +2817,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../identities/credentials-vault/" class="md-nav__link">
+      <a href="../../../features/identities/credentials-vault/" class="md-nav__link">
         Credentials Vault
       </a>
     </li>
@@ -2779,7 +2838,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../sso/sso/" class="md-nav__link">
+      <a href="../../../features/sso/sso/" class="md-nav__link">
         SSO
       </a>
     </li>
@@ -2793,7 +2852,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../costs/costs/" class="md-nav__link">
+      <a href="../../../features/costs/costs/" class="md-nav__link">
         Costs
       </a>
     </li>
@@ -2833,7 +2892,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../security/vpn/" class="md-nav__link">
+      <a href="../../../features/security/vpn/" class="md-nav__link">
         VPN
       </a>
     </li>
@@ -2847,7 +2906,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../security/services/" class="md-nav__link">
+      <a href="../../../features/security/services/" class="md-nav__link">
         Services
       </a>
     </li>
@@ -2894,7 +2953,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../network/vpc-addressing/" class="md-nav__link">
+      <a href="../../../features/network/vpc-addressing/" class="md-nav__link">
         VPC
       </a>
     </li>
@@ -2908,7 +2967,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../network/vpc-peering/" class="md-nav__link">
+      <a href="../../../features/network/vpc-peering/" class="md-nav__link">
         VPC Peering
       </a>
     </li>
@@ -2922,7 +2981,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../network/dns/" class="md-nav__link">
+      <a href="../../../features/network/dns/" class="md-nav__link">
         DNS
       </a>
     </li>
@@ -2943,7 +3002,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../secrets/secrets/" class="md-nav__link">
+      <a href="../../../features/secrets/secrets/" class="md-nav__link">
         Secrets
       </a>
     </li>
@@ -2983,7 +3042,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../compute/overview/" class="md-nav__link">
+      <a href="../../../features/compute/overview/" class="md-nav__link">
         Overview
       </a>
     </li>
@@ -2997,7 +3056,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../compute/k8s-kops/" class="md-nav__link">
+      <a href="../../../features/compute/k8s-kops/" class="md-nav__link">
         K8s Kops
       </a>
     </li>
@@ -3011,7 +3070,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../compute/k8s-eks/" class="md-nav__link">
+      <a href="../../../features/compute/k8s-eks/" class="md-nav__link">
         K8s EKS
       </a>
     </li>
@@ -3025,7 +3084,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../compute/serverless/" class="md-nav__link">
+      <a href="../../../features/compute/serverless/" class="md-nav__link">
         Serverless
       </a>
     </li>
@@ -3072,7 +3131,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../database/database/" class="md-nav__link">
+      <a href="../../../features/database/database/" class="md-nav__link">
         Databases
       </a>
     </li>
@@ -3086,7 +3145,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../database/mysql/" class="md-nav__link">
+      <a href="../../../features/database/mysql/" class="md-nav__link">
         MySQL
       </a>
     </li>
@@ -3100,7 +3159,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../database/postgres/" class="md-nav__link">
+      <a href="../../../features/database/postgres/" class="md-nav__link">
         PostgresSQL
       </a>
     </li>
@@ -3121,7 +3180,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../storage/storage/" class="md-nav__link">
+      <a href="../../../features/storage/storage/" class="md-nav__link">
         Storage
       </a>
     </li>
@@ -3135,7 +3194,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../cdn/cdn/" class="md-nav__link">
+      <a href="../../../features/cdn/cdn/" class="md-nav__link">
         CDN
       </a>
     </li>
@@ -3149,7 +3208,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../ci-cd/ci-cd/" class="md-nav__link">
+      <a href="../../../features/ci-cd/ci-cd/" class="md-nav__link">
         CI/CD
       </a>
     </li>
@@ -3161,14 +3220,12 @@
               
   
   
-    
-  
   
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_6_14" type="checkbox" id="__nav_4_6_14" checked>
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_6_14" type="checkbox" id="__nav_4_6_14" >
       
       
       
@@ -3191,7 +3248,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../monitoring/" class="md-nav__link">
+      <a href="../../../features/monitoring/monitoring/" class="md-nav__link">
         Monitoring
       </a>
     </li>
@@ -3205,7 +3262,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../metrics/" class="md-nav__link">
+      <a href="../../../features/monitoring/metrics/" class="md-nav__link">
         Metrics
       </a>
     </li>
@@ -3219,7 +3276,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../logs/" class="md-nav__link">
+      <a href="../../../features/monitoring/logs/" class="md-nav__link">
         Logs
       </a>
     </li>
@@ -3233,7 +3290,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../tracing/" class="md-nav__link">
+      <a href="../../../features/monitoring/tracing/" class="md-nav__link">
         Tracing
       </a>
     </li>
@@ -3245,52 +3302,11 @@
               
   
   
-    
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          APM
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../../../features/monitoring/apm/" class="md-nav__link">
         APM
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#user-guide" class="md-nav__link">
-    User guide
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -3335,7 +3351,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../reliability/backups/" class="md-nav__link">
+      <a href="../../../features/reliability/backups/" class="md-nav__link">
         Backups
       </a>
     </li>
@@ -3349,7 +3365,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../reliability/dr/" class="md-nav__link">
+      <a href="../../../features/reliability/dr/" class="md-nav__link">
         Disaster Recovery
       </a>
     </li>
@@ -3363,7 +3379,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../reliability/health-checks/" class="md-nav__link">
+      <a href="../../../features/reliability/health-checks/" class="md-nav__link">
         Health Checks
       </a>
     </li>
@@ -3798,8 +3814,6 @@
   
   
   
-    
-  
   
     <label class="md-nav__title" for="__toc">
       <span class="md-nav__icon md-icon"></span>
@@ -3808,9 +3822,29 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#user-guide" class="md-nav__link">
-    User guide
+  <a href="#override-defaults-via-buildenv-file" class="md-nav__link">
+    Override defaults via build.env file
   </a>
+  
+    <nav class="md-nav" aria-label="Override defaults via build.env file">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#buildenv-file-format" class="md-nav__link">
+    build.env file format
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#working-principle-multiple-buildenv-precedence" class="md-nav__link">
+    Working principle &amp; multiple build.env precedence
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -3826,19 +3860,52 @@
             <article class="md-content__inner md-typeset">
               
                 
-  <a href="https://github.com/binbashar/le-ref-architecture-doc/edit/master/docs/user-guide/features/monitoring/apm.md" title="Edit this page" class="md-content__button md-icon">
+  <a href="https://github.com/binbashar/le-ref-architecture-doc/edit/master/docs/user-guide/leverage-cli/extending-leverage/build.env.md" title="Edit this page" class="md-content__button md-icon">
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25Z"/></svg>
   </a>
 
 
 
-<h1 id="application-performance-monitoring-apm-and-business-performance">Application Performance Monitoring (APM) and Business Performance<a class="headerlink" href="#application-performance-monitoring-apm-and-business-performance" title="Permanent link"> ¶</a></h1>
-<div class="admonition help">
-<p class="admonition-title">How it works</p>
-<p><img alt="📚" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f4da.svg" title=":books:" /> <a href="../../../../how-it-works/features/monitoring/apm/"><strong>documentation:</strong> APM</a></p>
+  <h1>build.env</h1>
+
+<h2 id="override-defaults-via-buildenv-file">Override defaults via <code>build.env</code> file<a class="headerlink" href="#override-defaults-via-buildenv-file" title="Permanent link"> ¶</a></h2>
+<p>By utilizing the <a href="https://github.com/binbashar/leverage/blob/master/leverage/conf.py"><code>build.env</code> capability</a>, you can
+easily change some default behaviors of the CLI. In the <strong>binbash Leverage™ Ref
+Architecture</strong> you will find the following
+<a href="https://github.com/binbashar/le-tf-infra-aws/blob/master/build.env"><code>build.env</code> example</a> as an example. 
+This allows you to specify several configurations for the CLI, such as the
+<a href="https://hub.docker.com/repository/docker/binbash/leverage-toolbox/general">Leverage-Toolbox-Image</a> you want to
+use, ensuring that you are using the latest version or a specific version that you prefer based on your <a href="https://leverage.binbash.com.ar/work-with-us/releases/versions-compatibility-matrix/#compatibility-matrix">compatibility
+requirements</a>.
+This helps you avoid compatibility issues and ensures that your infrastructure deployments go smoothly.</p>
+<h3 id="buildenv-file-format"><code>build.env</code> file format<a class="headerlink" href="#buildenv-file-format" title="Permanent link"> ¶</a></h3>
+<p>The <code>build.env</code> file format and supported parameters are the following:</p>
+<div class="highlight"><pre><span></span><code># Project settings
+PROJECT=bb
+
+# General
+MFA_ENABLED=false
+
+# Terraform
+TERRAFORM_IMAGE_TAG=1.2.7-0.1.4
+</code></pre></div>
+<div class="admonition info">
+<p class="admonition-title">Customizing or extending the leverage-toolbox docker image</p>
+<p>You can locally copy and edit the <a href="https://github.com/binbashar/le-docker-leverage-toolbox/blob/master/Dockerfile">Dockerfile</a>
+in order to rebuild it based on your needs, eg for a <code>Dockerfile</code> placed in the current working directory:
+<code>$ docker build -t binbash/leverage-toolbox:1.2.7-0.1.4 --build-arg TERRAFORM_VERSION='1.2.7' .</code>
+In case you like this changes to be permanent please consider 
+<a href="https://github.com/binbashar/leverage/pulls">creating and submitting a PR</a>.</p>
 </div>
-<h2 id="user-guide">User guide<a class="headerlink" href="#user-guide" title="Permanent link"> ¶</a></h2>
-<p>TODO</p>
+<h3 id="working-principle-multiple-buildenv-precedence">Working principle &amp; multiple <code>build.env</code> precedence<a class="headerlink" href="#working-principle-multiple-buildenv-precedence" title="Permanent link"> ¶</a></h3>
+<p>The <code>leverage CLI</code> has an environmental variable loading utility that will load all <code>.env</code> files with the given name in 
+the current directory an all of its parents up to the repository root directory, and store them in a dictionary.
+Files are traversed from parent to child as to allow values in deeper directories to override possible
+previously existing values.
+Consider all files must bear the same name, which in our case defaults to <code>"build.env"</code>. So you can have multiple 
+<code>build.env</code> files that will be processed by the <code>leverage</code> CLI in the context of a specific layer of a 
+Reference Architecture project. 
+For example the <a href="https://github.com/binbashar/le-tf-infra-aws/blob/master/apps-devstg/us-east-1/k8s-kind/k8s-resources/build.env">/le-tf-infra-aws/apps-devstg/us-east-1/k8s-kind/k8s-resources/build.env</a> file. </p>
 
               
             </article>
@@ -3854,7 +3921,7 @@
     <nav class="md-footer__inner md-grid" aria-label="Footer" >
       
         
-        <a href="../tracing/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Tracing" rel="prev">
+        <a href="../extending/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Overview" rel="prev">
           <div class="md-footer__button md-icon">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
           </div>
@@ -3863,20 +3930,20 @@
               <span class="md-footer__direction">
                 Previous
               </span>
-              Tracing
+              Overview
             </div>
           </div>
         </a>
       
       
         
-        <a href="../../reliability/backups/" class="md-footer__link md-footer__link--next" aria-label="Next: Backups" rel="next">
+        <a href="../tasks/" class="md-footer__link md-footer__link--next" aria-label="Next: Custom tasks" rel="next">
           <div class="md-footer__title">
             <div class="md-ellipsis">
               <span class="md-footer__direction">
                 Next
               </span>
-              Backups
+              Custom tasks
             </div>
           </div>
           <div class="md-footer__button md-icon">

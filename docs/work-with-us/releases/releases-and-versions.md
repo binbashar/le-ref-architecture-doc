@@ -43,4 +43,4 @@ We're constantly kicking with a lot of improvements and some exciting new featur
 ## Documentation
 
 !!! done ":calendar: RELEASES"
-    - [Releases | Binbash Leverage™ Documentation](https://github.com/binbashar/le-ref-architecture-doc/releases)
+    - [Releases | binbash Leverage™ Documentation](https://github.com/binbashar/le-ref-architecture-doc/releases)

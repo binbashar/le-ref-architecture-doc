@@ -8,9 +8,9 @@ Users will be able to log in to JumpCloud in order to access AWS accounts, using
 ![leverage-aws-sso](../../../assets/images/diagrams/aws-sso.png "Leverage"){: style="width:750px"}
 <figcaption style="font-size:15px">
 <b>Figure:</b> AWS Organization with SSO + JumpCloud IdP diagram.
-(Source: Binbash Leverage,
+(Source: binbash Leverage,
 "Leverage Reference Architecture components",
-Binbash Leverage Doc, accessed January 4th 2022).
+binbash Leverage Doc, accessed January 4th 2022).
 </figcaption>
 
 ### SSO Strengths

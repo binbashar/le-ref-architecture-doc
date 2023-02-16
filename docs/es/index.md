@@ -1,4 +1,4 @@
 ---
 template: overrides/home-es.html
-title: Binbash Leverage
+title: binbash Leverage
 ---

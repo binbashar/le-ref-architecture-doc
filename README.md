@@ -1,13 +1,13 @@
 <a href="https://github.com/binbashar">
-    <img src="https://raw.githubusercontent.com/binbashar/le-ref-architecture-doc/master/docs/assets/images/logos/binbash-leverage-banner.png" width="1032" align="left" alt="Binbash"/>
+    <img src="https://raw.githubusercontent.com/binbashar/le-ref-architecture-doc/master/docs/assets/images/logos/binbash-leverage-banner.png" width="1032" align="left" alt="binbash"/>
 </a>
 <br clear="left"/>
 
-# Binbash Leverage™ Documentation
+# binbash Leverage™ Documentation
 
 ## Overview
 This repository contains all files used to create 
-[Binbash Leverage Reference Documentation](https://leverage.binbash.com.ar)
+[binbash Leverage Reference Documentation](https://leverage.binbash.com.ar)
 
 ### Branches
 - `master`   --> contains the source code

@@ -1,4 +1,4 @@
-![binbash-logo](../../assets/images/logos/binbash-leverage-header.png "Binbash"){: style="width:800px"}
+![binbash-logo](../../assets/images/logos/binbash-leverage-header.png "binbash"){: style="width:800px"}
 
 # Reference Architecture 
 
@@ -7,7 +7,7 @@
     popular modern web and mobile applications needs. 
     Its design is fully based on AWS [“Well Architected Framework”](../../work-with-us/support.md).
 
-    Reusing the [**Leverage Infrastructure as Code (IaC) Library**](../infra-as-code-library/infra-as-code-library.md) via
+    Reusing the [**Leverage Infrastructure as Code (IaC) Library**](../infra-as-code-library/index.md) via
     [**Leverage CLI**](https://github.com/binbashar/leverage) to rapidly implement it.
 
     It will solve your entire infrastructure and will grant you complete control of the source
@@ -22,7 +22,7 @@ Each individual configuration of the Reference Architecture is referred to as a 
 !!! check "Strengths"
     - [x] Faster updates (new features and bug fixes).
     - [x] Better code quality and modules maturity (proven and tested).
-    - [x] Supported by Binbash, and public modules even by 1000's of top talented Open Source community 
+    - [x] Supported by binbash, and public modules even by 1000's of top talented Open Source community 
         contributors.
     - [x] Increase development cost savings.
     - [x] Clients keep full rights to all commercial, modification, distribution, and private use of the code 
@@ -33,9 +33,9 @@ Each individual configuration of the Reference Architecture is referred to as a 
 ![leverage-aws-org](../../assets/images/diagrams/ref-architecture-aws.png "Leverage"){: style="width:950px"}
 <figcaption style="font-size:15px">
 <b>Figure:</b> AWS Organization multi-account reference architecture diagram.
-(Source: Binbash Leverage,
+(Source: binbash Leverage,
 "Leverage Reference Architecture components",
-Binbash Leverage Doc, accessed August 4th 2021).
+binbash Leverage Doc, accessed August 4th 2021).
 </figcaption>
 
 ## Read More

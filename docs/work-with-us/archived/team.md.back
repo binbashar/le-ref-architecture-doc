@@ -1,13 +1,13 @@
 ---
 template: overrides/work-with-us/team.html
-title: Binbash Leverage
+title: binbash Leverage
 ---
 
 [comment]: <> (# Meet our Team)
 
 [comment]: <> (## Tech Team)
 
-[comment]: <> (!!! info "[Marcos Pagnucco | Co-Founder & DevOps Cloud Engineer @ Binbash]&#40;https://www.linkedin.com/in/pagnucco/&#41;")
+[comment]: <> (!!! info "[Marcos Pagnucco | Co-Founder & DevOps Cloud Engineer @ binbash]&#40;https://www.linkedin.com/in/pagnucco/&#41;")
 
 [comment]: <> (    ![team]&#40;../assets/images/team/marcos.pagnucco.bwc.png "Leverage-team"&#41;{: style="width:150px"})
     
@@ -25,7 +25,7 @@ title: Binbash Leverage
 
 [comment]: <> (        - Cisco Certified Network Associate &#40;CCNA&#41;)
 
-[comment]: <> (!!! info "[Exequiel Barrirero | Co-Founder & DevOps Cloud Engineer @ Binbash]&#40;https://www.linkedin.com/in/barrireroexequiel/&#41;")
+[comment]: <> (!!! info "[Exequiel Barrirero | Co-Founder & DevOps Cloud Engineer @ binbash]&#40;https://www.linkedin.com/in/barrireroexequiel/&#41;")
 
 [comment]: <> (    ![team]&#40;../assets/images/team/exequiel.barrirero.bwc.png "Leverage-team"&#41;{: style="width:150px"})
     
@@ -45,7 +45,7 @@ title: Binbash Leverage
 
 [comment]: <> (        - Nokia Network Routing Specialist I &#40;NRS I&#41; - &#40;4A0-100&#41;)
 
-[comment]: <> (!!! info "[Diego Armando Ojeda | DevOps Cloud Solutions & Software Architecture Consultant @ Binbash]&#40;https://www.linkedin.com/in/diegoaojeda/&#41;")
+[comment]: <> (!!! info "[Diego Armando Ojeda | DevOps Cloud Solutions & Software Architecture Consultant @ binbash]&#40;https://www.linkedin.com/in/diegoaojeda/&#41;")
 
 [comment]: <> (    ![team]&#40;../assets/images/team/diego.ojeda.bwc.png "Leverage-team"&#41;{: style="width:150px"})
     
@@ -59,7 +59,7 @@ title: Binbash Leverage
 
 [comment]: <> (    release management, deployment, automation, CI, CD, performance, Cloud services &#40;AWS&#41;, serverless.)
 
-[comment]: <> (!!! info "[Luis Gallardo | Cloud Solutions Architect @ Binbash]&#40;https://www.linkedin.com/in/lgallard/&#41;")
+[comment]: <> (!!! info "[Luis Gallardo | Cloud Solutions Architect @ binbash]&#40;https://www.linkedin.com/in/lgallard/&#41;")
 
 [comment]: <> (    ![team]&#40;../assets/images/team/luis.gallardo.bwc.png "Leverage-team"&#41;{: style="width:150px"})
     
@@ -93,7 +93,7 @@ title: Binbash Leverage
 
 [comment]: <> (        - LPIC-1: Junior Level Linux Certification)
 
-[comment]: <> (!!! info "[Angelo Fenoglio | Software Engineer @ Binbash]&#40;https://www.linkedin.com/in/angelofenoglio/&#41;")
+[comment]: <> (!!! info "[Angelo Fenoglio | Software Engineer @ binbash]&#40;https://www.linkedin.com/in/angelofenoglio/&#41;")
 
 [comment]: <> (    ![team]&#40;../assets/images/team/angelo.fenoglio.bwc.png "Leverage-team"&#41;{: style="width:150px"})
     
@@ -101,11 +101,11 @@ title: Binbash Leverage
 
 [comment]: <> (## Business & Management Team)
 
-[comment]: <> (!!! info "[Carolina Rey | Emotional Intelligence Coach @ Binbash]&#40;https://www.linkedin.com/in/caroreyp/&#41;")
+[comment]: <> (!!! info "[Carolina Rey | Emotional Intelligence Coach @ binbash]&#40;https://www.linkedin.com/in/caroreyp/&#41;")
 
 [comment]: <> (    ![team]&#40;../assets/images/team/carolina.rey.bwc.png "Leverage-team"&#41;{: style="width:140px"})
     
-[comment]: <> (    - [x] Emotional coaching to Binbash Leverage leadership team members.)
+[comment]: <> (    - [x] Emotional coaching to binbash Leverage leadership team members.)
 
 [comment]: <> (    Supporting the team to evolve and improve:)
 
@@ -117,13 +117,13 @@ title: Binbash Leverage
 
 [comment]: <> (        - Relationship management )
 
-[comment]: <> (!!! info "[Marcelo Beresvil | CFO & BizDev Manager @ Binbash]&#40;https://www.linkedin.com/in/marceloberesvil/&#41;")
+[comment]: <> (!!! info "[Marcelo Beresvil | CFO & BizDev Manager @ binbash]&#40;https://www.linkedin.com/in/marceloberesvil/&#41;")
 
 [comment]: <> (    ![team]&#40;../assets/images/team/marcelo.beresvil.bwc.png "Leverage-team"&#41;{: style="width:150px"})
     
 [comment]: <> (    - [x] Chief Financial Officer & Business Development Manager)
 
-[comment]: <> (!!! info "[Patricia Charlier | Project Manager @ Binbash]&#40;https://www.linkedin.com/in/patricia-charlier-653bb23b/&#41;")
+[comment]: <> (!!! info "[Patricia Charlier | Project Manager @ binbash]&#40;https://www.linkedin.com/in/patricia-charlier-653bb23b/&#41;")
 
 [comment]: <> (    ![team]&#40;../assets/images/team/patricia.charlier.bwc.png "Leverage-team"&#41;{: style="width:150px"})
     

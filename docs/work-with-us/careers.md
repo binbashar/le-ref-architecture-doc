@@ -3,11 +3,11 @@
 
 ## How we work 
 
-!!! info "Binbash work culture"
+!!! info "binbash work culture"
 
     :star: **Fully Remote**
      
-    Binbash was founded as a remote-first company. That means you can always work from home, 
+    binbash was founded as a remote-first company. That means you can always work from home, 
     a co-working place, a nice cafe, or wherever else you feel comfortable, and you'll have almost complete control over
     your working hours. 
     _Why "almost"?_ Because depending on the current projects we'll require few hours of overlap between all Leverage
@@ -22,7 +22,7 @@
     :star: **We promote life-work balance**
      
     Job burnout is an epidemic 🙆, and we tech workers are especially at risk. So we'll do our best to de-stress 
-    our workforce at Binbash. In order to achieve this we offer:
+    our workforce at binbash. In order to achieve this we offer:
     
     - Remote work that lets you control your hours and physical location.
     - Normal working hours (prime-time 9am-5pm GTM-3), in average no more than ~30-40hs per week, and we don't
@@ -46,7 +46,7 @@
         (e.g., VPC, IAM, Kubernetes, Prometheus, Grafana, EFK, Consul, Vault, Jenkins, etc.) using several tool and 
         languages: *Terraform, Ansible, Helm, Dockerfiles, Python, Bash and Makefiles*.
            
-    - [x] [**Reference Architecture**](../how-it-works/infra-as-code-library/infra-as-code-library.md)
+    - [x] [**Reference Architecture**](../how-it-works/infra-as-code-library/index.md)
         
         Improve, maintain, extend and update our reference architecture, which has been designed under optimal configs 
         for the most popular modern web and mobile applications needs. Its design is fully based on the 
@@ -62,24 +62,24 @@
     - [x] **Document team knowledge**
      
         Get siloed and not yet documented knowledge and extend the [Leverage documentation](https://leverage.binbash.com.ar), such as 
-        creating knowledgebase articles, runbooks, and other documentation for the internal team as well as Binbash
+        creating knowledgebase articles, runbooks, and other documentation for the internal team as well as binbash
         Leverage customers.
 
     - [x] **Customer engineering support**
         
         While participating in business-hours only support rotations, collaborate with customer requests, teach 
-        Binbash Leverage and DevOps best-practices, help resolve problems, escalate to internal SMEs, and automate and
+        binbash Leverage and DevOps best-practices, help resolve problems, escalate to internal SMEs, and automate and
         document the solutions so that problems are mitigated for future scenarios and users.
     
     - [x] **Role scope and extra points!**
     
-        - Responsible for the development, maintenance, support and delivery of Binbash Leverage Products.
+        - Responsible for the development, maintenance, support and delivery of binbash Leverage Products.
         - Client side Leverage Reference Architecture solutions implementation, maintenance and support. 
         - Client side cloud solutions & tech management (service delivery and project task management).
         - Bring Leverage recs for re-engineering, bug fixes (issues) report and improvements based on real scenario implementations.
         - Mentoring, KT, PRs and team tech follow up both internally and customer facing.   
         
-        Binbash is a small, distributed startup, so things are changing all the time, and from time to time we all wear 
+        binbash is a small, distributed startup, so things are changing all the time, and from time to time we all wear 
         many hats. You should expect to write lot of code, but, depending on your interests, there will also be lot of 
         opportunities to write blog posts, give talks, contribute to open source, go to conferences, talk with customers, 
         do sales calls, think through financial questions, interview candidates, mentor new hires, design products, 

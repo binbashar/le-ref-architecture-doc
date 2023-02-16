@@ -62,13 +62,13 @@ the aliases automatically implicitly when running Terraform's Leverage code.
         ![leverage-org](../../../assets/images/screenshots/aws-iam-org-mgmt-admin-user-permissions.png "Leverage"){: style="width:950px"}
         <figcaption style="font-size:15px">
         <b>Figure:</b> AWS Web Console screenshot.
-        (Source: Binbash, "AWs Organization management account init IAM admin user", accessed June 16th 2021).
+        (Source: binbash, "AWs Organization management account init IAM admin user", accessed June 16th 2021).
         </figcaption>
     
         ![leverage-org](../../../assets/images/screenshots/aws-iam-org-mgmt-admin-user-keys.png "Leverage"){: style="width:950px"}
         <figcaption style="font-size:15px">
         <b>Figure:</b> AWS Web Console screenshot.
-        (Source: Binbash, "AWs Organization management account init IAM admin user", accessed June 16th 2021).
+        (Source: binbash, "AWs Organization management account init IAM admin user", accessed June 16th 2021).
         </figcaption>
 
     4. Set your IAM credentials in the machine your're going to exec the `Leverage CLI` (remember this are the

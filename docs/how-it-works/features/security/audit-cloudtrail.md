@@ -17,7 +17,7 @@ giving you control over storage, analysis, and remediation actions.
   ![Cloudtrail Diagram](../../../assets/images/diagrams/aws-cloudtrail.svg){ width="600" }
     <figcaption style="font-size:15px">
     <b>Figure:</b> AWS CloudTrail components architecture diagram (just as reference).
-    (Source: Binbash Leverage diagrams, accessed July 6th 2022).
+    (Source: binbash Leverage diagrams, accessed July 6th 2022).
     </figcaption>
 </figure>
 

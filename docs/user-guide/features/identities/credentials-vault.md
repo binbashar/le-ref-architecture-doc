@@ -85,8 +85,8 @@ to login to your instance.
 ![leverage-vault-ui-auth](../../../assets/images/screenshots/vault-ui-auth-github.png "Leverage"){: style="width:1200px"}
 <figcaption style="font-size:15px">
 <b>Figure:</b> Vault HCP UI user authentication screen.
-(Source: Binbash Leverage,
+(Source: binbash Leverage,
 "Leverage Vault Reference Architecture auth method",
-Binbash Leverage Doc, accessed August 5th 2021).
+binbash Leverage Doc, accessed August 5th 2021).
 </figcaption>
 

@@ -1,4 +1,4 @@
-# Contribute and Developing Binbash Leverage 
+# Contribute and Developing binbash Leverage 
 
 This document explains how to get started with developing for **Leverage Reference Architecture**.
 It includes how to build, test, and [release](https://github.com/binbashar/le-tf-infra-aws/releases) new versions.
@@ -8,7 +8,7 @@ It includes how to build, test, and [release](https://github.com/binbashar/le-tf
 ### Getting the code
 
 The code must be checked out from this same github.com repo inside the
-[Binbash Leverage Github Organization](https://github.com/binbashar).
+[binbash Leverage Github Organization](https://github.com/binbashar).
 
 ```
 git clone git@github.com:binbashar/le-tf-infra-aws.git

@@ -10,7 +10,7 @@ So first, make sure these are installed in your system and the Docker daemon is 
 
 ## Install [Leverage CLI](../../how-it-works/leverage-cli/)
 
-As previously stated, to manage a Leverage project and operate the whole Leverage stack you will need to install Leverage CLI. Binbash distributes Leverage CLI as a python package, so you can install it via `pip`.
+As previously stated, to manage a Leverage project and operate the whole Leverage stack you will need to install Leverage CLI. binbash distributes Leverage CLI as a python package, so you can install it via `pip`.
 
 ``` bash
 pip install leverage

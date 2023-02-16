@@ -2,7 +2,7 @@
 
 ## Overview
 This repository contains all the [Ansible Playbooks](https://github.com/binbashar/le-ansible-infra) configuration 
-files used to create _**Binbash Leverage™**_ Reference Architecture for AWS.
+files used to create _**binbash Leverage™**_ Reference Architecture for AWS.
 
 ## Ansible Playbook Documentation
 Check out the README.md under contained under each repo

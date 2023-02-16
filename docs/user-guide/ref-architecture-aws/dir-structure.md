@@ -172,12 +172,12 @@ resources that belong to such account environment and specific layer.
     While some other basic concepts and naming conventions in the context of Leverage like "project" and "layer" 
     [here](../../../how-it-works/ref-architecture/ref-architecture-aws/#structural-concepts)
 
-![binbash-logo](../../assets/images/diagrams/ref-architecture-aws.png "Binbash"){: style="width:950px"}
+![binbash-logo](../../assets/images/diagrams/ref-architecture-aws.png "binbash"){: style="width:950px"}
 <figcaption style="font-size:15px">
 <b>Figure:</b> AWS Organization multi-account architecture diagram.
-(Source: Binbash Leverage,
+(Source: binbash Leverage,
 "Leverage Reference Architecture components",
-Binbash Leverage Doc, accessed August 4th 2021).
+binbash Leverage Doc, accessed August 4th 2021).
 </figcaption>
 
 **NOTE:** As a convention folders with the `--` suffix reflect that the resources are not currently

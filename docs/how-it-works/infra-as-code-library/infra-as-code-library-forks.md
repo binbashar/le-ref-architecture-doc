@@ -23,7 +23,7 @@
     of this component.
     - [x] **Centralized Org source of truth:** for improved customer experience and keeping
     dependencies consistently imported from binbash repos at [Leverage Github](https://github.com/binbashar)
-    - [x] **Scope:** Binbash grants and responds for all these dependencies.
+    - [x] **Scope:** binbash grants and responds for all these dependencies.
     - [x] **Metrics:**  Dashboards w/ internal measurements.
     - [x] **Automation:** We’ll maintain all this workflow cross-tech as standardized and
     automated as possible, adding any extra validation like testing, security check, etc., if
@@ -36,7 +36,7 @@
     (for the time being Open Source looks like the best option)
 
 !!! important "Collaborators considerations"
-    - We look forward to have every Binbash Leverage repo open sourced favoring the 
+    - We look forward to have every binbash Leverage repo open sourced favoring the 
     collaboration of the open source community. 
     - Repos that are still **private** must not be forked by our internal collaborators
     till we've done a detailed and rigorous review in order to open source them.

@@ -104,4 +104,4 @@
     --help command, doc-string and in line comments.
      
 ??? important ":checkered_flag: **Supported  & Customizable**"      
-     Commercially maintained and supported by [**_Binbash_**](../../work-with-us/support.md).
+     Commercially maintained and supported by [**_binbash_**](../../work-with-us/support.md).

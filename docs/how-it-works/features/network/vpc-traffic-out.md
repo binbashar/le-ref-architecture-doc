@@ -29,9 +29,9 @@ North-South: Centralized internet egress (VPC to internet via Transit Gateway) a
 ![leverage-aws-tgw](../../../assets/images/diagrams/aws-tgw-nfw.png "Leverage"){: style="width:1600px"}
 <figcaption style="font-size:15px">
 <b>Figure:</b> Multi-account dedicated network transit gateway + network firewall architecture diagram.
-(Source: Binbash Leverage,
+(Source: binbash Leverage,
 "Leverage Reference Architecture dedicated network account TGW + NFW implementation",
-Binbash Leverage Doc, accessed August 4th 2021).
+binbash Leverage Doc, accessed August 4th 2021).
 </figcaption>
 
 ## Comparison of the alternatives analysed

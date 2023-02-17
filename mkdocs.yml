@@ -2,13 +2,13 @@
 #===================================================================================#
 # Site Information
 #===================================================================================#
-site_name: Binbash Leverage™
+site_name: binbash Leverage™
 repo_name: "binbashar/le-ref-architecture-doc"
 repo_url: https://github.com/binbashar/le-ref-architecture-doc
 site_url: https://leverage.binbash.com.ar/
-site_description: Binbash Leverage Reference Architecture Documentation
-site_author: Binbash
-copyright: Copyright &copy; 2017-2022 <a href="https://www.binbash.com.ar">Binbash</a>
+site_description: binbash Leverage Reference Architecture Documentation
+site_author: binbash
+copyright: Copyright &copy; 2017-2023 <a href="https://www.binbash.com.ar">binbash</a>
 
 #===================================================================================#
 # Mkdocs Theme (Material Mkdocs) + Extras
@@ -27,7 +27,12 @@ theme:
   features:
     - navigation.tabs
     - navigation.instant
+    - navigation.tracking
+    - navigation.indexes
+    - navigation.top
+    - navigation.footer
     - header.autohide
+    - content.action.edit
     #- content.tabs.link #Insiders only so far
   palette: # https://www.materialpalette.com/colors
     - scheme: default
@@ -46,6 +51,7 @@ theme:
   include_sidebar: true
 
 extra:
+  #generator: false
   analytics:
     provider: google
     property: !ENV GOOGLE_ANALYTICS_KEY
@@ -170,13 +176,14 @@ nav:
           - Why our stack?: "how-it-works/ref-architecture/general-concepts/why-tech-stack.md"
         - Considerations: "how-it-works/ref-architecture/considerations.md"
     - Infra Code Library:
-      - Overview: "how-it-works/infra-as-code-library/infra-as-code-library.md"
+      - Overview: "how-it-works/infra-as-code-library/index.md"
       - Forks workflow: "how-it-works/infra-as-code-library/infra-as-code-library-forks.md"
       - Specifications: "how-it-works/infra-as-code-library/infra-as-code-library-specs.md"
       - Modules per Tech: "how-it-works/infra-as-code-library/modules-library-per-tech.md"
-    - Leverage CLI: "how-it-works/leverage-cli/index.md"
+    - Leverage CLI:
+      - Overview: "how-it-works/leverage-cli/index.md"
     - Features:
-      - Overview: "how-it-works/features/features-overview.md"
+      - Overview: "how-it-works/features/index.md"
       - AWS Organization:
         - Organization: "how-it-works/features/organization/organization.md"
         - Accounts: "how-it-works/features/organization/accounts.md"
@@ -195,7 +202,7 @@ nav:
         - IAM Access Analyzer: "how-it-works/features/security/iam-access-analyzer.md"
       - Network:
         - VPC Topology: "how-it-works/features/network/vpc-topology.md"
-        - VPC Adressing: "how-it-works/features/network/vpc-addressing.md"
+        - VPC Addressing: "how-it-works/features/network/vpc-addressing.md"
         - VPC Peering: "how-it-works/features/network/vpc-peering.md"
         - TGW Topology: "how-it-works/features/network/tgw-topology.md"
         - VPC Outbound Traffic: "how-it-works/features/network/vpc-traffic-out.md"
@@ -206,7 +213,7 @@ nav:
         - K8s Kops: "how-it-works/features/compute/k8s-kops.md"
         - K8s EKS:
           - Overview: "how-it-works/features/compute/k8s-eks/overview.md"
-          - VPC Adressing: "how-it-works/features/compute/k8s-eks/vpc-adressing.md"
+          - VPC Addressing: "how-it-works/features/compute/k8s-eks/vpc-addressing.md"
         - K8s Service Mesh: "how-it-works/features/compute/k8s-service-mesh.md"
         - Serverless: "how-it-works/features/compute/serverless.md"
         - Tools: "how-it-works/features/compute/tools.md"
@@ -264,7 +271,7 @@ nav:
           - tfautomv: "user-guide/leverage-cli/reference/tfautomv.md"
           - run: "user-guide/leverage-cli/reference/run.md"
       - Extending Leverage:
-        - Overview: "user-guide/leverage-cli/extending-leverage/extending.md"
+        - Overview: "user-guide/leverage-cli/extending-leverage/index.md"
         - build.env : "user-guide/leverage-cli/extending-leverage/build.env.md"
         - Custom tasks: "user-guide/leverage-cli/extending-leverage/tasks.md"
       - Shell environment: "user-guide/leverage-cli/shell.md"

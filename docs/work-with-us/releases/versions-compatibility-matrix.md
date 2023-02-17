@@ -1,7 +1,7 @@
 
 # Leverage Releases & Versioning
 
-Binbash Leverage™ and its components intends to be backward compatible, but due to the complex ecosystems of tools we
+binbash Leverage™ and its components intends to be backward compatible, but due to the complex ecosystems of tools we
 manage this is not always possible.
 
 It is always recommended using the latest version of the [Leverage CLI](https://pypi.org/project/leverage/) with the latest versions of the
@@ -49,7 +49,7 @@ We suggest they should be upgraded soon.
 ## Release Schedule
 
 This project does not follow the **Terraform** or other release schedule. Leverage aims to
-provide a reliable deployment and operations experience for the [Binbash Leverage™ Reference Architecture
+provide a reliable deployment and operations experience for the [binbash Leverage™ Reference Architecture
 for AWS](https://leverage.binbash.com.ar/how-it-works/ref-architecture/), and typically releases about a quarter after
 the corresponding Terraform release. This time allows for the Terraform project to resolve any issues introduced
 by the new version and ensures that we can support the latest features.

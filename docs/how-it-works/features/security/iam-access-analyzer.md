@@ -53,5 +53,5 @@ AWS Documentation, accessed June 11th 2021).
 ![leverage-security-iam](../../../assets/images/screenshots/aws-iam-access-analyzer.png "Leverage"){: style="width:950px"}
 <figcaption style="font-size:15px">
 <b>Figure:</b> AWS Web Console screenshot.
-(Source: Binbash, "IAM access analyzer service", accessed June 11th 2021).
+(Source: binbash, "IAM access analyzer service", accessed June 11th 2021).
 </figcaption>

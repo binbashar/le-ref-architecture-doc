@@ -1,13 +1,13 @@
-![binbash-logo](../../assets/images/logos/binbash-leverage-header.png "Binbash"){: style="width:800px"}
+![binbash-logo](../../assets/images/logos/binbash-leverage-header.png "binbash"){: style="width:800px"}
 
 # How it works
 
-The objective of this document is to explain how the **Binbash Leverage Reference Architecture for AWS**
+The objective of this document is to explain how the **binbash Leverage Reference Architecture for AWS**
 works, in particular how the Reference Architecture model is built and why we need it.
 
 ## Overview
 
-This documentation contains all the guidelines to create Binbash 
+This documentation contains all the guidelines to create binbash 
 Leverage Reference Architecture for AWS that will be implemented on the 
 Projects’ AWS infrastructure.
 

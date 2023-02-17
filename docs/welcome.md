@@ -2,7 +2,7 @@
 template: overrides/main.html
 ---
 
-![binbash-logo](./assets/images/logos/binbash-leverage-header.png "Binbash"){: style="width:800px"}
+![binbash-logo](./assets/images/logos/binbash-leverage-header.png "binbash"){: style="width:800px"}
 
 # About Leverage
 
@@ -12,7 +12,7 @@ template: overrides/main.html
     Cloud Infrastructure code, through our core components:
 
     - [x] [**Reference Architecture for AWS**](how-it-works/ref-architecture/index.md)
-    - [x] [**Infrastructure as Code (IaC) Library**](how-it-works/infra-as-code-library/infra-as-code-library.md)
+    - [x] [**Infrastructure as Code (IaC) Library**](how-it-works/infra-as-code-library/index.md)
     - [x] [**Leverage CLI**](https://github.com/binbashar/leverage)
 
     Because all the code and modules are already built, we can get you up and running **up to 10x faster** :rocket: 
@@ -33,7 +33,7 @@ template: overrides/main.html
     - [Why Leverage?](./work-with-us/faqs/#why-leverage)
 
 !!! important "Core Features"
-    - [x] [**Reference Architecture**](how-it-works/infra-as-code-library/infra-as-code-library.md):
+    - [x] [**Reference Architecture**](how-it-works/infra-as-code-library/index.md):
     Designed under optimal configs for the most popular modern web and mobile applications needs.
     Its design is fully based on the
     [**AWS Well Architected Framework**](https://leverage.binbash.com.ar/support/#aws-well-architected-review).

@@ -1,7 +1,7 @@
 # License
 
 !!! info "**MIT License**"
-    Copyright &copy; 2017 - 2020 Binbash
+    Copyright &copy; 2017 - 2020 binbash
     
     Permission is hereby granted, free of charge, to any person obtaining a copy
     of this software and associated documentation files (the "Software"), to

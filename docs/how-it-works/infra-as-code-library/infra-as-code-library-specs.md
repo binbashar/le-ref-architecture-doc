@@ -97,11 +97,11 @@
     improve its quality, since a reusable asset has already been proven.
     
 ??? important ":checkered_flag: **Full Code Access & No Lock-In**"      
-    You get access to 100% of the code under [Open Source license](https://choosealicense.com/licenses/apache-2.0/), if you choose to discontinue the direct support of the Binbash Leverage team, you keep rights to all the code.
+    You get access to 100% of the code under [Open Source license](https://choosealicense.com/licenses/apache-2.0/), if you choose to discontinue the direct support of the binbash Leverage team, you keep rights to all the code.
      
 ??? important ":checkered_flag: **Documented**"       
     Includes code examples, use cases and thorough documentation, such as README.md, 
     --help command, doc-string and in line comments.
      
 ??? important ":checkered_flag: **Supported  & Customizable**"      
-     Commercially maintained and supported by [**_Binbash_**](../../work-with-us/support.md).
+     Commercially maintained and supported by [**_binbash_**](../../work-with-us/support.md).

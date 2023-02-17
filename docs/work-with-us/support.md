@@ -3,7 +3,7 @@
 ## Leverage Reference Architecture
 
 Please create a [Github Issue](https://github.com/binbashar/le-tf-infra-aws/issues/new/choose) to
-get immediate support from the [Binbash Leverage Team](https://www.binbash.com.ar)
+get immediate support from the [binbash Leverage Team](https://www.binbash.com.ar)
 
 ### Our Engineering & Support Team
 

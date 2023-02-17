@@ -4,14 +4,14 @@
 ![leverage-why](../../../assets/images/diagrams/leverage-why-problem.png "Leverage"){: style="width:950px"}
 <figcaption style="font-size:15px">
 <b>Figure:</b> Why Leverage? The problem.
-(Source: Binbash, "Leverage Presentation: Why you should use Leverage?", accessed June 15th 2021).
+(Source: binbash, "Leverage Presentation: Why you should use Leverage?", accessed June 15th 2021).
 </figcaption>
 
 ## Our solution
 ![leverage-why](../../../assets/images/diagrams/leverage-why-solution.png "Leverage"){: style="width:950px"}
 <figcaption style="font-size:15px">
 <b>Figure:</b> Why Leverage? The solution.
-(Source: Binbash, "Leverage Presentation: Why you should use Leverage?", accessed June 15th 2021).
+(Source: binbash, "Leverage Presentation: Why you should use Leverage?", accessed June 15th 2021).
 </figcaption>
 
 ### The problem & our solution intro video
@@ -51,7 +51,7 @@
     Terraform code has been extensively E2E tested. Moreover, 100% of the code is yours (to modify, extend,
     reuse, etc), with no vendor locking and vendor licensing fees. We use the MIT license, so you can take the
     code, modify it and use it as your private code. All we ask in return is a friendly greeting and that
-    (if possible) consider contributing to ***Binbash Leverage*** project. Implement ***Leverage*** yourself or we 
+    (if possible) consider contributing to ***binbash Leverage*** project. Implement ***Leverage*** yourself or we 
     can deploy it for you!
 
 ??? question "**DevOps culture and methodologies**"
@@ -82,7 +82,7 @@
 
 ??? question "**We've done it before (don't reinvent the wheel)**"
     Often, development teams have similar and recurring requests such as: iam, networking, security, storage, 
-    databases, compute and secret management, etc. Binbash ***Leverage*** has been proven in dozen of project to create
+    databases, compute and secret management, etc. binbash ***Leverage*** has been proven in dozen of project to create
     software-defined (IaC) AWS environments.
 
 ??? question "**Best practices baked in the code**"

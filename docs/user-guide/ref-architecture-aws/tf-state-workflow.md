@@ -8,7 +8,7 @@ State Storage & Locking.
 
 <figcaption style="font-size:15px">
 <b>Figure:</b> Terraform remote state store & locking necessary AWS S3 bucket and DynamoDB table components.
-(Source: Binbash Leverage, 
+(Source: binbash Leverage, 
 <a href="https://registry.terraform.io/modules/binbashar/tfstate-backend/aws/latest">
 "Terraform Module: Terraform Backend"</a>,
 Terraform modules registry, accessed December 3rd 2020).
@@ -21,7 +21,7 @@ Terraform modules registry, accessed December 3rd 2020).
     2. Refer to [Configuration Pre-requisites](./configs.md) to understand how to set up the
       configuration files required for this layer. Where you must build your
       [Terraform Reference Architecture account structure](../../how-it-works/features/organization/organization.md)
-    3. Leveraged by the [Infrastructure as Code (IaC) Library](../../how-it-works/infra-as-code-library/infra-as-code-library.md) through the
+    3. Leveraged by the [Infrastructure as Code (IaC) Library](../../how-it-works/infra-as-code-library/index.md) through the
      [terraform-aws-tfstate-backend module](https://registry.terraform.io/modules/binbashar/tfstate-backend/aws/latest)
         - [/management/base-tf-backend](https://github.com/binbashar/le-tf-infra-aws/tree/master/root/us-east-1/base-tf-backend)
         - [/security/base-tf-backend](https://github.com/binbashar/le-tf-infra-aws/tree/master/security/us-east-1/base-tf-backend)

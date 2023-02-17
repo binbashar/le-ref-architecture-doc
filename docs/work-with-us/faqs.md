@@ -52,7 +52,7 @@
     Which is work that falls outside of the current Iteration specific tasks. This is for special
     requests, meetings, pair programming sessions, extra documentation, etc.
 
-    Binbash will participate and review the planned tasks along the customer:
+    binbash will participate and review the planned tasks along the customer:
 
     - [x] planned roadmap features
     - [x] bug fixes

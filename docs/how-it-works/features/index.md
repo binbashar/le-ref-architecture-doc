@@ -37,7 +37,7 @@
 ??? check "Compute"
     - [x] [**Compute**](./compute/overview.md)
     - [x] [**K8s EKS Overview**](./compute/k8s-eks/overview.md)
-    - [x] [**K8s EKS VPC Adressing**](./compute/k8s-eks/vpc-addressing.md)
+    - [x] [**K8s EKS VPC Addressing**](./compute/k8s-eks/vpc-addressing.md)
     - [x] [**K8s Kops**](./compute/k8s-kops.md)
     - [x] [**K8s Service Mesh**](./compute/k8s-service-mesh.md)
     - [x] [**Serverless**](./compute/serverless.md)

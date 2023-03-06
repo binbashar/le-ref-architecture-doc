@@ -271,6 +271,7 @@ nav:
           - tfautomv: "user-guide/leverage-cli/reference/tfautomv.md"
           - run: "user-guide/leverage-cli/reference/run.md"
           - kubectl: "user-guide/leverage-cli/reference/kubectl.md"
+        - Private repos: "user-guide/leverage-cli/reference/private-repos.md"
       - Extending Leverage:
         - Overview: "user-guide/leverage-cli/extending-leverage/index.md"
         - build.env : "user-guide/leverage-cli/extending-leverage/build.env.md"

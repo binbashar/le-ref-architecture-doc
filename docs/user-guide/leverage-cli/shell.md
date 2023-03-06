@@ -4,7 +4,7 @@ When launching a Terraform shell, Leverage provides the user with a completely i
 
 The whole project is mounted on a directory named after the value for `project_long` in the global configuration file, or simply named `"project"` if this value is not defined. A project named `myexample`, would be mounted in `/myexample`.
 
-The user's `~/.ssh` directory and `.gitconfig` file are also mounted on `/root/.ssh` and `/etc/gitconfig` respectively for convenience. Also, the credentials files (`credentials` and `config`) found in the project AWS credentials directory (`~/.aws/myexample`), are mapped to the locations given by the environment variables `AWS_SHARED_CREDENTIALS_FILE` and `AWS_CONFIG_FILE` respectively within the container. 
+The `.gitconfig` user's file is also mounted on `/etc/gitconfig` for convenience, while (if `ssh-agent` is running), the socket stated in `SSH_AUTH_SOCK` is mounted on `/ssh-agent`. Also, the credentials files (`credentials` and `config`) found in the project AWS credentials directory (`~/.aws/myexample`), are mapped to the locations given by the environment variables `AWS_SHARED_CREDENTIALS_FILE` and `AWS_CONFIG_FILE` respectively within the container. 
 
 ## Authentication
 Determining which credentials are needed to operate on a layer, and retrieving those credentials, may prove cumbersome for many complex layer definitions. In addition to that, correctly configuring them can also become a tedious an error prone process. For that reason Leverage automates this process upon launching the shell if requested by the user via the [`shell` command options](./reference/terraform.md#shell).

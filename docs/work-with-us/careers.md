@@ -28,7 +28,7 @@
     - Normal working hours (prime-time 9am-5pm GTM-3), in average no more than ~30-40hs per week, and we don't
       work during weekends or your country of residence national holidays.
     - Project management and planning that will take into consideration the time zone of all our team members.
-    - A flexible vacation policy where you could take 3 weeks per year away from the keyboard. If more time is needed
+    - A flexible vacation policy where you could take 4 weeks per year away from the keyboard. If more time is needed
       we could always try to arrange it for you. 
     - No ON-CALL rotation. We only offer support contracts with SLAs of responses on prime time business days hours
       exclusively.

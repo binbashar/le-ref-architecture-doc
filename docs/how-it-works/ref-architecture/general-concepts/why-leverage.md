@@ -30,7 +30,7 @@
     change systems without relying on other teams, they require little communication to get the job done. 
     In other words, both the architecture and the teams are loosely coupled.
 
-??? question "**Innovation - Rapidly adopt new technologies and reduce development time:**"
+??? question "**Innovation - Rapidly adopt new technologies and reduce development time**"
     Use ***Leverage Reference Architecture and for AWS + our libraries*** to provide a collection of cloud application
     architecture components to build and deploy faster in the cloud. Building a cloud Landing Zone is complex, 
     especially since most companies have little or no expertise in this area. And it can take a significant amount 

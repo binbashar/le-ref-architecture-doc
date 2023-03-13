@@ -9,12 +9,31 @@
 	}
 }
 
+@font-face {
+    font-family: Telegraf-Regular;
+    src: url("typography/Telegraf-Regular.otf");
+}
+
+@font-face {
+    font-family: Telegraf-UltraBold;
+    src: url("typography/Telegraf-UltraBold.otf");
+}
+
+.Telegraf-Regular{
+    font-family:Telegraf-Regular;
+}
+
+.Telegraf-UltraBold{
+    font-family:Telegraf-UltraBold;
+}
+
 * {
     --md-primary-fg-color: #BDD61C;
     --md-primary-fg-color--light: #029c8e;
     --md-primary-fg-color--dark:  #303C55;
     --md-typeset-color:   var(--md-default-fg-color);
     --md-typeset-a-color: var(--md-primary-fg-color--light);
+    font-family: Telegraf-Regular;
 }
 
 :root {

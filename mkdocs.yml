@@ -157,7 +157,7 @@ nav:
     - Work with us: "work-with-us/index.md"
     - License: "license.md"
 
-  - First Steps: 
+  - First Steps:
     - Introduction: "first-steps/introduction.md"
     - Set Up your AWS Management account: "first-steps/aws-account-setup.md"
     - Set Up your local environment: "first-steps/local-setup.md"

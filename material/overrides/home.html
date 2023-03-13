@@ -5,560 +5,334 @@
 {{ super() }}
 
 <!-- Hero for landing page -->
-<!-- 1st Section -->
-<section class="tx-container">
-    <div class="md-grid md-typeset">
-        <div class="tx-hero">
 
-            <!-- Hero image -->
-            <div class="tx-hero__image">
-                <img
-                        src="assets/images/illustrations/home.png"
-                        alt=""
-                        width="600"
-                        draggable="false"
-                >
-            </div>
-
-            <!-- Hero content -->
-            <div class="tx-hero__content">
-                <h1  id="leverage-architecture">binbash Leverage™ Documentation</h1>
-                <p>
-                    the leading, easy to deploy, reusable and most automated solution
-                    for defining, provisioning and managing your secure and scalable
-                    multi-account AWS infrastructure environment. <br><br>
-
-                    Its design is fully based on the
-                    <strong>
-                        <a href="https://leverage.binbash.com.ar/work-with-us/support/#aws-well-architected-review">AWS
-                            Well Architected Framework.
-                        </a>
-                    </strong>
-                </p><br>
-
-                <p>
-                    ⭐ <strong>
-                    Own your AWS infrastructure
-                </strong> <br>
-                    ⭐ <strong>
-                    Implement, reuse and scale faster
-                </strong> <br>
-                    ⭐ <strong>
-                    Bootstrap your AWS Landing Zone
-                </strong> <br>
-                    ⭐ <strong>
-                    Proven libraries and modules
-                </strong> <br>
-                    ⭐ <strong>
-                    Modern Terraform, Ansible, Helm, K8s Stack
-                </strong> <br>
-                    ⭐ <strong>
-                    Optimize your cloud costs by design
-                </strong> <br>
-                    ⭐ <strong>
-                    Secure your cloud assets and production workloads
-                </strong> <br>
-                    ⭐ <strong>
-                    Achieve compliance in AWS
-                </strong> <br><br>
-
-                <a
-                        href="{{ page.next_page.url | url }}"
-                        title="{{ page.next_page.title | e }}"
-                        class="md-button md-button--primary"
-                >
-                    Get started
-                </a><br>
-
-                <a
-                    href="https://github.com/binbashar"
-                    title="{{ lang.t('source.link.title') }}"
-                    class="md-button">
-                    Contribute on GitHub
-                    <img
-                        class = icon
-                        src="assets/images/icons/github-white.svg"
-                        alt=""
-                        width="24"
-                        draggable="false"
-                    >
-                </a><br>
-
-                <a
-                    href="https://join.slack.com/t/binbashar/shared_invite/zt-fw1692b6-9k4ADsWJ47lKacszphXM1w"
-                    title="{{ page.next_page.title | e }}"
-                    class="md-button md-button--primary">
-                    Join us on Leverage Slack
-                    <img
-                            class = icon
-                            src="assets/images/logos/slack.png"
-                            alt=""
-                            width="22"
-                            draggable="false"
-                    >
-                </a>
-
-            </div>
-        </div>
+<!--binbash leverage documetation-->
+<section class="first-gradiant-body w-100">
+  <div class="md-grid conteiner-row pt-1 pt-lg-5 my-4">
+    <div class="px-3 ctx-header-text conteiner">
+      <div class="conteiner-row">
+        <p class="h1 text-xs-center">
+          binbash
+          <img src="assets/images/logos/leverage-title-logo.svg" class="mx-3 leverage-title-logo" height="22%"/>
+          documentation
+        </p>
+      </div>
+      <img src="assets/images/logos/binbash-landing-header.svg" class="laverage-header-img d-lg-none d-xl-none mx-auto mb-5" />
+      <p class="h3 text-xs-center">The leading, easy to deploy, reusable and most automated solution for defining, provisioning and managing your secure and scalable multi-account AWS infrastructure environment.</p>
+      <div class="conteiner-row conteiner-xs">
+        <button
+          type="button"
+          title="{{ page.next_page.title | e }}"
+          onclick="location.href='https://leverage.binbash.com.ar/welcome/'"
+          class="btn-dark btn-xl-large btn-lg-large mx-3  mt-3 my-md-5 my-lg-5 my-xl-5 box-shadow"
+        >
+            Get Started
+        </button>
+        <button
+          type="button"
+          title="{{ page.next_page.title | e }}"
+          onclick="window.open('https://join.slack.com/t/binbashar/shared_invite/zt-fw1692b6-9k4ADsWJ47lKacszphXM1w', '_blank')"
+          class="btn-warning btn-xl-large btn-lg-large mx-3 mt-3 my-md-5 my-lg-5 my-xl-5 box-shadow"
+        >
+          Join Us on Slack
+        </button>
+      </div>
     </div>
+    <div class="ctx-header-img d-lg">
+      <img src="assets/images/logos/binbash-landing-header.svg" class="laverage-header-img mx-lg-5" />
+    </div>
+  </div>
+
 </section>
 
-<!-- 2nd Section -->
-<!-- WHAT IS LEVERAGE? -->
-<section class="tx-container-2">
-    <div class="md-grid md-typeset">
-        <div class="tx-hero__image-2" style="margin-top: 50px">
-            <img
-                    src="assets/images/illustrations/home-section-2.png"
-                    alt=""
-                    width="800"
-                    draggable="false"
-                    align="left"
-            >
+<section class="second-gradiant-body w-100">
+  <!--We ship it. You own it-->
+  <div class="md-grid conteiner-row pt-4 my-4">
+    <div class="card-white py-3 mx-xs-3 mx-sm-3 mx-4 mx-xl-0 ">
+      <div class="conteiner-row">
+        <div class="conteiner ctx-card-white-1 pt-4">
+          <div class="d-sm text-align-center">
+            <p class="display-3 Telegraf-UltraBold text-dark mx-auto mt-4">We ship it.</p>
+            <p class="display-3 Telegraf-UltraBold text-pink mx-auto my-4">You own it.</p>
+          </div>
+          <div class="d-sm-none d-md-none d-lg-none d-xl-none text-align-center">
+            <p class="display-4 Telegraf-UltraBold text-dark mx-auto mt-4">We ship it.</p>
+            <p class="display-4 Telegraf-UltraBold text-pink mx-auto my-4">You own it.</p>
+          </div>
+
+          <div class="conteiner ctx-card-white-1 text-dark h3 d-lg-none d-xl-none my-xs-5 my-sm-5 my-md-5">
+            <ul class="ul-home mx-xs-auto mx-sm-auto mx-md-auto my-xs-5 my-sm-5 my-md-5">
+              <li>- Own your AWS infrastructure</li>
+              <li>- Implement, reuse and scale faster</li>
+              <li>- Bootstrap your AWS Landing Zone</li>
+              <li>- Proven libraries and modules</li>
+              <li>- Modern Terraform, Ansible, Helm, K8s Stack</li>
+              <li>- Optimize your cloud costs by design</li>
+              <li>- Secure your cloud assets and production workloads</li>
+              <li>- Achieve compliance in AWS</li>
+            </ul>
+          </div>
+
+          <button
+            onclick="window.open('https://github.com/binbashar', '_blank')"
+            title="{{ lang.t('source.link.title') }}"
+            type="button"
+            class="btn-white btn-xl-large btn-lg-large box-shadow mx-auto my-4"
+          >
+            Contribute on GitHub
+          </button>
         </div>
-        <div class="tx-hero">
-            <!-- Hero content -->
-            <div class="tx-hero__content-2">
-                <h1 id="what-is-leverage">What is Leverage?</h1><br>
-
-                <p>
-                    Our focus is on creating reusable, high quality AWS Cloud Infrastructure code, through our core components:<br>
-                    ▶️
-                    <strong>
-                        <a href="https://www.binbash.com.ar/leverage">Reference Architecture for AWS</a>
-                    </strong><br>
-                    ▶️
-                    <strong>
-                        <a href="https://www.binbash.com.ar/leverage">Infrastructure
-                            as Code (IaC) Library</a>
-                    </strong><br>
-                    ▶️
-                    <strong>
-                        <a href="https://www.binbash.com.ar/leverage">Leverage CLI</a>
-                    </strong><br><br>
-                    Because all the code and modules are already built, we can get your project up and running on AWS
-                    <strong> up to 10x faster </strong> 🚀 than a consulting company (✅ typically in just a few weeks!).<br><br>
-
-                    On top of code that is
-                    thoroughly documented, tested, and has been proven in production at dozens of other project
-                    deployments by our
-                    <strong>
-                        <a href="https://www.binbash.com.ar/team">Engineering Support Team.</a>
-                    </strong>
-
-                </p><br>
-
-                <a
-                        href="https://www.binbash.com.ar/leverage"
-                        title="{{ page.next_page.title | e }}"
-                        class="md-button md-button"
-                >
-                    Product Features
-                </a>
-            </div>
+        <div class="conteiner ctx-card-white-1 text-dark h3 d-lg">
+          <ul>
+            <li>- Own your AWS infrastructure</li>
+            <li>- Implement, reuse and scale faster</li>
+            <li>- Bootstrap your AWS Landing Zone</li>
+            <li>- Proven libraries and modules</li>
+            <li>- Modern Terraform, Ansible, Helm, K8s Stack</li>
+            <li>- Optimize your cloud costs by design</li>
+            <li>- Secure your cloud assets and production workloads</li>
+            <li>- Achieve compliance in AWS</li>
+          </ul>
         </div>
+      </div>
     </div>
+  </div>
+
+  <!--Whats is leverage-->
+  <div class="conteiner-row-lg conteiner-row-xl conteiner py-5 my-5">
+    <div class="conteiner" style="order:0; flex: 50%;">
+      <div class="conteiner ctx-what-is mx-auto">
+        <span class="display-3 text-dark Telegraf-UltraBold mt-4 text-align-center text-end-xl text-end-lg">What is Leverage?</span>
+        <div class="conteiner text-dark h3 text-align-start text-end-xl text-end-lg my-xs-5 my-sm-5 my-md-5">
+          <p class="my-3">
+            <img src="assets/images/icons/check-ok.svg" class="mx-2" width="20px" height="20px"/>
+            Our focus is on creating reusable, high quality AWS Cloud Infrastructure code, through our core components:
+          </p>
+          <p class="my-3 t-b">
+            <img src="assets/images/icons/check-ok.svg" class="mx-2" width="20px" height="20px"/>
+            Reference Architecture for AWS, Infrastructure as Code (IaC), Library Leverage CLI
+          </p>
+          <p class="my-3">
+            <img src="assets/images/icons/check-ok.svg" class="mx-2" width="20px" height="20px"/>
+            Because all the code and modules are already built, we can get your project up and running on AWS <span class="t-b">up to 10x faster</span>  than a consulting company.
+          </p>
+          <p class="my-3">
+            <img src="assets/images/icons/check-ok.svg" class="mx-2" width="20px" height="20px"/>
+            On top of code that is thoroughly documented, tested, and has been proven in production at dozens of other project deployments <span class="t-b">our Engineering Support Team.</span>
+          </p>
+          <button
+            onclick="location.href='https://www.binbash.com.ar/leverage'"
+            title="{{ page.next_page.title | e }}"
+            type="button"
+            class="btn-dark btn-xl-large btn-lg-large my-4 box-shadow ml-auto mx-xs-auto mx-sm-auto mx-md-auto"
+          >
+            Product Features
+          </button>
+        </div>
+      </div>
+    </div>
+    <div class="conteiner" style="order:1; flex: 50%; overflow:hidden;">
+      <img src="assets/images/illustrations/mock-mac-book-16.png" class="laverage-mac-img my-xs-5 my-sm-5 my-md-5" />
+    </div>
+  </div>
 </section>
 
-<!-- 3rd Section -->
-<!-- WHY LEVERAGE? -->
-<section class="tx-container-3">
-    <div class="md-grid md-typeset">
-        <div class="tx-hero">
-
-            <!-- Hero image -->
-            <div class="tx-hero__image-3">
-                <img
-                        src="assets/images/illustrations/home-why.png"
-                        alt=""
-                        width="2800"
-                        draggable="false"
-                >
-            </div>
-
-            <!-- Hero content -->
-            <div class="tx-hero__content_small">
-                <br>
-                <h1 id="why-leverage">Why Leverage?</h1><br>
-
-                <p>
-                    ✅ If you implement our
-                    <strong>
-                        <a href="https://www.binbash.com.ar/leverage">Reference AWS Cloud Solutions
-                            Architecture</a>
-                    </strong> and the
-                    <strong>
-                        <a href="https://www.binbash.com.ar/leverage">Infrastructure
-                            as Code (IaC) Library</a>
-                    </strong> via
-                    <strong>
-                        <a href="https://www.binbash.com.ar/leverage">Leverage CLI</a>
-                    </strong>
-                    , you will get your entire Cloud Native Application Infra in few weeks.<br><br>
-
-                    ✅ We've built every component based on the best recommended practices mainly following the
-                    <strong>
-                        <a href="https://www.binbash.com.ar/aws-well-architected">AWS
-                            Well-Archiected Framework
-                        </a>
-                    </strong>,
-                    granting you ownership to implement, reuse and scale your production workloads faster.<br><br>
-
-                    ✅ Leverage will solve your
-                    entire infrastructure and will grant you complete control of the source code, and of course you'll
-                    be able to run it without us.<br>
-                </p><br>
-
-                <a
-                        href="https://leverage.binbash.com.ar/how-it-works/ref-architecture/general-concepts/why-leverage/"
-                        title="{{ page.next_page.title | e }}"
-                        class="md-button"
-                >
-                    Find out more 'Whys'
-                </a>
-
-                <a
-                        href="https://leverage.binbash.com.ar/work-with-us/leverage-vs-competition/"
-                        title="{{ lang.t('source.link.title') }}"
-                        class="md-button md-button--primary">
-                    Leverage vs Competition
-                </a>
-
-                <p>
-
-<!--                <h2>
-                <i>Implement</i>
-                <i style="color: aquamarine">Leverage</i>
-                <i>with our support or we can deploy it for you! 💪</i>
-            </h2>-->
-                </p>
-            </div>
+<!--Why Leverage-->
+<section class="third-dark-body w-100">
+  <div class="conteiner py-5 my-5">
+    <img src="assets/images/illustrations/why-leverage.svg" class="why-laverage-img" />
+    <img src="assets/images/illustrations/Ilustracion-Binbash.png" class="laverage-mac2-img" />
+    <div class="conteiner-row">
+      <div style="order:0; flex: 50%;">
+        <div class="conteiner ctx-card-white-1 text-white h3 my-5 d-xl-none d-lg-none mx-auto w-70">
+          <p class="my-3">
+            <img src="assets/images/icons/check-ok.svg" class="mx-2" width="20px" height="20px"/>
+            You will get your entire Cloud Native Application Infra in a few weeks.
+          </p>
+          <p class="my-3">
+            <img src="assets/images/icons/check-ok.svg" class="mx-2" width="20px" height="20px"/>
+            We've built every component based on the best recommended practices.
+          </p>
+          <p class="my-3">
+            <img src="assets/images/icons/check-ok.svg" class="mx-2" width="20px" height="20px"/>
+            Implement, reuse and scale your production workloads faster.
+          </p>
         </div>
+        <div class="conteiner ctx-card-white-1 text-white h3 my-5 mx-auto w-70">
+          <btn
+            onclick="window.open('https://github.com/binbashar','_blank')"
+            title="{{ lang.t('source.link.title') }}"
+            type="button"
+            class="btn-rainbow btn-rainbow-custom btn-xl-large btn-lg-large mx-auto text-align-center cursor-pointer"
+          >
+            Leverage vs. Competition
+          </btn>
+        </div>
+      </div>
+      <div style="order:0; flex: 50%;" class="d-lg">
+        <div class="card-rainbow second-gradiant-body px-5 py-5" style="order:1; flex: 100%;">
+          <div class="conteiner ctx-card-white-1 text-dark h3">
+            <p class="my-3">
+              <img src="assets/images/icons/check-ok.svg" width="20px" height="20px"/>
+              If you implement our <span class="t-b">Reference AWS Cloud Solutions Architecture</span> and the <span class="t-b">Infrastructure as Code (IaC) Library</span> via <span class="t-b">Leverage CLI</span>, you will get your entire Cloud Native Application Infra in a few weeks.
+            </p>
+            <p class="my-3">
+              <img src="assets/images/icons/check-ok.svg" width="20px" height="20px"/>
+              We've built every component based on the best-recommended practices, mainly following the <span class="t-b">AWS Well-Architected Framework</span>, granting you ownership to implement, reuse and scale your production workloads faster.
+            </p>
+            <p class="my-3">
+              <img src="assets/images/icons/check-ok.svg" width="20px" height="20px"/>
+              Leverage will solve your entire infrastructure and grant you complete control of the source code, and of course, you'll be able to run it without us.
+            </p>
+          </div>
+        </div>
+      </div>
     </div>
-</section>
-<!-- CERTS & APN -->
-<!--<section class="tx-container-3">
-    <div class="md-grid md-typeset">
-        <div class="tx-hero">
-
-            &lt;!&ndash; Hero image &ndash;&gt;
-            <div class="tx-hero__image-4">
-                <img
-                        src="assets/images/illustrations/home-section-7.png"
-                        alt=""
-                        width="800"
-                        draggable="false"
-                >
-            </div>
-        </div>
-    </div>
-</section>-->
-
-<!-- 4th Section -->
-<!-- TECH STACK  -->
-<section class="tx-container-2">
-    <div class="md-grid md-typeset">
-        <div class="tx-hero__image-2">
-            <img
-                    src="assets/images/illustrations/home-section-5.png"
-                    alt=""
-                    width="800"
-                    draggable="false"
-                    align="left"
-            >
-        </div>
-        <div class="tx-hero">
-            <!-- Hero content -->
-            <div class="tx-hero__content-2">
-                <h1 id="tech-stack">Our tech stack</h1>
-                <p><br>
-                    ⛵ Opinionated reference AWS solutions composable architecture. Based in the
-                        <a href="https://leverage.binbash.com.ar/work-with-us/support/#aws-well-architected-review"><b>AWS Well
-                            Architected Framework</b></a>. With over 10 years of experience, Infra as code and best practices.
-                    <br><br>
-                    ⛵ Leverage facilitates a collection of reusable, tested, production-ready E2E IaC solutions. Leveraged by modules
-                    written in <a href="https://leverage.binbash.com.ar/how-it-works/infra-as-code-library/infra-as-code-library/">
-                        <b>Terraform, Ansible, Dockerfiles, Helm Charts and Python</b></a>.
-                    <br><br>
-
-                    ⛵ Automated deployment workflow via <strong>
-                        <a href="https://github.com/binbashar/leverage">Leverage CLI</a>.
-                    </strong>
-                </p><br>
-
-                <a
-                        href="https://leverage.binbash.com.ar/how-it-works/ref-architecture/general-concepts/why-tech-stack/"
-                        title="{{ page.next_page.title | e }}"
-                        class="md-button md-button"
-                >
-                    Why our tech stack?
-                </a>
-            </div>
-        </div>
-    </div>
+  </div>
 </section>
 
-<!-- 5th Section  -->
-<!-- WORK WITH US -->
-<section class="tx-container-4">
-    <div class="md-grid md-typeset">
-        <div class="tx-hero">
-
-            <!-- Hero image -->
-            <div class="tx-hero__image-3">
-                <img
-                        src="assets/images/illustrations/home-section-4.png"
-                        alt=""
-                        width="1200"
-                        draggable="false"
-                >
-            </div>
-
-            <!-- Hero content -->
-            <div class="tx-hero__content_small">
-                <h1 id="work-with-us">Work with us</h1>
-                <p>
-                    <i>Get to know how we work at binbash Leverage™ 🚀✨☁</i><br>
-                    ⭐ <strong>
-                    <a href="https://leverage.binbash.com.ar/work-with-us/">Collaboration Methodology</a>
-                        </strong> <br>
-                    ⭐ <strong>
-                    <a href="https://leverage.binbash.com.ar/work-with-us/support/">Support</a>
-                        </strong> <br>
-                    ⭐ <strong>
-                    <a href="https://leverage.binbash.com.ar/work-with-us/contribute/">Contribute</a>
-                        </strong> <br>
-                    ⭐ <strong>
-                    <a href="https://leverage.binbash.com.ar/work-with-us/careers/">Careers</a>
-                        </strong> <br>
-                    ⭐ <strong>
-                    <a href="https://leverage.binbash.com.ar/work-with-us/faqs/">FAQs</a>
-                </strong> <br>
-
-<!--                    <a
-                            href="https://drive.google.com/file/d/1bwjSdnVqc-fh2RqfO0s1VMt-Tv7Ushyi/view?usp=sharing"
-                            title="{{ page.next_page.title | e }}"
-                            class="md-button md-button--primary"
-                    >
-                        Action Plan
-                    </a>-->
-
-                    <a
-                            href="https://www.binbash.com.ar/team"
-                            title="{{ page.next_page.title | e }}"
-                            class="md-button md-button--primary">
-                        Our Team
-                    </a><br>
-
-                </p>
-            </div>
-        </div>
+<!--Our tech stack-->
+<section class="four-gray-body w-100">
+  <div class="md-grid conteiner pt-5  my-0 my-xl-4 my-lg-4">
+    <p class="display-3 text-dark Telegraf-UltraBold mt-4 text-align-center text-start-xl text-start-lg">Our tech stack</p>
+    <img src="assets/images/logos/stack-tecnology.svg" class="mx-auto my-5" width="80%"/>
+    <div class="conteiner conteiner-row-lg conteiner-row-xl my-4">
+      <div class="text-dark h3 mx-4 my-3 mx-lg-0 my-xl-0 mx-lg-0 my-xl-0" style="order:0; flex: 50%;">
+        <p>Opinionated reference <span class="t-b">AWS solutions</span> composable architecture, based on the <span class="t-b">AWS Well-Architected Framework</span>. With over ten years of experience, Infra as code and best practices.</p>
+      </div>
+      <div class="text-dark h3 mx-4 my-3 mx-lg-0 my-xl-0 mx-lg-0 my-xl-0" style="order:0; flex: 50%;">
+        <p>Leverage facilitates a collection of reusable, tested, production-ready E2E IaC solutions. They are leveraged by modules written in <span class="t-b">Terraform, Ansible, Dockerfiles, Helm Charts</span> and <span class="t-b">Python</span>.</p>
+      </div>
     </div>
+    <div class="conteiner conteiner-row-lg conteiner-row-xl my-4">
+      <div class="text-dark h3 mx-4 my-3 mx-lg-0 my-xl-0 mx-lg-0 my-xl-0" style="order:0; flex: 50%;">
+        <p>Automated deployment workflow via <span class="t-b">Leverage CLI.</span></p>
+      </div>
+      <div style="order:0; flex: 50%;">
+        <button
+          onclick="location.href='https://leverage.binbash.com.ar/how-it-works/ref-architecture/general-concepts/why-tech-stack'"
+          title="{{ page.next_page.title | e }}"
+          type="button"
+          class="btn-dark btn-xl-large btn-lg-large my-4 box-shadow mx-auto"
+        >
+          Why our tech stack?
+        </button>
+      </div>
+    </div>
+    <img src="assets/images/diagrams/AWS-ORGANIZATION.png" class="mx-auto mt-5 mb-3 d-sm" width="100%"/>
+    <img src="assets/images/diagrams/diagrama-organization-binbash.png" class="mx-auto mt-5 d-sm-none d-md-none d-lg-none d-xl-none" width="100%"/>
+    <div class="conteiner-row my-0 my-xl-4 my-lg-4 stack-tenology-gradient">
+      <img src="assets/images/logos/stack-tecnologico-2.svg" class="mx-auto py-3" width="60%"/>
+    </div>
+  </div>
 </section>
 
-<!--  6th Section  -->
-<!--  TESTIMONIALS -->
-<!--<section class="tx-container-testimonial">
-
-    <div>
-        &lt;!&ndash; Titulo &ndash;&gt;
-        <h1 class=testimonial-header id="testimonials" style="text-align: center">
-            Trusted by our customers
-        </h1>
+<!--Footer-->
+<footer class="bg-dark w-100">
+  <div class="md-grid conteiner-row-xl conteiner-row-lg conteiner pt-5 my-4">
+    <div class="conteiner-row" style="flex:50%">
+      <div class="text-white d-flex" style="flex: 40%;">
+        <img src="assets/images/logos/logo-binbash.png" class="mx-auto" width="30%"/>
+      </div>
+      <div class="text-white h3" style="flex: 30%;">
+        <div class="conteiner text-white h3">
+          <ul>
+            <li class="cursor-pointer item-text-footer">
+              <a href="https://www.binbash.com.ar/" target="_blank">Home</a>
+            </li>
+            <li class="cursor-pointer item-text-footer">
+              <a href="https://www.binbash.com.ar/" target="_blank">Solutions</a>
+            </li>
+            <li class="cursor-pointer item-text-footer">
+              <a href="https://www.binbash.com.ar/leverage" target="_blank">Leverage</a>
+            </li>
+            <li class="cursor-pointer item-text-footer">
+              <a href="https://medium.com/binbash-inc" target="_blank">Blog</a>
+            </li>
+            <li class="cursor-pointer item-text-footer">
+              <a href="https://www.binbash.com.ar/contact" target="_blank">Contact</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="text-white h3" style="flex: 30%;">
+        <div class="conteiner text-white h3">
+          <ul>
+            <li class="cursor-pointer item-text-footer">
+              <a href="https://github.com/sponsors/binbashar" target="_blank">About Us</a>
+            </li>
+            <li class="cursor-pointer item-text-footer">
+              <a href="https://www.binbash.com.ar/team" target="_blank">Team</a>
+            </li>
+            <li class="cursor-pointer item-text-footer">
+              <a href="https://github.com/binbashar" target="_blank">Resources</a>
+            </li>
+            <li class="cursor-pointer item-text-footer">
+              <a href="https://www.binbash.com.ar/" target="_blank">Testimonials</a>
+            </li>
+            <li class="cursor-pointer item-text-footer">
+              <a href="https://www.binbash.com.ar/pricing" target="_blank">Pricing</a>
+            </li>
+          </ul>
+        </div>
+      </div>
     </div>
-
-    <div class="container-testimonial">
-        <div class="testimonial-card">
-            <div class="text">
-                "We utilized binbash to help get our DevOps infrastructure launched and manage all aspects of our AWS-based setup.
-                Their security and compliance focus turned out to be a great fit for our HIPAA regulation needs.<br>
-                We’ve been very pleased with their responsiveness and thoroughness with regards to our technology needs
-                and would be happy to work with them again in the future."
-            </div>
-
-            <div class="footer">
-                <div class="image" style=" background:no-repeat center/cover url(assets/images/testimonials/yury.yakubchyk.circle.png);">
-                </div>
-                <h3 class='person'>
-                    <a href="https://www.linkedin.com/in/yuryyak/">Yury Yakubchyk</a>
-                    </h3>
-
-                <h5 class='person-title' style="text-align:center;">Founder & CEO<br>
-                    <a href="https://www.joinsprouttherapy.com/" style="color: aquamarine">joinsprouttherapy.com</a><br>
-                    <a href="https://www.lifehousehotels.com/" style="color: aquamarine">lifehousehotels.com</a><br>
-                    (Multiple US Industries)
-                </h5>
-            </div>
-        </div>
-
-        <div class="testimonial-card">
-            <div class="text">
-                "I've worked with binbash for almost 3 years and my experience was absolutely positive.<br>
-                I found them to be very knowledgeable and reliable as well as open minded and willing to try new
-                technologies (but always considering trade-offs).<br>
-                Communication is excellent (even if things go wrong).<br>
-                Great Team of professionals!"
-            </div>
-
-            <div class="footer">
-                <div class="image" style="background:no-repeat center/cover url(assets/images/testimonials/max.ivanov.circle.png);">
-                </div>
-                <h3 class='person'> <a href="https://www.toptal.com/resume/max-ivanov">Max Ivanov</a>
-                </h3>
-                <h5 class='person-title' style="text-align:center;"> Software Architect <br> (Media Streaming Industry)</h5>
-            </div>
-        </div>
-
-        <div class="testimonial-card">
-            <div class="text">
-                "binbash has a focused and highly productive professional team.<br>
-                They have exceptional tech skills and effectively transmit and implement their solutions, such as Leverage.
-                Thanks to their collaboration we managed to have a superlative product hosted in AWS.
-                It is undoubtedly a company with which I would like to work in any challenge that lies ahead"
-            </div>
-
-            <div class="footer">
-                <div class="image" style="background:no-repeat center/cover url(assets/images/testimonials/martin.vago.circle.png);">
-                </div>
-                <h3 class='person'> <a href="https://www.linkedin.com/in/mvago/">Martín Vago</a>
-                </h3>
-                <h5 class='person-title' style="text-align:center;">IT & CloudOps Manager <br>
-                    <a href="https://www.tunubi.com" style="color: aquamarine">tunubi.com</a><br>
-                    (Fintech Industry)
-                </h5>
-            </div>
-        </div>
-
-    </div><br>
-
-    <div class="tx-hero">
-        &lt;!&ndash; Hero content &ndash;&gt;
-        <div class="tx-hero__content-2" style="float: left">
-            <a
-                    href="../../work-with-us/testimonials/"
-                    title="{{ page.next_page.title | e }}"
-                    class="md-button md-typeset"
-                    style="
-                        font-family: Roboto;
-                        font-weight: 700;
-                        background: #172A45;
-                        padding-top: 1rem;
-                        padding-bottom: 1rem;
-                        padding-right: 2rem;
-                        padding-left: 2rem;
-                        border: 0.1rem solid;
-                        border-radius: .1rem;
-                          "
-            >
-                More testimonials
-            </a>
-        </div>
-    </div><br>
-
-</section>-->
-
-<!--     7th Section    -->
-<!-- SUBSCRIPTION PLANS -->
-<!--<section>
-    &lt;!&ndash; Contenedor &ndash;&gt;
-    <div class="pricing-wrapper clearfix">
-        &lt;!&ndash; Titulo &ndash;&gt;
-        <h1 class="pricing-table-title" id="leverage-subscription" style="text-align: left">
-            Subscription Plans
-        </h1>
-
-        <div class="pricing-table">
-            <h3 class="pricing-title">Community (Free)</h3>
-            <div class="price">$0<sup>/ month</sup></div>
-            &lt;!&ndash; Contratar / Contact Us &ndash;&gt;
-            <div class="table-buy">
-                <p><sup> Open Source ❤️</sup></p>
-                <a href="https://github.com/binbashar"
-                   class="pricing-action">Free</a>
-            </div>
-        </div>
-
-        <div class="pricing-table">
-            <h3 class="pricing-title">Basic</h3>
-            <div class="price">$3400<sup>/ month</sup></div>
-            &lt;!&ndash; Contratar / Contact Us &ndash;&gt;
-            <div class="table-buy">
-                <p>$3400<sup>/ month (40hs)</sup></p>
-                <a href="https://docs.google.com/forms/d/e/1FAIpQLScgYmguLk5lDgrDa7HEt8hZFsRKncCf0XMezbDRsXt4mixg4Q/viewform?usp=sf_link"
-                   class="pricing-action">Contact Us</a>
-            </div>
-        </div>
-
-        <div class="pricing-table recommended">
-            <h3 class="pricing-title">Premium</h3>
-            <div class="price">$6400<sup>/ month</sup></div>
-            &lt;!&ndash; Contratar / Contact Us &ndash;&gt;
-            <div class="table-buy">
-                <p>$6400<sup>/ month (80hs)</sup></p>
-                <a href="https://docs.google.com/forms/d/e/1FAIpQLScgYmguLk5lDgrDa7HEt8hZFsRKncCf0XMezbDRsXt4mixg4Q/viewform?usp=sf_link"
-                   class="pricing-action">Contact Us</a>
-            </div>
-        </div>
-
-        <div class="pricing-table">
-            <h3 class="pricing-title">Business</h3>
-            <div class="price">$90<sup>/ hour</sup></div>
-            &lt;!&ndash; Contratar / Contact Us &ndash;&gt;
-            <div class="table-buy">
-                <p>$10800<sup>/ month (120hs)</sup></p>
-                <a href="https://docs.google.com/forms/d/e/1FAIpQLScgYmguLk5lDgrDa7HEt8hZFsRKncCf0XMezbDRsXt4mixg4Q/viewform?usp=sf_link"
-                   class="pricing-action">Contact Us</a>
-            </div>
-        </div>
+    <div class="conteiner-row mt-5 my-xl-0 mX-lg-0" style="flex:50%">
+      <div class="text-white text-end h3" style="flex: 15%;">
+          <span>Follow us on: </span>
+      </div>
+      <div class="text-white h3" style="flex: 35%;">
+        <a href="https://join.slack.com/t/binbashar/shared_invite/zt-fw1692b6-9k4ADsWJ47lKacszphXM1w" target="_blank">
+          <img
+            src="assets/images/logos/socialmedia/slack.svg"
+            title="Slack"
+            class="mx-3 cursor-pointer item-social-media"
+            width="7%"
+          />
+        </a>
+        <a href="https://www.linkedin.com/company/binbash" target="_blank">
+          <img
+            src="assets/images/logos/socialmedia/linkedIn.svg"
+            title="linkedIn"
+            class="mr-3 cursor-pointer item-social-media"
+            width="7%"
+          />
+        </a>
+        <a href="https://github.com/binbashar" target="_blank">
+          <img
+            src="assets/images/logos/socialmedia/github.svg"
+            title="Github"
+            class="mr-3 cursor-pointer item-social-media"
+            width="7%"
+          />
+        </a>
+        <a href="https://twitter.com/binbash_devops" target="_blank">
+          <img
+            src="assets/images/logos/socialmedia/twitter.svg"
+            title="Twitter"
+            class="mr-3 cursor-pointer item-social-media"
+            width="7%"
+          />
+        </a>
+        <a href="https://www.instagram.com/binbash_devops/"  target="_blank">
+          <img
+            src="assets/images/logos/socialmedia/instagram.svg"
+            title="Instagram"
+            class="mr-3 cursor-pointer item-social-media"
+            width="7%"
+          />
+        </a>
+        <a href="https://medium.com/binbash-inc" target="_blank">
+          <img
+            src="assets/images/logos/socialmedia/medium.svg"
+            title="Medium"
+            class="mr-3 cursor-pointer item-social-media"
+            width="7%"
+          />
+        </a>
+      </div>
     </div>
+  </div>
+</footer>
 
-    <div class="tx-hero">
-        &lt;!&ndash; Hero content &ndash;&gt;
-        <div class="tx-hero__content-2" style="float: left">
-            <a
-                    href="../../work-with-us/subscription-plans"
-                    title="{{ page.next_page.title | e }}"
-                    class="md-button md-typeset"
-                    style="
-                        font-family: Roboto;
-                        font-weight: 700;
-                        background: #172A45;
-                        padding-top: 1rem;
-                        padding-bottom: 1rem;
-                        padding-right: 2rem;
-                        padding-left: 2rem;
-                        border: 0.1rem solid;
-                        border-radius: .1rem;
-                          "
-            >
-                Subscription Plans Details
-            </a>
-        </div>
-    </div>
-
-</section>-->
-
-<!-- Footer Section -->
-<section class="tx-footer">
-    <div class="md-grid md-typeset">
-        <div class="tx-hero">
-            <!-- Hero content -->
-            <div class="tx-hero__content-footer">
-                <p style="text-align:center;">
-                    © 2021
-                    <strong>
-                        <a href="https://www.binbash.com.ar">Binbashar, Inc</a>
-                    </strong>. All rights reserved
-
-                    || Contact us 📧
-                    <strong>
-                        <a href="https://mail.google.com/mail/?view=cm&fs=1&to=info@binbash.com.ar&su=Leverage Contact
-                                &body=Dear Leverage Team,">info@binbash.com.ar</a>
-                    </strong>.
-                </p>
-            </div>
-        </div>
-    </div>
-</section>
 {% endblock %}
-

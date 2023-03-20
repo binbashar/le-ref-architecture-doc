@@ -12,7 +12,7 @@ So, if an SSH private repo has to be reached the keys for such repo should be lo
 
 If the agent is automatically started and the needed keys added in the host system, it should work as it is.
 
-In other case these steps should be followed:
+These steps should be followed otherwise:
 
 - start the SSH-Agent:
 ```shell

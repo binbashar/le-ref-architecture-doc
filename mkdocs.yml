@@ -270,6 +270,7 @@ nav:
               - layers: "user-guide/leverage-cli/reference/terraform/layers.md"
           - tfautomv: "user-guide/leverage-cli/reference/tfautomv.md"
           - run: "user-guide/leverage-cli/reference/run.md"
+          - kubectl: "user-guide/leverage-cli/reference/kubectl.md"
       - Extending Leverage:
         - Overview: "user-guide/leverage-cli/extending-leverage/index.md"
         - build.env : "user-guide/leverage-cli/extending-leverage/build.env.md"

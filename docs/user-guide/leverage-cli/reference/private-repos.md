@@ -4,7 +4,7 @@ If it is the case that the layer is using a module from a private repository rea
 
 ## SSH accessed repository
 
-For using an SSH accessed private repository as a module for the layer these considerations have to be kept in mind.
+To source a Terraform module from a private repository in a layer via an SSH connection these considerations have to be kept in mind.
 
 Leverage CLI will mount the host's SSH-Agent socket into the Levarage Toolbox container, this way your keys are accessed in a secure way.
 

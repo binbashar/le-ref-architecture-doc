@@ -1,6 +1,17 @@
-# Working with modules in private repos
+# Working with Terraform modules in private repos
 
 If it is the case that the layer is using a module from a private repository read the following.
+
+E.g.:
+
+```yaml
+module "themodule" {
+  source = "git@gitlab.com:some-org/some-project/the-private-repo.git//modules/the-module?ref=v0.0.1"
+  ...
+}
+```
+where `gitlab.com:some-org/some-project/the-private-repo.git` is a private repo.
+
 
 ## SSH accessed repository
 

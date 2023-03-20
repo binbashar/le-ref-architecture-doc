@@ -75,6 +75,9 @@ leverage credentials configure --type MANAGEMENT # or `SECURITY` depending on th
 !!! note
     Both of these credentials (management and security) require an MFA device to be enabled. Once either credential is configured, the next step ([Enable MFA](#enable-mfa)) becomes mandatory. If MFA is not enabled, any action on the project will be executed using the bootstrap credentials.
 
+!!! note
+    If a layer was already set with BOOTSTRAP credentials, when changing the credential type Terraform has to be reconfigured: `leverage tf init -reconfigure`.
+
 ## Enable MFA
 
 The last step is to enable Multi Factor Authentication locally. The procedure is slightly different for a `management` IAM user and `security` IAM user, so we'll walk through both of them.
@@ -169,6 +172,9 @@ leverage credentials configure --fetch-mfa-device --type SECURITY
 <span class="fsg-timestamp">[10:11:08.229]</span> INFO             Configuring profile <b>me-shared-oaar</b>
 <span class="fsg-timestamp">[10:11:23.185]</span> INFO     <b>Account profiles configured in:</b> <span class="fsg-path">/home/user/.aws/me/config</span>
 </code></pre>
+
+!!! note
+    If a layer was already set with BOOTSTRAP credentials, when changing the credential type Terraform has to be reconfigured: `leverage tf init -reconfigure`.
 
 ## Next steps
 

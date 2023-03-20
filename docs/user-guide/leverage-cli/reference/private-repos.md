@@ -32,6 +32,6 @@ $ eval "$(ssh-agent -s)"
 
 - add the keys to it
 ```shell
-$ ssh-add ~/.ssh/id_ed25519
+$ ssh-add ~/.ssh/<private_ssh_key_file>
 ```
-(add here the right file, the process can request the passphrase if it was set on key creation step)
+(replace `private_ssh_key_file` with the desired file, the process can request the passphrase if it was set on key creation step)

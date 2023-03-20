@@ -8,7 +8,7 @@ To source a Terraform module from a private repository in a layer via an SSH con
 
 Leverage CLI will mount the host's SSH-Agent socket into the Levarage Toolbox container, this way your keys are accessed in a secure way.
 
-So, if an SSH private repo has to be reached the keys for such repo should be loaded in the SSH-Agent.
+So, if an SSH private repo has to be reached, the keys for such repo should be loaded in the SSH-Agent.
 
 If the agent is automatically started and the needed keys added in the host system, it should work as it is.
 

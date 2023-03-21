@@ -17,7 +17,7 @@ where `gitlab.com:some-org/some-project/the-private-repo.git` is a private repo.
 
 To source a Terraform module from a private repository in a layer via an SSH connection these considerations have to be kept in mind.
 
-Leverage CLI will mount the host's SSH-Agent socket into the Levarage Toolbox container, this way your keys are accessed in a secure way.
+Leverage CLI will mount the host's SSH-Agent socket into the Leverage Toolbox container, this way your keys are accessed in a secure way.
 
 So, if an SSH private repo has to be reached, the keys for such repo should be loaded in the SSH-Agent.
 

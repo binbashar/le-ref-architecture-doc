@@ -561,6 +561,11 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://leverage.binbash.com.ar/user-guide/leverage-cli/reference/private-repos/</loc>
+         <lastmod>2023-04-03</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://leverage.binbash.com.ar/user-guide/leverage-cli/reference/project/</loc>
          <lastmod>2023-04-03</lastmod>
          <changefreq>daily</changefreq>

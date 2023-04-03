@@ -2685,6 +2685,8 @@
         
           
         
+          
+        
       
       
         <label class="md-nav__link" for="__nav_4_5_2" id="__nav_4_5_2_label" tabindex="0">
@@ -2910,6 +2912,20 @@
           
         </ul>
       </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../user-guide/leverage-cli/reference/private-repos/" class="md-nav__link">
+        Private repos
+      </a>
     </li>
   
 
@@ -4500,6 +4516,10 @@
 <p class="admonition-title">Note</p>
 <p>Both of these credentials (management and security) require an MFA device to be enabled. Once either credential is configured, the next step (<a href="#enable-mfa">Enable MFA</a>) becomes mandatory. If MFA is not enabled, any action on the project will be executed using the bootstrap credentials.</p>
 </div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>If a layer was already set with BOOTSTRAP credentials, when changing the credential type Terraform has to be reconfigured: <code>leverage tf init -reconfigure</code>.</p>
+</div>
 <h2 id="enable-mfa">Enable MFA<a class="headerlink" href="#enable-mfa" title="Permanent link"> ¶</a></h2>
 <p>The last step is to enable Multi Factor Authentication locally. The procedure is slightly different for a <code>management</code> IAM user and <code>security</code> IAM user, so we'll walk through both of them.</p>
 <h3 id="management-user">Management user<a class="headerlink" href="#management-user" title="Permanent link"> ¶</a></h3>
@@ -4567,6 +4587,10 @@ leverage<span class="w"> </span>credentials<span class="w"> </span>configure<spa
 <span class="fsg-timestamp">[10:11:23.185]</span> INFO     <b>Account profiles configured in:</b> <span class="fsg-path">/home/user/.aws/me/config</span>
 </code></pre>
 
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>If a layer was already set with BOOTSTRAP credentials, when changing the credential type Terraform has to be reconfigured: <code>leverage tf init -reconfigure</code>.</p>
+</div>
 <h2 id="next-steps">Next steps<a class="headerlink" href="#next-steps" title="Permanent link"> ¶</a></h2>
 <p>Now you not only have a fully functional landing zone configuration deployed, but also the users to interact with it are correctly configured in both the AWS and local environment.</p>
 <p>This concludes this first steps guide for the Leverage Reference Architecture for AWS. For more detailed information, visit the links below.</p>

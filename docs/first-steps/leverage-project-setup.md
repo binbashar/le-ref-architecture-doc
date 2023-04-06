@@ -1,112 +1,82 @@
-# Set Up your Leverage project
+# Create a Leverage project
+A Leverage project starts with a simple project definition file that you modify to suit your needs. That file is then used to render the initial directory layout which, at the end of this guide, will be your reference architecture. Follow the sections below to begin with that.
 
-Up until now we have been taking care of all the prerequisites for a Leverage project, but is time to actually create the Reference Architecture definition for your project. Let's get to it.
+The account's name will be given by your project's name followed by `-management`, since Leverage uses a suffix naming system to differentiate between the multiple accounts of a project. For this guide we'll stick to calling the project `MyExample` and so, the account name will be `myexample-management`. 
+
+Along the same line, we'll use the `example.com` domain for the email address used to register the account. Adding a `-aws` suffix to the project's name to indicate that this email address is related to the project's AWS account, we end up with a registration email that looks like `myexample-aws@example.com`.
+
+!!! info "Email addresses for AWS accounts."
+        Each AWS account requires having a unique email address associated to it. The Leverage Reference Architecture for AWS makes use of multiple accounts to better manage the infrastructure, as such, you will need different addresses for each one. Creating a new email account for each AWS is not a really viable solution to this problem, a better approach is to take advantage of mail services that support aliases. For information regarding how this works: [:books: Email setup for your AWS account.](../../user-guide/features/organization/organization-init/#pre-requisites)
 
 ## Create the project directory
-Each Leverage project must be in its own working directory.
-
-Create the directory for your project.
-
+Each Leverage project lives in its own working directory. Create a directory for your project as follows:
 ``` bash
 mkdir myexample
 cd myexample
 ```
 
-## Initialize the Leverage project
-When setting up a Leverage project the directory where it will reside needs to be initialized
-
+## Initialize the project
+Create the project definition file by running the following command:
 ``` bash
-leverage project init
+$ leverage project init
+[18:53:24.407] INFO     Project template found. Updating.                                                                                              
+[18:53:25.105] INFO     Finished updating template.                                                                                                    
+[18:53:25.107] INFO     Initializing git repository in project directory.                                                                              
+[18:53:25.139] INFO     No project configuration file found. Dropping configuration template project.yaml.                                             
+[18:53:25.143] INFO     Project initialization finished.
 ```
-<pre><code><span class="fsg-timestamp">[09:30:54.027]</span> INFO     No <b>Leverage</b> directory found in user's home. Creating.
-<span class="fsg-timestamp">[09:30:54.030]</span> INFO     No project template found. Cloning template.
-<span class="fsg-timestamp">[09:30:54.978]</span> INFO     Finished cloning template.
-<span class="fsg-timestamp">[09:30:54.981]</span> INFO     Initializing git repository in project directory.
-<span class="fsg-timestamp">[09:30:54.990]</span> INFO     No project configuration file found. Dropping configuration template <b>project.yaml</b>.
-<span class="fsg-timestamp">[09:30:55.007]</span> INFO     Project initialization finished.
-</code></pre>
 
-!!! info "More information on [`project init`](../../user-guide/base-workflow/leverage-cli/reference/project#init)"
+The command above should create the project definition file (`project.yaml`) and should initialize a `git` repository in the current working directory. This is important because Leverage projects by-design rely on specific `git` conventions and also because it is assumed that you will want to keep your infrastructure code versioned.
 
-Initializing a project creates the global configurations directory for Leverage CLI and downloads the templates used to generate the project's files structure. It then initializes a `git` repository in the working directory, and creates a file called `project.yaml`. Leverage projects are by design repositories to leverage some of the capabilities of `git` and because it is assumed that the code in the project will be versioned.
+## Modify the project definition file
+Open the `project.yaml` file and fill in the required information.
 
-## Fill in the configuration file
+!!! info "Typically the placeholder values between `<` and `>` symbols are the ones you would want to edit however you are welcome to adjust any other values to suit your needs."
 
-Once the project is initialized you need to fill in the correct information for the project in the configuration file.
+For instance, the following is a snippet of the `project.yaml` file in which the values for `project_name` and `short_name` have been set to `example` and `ex` respectively:
+```
+project_name: example
+short_name: ex
+primary_region: us-east-1
+secondary_region: us-west-2
+...
+```
 
-After filling in the data you will end up with a configuration file similar to the one below. Indicated by arrows are the fields that were modified.
+Another example is below. Note that the `management`, `security`, and `shared` accounts have been updated with slightly different email addresses (actually `aws+security@example.com` and `aws+shared@example.com` are email aliases of `aws@example.com` which is a convenient trick in some cases):
+```
+...
+organization:
+  accounts:
+  - name: management
+    email: aws@example.com
+  - name: security
+    email: aws+security@example.com
+  - name: shared
+    email: aws+shared@example.com
+...
+```
 
-You can see in the global values, the project name and a short version of it, in the `organization` section, the emails for each account, and further down, in the `accounts` section, the different groups and users for each group in the `management` and `security` accounts.  
+Finally, here's another example snippet that shows how you can define users and assign them to groups:
+```
+...
+users:
+- first_name: Jane
+  last_name: Doe
+  email: jane.doe@example.com
+  groups:
+  - administrators
+  - devops
+- first_name: Foo
+  last_name: Bar
+  email: foo.bar@example.com
+  groups:
+  - devops
+...
+```
 
+!!! info "The project definition file includes other entries but the ones shown above are the most frequently updated."
 
-???+ note "`project.yaml` for *MyExample* project"
-    ```yaml
-    project_name: myexample # <--
-    short_name: me # <--
-
-    primary_region: us-east-1
-    secondary_region: us-west-2
-
-    organization:
-      accounts:
-      - name: management
-        email: myexample-aws@example.com # <--
-      - name: security
-        email: myexample-aws+security@example.com # <--
-      - name: shared
-        email: myexample-aws+shared@example.com # <--
-      organizational_units:
-      - name: security
-        policy:
-        - aws_organizations_policy.default
-        accounts:
-        - security
-      - name: shared
-        policy:
-        - aws_organizations_policy.standard
-        accounts:
-        - shared
-
-    accounts:
-      management:
-        groups:
-        - name: admins # <--
-          users:
-          - kit.walker
-          - natasha.romanoff
-          policies:
-          - '"arn:aws:iam::aws:policy/AdministratorAccess"'
-      security:
-        groups:
-        - name: admins # <--
-          users:
-          - natasha.romanoff
-        - name: auditors # <--
-          users:
-          - kit.walker
-          policies:
-          - aws_iam_policy.assume_auditor_role.arn
-        - name: devops # <--
-          users:
-          - natasha.romanoff
-          - edward.stark
-          - john.wick
-          policies:
-          - aws_iam_policy.assume_devops_role.arn
-      shared:
-        networks:
-        - cidr_block: "172.18.0.0/20"
-          availability_zones: [a,b]
-          private_subnets_cidr: "172.18.0.0/21"
-          private_subnets:
-          - "172.18.0.0/23"
-          - "172.18.2.0/23"
-          public_subnets_cidr: "172.18.8.0/21"
-          public_subnets:
-          - "172.18.8.0/23"
-          - "172.18.10.0/23"
-    ```
-## Set Up the bootstrap credentials
+## Configure "bootstrap" credentials
 To be able to interact with your AWS environment you first need to configure the credentials to enable AWS CLI to do so. Provide the keys obtained in the previous [account creation step](../aws-account-setup/) to the command by any of the available means.
 
 === "Manually"

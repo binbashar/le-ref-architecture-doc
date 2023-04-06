@@ -1,186 +1,106 @@
 # Post-deployment steps
+At this point the landing zone should be almost ready but there are still a few things that need to be changed. For instance, for the sake of simplicity you have been using the bootstrap user for every command. In this section you will make the necessary adjustments to start using your own user.
 
-The whole landing zone is already deployed, and with it, all defined users were created. From now on, each user should generate their personal programmatic keys and enable Multi Factor Authentication for their interactions with the AWS environment. Let's take a look at the steps required to accomplish this.
+## Configure SSO settings
 
-## Get the temporary password to access AWS console
-
-We'll take the place of `natasha.romanoff` to exemplify the process.
-
-When Natasha's user was created, an initial random password was also created alongside it. That password was encrypted using her GPG key, as it was shown in the [management account's](../management-account/#identities-layer) and in the [security account's](../security-and-shared-accounts/#identities-layer) identities layers.
-
-As Natasha, you need to access that password so that you can create your programmatic keys to interact with the environment through Leverage.
-
-First, for the `management` account, check that the value `sensitive` is set to `true` in the output block `user_natasha_romanoff_login_profile_encrypted_password` of `management/global/base-identities/outputs.tf`:
-
-``` terraform
-output "user_natasha_romanoff_login_profile_encrypted_password" {
-  description = "The encrypted password, base64 encoded"
-  value       = module.user["natasha.romanoff"].iam_user_login_profile_encrypted_password
-  sensitive   = true
-}
+### Enable SSO
+Let's start by configuring SSO settings. Open this file: `config/common.tfvars` and update the following lines:
+```
+sso_enabled   = false
+sso_start_url = "https://bbleverage.awsapps.com/start"
 ```
 
-Then, in the `global/base-identities` directory, run the output command with the `-json` flag:
-
-``` bash
-leverage terraform output -json
+Change `sso_enabled` to `true` as follows to enable SSO support:
 ```
-```
-...
-"user_natasha_romanoff_name": {
-  "sensitive": false,
-  "type": "string",
-  "value": "natasha.romanoff"
-},
-"user_natasha_romanoff_login_profile_encrypted_password": {
-  "sensitive": true,
-  "type": "string",
-  "value": "wcDMAyRZJTaxw5v1AQwAy6c...............2mBIbNFxF1Tp/ilvyk8eEHvAA="
-}
-...
+sso_enabled   = true
 ```
 
-Extract the value of the password field form the output and [decrypt it](../../user-guide/features/identities/gpg#how-to-manage-your-gpg-keys).
-
-Now, log in the [AWS Console](https://console.aws.amazon.com/) using the `management` account id: `000123456789`, which can be extracted from the `project.yaml` or `config/common.tfvars` files, your IAM user name: `natasha.romanoff`, and your recently decrypted password. This password should be changed during this procedure.
-
-Proceed to [enable a virtual MFA device for your user](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_mfa_enable_virtual.html#enable-virt-mfa-for-iam-user), and [generate programmatic keys for it](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_access-keys.html#Using_CreateAccessKey). Make sure to keep these keys in a safe location.
-
-As Natasha also has an IAM user for the `security` account besides the one in `management`, these steps should be repeated for that account, making sure of logging in the AWS console with the proper account id. Keep in mind that these are **two different IAM users** in **two different accounts**, so their credentials **are not interchangeable**.
-
-## Configure the new credentials
-
-To be able to use the generated programmatic keys, you need to configure them in your local environment. To do that, run:
-
-``` bash
-leverage credentials configure --type MANAGEMENT # or `SECURITY` depending on the credentials to be configured
+Now you need to set the `sso_start_url` with the right URL. To find that, navigate here: `https://us-east-1.console.aws.amazon.com/singlesignon/home` -- you should be already logged in to the Management account for this to work. You should see a "Settings summary" panel on the right of the screen that shows the "AWS access portal URL". Copy that and use it to replace the value in the `sso_start_url` entry. Below is an example just for reference:
 ```
-<pre><code><span class="fsg-timestamp">[12:28:12.111]</span> INFO     Loading configuration file.
-<span class="fsg-timestamp">[12:28:12.132]</span> INFO     Loading project environment configuration file.
-<span class="fsg-timestamp">[12:28:12.139]</span> INFO     Loading Terraform common configuration.
-<span class="fsg-timestamp">[12:28:13.237]</span> INFO     Configuring management credentials.
-<span class="fsg-prompt">></span> <b>Select the means by which you'll provide the programmatic keys: <span class="fsg-userinput">Manually</span></b>
-<span class="fsg-prompt">></span> <b>Key: <span class="fsg-userinput">AKIAUH0FAB7QVEXAMPLE</span></b>
-<span class="fsg-prompt">></span> <b>Secret: <span class="fsg-userinput">****************************************</span></b>
-<span class="fsg-timestamp">[12:28:30.739]</span> INFO     <b>Management credentials configured in:</b> <span class="fsg-path">/home/user/.aws/me/credentials</span>
-<span class="fsg-timestamp">[12:28:34.991]</span> INFO     Configuring assumable roles.
-<span class="fsg-timestamp">[12:28:39.299]</span> INFO     Backing up account profiles file.
-<span class="fsg-timestamp">[12:28:39.941]</span> INFO             Configuring profile <b>me-management-oaar</b>
-<span class="fsg-timestamp">[12:28:45.205]</span> INFO             Configuring profile <b>me-security-oaar</b>
-<span class="fsg-timestamp">[12:28:50.526]</span> INFO             Configuring profile <b>me-shared-oaar</b>
-<span class="fsg-timestamp">[12:28:55.953]</span> INFO     <b>Account profiles configured in:</b> <span class="fsg-path">/home/user/.aws/me/config</span>
-<span class="fsg-timestamp">[12:28:55.956]</span> INFO     Updating project's Terraform common configuration.
-</code></pre>
-
-!!! note
-    Both of these credentials (management and security) require an MFA device to be enabled. Once either credential is configured, the next step ([Enable MFA](#enable-mfa)) becomes mandatory. If MFA is not enabled, any action on the project will be executed using the bootstrap credentials.
-
-!!! note
-    If a layer was already set with BOOTSTRAP credentials, when changing the credential type Terraform has to be reconfigured: `leverage tf init -reconfigure`.
-
-## Enable MFA
-
-The last step is to enable Multi Factor Authentication locally. The procedure is slightly different for a `management` IAM user and `security` IAM user, so we'll walk through both of them.
-
-### Management user
-
-To enable MFA for a `management` account user, you need to enable this feature individually for the role `OrganizationAccountAccessRole` in all accounts of the infrastructure. So first, we'll take care of the `management` account:
-
-Move into the account's identities layer:
-
-``` bash
-cd management/global/base-identities
+sso_start_url = "https://d-xyz01234567.awsapps.com/start"
 ```
 
-Change the value `role_requires_mfa` for the role `iam_assumable_role_oaar` in `roles.tf` to `true`. By default this value is `false`, that is to say, MFA is disabled for the role.
+!!! tip "Customize the AWS access portal URL"
+    The 'AWS access portal URL' can be customized to use a more friendly name. Check the [official documentation](https://docs.aws.amazon.com/singlesignon/latest/userguide/howtochangeURL.html) for that.
 
-``` terraform
-module "iam_assumable_role_oaar" {
-  ...
-  #
-  # MFA setup
-  #
-  role_requires_mfa    = false -> true
-  ...
-}
+
+!!! info "Further info on configuring SSO"
+    There is more information on how to configure SSO [here](/user-guide/features/sso/sso/#preparing-the-project-to-use-aws-sso).
+
+### Update backend profiles in the management account
+It's time to set the right profile names in the backend configuration files. Open this file: `management/config/backend.tfvars` and change the `profile` value from this:
 ```
-
-And run:
-
-``` bash
-leverage terraform apply
-```
-
-You now should repeat these steps for the remaining accounts, in this guide's case, the `security` and `shared` accounts.
-
-Once the change is applied in all layers, change the value of `profile` in `management/config/backend.tfvars`
-
-``` terraform
-#
-# Backend Configuration
-#
-
-# AWS Profile (required by the backend but also used for other resources)
 profile = "me-bootstrap"
-...
+```
+To this:
+```
+profile = "me-management-oaar"
+```
+Please note that in the examples above my short project name is `me` which is used as a prefix and it's the part that doesn't get replaced.
+
+### Update the backend profile in the security directory
+One more files to update. Open `security/config/backend.tfvars` and modify the `profile` value from this:
+```
+profile = "me-security-oaar"
+```
+To this:
+```
+profile = "me-security-devops"
+```
+Note that in the examples above I only replaced `oaar` for `devops`.
+
+### Update the backend profile in the shared directory
+Now open `shared/config/backend.tfvars` and make the same update. For instance, your `profile` value should change from this:
+```
+profile = "me-shared-oaar"
+```
+To this:
+```
+profile = "me-shared-devops"
 ```
 
-To `<short project name>-management-oaar`, which in the case of this guide, would result in:
+## Activate your SSO user and set up your password
+The SSO users you created when you provisioned the SSO layer need to go through an email activation procedure. Find the [instructions here](/user-guide/features/sso/managing-users/#trigger-user-email-activation).
 
-* `me-bootstrap` --> `me-management-oaar`
+Once SSO user's have been activated, they will need to get their initial password so they are able to log in. Check out the [steps for that here](/user-guide/features/sso/managing-users/#reset-a-user-password).
 
-By doing this, you are effectively switching from using the bootstrap credentials to the management credentials profile for this specific account.
+## Configure the CLI for SSO
+Almost there. Let's try the SSO integration now.
 
-Lastly, set `MFA_ENABLED` in the file `build.env`, located in the project's root directory, to `true`.
+### Configure your SSO profiles
+Since this is your first time using that you will need to configure it by running this: `leverage aws configure sso`
 
-### Security user
+Follow the wizard to get your AWS config file created for you. There is [more info about that here](/user-guide/features/sso/sso/#1-configuring-aws-sso).
 
-To enable MFA for a `security` account user, the procedure is simpler but it has to be performed in all accounts **but `management`**. In the case of this guide, you need to make changes in the `security` account as well as in the `shared` account.
+### Verify on a layer in the management account
+To ensure that worked, let's run a few commands to verify:
 
-Set `profile` in `config/backend.tfvars` for each account to `<short project name>-<account>-devops`. That is:
+1. We'll use `base-identities` for the purpose of this example
+2. Move to the `management/global/base-identities` layer
+3. Run: `leverage tf plan`
+4. You should get this error: "Error: error configuring S3 Backend: no valid credential sources for S3 Backend found."
+5. This happens because so far you have been running Terraform with a different AWS profile (the bootstrap one). Luckily the fix is simple, just run this: `leverage tf init -reconfigure`. Terraform should reconfigure the AWS profile in the `.terraform/terraform.tfstate` file.
+6. Now try running that `leverage tf plan` command again
+7. This time it should succeed.
+8. Unfortunately, since through this guide we have deployed all the layers with the bootstrap profile you will face the same issue on every layer and thus you will have to repeat steps 5 and 6 to fix it.
 
-* `me-security-oaar` --> `me-security-devops` for the `security` account
-* `me-shared-oaar` --> `me-shared-devops` for the `shared` account
+### Verify on a layer in a non-management account
+The previous steps provided you with the knowledge to move on with the rest of layers but, just to be sure, let's try on a layer of a non-management account:
 
-Similarly to the management user's MFA enabling step, you are switching from using bootstrap credentials to the respective profile for each account of the security credentials.
+1. Switch to the `security/global/base-identities` directory
+2. Run: `leverage tf init -reconfigure`
+3. And then run: `leverage tf plan`
+4. If that works, that should validate your credentials have been configured successfully.
 
-As a last step you need to make sure that `MFA_ENABLED` is set to `true` in the `build.env` file.
-
-## Re-Configure profiles  MFA
-
-For everything to work as expected, you need to set the aws configuration profiles to the corresponding mfa-device configuration.
-
-Then run `leverage credentials configure` again with the `--fetch-mfa-device` flag and select the `skip credentials configuration` option.
-
-As an alternative, the flag [--skip-access-keys-setup](https://leverage.binbash.com.ar/user-guide/leverage-cli/reference/credentials/#options) could be used to avoid the interactive step.
-
-``` bash
-leverage credentials configure --fetch-mfa-device --type MANAGEMENT
-leverage credentials configure --fetch-mfa-device --type SECURITY
-```
-<pre><code>
-<span class="fsg-timestamp">[10:10:11.033]</span> INFO     Loading configuration file.
-<span class="fsg-timestamp">[10:10:11.092]</span> INFO     Loading project environment configuration file.
-<span class="fsg-timestamp">[10:10:11.093]</span> INFO     Loading Terraform common configuration.
-<span class="fsg-prompt">></span> <b> Credentials already configured for ld-management: <span class="fsg-userinput">Skip credentials configuration. Continue on with assumable roles setup.</span></b>
-<span class="fsg-timestamp">[10:10:30.345]</span> INFO     Attempting to fetch organization accounts.
-<span class="fsg-timestamp">[10:10:33.928]</span> INFO     Configuring assumable roles.
-<span class="fsg-timestamp">[10:10:33.932]</span> INFO     <b>Fetching MFA device serial.</b>
-<span class="fsg-timestamp">[10:10:37.473]</span> INFO     Backing up account profiles file.
-<span class="fsg-timestamp">[10:10:38.913]</span> INFO             Configuring profile <b>me-management-oaar</b>
-<span class="fsg-timestamp">[10:10:53.088]</span> INFO             Configuring profile <b>me-security-oaar</b>
-<span class="fsg-timestamp">[10:11:08.229]</span> INFO             Configuring profile <b>me-shared-oaar</b>
-<span class="fsg-timestamp">[10:11:23.185]</span> INFO     <b>Account profiles configured in:</b> <span class="fsg-path">/home/user/.aws/me/config</span>
-</code></pre>
+That's it! You are ready to roll on your own now! :raised_hand:
 
 !!! note
     If a layer was already set with BOOTSTRAP credentials, when changing the credential type Terraform has to be reconfigured: `leverage tf init -reconfigure`.
 
 ## Next steps
+Now you not only have a fully functional landing zone configuration deployed, but also are able to interact with it using your own AWS SSO credentials.
 
-Now you not only have a fully functional landing zone configuration deployed, but also the users to interact with it are correctly configured in both the AWS and local environment.
-
-This concludes this first steps guide for the Leverage Reference Architecture for AWS. For more detailed information, visit the links below.
+For more detailed information, visit the links below.
 
 - [X] :books: [How it works](../how-it-works/ref-architecture/index.md)
 - [X] :books: [User guides](../user-guide/index.md)

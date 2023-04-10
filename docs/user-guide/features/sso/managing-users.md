@@ -5,7 +5,7 @@
 ### Add/remove users
 1. Open this file: `management/global/sso/locals.tf`
 2. Locate the users map within the local variables definition
-3. Add an entry to the users map with all the required, including the groups the user should belong to
+3. Add an entry to the users map with all the required data, including the groups the user should belong to
 4. Apply your changes
 5. Additional steps are required when creating a new user:
     1. The user's email needs to be verified. Find the steps for that in [this section](#trigger-user-email-activation).

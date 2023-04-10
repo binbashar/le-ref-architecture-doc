@@ -506,6 +506,11 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://leverage.binbash.com.ar/user-guide/features/sso/managing-users/</loc>
+         <lastmod>2023-04-10</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://leverage.binbash.com.ar/user-guide/features/sso/sso/</loc>
          <lastmod>2023-04-10</lastmod>
          <changefreq>daily</changefreq>

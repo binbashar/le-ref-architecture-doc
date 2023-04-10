@@ -25,7 +25,7 @@
     
     
       
-        <title>Set Up your Leverage project - binbash Leverage™</title>
+        <title>Create a Leverage project - binbash Leverage™</title>
       
     
     
@@ -91,7 +91,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#set-up-your-leverage-project" class="md-skip">
+        <a href="#create-a-leverage-project" class="md-skip">
           Skip to content
         </a>
       
@@ -124,7 +124,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Set Up your Leverage project
+              Create a Leverage project
             
           </span>
         </div>
@@ -605,7 +605,7 @@
   
     <li class="md-nav__item">
       <a href="../local-setup/" class="md-nav__link">
-        Set Up your local environment
+        Install Leverage CLI
       </a>
     </li>
   
@@ -628,12 +628,12 @@
       
       
         <label class="md-nav__link md-nav__link--active" for="__toc">
-          Set Up your Leverage project
+          Create a Leverage project
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <a href="./" class="md-nav__link md-nav__link--active">
-        Set Up your Leverage project
+        Create a Leverage project
       </a>
       
         
@@ -659,22 +659,22 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#initialize-the-leverage-project" class="md-nav__link">
-    Initialize the Leverage project
+  <a href="#initialize-the-project" class="md-nav__link">
+    Initialize the project
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#fill-in-the-configuration-file" class="md-nav__link">
-    Fill in the configuration file
+  <a href="#modify-the-project-definition-file" class="md-nav__link">
+    Modify the project definition file
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#set-up-the-bootstrap-credentials" class="md-nav__link">
-    Set Up the bootstrap credentials
+  <a href="#configure-bootstrap-credentials" class="md-nav__link">
+    Configure "bootstrap" credentials
   </a>
   
 </li>
@@ -3272,10 +3272,64 @@
   
   
   
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_6_4" >
+      
+      
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_4_6_4" id="__nav_4_6_4_label" tabindex="0">
+          SSO
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_4_6_4_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_4_6_4">
+          <span class="md-nav__icon md-icon"></span>
+          SSO
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
     <li class="md-nav__item">
       <a href="../../user-guide/features/sso/sso/" class="md-nav__link">
-        SSO
+        Authentication
       </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../user-guide/features/sso/managing-users/" class="md-nav__link">
+        Onboarding Users
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
     </li>
   
 
@@ -4375,22 +4429,22 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#initialize-the-leverage-project" class="md-nav__link">
-    Initialize the Leverage project
+  <a href="#initialize-the-project" class="md-nav__link">
+    Initialize the project
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#fill-in-the-configuration-file" class="md-nav__link">
-    Fill in the configuration file
+  <a href="#modify-the-project-definition-file" class="md-nav__link">
+    Modify the project definition file
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#set-up-the-bootstrap-credentials" class="md-nav__link">
-    Set Up the bootstrap credentials
+  <a href="#configure-bootstrap-credentials" class="md-nav__link">
+    Configure "bootstrap" credentials
   </a>
   
 </li>
@@ -4432,103 +4486,73 @@
   
 
 
-<h1 id="set-up-your-leverage-project">Set Up your Leverage project<a class="headerlink" href="#set-up-your-leverage-project" title="Permanent link"> ¶</a></h1>
-<p>Up until now we have been taking care of all the prerequisites for a Leverage project, but is time to actually create the Reference Architecture definition for your project. Let's get to it.</p>
+<h1 id="create-a-leverage-project">Create a Leverage project<a class="headerlink" href="#create-a-leverage-project" title="Permanent link"> ¶</a></h1>
+<p>A Leverage project starts with a simple project definition file that you modify to suit your needs. That file is then used to render the initial directory layout which, at the end of this guide, will be your reference architecture. Follow the sections below to begin with that.</p>
+<p>The account's name will be given by your project's name followed by <code>-management</code>, since Leverage uses a suffix naming system to differentiate between the multiple accounts of a project. For this guide we'll stick to calling the project <code>MyExample</code> and so, the account name will be <code>myexample-management</code>. </p>
+<p>Along the same line, we'll use the <code>example.com</code> domain for the email address used to register the account. Adding a <code>-aws</code> suffix to the project's name to indicate that this email address is related to the project's AWS account, we end up with a registration email that looks like <code>myexample-aws@example.com</code>.</p>
+<div class="admonition info">
+<p class="admonition-title">Email addresses for AWS accounts.<p>Each AWS account requires having a unique email address associated to it. The Leverage Reference Architecture for AWS makes use of multiple accounts to better manage the infrastructure, as such, you will need different addresses for each one. Creating a new email account for each AWS is not a really viable solution to this problem, a better approach is to take advantage of mail services that support aliases. For information regarding how this works: <a href="../../user-guide/features/organization/organization-init/#pre-requisites"><img alt="📚" class="twemoji" src="https://cdnjs.cloudflare.com/ajax/libs/twemoji/14.0.2/svg/1f4da.svg" title=":books:" /> Email setup for your AWS account.</a></p>
+</p>
+</div>
 <h2 id="create-the-project-directory">Create the project directory<a class="headerlink" href="#create-the-project-directory" title="Permanent link"> ¶</a></h2>
-<p>Each Leverage project must be in its own working directory.</p>
-<p>Create the directory for your project.</p>
+<p>Each Leverage project lives in its own working directory. Create a directory for your project as follows:
 <div class="highlight"><pre><span></span><code>mkdir<span class="w"> </span>myexample
 <span class="nb">cd</span><span class="w"> </span>myexample
-</code></pre></div>
-<h2 id="initialize-the-leverage-project">Initialize the Leverage project<a class="headerlink" href="#initialize-the-leverage-project" title="Permanent link"> ¶</a></h2>
-<p>When setting up a Leverage project the directory where it will reside needs to be initialized</p>
-<div class="highlight"><pre><span></span><code>leverage<span class="w"> </span>project<span class="w"> </span>init
-</code></pre></div>
-<pre><code><span class="fsg-timestamp">[09:30:54.027]</span> INFO     No <b>Leverage</b> directory found in user's home. Creating.
-<span class="fsg-timestamp">[09:30:54.030]</span> INFO     No project template found. Cloning template.
-<span class="fsg-timestamp">[09:30:54.978]</span> INFO     Finished cloning template.
-<span class="fsg-timestamp">[09:30:54.981]</span> INFO     Initializing git repository in project directory.
-<span class="fsg-timestamp">[09:30:54.990]</span> INFO     No project configuration file found. Dropping configuration template <b>project.yaml</b>.
-<span class="fsg-timestamp">[09:30:55.007]</span> INFO     Project initialization finished.
-</code></pre>
-
+</code></pre></div></p>
+<h2 id="initialize-the-project">Initialize the project<a class="headerlink" href="#initialize-the-project" title="Permanent link"> ¶</a></h2>
+<p>Create the project definition file by running the following command:
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>leverage<span class="w"> </span>project<span class="w"> </span>init
+<span class="o">[</span><span class="m">18</span>:53:24.407<span class="o">]</span><span class="w"> </span>INFO<span class="w">     </span>Project<span class="w"> </span>template<span class="w"> </span>found.<span class="w"> </span>Updating.<span class="w">                                                                                              </span>
+<span class="o">[</span><span class="m">18</span>:53:25.105<span class="o">]</span><span class="w"> </span>INFO<span class="w">     </span>Finished<span class="w"> </span>updating<span class="w"> </span>template.<span class="w">                                                                                                    </span>
+<span class="o">[</span><span class="m">18</span>:53:25.107<span class="o">]</span><span class="w"> </span>INFO<span class="w">     </span>Initializing<span class="w"> </span>git<span class="w"> </span>repository<span class="w"> </span><span class="k">in</span><span class="w"> </span>project<span class="w"> </span>directory.<span class="w">                                                                              </span>
+<span class="o">[</span><span class="m">18</span>:53:25.139<span class="o">]</span><span class="w"> </span>INFO<span class="w">     </span>No<span class="w"> </span>project<span class="w"> </span>configuration<span class="w"> </span>file<span class="w"> </span>found.<span class="w"> </span>Dropping<span class="w"> </span>configuration<span class="w"> </span>template<span class="w"> </span>project.yaml.<span class="w">                                             </span>
+<span class="o">[</span><span class="m">18</span>:53:25.143<span class="o">]</span><span class="w"> </span>INFO<span class="w">     </span>Project<span class="w"> </span>initialization<span class="w"> </span>finished.
+</code></pre></div></p>
+<p>The command above should create the project definition file (<code>project.yaml</code>) and should initialize a <code>git</code> repository in the current working directory. This is important because Leverage projects by-design rely on specific <code>git</code> conventions and also because it is assumed that you will want to keep your infrastructure code versioned.</p>
+<h2 id="modify-the-project-definition-file">Modify the project definition file<a class="headerlink" href="#modify-the-project-definition-file" title="Permanent link"> ¶</a></h2>
+<p>Open the <code>project.yaml</code> file and fill in the required information.</p>
 <div class="admonition info">
-<p class="admonition-title">More information on <a href="../../user-guide/base-workflow/leverage-cli/reference/project#init"><code>project init</code></a></p>
+<p class="admonition-title">Typically the placeholder values between <code>&lt;</code> and <code>&gt;</code> symbols are the ones you would want to edit however you are welcome to adjust any other values to suit your needs.</p>
 </div>
-<p>Initializing a project creates the global configurations directory for Leverage CLI and downloads the templates used to generate the project's files structure. It then initializes a <code>git</code> repository in the working directory, and creates a file called <code>project.yaml</code>. Leverage projects are by design repositories to leverage some of the capabilities of <code>git</code> and because it is assumed that the code in the project will be versioned.</p>
-<h2 id="fill-in-the-configuration-file">Fill in the configuration file<a class="headerlink" href="#fill-in-the-configuration-file" title="Permanent link"> ¶</a></h2>
-<p>Once the project is initialized you need to fill in the correct information for the project in the configuration file.</p>
-<p>After filling in the data you will end up with a configuration file similar to the one below. Indicated by arrows are the fields that were modified.</p>
-<p>You can see in the global values, the project name and a short version of it, in the <code>organization</code> section, the emails for each account, and further down, in the <code>accounts</code> section, the different groups and users for each group in the <code>management</code> and <code>security</code> accounts.  </p>
-<details class="note" open="open">
-<summary><code>project.yaml</code> for <em>MyExample</em> project</summary>
-<div class="highlight"><pre><span></span><code><span class="nt">project_name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">myexample</span><span class="w"> </span><span class="c1"># &lt;--</span>
-<span class="nt">short_name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">me</span><span class="w"> </span><span class="c1"># &lt;--</span>
-
-<span class="nt">primary_region</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">us-east-1</span>
-<span class="nt">secondary_region</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">us-west-2</span>
-
-<span class="nt">organization</span><span class="p">:</span>
-<span class="w">  </span><span class="nt">accounts</span><span class="p">:</span>
-<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">management</span>
-<span class="w">    </span><span class="nt">email</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">myexample-aws@example.com</span><span class="w"> </span><span class="c1"># &lt;--</span>
-<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">security</span>
-<span class="w">    </span><span class="nt">email</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">myexample-aws+security@example.com</span><span class="w"> </span><span class="c1"># &lt;--</span>
-<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">shared</span>
-<span class="w">    </span><span class="nt">email</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">myexample-aws+shared@example.com</span><span class="w"> </span><span class="c1"># &lt;--</span>
-<span class="w">  </span><span class="nt">organizational_units</span><span class="p">:</span>
-<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">security</span>
-<span class="w">    </span><span class="nt">policy</span><span class="p">:</span>
-<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">aws_organizations_policy.default</span>
-<span class="w">    </span><span class="nt">accounts</span><span class="p">:</span>
-<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">security</span>
-<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">shared</span>
-<span class="w">    </span><span class="nt">policy</span><span class="p">:</span>
-<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">aws_organizations_policy.standard</span>
-<span class="w">    </span><span class="nt">accounts</span><span class="p">:</span>
-<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">shared</span>
-
-<span class="nt">accounts</span><span class="p">:</span>
-<span class="w">  </span><span class="nt">management</span><span class="p">:</span>
-<span class="w">    </span><span class="nt">groups</span><span class="p">:</span>
-<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">admins</span><span class="w"> </span><span class="c1"># &lt;--</span>
-<span class="w">      </span><span class="nt">users</span><span class="p">:</span>
-<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">kit.walker</span>
-<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">natasha.romanoff</span>
-<span class="w">      </span><span class="nt">policies</span><span class="p">:</span>
-<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&#39;&quot;arn:aws:iam::aws:policy/AdministratorAccess&quot;&#39;</span>
-<span class="w">  </span><span class="nt">security</span><span class="p">:</span>
-<span class="w">    </span><span class="nt">groups</span><span class="p">:</span>
-<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">admins</span><span class="w"> </span><span class="c1"># &lt;--</span>
-<span class="w">      </span><span class="nt">users</span><span class="p">:</span>
-<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">natasha.romanoff</span>
-<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">auditors</span><span class="w"> </span><span class="c1"># &lt;--</span>
-<span class="w">      </span><span class="nt">users</span><span class="p">:</span>
-<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">kit.walker</span>
-<span class="w">      </span><span class="nt">policies</span><span class="p">:</span>
-<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">aws_iam_policy.assume_auditor_role.arn</span>
-<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">devops</span><span class="w"> </span><span class="c1"># &lt;--</span>
-<span class="w">      </span><span class="nt">users</span><span class="p">:</span>
-<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">natasha.romanoff</span>
-<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">edward.stark</span>
-<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">john.wick</span>
-<span class="w">      </span><span class="nt">policies</span><span class="p">:</span>
-<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">aws_iam_policy.assume_devops_role.arn</span>
-<span class="w">  </span><span class="nt">shared</span><span class="p">:</span>
-<span class="w">    </span><span class="nt">networks</span><span class="p">:</span>
-<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">cidr_block</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;172.18.0.0/20&quot;</span>
-<span class="w">      </span><span class="nt">availability_zones</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">a</span><span class="p p-Indicator">,</span><span class="nv">b</span><span class="p p-Indicator">]</span>
-<span class="w">      </span><span class="nt">private_subnets_cidr</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;172.18.0.0/21&quot;</span>
-<span class="w">      </span><span class="nt">private_subnets</span><span class="p">:</span>
-<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&quot;172.18.0.0/23&quot;</span>
-<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&quot;172.18.2.0/23&quot;</span>
-<span class="w">      </span><span class="nt">public_subnets_cidr</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;172.18.8.0/21&quot;</span>
-<span class="w">      </span><span class="nt">public_subnets</span><span class="p">:</span>
-<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&quot;172.18.8.0/23&quot;</span>
-<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&quot;172.18.10.0/23&quot;</span>
-</code></pre></div>
-</details>
-<h2 id="set-up-the-bootstrap-credentials">Set Up the bootstrap credentials<a class="headerlink" href="#set-up-the-bootstrap-credentials" title="Permanent link"> ¶</a></h2>
+<p>For instance, the following is a snippet of the <code>project.yaml</code> file in which the values for <code>project_name</code> and <code>short_name</code> have been set to <code>example</code> and <code>ex</code> respectively:
+<div class="highlight"><pre><span></span><code>project_name: example
+short_name: ex
+primary_region: us-east-1
+secondary_region: us-west-2
+...
+</code></pre></div></p>
+<p>Another example is below. Note that the <code>management</code>, <code>security</code>, and <code>shared</code> accounts have been updated with slightly different email addresses (actually <code>aws+security@example.com</code> and <code>aws+shared@example.com</code> are email aliases of <code>aws@example.com</code> which is a convenient trick in some cases):
+<div class="highlight"><pre><span></span><code>...
+organization:
+  accounts:
+  - name: management
+    email: aws@example.com
+  - name: security
+    email: aws+security@example.com
+  - name: shared
+    email: aws+shared@example.com
+...
+</code></pre></div></p>
+<p>Finally, here's another example snippet that shows how you can define users and assign them to groups:
+<div class="highlight"><pre><span></span><code>...
+users:
+- first_name: Jane
+  last_name: Doe
+  email: jane.doe@example.com
+  groups:
+  - administrators
+  - devops
+- first_name: Foo
+  last_name: Bar
+  email: foo.bar@example.com
+  groups:
+  - devops
+...
+</code></pre></div></p>
+<div class="admonition info">
+<p class="admonition-title">The project definition file includes other entries but the ones shown above are the most frequently updated.</p>
+</div>
+<h2 id="configure-bootstrap-credentials">Configure "bootstrap" credentials<a class="headerlink" href="#configure-bootstrap-credentials" title="Permanent link"> ¶</a></h2>
 <p>To be able to interact with your AWS environment you first need to configure the credentials to enable AWS CLI to do so. Provide the keys obtained in the previous <a href="../aws-account-setup/">account creation step</a> to the command by any of the available means.</p>
 <div class="tabbed-set tabbed-alternate" data-tabs="1:3"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><input id="__tabbed_1_3" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">Manually</label><label for="__tabbed_1_2">File selection</label><label for="__tabbed_1_3">Provide file in command</label></div>
 <div class="tabbed-content">
@@ -4761,7 +4785,7 @@
       <nav class="md-footer__inner md-grid" aria-label="Footer" >
         
           
-          <a href="../local-setup/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Set Up your local environment" rel="prev">
+          <a href="../local-setup/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Install Leverage CLI" rel="prev">
             <div class="md-footer__button md-icon">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
             </div>
@@ -4770,7 +4794,7 @@
                 <span class="md-footer__direction">
                   Previous
                 </span>
-                Set Up your local environment
+                Install Leverage CLI
               </div>
             </div>
           </a>

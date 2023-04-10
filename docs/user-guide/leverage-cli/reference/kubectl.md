@@ -12,6 +12,10 @@ The sub-command `configure` can only be run at an **EKS cluster layer** level. U
 
 The command can also be invoked via its shortened version `kc`.
 
+!!! info "Configuring on first use"
+    To start using this command, you must first run `leverage kubectl configure` on a `cluster` layer,
+to set up the credentials on the proper config file.
+
 ---
 ## `run`
 

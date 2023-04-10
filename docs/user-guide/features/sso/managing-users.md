@@ -18,7 +18,7 @@
 4. Apply your changes
 
 ### Edit user/group membership
-1. Open this file: devops-tf-infra/management/global/sso/locals.tf
+1. Open this file: `devops-tf-infra/management/global/sso/locals.tf`
 2. Find the users map within the local variables definition
 3. Update the groups attribute to add/remove groups that user belongs to
 4. Apply your changes

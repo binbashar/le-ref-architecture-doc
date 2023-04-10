@@ -4395,19 +4395,91 @@ Commands:
 <h2 id="global-options">Global options<a class="headerlink" href="#global-options" title="Permanent link"> ¶</a></h2>
 <ul>
 <li><code>-f</code> | <code>--filename</code>:  Name of the file containing the tasks' definition. Defaults to <code>build.py</code></li>
-<li><code>-l</code> | <code>--list-tasks</code>: List all the tasks defined for the project along a description of their purpose (when available).
-<div class="highlight"><pre><span></span><code>Tasks in build file `build.py`:
+<li><code>-l</code> | <code>--list-tasks</code>: List all the tasks defined for the project along a description of their purpose (when available).<br />
+  <div class="highlight"><pre><span></span><code>Tasks in build file `build.py`:
 
-  clean                     Clean build directory.
-  copy_file                 
-  echo                      
-  html                      Generate HTML.
-  images        [Ignored]   Prepare images.
-  start_server  [Default]   Start the server
-  stop_server               
+  clean                   Clean build directory.
+  copy_file               
+  echo                    
+  html                    Generate HTML.
+  images        [Ignored] Prepare images.
+  start_server  [Default] Start the server
+  stop_server             
 
 Powered by Leverage 1.9.0
 </code></pre></div></li>
+<li>
+<p><code>-v</code> | <code>--verbose</code>: Increases output verbosity.<br />
+  When running a command in a container, the tool provides a description of the container's configuration before the execution.<br />
+  This is specially useful if the user were to to have the need of recreating Leverage's behavior by themselves.<br />
+  <div class="highlight"><pre><span></span><code>$<span class="w"> </span>leverage<span class="w"> </span>-v<span class="w"> </span>tf<span class="w"> </span>plan
+<span class="o">[</span><span class="m">18</span>:23:22.222<span class="o">]</span><span class="w"> </span>DEBUG<span class="w">    </span>Found<span class="w"> </span>config<span class="w"> </span>file<span class="w"> </span>/home/user/binbash/le-tf-infra-aws/build.env
+<span class="o">[</span><span class="m">18</span>:23:22.239<span class="o">]</span><span class="w"> </span>DEBUG<span class="w">    </span>Container<span class="w"> </span>configuration:
+<span class="w">                        </span><span class="o">{</span>
+<span class="w">                          </span><span class="s2">&quot;image&quot;</span>:<span class="w"> </span><span class="s2">&quot;binbash/leverage-toolbox:1.2.7-0.1.7&quot;</span>,<span class="w"> </span><span class="c1">#(1)!</span>
+<span class="w">                          </span><span class="s2">&quot;command&quot;</span>:<span class="w"> </span><span class="s2">&quot;&quot;</span>,
+<span class="w">                          </span><span class="s2">&quot;stdin_open&quot;</span>:<span class="w"> </span>true,
+<span class="w">                          </span><span class="s2">&quot;environment&quot;</span>:<span class="w"> </span><span class="o">{</span><span class="w"> </span><span class="c1">#(2)!</span>
+<span class="w">                            </span><span class="s2">&quot;COMMON_CONFIG_FILE&quot;</span>:<span class="w"> </span><span class="s2">&quot;/binbash/config/common.tfvars&quot;</span>,
+<span class="w">                            </span><span class="s2">&quot;ACCOUNT_CONFIG_FILE&quot;</span>:<span class="w"> </span><span class="s2">&quot;/binbash/security/config/account.tfvars&quot;</span>,
+<span class="w">                            </span><span class="s2">&quot;BACKEND_CONFIG_FILE&quot;</span>:<span class="w"> </span><span class="s2">&quot;/binbash/security/config/backend.tfvars&quot;</span>,
+<span class="w">                            </span><span class="s2">&quot;AWS_SHARED_CREDENTIALS_FILE&quot;</span>:<span class="w"> </span><span class="s2">&quot;/root/tmp/bb/credentials&quot;</span>,
+<span class="w">                            </span><span class="s2">&quot;AWS_CONFIG_FILE&quot;</span>:<span class="w"> </span><span class="s2">&quot;/root/tmp/bb/config&quot;</span>,
+<span class="w">                            </span><span class="s2">&quot;SRC_AWS_SHARED_CREDENTIALS_FILE&quot;</span>:<span class="w"> </span><span class="s2">&quot;/root/tmp/bb/credentials&quot;</span>,
+<span class="w">                            </span><span class="s2">&quot;SRC_AWS_CONFIG_FILE&quot;</span>:<span class="w"> </span><span class="s2">&quot;/root/tmp/bb/config&quot;</span>,
+<span class="w">                            </span><span class="s2">&quot;AWS_CACHE_DIR&quot;</span>:<span class="w"> </span><span class="s2">&quot;/root/tmp/bb/cache&quot;</span>,
+<span class="w">                            </span><span class="s2">&quot;SSO_CACHE_DIR&quot;</span>:<span class="w"> </span><span class="s2">&quot;/root/tmp/bb/sso/cache&quot;</span>,
+<span class="w">                            </span><span class="s2">&quot;SSH_AUTH_SOCK&quot;</span>:<span class="w"> </span><span class="s2">&quot;/ssh-agent&quot;</span>
+<span class="w">                          </span><span class="o">}</span>,
+<span class="w">                          </span><span class="s2">&quot;entrypoint&quot;</span>:<span class="w"> </span><span class="s2">&quot;/bin/terraform&quot;</span>,
+<span class="w">                          </span><span class="s2">&quot;working_dir&quot;</span>:<span class="w"> </span><span class="s2">&quot;/binbash/security/global/base-identities&quot;</span>,
+<span class="w">                          </span><span class="s2">&quot;host_config&quot;</span>:<span class="w"> </span><span class="o">{</span>
+<span class="w">                            </span><span class="s2">&quot;NetworkMode&quot;</span>:<span class="w"> </span><span class="s2">&quot;default&quot;</span>,
+<span class="w">                            </span><span class="s2">&quot;SecurityOpt&quot;</span>:<span class="w"> </span><span class="o">[</span>
+<span class="w">                              </span><span class="s2">&quot;label:disable&quot;</span>
+<span class="w">                            </span><span class="o">]</span>,
+<span class="w">                            </span><span class="s2">&quot;Mounts&quot;</span>:<span class="w"> </span><span class="o">[</span><span class="w"> </span><span class="c1">#(3)!</span>
+<span class="w">                              </span><span class="o">{</span>
+<span class="w">                                </span><span class="s2">&quot;Target&quot;</span>:<span class="w"> </span><span class="s2">&quot;/binbash&quot;</span>,
+<span class="w">                                </span><span class="s2">&quot;Source&quot;</span>:<span class="w"> </span><span class="s2">&quot;/home/user/binbash/le-tf-infra-aws&quot;</span>,
+<span class="w">                                </span><span class="s2">&quot;Type&quot;</span>:<span class="w"> </span><span class="s2">&quot;bind&quot;</span>,
+<span class="w">                                </span><span class="s2">&quot;ReadOnly&quot;</span>:<span class="w"> </span><span class="nb">false</span>
+<span class="w">                              </span><span class="o">}</span>,
+<span class="w">                              </span><span class="o">{</span>
+<span class="w">                                </span><span class="s2">&quot;Target&quot;</span>:<span class="w"> </span><span class="s2">&quot;/root/tmp/bb&quot;</span>,
+<span class="w">                                </span><span class="s2">&quot;Source&quot;</span>:<span class="w"> </span><span class="s2">&quot;/home/user/.aws/bb&quot;</span>,
+<span class="w">                                </span><span class="s2">&quot;Type&quot;</span>:<span class="w"> </span><span class="s2">&quot;bind&quot;</span>,
+<span class="w">                                </span><span class="s2">&quot;ReadOnly&quot;</span>:<span class="w"> </span><span class="nb">false</span>
+<span class="w">                              </span><span class="o">}</span>,
+<span class="w">                              </span><span class="o">{</span>
+<span class="w">                                </span><span class="s2">&quot;Target&quot;</span>:<span class="w"> </span><span class="s2">&quot;/etc/gitconfig&quot;</span>,
+<span class="w">                                </span><span class="s2">&quot;Source&quot;</span>:<span class="w"> </span><span class="s2">&quot;/home/user/.gitconfig&quot;</span>,
+<span class="w">                                </span><span class="s2">&quot;Type&quot;</span>:<span class="w"> </span><span class="s2">&quot;bind&quot;</span>,
+<span class="w">                                </span><span class="s2">&quot;ReadOnly&quot;</span>:<span class="w"> </span><span class="nb">false</span>
+<span class="w">                              </span><span class="o">}</span>,
+<span class="w">                              </span><span class="o">{</span>
+<span class="w">                                </span><span class="s2">&quot;Target&quot;</span>:<span class="w"> </span><span class="s2">&quot;/ssh-agent&quot;</span>,
+<span class="w">                                </span><span class="s2">&quot;Source&quot;</span>:<span class="w"> </span><span class="s2">&quot;/run/user/1000/keyring/ssh&quot;</span>,
+<span class="w">                                </span><span class="s2">&quot;Type&quot;</span>:<span class="w"> </span><span class="s2">&quot;bind&quot;</span>,
+<span class="w">                                </span><span class="s2">&quot;ReadOnly&quot;</span>:<span class="w"> </span><span class="nb">false</span>
+<span class="w">                              </span><span class="o">}</span>
+<span class="w">                            </span><span class="o">]</span>
+<span class="w">                          </span><span class="o">}</span>
+<span class="w">                        </span><span class="o">}</span>
+<span class="o">[</span><span class="m">18</span>:23:22.274<span class="o">]</span><span class="w"> </span>DEBUG<span class="w">    </span>Checking<span class="w"> </span><span class="k">for</span><span class="w"> </span>layer<span class="w"> </span>/home/user/binbash/le-tf-infra-aws/security/global/base-identities...
+<span class="o">[</span><span class="m">18</span>:23:22.279<span class="o">]</span><span class="w"> </span>DEBUG<span class="w">    </span>Checking<span class="w"> </span>layer<span class="w"> </span>/home/user/binbash/le-tf-infra-aws/security/global/base-identities...
+<span class="o">[</span><span class="m">18</span>:23:22.282<span class="o">]</span><span class="w"> </span>DEBUG<span class="w">    </span>Running<span class="w"> </span>command:<span class="w"> </span>sh<span class="w"> </span>-c<span class="w"> </span><span class="s1">&#39;cat $SSO_CACHE_DIR/token&#39;</span>
+<span class="o">[</span><span class="m">18</span>:23:22.901<span class="o">]</span><span class="w"> </span>DEBUG<span class="w">    </span>Running<span class="w"> </span>with<span class="w"> </span>entrypoint:<span class="w"> </span>/root/scripts/aws-sso/aws-sso-entrypoint.sh<span class="w"> </span>--<span class="w"> </span>/bin/terraform
+<span class="o">[</span><span class="m">18</span>:23:22.903<span class="o">]</span><span class="w"> </span>DEBUG<span class="w">    </span>Running<span class="w"> </span>command:<span class="w"> </span>plan<span class="w"> </span>-var-file<span class="o">=</span>/binbash/config/common.tfvars<span class="w"> </span>-var-file<span class="o">=</span>/binbash/security/config/account.tfvars<span class="w"> </span>-var-file<span class="o">=</span>/binbash/security/config/backend.tfvars<span class="w"> </span><span class="c1">#(4)!</span>
+...
+</code></pre></div></p>
+<ol>
+<li><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13.983 11.078h2.119a.186.186 0 0 0 .186-.185V9.006a.186.186 0 0 0-.186-.186h-2.119a.185.185 0 0 0-.185.185v1.888c0 .102.083.185.185.185m-2.954-5.43h2.118a.186.186 0 0 0 .186-.186V3.574a.186.186 0 0 0-.186-.185h-2.118a.185.185 0 0 0-.185.185v1.888c0 .102.082.185.185.185m0 2.716h2.118a.187.187 0 0 0 .186-.186V6.29a.186.186 0 0 0-.186-.185h-2.118a.185.185 0 0 0-.185.185v1.887c0 .102.082.185.185.186m-2.93 0h2.12a.186.186 0 0 0 .184-.186V6.29a.185.185 0 0 0-.185-.185H8.1a.185.185 0 0 0-.185.185v1.887c0 .102.083.185.185.186m-2.964 0h2.119a.186.186 0 0 0 .185-.186V6.29a.185.185 0 0 0-.185-.185H5.136a.186.186 0 0 0-.186.185v1.887c0 .102.084.185.186.186m5.893 2.715h2.118a.186.186 0 0 0 .186-.185V9.006a.186.186 0 0 0-.186-.186h-2.118a.185.185 0 0 0-.185.185v1.888c0 .102.082.185.185.185m-2.93 0h2.12a.185.185 0 0 0 .184-.185V9.006a.185.185 0 0 0-.184-.186h-2.12a.185.185 0 0 0-.184.185v1.888c0 .102.083.185.185.185m-2.964 0h2.119a.185.185 0 0 0 .185-.185V9.006a.185.185 0 0 0-.184-.186h-2.12a.186.186 0 0 0-.186.186v1.887c0 .102.084.185.186.185m-2.92 0h2.12a.185.185 0 0 0 .184-.185V9.006a.185.185 0 0 0-.184-.186h-2.12a.185.185 0 0 0-.184.185v1.888c0 .102.082.185.185.185M23.763 9.89c-.065-.051-.672-.51-1.954-.51-.338.001-.676.03-1.01.087-.248-1.7-1.653-2.53-1.716-2.566l-.344-.199-.226.327c-.284.438-.49.922-.612 1.43-.23.97-.09 1.882.403 2.661-.595.332-1.55.413-1.744.42H.751a.751.751 0 0 0-.75.748 11.376 11.376 0 0 0 .692 4.062c.545 1.428 1.355 2.48 2.41 3.124 1.18.723 3.1 1.137 5.275 1.137a15.74 15.74 0 0 0 2.93-.266 12.248 12.248 0 0 0 3.823-1.389 10.51 10.51 0 0 0 2.61-2.136c1.252-1.418 1.998-2.997 2.553-4.4h.221c1.372 0 2.215-.549 2.68-1.009.309-.293.55-.65.707-1.046l.098-.288Z"/></svg></span> Docker image being used</li>
+<li>Environment variables available in the container</li>
+<li>Mapping of the host (<code>Source</code>) directories and files into the container (<code>Target</code>)</li>
+<li>Command being executed (useful when trying to replicate Leverage's behavior by yourself)</li>
+</ol>
+</li>
 </ul>
 
 
@@ -4587,7 +4659,7 @@ Powered by Leverage 1.9.0
       <div class="md-dialog__inner md-typeset"></div>
     </div>
     
-    <script id="__config" type="application/json">{"base": "../../../..", "features": ["navigation.tabs", "navigation.instant", "navigation.tracking", "navigation.indexes", "navigation.top", "navigation.footer", "header.autohide", "content.action.edit"], "search": "../../../../assets/javascripts/workers/search.208ed371.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    <script id="__config" type="application/json">{"base": "../../../..", "features": ["navigation.tabs", "navigation.instant", "navigation.tracking", "navigation.indexes", "navigation.top", "navigation.footer", "header.autohide", "content.action.edit", "content.code.annotate"], "search": "../../../../assets/javascripts/workers/search.208ed371.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
       <script src="../../../../assets/javascripts/bundle.fc8c2696.min.js"></script>

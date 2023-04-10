@@ -249,7 +249,7 @@ From here, to ensure it's properly integrated, you may very likely want to creat
             ```
             profile = "bb-apps-prd-devops"
             ```
-        2. This is needed because we only want to use the OAAR role for exceptional cases, not on daily basis.
+        2. This is needed because we only want to use the OAAR role for exceptional cases, not on a daily basis.
         3. Now, let's configure your DevOps credentials (if you haven't already done so).
             1. Log into your security account, create programmatic access keys, and enable MFA.
             2. Then run: `leverage credentials configure --fetch-mfa-device --type SECURITY`

@@ -234,7 +234,7 @@ From here, to ensure it's properly integrated, you may very likely want to creat
         4. Import the OAAR role: `leverage terraform import module.iam_assumable_role_oaar.aws_iam_role.this OrganizationAccountAccessRole`
         5. Now run `leverage tf apply`
 
-    7. It's time for add a `security-base`:  
+    7. It's time to add `security-base`:  
         1. Create this layer from an existing one: `cp -r apps-devstg/us-east-1/security-base apps-prd/us-east-1/security-base`
         2. Go to the `apps-prd/us-east-1/security-base` directory and open the `config.tf` file. Replace any occurrences of `devstg` with `prd`
         3. Now run `leverage tf init`

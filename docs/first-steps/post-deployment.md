@@ -200,7 +200,7 @@ From here, to ensure it's properly integrated, you may very likely want to creat
         mkdir -p apps-prd/{global,us-east-1}
         ```
     3. Set up the config files:
-        1. Create a config files for this account: `cp -r apps-devstg/config apps-prd/config`
+        1. Create the config files for this account: `cp -r apps-devstg/config apps-prd/config`
         2. Open `apps-prd/config/backend.tfvars` and replace any occurrences of `devstg` with `prd`
         3. Do the same with `apps-prd/config/account.tfvars`
         4. Open up `apps-prd/config/backend.tfvars` again and replace this:
@@ -234,7 +234,7 @@ From here, to ensure it's properly integrated, you may very likely want to creat
         4. Import the OAAR role: `leverage terraform import module.iam_assumable_role_oaar.aws_iam_role.this OrganizationAccountAccessRole`
         5. Now run `leverage tf apply`
 
-    7. It's time for add a `security-base`:  
+    7. It's time to add `security-base`:  
         1. Create this layer from an existing one: `cp -r apps-devstg/us-east-1/security-base apps-prd/us-east-1/security-base`
         2. Go to the `apps-prd/us-east-1/security-base` directory and open the `config.tf` file. Replace any occurrences of `devstg` with `prd`
         3. Now run `leverage tf init`
@@ -249,11 +249,11 @@ From here, to ensure it's properly integrated, you may very likely want to creat
             ```
             profile = "bb-apps-prd-devops"
             ```
-        2. This is needed because we only want to use the OAAR role for exceptional cases, not on daily basis.
+        2. This is needed because we only want to use the OAAR role for exceptional cases, not on a daily basis.
         3. Now, let's configure your DevOps credentials (if you haven't already done so).
             1. Log into your security account, create programmatic access keys, and enable MFA.
             2. Then run: `leverage credentials configure --fetch-mfa-device --type SECURITY`
-            3. The command above should prompt for your programmatic keys and, with those, it should be able to configure you AWS config and credentials files appropriately.
+            3. The command above should prompt for your programmatic keys and, with those, Leverage should be able to configure your AWS config and credentials files appropriately.
     9.  That should be it. At this point you should have the following:
         1. A brand-new AWS account
         2. Configuration files that are needed for any layer that is created under this account

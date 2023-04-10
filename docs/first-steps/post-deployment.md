@@ -200,7 +200,7 @@ From here, to ensure it's properly integrated, you may very likely want to creat
         mkdir -p apps-prd/{global,us-east-1}
         ```
     3. Set up the config files:
-        1. Create a config files for this account: `cp -r apps-devstg/config apps-prd/config`
+        1. Create the config files for this account: `cp -r apps-devstg/config apps-prd/config`
         2. Open `apps-prd/config/backend.tfvars` and replace any occurrences of `devstg` with `prd`
         3. Do the same with `apps-prd/config/account.tfvars`
         4. Open up `apps-prd/config/backend.tfvars` again and replace this:

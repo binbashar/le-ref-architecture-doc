@@ -253,7 +253,7 @@ From here, to ensure it's properly integrated, you may very likely want to creat
         3. Now, let's configure your DevOps credentials (if you haven't already done so).
             1. Log into your security account, create programmatic access keys, and enable MFA.
             2. Then run: `leverage credentials configure --fetch-mfa-device --type SECURITY`
-            3. The command above should prompt for your programmatic keys and, with those, it should be able to configure you AWS config and credentials files appropriately.
+            3. The command above should prompt for your programmatic keys and, with those, Leverage should be able to configure your AWS config and credentials files appropriately.
     9.  That should be it. At this point you should have the following:
         1. A brand-new AWS account
         2. Configuration files that are needed for any layer that is created under this account

@@ -161,8 +161,8 @@ nav:
   - First Steps:
     - Introduction: "first-steps/introduction.md"
     - Set Up your AWS Management account: "first-steps/aws-account-setup.md"
-    - Set Up your local environment: "first-steps/local-setup.md"
-    - Set Up your Leverage project: "first-steps/leverage-project-setup.md"
+    - Install Leverage CLI: "first-steps/local-setup.md"
+    - Create a Leverage project: "first-steps/leverage-project-setup.md"
     - Orchestrate the Management account: "first-steps/management-account.md"
     - Orchestrate the Security and Shared accounts: "first-steps/security-and-shared-accounts.md"
     - Post-deployment: "first-steps/post-deployment.md"
@@ -288,7 +288,9 @@ nav:
         - Identities: "user-guide/features/identities/identities.md"
         - Credentials: "user-guide/features/identities/credentials.md"
         - Credentials Vault: "user-guide/features/identities/credentials-vault.md"
-      - SSO: "user-guide/features/sso/sso.md"
+      - SSO:
+        - Authentication: "user-guide/features/sso/sso.md"
+        - Onboarding Users: "user-guide/features/sso/managing-users.md"
       - Costs: "user-guide/features/costs/costs.md"
       - Security:
         - VPN: "user-guide/features/security/vpn.md"

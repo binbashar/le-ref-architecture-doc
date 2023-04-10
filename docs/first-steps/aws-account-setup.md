@@ -1,27 +1,41 @@
 # Set Up your AWS Management account
 
 ## Create an AWS account
-First and foremost you'll need to [create an AWS account](../user-guide/features/organization/organization-init.md) for your project's deployment. This will become the management account of your [AWS Organization](https://docs.aws.amazon.com/organizations/latest/userguide/orgs_getting-started_concepts.html). During the creation of the AWS account, a user will be created for you, the [root user](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_root-user.html). This user will take the email and password you provided as login credentials and it will be the main access point of your account (you can see this user represented in the [architecture diagram](../introduction/#introduction)).
+First and foremost you'll need to [create an AWS account](../user-guide/features/organization/organization-init.md) for your project. This will be the management account of your [AWS Organization](https://docs.aws.amazon.com/organizations/latest/userguide/orgs_getting-started_concepts.html) and the email address you use for signing up will be the [root user](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_root-user.html) of this account -- you can see this user represented in the [architecture diagram](../introduction/#introduction).
 
-The account's name will be given by your project's name followed by `-management`, since Leverage uses a suffix naming system to differentiate between the multiple accounts of a project. For this guide we'll stick to calling the project `MyExample` and so, the account name will be `myexample-management`. 
-
-Along the same line, we'll use the `example.com` domain for the email address used to register the account. Adding a `-aws` suffix to the project's name to indicate that this email address is related to the project's AWS account, we end up with a registration email that looks like `myexample-aws@example.com`.
-
-!!! info "Email addresses for AWS accounts."
-        Each AWS account requires having a unique email address associated to it. The Leverage Reference Architecture for AWS makes use of multiple accounts to better manage the infrastructure, as such, you will need different addresses for each one. Creating a new email account for each AWS is not a really viable solution to this problem, a better approach is to take advantage of mail services that support aliases. For information regarding how this works: [:books: Email setup for your AWS account.](../../user-guide/features/organization/organization-init/#pre-requisites)
+Since the root user is the main access point to your account it is strongly recommended that you keep its credentials (email, password) safe by following [AWS best practices](https://docs.aws.amazon.com/IAM/latest/UserGuide/best-practices.html).
 
 !!! tip
-        To protect your project's management account, [enabling Multi Factor Authentication](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_root-user.html#id_root-user_manage_mfa) is **highly** encouraged, also, reviewing the [account's billing setup](https://console.aws.amazon.com/billing/home?#/account) is always a good idea before proceeding.
+        To protect your management account, [enabling Multi Factor Authentication](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_root-user.html#id_root-user_manage_mfa) is **highly** encouraged. Also, reviewing the [account's billing setup](https://console.aws.amazon.com/billing/home?#/account) is always a good idea before proceeding.
 
-## Create an Admin user for the management account
-To be able to interact with and manage the AWS environment you will need an IAM user with administrator privileges.
+!!! info "For more details on setting up your AWS account: [:books: Organization account setup guide](../../user-guide/features/organization/organization-init#user-guide)"
 
-To accomplish this, sign in to the [IAM Console](https://console.aws.amazon.com/iam/) with your recently created account and create a user named `mgmt-org-admin` [following step 2 of this leverage doc](https://leverage.binbash.com.ar/user-guide/features/organization/organization-init/#reference-aws-organization-init-workflow). Setting a password is not necessary, since you won't use this user to log into the web console. Give it admin privileges by attaching the `AdministratorAccess` policy to it, there's no need to add the user to any group.
+## Create a bootstrap user with temporary administrator permissions
+Leverage needs a user with temporary administrator permissions in order to deploy the initial resources that will form the foundations you will then use to keep building on. That initial deployment is called the bootstrap process and thus the user required for that is called "the bootstrap user".
 
-## Generate programmatic access keys for the Admin user
-Lastly, generate programmatic access keys [following step 3 of this leverage doc](https://leverage.binbash.com.ar/user-guide/features/organization/organization-init/#reference-aws-organization-init-workflow) for the `mgmt-org-admin` user, and then either copy them or download the `.csv` file that AWS generates for you. In both cases, store the credentials in a secure location.
+To create that user, navigate to the [IAM page](https://console.aws.amazon.com/iam/) and create a user named `mgmt-org-admin` [following step 2 of this leverage doc](https://leverage.binbash.com.ar/user-guide/features/organization/organization-init/#reference-aws-organization-init-workflow).
 
-!!! info "For more detailed information on setting up your AWS account: [:books: Organization account setup guide](../../user-guide/features/organization/organization-init#user-guide)"
+!!! info
+        Bear in mind that the page for creating users may change from time to time but the key settings for configuring the bootstrap user are the following:
+
+        * It must be an IAM user (we won't be using IAM Identity Center for this)
+        * Password can be auto-generated
+        * It requires admin privileges which you can achieve by directly attaching the `AdministratorAccess` policy to it
+        * There's no need to add the user to any group as it is only a temporary user
+        * Generating programmatic access keys won't be necessary
+
+Usually the last step of the user creation should present you the following information:
+
+- Console sign-in URL
+- User name
+- Console password
+
+Make a note of all of these and keep them in a safe place as you will need them in the following steps.
+
+!!! info
+        If you are only getting the bootstrap user credentials for someone else in your team or
+        in Binbash's team, then please share that using a secure way (e.g. password management
+        service, GPG keys, etc).
 
 ## Next steps
 You have successfully created and configured the AWS account for your Leverage project. From now on, almost all interactions with the AWS environment (with few notable exceptions) will be performed via Leverage.

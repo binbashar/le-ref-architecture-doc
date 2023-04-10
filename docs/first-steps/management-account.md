@@ -1,26 +1,21 @@
 # Orchestrate the Management account
-
 Finally we reach the point in which you'll get to actually create the infrastructure in our AWS environment.
 
 Some accounts and layers rely on other accounts/layers being already deployed, creating dependencies between each other and establishing an order in which all layers should be deployed. We will go through these dependency chains in order.
 
-!!! success "Basic Landing Zone AWS Expenses"
+!!! success "Costs associated with this solution"
     By default this AWS Reference Architecture configuration should not incur in any costs.
 
-The **management** account is used to configure and access all AWS Organizations managed accounts, also, billing and financial decisions are enforced though this account.
+The **management** account is used to configure and access all the accounts in the AWS Organization. Consolidated Billing and Cost Management are also enforced though this account.
 
 ## Deploy the Management account's layers
-
 To begin, place yourself in the `management` account directory.
-
 ``` bash
 cd management
 ```
 
 ### Terraform backend layer
-
 Move into the `us-east-1/base-tf-backend` directory and run:
-
 ``` bash
 leverage terraform init --skip-validation
 leverage terraform apply
@@ -39,7 +34,6 @@ Now, the infrastructure for the Terraform state management is created. The next 
 ```
 
 And run once more:
-
 ``` bash
 leverage terraform init
 ```
@@ -53,29 +47,14 @@ When prompted, answer `yes`. Now you can safely remove the `terraform.tfstate` a
     * [How to manage Terraform state](https://blog.gruntwork.io/how-to-manage-terraform-state-28f5697e68fa)
 
 ### Identities layer
-
 The definition for the identities layer is located within the `global` directory. Move into the `global/base-identities` directory and run:
-
 ``` bash
 leverage terraform init
-```
-
-To securely manage the users credentials, all members of the organization that are bound to interact with the AWS environment, and are therefore listed in the `project.yaml` configuration file, should create GPG keys of their own. Then, they should export them and share their public key files with whoever is in charge of the project infrastructure in order to be able to create their respective IAM users. In this guide's case, that person it is you.
-
-!!! info "[:books: How to create and manage GPG keys](../../user-guide/features/identities/gpg/)"
-
-Once you get hold of the keys files, copy them to the `keys` subdirectory, respecting the user's configured name. For the `management` account in this guide, we need the keys for `kit.walker` and `natasha.romanoff`.
-
-Finally, run:
-
-``` bash
 leverage terraform apply
 ```
 
 ### Organizations layer
-
 Next, in the same fashion as in the previous layer, move into the `global/organizations` directory and run:
-
 ``` bash
 leverage terraform init
 leverage terraform apply
@@ -103,47 +82,70 @@ organization:
 ```
 
 And run:
-
 ``` bash
 leverage terraform import aws_organizations_account.management 000123456789
 ```
 
 !!! info "More information on [`terraform import`](../../user-guide/base-workflow/leverage-cli/reference/terraform#import)"
 
+!!! info "Getting errors with zsh?"
+    Zsh users may need to prepend `noglob` to the import command for it to be recognized correctly, as an alternative, square brackets can be escaped as `\[\]`
+
 ### Security layer
-
-The last layer for the `management` account is the security layer and its definition is located in `us-east-1`. So, move into the `us-east-1/security-base` directory and run:
-
+Change directory to `us-east-1/security-base` and run this:
 ``` bash
 leverage terraform init
 leverage terraform apply
 ```
 
 ## Update the bootstrap credentials
-
 Now that the `management` account has been deployed, and more specifically, all Organizations accounts have been created (in the [organizations layer](#organizations-layer)) you need to update the credentials for the bootstrap process before proceeding to deploy any of the remaining accounts.
 
 This will fetch the organizations structure from the AWS environment and create individual profiles associated with each account for the AWS CLI to use. So, run:
-
 ``` bash
-leverage credentials configure --type BOOTSTRAP --skip-access-keys-setup
+$ leverage credentials configure --type BOOTSTRAP --skip-access-keys-setup
+[09:08:44.762] INFO     Loading configuration file.
+[09:08:44.785]     Loading project environment configuration file.
+[09:08:44.791]     Loading Terraform common configuration.
+[09:08:53.247]     Configuring assumable roles.
+[09:08:53.248]     Fetching organization accounts.
+[09:08:55.193]     Backing up account profiles file.
+[09:08:55.761]             Configuring profile me-management-oaar
+[09:08:59.977]             Configuring profile me-security-oaar
+[09:09:04.081]             Configuring profile me-shared-oaar
+[09:09:08.305]     Account profiles configured in: /home/user/.aws/me/config
+[09:09:08.307] INFO     Updating project's Terraform common configuration.
 ```
-<pre><code><span class="fsg-timestamp">[09:08:44.762]</span> INFO     Loading configuration file.
-<span class="fsg-timestamp">[09:08:44.785]</span> INFO     Loading project environment configuration file.
-<span class="fsg-timestamp">[09:08:44.791]</span> INFO     Loading Terraform common configuration.
-<span class="fsg-timestamp">[09:08:53.247]</span> INFO     Configuring assumable roles.
-<span class="fsg-timestamp">[09:08:53.248]</span> INFO     Fetching organization accounts.
-<span class="fsg-timestamp">[09:08:55.193]</span> INFO     Backing up account profiles file.
-<span class="fsg-timestamp">[09:08:55.761]</span> INFO             Configuring profile <b>me-management-oaar</b>
-<span class="fsg-timestamp">[09:08:59.977]</span> INFO             Configuring profile <b>me-security-oaar</b>
-<span class="fsg-timestamp">[09:09:04.081]</span> INFO             Configuring profile <b>me-shared-oaar</b>
-<span class="fsg-timestamp">[09:09:08.305]</span> INFO     Account profiles configured in: <span class="fsg-path">/home/user/.aws/me/config</span>
-<span class="fsg-timestamp">[09:09:08.307]</span> INFO     Updating project's Terraform common configuration.
-</code></pre>
 
 !!! info "More information on [`credentials configure`](../../user-guide/base-workflow/leverage-cli/reference/credentials#configure)"
 
+### SSO layer
+Before working on the SSO layer you have to navigate to the [AWS IAM Identity Center page](https://console.aws.amazon.com/singlesignon/) and enable Single Sign-On (SSO) by clicking on the `Enable` button.
+
+Now back to the terminal. The SSO layer is deployed in two steps. First, switch to the `global/sso` directory and run the following:
+``` bash
+leverage terraform init
+leverage terraform apply
+```
+
+Secondly, open the `account_assignments.tf` file and uncomment the entire section that starts with this line:
+```
+# module "account_assignments" {
+#   source = "github.com/binbashar/terraform-aws-sso.git//modules/account-assignments?ref=0.7.1"
+
+[REDACTED]
+
+#   ]
+# }
+```
+
+After that, run these commands:
+``` bash
+leverage terraform init
+leverage terraform apply
+```
+
 ## Next steps
-You have successfully orchestrated the `management` account for your project and configured the credentials for the following steps.
+You have successfully orchestrated the `management` account for your project and configured the credentials for the next steps.
 
 Next, you will orchestrate the remaining accounts, `security` and `shared`.

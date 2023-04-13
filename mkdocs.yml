@@ -166,6 +166,7 @@ nav:
     - Orchestrate the Management account: "first-steps/management-account.md"
     - Orchestrate the Security and Shared accounts: "first-steps/security-and-shared-accounts.md"
     - Post-deployment: "first-steps/post-deployment.md"
+    - Add AWS Accounts: "first-steps/add-aws-accounts.md"
 
   - How it works:
     - Reference Architecture:

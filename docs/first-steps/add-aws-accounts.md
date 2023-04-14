@@ -21,7 +21,7 @@ For this example `apps-prd` will be created in region `us-east-1`.
         }
     ```
     
-    Note `apps` organizational unit (OU) is being used as parent OU. If a new OU has to be used here, it has to be created be adding it to `organizational_units` structure in the same file. 
+    Note `apps` organizational unit (OU) is being used as parent OU. If a new OU has to be used here, it has to be created by adding it to `organizational_units` structure in the same file. 
     
 3. Run the [Terraform workflow](https://leverage.binbash.com.ar/user-guide/ref-architecture-aws/workflow/) to apply the new changes.
 

@@ -153,7 +153,7 @@ Now, you have to create the initial directory structure for this new account, *a
         !!! info
             If the source layer was already initialized you should delete the previous Terraform setup using `sudo rm -rf .terraform*` in the target layer's directory.
         
-    2. Go to the `apps-prd/us-east-1/base-tf-backend` directory, open the `config.tf` file and comment the the S3 backend block:
+    2. Go to the `apps-prd/us-east-1/base-tf-backend` directory, open the `config.tf` file and comment the S3 backend block:
     
         E.g.:
         ```yaml

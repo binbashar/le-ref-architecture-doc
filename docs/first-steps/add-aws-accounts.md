@@ -35,7 +35,7 @@ For this example `apps-prd` will be created in region `us-east-1`.
 
     The new account ID should be got from the previous step.
     
-    Using it update the file:
+    Usi it to update the file:
     
     ```shell
         accounts = {

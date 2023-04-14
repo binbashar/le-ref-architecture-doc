@@ -18,7 +18,7 @@
         <link rel="prev" href="../security-and-shared-accounts/">
       
       
-        <link rel="next" href="../../how-it-works/ref-architecture/">
+        <link rel="next" href="../add-aws-accounts/">
       
       <link rel="icon" href="../../assets/images/logos/favicon.ico">
       <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-9.1.2">
@@ -556,6 +556,8 @@
         
           
         
+          
+        
       
       
         <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
@@ -776,33 +778,6 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#add-new-aws-accounts" class="md-nav__link">
-    Add New AWS Accounts
-  </a>
-  
-    <nav class="md-nav" aria-label="Add New AWS Accounts">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#create-the-account-in-your-organization" class="md-nav__link">
-    Create the account in your Organization
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#create-the-initial-directory-structure-for-a-new-account" class="md-nav__link">
-    Create the initial directory structure for a new account
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#next-steps" class="md-nav__link">
     Next steps
   </a>
@@ -813,6 +788,20 @@
   
 </nav>
       
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../add-aws-accounts/" class="md-nav__link">
+        Add AWS Accounts
+      </a>
     </li>
   
 
@@ -4578,33 +4567,6 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#add-new-aws-accounts" class="md-nav__link">
-    Add New AWS Accounts
-  </a>
-  
-    <nav class="md-nav" aria-label="Add New AWS Accounts">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#create-the-account-in-your-organization" class="md-nav__link">
-    Create the account in your Organization
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#create-the-initial-directory-structure-for-a-new-account" class="md-nav__link">
-    Create the initial directory structure for a new account
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#next-steps" class="md-nav__link">
     Next steps
   </a>
@@ -4712,307 +4674,6 @@ To this:
 <p class="admonition-title">Note</p>
 <p>If a layer was already set with BOOTSTRAP credentials, when changing the credential type Terraform has to be reconfigured: <code>leverage tf init -reconfigure</code>.</p>
 </div>
-<h2 id="add-new-aws-accounts">Add New AWS Accounts<a class="headerlink" href="#add-new-aws-accounts" title="Permanent link"> ¶</a></h2>
-<p>If  necessary you can easily add new AWS accounts to your Leverage project by following these steps.</p>
-<p>For this example <code>apps-prd</code> will be created.</p>
-<h4 id="create-the-account-in-your-organization">Create the account in your Organization<a class="headerlink" href="#create-the-account-in-your-organization" title="Permanent link"> ¶</a></h4>
-<ol>
-<li>
-<p>Go to <code>management/global/organizations</code>.</p>
-</li>
-<li>
-<p>Edit the <code>locals.tf</code> file to add the account to the local <code>accounts</code> variable.
-    <div class="highlight"><pre><span></span><code><span class="w">    </span><span class="l l-Scalar l-Scalar-Plain">accounts = {</span>
-
-<span class="w">    </span><span class="l l-Scalar l-Scalar-Plain">[...]</span>
-
-<span class="w">        </span><span class="l l-Scalar l-Scalar-Plain">apps-prd = {</span>
-<span class="w">        </span><span class="l l-Scalar l-Scalar-Plain">email     = &quot;aws+apps-prd@yourcompany.com&quot;,</span>
-<span class="w">        </span><span class="l l-Scalar l-Scalar-Plain">parent_ou = &quot;apps&quot;</span>
-<span class="w">        </span><span class="l l-Scalar l-Scalar-Plain">}</span>
-<span class="w">    </span><span class="l l-Scalar l-Scalar-Plain">}</span>
-</code></pre></div></p>
-<p>Note <code>apps</code> organizational unit (OU) is being used as parent OU. If a new OU has to be used here, it has to be created be adding it to <code>organizational_units</code> structure in the same file.</p>
-</li>
-<li>
-<p>Run the <a href="https://leverage.binbash.com.ar/user-guide/ref-architecture-aws/workflow/">Terraform workflow</a> to apply the new changes.</p>
-<p>Basically:</p>
-<div class="highlight"><pre><span></span><code>leverage<span class="w"> </span>terraform<span class="w"> </span>apply
-</code></pre></div>
-</li>
-<li>
-<p>Add the new account to the <code>config/common.tfvars</code> file.</p>
-<p>The new account ID should be got from the previous step.</p>
-<p>Using it update the file:</p>
-<div class="highlight"><pre><span></span><code><span class="w">    </span><span class="nv">accounts</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">{</span>
-
-<span class="w">    </span><span class="o">[</span>...<span class="o">]</span>
-
-<span class="w">        </span>apps-prd<span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">{</span>
-<span class="w">            </span><span class="nv">email</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;aws+apps-prd@yourcompany.com&quot;</span>,
-<span class="w">            </span><span class="nv">id</span><span class="w">    </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;&lt;here-the-account-id&gt;&quot;</span>
-<span class="w">        </span><span class="o">}</span>
-<span class="w">    </span><span class="o">}</span>
-</code></pre></div>
-</li>
-<li>
-<p>If SSO is being used in this project.</p>
-<p>Permissions for SSO access have to be granted before we can step forward.</p>
-<p>Add the right permissions in file <code>management/global/sso/account_assignments.tf</code>.</p>
-<p>For the example:</p>
-<div class="highlight"><pre><span></span><code><span class="w">    </span><span class="p p-Indicator">{</span>
-<span class="w">      </span><span class="nv">account             = var.accounts.apps-prd.id</span><span class="p p-Indicator">,</span>
-<span class="w">      </span><span class="nv">permission_set_arn  = module.permission_sets.permission_sets</span><span class="p p-Indicator">[</span><span class="s">&quot;Administrator&quot;</span><span class="p p-Indicator">]</span><span class="nv">.arn</span><span class="p p-Indicator">,</span>
-<span class="w">      </span><span class="nv">permission_set_name = &quot;Administrator&quot;</span><span class="p p-Indicator">,</span>
-<span class="w">      </span><span class="nv">principal_type      = &quot;GROUP&quot;</span><span class="p p-Indicator">,</span>
-<span class="w">      </span><span class="nv">principal_name      = &quot;AWS_Administrators&quot;</span>
-<span class="w">    </span><span class="p p-Indicator">}</span><span class="err">,</span>
-
-<span class="w">    </span><span class="p p-Indicator">{</span>
-<span class="w">      </span><span class="nv">account             = var.accounts.apps-prd.id</span><span class="p p-Indicator">,</span>
-<span class="w">      </span><span class="nv">permission_set_arn  = module.permission_sets.permission_sets</span><span class="p p-Indicator">[</span><span class="s">&quot;DevOps&quot;</span><span class="p p-Indicator">]</span><span class="nv">.arn</span><span class="p p-Indicator">,</span>
-<span class="w">      </span><span class="nv">permission_set_name = &quot;DevOps&quot;</span><span class="p p-Indicator">,</span>
-<span class="w">      </span><span class="nv">principal_type      = &quot;GROUP&quot;</span><span class="p p-Indicator">,</span>
-<span class="w">      </span><span class="nv">principal_name      = &quot;AWS_DevOps&quot;</span>
-<span class="w">    </span><span class="p p-Indicator">}</span><span class="err">,</span>
-
-<span class="w">    </span><span class="p p-Indicator">{</span>
-<span class="w">      </span><span class="nv">account             = var.accounts.apps-prd.id</span><span class="p p-Indicator">,</span>
-<span class="w">      </span><span class="nv">permission_set_arn  = module.permission_sets.permission_sets</span><span class="p p-Indicator">[</span><span class="s">&quot;Developer_FullAccess&quot;</span><span class="p p-Indicator">]</span><span class="nv">.arn</span><span class="p p-Indicator">,</span>
-<span class="w">      </span><span class="nv">permission_set_name = &quot;Developer_FullAccess&quot;</span><span class="p p-Indicator">,</span>
-<span class="w">      </span><span class="nv">principal_type      = &quot;GROUP&quot;</span><span class="p p-Indicator">,</span>
-<span class="w">      </span><span class="nv">principal_name      = &quot;AWS_Developers&quot;</span>
-<span class="w">    </span><span class="p p-Indicator">}</span><span class="err">,</span>
-</code></pre></div>
-<p>Note that your needs can vary, and these permissions are just an example. Please be careful with what you are granting here.</p>
-<p>Apply changes:
-<div class="highlight"><pre><span></span><code>leverage<span class="w"> </span>terraform<span class="w"> </span>apply
-</code></pre></div></p>
-<p>Now you need to get the new permissions locally:</p>
-<div class="highlight"><pre><span></span><code>leverage<span class="w"> </span>aws<span class="w"> </span>configure<span class="w"> </span>sso
-</code></pre></div>
-</li>
-</ol>
-<p>From here, to make sure it integrates correctly, you will most likely want to create the initial directory structure for this new account, <em>as explained below</em>.</p>
-<h4 id="create-the-initial-directory-structure-for-a-new-account">Create the initial directory structure for a new account<a class="headerlink" href="#create-the-initial-directory-structure-for-a-new-account" title="Permanent link"> ¶</a></h4>
-<p>For this example, we will set up the <code>apps-prd</code> account by using the <code>apps-devstg</code> as a template:</p>
-<ol>
-<li>
-<p>Ensure you are at the root of this repository</p>
-</li>
-<li>
-<p>Create the initial directory structure for the new account:</p>
-<div class="highlight"><pre><span></span><code>mkdir -p apps-prd/{global,us-east-1}
-</code></pre></div>
-</li>
-<li>
-<p>Set up the config files:</p>
-<ol>
-<li>
-<p>Create the config files for this account: <code>cp -r apps-devstg/config apps-prd/config</code></p>
-</li>
-<li>
-<p>Open <code>apps-prd/config/backend.tfvars</code> and replace any occurrences of <code>devstg</code> with <code>prd</code>.</p>
-<p>(basically, <code>apps-devstg</code> is being replaced with the new name <code>apps-prd</code>)</p>
-</li>
-<li>
-<p>Do the same with <code>apps-prd/config/account.tfvars</code></p>
-</li>
-<li>
-<p>If <strong>no SSO</strong> is implemented in the project (i.e. OAAR is being used):</p>
-<ol>
-<li>
-<p>Open up <code>apps-prd/config/backend.tfvars</code> again and replace this:
-    <div class="highlight"><pre><span></span><code>profile = &quot;bb-apps-prd-devops&quot;
-</code></pre></div>
-    with this:
-    <div class="highlight"><pre><span></span><code>profile = &quot;bb-apps-prd-oaar&quot;
-</code></pre></div></p>
-</li>
-<li>
-<p>In the step above, we are switching to the OAAR (OrganizationalAccountAccessRole) role because we are working with a brand new account that is empty, so, the only way to access it programmatically is through the OAAR role.</p>
-</li>
-<li>
-<p>Now it's time to configure your OAAR credentials (if haven't already done so). For that you can follow the steps in <a href="https://leverage.binbash.com.ar/first-steps/management-account/#update-the-bootstrap-credentials">this section</a> of the official documentation.</p>
-</li>
-</ol>
-</li>
-</ol>
-</li>
-<li>
-<p>Create the <code>base-tf-backend</code> layer:</p>
-<ol>
-<li>
-<p>Copy the layer from an existing one:</p>
-<p>From the repository root run:
-<div class="highlight"><pre><span></span><code>cp<span class="w"> </span>-r<span class="w"> </span>apps-devstg/us-east-1/base-tf-backend<span class="w"> </span>apps-prd/us-east-1/base-tf-backend
-</code></pre></div></p>
-<div class="admonition info">
-<p class="admonition-title">Info</p>
-<p>If the source layer was already initialized you should delete the previous Terraform setup using <code>sudo rm -rf .terraform*</code> in the target layer's directory.</p>
-</div>
-</li>
-<li>
-<p>Go to the <code>apps-prd/us-east-1/base-tf-backend</code> directory and open the <code>config.tf</code> file and comment the the S3 backend block:</p>
-<p>E.g.:
-<div class="highlight"><pre><span></span><code>#backend &quot;s3&quot; {
-#    key = &quot;apps-devstg/tf-backend/terraform.tfstate&quot;
-#}
-</code></pre></div></p>
-</li>
-<li>
-<p>Now run the <a href="https://leverage.binbash.com.ar/user-guide/ref-architecture-aws/workflow/">Terraform workflow</a> to initialize and apply this layer.</p>
-<p>The flag <code>--skip-validation</code> is needed here since the bucket does not yet exist.</p>
-<div class="highlight"><pre><span></span><code>leverage<span class="w"> </span>terraform<span class="w"> </span>init<span class="w"> </span>--skip-validation
-leverage<span class="w"> </span>terraform<span class="w"> </span>apply
-</code></pre></div>
-</li>
-<li>
-<p>Open the <code>config.tf</code> file again uncommenting the block commented before and replacing <code>devstg</code> with <code>prd</code>:</p>
-<p>E.g.:
-<div class="highlight"><pre><span></span><code>backend &quot;s3&quot; {
-    key = &quot;apps-prd/tf-backend/terraform.tfstate&quot;
-}
-</code></pre></div></p>
-</li>
-<li>
-<p>To finish with the backend layer, re-init to move the <code>tfstate</code> to the new location.</p>
-<p>Run:
-<div class="highlight"><pre><span></span><code>leverage<span class="w"> </span>terraform<span class="w"> </span>init
-</code></pre></div></p>
-<p>Terraform will detect that you are trying to move from a local to a remote state and will ask for confirmation.</p>
-<div class="highlight"><pre><span></span><code>Initializing<span class="w"> </span>the<span class="w"> </span>backend...
-Acquiring<span class="w"> </span>state<span class="w"> </span>lock.<span class="w"> </span>This<span class="w"> </span>may<span class="w"> </span>take<span class="w"> </span>a<span class="w"> </span>few<span class="w"> </span>moments...
-Do<span class="w"> </span>you<span class="w"> </span>want<span class="w"> </span>to<span class="w"> </span>copy<span class="w"> </span>existing<span class="w"> </span>state<span class="w"> </span>to<span class="w"> </span>the<span class="w"> </span>new<span class="w"> </span>backend?
-<span class="w">  </span>Pre-existing<span class="w"> </span>state<span class="w"> </span>was<span class="w"> </span>found<span class="w"> </span><span class="k">while</span><span class="w"> </span>migrating<span class="w"> </span>the<span class="w"> </span>previous<span class="w"> </span><span class="s2">&quot;local&quot;</span><span class="w"> </span>backend<span class="w"> </span>to<span class="w"> </span>the
-<span class="w">  </span>newly<span class="w"> </span>configured<span class="w"> </span><span class="s2">&quot;s3&quot;</span><span class="w"> </span>backend.<span class="w"> </span>No<span class="w"> </span>existing<span class="w"> </span>state<span class="w"> </span>was<span class="w"> </span>found<span class="w"> </span><span class="k">in</span><span class="w"> </span>the<span class="w"> </span>newly
-<span class="w">  </span>configured<span class="w"> </span><span class="s2">&quot;s3&quot;</span><span class="w"> </span>backend.<span class="w"> </span>Do<span class="w"> </span>you<span class="w"> </span>want<span class="w"> </span>to<span class="w"> </span>copy<span class="w"> </span>this<span class="w"> </span>state<span class="w"> </span>to<span class="w"> </span>the<span class="w"> </span>new<span class="w"> </span><span class="s2">&quot;s3&quot;</span>
-<span class="w">  </span>backend?<span class="w"> </span>Enter<span class="w"> </span><span class="s2">&quot;yes&quot;</span><span class="w"> </span>to<span class="w"> </span>copy<span class="w"> </span>and<span class="w"> </span><span class="s2">&quot;no&quot;</span><span class="w"> </span>to<span class="w"> </span>start<span class="w"> </span>with<span class="w"> </span>an<span class="w"> </span>empty<span class="w"> </span>state.
-
-<span class="w">  </span>Enter<span class="w"> </span>a<span class="w"> </span>value:
-</code></pre></div>
-<p>Enter <code>yes</code> and hit enter.</p>
-</li>
-</ol>
-</li>
-<li>
-<p>Create the <code>base-identities</code> layer:</p>
-<ol>
-<li>
-<p>Copy the layer from an existing one:</p>
-<p>From the repository root run:
-<div class="highlight"><pre><span></span><code>cp -r apps-devstg/global/base-identities apps-prd/global/base-identities`
-</code></pre></div></p>
-<div class="admonition info">
-<p class="admonition-title">Info</p>
-<p>If the source layer was already initialized you should delete the previous Terraform setup using <code>sudo rm -rf .terraform*</code> in the target layer's directory.</p>
-</div>
-</li>
-<li>
-<p>Go to the <code>apps-prd/global/base-identities</code> directory and open the <code>config.tf</code> file. Replace any occurrences of <code>devstg</code> with <code>prd</code></p>
-<p>E.g. this line should be:
-<div class="highlight"><pre><span></span><code><span class="l l-Scalar l-Scalar-Plain">backend &quot;s3&quot; {</span>
-<span class="w">  </span><span class="l l-Scalar l-Scalar-Plain">key = &quot;apps-prd/identities/terraform.tfstate&quot;</span>
-<span class="l l-Scalar l-Scalar-Plain">}</span>
-</code></pre></div></p>
-</li>
-<li>
-<p>Init the layer</p>
-<div class="highlight"><pre><span></span><code>leverage<span class="w"> </span>terraform<span class="w"> </span>init
-</code></pre></div>
-</li>
-<li>
-<p>Import the OAAR role</p>
-<p>Run this command:
-<div class="highlight"><pre><span></span><code>leverage<span class="w"> </span>terraform<span class="w"> </span>import<span class="w"> </span>module.iam_assumable_role_oaar.aws_iam_role.this<span class="w"> </span>OrganizationAccountAccessRole
-</code></pre></div></p>
-</li>
-<li>
-<p>Finally apply the layer</p>
-<div class="highlight"><pre><span></span><code>leverage<span class="w"> </span>terraform<span class="w"> </span>apply
-</code></pre></div>
-</li>
-</ol>
-</li>
-<li>
-<p>Create the <code>security-base</code> layer:</p>
-<ol>
-<li>
-<p>Copy the layer from an existing one:</p>
-<p>From the repository root run:
-<div class="highlight"><pre><span></span><code>cp<span class="w"> </span>-r<span class="w"> </span>apps-devstg/us-east-1/security-base<span class="w"> </span>apps-prd/us-east-1/security-base
-</code></pre></div></p>
-<div class="admonition info">
-<p class="admonition-title">Info</p>
-<p>If the source layer was already initialized you should delete the previous Terraform setup using <code>sudo rm -rf .terraform*</code> in the target layer's directory.</p>
-</div>
-</li>
-<li>
-<p>Go to the <code>apps-prd/us-east-1/security-base</code> directory and open the <code>config.tf</code> file replacing any occurrences of <code>devstg</code> with <code>prd</code></p>
-<p>E.g. this line should be:
-<div class="highlight"><pre><span></span><code><span class="l l-Scalar l-Scalar-Plain">backend &quot;s3&quot; {</span>
-<span class="w">  </span><span class="l l-Scalar l-Scalar-Plain">key = &quot;apps-prd/security-base/terraform.tfstate&quot;</span>
-<span class="l l-Scalar l-Scalar-Plain">}</span>
-</code></pre></div></p>
-</li>
-<li>
-<p>Init and apply the layer</p>
-<div class="highlight"><pre><span></span><code>leverage<span class="w"> </span>tf<span class="w"> </span>init
-leverage<span class="w"> </span>tf<span class="w"> </span>apply
-</code></pre></div>
-</li>
-</ol>
-</li>
-<li>
-<p>If no SSO is implemented in the project (i.e. OAAR is being used), switch back from OAAR to DevOps role.</p>
-<ol>
-<li>
-<p>Open up <code>apps-prd/config/backend.tfvars</code></p>
-<p>Replace this:
-<div class="highlight"><pre><span></span><code><span class="l l-Scalar l-Scalar-Plain">profile = &quot;bb-apps-prd-oaar&quot;</span>
-</code></pre></div></p>
-<p>with this:</p>
-<div class="highlight"><pre><span></span><code><span class="l l-Scalar l-Scalar-Plain">profile = &quot;bb-apps-prd-devops&quot;</span>
-</code></pre></div>
-<div class="admonition info">
-<p class="admonition-title">Info</p>
-<p>This is needed because we only want to use the OAAR role for exceptional cases, not on a daily basis.</p>
-</div>
-</li>
-<li>
-<p>Now, let's configure your DevOps credentials (if you haven't already done so).</p>
-<ol>
-<li>
-<p>Log into your security account, create programmatic access keys, and enable MFA.</p>
-</li>
-<li>
-<p>Then run: <code>leverage credentials configure --fetch-mfa-device --type SECURITY</code></p>
-</li>
-<li>
-<p>The command above should prompt for your programmatic keys and, with those, Leverage should be able to configure your AWS config and credentials files appropriately.</p>
-</li>
-</ol>
-</li>
-</ol>
-</li>
-<li>
-<p>That should be it. At this point you should have the following:</p>
-<ol>
-<li>
-<p>A brand-new AWS account.</p>
-</li>
-<li>
-<p>Configuration files that are needed for any layer that is created under this account.</p>
-</li>
-<li>
-<p>A Terraform State Backend for this new account.</p>
-</li>
-<li>
-<p>Roles and policies (base identities) that are necessary to access the new account.</p>
-</li>
-</ol>
-</li>
-</ol>
 <h2 id="next-steps">Next steps<a class="headerlink" href="#next-steps" title="Permanent link"> ¶</a></h2>
 <p>Now you not only have a fully functional landing zone configuration deployed, but also are able to interact with it using your own AWS SSO credentials.</p>
 <p>For more detailed information, visit the links below.</p>
@@ -5064,13 +4725,13 @@ leverage<span class="w"> </span>tf<span class="w"> </span>apply
         
         
           
-          <a href="../../how-it-works/ref-architecture/" class="md-footer__link md-footer__link--next" aria-label="Next: Overview" rel="next">
+          <a href="../add-aws-accounts/" class="md-footer__link md-footer__link--next" aria-label="Next: Add AWS Accounts" rel="next">
             <div class="md-footer__title">
               <div class="md-ellipsis">
                 <span class="md-footer__direction">
                   Next
                 </span>
-                Overview
+                Add AWS Accounts
               </div>
             </div>
             <div class="md-footer__button md-icon">

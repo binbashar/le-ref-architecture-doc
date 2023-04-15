@@ -1,23 +1,29 @@
 # Why Leverage?
 
-## The problem
+## In a nutshell
+If you implement our **Reference Architecture for AWS** and the **Infrastructure as Code (IaC) Library** via Leverage CLI, you will get your entire Cloud Native Application Infra in few weeks.
+
+:material-comment-quote: *Implement Leverage yourself or we can deploy it for you!* :muscle:
+
+## The problem and our solution
+
+### What are the problems you might be facing?
 ![leverage-why](../../../assets/images/diagrams/leverage-why-problem.png "Leverage"){: style="width:950px"}
 <figcaption style="font-size:15px">
 <b>Figure:</b> Why Leverage? The problem.
 (Source: binbash, "Leverage Presentation: Why you should use Leverage?", accessed June 15th 2021).
 </figcaption>
 
-## Our solution
+### What is our solution?
 ![leverage-why](../../../assets/images/diagrams/leverage-why-solution.png "Leverage"){: style="width:950px"}
 <figcaption style="font-size:15px">
 <b>Figure:</b> Why Leverage? The solution.
 (Source: binbash, "Leverage Presentation: Why you should use Leverage?", accessed June 15th 2021).
 </figcaption>
 
-### The problem & our solution intro video
-<iframe width="560" height="315" src="https://www.youtube.com/embed/-vb9Qtz6mLs" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+## Leverage for the different roles of a company
 
-## Why Leverage for CIOs, CTOs and VPs of Engineering?
+### Leverage for CIOs, CTOs and VPs of Engineering
 
 ??? question "**Accelerate development and optimize costs**"
     Annual cost savings are a new standard and best practice. Profits are being targeted to business development,
@@ -70,7 +76,7 @@
     The `Leverage CLI` allows to build repeatable and immutable infrastructure. So your cloud development, staging and
     production environments will consistently be the same.
 
-## Why Leverage for DevOps Engineers, Cloud Architects and Software Engineers?
+### Leverage for DevOps Engineers, Cloud Architects and Software Engineers
 
 ??? question "**Provisioning infrastructure as code (Iac)**"
     Instead of manually provisioning infrastructure, the real benefits of cloud adoption come from orchestrating

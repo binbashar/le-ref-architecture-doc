@@ -4,7 +4,7 @@
 Use this terraform configuration files to create the **S3 bucket** & **DynamoDB** table needed to use Terraform Remote
 State Storage & Locking.
 
-![leverage-ref-arch-tf](../../assets/images/diagrams/terraform-aws-s3-backend.png "Leverage"){: style="width:350px"}
+![leverage-ref-arch-tf](../../../assets/images/diagrams/terraform-aws-s3-backend.png "Leverage"){: style="width:350px"}
 
 <figcaption style="font-size:15px">
 <b>Figure:</b> Terraform remote state store & locking necessary AWS S3 bucket and DynamoDB table components.

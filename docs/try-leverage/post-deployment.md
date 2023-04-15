@@ -235,7 +235,7 @@ From here, to make sure it integrates correctly, you will most likely want to cr
 
         2. In the step above, we are switching to the OAAR (OrganizationalAccountAccessRole) role because we are working with a brand new account that is empty, so, the only way to access it programmatically is through the OAAR role.
 
-        3. Now it's time to configure your OAAR credentials (if haven't already done so). For that you can follow the steps in [this section](https://leverage.binbash.com.ar/first-steps/management-account/#update-the-bootstrap-credentials) of the official documentation.
+        3. Now it's time to configure your OAAR credentials (if haven't already done so). For that you can follow the steps in [this section](https://leverage.binbash.com.ar/try-leverage/management-account/#update-the-bootstrap-credentials) of the official documentation.
 
 4. Create the `base-tf-backend` layer:
 

@@ -1,4 +1,9 @@
-## Why we choose our tech stack
+# Tech Stack
+Leverage was built around the [AWS Well Architected Framework](https://aws.amazon.com/architecture/well-architected/) and it uses a stack that includes [Terraform](https://www.terraform.io/), [Ansible](https://www.ansible.com/), [Helm](https://helm.sh/) and other tools.
+
+We are also adopters and supporters of Kubernetes and the Cloud Native movement, which you should become self-evident as you keep exploring our technology stack.
+
+## Why did we choose our tech stack?
 
 ??? info "Why AWS❓"
     Amazon Web Services (AWS) is the world’s most comprehensive and broadly adopted 
@@ -208,10 +213,3 @@
 
     - [How it works: Secrets](../../features/secrets/secrets/)
     - [Hashicorp Vault Project](https://www.vaultproject.io/)
-    
-    
-    
-    
-    
-    
-    

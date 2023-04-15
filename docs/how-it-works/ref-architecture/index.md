@@ -12,7 +12,7 @@ Leverage Reference Architecture for AWS that will be implemented on the
 Projects’ AWS infrastructure.
 
 We're assuming you've already have in place your AWS Landing Zone based on the
-[First Steps](../../first-steps/introduction.md) guide. 
+[First Steps](../../try-leverage/introduction.md) guide. 
 
 !!! check "Our Purpose"
     * [x] **Democratize advanced technologies:** As complex as it may sound, the basic idea behind this design principle is 

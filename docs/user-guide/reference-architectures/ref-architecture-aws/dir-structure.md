@@ -14,29 +14,25 @@ The following block provides a brief explanation of the chosen files/folders lay
         |   ├── 📂 global
         |   │   └── 📂 base-identities
         |   ├── 📂 us-east-1
-        |   │   ├── 📂 backups --
+        |   │   ├── 📂 backups
         |   │   ├── 📂 base-certificates
         |   │   ├── 📂 base-network
         |   │   ├── 📂 base-tf-backend
         |   │   ├── 📂 cdn-s3-frontend
         |   │   ├── 📂 databases-aurora
-        |   │   ├── 📂 databases-mysql --
-        |   │   ├── 📂 databases-pgsql --
-        |   │   ├── 📂 ec2-fleet-ansible --
+        |   │   ├── 📂 databases-mysql
+        |   │   ├── 📂 databases-pgsql
         |   │   ├── 📂 k8s-eks-demoapps
-        |   │   ├── 📂 k8s-kind
-        |   │   ├── 📂 k8s-kops --
         |   │   ├── 📂 notifications
         |   │   ├── 📂 security-audit
         |   │   ├── 📂 security-base
         |   │   ├── 📂 security-certs
-        |   │   ├── 📂 security-firewall --
-        |   │   ├── 📂 security-keys-dr
+        |   │   ├── 📂 security-firewall
         |   │   ├── 📂 storage
         |   │   └── 📂 tools-cloud-nuke
         |   └── 📂 us-east-2
         |       ├── 📂 k8s-eks
-        |       ├── 📂 security-compliance --
+        |       ├── 📂 security-compliance
         |       └── 📂 security-keys
         ├── 📂 apps-prd
         │   ├── 📂 config
@@ -45,17 +41,16 @@ The following block provides a brief explanation of the chosen files/folders lay
         │   ├── 📂 global
         |   │   └── 📂 base-identities
         │   └── 📂 us-east-1
-        |       ├── 📂 backups --
+        |       ├── 📂 backups
         |       ├── 📂 base-network
         |       ├── 📂 base-tf-backend
         |       ├── 📂 cdn-s3-frontend
-        |       ├── 📂 ec2-fleet --
         |       ├── 📂 k8s-eks
         |       ├── 📂 notifications
         |       ├── 📂 security-audit
         |       ├── 📂 security-base
         |       ├── 📂 security-certs
-        |       ├── 📂 security-compliance --
+        |       ├── 📂 security-compliance
         |       └── 📂 security-keys
         ├── 📄 build.env
         ├── 📄 build.py
@@ -76,9 +71,8 @@ The following block provides a brief explanation of the chosen files/folders lay
         |   │   ├── 📂 notifications
         |   │   ├── 📂 security-audit
         |   │   ├── 📂 security-base
-        |   │   ├── 📂 security-compliance --
+        |   │   ├── 📂 security-compliance
         |   │   ├── 📂 security-keys
-        |   │   └── 📂 security-monitoring-dr --
         │   └── 📂 us-east-2
         |       └── 📂 security-monitoring
         ├── 📂 network
@@ -94,13 +88,13 @@ The following block provides a brief explanation of the chosen files/folders lay
         |   │   ├── 📂 notifications
         |   │   ├── 📂 security-audit
         |   │   ├── 📂 security-base
-        |   │   ├── 📂 security-compliance --
+        |   │   ├── 📂 security-compliance
         |   │   ├── 📂 security-keys
         |   │   └── 📂 transit-gateway
         │   └── 📂 us-east-2
         |       ├── 📂 base-network
         |       ├── 📂 network-firewall
-        |       ├── 📂 security-compliance --
+        |       ├── 📂 security-compliance
         |       ├── 📂 security-keys
         |       └── 📂 transit-gateway
         ├── 📂 security
@@ -115,13 +109,13 @@ The following block provides a brief explanation of the chosen files/folders lay
         |   │   ├── 📂 notifications
         |   │   ├── 📂 security-audit
         |   │   ├── 📂 security-base
-        |   │   ├── 📂 security-compliance --
+        |   │   ├── 📂 security-compliance
         |   │   ├── 📂 security-keys
         |   │   └── 📂 security-monitoring
         │   └── 📂 us-east-2
         |       ├── 📂 security-audit
-        |       ├── 📂 security-compliance --
-        |       └── 📂 security-monitoring --
+        |       ├── 📂 security-compliance
+        |       └── 📂 security-monitoring
         └── 📂 shared
         ├── 📂 config
         │   ├── 📄 account.tfvars
@@ -134,28 +128,28 @@ The following block provides a brief explanation of the chosen files/folders lay
         |   ├── 📂 base-network
         |   ├── 📂 base-tf-backend
         |   ├── 📂 container-registry
-        |   ├── 📂 ec2-fleet --
+        |   ├── 📂 ec2-fleet
         |   ├── 📂 k8s-eks
         |   ├── 📂 k8s-eks-demoapps
         |   ├── 📂 k8s-eks-prd
         |   ├── 📂 notifications
         |   ├── 📂 security-audit
         |   ├── 📂 security-base
-        |   ├── 📂 security-compliance --
+        |   ├── 📂 security-compliance
         |   ├── 📂 storage
         |   ├── 📂 tools-cloud-scheduler-stop-start
         |   ├── 📂 tools-eskibana
         |   ├── 📂 tools-github-selfhosted-runners
-        |   ├── 📂 tools-jenkins --
+        |   ├── 📂 tools-jenkins
         |   ├── 📂 tools-managedeskibana
         |   ├── 📂 tools-prometheus
         |   ├── 📂 tools-vault
         |   ├── 📂 tools-vpn-server
-        |   └── 📂 tools-webhooks --
+        |   └── 📂 tools-webhooks
            └── 📂 us-east-2
         ├── 📂 base-network
         ├── 📂 container-registry
-        ├── 📂 security-compliance --
+        ├── 📂 security-compliance
         ├── 📂 security-keys
         ├── 📂 tools-eskibana
         └── 📂 tools-prometheus
@@ -168,11 +162,11 @@ resources that belong to such account environment and specific layer.
 
 !!! info "Project file structure " 
     An extended project file structure could be found 
-    [here](../../../first-steps/leverage-project-setup/#create-the-configured-project)
+    [here](../../../try-leverage/leverage-project-setup/#create-the-configured-project)
     While some other basic concepts and naming conventions in the context of Leverage like "project" and "layer" 
     [here](../../../how-it-works/ref-architecture/ref-architecture-aws/#structural-concepts)
 
-![binbash-logo](../../assets/images/diagrams/ref-architecture-aws.png "binbash"){: style="width:950px"}
+![binbash-logo](../../../assets/images/diagrams/ref-architecture-aws.png "binbash"){: style="width:950px"}
 <figcaption style="font-size:15px">
 <b>Figure:</b> AWS Organization multi-account architecture diagram.
 (Source: binbash Leverage,

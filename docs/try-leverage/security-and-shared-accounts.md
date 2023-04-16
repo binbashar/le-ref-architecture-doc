@@ -1,4 +1,5 @@
-# Orchestrate the Security and Shared accounts
+# Configure the Security and Shared accounts
+Just a couple more accounts to get ready. Let's go!
 
 ## Deploy the Security account's layers
 The next account to orchestrate is the **security** account.

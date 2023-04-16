@@ -1,12 +1,12 @@
-# Orchestrate the Management account
+# Configure the Management account
 Finally we reach the point in which you'll get to actually create the infrastructure in our AWS environment.
 
-Some accounts and layers rely on other accounts/layers being already deployed, creating dependencies between each other and establishing an order in which all layers should be deployed. We will go through these dependency chains in order.
+Some accounts and layers rely on other accounts or layers to be deployed first, which creates dependencies between them and establishes an order in which all layers should be deployed. We will go through these dependencies in order.
+
+The **management** account is used to configure and access all the accounts in the AWS Organization. Consolidated Billing and Cost Management are also enforced though this account.
 
 !!! success "Costs associated with this solution"
     By default this AWS Reference Architecture configuration should not incur in any costs.
-
-The **management** account is used to configure and access all the accounts in the AWS Organization. Consolidated Billing and Cost Management are also enforced though this account.
 
 ## Deploy the Management account's layers
 To begin, place yourself in the `management` account directory.

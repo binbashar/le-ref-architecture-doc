@@ -154,33 +154,158 @@ nav:
     - Welcome: "welcome.md"
     - First steps: "try-leverage/introduction.md"
     - How it works: "how-it-works/ref-architecture/index.md"
-    - User guide: "user-guide/index.md"
+    - User guide: "reference/index.md"
     - Work with us: "work-with-us/index.md"
     - License: "license.md"
 
   - Try Leverage:
-    - Introduction: "try-leverage/introduction.md"
-    - Set Up your AWS Management account: "try-leverage/aws-account-setup.md"
+    - Index: "try-leverage/index.md"
+    - Creating your AWS Management account: "try-leverage/aws-account-setup.md"
     - Install Leverage CLI: "try-leverage/local-setup.md"
     - Create a Leverage project: "try-leverage/leverage-project-setup.md"
-    - Orchestrate the Management account: "try-leverage/management-account.md"
-    - Orchestrate the Security and Shared accounts: "try-leverage/security-and-shared-accounts.md"
+    - Configure the Management account: "try-leverage/management-account.md"
+    - Configure the Security and Shared accounts: "try-leverage/security-and-shared-accounts.md"
     - Post-deployment: "try-leverage/post-deployment.md"
 
   - Concepts:
-    - Overview: "concepts/overview.md"
+    - Index: "concepts/index.md"
     - What is Leverage?: "concepts/what-is-leverage.md"
     - Why Leverage?: "concepts/why-leverage.md"
+    - What can Leverange do for you?: "concepts/what-leverage-can-do-for-you.md"
     - Our Tech Stack: "concepts/our-tech-stack.md"
     - Next Steps: "concepts/next-steps.md"
+
+  - Reference:
+    - Index: "reference/index.md"
+    - AWS Reference Architecture:
+      - Overview: "reference/reference-architectures/ref-architecture-aws/overview.md"
+      - Project Structure: "reference/reference-architectures/ref-architecture-aws/dir-structure.md"
+      - Configuration: "reference/reference-architectures/ref-architecture-aws/configs.md"
+      - Credentials: "reference/reference-architectures/ref-architecture-aws/credentials.md"
+      - Workflow: "reference/reference-architectures/ref-architecture-aws/workflow.md"
+      - Terraform State: "reference/reference-architectures/ref-architecture-aws/tf-state.md"
+      - Features:
+        - Overview: "reference/features/overview.md"
+        - AWS Organization:
+          - Organization: "reference/features/organization/organization.md"
+          - Accounts: "reference/features/organization/accounts.md"
+          - Billing: "reference/features/organization/billing.md"
+          - Organization Init: "reference/features/organization/organization-init.md"
+          - Invite Legacy accounts: "reference/features/organization/organization-legacy-accounts.md"
+        - Identities:
+          - gpg: "reference/features/identities/gpg.md"
+          - Identities: "reference/features/identities/identities.md"
+          - Credentials: "reference/features/identities/credentials.md"
+          - Credentials Vault: "reference/features/identities/credentials-vault.md"
+          - Identities2: "reference/features/identities/identities2.md"
+          - Roles: "reference/features/identities/roles.md"
+        - SSO:
+          - Overview: "reference/features/sso/overview.md"
+          - Configuration: "reference/features/sso/configuration.md"
+          - Onboarding Users: "reference/features/sso/managing-users.md"
+        - Costs: "reference/features/costs/costs.md"
+        - Security:
+          - Overview: "reference/features/security/overview.md"
+          - VPN: "reference/features/security/vpn.md"
+          - Services: "reference/features/security/services.md"
+          - CloudTrail: "reference/features/security/audit-cloudtrail.md"
+          - Certificates: "reference/features/security/certificates.md"
+          - IAM Access Anayzer: "reference/features/security/iam-access-analyzer.md"
+        - Network:
+          - VPC: "reference/features/network/vpc-addressing.md"
+          - VPC Peering: "reference/features/network/vpc-peering.md"
+          - VPC Topology: "reference/features/network/vpc-topology.md"
+          - VPC Traffic Out: "reference/features/network/vpc-traffic-out.md"
+          - DNS: "reference/features/network/dns.md"
+          - Transit Gateway: "reference/features/network/tgw-topology.md"
+        - Secrets: "reference/features/secrets/secrets.md"
+        - Compute:
+          - Overview: "reference/features/compute/overview.md"
+          - K8s Kops: "reference/features/compute/k8s-kops.md"
+          - K8s EKS: "reference/features/compute/k8s-eks/overview.md"
+          - K8s EKS VPC: "reference/features/compute/k8s-eks/vpc-addressing.md"
+          - K8s Service Mesh: "reference/features/compute/k8s-service-mesh.md"
+          - Serverless: "reference/features/compute/serverless.md"
+          - Tools: "reference/features/compute/tools.md"
+        - Database:
+          - Databases: "reference/features/database/database.md"
+          - MySQL: "reference/features/database/mysql.md"
+          - PostgresSQL: "reference/features/database/postgres.md"
+        - Storage: "reference/features/storage/storage.md"
+        - CDN: "reference/features/cdn/cdn.md"
+        - CI/CD: "reference/features/ci-cd/ci-cd.md"
+        - Monitoring:
+          - Monitoring: "reference/features/monitoring/monitoring.md"
+          - Metrics: "reference/features/monitoring/metrics.md"
+          - Logs: "reference/features/monitoring/logs.md"
+          - Tracing: "reference/features/monitoring/tracing.md"
+          - APM: "reference/features/monitoring/apm.md"
+        - Reliability:
+          - Backups: "reference/features/reliability/backups.md"
+          - Disaster Recovery: "reference/features/reliability/dr.md"
+          - High Availability: "reference/features/reliability/high-availability.md"
+    - EKS Reference Architecture:
+      - Overview: "reference/reference-architectures/ref-architecture-eks/overview.md"
+    - Ansible Reference Architecture:
+      - Overview: "reference/reference-architectures/ref-architecture-ansible/overview.md"
+      - Configs: "reference/reference-architectures/ref-architecture-ansible/configs.md"
+      - Workflow: "reference/reference-architectures/ref-architecture-ansible/workflow.md"
+    - Leverage CLI:
+      - Overview: "reference/leverage-cli/overview.md"
+      - Installation: "reference/leverage-cli/installation.md"
+      - Basic features: "reference/leverage-cli/basic-features.md"
+      - Commands Reference:
+        - project: "reference/leverage-cli/reference/project.md"
+        - credentials: "reference/leverage-cli/reference/credentials.md"
+        - aws: "reference/leverage-cli/reference/aws.md"
+        - terraform:
+            - commands: "reference/leverage-cli/reference/terraform.md"
+            - layers: "reference/leverage-cli/reference/terraform/layers.md"
+        - tfautomv: "reference/leverage-cli/reference/tfautomv.md"
+        - run: "reference/leverage-cli/reference/run.md"
+        - kubectl: "reference/leverage-cli/reference/kubectl.md"
+      - Extending Leverage:
+        - How to extend Leverage: "reference/leverage-cli/extending-leverage/how-to-extend.md"
+        - The build.env file: "reference/leverage-cli/extending-leverage/build.env.md"
+        - Custom tasks: "reference/leverage-cli/extending-leverage/tasks.md"
+      - Private Repositories: "reference/leverage-cli/private-repositories.md"
+      - Getting shell access: "reference/leverage-cli/shell.md"
+      - A bit of history: "reference/leverage-cli/history.md"
+    - Infra-as-Code Library:
+      - Overview: "reference/infra-as-code-library/overview.md"
+      - Forks workflow: "reference/infra-as-code-library/infra-as-code-library-forks.md"
+      - Specifications: "reference/infra-as-code-library/infra-as-code-library-specs.md"
+      - Modules by Technology: "reference/infra-as-code-library/modules-library-by-technology.md"
+  - Work with us:
+      - Overview: "work-with-us/index.md"
+      - Support:
+          - Support: "work-with-us/support.md"
+      - Releases:
+          - Releases and Versions: "work-with-us/releases/releases-and-versions.md"
+          - Versions compatibility matrix: "work-with-us/releases/versions-compatibility-matrix.md"
+      - Leverage vs Competition: "work-with-us/leverage-vs-competition.md"
+      #- Subscription Plans: "work-with-us/subscription-plans.md"
+      - Contribute: "work-with-us/contribute.md"
+      - Roadmap:
+        - Reference Architecture:
+          - Overview: "work-with-us/roadmap/ref-arch/overview.md"
+          - Operational Excellence: "work-with-us/roadmap/ref-arch/operational-excellence.md"
+          - Reliability & Performance: "work-with-us/roadmap/ref-arch/reliability-performance.md"
+          - Security: "work-with-us/roadmap/ref-arch/security.md"
+          - Cost Optimization: "work-with-us/roadmap/ref-arch/cost-optimization.md"
+          - Demo Applications: "work-with-us/roadmap/ref-arch/demo-apps.md"
+        - Leverage CLI: "work-with-us/roadmap/leverage-cli/overview.md"
+      - Careers: "work-with-us/careers.md"
+      #- Team: "work-with-us/team.md"
+      #- Testimonials: "work-with-us/testimonials.md"
+      - FAQs: "work-with-us/faqs.md"
+      - Contact Us: https://www.binbash.com.ar/contact
 
     # - Reference Architecture:
     #     - Overview: "how-it-works/ref-architecture/index.md"
     #     - Reference Architecture | AWS: "how-it-works/ref-architecture/ref-architecture-aws.md"
     #     - Reference Architecture | EKS: "how-it-works/ref-architecture/ref-architecture-eks.md"
     #     - Considerations: "how-it-works/ref-architecture/considerations.md"
-    # - Leverage CLI:
-    #   - Overview: "how-it-works/leverage-cli/index.md"
     # - Features:
     #   - Overview: "how-it-works/features/index.md"
     #   - AWS Organization:
@@ -237,113 +362,3 @@ nav:
     #     - High Availability: "how-it-works/features/reliability/high-availability.md"
     #     - Health Checks: "how-it-works/features/reliability/health-checks.md"
     #     - Disaster Recovery: "how-it-works/features/reliability/dr.md"
-
-  - Reference:
-    - Overview: "user-guide/overview.md"
-    - Reference Architectures:
-      - AWS Reference Architecture:
-        - Overview: "user-guide/reference-architectures/ref-architecture-aws/overview.md"
-        - Project Structure: "user-guide/reference-architectures/ref-architecture-aws/dir-structure.md"
-        - Configs: "user-guide/reference-architectures/ref-architecture-aws/configs.md"
-        - Credentials: "user-guide/reference-architectures/ref-architecture-aws/credentials.md"
-        - Terraform state setup: "user-guide/reference-architectures/ref-architecture-aws/tf-state-setup.md"
-        - Terraform state workflow: "user-guide/reference-architectures/ref-architecture-aws/tf-state-workflow.md"
-        - Terraform Workflow: "user-guide/reference-architectures/ref-architecture-aws/tf-workflow.md"
-      - Ansible Reference Architecture:
-        - Configs: "user-guide/reference-architectures/ref-architecture-ansible/configs.md"
-        - Workflow: "user-guide/reference-architectures/ref-architecture-ansible/workflow.md"
-    - Leverage CLI:
-      - Overview: "user-guide/leverage-cli/overview.md"
-      - Installation: "user-guide/leverage-cli/installation.md"
-      - Basic features: "user-guide/leverage-cli/reference/basic-features.md"
-      - Commands Reference:
-        - project: "user-guide/leverage-cli/reference/project.md"
-        - credentials: "user-guide/leverage-cli/reference/credentials.md"
-        - aws: "user-guide/leverage-cli/reference/aws.md"
-        - terraform:
-            - commands: "user-guide/leverage-cli/reference/terraform.md"
-            - layers: "user-guide/leverage-cli/reference/terraform/layers.md"
-        - tfautomv: "user-guide/leverage-cli/reference/tfautomv.md"
-        - run: "user-guide/leverage-cli/reference/run.md"
-        - kubectl: "user-guide/leverage-cli/reference/kubectl.md"
-      - Extending Leverage:
-        - Overview: "user-guide/leverage-cli/extending-leverage/index.md"
-        - build.env : "user-guide/leverage-cli/extending-leverage/build.env.md"
-        - Custom tasks: "user-guide/leverage-cli/extending-leverage/tasks.md"
-      - Private Repositories: "user-guide/leverage-cli/reference/private-repos.md"
-      - Shell environment: "user-guide/leverage-cli/shell.md"
-    - Infra-as-Code Library:
-      - Overview: "how-it-works/infra-as-code-library/index.md"
-      - Forks workflow: "how-it-works/infra-as-code-library/infra-as-code-library-forks.md"
-      - Specifications: "how-it-works/infra-as-code-library/infra-as-code-library-specs.md"
-      - Modules per Tech: "how-it-works/infra-as-code-library/modules-library-per-tech.md"
-    - Features:
-      - Overview: "user-guide/features/features-overview.md"
-      - AWS Organization:
-        - Organization Init: "user-guide/features/organization/organization-init.md"
-        - Invite Legacy accounts: "user-guide/features/organization/organization-legacy-accounts.md"
-      - Identities:
-        - gpg: "user-guide/features/identities/gpg.md"
-        - Identities: "user-guide/features/identities/identities.md"
-        - Credentials: "user-guide/features/identities/credentials.md"
-        - Credentials Vault: "user-guide/features/identities/credentials-vault.md"
-      - SSO:
-        - Authentication: "user-guide/features/sso/sso.md"
-        - Onboarding Users: "user-guide/features/sso/managing-users.md"
-      - Costs: "user-guide/features/costs/costs.md"
-      - Security:
-        - VPN: "user-guide/features/security/vpn.md"
-        - Services: "user-guide/features/security/services.md"
-      - Network:
-        - VPC: "user-guide/features/network/vpc-addressing.md"
-        - VPC Peering: "user-guide/features/network/vpc-peering.md"
-        - DNS: "user-guide/features/network/dns.md"
-      - Secrets: "user-guide/features/secrets/secrets.md"
-      - Compute:
-        - Overview: "user-guide/features/compute/overview.md"
-        - K8s Kops: "user-guide/features/compute/k8s-kops.md"
-        - K8s EKS: "user-guide/features/compute/k8s-eks.md"
-        - Serverless: "user-guide/features/compute/serverless.md"
-      - Database:
-        - Databases: "user-guide/features/database/database.md"
-        - MySQL: "user-guide/features/database/mysql.md"
-        - PostgresSQL: "user-guide/features/database/postgres.md"
-      - Storage: "user-guide/features/storage/storage.md"
-      - CDN: "user-guide/features/cdn/cdn.md"
-      - CI/CD: "user-guide/features/ci-cd/ci-cd.md"
-      - Monitoring:
-        - Monitoring: "user-guide/features/monitoring/monitoring.md"
-        - Metrics: "user-guide/features/monitoring/metrics.md"
-        - Logs: "user-guide/features/monitoring/logs.md"
-        - Tracing: "user-guide/features/monitoring/tracing.md"
-        - APM: "user-guide/features/monitoring/apm.md"
-      - Reliability:
-        - Backups: "user-guide/features/reliability/backups.md"
-        - Disaster Recovery: "user-guide/features/reliability/dr.md"
-        - Health Checks: "user-guide/features/reliability/health-checks.md"
-
-  - Work with us:
-      - Overview: "work-with-us/index.md"
-      - Support:
-          - Support: "work-with-us/support.md"
-      - Releases:
-          - Releases and Versions: "work-with-us/releases/releases-and-versions.md"
-          - Versions compatibility matrix: "work-with-us/releases/versions-compatibility-matrix.md"
-      - Leverage vs Competition: "work-with-us/leverage-vs-competition.md"
-      #- Subscription Plans: "work-with-us/subscription-plans.md"
-      - Contribute: "work-with-us/contribute.md"
-      - Roadmap:
-        - Reference Architecture:
-          - Overview: "work-with-us/roadmap/ref-arch/overview.md"
-          - Operational Excellence: "work-with-us/roadmap/ref-arch/operational-excellence.md"
-          - Reliability & Performance: "work-with-us/roadmap/ref-arch/reliability-performance.md"
-          - Security: "work-with-us/roadmap/ref-arch/security.md"
-          - Cost Optimization: "work-with-us/roadmap/ref-arch/cost-optimization.md"
-          - Demo Applications: "work-with-us/roadmap/ref-arch/demo-apps.md"
-        - Leverage CLI: "work-with-us/roadmap/leverage-cli/overview.md"
-      - Careers: "work-with-us/careers.md"
-      #- Team: "work-with-us/team.md"
-      #- Testimonials: "work-with-us/testimonials.md"
-      - FAQs: "work-with-us/faqs.md"
-      - Contact Us: https://www.binbash.com.ar/contact
-

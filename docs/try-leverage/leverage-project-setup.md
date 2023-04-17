@@ -6,7 +6,7 @@ The account's name will be given by your project's name followed by `-management
 Along the same line, we'll use the `example.com` domain for the email address used to register the account. Adding a `-aws` suffix to the project's name to indicate that this email address is related to the project's AWS account, we end up with a registration email that looks like `myexample-aws@example.com`.
 
 !!! info "Email addresses for AWS accounts."
-        Each AWS account requires having a unique email address associated to it. The Leverage Reference Architecture for AWS makes use of multiple accounts to better manage the infrastructure, as such, you will need different addresses for each one. Creating a new email account for each AWS is not a really viable solution to this problem, a better approach is to take advantage of mail services that support aliases. For information regarding how this works: [:books: Email setup for your AWS account.](../../user-guide/features/organization/organization-init/#pre-requisites)
+        Each AWS account requires having a unique email address associated to it. The Leverage Reference Architecture for AWS makes use of multiple accounts to better manage the infrastructure, as such, you will need different addresses for each one. Creating a new email account for each AWS is not a really viable solution to this problem, a better approach is to take advantage of mail services that support aliases. For information regarding how this works: [:books: Email setup for your AWS account.](../../user-guide/user-guide/organization/organization-init/#pre-requisites)
 
 ## Create the project directory
 Each Leverage project lives in its own working directory. Create a directory for your project as follows:

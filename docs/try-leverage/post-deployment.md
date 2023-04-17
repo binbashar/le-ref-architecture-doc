@@ -25,7 +25,7 @@ sso_start_url = "https://d-xyz01234567.awsapps.com/start"
 
 
 !!! info "Further info on configuring SSO"
-    There is more information on how to configure SSO [here](/user-guide/features/sso/sso/#preparing-the-project-to-use-aws-sso).
+    There is more information on how to configure SSO [here](/user-guide/user-guide/sso/sso/#preparing-the-project-to-use-aws-sso).
 
 ### Update backend profiles in the management account
 It's time to set the right profile names in the backend configuration files. Open this file: `management/config/backend.tfvars` and change the `profile` value from this:
@@ -60,9 +60,9 @@ profile = "me-shared-devops"
 ```
 
 ## Activate your SSO user and set up your password
-The SSO users you created when you provisioned the SSO layer need to go through an email activation procedure. Find the [instructions here](/user-guide/features/sso/managing-users/#trigger-user-email-activation).
+The SSO users you created when you provisioned the SSO layer need to go through an email activation procedure. Find the [instructions here](/user-guide/user-guide/sso/managing-users/#trigger-user-email-activation).
 
-Once SSO user's have been activated, they will need to get their initial password so they are able to log in. Check out the [steps for that here](/user-guide/features/sso/managing-users/#reset-a-user-password).
+Once SSO user's have been activated, they will need to get their initial password so they are able to log in. Check out the [steps for that here](/user-guide/user-guide/sso/managing-users/#reset-a-user-password).
 
 ## Configure the CLI for SSO
 Almost there. Let's try the SSO integration now.
@@ -70,7 +70,7 @@ Almost there. Let's try the SSO integration now.
 ### Configure your SSO profiles
 Since this is your first time using that you will need to configure it by running this: `leverage aws configure sso`
 
-Follow the wizard to get your AWS config file created for you. There is [more info about that here](/user-guide/features/sso/sso/#1-configuring-aws-sso).
+Follow the wizard to get your AWS config file created for you. There is [more info about that here](/user-guide/user-guide/sso/sso/#1-configuring-aws-sso).
 
 ### Verify on a layer in the management account
 To ensure that worked, let's run a few commands to verify:

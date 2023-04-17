@@ -1,19 +1,19 @@
 # Creating your AWS Management account
 
 ## Create an AWS account
-First and foremost you'll need to [create an AWS account](../user-guide/features/organization/organization-init.md) for your project. This will be the management account of your [AWS Organization](https://docs.aws.amazon.com/organizations/latest/userguide/orgs_getting-started_concepts.html) and the email address you use for signing up will be the [root user](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_root-user.html) of this account -- you can see this user represented in the [architecture diagram](../introduction/#introduction).
+First and foremost you'll need to [create an AWS account](../user-guide/user-guide/organization/organization-init.md) for your project. This will be the management account of your [AWS Organization](https://docs.aws.amazon.com/organizations/latest/userguide/orgs_getting-started_concepts.html) and the email address you use for signing up will be the [root user](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_root-user.html) of this account -- you can see this user represented in the [architecture diagram](../introduction/#introduction).
 
 Since the root user is the main access point to your account it is strongly recommended that you keep its credentials (email, password) safe by following [AWS best practices](https://docs.aws.amazon.com/IAM/latest/UserGuide/best-practices.html).
 
 !!! tip
         To protect your management account, [enabling Multi Factor Authentication](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_root-user.html#id_root-user_manage_mfa) is **highly** encouraged. Also, reviewing the [account's billing setup](https://console.aws.amazon.com/billing/home?#/account) is always a good idea before proceeding.
 
-!!! info "For more details on setting up your AWS account: [:books: Organization account setup guide](../../user-guide/features/organization/organization-init#user-guide)"
+!!! info "For more details on setting up your AWS account: [:books: Organization account setup guide](../../user-guide/user-guide/organization/organization-init#user-guide)"
 
 ## Create a bootstrap user with temporary administrator permissions
 Leverage needs a user with temporary administrator permissions in order to deploy the initial resources that will form the foundations you will then use to keep building on. That initial deployment is called the bootstrap process and thus the user required for that is called "the bootstrap user".
 
-To create that user, navigate to the [IAM page](https://console.aws.amazon.com/iam/) and create a user named `mgmt-org-admin` [following step 2 of this leverage doc](https://leverage.binbash.com.ar/user-guide/features/organization/organization-init/#reference-aws-organization-init-workflow).
+To create that user, navigate to the [IAM page](https://console.aws.amazon.com/iam/) and create a user named `mgmt-org-admin` [following step 2 of this leverage doc](https://leverage.binbash.com.ar/user-guide/user-guide/organization/organization-init/#reference-aws-organization-init-workflow).
 
 !!! info
         Bear in mind that the page for creating users may change from time to time but the key settings for configuring the bootstrap user are the following:

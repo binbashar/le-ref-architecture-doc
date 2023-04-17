@@ -77,7 +77,7 @@
 
     :books: **Read More** 
     
-    - [How it works: AWS Organizations](../../features/organization/organization/)
+    - [How it works: AWS Organizations](../../user-guide/organization/organization/)
     - [AWS Organizations](https://aws.amazon.com/organizations/)
 
 ??? info "Why AIM and roles❓"
@@ -92,7 +92,7 @@
 
     :books: **Read More** 
     
-    - [How it works: AWS IAM](../../features/identities/identities/)
+    - [How it works: AWS IAM](../../user-guide/identities/identities/)
     - [AWS Identity and Access Management (IAM)](https://aws.amazon.com/iam/)
 
 ??? info "Security | Why Web Application Firewall (WAF), Cloud Trail, Config, Guarduty❓"
@@ -107,7 +107,7 @@
 
     :books: **Read More** 
 
-    - [How it works: AWS Security](../../features/security/services/)
+    - [How it works: AWS Security](../../user-guide/security/services/)
     - [AWS Cloud Security](https://aws.amazon.com/security/)
 
 ??? info "Why VPC❓"
@@ -120,7 +120,7 @@
 
     :books: **Read More** 
 
-    - [How it works: AWS Networking](../../features/network/vpc-topology)
+    - [How it works: AWS Networking](../../user-guide/network/vpc-topology)
     - [AWS Virtual Private Cloud](https://aws.amazon.com/vpc)
 
 ??? info "Why Kubernetes (K8s) & AWS EKS❓"
@@ -143,7 +143,7 @@
 
     :books: **Read More** 
 
-    - [How it works: AWS EKS](../../features/compute/k8s-eks/)
+    - [How it works: AWS EKS](../../user-guide/compute/k8s-eks/)
     - [AWS EKS](https://aws.amazon.com/eks)
     - [Kubernetes](https://kubernetes.io/)
 
@@ -161,7 +161,7 @@
 
     :books: **Read More** 
 
-    - [How it works: AWS Storage](../../features/storage/storage)
+    - [How it works: AWS Storage](../../user-guide/storage/storage)
     - [AWS S3](https://aws.amazon.com/s3)
 
 ??? info "Why RDS❓"
@@ -180,7 +180,7 @@
 
     :books: **Read More** 
 
-    - [How it works: AWS Databases](../../features/database/database/)
+    - [How it works: AWS Databases](../../user-guide/database/database/)
     - [AWS RDS](https://aws.amazon.com/rds)
 
 ??? info "Why Hashicorp Vault❓"
@@ -206,5 +206,5 @@
 
     :books: **Read More** 
 
-    - [How it works: Secrets](../../features/secrets/secrets/)
+    - [How it works: Secrets](../../user-guide/secrets/secrets/)
     - [Hashicorp Vault Project](https://www.vaultproject.io/)

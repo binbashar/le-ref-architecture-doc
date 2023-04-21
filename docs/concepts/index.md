@@ -6,7 +6,7 @@ template: overrides/main.html
 
 # Concepts
 
-## Overview
+## Welcome!
 Welcome to Leverage's documentation! Here you will find the concepts you need to understand to work with our stack, the steps to try Leverage for yourself, and extensive documentation about every aspect of our solution.
 
 ## Getting Started

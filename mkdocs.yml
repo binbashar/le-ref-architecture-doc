@@ -253,15 +253,15 @@ nav:
       - Installation: "user-guide/leverage-cli/installation.md"
       - Basic features: "user-guide/leverage-cli/basic-features.md"
       - Commands Reference:
-        - project: "user-guide/leverage-cli/user-guide/project.md"
-        - credentials: "user-guide/leverage-cli/user-guide/credentials.md"
-        - aws: "user-guide/leverage-cli/user-guide/aws.md"
+        - project: "user-guide/leverage-cli/reference/project.md"
+        - credentials: "user-guide/leverage-cli/reference/credentials.md"
+        - aws: "user-guide/leverage-cli/reference/aws.md"
         - terraform:
-            - commands: "user-guide/leverage-cli/user-guide/terraform.md"
-            - layers: "user-guide/leverage-cli/user-guide/terraform/layers.md"
-        - tfautomv: "user-guide/leverage-cli/user-guide/tfautomv.md"
-        - run: "user-guide/leverage-cli/user-guide/run.md"
-        - kubectl: "user-guide/leverage-cli/user-guide/kubectl.md"
+            - commands: "user-guide/leverage-cli/reference/terraform.md"
+            - layers: "user-guide/leverage-cli/reference/terraform/layers.md"
+        - tfautomv: "user-guide/leverage-cli/reference/tfautomv.md"
+        - run: "user-guide/leverage-cli/reference/run.md"
+        - kubectl: "user-guide/leverage-cli/reference/kubectl.md"
       - Extending Leverage:
         - How to extend Leverage: "user-guide/leverage-cli/extending-leverage/how-to-extend.md"
         - The build.env file: "user-guide/leverage-cli/extending-leverage/build.env.md"

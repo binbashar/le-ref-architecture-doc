@@ -8,7 +8,7 @@
 
 ### Pre-requisites
 You must have your AWS Organization deployed and access to your Management account as 
-described in the [/user-guide/user-guide/organization/organization-init](./organization-init.md) section.
+described in the [/user-guide/user-guide/organization/organization-init](./configuration.md) section.
 
 ## Invite AWS pre-existing (legacy) accounts to your AWS Organization
 !!! example "AWS Org pre-existing accounts invitation"

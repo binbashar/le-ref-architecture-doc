@@ -1,11 +1,10 @@
 # Terraform - S3 & DynamoDB for Remote State Storage & Locking
 
-TODO What is? Why?
-TODO Set up
-
 ## Overview
-Use this terraform configuration files to create the **S3 bucket** & **DynamoDB** table needed to use Terraform Remote
-State Storage & Locking.
+Use this terraform configuration files to create the **S3 bucket** & **DynamoDB** table needed to use Terraform Remote State Storage & Locking.
+
+!!! info "What is the Terraform Remote State?"
+    Read the [official definition](https://developer.hashicorp.com/terraform/language/state/remote) by Hashicorp.
 
 ![leverage-ref-arch-tf](../../../assets/images/diagrams/terraform-aws-s3-backend.png "Leverage"){: style="width:350px"}
 
@@ -20,11 +19,11 @@ Terraform modules registry, accessed December 3rd 2020).
 ## Prerequisites
 
 !!! example "Terraform repo structure + state backend initialization"
-    1. Ensure you have [`Leverage CLI`](../../how-it-works/leverage-cli/index.md) installed in your system
-    2. Refer to [Configuration Pre-requisites](./configs.md) to understand how to set up the
+    1. Ensure you have [`Leverage CLI`](../../user-guide/leverage-cli/overview.md) installed in your system
+    2. Refer to [Configuration Pre-requisites](./configuration.md) to understand how to set up the
       configuration files required for this layer. Where you must build your
-      [Terraform Reference Architecture account structure](../../how-it-works/user-guide/organization/organization.md)
-    3. Leveraged by the [Infrastructure as Code (IaC) Library](../../how-it-works/infra-as-code-library/index.md) through the
+      [Terraform Reference Architecture account structure](features/organization/overview.md)
+    3. Leveraged by the [Infrastructure as Code (IaC) Library](../../user-guide/infra-as-code-library/overview.md) through the
      [terraform-aws-tfstate-backend module](https://registry.terraform.io/modules/binbashar/tfstate-backend/aws/latest)
         - [/management/base-tf-backend](https://github.com/binbashar/le-tf-infra-aws/tree/master/root/us-east-1/base-tf-backend)
         - [/security/base-tf-backend](https://github.com/binbashar/le-tf-infra-aws/tree/master/security/us-east-1/base-tf-backend)
@@ -54,7 +53,7 @@ Terraform modules registry, accessed December 3rd 2020).
         - Done. You can remove `terraform.tfstate` now (and also `terraform.tfstate.backup` if available)
 
 ## Expected workflow after set up 
-:warning: this tape must be updated
+:warning: This video is outdated!
 [![asciicast](https://asciinema.org/a/377220.svg)](https://asciinema.org/a/377220)
 
 # Terraform Remote State

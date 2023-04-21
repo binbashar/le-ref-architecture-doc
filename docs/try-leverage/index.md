@@ -2,13 +2,13 @@
 
 # Try Leverage
 
-## Overview
+## Before you begin
 
-The objective of this guide is to introduce the user to our
-[**binbash Leverage Reference Architecture for AWS**](../../how-it-works/ref-architecture/) workflow 
+The objective of this guide is to introduce you to our
+[**binbash Leverage Reference Architecture for AWS**](../../user-guide/ref-architecture-aws/overview/) workflow 
 through the complete deployment of a basic landing zone configuration.
 
-The Leverage landing zone is the smallest possible fully functional configuration. 
+The Leverage Landing Zone is the smallest possible fully functional configuration. 
 It lays out the base infrastructure required to manage the environment: billing and
 financial management, user management, security enforcement, and shared services and
 resources. Always following the best practices layed out by the

@@ -52,7 +52,7 @@ afterwards in your [`project-security`](https://github.com/binbashar/le-tf-infra
     ---
     :ledger: Source | :earth_americas: [AWS Documentation IAM User Guide | Activating and deactivating AWS STS in an AWS Region](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_enable-regions.html)
 
-![leverage-aws-iam-roles](../../../../assets/images/screenshots/aws-iam-sts-regions.png "Leverage"){: style="width:900px"}
+![leverage-aws-iam-roles](/assets/images/screenshots/aws-iam-sts-regions.png "Leverage"){: style="width:900px"}
 
 **Figure:** *Deactivating AWS STS in not in use AWS Region. Only in used Regions must have STS activated.*
 

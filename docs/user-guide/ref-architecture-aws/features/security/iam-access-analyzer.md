@@ -13,7 +13,7 @@ Supported resource types:
 - [x] Amazon Simple Queue Service queues
 - [x] AWS Secrets Manager secrets
 
-![leverage-vpn](../../../../assets/images/diagrams/aws-iam-access-analyzer.png "Leverage"){: style="width:650px"}
+![leverage-vpn](/assets/images/diagrams/aws-iam-access-analyzer.png "Leverage"){: style="width:650px"}
 <figcaption style="font-size:15px">
 <b>Figure:</b> AWS IAM access analysis features.
 (Source: AWS, 
@@ -50,7 +50,7 @@ AWS Documentation, accessed June 11th 2021).
     ```
 
 ## AWS Web Console 
-![leverage-security-iam](../../../../assets/images/screenshots/aws-iam-access-analyzer.png "Leverage"){: style="width:950px"}
+![leverage-security-iam](/assets/images/screenshots/aws-iam-access-analyzer.png "Leverage"){: style="width:950px"}
 <figcaption style="font-size:15px">
 <b>Figure:</b> AWS Web Console screenshot.
 (Source: binbash, "IAM access analyzer service", accessed June 11th 2021).

@@ -16,7 +16,7 @@ The project describes itself as kubectl for clusters.
     - [x] Rolling cluster updates
     - [x] Supports heterogeneous clusters by creating multiple instance groups
     
-![leverage-aws-k8s-kops](../../../../assets/images/diagrams/aws-k8s-kops.png "Leverage"){: style="width:950px"}
+![leverage-aws-k8s-kops](/assets/images/diagrams/aws-k8s-kops.png "Leverage"){: style="width:950px"}
 
 <figcaption style="font-size:15px">
 <b>Figure:</b> AWS K8s Kops architecture diagram (just as reference).
@@ -65,7 +65,7 @@ Nclouds.com Blog post, accessed November 18th 2020).
     ```
 
 #### Resulting Solutions Architecture
-![leverage-aws-k8s-kops](../../../../assets/images/diagrams/aws-k8s-kops.png "Leverage"){: style="width:950px"}
+![leverage-aws-k8s-kops](/assets/images/diagrams/aws-k8s-kops.png "Leverage"){: style="width:950px"}
 <figcaption style="font-size:15px">Figure: AWS K8s Kops architecture diagram (just as reference).</figcaption>
 
 
@@ -84,7 +84,7 @@ fully customize any AWS component without having to alter our Kubernetes cluster
 2. This is a fully declarative coding style approach to manage your infrastructure so being able to declare
 the state of our cluster in YAML files fits **100% as code & GitOps** based approach.
 
-![leverage-aws-k8s-kops](../../../../assets/images/diagrams/aws-k8s-kops-tf.png "Leverage"){: style="width:950px"}
+![leverage-aws-k8s-kops](/assets/images/diagrams/aws-k8s-kops-tf.png "Leverage"){: style="width:950px"}
 <figcaption style="font-size:15px">Figure: [Workflow diagram](https://medium.com/bench-engineering/deploying-kubernetes-clusters-with-kops-and-terraform-832b89250e8e).</figcaption>
 
 ## Kops Cluster Management

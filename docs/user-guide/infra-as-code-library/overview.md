@@ -7,11 +7,11 @@ Dockerfiles, Helm charts and Makefiles.
 
 ## Model
 Our development model is strongly based on code reusability.
-![infra-as-code-library](../../assets/images/diagrams/infra-as-code-library-specs.png "Leverage"){: style="width:750px"}
+![infra-as-code-library](/assets/images/diagrams/infra-as-code-library-specs.png "Leverage"){: style="width:750px"}
 
 ## Reusability
 High level summary of the the code reusability efficiency.
-![infra-as-code-library](../../assets/images/diagrams/infra-as-code-library-reuse.png "Leverage"){: style="width:750px"}
+![infra-as-code-library](/assets/images/diagrams/infra-as-code-library-reuse.png "Leverage"){: style="width:750px"}
 
 
 !!! important "Considerations"
@@ -23,4 +23,4 @@ High level summary of the the code reusability efficiency.
 
 ## Modules
 Infrastructure as Code (IaC) Library development and implementation workflow.
-![infra-as-code-library](../../assets/images/diagrams/infra-as-code-library-workflow.png "Leverage"){: style="width:850px"}
+![infra-as-code-library](/assets/images/diagrams/infra-as-code-library-workflow.png "Leverage"){: style="width:850px"}

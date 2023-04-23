@@ -53,13 +53,13 @@ the aliases automatically implicitly when running Terraform's Leverage code.
     3. Via AWS Web Console: in `project-management` account create `mgmt-org-admin` IAM user AWS ACCESS KEYS
         - :ledger: **NOTE:** This could be created all in one in the previous step (Nº 2).
 
-        ![leverage-org](../../../../assets/images/screenshots/aws-iam-org-mgmt-admin-user-permissions.png "Leverage"){: style="width:950px"}
+        ![leverage-org](/assets/images/screenshots/aws-iam-org-mgmt-admin-user-permissions.png "Leverage"){: style="width:950px"}
         <figcaption style="font-size:15px">
         <b>Figure:</b> AWS Web Console screenshot.
         (Source: binbash, "AWs Organization management account init IAM admin user", accessed June 16th 2021).
         </figcaption>
     
-        ![leverage-org](../../../../assets/images/screenshots/aws-iam-org-mgmt-admin-user-keys.png "Leverage"){: style="width:950px"}
+        ![leverage-org](/assets/images/screenshots/aws-iam-org-mgmt-admin-user-keys.png "Leverage"){: style="width:950px"}
         <figcaption style="font-size:15px">
         <b>Figure:</b> AWS Web Console screenshot.
         (Source: binbash, "AWs Organization management account init IAM admin user", accessed June 16th 2021).
@@ -112,7 +112,7 @@ the aliases automatically implicitly when running Terraform's Leverage code.
     layer via `Leverage CLI` on your security account
     for consolidated and centralized User Mgmt and access to the AWS Org.    
     
-    4. [AWS Organizations: invite pre-existing (legacy) accounts](./organization-legacy-accounts.md)
+    4. [AWS Organizations: invite pre-existing (legacy) accounts](./legacy-accounts.md)
 
     - :ledger: Pending to document the debug mode for the mfa script
 

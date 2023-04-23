@@ -155,18 +155,18 @@ The following block provides a brief explanation of the chosen files/folders lay
         └── 📂 tools-prometheus
     ```
 
-[Configuration files](configs.md) are organized by environments (e.g. dev, stg, prd), and service type,
+[Configuration files](configuration.md) are organized by environments (e.g. dev, stg, prd), and service type,
 which we call **layers** (identities, organizations, storage, etc) to keep any changes made to them separate.
 Within each of those **layers** folders you should find the Terraform files that are used to define all the 
 resources that belong to such account environment and specific layer.
 
 !!! info "Project file structure " 
     An extended project file structure could be found 
-    [here](../../../try-leverage/leverage-project-setup/#create-the-configured-project)
+    [here](../..//try-leverage/leverage-project-setup/#create-the-configured-project)
     While some other basic concepts and naming conventions in the context of Leverage like "project" and "layer" 
-    [here](../../../how-it-works/ref-architecture/ref-architecture-aws/#structural-concepts)
+    [here](..//how-it-works/ref-architecture/ref-architecture-aws/#structural-concepts)
 
-![binbash-logo](../../../assets/images/diagrams/ref-architecture-aws.png "binbash"){: style="width:950px"}
+![binbash-logo](/assets/images/diagrams/ref-architecture-aws.png "binbash"){: style="width:950px"}
 <figcaption style="font-size:15px">
 <b>Figure:</b> AWS Organization multi-account architecture diagram.
 (Source: binbash Leverage,

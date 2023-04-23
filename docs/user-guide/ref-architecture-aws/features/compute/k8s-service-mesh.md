@@ -15,7 +15,7 @@ reliability to Kubernetes, without the complexity. CNCF-hosted and 100% open sou
     without introducing excessive latency.
 
 ### Architecture
-![leverage-k8s-networking](../../../../assets/images/diagrams/k8s-linkerd-control-plane.png "Leverage"){: style="width:750px"}
+![leverage-k8s-networking](/assets/images/diagrams/k8s-linkerd-control-plane.png "Leverage"){: style="width:750px"}
 <figcaption style="font-size:15px">
 <b>Figure:</b> Figure: Linkerd v2.10 architecture diagram.
 (Source: Linkerd official documentation, 
@@ -25,7 +25,7 @@ Linkerd Doc, accessed June 14th 2021).
 </figcaption>
 
 ### Dashboard
-![leverage-k8s-networking](../../../../assets/images/diagrams/k8s-linkerd-dashboard.png "Leverage"){: style="width:750px"}
+![leverage-k8s-networking](/assets/images/diagrams/k8s-linkerd-dashboard.png "Leverage"){: style="width:750px"}
 <figcaption style="font-size:15px">
 <b>Figure:</b> Figure: Linkerd v2.10 dashboard.
 (Source: Linkerd official documentation, 

@@ -16,7 +16,7 @@ Prometheus and [AWS CloudWatch metrics](https://docs.aws.amazon.com/AmazonCloudW
     include a library in your own application that provides you with the ability to create an endpoint that publishes
     certain metrics about your own application, that we can graph or alert based on them.
 
-![leverage-monitoring](../../../../assets/images/diagrams/monitoring-metrics-logs.png "Leverage"){: style="width:750px"}
+![leverage-monitoring](/assets/images/diagrams/monitoring-metrics-logs.png "Leverage"){: style="width:750px"}
 <figcaption style="font-size:15px">
 <b>Figure:</b> Monitoring metrics and log architecture diagram (just as reference).
 (Source: binbash Leverage, 
@@ -33,7 +33,7 @@ binbash Leverage Doc, accessed November 18th 2020).
     Grafana as well, and build dashboards that integrate these metrics and even do some intelligence on them coming
     from multiple origins.
     
-![leverage-monitoring](../../../../assets/images/screenshots/monitoring-metrics-k8s-cluster.png){: style="width:750px"}
+![leverage-monitoring](/assets/images/screenshots/monitoring-metrics-k8s-cluster.png){: style="width:750px"}
 <figcaption style="font-size:15px">
 <b>Figure:</b> Grafana K8s cluster metrics monitoring dashboard reference screenshot.
 (Source: DevOpsProdigy, 
@@ -42,7 +42,7 @@ binbash Leverage Doc, accessed November 18th 2020).
 Grafana plugins, accessed November 18th 2020).
 </figcaption>
 
-![leverage-monitoring](../../../../assets/images/screenshots/monitoring-metrics-k8s-nodes.png "Leverage"){: style="width:750px"}
+![leverage-monitoring](/assets/images/screenshots/monitoring-metrics-k8s-nodes.png "Leverage"){: style="width:750px"}
 <figcaption style="font-size:15px">
 <b>Figure:</b> Grafana K8s cluster metrics monitoring dashboard reference screenshot.
 (Source: DevOpsProdigy, 
@@ -56,7 +56,7 @@ Grafana plugins, accessed November 18th 2020).
     engine configured, because we can have really customize and specify alerts. We can have them as code in their
     extremely readable syntax. Example:
 
-![leverage-monitoring](../../../../assets/images/screenshots/monitoring-metrics-alerts.png "Leverage"){: style="width:750px"}
+![leverage-monitoring](/assets/images/screenshots/monitoring-metrics-alerts.png "Leverage"){: style="width:750px"}
 <figcaption style="font-size:15px">
 <b>Figure:</b> Prometheus Alert Manager `CriticalRamUsage` alert screenshot (just as reference).
 (Source: binbash Leverage).

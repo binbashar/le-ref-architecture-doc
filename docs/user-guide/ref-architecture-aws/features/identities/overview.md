@@ -4,7 +4,7 @@
 Having this [official AWS resource](https://d0.awsstatic.com/aws-answers/AWS_Multi_Account_Security_Strategy.pdf) 
 as reference  we've define a security account structure for managing multiple accounts.
 
-!!! tip "User Management Definitions ![aws-service](../../../../assets/images/icons/aws-emojipack/General_AWScloud.png){: style="width:30px"} ![aws-service](../../../../assets/images/icons/aws-emojipack/SecurityIdentityCompliance_IAM.png){: style="width:15px"}" 
+!!! tip "User Management Definitions ![aws-service](/assets/images/icons/aws-emojipack/General_AWScloud.png){: style="width:30px"} ![aws-service](/assets/images/icons/aws-emojipack/SecurityIdentityCompliance_IAM.png){: style="width:15px"}" 
     *   [x] IAM users will strictly be created and centralized in the Security account (member accounts IAM Users could be exceptionally created for very specific tools that still don’t support IAM roles for cross-account auth). 
     *   [x] All access to resources within the Client organization will be assigned via policy documents attached to IAM roles or groups.
     *   [x] All IAM roles and groups will have the least privileges required to properly work.
@@ -20,7 +20,7 @@ as reference  we've define a security account structure for managing multiple ac
     of AWS-based deployments, centralize security monitoring and management, manage identity and access, and provide 
     audit and compliance monitoring services
 
-![leverage-aws-iam](../../../../assets/images/diagrams/aws-iam.png "Leverage"){: style="width:600px"}
+![leverage-aws-iam](/assets/images/diagrams/aws-iam.png "Leverage"){: style="width:600px"}
 
 <figcaption style="font-size:15px">
 <b>Figure:</b> AWS Organization Security account structure for managing multiple accounts (just as reference).

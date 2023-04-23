@@ -6,7 +6,7 @@ Use this terraform configuration files to create the **S3 bucket** & **DynamoDB*
 !!! info "What is the Terraform Remote State?"
     Read the [official definition](https://developer.hashicorp.com/terraform/language/state/remote) by Hashicorp.
 
-![leverage-ref-arch-tf](../../../assets/images/diagrams/terraform-aws-s3-backend.png "Leverage"){: style="width:350px"}
+![leverage-ref-arch-tf](/assets/images/diagrams/terraform-aws-s3-backend.png "Leverage"){: style="width:350px"}
 
 <figcaption style="font-size:15px">
 <b>Figure:</b> Terraform remote state store & locking necessary AWS S3 bucket and DynamoDB table components.
@@ -19,11 +19,11 @@ Terraform modules registry, accessed December 3rd 2020).
 ## Prerequisites
 
 !!! example "Terraform repo structure + state backend initialization"
-    1. Ensure you have [`Leverage CLI`](../../user-guide/leverage-cli/overview.md) installed in your system
+    1. Ensure you have [`Leverage CLI`](/user-guide/leverage-cli/overview.md) installed in your system
     2. Refer to [Configuration Pre-requisites](./configuration.md) to understand how to set up the
       configuration files required for this layer. Where you must build your
       [Terraform Reference Architecture account structure](features/organization/overview.md)
-    3. Leveraged by the [Infrastructure as Code (IaC) Library](../../user-guide/infra-as-code-library/overview.md) through the
+    3. Leveraged by the [Infrastructure as Code (IaC) Library](/user-guide/infra-as-code-library/overview.md) through the
      [terraform-aws-tfstate-backend module](https://registry.terraform.io/modules/binbashar/tfstate-backend/aws/latest)
         - [/management/base-tf-backend](https://github.com/binbashar/le-tf-infra-aws/tree/master/root/us-east-1/base-tf-backend)
         - [/security/base-tf-backend](https://github.com/binbashar/le-tf-infra-aws/tree/master/security/us-east-1/base-tf-backend)

@@ -29,7 +29,7 @@
     traffic goes to those instances, the NAT device translates the address back to those instances’ private IPv4
     addresses.
 
-![leverage-aws-vpc-ngw](../../../../assets/images/diagrams/aws-vpc-nat-gateway.png "Leverage"){: style="width:900px"}
+![leverage-aws-vpc-ngw](/assets/images/diagrams/aws-vpc-nat-gateway.png "Leverage"){: style="width:900px"}
 <figcaption style="font-size:15px">
 <b>Figure:</b> VPC topology diagram.
 (Source: AWS, 
@@ -38,7 +38,7 @@
 AWS Documentation Amazon VPC User Guide, accessed November 18th 2020).
 </figcaption>
 
-![leverage-aws-vpc-ngw-ha](../../../../assets/images/diagrams/aws-vpc-nat-gateway-ha.png "Leverage"){: style="width:900px"}
+![leverage-aws-vpc-ngw-ha](/assets/images/diagrams/aws-vpc-nat-gateway-ha.png "Leverage"){: style="width:900px"}
 <figcaption style="font-size:15px">
 <b>Figure:</b> VPC topology diagram with multiple Nat Gateways for HA.
 (Source: Andreas Wittig, 

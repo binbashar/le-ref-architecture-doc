@@ -7,17 +7,17 @@ get immediate support from the [binbash Leverage Team](https://www.binbash.com.a
 
 ### Our Engineering & Support Team
 
-![leverage-aws-waf](../assets/images/services/ref-architecture-waf-team.png "Leverage"){: style="width:850px"}
+![leverage-aws-waf](/assets/images/services/ref-architecture-waf-team.png "Leverage"){: style="width:850px"}
 
 ### [AWS Well Architected Review](https://aws.amazon.com/architecture/well-architected/)
 
-Feel free to contact us for an ![leverage-aws](../assets/images/icons/aws-emojipack/General_AWScloud.png "AWS"){: style="width:30px"}
+Feel free to contact us for an ![leverage-aws](/assets/images/icons/aws-emojipack/General_AWScloud.png "AWS"){: style="width:30px"}
 [**AWS Well Architected Framework Review**](https://drive.google.com/file/d/16VOOy5LmSqkFZ5vFpoURDeifEWpjMHtJ/view?usp=sharing) 
 :cloud::rocket::cloud:
 
-![leverage-aws-waf](../assets/images/services/ref-architecture-waf-review.png "Leverage"){: style="width:850px"}
+![leverage-aws-waf](/assets/images/services/ref-architecture-waf-review.png "Leverage"){: style="width:850px"}
 
-!!! check "![leverage-aws](../assets/images/icons/aws-emojipack/General_AWScloud.png "AWS"){: style="width:30px"} Well Architected Framework Review Reference Study Case"
+!!! check "![leverage-aws](/assets/images/icons/aws-emojipack/General_AWScloud.png "AWS"){: style="width:30px"} Well Architected Framework Review Reference Study Case"
     - [X] [Operational Excellence](https://drive.google.com/file/d/1NQScQo0skHjbm-hG0kOJ6zvBwb0M2qLx/view?usp=sharing)
     - [X] [Security](https://drive.google.com/file/d/10TAb2h-P4yaF9WIau5rfIWtazwHvMpUH/view?usp=sharing)
     - [X] [Cost Optimization](https://drive.google.com/file/d/1Eoj9YuTHSbXWt6ASxq3WwO7snto5YrcB/view?usp=sharing)

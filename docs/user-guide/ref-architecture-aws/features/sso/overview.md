@@ -7,7 +7,7 @@ JumpCloud will be configured as the Identity Provider (IdP) that we will integra
 in order to grant users access to AWS resources from a centralized service.
 Users will be able to log in to JumpCloud in order to access AWS accounts, using specific permission sets that will in turn determine what kind of actions they are allowed on AWS resources.
 
-![leverage-aws-sso](../../../../assets/images/diagrams/aws-sso.png "Leverage"){: style="width:750px"}
+![leverage-aws-sso](/assets/images/diagrams/aws-sso.png "Leverage"){: style="width:750px"}
 <figcaption style="font-size:15px">
 <b>Figure:</b> AWS Organization with SSO + JumpCloud IdP diagram.
 (Source: binbash Leverage,

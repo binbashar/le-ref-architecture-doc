@@ -1,11 +1,11 @@
-![binbash-logo](../assets/images/logos/binbash-leverage-header.png "binbash"){: style="width:800px"}
+![binbash-logo](/assets/images/logos/binbash-leverage-header.png "binbash"){: style="width:800px"}
 
 # Try Leverage
 
 ## Before you begin
 
 The objective of this guide is to introduce you to our
-[**binbash Leverage Reference Architecture for AWS**](../../user-guide/ref-architecture-aws/overview/) workflow 
+[**binbash Leverage Reference Architecture for AWS**](/user-guide/ref-architecture-aws/overview/) workflow 
 through the complete deployment of a basic landing zone configuration.
 
 The Leverage Landing Zone is the smallest possible fully functional configuration. 
@@ -17,7 +17,7 @@ to ensure quality and to provide a solid base to build upon. This is the startin
 any Leverage user can and will develop all the features and capabilities they may require to satisfy
 their specific needs.
 
-![leverage-landing-zone](../assets/images/diagrams/ref-architecture-aws-landing-zone.png "Leverage Landing Zone"){: style="width: 650px"}
+![leverage-landing-zone](/assets/images/diagrams/ref-architecture-aws-landing-zone.png "Leverage Landing Zone"){: style="width: 650px"}
 <figcaption style="font-size:15px">
 <b>Figure:</b> Leverage Landing Zone architecture components diagram.
 </figcaption>

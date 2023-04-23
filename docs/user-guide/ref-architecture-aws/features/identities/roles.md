@@ -1,6 +1,6 @@
 # IAM Roles
 
-!!! info "What are AWS IAM Roles? ![aws-service](../../../../assets/images/icons/aws-emojipack/General_AWScloud.png){: style="width:30px"} ![aws-service](../../../../assets/images/icons/aws-emojipack/SecurityIdentityCompliance_IAM.png){: style="width:15px"}"
+!!! info "What are AWS IAM Roles? ![aws-service](/assets/images/icons/aws-emojipack/General_AWScloud.png){: style="width:30px"} ![aws-service](/assets/images/icons/aws-emojipack/SecurityIdentityCompliance_IAM.png){: style="width:15px"}"
     For the Leverage AWS Reference Architecture we heavily depend on **AWS IAM roles**, which is a standalone IAM entity 
     that:
     
@@ -28,7 +28,7 @@
 
 ## How IAM roles work?
 
-![leverage-aws-iam-roles](../../../../assets/images/diagrams/aws-iam-role-cross-account.png "Leverage"){: style="width:600px"}
+![leverage-aws-iam-roles](/assets/images/diagrams/aws-iam-role-cross-account.png "Leverage"){: style="width:600px"}
 
 <figcaption style="font-size:15px">
 <b>Figure:</b> Example of AWS cross-account AWS access.
@@ -94,7 +94,7 @@ AWS Security Blog, accessed November 17th 2020).
     first authenticate to AWS using some other mechanism. 
 
 For example, for an IAM user to assume an IAM role, the workflow looks like this:
-![leverage-aws-iam-roles](../../../../assets/images/diagrams/aws-iam-role-assume.png "Leverage"){: style="width:900px"}
+![leverage-aws-iam-roles](/assets/images/diagrams/aws-iam-role-assume.png "Leverage"){: style="width:900px"}
 
 <figcaption style="font-size:15px">
 <b>Figure:</b> Assuming an AWS IAM role.

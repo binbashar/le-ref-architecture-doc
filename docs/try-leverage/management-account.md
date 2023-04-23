@@ -23,7 +23,7 @@ leverage terraform apply
 
 All `apply` commands will prompt for confirmation, answer `yes` when this happens.
 
-!!! info "More information on [`terraform init`](../../user-guide/leverage-cli/reference/terraform#init) and [`terraform apply`](../../user-guide/leverage-cli/reference/terraform#apply)"
+!!! info "More information on [`terraform init`](/user-guide/leverage-cli/reference/terraform#init) and [`terraform apply`](/user-guide/leverage-cli/reference/terraform#apply)"
 
 Now, the infrastructure for the Terraform state management is created. The next step is to push the local `.tfstate` to the bucket. To do this, uncomment the `backend` section for the `terraform` configuration in `management/base-tf-backend/config.tf`
 
@@ -86,7 +86,7 @@ And run:
 leverage terraform import aws_organizations_account.management 000123456789
 ```
 
-!!! info "More information on [`terraform import`](../../user-guide/leverage-cli/reference/terraform#import)"
+!!! info "More information on [`terraform import`](/user-guide/leverage-cli/reference/terraform#import)"
 
 !!! info "Getting errors with zsh?"
     Zsh users may need to prepend `noglob` to the import command for it to be recognized correctly, as an alternative, square brackets can be escaped as `\[\]`
@@ -117,7 +117,7 @@ $ leverage credentials configure --type BOOTSTRAP --skip-access-keys-setup
 [09:09:08.307] INFO     Updating project's Terraform common configuration.
 ```
 
-!!! info "More information on [`credentials configure`](../../user-guide/leverage-cli/reference/credentials#configure)"
+!!! info "More information on [`credentials configure`](/user-guide/leverage-cli/reference/credentials#configure)"
 
 ### SSO layer
 Before working on the SSO layer you have to navigate to the [AWS IAM Identity Center page](https://console.aws.amazon.com/singlesignon/) and enable Single Sign-On (SSO) by clicking on the `Enable` button.

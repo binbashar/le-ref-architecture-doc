@@ -5,7 +5,7 @@
     especially those built using a microservices architecture. Distributed tracing helps pinpoint where failures occur
     and what causes poor performance.
 
-![leverage-monitoring](../../../../assets/images/diagrams/monitoring-tracing.png "Leverage"){: style="width:750px"}
+![leverage-monitoring](/assets/images/diagrams/monitoring-tracing.png "Leverage"){: style="width:750px"}
 <figcaption style="font-size:15px">
 <b>Figure:</b> Figure: Distributed tracing architecture diagram (just as reference).
 (Source: binbash Leverage, 

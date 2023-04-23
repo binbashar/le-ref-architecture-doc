@@ -1,6 +1,6 @@
 # Firewall Manager
 
-![Firewall Manager Service](../../../../assets/images/diagrams/aws-fms.png)
+![Firewall Manager Service](/assets/images/diagrams/aws-fms.png)
 
 ## Use Cases
 

@@ -17,7 +17,7 @@ Move into the `us-east-1/base-tf-backend` directory and run:
 leverage terraform init --skip-validation
 leverage terraform apply
 ```
-!!! info "More information on [`terraform init`](../../user-guide/leverage-cli/reference/terraform#init) and [`terraform apply`](../../user-guide/leverage-cli/reference/terraform#apply)"
+!!! info "More information on [`terraform init`](/user-guide/leverage-cli/reference/terraform#init) and [`terraform apply`](/user-guide/leverage-cli/reference/terraform#apply)"
 
 Now, to push the local `.tfstate` to the bucket, uncomment the `backend` section for the `terraform` configuration in `security/base-tf-backend/config.tf`
 ``` terraform
@@ -65,7 +65,7 @@ Move into the `us-east-1/base-tf-backend` directory and run:
 leverage terraform init --skip-validation
 leverage terraform apply
 ```
-!!! info "More information on [`terraform init`](../../user-guide/leverage-cli/reference/terraform#init) and [`terraform apply`](../../user-guide/leverage-cli/reference/terraform#apply)"
+!!! info "More information on [`terraform init`](/user-guide/leverage-cli/reference/terraform#init) and [`terraform apply`](/user-guide/leverage-cli/reference/terraform#apply)"
 
 Now, to push the local `.tfstate` to the bucket, uncomment the `backend` section for the `terraform` configuration in `shared/base-tf-backend/config.tf`
 ``` terraform

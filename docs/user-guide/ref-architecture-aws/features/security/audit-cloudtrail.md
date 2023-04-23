@@ -13,14 +13,14 @@ giving you control over storage, analysis, and remediation actions.
     time will be available through a centralized S3 bucket.
 
 <figure markdown>
-  ![Cloudtrail Diagram](../../../../assets/images/diagrams/aws-cloudtrail.svg){ width="600" }
+  ![Cloudtrail Diagram](/assets/images/diagrams/aws-cloudtrail.svg){ width="600" }
     <figcaption style="font-size:15px">
     <b>Figure:</b> AWS CloudTrail components architecture diagram (just as reference).
     (Source: binbash Leverage diagrams, accessed July 6th 2022).
     </figcaption>
 </figure>
 
-!!! example "![leverage-tf](../../../../assets/images/logos/terraform.png "Terraform"){: style="width:25px"} IaC Terraform Codebase <>"
+!!! example "![leverage-tf](/assets/images/logos/terraform.png "Terraform"){: style="width:25px"} IaC Terraform Codebase <>"
     - [x] `binbash-management` account | Audit: Cloudtrail
         - **Code:** [management/us-east-1/security-audit](https://github.com/binbashar/le-tf-infra-aws/tree/master/management/us-east-1/security-audit)
     - [x] `binbash-security` account | Audit: Cloudtrail & S3 Bucket

@@ -4,7 +4,7 @@
 Each month AWS charges your payer **Root Account** for all the linked accounts in a consolidated bill. 
 The following illustration shows an example of a consolidated bill.
 
-![leverage-aws-org](../../../../assets/images/diagrams/aws-organizations-scp.png "Leverage"){: style="width:750px"}
+![leverage-aws-org](/assets/images/diagrams/aws-organizations-scp.png "Leverage"){: style="width:750px"}
 <figcaption style="font-size:15px">
 <b>Figure:</b> AWS Organization Multi-Account structure (just as reference).
 (Source: Andreas Wittig, 
@@ -13,7 +13,7 @@ The following illustration shows an example of a consolidated bill.
 Cloudonaut.io Blog, accessed November 18th 2020).
 </figcaption>
 
-![leverage-aws-org](../../../../assets/images/diagrams/aws-organizations-billing.png "Leverage"){: style="width:750px"}
+![leverage-aws-org](/assets/images/diagrams/aws-organizations-billing.png "Leverage"){: style="width:750px"}
 <figcaption style="font-size:15px">
 <b>Figure:</b> AWS Organization Multi-Account billing structure (just as reference).
 (Source: AWS, 

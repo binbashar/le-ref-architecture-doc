@@ -15,7 +15,7 @@ Clusters will be provisioned with [**_Kops_**](https://github.com/kubernetes/kop
 [**_AWS EKS_**](https://aws.amazon.com/eks/), which are solutions meant to orchestrate this
  compute engine in AWS. Whenever possible the initial version deployed will be the latest stable release.
 
-![leverage-k8s-architecture](../../../../assets/images/diagrams/k8s-architecture.png "Leverage"){: style="width:700"}
+![leverage-k8s-architecture](/assets/images/diagrams/k8s-architecture.png "Leverage"){: style="width:700"}
 
 <figcaption style="font-size:15px">
 <b>Figure:</b> Kubernetes high level components architecture.

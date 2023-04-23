@@ -13,7 +13,7 @@ when interacting with your Leverage project and simplify the usage of any other 
 ## Tasks
 Tasks are simple python functions that are marked as such with the use of the `@task()` decorator. We call the file where
 all tasks are defined a 'build script', and by default it is assumed to be named `build.py`. If you use any other name
-for your build script, you can let Leverage know through the [global option `--filename`](../reference/basic-features.md).
+for your build script, you can let Leverage know through the [global option `--filename`](../basic-features.md).
 
 ```python
 from leverage import task
@@ -25,7 +25,7 @@ def copy_file(src, dst):
 
 ```
 
-The contents in the task's docstring are used to provide a short description of what's the task's purpose when [listing all available tasks](../reference/basic-features.md) to run.
+The contents in the task's docstring are used to provide a short description of what's the task's purpose when [listing all available tasks](../basic-features.md) to run.
 
 ``` bash
 $ leverage --list-tasks
@@ -124,7 +124,7 @@ Starting server at localhost:80
 [09:38:32.825] [ build.py - ✔ Completed task start_server ]
 ```
 
-When [listing the available tasks](../reference/basic-features.md) any ignored task will be marked as such.
+When [listing the available tasks](../basic-features.md) any ignored task will be marked as such.
 
 ``` bash
 $ leverage --list-tasks

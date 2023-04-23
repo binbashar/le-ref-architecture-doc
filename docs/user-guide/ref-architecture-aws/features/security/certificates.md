@@ -28,7 +28,7 @@
     With AWS Certificate Manager Private Certificate Authority, you pay monthly for the operation of
     the private CA and for the private certificates you issue."_
 
-![leverage-aws-acm](../../../../assets/images/diagrams/aws-acm.png "Leverage ACM"){: style="width:450px"}
+![leverage-aws-acm](/assets/images/diagrams/aws-acm.png "Leverage ACM"){: style="width:450px"}
 <figcaption style="font-size:15px">
 <b>Figure:</b> AWS certificate manager (ACM) service integration diagram.
 (Source: AWS, 
@@ -50,7 +50,7 @@ AWS Documentation Amazon ACM User Guide, accessed August 4th 2021).
     
     - [x] It is loosely based upon the work of kube-lego and has borrowed some wisdom from other similar projects such as kube-cert-manager.
 
-![leverage-aws-vpc-peering](../../../../assets/images/diagrams/cert-manager.svg "Leverage Cert-manager"){: style="width:800px"}
+![leverage-aws-vpc-peering](/assets/images/diagrams/cert-manager.svg "Leverage Cert-manager"){: style="width:800px"}
 <figcaption style="font-size:15px">
 <b>Figure:</b> Certificate manager high level components architecture diagram.
 (Source: Cert-manager official documentation, 

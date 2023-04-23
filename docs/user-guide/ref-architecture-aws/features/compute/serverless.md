@@ -16,7 +16,7 @@ As stated by [AWS Serverless definitions](https://aws.amazon.com/serverless/)
     about managing and operating servers or runtimes, either in the cloud or on-premises. This reduced overhead lets
     developers reclaim time and energy that can be spent on developing great products which scale and that are reliable.
 
-![leverage-aws-serverless](../../../../assets/images/diagrams/aws-serverless.png "Leverage"){: style="width:950px"}
+![leverage-aws-serverless](/assets/images/diagrams/aws-serverless.png "Leverage"){: style="width:950px"}
 
 <figcaption style="font-size:15px">
 <b>Figure:</b> AWS serverless architecture diagram (just as reference).
@@ -26,7 +26,7 @@ As stated by [AWS Serverless definitions](https://aws.amazon.com/serverless/)
 Containers-on-AWS Medium Blog post, accessed November 18th 2020).
 </figcaption>
 
-!!! info "Serverless Compute ![aws-service](../../../../assets/images/icons/aws-emojipack/General_AWScloud.png){: style="width:30px"} Services"
+!!! info "Serverless Compute ![aws-service](/assets/images/icons/aws-emojipack/General_AWScloud.png){: style="width:30px"} Services"
     * [x] [AWS Lambda](https://aws.amazon.com/lambda/) lets you run code without provisioning or managing servers. 
     You pay only for the compute time you consume - there is no charge when your code is not running. 
     * [x] [Lambda@Edge](https://aws.amazon.com/lambda/edge/) allows you to run Lambda functions at AWS Edge locations in

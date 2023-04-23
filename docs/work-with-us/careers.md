@@ -40,13 +40,13 @@
 ## Leverage Software / DevOps Engineer Profile
 
 !!! info "What You'll Work On (our tech stack) :man_technologist: :woman_technologist: :rocket:"
-    - [x] [**Infrastructure as Code (IaC) Library**](../how-it-works/ref-architecture/index.md)
+    - [x] [**Infrastructure as Code (IaC) Library**](/user-guide/infra-as-code-library/overview/)
         
         Create a collection of reusable, tested, production-ready E2E AWS oriented infrastructure modules 
         (e.g., VPC, IAM, Kubernetes, Prometheus, Grafana, EFK, Consul, Vault, Jenkins, etc.) using several tool and 
         languages: *Terraform, Ansible, Helm, Dockerfiles, Python, Bash and Makefiles*.
            
-    - [x] [**Reference Architecture**](../how-it-works/infra-as-code-library/index.md)
+    - [x] [**Reference Architecture**](/user-guide/)
         
         Improve, maintain, extend and update our reference architecture, which has been designed under optimal configs 
         for the most popular modern web and mobile applications needs. Its design is fully based on the 
@@ -55,7 +55,7 @@
     - [x] **Open Source & Leverage DevOps Tools** 
         
         Contribute to our open source projects to continue building a fundamentally better DevOps experience, including
-        our [open source modules](../how-it-works/infra-as-code-library/modules-library-per-tech.md), 
+        our [open source modules](/user-guide/infra-as-code-library/modules-library-by-technology/), 
         [leverage python CLI](https://github.com/binbashar/leverage), 
         [Makefiles Lib](https://github.com/binbashar/le-dev-makefiles) among others.        
     

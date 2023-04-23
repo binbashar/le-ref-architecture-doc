@@ -31,7 +31,7 @@ Each individual configuration of the Reference Architecture is referred to as a 
 
 ## A More Visual Example
 The following diagram shows the type of AWS multi-account setup you can achieve by using this Reference Architecture:
-![leverage-aws-org](../../../assets/images/diagrams/ref-architecture-aws.png "Leverage"){: style="width:950px"}
+![leverage-aws-org](/assets/images/diagrams/ref-architecture-aws.png "Leverage"){: style="width:950px"}
 <figcaption style="font-size:15px">
 <b>Figure:</b> AWS Organization multi-account reference architecture diagram. (Source: binbash Leverage, "Leverage Reference Architecture components", binbash Leverage Doc, accessed August 4th 2021).
 </figcaption>

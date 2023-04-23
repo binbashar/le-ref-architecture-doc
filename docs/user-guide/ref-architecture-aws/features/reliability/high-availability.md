@@ -6,7 +6,7 @@
     It keeps an AWS environment reliable. Using logs and metrics from CloudWatch, designing a system where the failures
     themselves trigger recovery is the way to move forward.
 
-![leverage-aws-reliability](../../../../assets/images/diagrams/aws-reliability-ha-recovery-failure.png "Leverage"){: style="width:750px"}
+![leverage-aws-reliability](/assets/images/diagrams/aws-reliability-ha-recovery-failure.png "Leverage"){: style="width:750px"}
 <figcaption style="font-size:15px">Figure: AWS HA architecture diagrams (just as reference).</figcaption>
 
 ## Recovery Procedures 
@@ -17,7 +17,7 @@
     that can be done using these insights. Real points of failure are exploited and the way the environment reacts to
     the emergency shows just how reliable the system it.
 
-![leverage-aws-reliability](../../../../assets/images/diagrams/aws-reliability-ha-recovery-procs.png "Leverage"){: style="width:750px"}
+![leverage-aws-reliability](/assets/images/diagrams/aws-reliability-ha-recovery-procs.png "Leverage"){: style="width:750px"}
 <figcaption style="font-size:15px">Figure: AWS HA architecture diagrams (just as reference).</figcaption>
 
 ## Scalability and Availability
@@ -27,7 +27,7 @@
     measures. Of course, multiple redundancies require good management and maintenance for them to remain active through
     the environment’s lifecycle.
 
-![leverage-aws-reliability](../../../../assets/images/diagrams/aws-reliability-ha-recovery-scaling.png "Leverage"){: style="width:750px"}
+![leverage-aws-reliability](/assets/images/diagrams/aws-reliability-ha-recovery-scaling.png "Leverage"){: style="width:750px"}
 <figcaption style="font-size:15px">Figure: AWS HA scalable architecture diagrams (just as reference).</figcaption>
 
 ## Healthchecks & Self-healing

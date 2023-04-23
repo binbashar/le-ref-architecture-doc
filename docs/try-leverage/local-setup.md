@@ -1,5 +1,5 @@
 # Install Leverage CLI
-Leverage-based projects are better managed via the [Leverage CLI](../../how-it-works/leverage-cli/) which is a companion tool that simplifies your daily interactions with Leverage. This page will guide you through the installation steps.
+Leverage-based projects are better managed via the [Leverage CLI](/user-guide/leverage-cli/overview/) which is a companion tool that simplifies your daily interactions with Leverage. This page will guide you through the installation steps.
 
 ## Prerequisites
 In order to install the CLI you should have the following installed in your system:
@@ -8,13 +8,13 @@ In order to install the CLI you should have the following installed in your syst
 - [X] [Python 3](https://www.python.org/) `version 3.8 and up`
 - [X] [Docker](https://docs.docker.com/engine/install/)
 
-## Install [Leverage CLI](../../user-guide/leverage-cli/overview/)
+## Install [Leverage CLI](/user-guide/leverage-cli/overview/)
 Leverage CLI is distributed as a python package that you can install it via `pip` as follows:
 ``` bash
 pip install leverage
 ```
 
-!!! info "For further details on installing Leverage CLI: [:books: Install Leverage CLI](../../user-guide/leverage-cli/installation/)"
+!!! info "For further details on installing Leverage CLI: [:books: Install Leverage CLI](/user-guide/leverage-cli/installation/)"
 
 ## Verify your Leverage CLI installation
 Verify that your Leverage CLI installation was successful by running the following command:

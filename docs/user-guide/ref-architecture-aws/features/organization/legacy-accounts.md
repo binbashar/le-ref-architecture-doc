@@ -1,8 +1,8 @@
 # Managing legacy (pre-existing) accounts
 !!! help "How it works"
-    :books: [**documentation:** organization](../../../../how-it-works/user-guide/organization/organization/)
+    :books: [**documentation:** organization](../..//how-it-works/user-guide/organization/organization/)
     
-    :books: [**documentation:** organization accounts](../../../../how-it-works/user-guide/organization/accounts/)
+    :books: [**documentation:** organization accounts](../..//how-it-works/user-guide/organization/accounts/)
 
 ## User guide
 

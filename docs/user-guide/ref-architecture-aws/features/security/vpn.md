@@ -14,7 +14,7 @@
         2. Each VPN user can be required to use MFA to connect via VPN (as well as strong passwords). This combination makes almost impossible for an outsider to gain access via VPN.
         3. Centralized access and audit logs.
    
-![leverage-vpn](../../../../assets/images/diagrams/ref-architecture-vpn.png "Leverage"){: style="width:650px"}
+![leverage-vpn](/assets/images/diagrams/ref-architecture-vpn.png "Leverage"){: style="width:650px"}
 <figcaption style="font-size:15px">
 <b>Figure:</b> Securing access to a private network with Pritunl diagram.
 (Source: Pritunl, 

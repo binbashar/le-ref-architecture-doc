@@ -6,7 +6,7 @@ We will review all S3 buckets in the existing account to determine if it’s nec
 evaluate existing bucket policy and tightening permissions to be absolutely minimum required for users and applications.
 As for EBS volumes, our recommendation is to create all encrypted by default. Overhead created by this process is negligible. 
 
-##  ![leverage-aws-s3](../../../../assets/images/icons/aws-emojipack/Storage_AmazonS3.png "Leverage"){: style="width:30px"} S3 buckets
+##  ![leverage-aws-s3](/assets/images/icons/aws-emojipack/Storage_AmazonS3.png "Leverage"){: style="width:30px"} S3 buckets
 
 !!! important "Tech specs"
     * [x] **Encryption:** Yes (by default)
@@ -25,7 +25,7 @@ As for EBS volumes, our recommendation is to create all encrypted by default. Ov
 | S3 Glacier Deep Archive | Archiving rarely accessed data with a default retrieval time of 12 hours    | 99.999999999%             | 99.99% (after you restore objects) | >= 3               | 180 days             | 40 KB                    | Per GB retrieval fees apply. You must first restore archived objects before you can access them. For more information, see Restoring archived objects. |
 | RRS (Not recommended)   | Frequently accessed, non-critical data                                      | 99.99%                    | 99.99%                             | >= 3               | None                 | None                     | None                                                                                                                                                   |
 
-## ![leverage-aws-ebs](../../../../assets/images/icons/aws-emojipack/Storage_AmazonEBS.png "Leverage"){: style="width:25px"} EBS Volumes
+## ![leverage-aws-ebs](/assets/images/icons/aws-emojipack/Storage_AmazonEBS.png "Leverage"){: style="width:25px"} EBS Volumes
 
 !!! Important "Tech specs"
     * [x] **Backups:** Periodic EBS snapshots with retention policy

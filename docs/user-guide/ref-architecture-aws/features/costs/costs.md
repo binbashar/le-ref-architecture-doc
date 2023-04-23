@@ -2,7 +2,7 @@
 
 ## Opportunity to optimize resources
 
-!!! tip "![leverage-aws-ec2](../../../../assets/images/icons/aws-emojipack/Compute_AmazonEC2.png "Leverage"){: style="width:20px"} Compute"
+!!! tip "![leverage-aws-ec2](/assets/images/icons/aws-emojipack/Compute_AmazonEC2.png "Leverage"){: style="width:20px"} Compute"
     * Usage of reserved EC2 instances for stable workloads (AWS Cost Explorer Reserved Optimization | Compute 
     Optimizer - get a -$ of up to 42% vs On-Demand)
     * Usage of Spot EC2 instances for fault-tolerant workloads (-$ by up to 90%).
@@ -11,10 +11,10 @@
     * Compute Savings Plans to reduce EC2, Fargate and Lambda $ (Compute Savings Plans OK regardless of EC2 family,
      size, AZ, reg, OS or tenancy, OK for Fargate / Lambda too).
 
-!!! tip "![leverage-aws-rds](../../../../assets/images/icons/aws-emojipack/Database_AmazonRDS.png "Leverage"){: style="width:20px"} Databases"
+!!! tip "![leverage-aws-rds](/assets/images/icons/aws-emojipack/Database_AmazonRDS.png "Leverage"){: style="width:20px"} Databases"
     * Usage of reserved RDS instances for stable workload databases.
 
-!!! tip "![leverage-aws-cw](../../../../assets/images/icons/aws-emojipack/ManagementTools_AmazonCloudWatch.png "Leverage"){: style="width:20px"} Monitoring & Automation"
+!!! tip "![leverage-aws-cw](/assets/images/icons/aws-emojipack/ManagementTools_AmazonCloudWatch.png "Leverage"){: style="width:20px"} Monitoring & Automation"
     * AWS billing alarms + AWS Budget (forecasted account cost / RI Coverage) Notifications to Slack
     * Activate AWS Trusted Advisor cost related results
         * Id EBS w/ low-utiliz and -$ by snapshotting and then rm them
@@ -23,7 +23,7 @@
     * Setup Lambda nuke to automatically clean up AWS account resources.
     * Setup lambda scheduler for stop and start resources on AWS (EC2, ASG & RDS)
 
-!!! tip "![leverage-aws-s3](../../../../assets/images/icons/aws-emojipack/Storage_AmazonS3.png "Leverage"){: style="width:20px"} Storage & Network Traffic"
+!!! tip "![leverage-aws-s3](/assets/images/icons/aws-emojipack/Storage_AmazonS3.png "Leverage"){: style="width:20px"} Storage & Network Traffic"
     * Check S3 usage and -$ by leveraging lower $ storage tiers.
     * Use S3 Analytics, or automate mv for these objects into lower $ storage tier w/ Life Cycle Policies or w/ S3
     Intelligent-Tiering.

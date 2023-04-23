@@ -43,7 +43,7 @@ Now, the extended workflow is annotated with more explanations and it is intende
     rest of our tools and practices like CI/CD, in
 
 ## Running in Automation
-![leverage-aws-terraform](../../../assets/images/diagrams/aws-terraform-automation.png "Terraform"){: style="width:350"}
+![leverage-aws-terraform](/assets/images/diagrams/aws-terraform-automation.png "Terraform"){: style="width:350"}
 <figcaption style="font-size:15px">Figure: Running terraform with AWS in automation (just as reference).</figcaption>
 
 !!! info "Read More"

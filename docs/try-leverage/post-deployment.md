@@ -60,9 +60,9 @@ profile = "me-shared-devops"
 ```
 
 ## Activate your SSO user and set up your password
-The SSO users you created when you provisioned the SSO layer need to go through an email activation procedure. Find the [instructions here](../../user-guide/ref-architecture-aws/features/sso/managing-users/#trigger-user-email-activation).
+The SSO users you created when you provisioned the SSO layer need to go through an email activation procedure. Find the [instructions here](/user-guide/ref-architecture-aws/features/sso/managing-users/#trigger-user-email-activation).
 
-Once SSO user's have been activated, they will need to get their initial password so they are able to log in. Check out the [steps for that here](../../user-guide/ref-architecture-aws/features/sso/managing-users/#reset-a-user-password).
+Once SSO user's have been activated, they will need to get their initial password so they are able to log in. Check out the [steps for that here](/user-guide/ref-architecture-aws/features/sso/managing-users/#reset-a-user-password).
 
 ## Configure the CLI for SSO
 Almost there. Let's try the SSO integration now.
@@ -70,7 +70,7 @@ Almost there. Let's try the SSO integration now.
 ### Configure your SSO profiles
 Since this is your first time using that you will need to configure it by running this: `leverage aws configure sso`
 
-Follow the wizard to get your AWS config file created for you. There is [more info about that here](../../user-guide/ref-architecture-aws/features/sso/configuration/#authentication-via-sso).
+Follow the wizard to get your AWS config file created for you. There is [more info about that here](/user-guide/ref-architecture-aws/features/sso/configuration/#authentication-via-sso).
 
 ### Verify on a layer in the management account
 To ensure that worked, let's run a few commands to verify:
@@ -410,5 +410,5 @@ Now you not only have a fully functional landing zone configuration deployed, bu
 
 For more detailed information, visit the links below.
 
-- [X] :books: [How it works](../how-it-works/ref-architecture/index.md)
-- [X] :books: [User guides](../user-guide/index.md)
+- [X] :books: [How it works](/user-guide/ref-architecture-aws/overview/)
+- [X] :books: [User guide](/user-guide/)

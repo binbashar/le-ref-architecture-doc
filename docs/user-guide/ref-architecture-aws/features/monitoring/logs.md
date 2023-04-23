@@ -10,7 +10,7 @@
     request logs, application error logs. Access logs on AWS based resources can be stored in a centralized bucket for that
     purpose, on the security account and given the need these can be streamed to Elasticsearch as well if needed.
 
-![leverage-monitoring](../../../../assets/images/diagrams/monitoring-metrics-logs.png "Leverage"){: style="width:750px"}
+![leverage-monitoring](/assets/images/diagrams/monitoring-metrics-logs.png "Leverage"){: style="width:750px"}
 <figcaption style="font-size:15px">
 <b>Figure:</b> Monitoring metrics and log architecture diagram (just as reference).
 (Source: binbash Leverage, 

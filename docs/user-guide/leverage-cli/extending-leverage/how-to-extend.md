@@ -22,7 +22,7 @@ your configuration, reducing the risk of misconfigurations or errors.
 
 !!! info "Read More about `.tfvars` config files"
     In order to further understand this mechanism and how to use it please visit the dedicated
-    [.tfvars configs](../../ref-architecture-aws/configs.md) entry.
+    [.tfvars configs](../../ref-architecture-aws/configuration.md) entry.
 
 ## Custom tasks with build.py 
 Leverage CLI has a native mechanism to allow customizing your workflow. With the custom tasks feature using `build.py`,

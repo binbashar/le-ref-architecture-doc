@@ -82,7 +82,7 @@ to show an example using the Github personal access token, one of our supported 
 Open your preferred web browser choose Github auth method and paste your GH token and you'll be able
 to login to your instance.
 
-![leverage-vault-ui-auth](../../../../assets/images/screenshots/vault-ui-auth-github.png "Leverage"){: style="width:1200px"}
+![leverage-vault-ui-auth](/assets/images/screenshots/vault-ui-auth-github.png "Leverage"){: style="width:1200px"}
 <figcaption style="font-size:15px">
 <b>Figure:</b> Vault HCP UI user authentication screen.
 (Source: binbash Leverage,

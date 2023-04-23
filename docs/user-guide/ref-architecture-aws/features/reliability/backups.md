@@ -20,7 +20,7 @@
     and retention management. AWS Backup provides a fully managed, policy-based backup solution, simplifying your
     backup management, enabling you to meet your business and regulatory backup compliance requirements.
 
-![leverage-aws-backup](../../../../assets/images/diagrams/aws-backup.png "Leverage"){: style="width:950px"}
+![leverage-aws-backup](/assets/images/diagrams/aws-backup.png "Leverage"){: style="width:950px"}
 <figcaption style="font-size:15px">
 <b>Figure:</b> AWS Backup service diagram (just as reference).
 (Source: AWS, 
@@ -28,11 +28,11 @@
 AWS Documentation, accessed November 18th 2020).
 </figcaption>
 
-## ![leverage-aws-s3](../../../../assets/images/icons/aws-emojipack/Storage_AmazonS3.png "Leverage"){: style="width:30px"} S3 bucket region replication
-* ![leverage-aws-s3](../../../../assets/images/icons/aws-emojipack/Storage_AmazonS3_bucket.png "Leverage"){: style="width:20px"}
+## ![leverage-aws-s3](/assets/images/icons/aws-emojipack/Storage_AmazonS3.png "Leverage"){: style="width:30px"} S3 bucket region replication
+* ![leverage-aws-s3](/assets/images/icons/aws-emojipack/Storage_AmazonS3_bucket.png "Leverage"){: style="width:20px"}
 Buckets that hold data critical to business or to application operation can be replicated to another region almost
  synchronously. 
-* ![leverage-aws-s3](../../../../assets/images/icons/aws-emojipack/Storage_AmazonS3_bucket.png "Leverage"){: style="width:20px"}
+* ![leverage-aws-s3](/assets/images/icons/aws-emojipack/Storage_AmazonS3_bucket.png "Leverage"){: style="width:20px"}
 This can be setup on request to increase durability and along with database backup can constitute the base for a
  Business Continuity strategy.
 

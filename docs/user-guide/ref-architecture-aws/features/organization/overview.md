@@ -36,7 +36,7 @@ The following block provides a brief explanation of the chosen AWS Organization 
         ...
     ```
 
-![leverage-aws-org](../../../../assets/images/diagrams/ref-architecture-aws-landing-zone-full.png "Leverage"){: style="width:750px"}
+![leverage-aws-org](/assets/images/diagrams/ref-architecture-aws-landing-zone-full.png "Leverage"){: style="width:750px"}
 <figcaption style="font-size:15px">
 <b>Figure:</b> AWS Organization multi-account architecture diagram (just as reference).
 (Source: binbash Leverage,

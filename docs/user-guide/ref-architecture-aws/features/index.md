@@ -1,4 +1,4 @@
-![binbash-logo](../../../../assets/images/logos/binbash-leverage-header.png "binbash"){: style="width:800px"}
+![binbash-logo](/assets/images/logos/binbash-leverage-header.png "binbash"){: style="width:800px"}
 
 # Features
 
@@ -8,7 +8,7 @@ This reference architecture supports a growing number of AWS services. This sect
 ## Governance | AWS Organizations
 - [x] [Overview](organization/overview.md)
 - [x] [Configuration](organization/configuration.md)
-- [x] [Invite pre-exiting accounts to AWS Organizations](organization/organization-legacy-accounts.md)
+- [x] [Invite pre-exiting accounts to AWS Organizations](organization/legacy-accounts.md)
 
 ## Identity Management
 - [x] [GPG Keys](identities/gpg.md)
@@ -17,13 +17,13 @@ This reference architecture supports a growing number of AWS services. This sect
 - [x] [Hashicorp Vault Credentials](identities/credentials-vault.md)
 
 ## Single Sign-On (SSO)
-- [x] [AWS SSO + Jumpcloud IdP](sso/sso.md)
+- [x] [AWS SSO + Jumpcloud IdP](sso/overview.md)
 
 ## Cost Monitoring & Optimization
 - [x] [Costs](costs/costs.md)
 
 ## Security
-- [X] [Security Services](security/services.md)
+- [X] [Security Services](security/overview.md)
 - [X] [VPN | Pritunl](security/vpn.md)
 
 ## Networking | VPC, TGW, NFW, DNS and NACLs
@@ -63,5 +63,5 @@ This reference architecture supports a growing number of AWS services. This sect
 
 ## Reliability
 - [X] [Bakcups](reliability/backups.md)
-- [x] [Health-Checks](reliability/health-checks.md)
+- [x] [Health-Checks](./)
 - [X] [Disaster Recovery](reliability/dr.md)

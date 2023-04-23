@@ -1,6 +1,6 @@
 # CDN 
 
-!!! quote "![leverage-aws-ec2](../../../../assets/images/icons/aws-emojipack/NetworkingContentDelivery_AmazonCloudFront.png "Leverage"){: style="width:20px"} AWS Cloud Front"
+!!! quote "![leverage-aws-ec2](/assets/images/icons/aws-emojipack/NetworkingContentDelivery_AmazonCloudFront.png "Leverage"){: style="width:20px"} AWS Cloud Front"
     [**Amazon CloudFront**](https://aws.amazon.com/cloudfront/) is a fast content delivery network (CDN) service that securely delivers data, videos, 
     applications, and APIs to customers globally with low latency, high transfer speeds, all within a developer-friendly
     environment. CloudFront is integrated with AWS – both physical locations that are directly connected to the AWS
@@ -13,7 +13,7 @@
     
 ## Load Balancer (ALB | NLB) & S3 Cloudfront Origins 
 
-![leverage-aws-cloudfront](../../../../assets/images/diagrams/aws-cloudfront-acm-elb-s3.png "Leverage"){: style="width:950px"}
+![leverage-aws-cloudfront](/assets/images/diagrams/aws-cloudfront-acm-elb-s3.png "Leverage"){: style="width:950px"}
 <figcaption style="font-size:15px">
 <b>Figure:</b> AWS CloudFront with ELB and S3 as origin diagram.
 (Source: Lee Atkinson, 
@@ -24,7 +24,7 @@ AWS Security Blog, accessed November 17th 2020).
 
 ## API Gateway Cloudfront Origins 
 
-![leverage-aws-cloudfront](../../../../assets/images/diagrams/aws-cloudfront-api-gw.png "Leverage"){: style="width:950px"}
+![leverage-aws-cloudfront](/assets/images/diagrams/aws-cloudfront-api-gw.png "Leverage"){: style="width:950px"}
 <figcaption style="font-size:15px">
 <b>Figure:</b> AWS CloudFront with API Gateway as origin diagram.
 (Source: AWS, 

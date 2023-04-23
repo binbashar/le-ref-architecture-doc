@@ -5,7 +5,7 @@
 The below diagram is based on our 
 [binbash Leverage Reference Architecture CI-CD official documentation](https://binbash.atlassian.net/wiki/external/1962410007/YWMxMmY1NzM4MmIyNDRmMDkxMDIwNDY3OWU4ZDYwZjA)
 
-![leverage-aws-demoapps](../../../../assets/images/diagrams/aws-k8s-eks-ci-cd-argocd.png "Leverage"){: style="width:750px"}
+![leverage-aws-demoapps](/assets/images/diagrams/aws-k8s-eks-ci-cd-argocd.png "Leverage"){: style="width:750px"}
 <figcaption style="font-size:15px">
 <b>Figure:</b> K8S reference architecture CI/CD with ArgoCD diagram.
 (Source: binbash Leverage Confluence Doc, 

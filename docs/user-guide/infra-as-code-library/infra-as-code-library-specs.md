@@ -76,7 +76,7 @@
     Continuously perform updates, additions, and fixes to libraries and modules. 
 
 ??? important ":checkered_flag: **Orchestrated in automation**"         
-    We use the [leverage-cli](../leverage-cli/index.md) for this purpose 
+    We use the [leverage-cli](/user-guide/leverage-cli/overview/) for this purpose 
         
 ??? important ":checkered_flag: **Proven & Tested**"      
     Every commit goes through a suite of automated tests to grant code styling and functional testing.
@@ -104,4 +104,4 @@
     --help command, doc-string and in line comments.
      
 ??? important ":checkered_flag: **Supported  & Customizable**"      
-     Commercially maintained and supported by [**_binbash_**](../../work-with-us/support.md).
+     Commercially maintained and supported by [**_binbash_**](/work-with-us/support/).

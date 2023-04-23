@@ -38,7 +38,7 @@ After deciding RTO and RPO we have options available to achieve the time objecti
      that is available, this can even be performed automatically with Route53 or other DNS services that provide health
      check mechanisms as well as load balancing.
 
-![leverage-aws-dr](../../../../assets/images/diagrams/aws-route53-dns-dr.png "Leverage"){: style="width:800px"}
+![leverage-aws-dr](/assets/images/diagrams/aws-route53-dns-dr.png "Leverage"){: style="width:800px"}
 <figcaption style="font-size:15px">
 <b>Figure:</b> 2 sets of app instances, each behind an elastic load balancer in two separate regions (just as reference).
 (Source: Randika Rathugamage, 
@@ -47,7 +47,7 @@ After deciding RTO and RPO we have options available to achieve the time objecti
 Medium blogpost, accessed December 1st 2020).
 </figcaption>
 
-![leverage-aws-dr](../../../../assets/images/diagrams/aws-route53-dns-health-checks.png "Leverage"){: style="width:800px"}
+![leverage-aws-dr](/assets/images/diagrams/aws-route53-dns-health-checks.png "Leverage"){: style="width:800px"}
 <figcaption style="font-size:15px">
 <b>Figure:</b> AWS calculated — or parent — health check, we can fail on any number of child health checks (just as reference).
 (Source: Simon Tabor, 

@@ -151,8 +151,8 @@ extra_css:
 nav:
   - Home:
     - Home: "index.md"
-    - Welcome: "welcome.md"
-    - First steps: "try-leverage/introduction.md"
+    - Welcome: "concepts/index.md"
+    - First steps: "try-leverage/index.md"
     - How it works: "how-it-works/ref-architecture/index.md"
     - User guide: "user-guide/index.md"
     - Work with us: "work-with-us/index.md"
@@ -220,6 +220,7 @@ nav:
         - Secrets: "user-guide/ref-architecture-aws/features/secrets/secrets.md"
         - Compute:
           - Overview: "user-guide/ref-architecture-aws/features/compute/overview.md"
+          - K8s EKS: "user-guide/ref-architecture-aws/features/compute/k8s-eks.md"
           - K8s Kops: "user-guide/ref-architecture-aws/features/compute/k8s-kops.md"
           - K8s Service Mesh: "user-guide/ref-architecture-aws/features/compute/k8s-service-mesh.md"
           - Serverless: "user-guide/ref-architecture-aws/features/compute/serverless.md"

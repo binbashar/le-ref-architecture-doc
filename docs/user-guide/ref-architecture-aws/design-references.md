@@ -1,5 +1,4 @@
-# Read more
-
+# Design References
 Please consider some official AWS docs, blog post and whitepapers we've considered for the current 
 Reference Solutions Architecture design:
 

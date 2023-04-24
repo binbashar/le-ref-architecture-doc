@@ -242,6 +242,7 @@ nav:
           - Backups: "user-guide/ref-architecture-aws/features/reliability/backups.md"
           - Disaster Recovery: "user-guide/ref-architecture-aws/features/reliability/dr.md"
           - High Availability: "user-guide/ref-architecture-aws/features/reliability/high-availability.md"
+      - Design References: "user-guide/ref-architecture-aws/design-references.md"
     - Reference Architecture for EKS:
       - Overview: "user-guide/ref-architecture-eks/overview.md"
       - VPC: "user-guide/ref-architecture-eks/vpc.md"
@@ -275,6 +276,8 @@ nav:
       - Forks workflow: "user-guide/infra-as-code-library/infra-as-code-library-forks.md"
       - Specifications: "user-guide/infra-as-code-library/infra-as-code-library-specs.md"
       - Modules by Technology: "user-guide/infra-as-code-library/modules-library-by-technology.md"
+    - Troubleshooting:
+      - Identities: "user-guide/troubleshooting/credentials.md"
   - Work with us:
       - Overview: "work-with-us/index.md"
       - Support: "work-with-us/support.md"

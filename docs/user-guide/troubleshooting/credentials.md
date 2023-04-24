@@ -1,5 +1,7 @@
 # Troubleshooting credentials issues
 
+## General tips
+
 ### Gathering more information
 Trying to get as much information of the issue as possible is key when troubleshooting. Keep reading to find out typical scenarios and how you can gather more information about each.
 
@@ -29,3 +31,9 @@ Since Leverage stores the AWS config and credentials file under a non-default pa
 export AWS_CONFIG_FILE=~/.aws/[project_name_here]/config
 export AWS_SHARED_CREDENTIALS_FILE=~/.aws/[project_name_here]/credentials
 ```
+
+## Troubleshooting SSO credentials
+TODO
+
+## Troubleshooting IAM credentials
+TODO

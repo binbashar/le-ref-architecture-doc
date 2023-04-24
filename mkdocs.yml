@@ -248,6 +248,7 @@ nav:
       - Overview: "user-guide/ref-architecture-eks/overview.md"
       - VPC: "user-guide/ref-architecture-eks/vpc.md"
       - Components: "user-guide/ref-architecture-eks/components.md"
+      - Upgrading EKS: "user-guide/ref-architecture-eks/cluster-upgrade.md"
     - Reference Architecture for Ansible:
       - Overview: "user-guide/ref-architecture-ansible/overview.md"
       - Workflow: "user-guide/ref-architecture-ansible/workflow.md"

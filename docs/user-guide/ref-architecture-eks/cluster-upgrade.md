@@ -31,6 +31,7 @@ Here you need to get a good understanding of the things that changed between the
 Another documentation you should refer to is the Kubernetes official documentation, specially the [Kubernetes API Migration Guide](https://kubernetes.io/docs/reference/using-api/deprecation-guide/) which explains in great detail what has been changed.
 
 For instance, typical changes include:
+
 * Removed/deprecated Kubernetes APIs: this one may require that you also upgrade the resources used by your applications or even base components your applications rely on. E.g. cert-manager, external-dns, etc.
 * You can use tools such as [kubent](https://github.com/doitintl/kube-no-trouble) to find deprecated API versions. That should list the resources that need to be upgraded however you may still need to figure out if it's an EKS base component or a cluster component installed via Terraform & Helm.
 * Base component updates: this is about changes to control plane components. components that run on the nodes. An example of that would be the deprecation and removal of Docker as a container runtime.
@@ -100,11 +101,13 @@ Namely these components are:
 In recent versions EKS is able to manage these components as add-ons which makes their upgrades less involved and which can even be performed through a recent version of the Terraform EKS module. However, we are not currently using EKS Add-ons to manage the installation of these components, we are using the so called self-managed approach, so the upgrade needs to be applied manually.
 
 Generally speaking, the upgrade procedure could be summed up as follows:
+
 1. Determine current version
 2. Determine the appropriate version you need to upgrade to
 3. Upgrade each component and verify
 
 Now, the recommendation is to refer to the following guides which carefully describe the steps that need to be performed:
+
 1. Kube-proxy: https://docs.aws.amazon.com/eks/latest/userguide/managing-kube-proxy.html#updating-kube-proxy-add-on
 2. CoreDNS: https://docs.aws.amazon.com/eks/latest/userguide/managing-coredns.html#updating-coredns-add-on
 3. VPC CNI: https://docs.aws.amazon.com/eks/latest/userguide/managing-vpc-cni.html#updating-vpc-cni-add-on

@@ -166,6 +166,7 @@ nav:
     - Configure the Management account: "try-leverage/management-account.md"
     - Configure the Security and Shared accounts: "try-leverage/security-and-shared-accounts.md"
     - Post-deployment: "try-leverage/post-deployment.md"
+    - Add AWS Accounts: "try-leverage/add-aws-accounts.md"    
 
   - Concepts:
     - Index: "concepts/index.md"

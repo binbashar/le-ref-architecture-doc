@@ -1,6 +1,7 @@
 # AWS SSO
 
-TODO Replace JumpCloud with AWS SSO
+!!! warn "Important"
+    Parts of this documentation are outdated. JumpCloud is no longer part of our reference architecture.
 
 ## Single Sign-On (SSO)
 JumpCloud will be configured as the Identity Provider (IdP) that we will integrate with AWS SSO

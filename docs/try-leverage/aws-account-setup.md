@@ -1,6 +1,6 @@
 # Creating your AWS Management account
 
-## Create an AWS account
+## Create the first AWS account
 First and foremost you'll need to [create an AWS account](/user-guide/ref-architecture-aws/features/organization/configuration/) for your project. This will be the management account of your [AWS Organization](https://docs.aws.amazon.com/organizations/latest/userguide/orgs_getting-started_concepts.html) and the email address you use for signing up will be the [root user](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_root-user.html) of this account -- you can see this user represented in the [architecture diagram](../#leverage-landing-zone).
 
 Since the root user is the main access point to your account it is strongly recommended that you keep its credentials (email, password) safe by following [AWS best practices](https://docs.aws.amazon.com/IAM/latest/UserGuide/best-practices.html).

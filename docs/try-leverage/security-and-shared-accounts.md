@@ -1,5 +1,10 @@
 # Configure the Security and Shared accounts
-Just a couple more accounts to get ready. Let's go!
+You should by now be more familiar with the steps required to create and configure the Management account. Now you need to do pretty much the same with two more accounts: Security and Shared. Follow the sections in this page to get started!
+
+!!! info "What are these accounts used for?"
+    The **Security** account is intended for operating security services (e.g. GuardDuty, AWS Security Hub, AWS Audit Manager, Amazon Detective, Amazon Inspector, and AWS Config), monitoring AWS accounts, and automating security alerting and response.
+
+    The **Shared Services** account supports the services that multiple applications and teams use to deliver their outcomes. Some examples include VPN servers, monitoring systems, and centralized logs management services.
 
 ## Deploy the Security account's layers
 The next account to orchestrate is the **security** account.
@@ -52,7 +57,7 @@ leverage terraform apply
 ## Deploy the Shared account's layers
 The last account in this deployment is the `shared` account.
 
-The account's objective is managing infrastructure for shared services and resources like directory services, DNS, VPN, monitoring tools or centralized logging solutions.
+Again, this account is intended for managing the infrastructure of shared services and resources such as directory services, DNS, VPN, monitoring tools or centralized logging solutions.
 
 Place yourself in the `shared` directory.
 ``` bash

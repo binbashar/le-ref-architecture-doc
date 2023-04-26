@@ -166,7 +166,7 @@ nav:
     - Configure the Management account: "try-leverage/management-account.md"
     - Configure the Security and Shared accounts: "try-leverage/security-and-shared-accounts.md"
     - Post-deployment: "try-leverage/post-deployment.md"
-    - Add AWS Accounts: "try-leverage/add-aws-accounts.md"    
+    - Add more AWS Accounts: "try-leverage/add-aws-accounts.md"    
 
   - Concepts:
     - Index: "concepts/index.md"
@@ -243,7 +243,7 @@ nav:
           - Backups: "user-guide/ref-architecture-aws/features/reliability/backups.md"
           - Disaster Recovery: "user-guide/ref-architecture-aws/features/reliability/dr.md"
           - High Availability: "user-guide/ref-architecture-aws/features/reliability/high-availability.md"
-      - Design References: "user-guide/ref-architecture-aws/design-references.md"
+      - References: "user-guide/ref-architecture-aws/references.md"
     - Reference Architecture for EKS:
       - Overview: "user-guide/ref-architecture-eks/overview.md"
       - VPC: "user-guide/ref-architecture-eks/vpc.md"

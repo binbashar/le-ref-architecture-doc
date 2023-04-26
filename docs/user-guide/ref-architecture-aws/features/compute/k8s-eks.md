@@ -1,4 +1,4 @@
 # AWS Elastic Kubernetes Service (EKS)
 
 !!! info "Important"
-    This page has been moved [here](/user-guide/ref-architecture-eks/overview/).
+    Please check the [Reference Architecture for EKS](/user-guide/ref-architecture-eks/overview/) to learn more details about this.

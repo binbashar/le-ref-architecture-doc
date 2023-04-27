@@ -1,7 +1,7 @@
 # Our Tech Stack
 Leverage was built around the [AWS Well Architected Framework](https://aws.amazon.com/architecture/well-architected/) and it uses a stack that includes [Terraform](https://www.terraform.io/), [Ansible](https://www.ansible.com/), [Helm](https://helm.sh/) and other tools.
 
-We are also adopters and supporters of Kubernetes and the Cloud Native movement, which you should become self-evident as you keep exploring our technology stack.
+We are also adopters and supporters of Kubernetes and the Cloud Native movement, which should become self-evident as you keep exploring our technology stack.
 
 ## Why did we choose our tech stack?
 

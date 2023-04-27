@@ -1,5 +1,7 @@
-# Shell environment
+# Getting Shell Access
 
+
+## The shell environment
 When launching a Terraform shell, Leverage provides the user with a completely isolated environment tailored to operate in the current project via a Docker container.
 
 The whole project is mounted on a directory named after the value for `project_long` in the global configuration file, or simply named `"project"` if this value is not defined. A project named `myexample`, would be mounted in `/myexample`.
@@ -7,7 +9,7 @@ The whole project is mounted on a directory named after the value for `project_l
 The `.gitconfig` user's file is also mounted on `/etc/gitconfig` for convenience, while (if `ssh-agent` is running), the socket stated in `SSH_AUTH_SOCK` is mounted on `/ssh-agent`. Also, the credentials files (`credentials` and `config`) found in the project AWS credentials directory (`~/.aws/myexample`), are mapped to the locations given by the environment variables `AWS_SHARED_CREDENTIALS_FILE` and `AWS_CONFIG_FILE` respectively within the container. 
 
 ## Authentication
-Determining which credentials are needed to operate on a layer, and retrieving those credentials, may prove cumbersome for many complex layer definitions. In addition to that, correctly configuring them can also become a tedious an error prone process. For that reason Leverage automates this process upon launching the shell if requested by the user via the [`shell` command options](./reference/terraform.md#shell).
+Determining which credentials are needed to operate on a layer, and retrieving those credentials, may prove cumbersome for many complex layer definitions. In addition to that, correctly configuring them can also become a tedious an error prone process. For that reason Leverage automates this process upon launching the shell if requested by the user via the [`shell` command options](reference/terraform.md#shell).
 
 Bear in mind, that an authenticated shell session's credentials are obtained for the layer in which the session was launched. These credentials may not be valid for other layers in which different roles need to be assumed or require more permissions.
 
@@ -23,7 +25,7 @@ The user's programmatic keys must be configured beforehand via `leverage credent
 
 ### Single-Sign On
 
-If authentication via SSO is required, the user will need to [configure](./reference/aws.md#configure-sso) or [login](./reference/aws.md#sso-login) into SSO before launching the shell via
+If authentication via SSO is required, the user will need to [configure](reference/aws.md#configure-sso) or [login](./reference/aws.md#sso-login) into SSO before launching the shell via
 
 ``` bash
 leverage terraform shell --sso

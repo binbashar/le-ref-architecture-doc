@@ -1,15 +1,15 @@
-![binbash-logo](../assets/images/logos/binbash-leverage-header.png "binbash"){: style="width:800px"}
+![binbash-logo](/assets/images/logos/binbash-leverage-header.png "binbash"){: style="width:800px"}
 
-# Overview
-## Pre-requisites
+# User Guide
 
-!!! done "Local env pre-required packages"
+## Overview
+The pages in this section explore, with great detail, the architecture of the components that make up Leverage.
 
-    * [x] **Docker engine** `>= 20.x.y`(check via `docker --version`)
-    * [x] **Python** `>= 3.8` (check via `python3 --version` || `python3.8 --version`)
-    * [x] **leverage cli** `>= 1.0.0` (check via `leverage --version`)`
+- [x] Reference Architectures
+    - [x] [Reference Architecture for AWS](ref-architecture-aws/overview/)
+    - [x] [Reference Architecture for EKS](ref-architecture-eks/overview/)
+    - [x] [Reference Architecture for Ansible](ref-architecture-ansible/overview/)
+- [x] [Infrastructure-as-Code Library](infra-as-code-library/overview/)
+- [x] [Leverage CLI](leverage-cli/overview/)
 
-## Configurations & Workflow
-- [x] [le-tf-infra-aws](ref-architecture-aws/dir-structure.md)
-- [x] [le-tf-vault](ref-architecture-vault/dir-structure.md)
-- [x] [le-ansible-infra](ref-architecture-ansible/configs.md)
+But don't feel constrained to the links above, feel free to use the left menu to explore more on your own.

@@ -16,7 +16,7 @@ We're constantly kicking with a lot of improvements and some exciting new featur
 ## Infrastructure as Code Library
 
 !!! done ":calendar: RELEASES"
-    ![leverage-tf](../../assets/images/logos/terraform.png "Terraform"){: style="width:25px"} **Releases |Terraform Leverage™ Modules** :
+    ![leverage-tf](/assets/images/logos/terraform.png "Terraform"){: style="width:25px"} **Releases |Terraform Leverage™ Modules** :
     
     - [terraform-aws-waf-owasp](https://github.com/binbashar/terraform-aws-waf-owasp/releases)
     - [terraform-aws-cost-billing-alarm](https://github.com/binbashar/terraform-aws-cost-billing-alarm/releases)
@@ -31,12 +31,12 @@ We're constantly kicking with a lot of improvements and some exciting new featur
     - [terraform-aws-backup-notifications](https://github.com/binbashar/terraform-aws-backup-notifications/releases)
     - [terraform-aws-rds-export-to-s3](https://github.com/binbashar/terraform-aws-rds-export-to-s3/releases)
     
-    ![leverage-tf](../../assets/images/logos/terraform.png "Terraform"){: style="width:25px"} **Releases | Terraform Community Forks Modules**:
+    ![leverage-tf](/assets/images/logos/terraform.png "Terraform"){: style="width:25px"} **Releases | Terraform Community Forks Modules**:
     
     - [terraform-aws-sso]([terraform-aws-sso](https://github.com/binbashar/terraform-aws-sso/tags))
     - ...
     
-    ![leverage-helm](../../assets/images/logos/helm.png "Terraform"){: style="width:25px"} **Releases | Helm Leverage™ Charts**:
+    ![leverage-helm](/assets/images/logos/helm.png "Terraform"){: style="width:25px"} **Releases | Helm Leverage™ Charts**:
     
     - [helm-charts](https://github.com/binbashar/helm-charts/blob/master/index.yaml)
 

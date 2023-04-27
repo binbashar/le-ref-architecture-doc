@@ -40,7 +40,7 @@ To run tests, just run...
 ## Releasing
 ### CircleCi PR auto-release job
 
-![circleci-logo](../assets/images/logos/circleci.png "CircleCI"){: style="width:150px"}
+![circleci-logo](/assets/images/logos/circleci.png "CircleCI"){: style="width:150px"}
 
 - <https://circleci.com/gh/binbashar/bb-devops-tf-infra-aws>
 - **NOTE:** Will only run after merged PR.

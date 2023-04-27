@@ -1,18 +1,16 @@
-![binbash-logo](../../assets/images/logos/binbash-leverage-header.png "binbash"){: style="width:800px"}
+![binbash-logo](/assets/images/logos/binbash-leverage-header.png "binbash"){: style="width:800px"}
 
 # How it works
-
 The objective of this document is to explain how the **binbash Leverage Reference Architecture for AWS**
 works, in particular how the Reference Architecture model is built and why we need it.
 
 ## Overview
-
 This documentation contains all the guidelines to create binbash 
 Leverage Reference Architecture for AWS that will be implemented on the 
 Projects’ AWS infrastructure.
 
 We're assuming you've already have in place your AWS Landing Zone based on the
-[First Steps](../../first-steps/introduction.md) guide. 
+[First Steps](/try-leverage/index.md) guide. 
 
 !!! check "Our Purpose"
     * [x] **Democratize advanced technologies:** As complex as it may sound, the basic idea behind this design principle is 

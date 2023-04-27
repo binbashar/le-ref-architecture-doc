@@ -1,26 +1,39 @@
 # Workflow
 
-## Steps 
+## Overview
+The sequence of commands that you run to operate on each layer is called **the Terraform workflow**. In other words, it's what you would typically run in order to create, update, or delete the resources defined in a given layer.
+
+## The basic workflow
+Assuming that you have everything configured, the frequent commands you'll need to run are these:
+```
+# 1. Initialize
+leverage terraform init
+
+# 2. Preview any changes
+leverage terraform plan
+
+# 3. Apply any changes
+leverage terraform apply
+```
+
+## The extended workflow
+Now, the extended workflow is annotated with more explanations and it is intended for users who haven't yet worked with Leverage on a daily basis:
+
 !!! check "Terraform Workflow"
-    1. Make sure you've read and prepared your local development environment following the
-    [Overview base-configurations](../index.md) section.
-    2. Depending in which Terraform Ref Architecture repo you are working, please review and assure you meet
-    all the [terraform aws pre-requisites](./configs.md) or 
-    [terraform aws pre-requisites](./dir-structure.md)  
-        - [x] [Remote State](tf-state-workflow.md)
-        - [x] Configuration files
-        - [x] [AWS Profile and credentials](../features/identities/credentials.md)
-        - [x] [Vault token secret](../features/identities/credentials-vault.md)
-    3. Get into the folder that you need to work with (e.g. `2_identities`)
-    4. Run `leverage terraform init`
-    5. Make whatever changes you need to make
-    6. Run `leverage terraform plan` if you only mean to preview those changes
-    7. Run `leverage terraform apply` if you want to review and likely apply those changes
+    1. Make sure you understood the basic concepts:
+        - [x] [Overview](overview.md)
+        - [x] [Configuration](configuration.md)
+        - [x] [Directory Structure](dir-structure.md)
+        - [x] [Remote State](tf-state.md)
+    2. Make sure you installed the [Leverage CLI](../leverage-cli/overview.md).
+    3. Go to the layer (directory) you need to work with, e.g. `shared/global/base-identities/`.
+    4. Run `leverage terraform init` -- only the first time you work on this layer, or if you upgraded modules or providers versions, or if you made changes to the Terraform remote backend configuration.
+    5. Make any changes you need to make. For instance: modify a resource definition, add an output, add a new resource, etc.
+    6. Run `leverage terraform plan` to preview any changes.
+    7. Run `leverage terraform apply` to give it a final review and to apply any changes.
 
-!!! info
-    Please note you can make use of the `--layers` parameter to apply Terraform commands to more than one layer. 
-
-    For more information see [here](../leverage-cli/reference/terraform/layers.md)
+!!! info "Tip"
+    You can use the `--layers` argument to run Terraform commands on more than one layer. For more information see [here](../leverage-cli/reference/terraform/layers.md)
 
 !!! note 
     If desired, at step **#5** you could submit a PR, allowing you and the rest of the team to 
@@ -30,11 +43,8 @@
     rest of our tools and practices like CI/CD, in
 
 ## Running in Automation
-![leverage-aws-terraform](../../assets/images/diagrams/aws-terraform-automation.png "Terraform"){: style="width:350"}
+![leverage-aws-terraform](/assets/images/diagrams/aws-terraform-automation.png "Terraform"){: style="width:350"}
 <figcaption style="font-size:15px">Figure: Running terraform with AWS in automation (just as reference).</figcaption>
 
-## Read More
-
-!!! info "Extra resources"
+!!! info "Read More"
     * :ledger: [Running Terraform in automation](https://learn.hashicorp.com/terraform/development/running-terraform-in-automation)
-    

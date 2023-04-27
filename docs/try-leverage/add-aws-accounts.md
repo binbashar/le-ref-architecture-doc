@@ -4,7 +4,7 @@
 You can add new AWS accounts to your Leverage project by following the steps in this page.
 
 !!! info "Important"
-    In the examples belo, we will be using `apps-prd` as the account we will be adding and it will be created in the `us-east-1` region.
+    In the examples below, we will be using `apps-prd` as the account we will be adding and it will be created in the `us-east-1` region.
 
 ## Create the new account in your AWS Organization
 1. Go to `management/global/organizations`.

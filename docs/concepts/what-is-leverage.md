@@ -1,5 +1,5 @@
 # What is Leverage?
-Leverage was made of a significant amount of knowledge, acquired through several years of experience, turned into an ecosystem of code, tools and workflows that enables you to build the AWS infrastructure for your applications and services quickly and securely.
+Leverage was made out of a significant amount of knowledge, acquired through several years of experience, turned into an ecosystem of code, tools, and workflows that enables you to build the AWS infrastructure for your applications and services quickly and securely.
 
 Since all the code and modules are already built, we can get you up and running **up to 10x faster** :rocket: 
 than a consulting company -- :white_check_mark: *typically in just a few weeks!* -- and on top of code that is thoroughly documented, tested, and has been proven in production at dozens of other project deployments.

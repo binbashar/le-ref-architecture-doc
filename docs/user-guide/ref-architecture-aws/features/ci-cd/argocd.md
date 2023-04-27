@@ -1,6 +1,6 @@
 ## ArgoCD
 
-#### AWS Apps & Services K8s EKS accounts diagram
+### AWS Apps & Services K8s EKS accounts diagram
 
 The below diagram is based on our 
 [binbash Leverage Reference Architecture CI-CD official documentation](https://binbash.atlassian.net/wiki/external/1962410007/YWMxMmY1NzM4MmIyNDRmMDkxMDIwNDY3OWU4ZDYwZjA)

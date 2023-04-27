@@ -232,7 +232,10 @@ nav:
           - PostgresSQL: "user-guide/ref-architecture-aws/features/database/postgres.md"
         - Storage: "user-guide/ref-architecture-aws/features/storage/storage.md"
         - CDN: "user-guide/ref-architecture-aws/features/cdn/cdn.md"
-        - CI/CD: "user-guide/ref-architecture-aws/features/ci-cd/ci-cd.md"
+        - CI/CD:
+          - ArgoCD: "user-guide/ref-architecture-aws/features/ci-cd/argocd.md"
+          - Jenkins & ArgoCD: "user-guide/ref-architecture-aws/features/ci-cd/jenkins-argocd.md"
+          - Jenkins & Spinnaker: "user-guide/ref-architecture-aws/features/ci-cd/jenkins-spinnaker.md"
         - Monitoring:
           - Monitoring: "user-guide/ref-architecture-aws/features/monitoring/monitoring.md"
           - Metrics: "user-guide/ref-architecture-aws/features/monitoring/metrics.md"

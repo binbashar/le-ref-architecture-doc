@@ -52,7 +52,9 @@ This reference architecture supports a growing number of AWS services. This sect
 - [x] [AWS CloudFront](cdn/cdn.md)
 
 ## CI/CD (Continuous Integration / Continuous Delivery)
-- [x] [CI/CD](ci-cd/ci-cd.md)
+- [x] [ArgoCD](ci-cd/argocd.md)
+- [x] [Jenkins & ArgoCD](ci-cd/jenkins-argocd.md)
+- [x] [Jenkins & Spinnaker](ci-cd/jenkins-spinnaker.md)
 
 ## Monitoring | Metrics, Logs, APM and Tracing
 - [x] [Monitoring](monitoring/monitoring.md)

@@ -25,7 +25,7 @@ sso_start_url = "https://d-xyz01234567.awsapps.com/start"
 
 
 !!! info "Further info on configuring SSO"
-    There is more information on how to configure SSO [here](/user-guide/user-guide/sso/sso/#preparing-the-project-to-use-aws-sso).
+    There is more information on how to configure SSO [here](/user-guide/ref-architecture-aws/features/sso/configuration/#preparing-the-project-to-use-aws-sso).
 
 ### Update backend profiles in the management account
 It's time to set the right profile names in the backend configuration files. Open this file: `management/config/backend.tfvars` and change the `profile` value from this:

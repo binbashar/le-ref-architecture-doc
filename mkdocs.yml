@@ -278,8 +278,7 @@ nav:
       - Forks workflow: "user-guide/infra-as-code-library/infra-as-code-library-forks.md"
       - Specifications: "user-guide/infra-as-code-library/infra-as-code-library-specs.md"
       - Modules by Technology: "user-guide/infra-as-code-library/modules-library-by-technology.md"
-    - Troubleshooting:
-      - Identities: "user-guide/troubleshooting/credentials.md"
+    - Troubleshooting: "user-guide/troubleshooting/index.md"
   - Work with us:
       - Overview: "work-with-us/index.md"
       - Support: "work-with-us/support.md"

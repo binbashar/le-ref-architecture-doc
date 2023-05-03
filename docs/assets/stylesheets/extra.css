@@ -87,3 +87,14 @@ custom code blocks coloring
 .fsg-path, .fsg-prompt {
     color: mediumseagreen;
 }
+
+/*
+Footer social media icons:
+set the size of the svg icons and the espace between them.
+*/
+.md-social__link {
+    width: 2rem;
+}
+.md-social__link svg {
+    max-height: 1.6rem;
+}

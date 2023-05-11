@@ -98,3 +98,13 @@ set the size of the svg icons and the espace between them.
 .md-social__link svg {
     max-height: 1.6rem;
 }
+
+/*
+hide content only for mobile devices
+*/
+@media only screen and (min-device-width: 280px) and (max-device-width: 480px)
+{
+	.hide-on-mobile {
+    display: none;
+	}
+}

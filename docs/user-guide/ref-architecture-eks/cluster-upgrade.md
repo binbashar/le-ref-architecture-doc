@@ -3,6 +3,9 @@
 ## Brief
 This guideline includes considerations and steps that should be performed when upgrading a cluster to a newer version.
 
+An official AWS procedure (step-bystep instructions guide) for upgrading an EKS cluster can be found at the following link:
+[https://repost.aws/knowledge-center/eks-plan-upgrade-cluster](https://repost.aws/knowledge-center/eks-plan-upgrade-cluster)
+
 ## Upgrade Plan Overview
 1. General considerations
 2. Preparation Steps

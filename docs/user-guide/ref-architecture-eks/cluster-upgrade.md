@@ -149,3 +149,7 @@ CodeDNS: no issues. Upgraded to v1.8.7-eksbuild.1.
 VPC CNI: no issues. Upgraded to latest version available, v1.12.1.
 
 Outstanding issue: Prometheus/Grafana instance became unresponsive right during the upgrade of the control plane. It was fully inaccessible. A stop and start was needed to bring it back up.
+
+!!! info "Official AWS procedure"
+    A step-bystep instructions guide for upgrading an EKS cluster can be found at the following link:
+    [https://repost.aws/knowledge-center/eks-plan-upgrade-cluster](https://repost.aws/knowledge-center/eks-plan-upgrade-cluster)

@@ -46,13 +46,6 @@ When prompted, answer `yes`. Now you can safely remove the `terraform.tfstate` a
     * [Terraform backend](https://www.terraform.io/docs/language/settings/backends/index.html)
     * [How to manage Terraform state](https://blog.gruntwork.io/how-to-manage-terraform-state-28f5697e68fa)
 
-### Identities layer
-The definition for the identities layer is located within the `global` directory. Move into the `global/base-identities` directory and run:
-``` bash
-leverage terraform init
-leverage terraform apply
-```
-
 ### Organizations layer
 Next, in the same fashion as in the previous layer, move into the `global/organizations` directory and run:
 ``` bash

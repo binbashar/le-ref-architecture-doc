@@ -690,13 +690,6 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#identities-layer" class="md-nav__link">
-    Identities layer
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
   <a href="#security-layer" class="md-nav__link">
     Security layer
   </a>
@@ -719,13 +712,6 @@
           <li class="md-nav__item">
   <a href="#terraform-backend-layer_1" class="md-nav__link">
     Terraform backend layer
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#identities-layer_1" class="md-nav__link">
-    Identities layer
   </a>
   
 </li>
@@ -3486,13 +3472,6 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#identities-layer" class="md-nav__link">
-    Identities layer
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
   <a href="#security-layer" class="md-nav__link">
     Security layer
   </a>
@@ -3515,13 +3494,6 @@
           <li class="md-nav__item">
   <a href="#terraform-backend-layer_1" class="md-nav__link">
     Terraform backend layer
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#identities-layer_1" class="md-nav__link">
-    Identities layer
   </a>
   
 </li>
@@ -3606,11 +3578,6 @@ leverage<span class="w"> </span>terraform<span class="w"> </span>apply
 </code></pre></div></p>
 <p>When prompted, answer <code>yes</code>.</p>
 <p>Now you can safely remove the <code>terraform.tfstate</code> and <code>terraform.tfstate.backup</code> files created during the <code>apply</code> step.</p>
-<h3 id="identities-layer">Identities layer<a class="headerlink" href="#identities-layer" title="Permanent link"> ¶</a></h3>
-<p>Now, move into the <code>global/base-identities</code> directory, and run:
-<div class="highlight"><pre><span></span><code>leverage<span class="w"> </span>terraform<span class="w"> </span>init
-leverage<span class="w"> </span>terraform<span class="w"> </span>apply
-</code></pre></div></p>
 <h3 id="security-layer">Security layer<a class="headerlink" href="#security-layer" title="Permanent link"> ¶</a></h3>
 <p>The last layer for the <code>security</code> account is the security layer. Move into the <code>us-east-1/security-base</code> directory and run:
 <div class="highlight"><pre><span></span><code>leverage<span class="w"> </span>terraform<span class="w"> </span>init
@@ -3640,10 +3607,6 @@ leverage<span class="w"> </span>terraform<span class="w"> </span>apply
 </code></pre></div></p>
 <p>When prompted, answer <code>yes</code>.</p>
 <p>Now you can safely remove the <code>terraform.tfstate</code> and <code>terraform.tfstate.backup</code> files created during the <code>apply</code> step.</p>
-<h3 id="identities-layer_1">Identities layer<a class="headerlink" href="#identities-layer_1" title="Permanent link"> ¶</a></h3>
-<p>Now move into the <code>global/base-identities</code> directory and run:
-<div class="highlight"><pre><span></span><code>leverage<span class="w"> </span>terraform<span class="w"> </span>init
-</code></pre></div></p>
 <h3 id="security-layer_1">Security layer<a class="headerlink" href="#security-layer_1" title="Permanent link"> ¶</a></h3>
 <p>Next, move into the <code>us-east-1/security-base</code> directory:
 <div class="highlight"><pre><span></span><code>leverage<span class="w"> </span>terraform<span class="w"> </span>init

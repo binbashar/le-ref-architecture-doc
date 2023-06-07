@@ -40,13 +40,6 @@ When prompted, answer `yes`.
 
 Now you can safely remove the `terraform.tfstate` and `terraform.tfstate.backup` files created during the `apply` step.
 
-### Identities layer
-Now, move into the `global/base-identities` directory, and run:
-``` bash
-leverage terraform init
-leverage terraform apply
-```
-
 ### Security layer
 The last layer for the `security` account is the security layer. Move into the `us-east-1/security-base` directory and run:
 ``` bash
@@ -87,12 +80,6 @@ leverage terraform init
 When prompted, answer `yes`.
 
 Now you can safely remove the `terraform.tfstate` and `terraform.tfstate.backup` files created during the `apply` step.
-
-### Identities layer
-Now move into the `global/base-identities` directory and run:
-``` bash
-leverage terraform init
-```
 
 ### Security layer
 Next, move into the `us-east-1/security-base` directory:

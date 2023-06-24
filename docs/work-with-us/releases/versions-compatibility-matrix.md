@@ -50,7 +50,7 @@ We suggest they should be upgraded soon.
 
 This project does not follow the **Terraform** or other release schedule. Leverage aims to
 provide a reliable deployment and operations experience for the [binbash Leverage™ Reference Architecture
-for AWS](https://leverage.binbash.com.ar/how-it-works/ref-architecture/), and typically releases about a quarter after
+for AWS](https://leverage.binbash.co/how-it-works/ref-architecture/), and typically releases about a quarter after
 the corresponding Terraform release. This time allows for the Terraform project to resolve any issues introduced
 by the new version and ensures that we can support the latest features.
 

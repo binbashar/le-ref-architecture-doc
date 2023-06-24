@@ -20,7 +20,7 @@ You can add new AWS accounts to your Leverage project by following the steps in 
         }
     ```
     Note that the `apps` organizational unit (OU) is being used as the parent OU of the new account. If you need to use a new OU you can add it to `organizational_units` variable in the same file.
-3. Run the [Terraform workflow](https://leverage.binbash.com.ar/user-guide/ref-architecture-aws/workflow/) to apply the new changes. Typically that would be this:
+3. Run the [Terraform workflow](https://leverage.binbash.co/user-guide/ref-architecture-aws/workflow/) to apply the new changes. Typically that would be this:
     ```shell
     leverage terraform init
     leverage terraform apply
@@ -101,7 +101,7 @@ In this example we will create the `apps-prd` account structure by using the `ap
             profile = "bb-apps-prd-oaar"
             ```
         2. In the step above, we are switching to the OAAR (OrganizationalAccountAccessRole) role because we are working with a brand new account that is empty, so, the only way to access it programmatically is through the OAAR role.
-        3. Now it's time to configure your OAAR credentials (if haven't already done so). For that you can follow the steps in [this section](https://leverage.binbash.com.ar/try-leverage/management-account/#update-the-bootstrap-credentials) of the official documentation.
+        3. Now it's time to configure your OAAR credentials (if haven't already done so). For that you can follow the steps in [this section](https://leverage.binbash.co/try-leverage/management-account/#update-the-bootstrap-credentials) of the official documentation.
 
 ### Create the Terraform Backend layer
 1. Copy the layer from an existing one:
@@ -118,7 +118,7 @@ In this example we will create the `apps-prd` account structure by using the `ap
     #    key = "apps-devstg/tf-backend/terraform.tfstate"
     #}
     ```
-3. Now run the [Terraform workflow](https://leverage.binbash.com.ar/user-guide/ref-architecture-aws/workflow/) to initialize and
+3. Now run the [Terraform workflow](https://leverage.binbash.co/user-guide/ref-architecture-aws/workflow/) to initialize and
     apply this layer. The flag `--skip-validation` is needed here since the bucket does not yet exist.
     ```shell
     leverage terraform init --skip-validation

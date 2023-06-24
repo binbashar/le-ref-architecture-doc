@@ -4,5 +4,5 @@ binbash follows the [CNCF Code of Conduct](https://github.com/cncf/foundation/bl
 
 Instances of abusive, harassing, or otherwise unacceptable behavior may be reported by contacting
 the binbash Code of Conduct responsibles via:
-- <leverage@binbash.com.ar>
-- <info@binbash.com.ar>
+- <leverage@binbash.co>
+- <info@binbash.co>

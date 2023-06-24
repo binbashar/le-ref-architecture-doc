@@ -50,7 +50,7 @@
         
         Improve, maintain, extend and update our reference architecture, which has been designed under optimal configs 
         for the most popular modern web and mobile applications needs. Its design is fully based on the 
-        [**AWS Well Architected Framework**](https://leverage.binbash.com.ar/support/#aws-well-architected-review).
+        [**AWS Well Architected Framework**](https://leverage.binbash.co/support/#aws-well-architected-review).
     
     - [x] **Open Source & Leverage DevOps Tools** 
         
@@ -61,7 +61,7 @@
     
     - [x] **Document team knowledge**
      
-        Get siloed and not yet documented knowledge and extend the [Leverage documentation](https://leverage.binbash.com.ar), such as 
+        Get siloed and not yet documented knowledge and extend the [Leverage documentation](https://leverage.binbash.co), such as 
         creating knowledgebase articles, runbooks, and other documentation for the internal team as well as binbash
         Leverage customers.
 

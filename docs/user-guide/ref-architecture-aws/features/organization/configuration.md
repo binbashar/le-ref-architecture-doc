@@ -27,7 +27,7 @@ the aliases automatically implicitly when running Terraform's Leverage code.
     #
     resource "aws_organizations_account" "apps_prd" {
       name      = "apps-prd"
-      email     = "aws+apps-prd@doamin.ar"
+      email     = "aws+apps-prd@domain.ar"
       parent_id = aws_organizations_organizational_unit.apps_prd.id
     }
     ```

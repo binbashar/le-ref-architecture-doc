@@ -8,7 +8,7 @@ installation. We always favours a private endpoint deployment only accessible
 from the VPN.
 
 ### AWS Self Hosted Vault Instance Endpoint
-`vault_address = "https://vault.aws.binbash.com.ar:8200"`
+`vault_address = "https://vault.aws.binbash.co:8200"`
 
 ### HCP Vault private API endpoint
 `vault_address = "https://bb-le-shared-vault-cluster.private.vault.xxxxxxxxxx.aws.hashicorp.cloud:8200"`

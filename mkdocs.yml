@@ -5,10 +5,10 @@
 site_name: binbash Leverage™
 repo_name: "binbashar/le-ref-architecture-doc"
 repo_url: https://github.com/binbashar/le-ref-architecture-doc
-site_url: https://leverage.binbash.com.ar/
+site_url: https://leverage.binbash.co/
 site_description: binbash Leverage Reference Architecture Documentation
 site_author: binbash
-copyright: Copyright &copy; 2017-2023 <a href="https://www.binbash.com.ar">binbash</a>
+copyright: Copyright &copy; 2017-2023 <a href="https://www.binbash.co">binbash</a>
 
 #===================================================================================#
 # Mkdocs Theme (Material Mkdocs) + Extras
@@ -76,7 +76,7 @@ extra:
 
   social:
     - icon: material/home
-      link: 'https://www.binbash.com.ar'
+      link: 'https://www.binbash.co'
     - icon: material/github
       link: 'https://github.com/binbashar'
     - icon: material/linkedin
@@ -95,13 +95,13 @@ extra:
   alternate:
     # Switch to English
     - name: English
-      #link: https://leverage.binbash.com.ar
+      #link: https://leverage.binbash.co
       link: /
       lang: en
 
     # Switch to Spanish
     - name: Spanish
-      #link: https://leverage.binbash.com.ar/es/
+      #link: https://leverage.binbash.co/es/
       link: /es
       lang: es
 
@@ -304,4 +304,4 @@ nav:
       #- Team: "work-with-us/team.md"
       #- Testimonials: "work-with-us/testimonials.md"
       - FAQs: "work-with-us/faqs.md"
-      - Contact Us: https://www.binbash.com.ar/contact
+      - Contact Us: https://www.binbash.co/contact

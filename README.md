@@ -7,14 +7,14 @@
 
 ## Overview
 This repository contains all files used to create 
-[binbash Leverage Reference Documentation](https://leverage.binbash.com.ar)
+[binbash Leverage Reference Documentation](https://leverage.binbash.co)
 
 ### Branches
 - `master`   --> contains the source code
 - `gh-pages` --> deployable (builded) version
 
 ## Deployed Documentation
-Check it out [here](https://leverage.binbash.com.ar/).
+Check it out [here](https://leverage.binbash.co/).
 
 ## Development / Contributing
 
@@ -28,7 +28,7 @@ Check it out [here](https://leverage.binbash.com.ar/).
 4. Update necessary `*.md` files inside the `docs/` folder and check your updates through the local environment
 browser 
 5. And create your PR from `BBL-XXX` to `master` branch.
-6. The Github Pages site [https://leverage.binbash.com.ar](https://leverage.binbash.com.ar/) will be automatically deployed 
+6. The Github Pages site [https://leverage.binbash.co](https://leverage.binbash.co/) will be automatically deployed 
 via CircleCI job to the `gh-pages` branch (currently being built from this branch).
     - It currently uses the `make docs-deploy-gh` cmd which could be locally executed if needed too.
 

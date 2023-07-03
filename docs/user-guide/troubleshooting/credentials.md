@@ -20,7 +20,7 @@ MFA is optionally used via the IAM method. It can be enabled/disabled in the [bu
 !!! info "Keep in mind that MFA should only be used with the IAM method, not with SSO."
 
 ## Identify which credentials are failing
-Since Leverage actually relies on Terraform and, since most of the definitions are AWS resources, it is likely that you are having issues with the Terraform AWS provider, in other words, you might be struggling with AWS credentials. Now, bear in mind that Leverage can also be used with other providers such as Gitlab, Github, Hashicorp Cloud Platform, or even SSH via Ansiblel; so the point here is to understand what credentials are not working for you in order to focus the troubleshooting on the right suspect.
+Since Leverage actually relies on Terraform and, since most of the definitions are AWS resources, it is likely that you are having issues with the Terraform AWS provider, in other words, you might be struggling with AWS credentials. Now, bear in mind that Leverage can also be used with other providers such as Gitlab, Github, Hashicorp Cloud Platform, or even SSH via Ansible; so the point here is to understand what credentials are not working for you in order to focus the troubleshooting on the right suspect.
 
 ## Determine the AWS profile you are using
 When you are facing AWS credentials issues it's important to understand what is the AWS profile that might be causing the issue. [Enabling verbose mode](../general/#gathering-more-information) should help with that. The suspect profile is likely to show right above the error line and, once you have identified that, you can skip to the next section.

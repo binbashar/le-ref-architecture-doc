@@ -37,7 +37,7 @@ For instance, the following is a snippet of the `project.yaml` file in which the
 ```
 project_name: example
 short_name: ex
-primary_region: us-east-1
+primary_region: us-east-2
 secondary_region: us-west-2
 ...
 ```
@@ -207,7 +207,7 @@ You will end up with something that looks like this:
     |   │       ├── 📄 roles.tf
     |   │       ├── 📄 users.tf
     |   │       └── 📄 variables.tf
-    |   └── 📂 <b>us-east-1</b>
+    |   └── 📂 <b>us-east-2</b>
     |       ├── 📂 <b>base-tf-backend</b>
     |       │   ├── 📄 config.tf
     |       │   ├── 📄 locals.tf
@@ -234,7 +234,7 @@ You will end up with something that looks like this:
     |   │       ├── 📄 roles.tf
     |   │       ├── 📄 users.tf
     |   │       └── 📄 variables.tf
-    │   └── 📂 <b>us-east-1</b>
+    │   └── 📂 <b>us-east-2</b>
     |       ├── 📂 <b>base-tf-backend</b>
     |       │   ├── 📄 config.tf
     |       │   ├── 📄 locals.tf
@@ -259,7 +259,7 @@ You will end up with something that looks like this:
         |       ├── 📄 roles.tf
         |       ├── 📄 service_linked_roles.tf
         |       └── 📄 variables.tf
-        └── 📂 <b>us-east-1</b>
+        └── 📂 <b>us-east-2</b>
             ├── 📂 <b>base-network</b>
             │   ├── 📄 account.tf
             │   ├── 📄 config.tf
@@ -281,7 +281,7 @@ You will end up with something that looks like this:
 
 As you can see, it is a structure comprised of directories for each account containing all the definitions for each of the accounts respective layers.
 
-The layers themselves are also grouped based on the region in which they are deployed. The regions are configured through the `project.yaml` file. In the case of the Leverage landing zone, most layers are deployed in the primary region, so you can see the definition of these layers in a `us-east-1` directory, as per the example configuration.
+The layers themselves are also grouped based on the region in which they are deployed. The regions are configured through the `project.yaml` file. In the case of the Leverage landing zone, most layers are deployed in the primary region, so you can see the definition of these layers in a `us-east-2` directory, as per the example configuration.
 
 Some layers are not bound to a region because their definition is mainly comprised of resources for services that are global in nature, like IAM or Organizations. These kind of layers are kept in a `global` directory.
 

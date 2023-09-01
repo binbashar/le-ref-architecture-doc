@@ -22,7 +22,6 @@ To create that user, navigate to the [IAM page](https://console.aws.amazon.com/i
         * Password can be auto-generated
         * It requires admin privileges which you can achieve by directly attaching the `AdministratorAccess` policy to it
         * There's no need to add the user to any group as it is only a temporary user
-        * Generating programmatic access keys won't be necessary
 
 Usually the last step of the user creation should present you the following information:
 

@@ -41,7 +41,9 @@ primary_region: us-east-1
 secondary_region: us-west-2
 ...
 ```
-!!! info "We took `us-east-1` as an example, but it might not be the best region for your use case. For more information, you can follow these [guidelines](https://binbash.atlassian.net/wiki/external/2159050753/NGZkZWMzMTA5M2UwNDQ0OTk3MjUwMGY5NjA0YzRjNjk)."
+!!! info "The `project_name` field only accepts lowercase alphanumeric characters and allows hyphens('-'). For instance, valid names could be 'example' or 'leveragedemo' or 'example-demo' "
+
+!!! info "We typically use `us-east-1` and `us-west-2` as our default regions for the majority of our projects. However, please note that these regions may not be the most fitting choice for your specific use case. For detailed guidance, we recommend following these provided [guidelines](https://binbash.atlassian.net/wiki/external/2159050753/NGZkZWMzMTA5M2UwNDQ0OTk3MjUwMGY5NjA0YzRjNjk)."
 
 Another example is below. Note that the `management`, `security`, and `shared` accounts have been updated with slightly different email addresses (actually `aws+security@example.com` and `aws+shared@example.com` are email aliases of `aws@example.com` which is a convenient trick in some cases):
 ```

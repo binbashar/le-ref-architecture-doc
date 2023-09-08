@@ -113,7 +113,7 @@ $ leverage credentials configure --type BOOTSTRAP --skip-access-keys-setup
 !!! info "More information on [`credentials configure`](/user-guide/leverage-cli/reference/credentials#configure)"
 
 ### SSO layer
-Before working on the SSO layer you have to navigate to the [AWS IAM Identity Center page](https://console.aws.amazon.com/singlesignon/) and enable Single Sign-On (SSO) by clicking on the `Enable` button.
+Before working on the SSO layer you have to navigate to the [AWS IAM Identity Center page](https://console.aws.amazon.com/singlesignon/) and enable Single Sign-On (SSO) by clicking on the `Enable` button. Additionally, to ensure a correct integration, make sure to set the primary region for SSO in AWS console to match the primary region of your Leverage project. 
 
 Now back to the terminal. The SSO layer is deployed in two steps. First, switch to the `global/sso` directory and run the following:
 ``` bash

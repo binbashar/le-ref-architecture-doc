@@ -43,7 +43,7 @@ This is the primary resource which defines the cluster. We will create one clust
 account:
 
 - [x] [apps-devstg/us-east-1/k8s-eks](https://github.com/binbashar/le-tf-infra-aws/tree/master/apps-devstg/us-east-1/k8s-eks)
-- [x] [apps-prd/us-east-1/k8s-eks](https://github.com/binbashar/le-tf-infra-aws/tree/master/apps-prd/us-east-1/k8s-eks)
+- [x] [apps-devstg/us-east-1/k8s-eks-demoapps](https://github.com/binbashar/le-tf-infra-aws/tree/master/apps-devstg/us-east-1/k8s-eks-demoapps)
 
 !!! info "Important" 
     In case of multiple environments hosted in the same cluster as for the one with

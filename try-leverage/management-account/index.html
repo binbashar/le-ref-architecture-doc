@@ -4660,7 +4660,7 @@ leverage<span class="w"> </span>terraform<span class="w"> </span>apply
 <p class="admonition-title">More information on <a href="/user-guide/leverage-cli/reference/credentials#configure"><code>credentials configure</code></a></p>
 </div>
 <h3 id="sso-layer">SSO layer<a class="headerlink" href="#sso-layer" title="Permanent link"> ¶</a></h3>
-<p>Before working on the SSO layer you have to navigate to the <a href="https://console.aws.amazon.com/singlesignon/">AWS IAM Identity Center page</a> and enable Single Sign-On (SSO) by clicking on the <code>Enable</code> button.</p>
+<p>Before working on the SSO layer you have to navigate to the <a href="https://console.aws.amazon.com/singlesignon/">AWS IAM Identity Center page</a> and enable Single Sign-On (SSO) by clicking on the <code>Enable</code> button. Additionally, to ensure a correct integration, make sure to set the primary region for SSO in AWS console to match the primary region of your Leverage project. e.g. <code>us-east-1</code> for both of them.</p>
 <p>Now back to the terminal. The SSO layer is deployed in two steps. First, switch to the <code>global/sso</code> directory and run the following:
 <div class="highlight"><pre><span></span><code>leverage<span class="w"> </span>terraform<span class="w"> </span>init
 leverage<span class="w"> </span>terraform<span class="w"> </span>apply

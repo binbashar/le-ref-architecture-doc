@@ -32,7 +32,7 @@ $ ssh-add ~/.ssh/<private_ssh_key_file>
 ```
 (replace `private_ssh_key_file` with the desired file, the process can request the passphrase if it was set on key creation step)
 
-## .ssh folder
+## Using the SSH config file to specify the key that must be used for a given host
 
 The ssh-agent socket is not always available in all the OS, like in Mac. So now our `leverage terraform init` command copies the ssh config file (and the whole .ssh directory) into the container volume, which means any custom configuration you have there,
 will be used. You can read more on the [ssh official documentation](https://www.ssh.com/academy/ssh/config).

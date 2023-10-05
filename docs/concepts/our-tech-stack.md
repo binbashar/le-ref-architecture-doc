@@ -85,7 +85,7 @@ We are also adopters and supporters of Kubernetes and the Cloud Native movement,
     - [How it works: AWS Organizations](/user-guide/organization/organization/)
     - [AWS Organizations](https://aws.amazon.com/organizations/)
 
-??? info "Why AIM and roles❓"
+??? info "Why IAM and roles❓"
     AWS Identity and Access Management (IAM) enables you to manage access to AWS services
     and resources securely. Using IAM, you can create and manage AWS users and groups,
     and use permissions to allow and deny their access to AWS resources.

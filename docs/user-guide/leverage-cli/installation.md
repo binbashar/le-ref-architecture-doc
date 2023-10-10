@@ -7,6 +7,10 @@ To use Leverage CLI you need to install it from the Python Package Index (Pypi).
     * [x] **Git** `>= 2.25`
     * [x] **Docker engine** `>= 20.x.y`
 
+!!! warning "Docker daemon doesn't seem to be responding"
+    If you are using Docker Desktop on macOS 12.5 or above, right click on your Docker Desktop task bar icon,
+    then “Settings …“, under “General” , make sure to choose osxfs (legacy) as your file sharing implementation.
+
 ###Install Pip
 
 === "Ubuntu/Debian"

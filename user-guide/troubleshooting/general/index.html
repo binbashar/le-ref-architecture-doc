@@ -3850,6 +3850,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#ssh-reiterative-confirmation" class="md-nav__link">
+    SSH reiterative confirmation
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -4466,6 +4473,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#ssh-reiterative-confirmation" class="md-nav__link">
+    SSH reiterative confirmation
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -4510,6 +4524,14 @@ For instance, if the error shows up while running a Terraform plan command, you 
 <p>They are stored in 2 files: <code>config</code> and <code>credentials</code>.
 By default, the AWS CLI will create those files under this path: <code>~/.aws/</code> but Leverage uses a slightly different convention, so they should actually be located in this path: <code>~/.aws/[project_name_here]/</code>.</p>
 <p>So, for instance, if your project name is <code>acme</code>, then said files should be found under: <code>~/.aws/acme/config</code> and <code>~/.aws/acme/credentials</code>.</p>
+<h2 id="ssh-reiterative-confirmation">SSH reiterative confirmation<a class="headerlink" href="#ssh-reiterative-confirmation" title="Permanent link"> ¶</a></h2>
+<p>If you get a reiterative dialog for confirmation while running a <code>leverage terraform init</code> :
+<div class="highlight"><pre><span></span><code>Warning: the ECDSA host key for &#39;YYY&#39; differs from the key for the IP address &#39;ZZZ.ZZZ.ZZZ.ZZZ&#39;
+Offending key for IP in /root/.ssh/known_hosts:xyz
+Matching host key in /root/.ssh/known_hosts:xyw
+Are you sure you want to continue connecting (yes/no)?
+</code></pre></div>
+You may have more than 1 key associated to the <code>YYY</code> host. Remove the old or incorrect one, and the dialog should stop.</p>
 
 
   

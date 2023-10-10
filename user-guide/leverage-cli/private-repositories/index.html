@@ -3589,6 +3589,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#using-the-ssh-config-file-to-specify-the-key-that-must-be-used-for-a-given-host" class="md-nav__link">
+    Using the SSH config file to specify the key that must be used for a given host
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -4452,6 +4459,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#using-the-ssh-config-file-to-specify-the-key-that-must-be-used-for-a-given-host" class="md-nav__link">
+    Using the SSH config file to specify the key that must be used for a given host
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -4503,6 +4517,14 @@ where <code>gitlab.com:some-org/some-project/the-private-repo.git</code> is a pr
 (replace <code>private_ssh_key_file</code> with the desired file, the process can request the passphrase if it was set on key creation step)</p>
 </li>
 </ul>
+<h2 id="using-the-ssh-config-file-to-specify-the-key-that-must-be-used-for-a-given-host">Using the SSH config file to specify the key that must be used for a given host<a class="headerlink" href="#using-the-ssh-config-file-to-specify-the-key-that-must-be-used-for-a-given-host" title="Permanent link"> ¶</a></h2>
+<p>The ssh-agent socket is not always available in all the OS, like in Mac. So now our <code>leverage terraform init</code> command copies the ssh config file (and the whole .ssh directory) into the container volume, which means any custom configuration you have there,
+will be used. You can read more on the <a href="https://www.ssh.com/academy/ssh/config">ssh official documentation</a>.</p>
+<p>If, for example, you need to use a custom key for your private repositories on gitlab, you could add a block to your <code>ssh config</code> file, specifying:</p>
+<div class="highlight"><pre><span></span><code>host gitlab.com
+ HostName gitlab.com
+ IdentityFile ~/.ssh/my_gitlab_key
+</code></pre></div>
 
 
   

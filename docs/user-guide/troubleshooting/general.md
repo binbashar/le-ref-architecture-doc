@@ -27,3 +27,14 @@ They are stored in 2 files: `config` and `credentials`.
 By default, the AWS CLI will create those files under this path: `~/.aws/` but Leverage uses a slightly different convention, so they should actually be located in this path: `~/.aws/[project_name_here]/`.
 
 So, for instance, if your project name is `acme`, then said files should be found under: `~/.aws/acme/config` and `~/.aws/acme/credentials`.
+
+## SSH reiterative confirmation
+
+If you get a reiterative dialog for confirmation while running a `leverage terraform init` :
+```
+Warning: the ECDSA host key for 'YYY' differs from the key for the IP address 'ZZZ.ZZZ.ZZZ.ZZZ'
+Offending key for IP in /root/.ssh/known_hosts:xyz
+Matching host key in /root/.ssh/known_hosts:xyw
+Are you sure you want to continue connecting (yes/no)?
+```
+You may have more than 1 key associated to the `YYY` host. Remove the old or incorrect one, and the dialog should stop.

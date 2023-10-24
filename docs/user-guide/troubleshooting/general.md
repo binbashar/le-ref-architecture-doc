@@ -63,6 +63,6 @@ The Leverage CLI mounts the `~/.ssh` directory in order to make the pulling of p
 ```
 
 The problem happes because of the file system virtualization that is used by default and can be fixed by choosing the "osxfs (Legacy)" option as shown below:
-![docket-daemon-not-responding](/assets/images/screenshots/leverage-docket-desktop-daemon-issue.png "Docker daemon not responding")
+![docket-daemon-not-responding](/assets/images/screenshots/leverage-docket-desktop-file-system.png "Docker daemon not responding")
 
 Note: that setting can be accessed by clicking on the Docker Desktop icon tray, and then clicking on "Settings...". The setting should be in the "General" tab.

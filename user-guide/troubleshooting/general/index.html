@@ -4575,7 +4575,7 @@ You may have more than 1 key associated to the <code>YYY</code> host. Remove the
                         APIError: 400 Client Error for http+docker://localhost/v1.43/containers/create: Bad Request (&quot;invalid mount config for type &quot;bind&quot;: stat /host_mnt/private/tmp/com.apple.launchd.CWrsoki5yP/Listeners: operation not supported&quot;)
 </code></pre></div></p>
 <p>The problem happes because of the file system virtualization that is used by default and can be fixed by choosing the "osxfs (Legacy)" option as shown below:
-<img alt="docket-daemon-not-responding" src="/assets/images/screenshots/leverage-docket-desktop-daemon-issue.png" title="Docker daemon not responding" /></p>
+<img alt="docket-daemon-not-responding" src="/assets/images/screenshots/leverage-docket-desktop-file-system.png" title="Docker daemon not responding" /></p>
 <p>Note: that setting can be accessed by clicking on the Docker Desktop icon tray, and then clicking on "Settings...". The setting should be in the "General" tab.</p>
 
 

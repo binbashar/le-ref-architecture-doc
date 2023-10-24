@@ -3857,6 +3857,20 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#leverage-cli-cant-find-the-docker-daemon" class="md-nav__link">
+    Leverage CLI can't find the Docker daemon
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#leverage-cli-fails-to-mount-the-ssh-directory" class="md-nav__link">
+    Leverage CLI fails to mount the SSH directory
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -4480,6 +4494,20 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#leverage-cli-cant-find-the-docker-daemon" class="md-nav__link">
+    Leverage CLI can't find the Docker daemon
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#leverage-cli-fails-to-mount-the-ssh-directory" class="md-nav__link">
+    Leverage CLI fails to mount the SSH directory
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -4532,6 +4560,23 @@ Matching host key in /root/.ssh/known_hosts:xyw
 Are you sure you want to continue connecting (yes/no)?
 </code></pre></div>
 You may have more than 1 key associated to the <code>YYY</code> host. Remove the old or incorrect one, and the dialog should stop.</p>
+<h2 id="leverage-cli-cant-find-the-docker-daemon">Leverage CLI can't find the Docker daemon<a class="headerlink" href="#leverage-cli-cant-find-the-docker-daemon" title="Permanent link"> ¶</a></h2>
+<p>The Leverage CLI talks to the Docker API which usually runs as a daemon on your machine. Here's an example of the error:
+<div class="highlight"><pre><span></span><code>$ leverage tf shell
+[17:06:13.754] ERROR    Docker daemon doesn&#39;t seem to be responding. Please check it is up and running correctly before re-running the command.
+</code></pre></div></p>
+<p>We've seen this happen after a Docker Desktop upgrade. Defaults are changed and the Docker daemon no longer uses Unix sockets but TCP, or perhaps it does use Unix sockets but under a different path or user.</p>
+<p>What has worked for us in order to fix the issue is to make sure the following setting is enabled:
+<img alt="docket-daemon-not-responding" src="/assets/images/screenshots/leverage-docket-desktop-daemon-issue.png" title="Docker daemon not responding" /></p>
+<p>Note: that setting can be accessed by clicking on the Docker Desktop icon tray, and then clicking on "Settings...". Then click on the "Advanced" tab to find the checkbox.</p>
+<h2 id="leverage-cli-fails-to-mount-the-ssh-directory">Leverage CLI fails to mount the SSH directory<a class="headerlink" href="#leverage-cli-fails-to-mount-the-ssh-directory" title="Permanent link"> ¶</a></h2>
+<p>The Leverage CLI mounts the <code>~/.ssh</code> directory in order to make the pulling of private Terraform modules work. The error should look similar to the following:
+<div class="highlight"><pre><span></span><code>[18:26:44.416] ERROR    Error creating container:
+                        APIError: 400 Client Error for http+docker://localhost/v1.43/containers/create: Bad Request (&quot;invalid mount config for type &quot;bind&quot;: stat /host_mnt/private/tmp/com.apple.launchd.CWrsoki5yP/Listeners: operation not supported&quot;)
+</code></pre></div></p>
+<p>The problem happes because of the file system virtualization that is used by default and can be fixed by choosing the "osxfs (Legacy)" option as shown below:
+<img alt="docket-daemon-not-responding" src="/assets/images/screenshots/leverage-docket-desktop-daemon-issue.png" title="Docker daemon not responding" /></p>
+<p>Note: that setting can be accessed by clicking on the Docker Desktop icon tray, and then clicking on "Settings...". The setting should be in the "General" tab.</p>
 
 
   

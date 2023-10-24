@@ -38,3 +38,31 @@ Matching host key in /root/.ssh/known_hosts:xyw
 Are you sure you want to continue connecting (yes/no)?
 ```
 You may have more than 1 key associated to the `YYY` host. Remove the old or incorrect one, and the dialog should stop.
+
+## Leverage CLI can't find the Docker daemon
+
+The Leverage CLI talks to the Docker API which usually runs as a daemon on your machine. Here's an example of the error:
+```
+$ leverage tf shell
+[17:06:13.754] ERROR    Docker daemon doesn't seem to be responding. Please check it is up and running correctly before re-running the command.
+```
+
+We've seen this happen after a Docker Desktop upgrade. Defaults are changed and the Docker daemon no longer uses Unix sockets but TCP, or perhaps it does use Unix sockets but under a different path or user.
+
+What has worked for us in order to fix the issue is to make sure the following setting is enabled:
+![docket-daemon-not-responding](/assets/images/screenshots/leverage-docket-desktop-daemon-issue.png "Docker daemon not responding")
+
+Note: that setting can be accessed by clicking on the Docker Desktop icon tray, and then clicking on "Settings...". Then click on the "Advanced" tab to find the checkbox.
+
+## Leverage CLI fails to mount the SSH directory
+
+The Leverage CLI mounts the `~/.ssh` directory in order to make the pulling of private Terraform modules work. The error should look similar to the following:
+```
+[18:26:44.416] ERROR    Error creating container:
+                        APIError: 400 Client Error for http+docker://localhost/v1.43/containers/create: Bad Request ("invalid mount config for type "bind": stat /host_mnt/private/tmp/com.apple.launchd.CWrsoki5yP/Listeners: operation not supported")
+```
+
+The problem happes because of the file system virtualization that is used by default and can be fixed by choosing the "osxfs (Legacy)" option as shown below:
+![docket-daemon-not-responding](/assets/images/screenshots/leverage-docket-desktop-daemon-issue.png "Docker daemon not responding")
+
+Note: that setting can be accessed by clicking on the Docker Desktop icon tray, and then clicking on "Settings...". The setting should be in the "General" tab.

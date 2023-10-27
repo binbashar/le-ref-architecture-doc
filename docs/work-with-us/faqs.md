@@ -70,14 +70,14 @@
 !!! question ":credit_card: Rates and pricing plans"
     
     - [x] **Pre-paid package subscriptions:** A number of prepaid hours is agreed according to the needs 
-    of the project. It could be a [**"Basic Plan"**](https://leverage.binbash.co/work-with-us/subscription-plans/)
-    of 40 hours per month. Or a [**"Premium Plan"**](https://leverage.binbash.co/work-with-us/subscription-plans/)
+    of the project. It could be a [**"Basic Plan"**](https://www.binbash.co/pricing)
+    of 40 hours per month. Or a [**"Premium Plan"**](https://www.binbash.co/pricing)
     of 80 hours per month (if more hours are needed it could be reviewed). When buying in 
     bulk there is a discount on the value of the hour. When you pay for the package you start discounting
     the hours from the total as they are used, and if there are unused hours left, consider that maximum 20% 
     could be transferred for the next month.
 
-    - [x] [**On-demand Business Subscription**](https://leverage.binbash.co/work-with-us/subscription-plans/): There are
+    - [x] [**On-demand Business Subscription**](https://www.binbash.co/pricing): There are
     a certain number of hours tracked each month, as planned tasks are demanded. The total spent hours will be reported 
     each month. There is a monthly minimum of 40 hours per month. Support tasks maximum estimated effort should
     be between 80 and 120 hs / month.

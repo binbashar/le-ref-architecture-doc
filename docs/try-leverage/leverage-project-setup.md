@@ -291,4 +291,4 @@ Some layers are not bound to a region because their definition is mainly compris
 ## Next steps
 You have now created the definition of all the infrastructure for your project and configured the credentials need to deploy such infrastructure in the AWS environment.
 
-Next, you will orchestrate de first and main account of the project, the management account.
+Next, you will orchestrate the first and main account of the project, the management account.

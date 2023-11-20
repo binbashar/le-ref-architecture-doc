@@ -1,51 +1,78 @@
-# AWS Network Access Control List (NACLs)
-AWS Network Access Control Lists (NACLs) sevice it's crucial to implement robust security measures within your AWS environment.
+# Security in AWS with Leverage Reference Architecture and NACLs
+When deploying an AWS Landing Zone resources, security is of fundamental importance. Network Access Control Lists (NACLs) play a crucial role in controlling traffic at the subnet level. In this section we'll describe the use of NACLs implementing with Terraform over the **Leverage AWS Reference Architecture**.
 
-## How it works
+## Understanding Network Access Control Lists (NACLs)
 Network Access Control Lists (NACLs) act as a virtual firewall for your AWS VPC (Virtual Private Cloud), controlling inbound and outbound traffic at the subnet level. They operate on a rule-based system, allowing or denying traffic based on defined rules.
 
-
-## Default vs Custom NACLs
-
-##### Default NACLs:
-  - This NACL allows all inbound and outbound traffic by default. It serves as a basic level of security, ensuring that your resources can communicate within the VPC and to the internet.
-
-##### Dedicated NACLs:
-  - Dedicated NACLs are manually created and associated with a specific subnet within your VPC. They offer a higher level of customization and control over the traffic flow. This means you can tailor the rules to meet your specific security requirements for your workload and applications
-
-## Pros and Cons:
-#### Default NACL
-##### **Pros:**
-
-1. *Convenience:* They are automatically created with each new VPC, saving time during the initial setup.
-1. *Basic Protection:* Provides a baseline level of security for your VPC resources.
-
-##### **Cons:**
-
-1. *Limited Customization:* Offers less flexibility in terms of rule configuration.
-1. *Less Granular Control:* May not meet specific security requirements for complex environments.
+## Leverage Ref Arch: Default Configuration and Variables Setup for NACLs
+In the Leverage Reference Architecture, we adopt the default NACLs approach.
+This foundational setup not only ensures a controlled security environment but also offers the flexibility for customization.
 
 
-#### Custom Dedicated NACLs
+This setup ensures that default NACLs are used, providing a baseline level of security.:
+```bash
+manage_default_network_acl    = true
+public_dedicated_network_acl  = false // use dedicated network ACL for the public subnets.
+private_dedicated_network_acl = false // use dedicated network ACL for the private subnets.
+```
+To verify that default NACLs are enabled in your Leverage proyect, follow this steps:
 
-##### Pros:
-1. *Granular Control:* Allows for fine-tuning of inbound and outbound traffic rules.
-1. *Enhanced Security:* Provides the ability to create custom rules for specific resources and subnets.
-1. *Isolation:* Allows you to isolate specific subnets for added security.
-
-##### Cons:
-1. *Manual Configuration:* Requires manual creation and association with subnets, which can be time-consuming.
-1. *Potential Complexity:* If not properly configured, it may lead to unintended connectivity issues.
+1. Move into the `/shared/us-east-1/base-network/` directory.
 
 
-## Best practices and recomendations
-  - [x] Given the recurrent challenges and complications associated with NACLs, especially during real-time troubleshooting, a safer default approach is to have them disabled by defualt. This ensures a smoother experience for most users while still providing the flexibility to enable NACLs when necessary.
-  - [x] Periodically assess and update your NACL rules to ensure they align with your evolving security requirements.
-  - [x] Users or tech leads wishing to enable custom dedicated NACLs must undergo an explicit approval process.
-  - [x] Feedback mechanisms should be in place to inform users of the status of NACLs and any associated permissions.
-  - [x] Comprehensive testing should be conducted to ensure that the default disabling of NACLs does not introduce new issues.
-  - [x] Enable logging for your NACLs to gain visibility into traffic patterns and potential security incidents.
+1. Open `network.tf` file:
+  The `network.tf` file defines the configuration for the VPC (Virtual Private Cloud) and NACL service using a terraform module.
+    ```bash
+    module "vpc" {
+    source = "github.com/binbashar/terraform-aws-vpc.git?ref=v3.18.1"
+    .
+    .
+    .
+    manage_default_network_acl    = var.manage_default_network_acl
+    public_dedicated_network_acl  = var.public_dedicated_network_acl  // use dedicated network ACL for the public subnets.
+    private_dedicated_network_acl = var.private_dedicated_network_acl // use dedicated network ACL for the private subnets.
+    .
+    .
+    .
+    ```
+
+
+1. Open `variable.tf` file:
+  The module allows customization of Network Access Control Lists (NACLs) through specified variables
+    ```bash
+    variable "manage_default_network_acl" {
+     description = "Manage default Network ACL"
+     type        = bool
+     default     = true
+    }
+    variable "public_dedicated_network_acl" {
+      description = "Manage default Network ACL"
+      type        = bool
+      default     = false
+    }
+    variable "private_dedicated_network_acl" {
+      description = "Manage default Network ACL"
+      type        = bool
+      default     = false
+    }
+    ```
+
+
+## Key Points to kae into account for a robust and secure setup:
+1. **Explicit Approval Process for NACL Enablement:**
+Enabling NACLs should not be taken lightly. Users or tech leads wishing to enable NACLs must undergo an explicit approval process. This additional step ensures that the introduction of NACLs aligns with the overall security policies and requirements of the organization.
+
+1. **Feedback Mechanisms for NACL Status and Permissions:**
+Communication is key when it comes to security configurations. Feedback mechanisms should be in place to inform users of the status of NACLs and any associated permissions. This ensures transparency and allows for prompt resolution of any issues that may arise.
+
+1. **Comprehensive Testing for Non-disruptive Integration:**
+Before enabling NACLs, comprehensive testing should be conducted to ensure that the default disabling of NACLs does not introduce new issues. This includes testing in different environments and scenarios to guarantee a non-disruptive integration. Automated testing and continuous monitoring can be valuable tools in this phase.
+
 
 
 ## Conclusion
-AWS Network Access Control Lists (NACLs) are a fundamental aspect of securing your VPC. While default NACLs provide a basic level of security, dedicated NACLs offer greater customization and control. By combining these measures and following best practices, you can establish a robust security framework within your AWS environment
+We prioritize operational simplicity to provide an efficient deployment process; however, it's essential for users to conduct a review process align with their specific security and compliance requirements.
+
+This approach allows users to benefit from initial ease of use while maintaining the flexibility to customize and enhance security measures according to their unique needs and compliance standards
+
+In this code, we ensure that default NACLs are enabled. Users can later seek approval and modify these variables if enabling **dedicated NACLs** becomes necessary.

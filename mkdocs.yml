@@ -166,7 +166,7 @@ nav:
     - Configure the Management account: "try-leverage/management-account.md"
     - Configure the Security and Shared accounts: "try-leverage/security-and-shared-accounts.md"
     - Post-deployment: "try-leverage/post-deployment.md"
-    - Add more AWS Accounts: "try-leverage/add-aws-accounts.md"    
+    - Add more AWS Accounts: "try-leverage/add-aws-accounts.md"
 
   - Concepts:
     - Index: "concepts/index.md"
@@ -218,6 +218,8 @@ nav:
           - VPC Traffic Out: "user-guide/ref-architecture-aws/features/network/vpc-traffic-out.md"
           - DNS: "user-guide/ref-architecture-aws/features/network/dns.md"
           - Transit Gateway: "user-guide/ref-architecture-aws/features/network/tgw-topology.md"
+          - Network ACLs (NACLs): "user-guide/ref-architecture-aws/features/network/network-nacl.md"
+
         - Secrets: "user-guide/ref-architecture-aws/features/secrets/secrets.md"
         - Compute:
           - Overview: "user-guide/ref-architecture-aws/features/compute/overview.md"

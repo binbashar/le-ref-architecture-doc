@@ -134,7 +134,7 @@ Plan it:
 leverage tf plan
 ```
 
-If you are happy (or you are unhuppy but you are ok with the plan), apply it:
+If you are happy (or you are unhappy but you are ok with the plan), apply it:
 ```bash
 leverage tf apply
 ```

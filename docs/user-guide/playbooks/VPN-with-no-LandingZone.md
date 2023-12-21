@@ -64,7 +64,7 @@ You end up with this structure:
 
 Create a dummy acconunt dir.
 
-Despite we won't create a real account (since there is no Landing Zone), we have to create a dir to hold all the layers we need.
+Despite we won't create a real account (since there is no Landing Zone), we'll have to create a dir to hold all the layers we need.
 
 ```bash
 mkdir -p apps-dummy/us-east-1/

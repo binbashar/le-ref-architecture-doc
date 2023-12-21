@@ -28,7 +28,7 @@ We will create a simple VPC (with all its resources) and an will add an EC2 inst
 
 ### Common Process
 
-Ok, just [install binbash Leverage](/try-leverage/local-setup/) and [create the Leverage project](/try-leverage/leverage-project-setup/). In the former, when creating credentials, do it for MANAGEMENT type. 
+Ok, just [install binbash Leverage](/try-leverage/local-setup/) and [create the Leverage project](/try-leverage/leverage-project-setup/). When creating credentials, do it for MANAGEMENT type. 
 Basically:
 ```bash
 mkdir project && cd project

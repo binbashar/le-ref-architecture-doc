@@ -62,7 +62,7 @@ You end up with this structure:
 ```
 
 
-Create a dummy acconunt dir.
+Create a dummy account dir.
 
 Despite we won't create a real account (since there is no Landing Zone), we'll have to create a dir to hold all the layers we need.
 

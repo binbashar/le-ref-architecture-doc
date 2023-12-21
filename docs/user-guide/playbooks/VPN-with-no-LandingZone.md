@@ -338,7 +338,7 @@ to add SSM access.
 
 
 In `locals.tf` file check the variable `multiple_instances`. There the EC2 instances are defined, by default there are four.
-Remember set the subnets in which the instances will be created.
+Remember to set the subnets in which the instances will be created.
 
 Finally, apply the layer:
 

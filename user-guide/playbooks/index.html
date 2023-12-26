@@ -12,28 +12,28 @@
         <meta name="author" content="binbash">
       
       
-        <link rel="canonical" href="https://leverage.binbash.co/user-guide/ref-architecture-aws/features/network/vpc-addressing/">
+        <link rel="canonical" href="https://leverage.binbash.co/user-guide/playbooks/">
       
       
-        <link rel="prev" href="../../security/firewall-manager/">
+        <link rel="prev" href="../troubleshooting/credentials/">
       
       
-        <link rel="next" href="../vpc-peering/">
+        <link rel="next" href="VPN-with-no-LandingZone/">
       
       
-      <link rel="icon" href="../../../../../assets/images/logos/favicon.ico">
+      <link rel="icon" href="../../assets/images/logos/favicon.ico">
       <meta name="generator" content="mkdocs-1.5.2, mkdocs-material-9.2.8">
     
     
       
-        <title>VPC - binbash Leverage™</title>
+        <title>Overview - binbash Leverage™</title>
       
     
     
-      <link rel="stylesheet" href="../../../../../assets/stylesheets/main.046329b4.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.046329b4.min.css">
       
         
-        <link rel="stylesheet" href="../../../../../assets/stylesheets/palette.85d0ee34.min.css">
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.85d0ee34.min.css">
       
       
 
@@ -52,9 +52,9 @@
       
     
     
-      <link rel="stylesheet" href="../../../../../assets/stylesheets/extra.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/extra.css">
     
-    <script>__md_scope=new URL("../../../../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
   
@@ -93,7 +93,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#network-layer" class="md-skip">
+        <a href="#playbooks" class="md-skip">
           Skip to content
         </a>
       
@@ -107,7 +107,7 @@
 
 <header class="md-header" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="../../../../.." title="binbash Leverage™" class="md-header__button md-logo" aria-label="binbash Leverage™" data-md-component="logo">
+    <a href="../.." title="binbash Leverage™" class="md-header__button md-logo" aria-label="binbash Leverage™" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m19 2-5 4.5v11l5-4.5V2M6.5 5C4.55 5 2.45 5.4 1 6.5v14.66c0 .25.25.5.5.5.1 0 .15-.07.25-.07 1.35-.65 3.3-1.09 4.75-1.09 1.95 0 4.05.4 5.5 1.5 1.35-.85 3.8-1.5 5.5-1.5 1.65 0 3.35.31 4.75 1.06.1.05.15.03.25.03.25 0 .5-.25.5-.5V6.5c-.6-.45-1.25-.75-2-1V19c-1.1-.35-2.3-.5-3.5-.5-1.7 0-4.15.65-5.5 1.5V6.5C10.55 5.4 8.45 5 6.5 5Z"/></svg>
@@ -127,7 +127,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              VPC
+              Overview
             
           </span>
         </div>
@@ -259,7 +259,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../../../.." class="md-tabs__link">
+        <a href="../.." class="md-tabs__link">
           
   
     
@@ -279,7 +279,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../../../../try-leverage/" class="md-tabs__link">
+        <a href="../../try-leverage/" class="md-tabs__link">
           
   
     
@@ -299,7 +299,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../../../../concepts/" class="md-tabs__link">
+        <a href="../../concepts/" class="md-tabs__link">
           
   
     
@@ -321,7 +321,7 @@
     
     
       <li class="md-tabs__item md-tabs__item--active">
-        <a href="../../../../" class="md-tabs__link">
+        <a href="../" class="md-tabs__link">
           
   
     
@@ -341,7 +341,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../../../../work-with-us/" class="md-tabs__link">
+        <a href="../../work-with-us/" class="md-tabs__link">
           
   
     
@@ -376,7 +376,7 @@
 
 <nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="../../../../.." title="binbash Leverage™" class="md-nav__button md-logo" aria-label="binbash Leverage™" data-md-component="logo">
+    <a href="../.." title="binbash Leverage™" class="md-nav__button md-logo" aria-label="binbash Leverage™" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m19 2-5 4.5v11l5-4.5V2M6.5 5C4.55 5 2.45 5.4 1 6.5v14.66c0 .25.25.5.5.5.1 0 .15-.07.25-.07 1.35-.65 3.3-1.09 4.75-1.09 1.95 0 4.05.4 5.5 1.5 1.35-.85 3.8-1.5 5.5-1.5 1.65 0 3.35.31 4.75 1.06.1.05.15.03.25.03.25 0 .5-.25.5-.5V6.5c-.6-.45-1.25-.75-2-1V19c-1.1-.35-2.3-.5-3.5-.5-1.7 0-4.15.65-5.5 1.5V6.5C10.55 5.4 8.45 5 6.5 5Z"/></svg>
@@ -446,7 +446,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../../../.." class="md-nav__link ">
+            <a href="../.." class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -477,7 +477,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../concepts/" class="md-nav__link">
+      <a href="../../concepts/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -497,7 +497,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../try-leverage/" class="md-nav__link">
+      <a href="../../try-leverage/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -517,7 +517,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../how-it-works/ref-architecture/" class="md-nav__link">
+      <a href="../../how-it-works/ref-architecture/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -537,7 +537,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../" class="md-nav__link">
+      <a href="../" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -557,7 +557,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../work-with-us/" class="md-nav__link">
+      <a href="../../work-with-us/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -577,7 +577,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../license/" class="md-nav__link">
+      <a href="../../license/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -637,7 +637,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../../../../try-leverage/" class="md-nav__link ">
+            <a href="../../try-leverage/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -668,7 +668,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../try-leverage/aws-account-setup/" class="md-nav__link">
+      <a href="../../try-leverage/aws-account-setup/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -688,7 +688,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../try-leverage/local-setup/" class="md-nav__link">
+      <a href="../../try-leverage/local-setup/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -708,7 +708,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../try-leverage/leverage-project-setup/" class="md-nav__link">
+      <a href="../../try-leverage/leverage-project-setup/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -728,7 +728,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../try-leverage/management-account/" class="md-nav__link">
+      <a href="../../try-leverage/management-account/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -748,7 +748,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../try-leverage/security-and-shared-accounts/" class="md-nav__link">
+      <a href="../../try-leverage/security-and-shared-accounts/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -768,7 +768,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../try-leverage/post-deployment/" class="md-nav__link">
+      <a href="../../try-leverage/post-deployment/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -788,7 +788,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../try-leverage/add-aws-accounts/" class="md-nav__link">
+      <a href="../../try-leverage/add-aws-accounts/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -844,7 +844,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../../../../concepts/" class="md-nav__link ">
+            <a href="../../concepts/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -875,7 +875,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../concepts/what-is-leverage/" class="md-nav__link">
+      <a href="../../concepts/what-is-leverage/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -895,7 +895,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../concepts/why-leverage/" class="md-nav__link">
+      <a href="../../concepts/why-leverage/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -915,7 +915,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../concepts/what-leverage-can-do-for-you/" class="md-nav__link">
+      <a href="../../concepts/what-leverage-can-do-for-you/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -935,7 +935,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../concepts/our-tech-stack/" class="md-nav__link">
+      <a href="../../concepts/our-tech-stack/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -955,7 +955,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../concepts/next-steps/" class="md-nav__link">
+      <a href="../../concepts/next-steps/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1017,7 +1017,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../../../" class="md-nav__link ">
+            <a href="../" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -1046,8 +1046,6 @@
                 
   
   
-    
-  
   
     
     
@@ -1068,13 +1066,13 @@
       
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_2" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_2" >
         
           <label class="md-nav__link" for="__nav_4_2" id="__nav_4_2_label" tabindex="0">
             
@@ -1087,7 +1085,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_2_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_2_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_4_2">
             <span class="md-nav__icon md-icon"></span>
             Reference Architecture for AWS
@@ -1100,7 +1098,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../overview/" class="md-nav__link">
+      <a href="../ref-architecture-aws/overview/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1120,7 +1118,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../dir-structure/" class="md-nav__link">
+      <a href="../ref-architecture-aws/dir-structure/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1140,7 +1138,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../configuration/" class="md-nav__link">
+      <a href="../ref-architecture-aws/configuration/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1160,7 +1158,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../workflow/" class="md-nav__link">
+      <a href="../ref-architecture-aws/workflow/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1180,7 +1178,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../tf-state/" class="md-nav__link">
+      <a href="../ref-architecture-aws/tf-state/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1198,8 +1196,6 @@
                 
   
   
-    
-  
   
     
     
@@ -1238,18 +1234,18 @@
       
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_2_6" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_2_6" >
         
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../" class="md-nav__link ">
+            <a href="../ref-architecture-aws/features/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -1265,7 +1261,7 @@
             
           </div>
         
-        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_4_2_6_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_4_2_6_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_4_2_6">
             <span class="md-nav__icon md-icon"></span>
             Features
@@ -1326,7 +1322,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../organization/overview/" class="md-nav__link">
+      <a href="../ref-architecture-aws/features/organization/overview/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1346,7 +1342,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../organization/accounts/" class="md-nav__link">
+      <a href="../ref-architecture-aws/features/organization/accounts/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1366,7 +1362,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../organization/configuration/" class="md-nav__link">
+      <a href="../ref-architecture-aws/features/organization/configuration/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1386,7 +1382,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../organization/billing/" class="md-nav__link">
+      <a href="../ref-architecture-aws/features/organization/billing/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1406,7 +1402,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../organization/legacy-accounts/" class="md-nav__link">
+      <a href="../ref-architecture-aws/features/organization/legacy-accounts/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1476,7 +1472,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../sso/overview/" class="md-nav__link">
+      <a href="../ref-architecture-aws/features/sso/overview/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1496,7 +1492,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../sso/configuration/" class="md-nav__link">
+      <a href="../ref-architecture-aws/features/sso/configuration/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1516,7 +1512,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../sso/managing-users/" class="md-nav__link">
+      <a href="../ref-architecture-aws/features/sso/managing-users/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1590,7 +1586,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../identities/overview/" class="md-nav__link">
+      <a href="../ref-architecture-aws/features/identities/overview/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1610,7 +1606,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../identities/gpg/" class="md-nav__link">
+      <a href="../ref-architecture-aws/features/identities/gpg/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1630,7 +1626,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../identities/identities/" class="md-nav__link">
+      <a href="../ref-architecture-aws/features/identities/identities/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1650,7 +1646,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../identities/credentials/" class="md-nav__link">
+      <a href="../ref-architecture-aws/features/identities/credentials/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1670,7 +1666,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../identities/roles/" class="md-nav__link">
+      <a href="../ref-architecture-aws/features/identities/roles/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1698,7 +1694,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../costs/costs/" class="md-nav__link">
+      <a href="../ref-architecture-aws/features/costs/costs/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1766,7 +1762,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../security/overview/" class="md-nav__link">
+      <a href="../ref-architecture-aws/features/security/overview/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1786,7 +1782,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../security/vpn/" class="md-nav__link">
+      <a href="../ref-architecture-aws/features/security/vpn/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1806,7 +1802,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../security/audit-cloudtrail/" class="md-nav__link">
+      <a href="../ref-architecture-aws/features/security/audit-cloudtrail/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1826,7 +1822,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../security/certificates/" class="md-nav__link">
+      <a href="../ref-architecture-aws/features/security/certificates/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1846,7 +1842,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../security/iam-access-analyzer/" class="md-nav__link">
+      <a href="../ref-architecture-aws/features/security/iam-access-analyzer/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1866,7 +1862,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../security/firewall-manager/" class="md-nav__link">
+      <a href="../ref-architecture-aws/features/security/firewall-manager/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1892,8 +1888,6 @@
                 
   
   
-    
-  
   
     
     
@@ -1914,13 +1908,13 @@
       
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_2_6_7" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_2_6_7" >
         
           <label class="md-nav__link" for="__nav_4_2_6_7" id="__nav_4_2_6_7_label" tabindex="0">
             
@@ -1933,7 +1927,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="4" aria-labelledby="__nav_4_2_6_7_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="4" aria-labelledby="__nav_4_2_6_7_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_4_2_6_7">
             <span class="md-nav__icon md-icon"></span>
             Network
@@ -1944,29 +1938,9 @@
                 
   
   
-    
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  <span class="md-ellipsis">
-    VPC
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../ref-architecture-aws/features/network/vpc-addressing/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1975,80 +1949,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#vpcs-ip-addressing-plan-cidr-blocks-sizing" class="md-nav__link">
-    VPCs IP Addressing Plan (CIDR blocks sizing)
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#networking-ip-addressing" class="md-nav__link">
-    Networking - IP Addressing
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#planned-subnets-per-vpc" class="md-nav__link">
-    Planned Subnets per VPC
-  </a>
-  
-    <nav class="md-nav" aria-label="Planned Subnets per VPC">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#considerations" class="md-nav__link">
-    Considerations
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#user-guide" class="md-nav__link">
-    User guide
-  </a>
-  
-    <nav class="md-nav" aria-label="User guide">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#next-steps" class="md-nav__link">
-    Next Steps
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -2060,7 +1960,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../vpc-peering/" class="md-nav__link">
+      <a href="../ref-architecture-aws/features/network/vpc-peering/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2080,7 +1980,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../vpc-topology/" class="md-nav__link">
+      <a href="../ref-architecture-aws/features/network/vpc-topology/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2100,7 +2000,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../vpc-traffic-out/" class="md-nav__link">
+      <a href="../ref-architecture-aws/features/network/vpc-traffic-out/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2120,7 +2020,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../dns/" class="md-nav__link">
+      <a href="../ref-architecture-aws/features/network/dns/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2140,7 +2040,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../tgw-topology/" class="md-nav__link">
+      <a href="../ref-architecture-aws/features/network/tgw-topology/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2160,7 +2060,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../network-nacl/" class="md-nav__link">
+      <a href="../ref-architecture-aws/features/network/network-nacl/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2188,7 +2088,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../secrets/secrets/" class="md-nav__link">
+      <a href="../ref-architecture-aws/features/secrets/secrets/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2256,7 +2156,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../compute/overview/" class="md-nav__link">
+      <a href="../ref-architecture-aws/features/compute/overview/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2276,7 +2176,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../compute/k8s-eks/" class="md-nav__link">
+      <a href="../ref-architecture-aws/features/compute/k8s-eks/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2296,7 +2196,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../compute/k8s-kops/" class="md-nav__link">
+      <a href="../ref-architecture-aws/features/compute/k8s-kops/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2316,7 +2216,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../compute/k8s-service-mesh/" class="md-nav__link">
+      <a href="../ref-architecture-aws/features/compute/k8s-service-mesh/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2336,7 +2236,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../compute/serverless/" class="md-nav__link">
+      <a href="../ref-architecture-aws/features/compute/serverless/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2356,7 +2256,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../compute/tools/" class="md-nav__link">
+      <a href="../ref-architecture-aws/features/compute/tools/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2426,7 +2326,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../database/database/" class="md-nav__link">
+      <a href="../ref-architecture-aws/features/database/database/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2446,7 +2346,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../database/mysql/" class="md-nav__link">
+      <a href="../ref-architecture-aws/features/database/mysql/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2466,7 +2366,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../database/postgres/" class="md-nav__link">
+      <a href="../ref-architecture-aws/features/database/postgres/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2494,7 +2394,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../storage/storage/" class="md-nav__link">
+      <a href="../ref-architecture-aws/features/storage/storage/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2514,7 +2414,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../cdn/cdn/" class="md-nav__link">
+      <a href="../ref-architecture-aws/features/cdn/cdn/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2576,7 +2476,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../ci-cd/argocd/" class="md-nav__link">
+      <a href="../ref-architecture-aws/features/ci-cd/argocd/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2596,7 +2496,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../ci-cd/jenkins-argocd/" class="md-nav__link">
+      <a href="../ref-architecture-aws/features/ci-cd/jenkins-argocd/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2616,7 +2516,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../ci-cd/jenkins-spinnaker/" class="md-nav__link">
+      <a href="../ref-architecture-aws/features/ci-cd/jenkins-spinnaker/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2690,7 +2590,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../monitoring/monitoring/" class="md-nav__link">
+      <a href="../ref-architecture-aws/features/monitoring/monitoring/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2710,7 +2610,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../monitoring/metrics/" class="md-nav__link">
+      <a href="../ref-architecture-aws/features/monitoring/metrics/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2730,7 +2630,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../monitoring/logs/" class="md-nav__link">
+      <a href="../ref-architecture-aws/features/monitoring/logs/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2750,7 +2650,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../monitoring/tracing/" class="md-nav__link">
+      <a href="../ref-architecture-aws/features/monitoring/tracing/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2770,7 +2670,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../monitoring/apm/" class="md-nav__link">
+      <a href="../ref-architecture-aws/features/monitoring/apm/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2840,7 +2740,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../reliability/backups/" class="md-nav__link">
+      <a href="../ref-architecture-aws/features/reliability/backups/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2860,7 +2760,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../reliability/dr/" class="md-nav__link">
+      <a href="../ref-architecture-aws/features/reliability/dr/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2880,7 +2780,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../reliability/high-availability/" class="md-nav__link">
+      <a href="../ref-architecture-aws/features/reliability/high-availability/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2916,7 +2816,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../references/" class="md-nav__link">
+      <a href="../ref-architecture-aws/references/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2988,7 +2888,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../ref-architecture-eks/overview/" class="md-nav__link">
+      <a href="../ref-architecture-eks/overview/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3008,7 +2908,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../ref-architecture-eks/vpc/" class="md-nav__link">
+      <a href="../ref-architecture-eks/vpc/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3028,7 +2928,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../ref-architecture-eks/components/" class="md-nav__link">
+      <a href="../ref-architecture-eks/components/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3048,7 +2948,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../ref-architecture-eks/cluster-upgrade/" class="md-nav__link">
+      <a href="../ref-architecture-eks/cluster-upgrade/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3116,7 +3016,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../ref-architecture-ansible/overview/" class="md-nav__link">
+      <a href="../ref-architecture-ansible/overview/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3136,7 +3036,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../ref-architecture-ansible/workflow/" class="md-nav__link">
+      <a href="../ref-architecture-ansible/workflow/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3216,7 +3116,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../leverage-cli/overview/" class="md-nav__link">
+      <a href="../leverage-cli/overview/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3236,7 +3136,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../leverage-cli/installation/" class="md-nav__link">
+      <a href="../leverage-cli/installation/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3256,7 +3156,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../leverage-cli/basic-features/" class="md-nav__link">
+      <a href="../leverage-cli/basic-features/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3326,7 +3226,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../leverage-cli/reference/project/" class="md-nav__link">
+      <a href="../leverage-cli/reference/project/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3346,7 +3246,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../leverage-cli/reference/credentials/" class="md-nav__link">
+      <a href="../leverage-cli/reference/credentials/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3366,7 +3266,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../leverage-cli/reference/aws/" class="md-nav__link">
+      <a href="../leverage-cli/reference/aws/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3426,7 +3326,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../leverage-cli/reference/terraform/" class="md-nav__link">
+      <a href="../leverage-cli/reference/terraform/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3446,7 +3346,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../leverage-cli/reference/terraform/layers/" class="md-nav__link">
+      <a href="../leverage-cli/reference/terraform/layers/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3474,7 +3374,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../leverage-cli/reference/tfautomv/" class="md-nav__link">
+      <a href="../leverage-cli/reference/tfautomv/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3494,7 +3394,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../leverage-cli/reference/run/" class="md-nav__link">
+      <a href="../leverage-cli/reference/run/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3514,7 +3414,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../leverage-cli/reference/kubectl/" class="md-nav__link">
+      <a href="../leverage-cli/reference/kubectl/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3584,7 +3484,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../leverage-cli/extending-leverage/how-to-extend/" class="md-nav__link">
+      <a href="../leverage-cli/extending-leverage/how-to-extend/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3604,7 +3504,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../leverage-cli/extending-leverage/build.env/" class="md-nav__link">
+      <a href="../leverage-cli/extending-leverage/build.env/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3624,7 +3524,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../leverage-cli/extending-leverage/tasks/" class="md-nav__link">
+      <a href="../leverage-cli/extending-leverage/tasks/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3652,7 +3552,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../leverage-cli/private-repositories/" class="md-nav__link">
+      <a href="../leverage-cli/private-repositories/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3672,7 +3572,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../leverage-cli/shell/" class="md-nav__link">
+      <a href="../leverage-cli/shell/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3692,7 +3592,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../leverage-cli/history/" class="md-nav__link">
+      <a href="../leverage-cli/history/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3764,7 +3664,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../infra-as-code-library/overview/" class="md-nav__link">
+      <a href="../infra-as-code-library/overview/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3784,7 +3684,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../infra-as-code-library/infra-as-code-library-forks/" class="md-nav__link">
+      <a href="../infra-as-code-library/infra-as-code-library-forks/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3804,7 +3704,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../infra-as-code-library/infra-as-code-library-specs/" class="md-nav__link">
+      <a href="../infra-as-code-library/infra-as-code-library-specs/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3824,7 +3724,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../infra-as-code-library/modules-library-by-technology/" class="md-nav__link">
+      <a href="../infra-as-code-library/modules-library-by-technology/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3875,7 +3775,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../../../troubleshooting/" class="md-nav__link ">
+            <a href="../troubleshooting/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -3906,7 +3806,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../troubleshooting/general/" class="md-nav__link">
+      <a href="../troubleshooting/general/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3926,7 +3826,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../troubleshooting/credentials/" class="md-nav__link">
+      <a href="../troubleshooting/credentials/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3952,6 +3852,8 @@
                 
   
   
+    
+  
   
     
     
@@ -3966,18 +3868,18 @@
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_8" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_8" checked>
         
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../../../playbooks/" class="md-nav__link ">
+            <a href="./" class="md-nav__link md-nav__link--active">
               
   
   <span class="md-ellipsis">
@@ -3987,13 +3889,13 @@
 
             </a>
             
-              <label class="md-nav__link " for="__nav_4_8">
+              <label class="md-nav__link md-nav__link--active" for="__nav_4_8">
                 <span class="md-nav__icon md-icon"></span>
               </label>
             
           </div>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_8_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_8_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_4_8">
             <span class="md-nav__icon md-icon"></span>
             Playbooks
@@ -4008,7 +3910,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../playbooks/VPN-with-no-LandingZone/" class="md-nav__link">
+      <a href="VPN-with-no-LandingZone/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -4028,7 +3930,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../playbooks/schedule-start-stop-ec2/" class="md-nav__link">
+      <a href="schedule-start-stop-ec2/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -4098,7 +4000,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../../../../work-with-us/" class="md-nav__link ">
+            <a href="../../work-with-us/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -4129,7 +4031,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../work-with-us/support/" class="md-nav__link">
+      <a href="../../work-with-us/support/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -4189,7 +4091,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../work-with-us/releases/releases-and-versions/" class="md-nav__link">
+      <a href="../../work-with-us/releases/releases-and-versions/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -4209,7 +4111,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../work-with-us/releases/versions-compatibility-matrix/" class="md-nav__link">
+      <a href="../../work-with-us/releases/versions-compatibility-matrix/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -4237,7 +4139,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../work-with-us/leverage-vs-competition/" class="md-nav__link">
+      <a href="../../work-with-us/leverage-vs-competition/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -4257,7 +4159,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../work-with-us/contribute/" class="md-nav__link">
+      <a href="../../work-with-us/contribute/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -4365,7 +4267,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../work-with-us/roadmap/ref-arch/overview/" class="md-nav__link">
+      <a href="../../work-with-us/roadmap/ref-arch/overview/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -4385,7 +4287,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../work-with-us/roadmap/ref-arch/operational-excellence/" class="md-nav__link">
+      <a href="../../work-with-us/roadmap/ref-arch/operational-excellence/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -4405,7 +4307,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../work-with-us/roadmap/ref-arch/reliability-performance/" class="md-nav__link">
+      <a href="../../work-with-us/roadmap/ref-arch/reliability-performance/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -4425,7 +4327,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../work-with-us/roadmap/ref-arch/security/" class="md-nav__link">
+      <a href="../../work-with-us/roadmap/ref-arch/security/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -4445,7 +4347,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../work-with-us/roadmap/ref-arch/cost-optimization/" class="md-nav__link">
+      <a href="../../work-with-us/roadmap/ref-arch/cost-optimization/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -4465,7 +4367,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../work-with-us/roadmap/ref-arch/demo-apps/" class="md-nav__link">
+      <a href="../../work-with-us/roadmap/ref-arch/demo-apps/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -4493,7 +4395,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../work-with-us/roadmap/leverage-cli/overview/" class="md-nav__link">
+      <a href="../../work-with-us/roadmap/leverage-cli/overview/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -4521,7 +4423,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../work-with-us/careers/" class="md-nav__link">
+      <a href="../../work-with-us/careers/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -4541,7 +4443,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../work-with-us/faqs/" class="md-nav__link">
+      <a href="../../work-with-us/faqs/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -4602,68 +4504,6 @@
     
   
   
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#vpcs-ip-addressing-plan-cidr-blocks-sizing" class="md-nav__link">
-    VPCs IP Addressing Plan (CIDR blocks sizing)
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#networking-ip-addressing" class="md-nav__link">
-    Networking - IP Addressing
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#planned-subnets-per-vpc" class="md-nav__link">
-    Planned Subnets per VPC
-  </a>
-  
-    <nav class="md-nav" aria-label="Planned Subnets per VPC">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#considerations" class="md-nav__link">
-    Considerations
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#user-guide" class="md-nav__link">
-    User guide
-  </a>
-  
-    <nav class="md-nav" aria-label="User guide">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#next-steps" class="md-nav__link">
-    Next Steps
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-    </ul>
-  
 </nav>
                   </div>
                 </div>
@@ -4677,7 +4517,7 @@
                   
 
   
-    <a href="https://github.com/binbashar/le-ref-architecture-doc/edit/master/docs/user-guide/ref-architecture-aws/features/network/vpc-addressing.md" title="Edit this page" class="md-content__button md-icon">
+    <a href="https://github.com/binbashar/le-ref-architecture-doc/edit/master/docs/user-guide/playbooks/index.md" title="Edit this page" class="md-content__button md-icon">
       
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4v-2m10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1 2.1 2.1Z"/></svg>
     </a>
@@ -4685,214 +4525,11 @@
   
 
 
-<h1 id="network-layer">Network Layer<a class="headerlink" href="#network-layer" title="Permanent link"> ¶</a></h1>
-<div class="admonition info">
-<p class="admonition-title">In this section we detail all the network design related specifications</p>
+<h1 id="playbooks">Playbooks<a class="headerlink" href="#playbooks" title="Permanent link"> ¶</a></h1>
 <ul class="task-list">
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> VPCs CIDR blocks</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> VPC Gateways:  Internet, NAT, VPN.</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> VPC Peerings</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> VPC DNS Private Hosted Zones Associations.</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Network ACLS (NACLs)</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> <a href="VPN-with-no-LandingZone/">VPN with no Landing Zone</a></li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> <a href="schedule-start-stop-ec2/">Start/Stop EC2/RDS instances using schedule or manual endpoint</a></li>
 </ul>
-</div>
-<h3 id="vpcs-ip-addressing-plan-cidr-blocks-sizing">VPCs IP Addressing Plan (CIDR blocks sizing)<a class="headerlink" href="#vpcs-ip-addressing-plan-cidr-blocks-sizing" title="Permanent link"> ¶</a></h3>
-<div class="admonition summary">
-<p class="admonition-title">Introduction</p>
-<p>VPCs can vary in size from 16 addresses (/28 netmask) to 65,536 addresses (/16 netmask). 
-In order to size a VPC correctly, it is important to understand the number, types, and sizes of workloads 
-expected to run in it, as well as workload elasticity and load balancing requirements. </p>
-<p>Keep in mind that there is no charge for using Amazon VPC (aside from EC2 charges), therefore cost 
-should not be a factor when determining the appropriate size for your VPC, so make sure you size your 
-VPC for growth.</p>
-<p>Moving workloads or AWS resources between networks is not a trivial task, so be generous in your 
-IP address estimates to give yourself plenty of room to grow, deploy new workloads, or change your 
-VPC design configuration from one to another. The majority of AWS customers use VPCs with a /16 
-netmask and subnets with /24 netmasks. The primary reason AWS customers select smaller VPC and 
-subnet sizes is to avoid overlapping network addresses with existing networks. </p>
-<p>So having <a href="https://aws.amazon.com/answers/networking/aws-single-vpc-design/">AWS single VPC Design</a> we've chosen
-a Medium/Small VPC/Subnet addressing plan which would probably fit a broad range variety of
-use cases</p>
-</div>
-<h2 id="networking-ip-addressing">Networking - IP Addressing<a class="headerlink" href="#networking-ip-addressing" title="Permanent link"> ¶</a></h2>
-<div class="admonition example">
-<p class="admonition-title">Starting CIDR Segment (AWS Org)</p>
-<ul class="task-list">
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> AWS Org IP Addressing calculation is presented below based on segment <code>172.16.0.0/12</code></li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> We started from <code>172.16.0.0/12</code> and subnetted to <code>/20</code></li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Resulting in <strong>Total Subnets: 256</strong><ul>
-<li>2 x AWS Account with Hosts/SubNet: 4094</li>
-<li>1ry VPC + 2ry VPC</li>
-<li>1ry VPC DR + 2ry VPC DR</li>
-</ul>
-</li>
-</ul>
-</div>
-<div class="admonition example">
-<p class="admonition-title">Individual CIDR Segments (VPCs)</p>
-<p><img alt="⏩" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@14.1.2/assets/svg/23e9.svg" title=":fast_forward:" /> Then each of these are /20 to /24</p>
-<ul class="task-list">
-<li class="task-list-item">
-<p><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Considering the whole Starting CIDR Segment (AWS Org) before declared, we'll start at <code>172.18.0.0/20</code></p>
-<ul>
-<li><strong>shared</strong><ul>
-<li>1ry VPC CIDR: <code>172.18.0.0/24</code></li>
-<li>2ry VPC CIDR: <code>172.18.16.0/24</code></li>
-<li>1ry VPC DR CIDR: <code>172.18.32.0/24</code></li>
-<li>2ry VPC DR CIDR: <code>172.18.48.0/24</code></li>
-</ul>
-</li>
-<li><strong>apps-devstg</strong><ul>
-<li>1ry VPC CIDR: <code>172.18.64.0/24</code></li>
-<li>2ry VPC CIDR: <code>172.18.80.0/24</code></li>
-<li>1ry VPC DR CIDR: <code>172.18.96.0/24</code></li>
-<li>2ry VPC DR CIDR: <code>172.18.112.0/24</code></li>
-</ul>
-</li>
-<li><strong>apps-prd</strong><ul>
-<li>1ry VPC CIDR: <code>172.18.128.0/24</code></li>
-<li>2ry VPC CIDR: <code>172.18.144.0/24</code></li>
-<li>1ry VPC DR CIDR: <code>172.18.160.0/24</code></li>
-<li>2ry VPC DR CIDR: <code>172.18.176.0/24</code></li>
-</ul>
-</li>
-</ul>
-</li>
-<li class="task-list-item">
-<p><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Resulting in <strong>Subnets: 16 x VPC</strong></p>
-<ul>
-<li>VPC Subnets with Hosts/Net: 256.</li>
-<li>Eg: apps-devstg account → us-east-1 w/ 3 AZs → 3 x Private Subnets /az + 3 x Public Subnets /az<ul>
-<li>1ry VPC CIDR: <code>172.18.64.0/24</code>Subnets:<ul>
-<li>Private <code>172.18.64.0/24, 172.18.66.0/24 and 172.18.68.0/24</code></li>
-<li>Public <code>172.18.65.0/24, 172.18.67.0/24 and 172.18.69.0/24</code></li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-</div>
-<h2 id="planned-subnets-per-vpc">Planned Subnets per VPC<a class="headerlink" href="#planned-subnets-per-vpc" title="Permanent link"> ¶</a></h2>
-<p>Having defined the initial VPC that will be created in the different accounts that were defined, we are going to create
-subnets in each of these VPCs defining Private and Public subnets split among different availability zones:</p>
-<table>
-<thead>
-<tr>
-<th style="text-align: center;">Subnet address</th>
-<th style="text-align: center;">Range of addresses</th>
-<th style="text-align: center;">Hosts</th>
-<th style="text-align: center;">Assignment</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align: center;">172.18.0.0/20</td>
-<td style="text-align: center;">172.18.0.0 - 172.18.15.255</td>
-<td style="text-align: center;">4094</td>
-<td style="text-align: center;">1ry VPC: shared</td>
-</tr>
-<tr>
-<td style="text-align: center;">172.18.16.0/20</td>
-<td style="text-align: center;">172.18.16.0 - 172.18.31.255</td>
-<td style="text-align: center;">4094</td>
-<td style="text-align: center;">2ry VPC: shared</td>
-</tr>
-<tr>
-<td style="text-align: center;">172.18.32.0/20</td>
-<td style="text-align: center;">172.18.32.0 - 172.18.47.255</td>
-<td style="text-align: center;">4094</td>
-<td style="text-align: center;">1ry VPC DR: shared</td>
-</tr>
-<tr>
-<td style="text-align: center;">172.18.48.0/20</td>
-<td style="text-align: center;">172.18.48.0 - 172.18.63.255</td>
-<td style="text-align: center;">4094</td>
-<td style="text-align: center;">2ry VPC DR: shared</td>
-</tr>
-<tr>
-<td style="text-align: center;">172.18.64.0/20</td>
-<td style="text-align: center;">172.18.64.0 - 172.18.79.255</td>
-<td style="text-align: center;">4094</td>
-<td style="text-align: center;">1ry VPC: apps-devstg</td>
-</tr>
-<tr>
-<td style="text-align: center;">172.18.80.0/20</td>
-<td style="text-align: center;">172.18.80.0 - 172.18.95.255</td>
-<td style="text-align: center;">4094</td>
-<td style="text-align: center;">2ry VPC: apps-devstg</td>
-</tr>
-<tr>
-<td style="text-align: center;">172.18.96.0/20</td>
-<td style="text-align: center;">172.18.96.0 - 172.18.111.255</td>
-<td style="text-align: center;">4094</td>
-<td style="text-align: center;">1ry VPC DR: apps-devstg</td>
-</tr>
-<tr>
-<td style="text-align: center;">172.18.112.0/20</td>
-<td style="text-align: center;">172.18.112.0 - 172.18.127.255</td>
-<td style="text-align: center;">4094</td>
-<td style="text-align: center;">2ry VPC DR: apps-devstg</td>
-</tr>
-<tr>
-<td style="text-align: center;">172.18.128.0/20</td>
-<td style="text-align: center;">172.18.128.0 - 172.18.143.255</td>
-<td style="text-align: center;">4094</td>
-<td style="text-align: center;">1ry VPC: apps-prd</td>
-</tr>
-<tr>
-<td style="text-align: center;">172.18.144.0/20</td>
-<td style="text-align: center;">172.18.144.0 - 172.18.159.255</td>
-<td style="text-align: center;">4094</td>
-<td style="text-align: center;">2ry VPC: apps-prd</td>
-</tr>
-<tr>
-<td style="text-align: center;">172.18.160.0/20</td>
-<td style="text-align: center;">172.18.160.0 - 172.18.175.255</td>
-<td style="text-align: center;">4094</td>
-<td style="text-align: center;">1ry VPC DR: apps-prd</td>
-</tr>
-<tr>
-<td style="text-align: center;">172.18.176.0/20</td>
-<td style="text-align: center;">172.18.176.0 - 172.18.191.255</td>
-<td style="text-align: center;">4094</td>
-<td style="text-align: center;">2ry VPC DR: apps-prd</td>
-</tr>
-</tbody>
-</table>
-<h3 id="considerations">Considerations<a class="headerlink" href="#considerations" title="Permanent link"> ¶</a></h3>
-<ul>
-<li>Kubernetes on EKS General Requirements for Network Layer: <a href="/user-guide/ref-architecture-eks/vpc/"><strong>K8s EKS Networking | VPC Adressing</strong></a></li>
-</ul>
-<h2 id="user-guide">User guide<a class="headerlink" href="#user-guide" title="Permanent link"> ¶</a></h2>
-<p>Please follow the steps below to orchestrate your <code>base-network</code> layer, 1<sup>st</sup> in your
-<a href="https://github.com/binbashar/le-tf-infra-aws/tree/master/shared/us-east-1/base-network"><code>project-shared</code></a> AWS account and
-afterwards in the necessary member accounts which will host network connected resources (EC2, Lambda, EKS, RDS, ALB, NLB, etc):  </p>
-<ul class="task-list">
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> <a href="https://github.com/binbashar/le-tf-infra-aws/tree/master/apps-devstg/us-east-1/base-network"><code>project-apps-devstg</code></a> account.</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> <a href="https://github.com/binbashar/le-tf-infra-aws/tree/master/apps-prd/us-east-1/base-network"><code>project-apps-prd</code></a> account.</li>
-</ul>
-<div class="admonition example">
-<p class="admonition-title">Network layer standard creation workflow</p>
-<ol>
-<li>Please follow 
-<a href="../../../base-workflow/repo-le-tf-infra/">Leverage's Terraform workflow</a> for
-each of your accounts.</li>
-<li>We'll start by <code>project-shared</code> AWS Account Update (add | remove | customize) your VPC associated code before 
-deploying this layer <a href="https://github.com/binbashar/le-tf-infra-aws/tree/master/shared/us-east-1/base-network">shared/base-network</a>
-    Main files<ul>
-<li><img alt="📁" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@14.1.2/assets/svg/1f4c1.svg" title=":file_folder:" /> <a href="https://github.com/binbashar/le-tf-infra-aws/blob/master/shared/us-east-1/base-network/network.tf">network.tf</a></li>
-<li><img alt="📁" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@14.1.2/assets/svg/1f4c1.svg" title=":file_folder:" /> <a href="https://github.com/binbashar/le-tf-infra-aws/blob/master/shared/us-east-1/base-network/locals.tf">locals.tf</a></li>
-</ul>
-</li>
-<li>Repeat for every AWS member Account that needs its own VPC 
-<a href="https://aws.amazon.com/premiumsupport/knowledge-center/organizations-member-account-access/">Access AWS Organization member account</a>      <br />
-consider repeating step 3. but for the corresponding member accounts.</li>
-</ol>
-</div>
-<h3 id="next-steps">Next Steps<a class="headerlink" href="#next-steps" title="Permanent link"> ¶</a></h3>
-<p><img alt="📚" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@14.1.2/assets/svg/1f4da.svg" title=":books:" /> <a href="../vpc-peering/">AWS VPC Peering</a></p>
 
 
   
@@ -4922,7 +4559,7 @@ consider repeating step 3. but for the corresponding member accounts.</li>
       <nav class="md-footer__inner md-grid" aria-label="Footer" >
         
           
-          <a href="../../security/firewall-manager/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Firewall Manager" rel="prev">
+          <a href="../troubleshooting/credentials/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Credentials" rel="prev">
             <div class="md-footer__button md-icon">
               
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
@@ -4932,20 +4569,20 @@ consider repeating step 3. but for the corresponding member accounts.</li>
                 Previous
               </span>
               <div class="md-ellipsis">
-                Firewall Manager
+                Credentials
               </div>
             </div>
           </a>
         
         
           
-          <a href="../vpc-peering/" class="md-footer__link md-footer__link--next" aria-label="Next: VPC Peering" rel="next">
+          <a href="VPN-with-no-LandingZone/" class="md-footer__link md-footer__link--next" aria-label="Next: VPN with no LandingZone" rel="next">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 Next
               </span>
               <div class="md-ellipsis">
-                VPC Peering
+                VPN with no LandingZone
               </div>
             </div>
             <div class="md-footer__button md-icon">
@@ -5074,10 +4711,10 @@ consider repeating step 3. but for the corresponding member accounts.</li>
       <div class="md-dialog__inner md-typeset"></div>
     </div>
     
-    <script id="__config" type="application/json">{"base": "../../../../..", "features": ["navigation.tabs", "navigation.instant", "navigation.tracking", "navigation.indexes", "navigation.top", "navigation.footer", "header.autohide", "content.action.edit", "content.code.annotate"], "search": "../../../../../assets/javascripts/workers/search.dfff1995.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs", "navigation.instant", "navigation.tracking", "navigation.indexes", "navigation.top", "navigation.footer", "header.autohide", "content.action.edit", "content.code.annotate"], "search": "../../assets/javascripts/workers/search.dfff1995.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
-      <script src="../../../../../assets/javascripts/bundle.dff1b7c8.min.js"></script>
+      <script src="../../assets/javascripts/bundle.dff1b7c8.min.js"></script>
       
     
   </body>

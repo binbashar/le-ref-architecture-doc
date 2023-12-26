@@ -287,6 +287,10 @@ nav:
       - Overview: "user-guide/troubleshooting/index.md"
       - General: "user-guide/troubleshooting/general.md"
       - Credentials: "user-guide/troubleshooting/credentials.md"
+    - Playbooks:
+      - Overview: "user-guide/playbooks/index.md"
+      - VPN with no LandingZone: "user-guide/playbooks/VPN-with-no-LandingZone.md"
+      - Start/Stop EC2/RDS instances using schedule or manual endpoint: "user-guide/playbooks/schedule-start-stop-ec2.md"
   - Work with us:
       - Overview: "work-with-us/index.md"
       - Support: "work-with-us/support.md"

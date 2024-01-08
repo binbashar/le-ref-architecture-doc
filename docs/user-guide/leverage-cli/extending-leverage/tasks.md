@@ -10,6 +10,8 @@ capabilities that are outside of Leverage CLI's scope.
 By implementing new auxiliary Leverage tasks you can achieve consistency and homogeneity in the experience of the user
 when interacting with your Leverage project and simplify the usage of any other tool that you may require.
 
+To check some common included tasks please see [here](#common-tasks)
+
 ## Tasks
 Tasks are simple python functions that are marked as such with the use of the `@task()` decorator. We call the file where
 all tasks are defined a 'build script', and by default it is assumed to be named `build.py`. If you use any other name
@@ -299,3 +301,109 @@ For example, if the directory where the build script `build.py` is stored is nam
 The same situation will arise from any other subdirectory in the project. When importing modules from those directories, they wont be found.
 
 The simple solution to this is to avoid using periods when naming directories. If the build script is located in the project's root folder, this would also apply to that directory.
+
+## Common tasks
+
+These are the common tasks included with **binbash Leverage**:
+
+
+### Layer Dependency Check
+
+This tasks is aimed to help to determine the current layer dependencies.
+
+If the current layer is getting information from remote states in different layers, then these layers have to be run before the current layer, this is called a dependency.
+
+To run this task, `cd` into the desired layer and run:
+
+```shell
+leverage run layer_dependency
+```
+
+This is a sample output:
+
+```shell
+❯ leverage run layer_dependency
+[10:37:41.817] [ build.py - ➜ Starting task _checkdir ]                                          
+[10:37:41.824] [ build.py - ✔ Completed task _checkdir ]                                         
+[10:37:41.825] [ build.py - ➜ Starting task layer_dependency ]                                   
+Note layer dependency is calculated using remote states.
+Nevertheless, other sort of dependencies could exist without this kind of resources,
+e.g. if you rely on some resource created in a different layer and not referenced here.
+{
+ "security": {
+  "remote_state_name": "security",
+  "account": "apps-devstg",
+  "layer": "security-keys",
+  "key": "apps-devstg/security-keys/terraform.tfstate",
+  "key_raw": "${var.environment}/security-keys/terraform.tfstate",
+  "usage": {
+   "used": true,
+   "files": [
+    "/home/jdelacamara/Dev/work/BinBash/code/le-tf-infra-aws/apps-devstg/us-east-1/ec2-fleet-ansible --/ec2_fleet.tf"
+   ]
+  }
+ },
+ "vpc": {
+  "remote_state_name": "vpc",
+  "account": "apps-devstg",
+  "layer": "network",
+  "key": "apps-devstg/network/terraform.tfstate",
+  "key_raw": "${var.environment}/network/terraform.tfstate",
+  "usage": {
+   "used": true,
+   "files": [
+    "/home/jdelacamara/Dev/work/BinBash/code/le-tf-infra-aws/apps-devstg/us-east-1/ec2-fleet-ansible --/locals.tf",
+    "/home/jdelacamara/Dev/work/BinBash/code/le-tf-infra-aws/apps-devstg/us-east-1/ec2-fleet-ansible --/ec2_fleet.tf"
+   ]
+  }
+ },
+ "vpc-shared": {
+  "remote_state_name": "vpc-shared",
+  "account": "shared",
+  "layer": "network",
+  "key": "shared/network/terraform.tfstate",
+  "key_raw": "shared/network/terraform.tfstate",
+  "usage": {
+   "used": true,
+   "files": [
+    "/home/jdelacamara/Dev/work/BinBash/code/le-tf-infra-aws/apps-devstg/us-east-1/ec2-fleet-ansible --/ec2_fleet.tf"
+   ]
+  }
+ }
+}
+[10:37:41.943] [ build.py - ✔ Completed task layer_dependency ]
+```
+
+Data:
+
+- "remote_state_name": the remote state name
+- "account": the account the remote state belongs to
+- "layer": the referenced layer
+- "key": the key name (i.e. the `tfstate` file name for the remote state)
+- "key_raw": the same as `key` but with variables not resolved
+- "usage": if this remote state is used and in what files
+  
+For a shorter version:
+```shell
+❯ leverage run layer_dependency\['summary=True'\]
+[10:47:00.461] [ build.py - ➜ Starting task _checkdir ]                                          
+[10:47:00.467] [ build.py - ✔ Completed task _checkdir ]                                         
+               [ build.py - ➜ Starting task layer_dependency ]                                   
+Note layer dependency is calculated using remote states.
+Nevertheless, other sort of dependencies could exist without this kind of resources,
+e.g. if you rely on some resource created in a different layer and not referenced here.
+{
+ "this": [
+  "apps-devstg/security-keys/terraform.tfstate",
+  "apps-devstg/network/terraform.tfstate",
+  "shared/network/terraform.tfstate"
+ ]
+}
+[10:47:00.489] [ build.py - ✔ Completed task layer_dependency ]  
+```
+
+If you already have a **binbash Leverage** project created, you can download [this file](https://github.com/binbashar/le-tf-infra-aws/blob/master/build_deplayerchk.py) into your project root dir and add this import to your `build.py`:
+
+```yaml
+from build_deplayerchk import *
+```

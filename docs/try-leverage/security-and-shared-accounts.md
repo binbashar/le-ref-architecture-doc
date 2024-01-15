@@ -16,6 +16,16 @@ First, go to the `security` directory.
 cd security
 ```
 
+### Set profile
+
+Since we are using SSO, check in `security/config/backend.tfvars` file the `profile` is set to:
+
+```yaml
+profile = "me-security-devops"
+```
+
+If it is not, please modify it. Note we are using a sample short project name `me`, use the one you have set.
+
 ### Terraform backend layer
 Move into the `us-east-1/base-tf-backend` directory and run:
 ``` bash
@@ -57,6 +67,17 @@ Place yourself in the `shared` directory.
 cd shared
 ```
 
+### Set profile
+
+Since we are using SSO, check in `shared/config/backend.tfvars` file the `profile` is set to:
+
+```yaml
+profile = "me-shared-devops"
+```
+
+If it is not, please modify it. Note we are using a sample short project name `me`, use the one you have set.
+
+
 ### Terraform backend layer
 Move into the `us-east-1/base-tf-backend` directory and run:
 ``` bash
@@ -96,6 +117,6 @@ leverage terraform apply
 ```
 
 ## Next steps
-You have now a fully deployed landing zone configuration for the Leverage Reference Architecture for AWS, with its three accounts `management`, `security` and `shared` ready to be used.
+You have now a fully deployed landing zone configuration for the Leverage Reference Architecture for AWS, with its three accounts management, security and shared ready to be used.
 
-Next, you are going to tackle de last steps configuring the credentials for a user to interact with your Leverage project securely.
+Next, you are going to tackle de last steps.

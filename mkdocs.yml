@@ -164,6 +164,7 @@ nav:
     - Install Leverage CLI: "try-leverage/local-setup.md"
     - Create a Leverage project: "try-leverage/leverage-project-setup.md"
     - Configure the Management account: "try-leverage/management-account.md"
+    - Enable SSO: "try-leverage/enabling-sso.md"
     - Configure the Security and Shared accounts: "try-leverage/security-and-shared-accounts.md"
     - Post-deployment: "try-leverage/post-deployment.md"
     - Add more AWS Accounts: "try-leverage/add-aws-accounts.md"

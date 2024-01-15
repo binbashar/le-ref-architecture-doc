@@ -29,8 +29,8 @@
 3. Go to the users section
 4. Locate the user whose email you want to active
 5. Click on the user to view the user details
-6. There should be a "Send verification email" button at the top. Click on it.
+6. There should be a "Send verification email" or "Send email verification link" button at the top. Click on it.
 7. Notify the user, confirm that he/she got the email and that he/she clicked on the activation link.
 
 ## Reset a user password
-Follow the steps in the [official documentation](https://docs.aws.amazon.com/singlesignon/latest/userguide/resetuserpwd.html)
+Follow the steps in the [official documentation](https://docs.aws.amazon.com/singlesignon/latest/userguide/resetpassword-accessportal.html)

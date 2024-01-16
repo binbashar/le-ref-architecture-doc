@@ -10,6 +10,9 @@ The bootstrap user can now be deleted.
 - Go to IAM
 - Delete the user `mgmt-org-admin`
 
+## Adding SSO users and groups
+
+To add users or groups, please see [SSO Managing Users document](/user-guide/ref-architecture-aws/features/sso/managing-users).
 
 ## Next steps
 Now you not only have a fully functional landing zone configuration deployed, but also are able to interact with it using your own AWS SSO credentials.

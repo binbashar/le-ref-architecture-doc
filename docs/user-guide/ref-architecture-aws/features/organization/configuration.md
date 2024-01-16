@@ -46,7 +46,7 @@ the aliases automatically implicitly when running Terraform's Leverage code.
             - If needed Update Alternate Contacts 
 
     2. Via AWS Web Console: in `project_name-management` previously created account (eg, name: `leverage-management`,
-    email: `aws@binbash.com.ar`) [create the `mgmt-org-admin` IAM user with Admin privileges](https://docs.aws.amazon.com/mediapackage/latest/ug/setting-up-create-iam-user.html)
+    email: `aws@binbash.com.ar`) [create the `mgmt-org-admin` IAM user with Admin privileges](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_users_create.html#id_users_create_console)
     (admin IAM policy attached), which will be use for the initial AWS Org bootstrapping.
         - :ledger: **NOTE:** After it’s 1st execution only nominated Org admin users will persist in the `project-management` account.
 

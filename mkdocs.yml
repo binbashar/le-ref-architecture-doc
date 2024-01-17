@@ -164,6 +164,7 @@ nav:
     - Install Leverage CLI: "try-leverage/local-setup.md"
     - Create a Leverage project: "try-leverage/leverage-project-setup.md"
     - Configure the Management account: "try-leverage/management-account.md"
+    - Enable SSO: "try-leverage/enabling-sso.md"
     - Configure the Security and Shared accounts: "try-leverage/security-and-shared-accounts.md"
     - Post-deployment: "try-leverage/post-deployment.md"
     - Add more AWS Accounts: "try-leverage/add-aws-accounts.md"
@@ -291,6 +292,7 @@ nav:
       - Overview: "user-guide/playbooks/index.md"
       - VPN with no LandingZone: "user-guide/playbooks/VPN-with-no-LandingZone.md"
       - Start/Stop EC2/RDS instances using schedule or manual endpoint: "user-guide/playbooks/schedule-start-stop-ec2.md"
+      - Calculate VPC cubnet CIDRs: "user-guide/playbooks/VPC-subnet-calculator.md"
   - Work with us:
       - Overview: "work-with-us/index.md"
       - Support: "work-with-us/support.md"

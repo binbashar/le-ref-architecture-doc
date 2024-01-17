@@ -1,4 +1,4 @@
-# VPN with no Landing Zone
+# VPC with no Landing Zone
 
 ## What
 

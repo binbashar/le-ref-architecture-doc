@@ -626,6 +626,8 @@
       
         
       
+        
+      
     
     
     <li class="md-nav__item md-nav__item--active md-nav__item--nested">
@@ -796,6 +798,26 @@
   
   <span class="md-ellipsis">
     Configure the Management account
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../enabling-sso/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Enable SSO
   </span>
   
 
@@ -3925,6 +3947,8 @@
       
         
       
+        
+      
     
     
     <li class="md-nav__item md-nav__item--nested">
@@ -3994,6 +4018,26 @@
   
   <span class="md-ellipsis">
     Start/Stop EC2/RDS instances using schedule or manual endpoint
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../user-guide/playbooks/VPC-subnet-calculator/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Calculate VPC cubnet CIDRs
   </span>
   
 
@@ -4615,7 +4659,7 @@
 
 <h1 id="creating-your-aws-management-account">Creating your AWS Management account<a class="headerlink" href="#creating-your-aws-management-account" title="Permanent link"> ¶</a></h1>
 <h2 id="create-the-first-aws-account">Create the first AWS account<a class="headerlink" href="#create-the-first-aws-account" title="Permanent link"> ¶</a></h2>
-<p>First and foremost you'll need to <a href="/user-guide/ref-architecture-aws/features/organization/configuration/">create an AWS account</a> for your project. This will be the management account of your <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_getting-started_concepts.html">AWS Organization</a> and the email address you use for signing up will be the <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_root-user.html">root user</a> of this account -- you can see this user represented in the <a href="../#leverage-landing-zone">architecture diagram</a>.</p>
+<p>First and foremost you'll need to <a href="/user-guide/ref-architecture-aws/features/organization/configuration/">create an AWS account</a> for your project (note your management account should be called <code>&lt;project-name&gt;-management</code>). This will be the management account of your <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_getting-started_concepts.html">AWS Organization</a> and the email address you use for signing up will be the <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_root-user.html">root user</a> of this account -- you can see this user represented in the <a href="../#leverage-landing-zone">architecture diagram</a>.</p>
 <p>Since the root user is the main access point to your account it is strongly recommended that you keep its credentials (email, password) safe by following <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/best-practices.html">AWS best practices</a>.</p>
 <div class="admonition tip">
 <p class="admonition-title">Tip<p>To protect your management account, <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_root-user.html#id_root-user_manage_mfa">enabling Multi Factor Authentication</a> is <strong>highly</strong> encouraged. Also, reviewing the <a href="https://console.aws.amazon.com/billing/home?#/account">account's billing setup</a> is always a good idea before proceeding.</p>
@@ -4626,7 +4670,7 @@
 </div>
 <h2 id="create-a-bootstrap-user-with-temporary-administrator-permissions">Create a bootstrap user with temporary administrator permissions<a class="headerlink" href="#create-a-bootstrap-user-with-temporary-administrator-permissions" title="Permanent link"> ¶</a></h2>
 <p>Leverage needs a user with temporary administrator permissions in order to deploy the initial resources that will form the foundations you will then use to keep building on. That initial deployment is called the bootstrap process and thus the user required for that is called "the bootstrap user".</p>
-<p>To create that user, navigate to the <a href="https://console.aws.amazon.com/iam/">IAM page</a> and create a user named <code>mgmt-org-admin</code> <a href="/user-guide/ref-architecture-aws/features/organization/configuration/#reference-aws-organization-init-workflow">following step 2 of this leverage doc</a>.</p>
+<p>To create that user, navigate to the <a href="https://console.aws.amazon.com/iam/">IAM page</a> and create a user named <code>mgmt-org-admin</code> <a href="/user-guide/ref-architecture-aws/features/organization/configuration/#reference-aws-organization-init-workflow">following steps 2 and 3 of this leverage doc</a>.</p>
 <div class="admonition info">
 <p class="admonition-title">Info<p>Bear in mind that the page for creating users may change from time to time but the key settings for configuring the bootstrap user are the following:</p>
 <ul>
@@ -4648,6 +4692,10 @@
 <p class="admonition-title">Info<p>If you are only getting the bootstrap user credentials for someone else in your team or
 in Binbash's team, then please share that using a secure way (e.g. password management
 service, GPG keys, etc).</p>
+</p>
+</div>
+<div class="admonition info">
+<p class="admonition-title">Info<p>If user was set up with the option "Force to change password on first login", you should log into the console to do so.</p>
 </p>
 </div>
 <h2 id="next-steps">Next steps<a class="headerlink" href="#next-steps" title="Permanent link"> ¶</a></h2>

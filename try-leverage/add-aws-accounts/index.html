@@ -626,6 +626,8 @@
       
         
       
+        
+      
     
     
     <li class="md-nav__item md-nav__item--active md-nav__item--nested">
@@ -735,6 +737,26 @@
   
   <span class="md-ellipsis">
     Configure the Management account
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../enabling-sso/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Enable SSO
   </span>
   
 
@@ -872,13 +894,6 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#create-the-identities-layer" class="md-nav__link">
-    Create the identities layer
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
   <a href="#create-the-security-base-layer" class="md-nav__link">
     Create the security-base layer
   </a>
@@ -892,13 +907,6 @@
   
 </li>
         
-          <li class="md-nav__item">
-  <a href="#replace-temporary-profiles-with-permanent-ones" class="md-nav__link">
-    Replace temporary profiles with permanent ones
-  </a>
-  
-</li>
-        
       </ul>
     </nav>
   
@@ -907,6 +915,13 @@
         <li class="md-nav__item">
   <a href="#done" class="md-nav__link">
     Done!
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#next-steps" class="md-nav__link">
+    Next steps
   </a>
   
 </li>
@@ -3980,6 +3995,8 @@
       
         
       
+        
+      
     
     
     <li class="md-nav__item md-nav__item--nested">
@@ -4049,6 +4066,26 @@
   
   <span class="md-ellipsis">
     Start/Stop EC2/RDS instances using schedule or manual endpoint
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../user-guide/playbooks/VPC-subnet-calculator/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Calculate VPC cubnet CIDRs
   </span>
   
 
@@ -4661,13 +4698,6 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#create-the-identities-layer" class="md-nav__link">
-    Create the identities layer
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
   <a href="#create-the-security-base-layer" class="md-nav__link">
     Create the security-base layer
   </a>
@@ -4681,13 +4711,6 @@
   
 </li>
         
-          <li class="md-nav__item">
-  <a href="#replace-temporary-profiles-with-permanent-ones" class="md-nav__link">
-    Replace temporary profiles with permanent ones
-  </a>
-  
-</li>
-        
       </ul>
     </nav>
   
@@ -4696,6 +4719,13 @@
         <li class="md-nav__item">
   <a href="#done" class="md-nav__link">
     Done!
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#next-steps" class="md-nav__link">
+    Next steps
   </a>
   
 </li>
@@ -4748,8 +4778,20 @@
     <div class="highlight"><pre><span></span><code>leverage<span class="w"> </span>terraform<span class="w"> </span>init
 leverage<span class="w"> </span>terraform<span class="w"> </span>apply
 </code></pre></div></li>
-<li>Add the new account to the <code>config/common.tfvars</code> file. The new account ID should have been displayed in the output of the previous step so please grab it from there and use it to update said file as in the example below:
-    <div class="highlight"><pre><span></span><code><span class="nv">accounts</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">{</span>
+</ol>
+<div class="admonition info">
+<p class="admonition-title">Authentication error</p>
+<p>Note this layer was first applied before using the boostrap user. Now, that we are working with SSO, credentials have changed. So, if this is the first account you add you'll probably get this error applying: "Error: error configuring S3 Backend: no valid credential sources for S3 Backend found."
+In this case running <code>leverage tf init -reconfigure</code> will fix the issue.</p>
+</div>
+<ol>
+<li>
+<p>Add the new account to the <code>&lt;project&gt;/config/common.tfvars</code> file. The new account ID should have been displayed in the output of the previous step, e.g.:
+   <div class="highlight"><pre><span></span><code>aws_organizations_account.accounts<span class="o">[</span><span class="s2">&quot;apps-prd&quot;</span><span class="o">]</span>:<span class="w"> </span>Creation<span class="w"> </span><span class="nb">complete</span><span class="w"> </span>after<span class="w"> </span>14s<span class="w"> </span><span class="o">[</span><span class="nv">id</span><span class="o">=</span><span class="m">999999999999</span><span class="o">]</span>
+</code></pre></div>
+   <strong>Note</strong> the id, <code>999999999999</code>.</p>
+<p>...so please grab it from there and use it to update the file as shown below:
+<div class="highlight"><pre><span></span><code><span class="nv">accounts</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">{</span>
 
 <span class="o">[</span>...<span class="o">]</span>
 
@@ -4758,42 +4800,38 @@ leverage<span class="w"> </span>terraform<span class="w"> </span>apply
 <span class="w">        </span><span class="nv">id</span><span class="w">    </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;&lt;add-the-account-id-here&gt;&quot;</span>
 <span class="w">    </span><span class="o">}</span>
 <span class="o">}</span>
-</code></pre></div></li>
-<li>If you are using SSO in this project, permissions on the new account must be granted before we can move forward. Add the right permissions to the <code>management/global/sso/account_assignments.tf</code> file. For the example:
-    <div class="highlight"><pre><span></span><code><span class="w">    </span><span class="p p-Indicator">{</span>
-<span class="w">      </span><span class="nv">account             = var.accounts.apps-prd.id</span><span class="p p-Indicator">,</span>
-<span class="w">      </span><span class="nv">permission_set_arn  = module.permission_sets.permission_sets</span><span class="p p-Indicator">[</span><span class="s">&quot;Administrator&quot;</span><span class="p p-Indicator">]</span><span class="nv">.arn</span><span class="p p-Indicator">,</span>
-<span class="w">      </span><span class="nv">permission_set_name = &quot;Administrator&quot;</span><span class="p p-Indicator">,</span>
-<span class="w">      </span><span class="nv">principal_type      = &quot;GROUP&quot;</span><span class="p p-Indicator">,</span>
-<span class="w">      </span><span class="nv">principal_name      = &quot;AWS_Administrators&quot;</span>
-<span class="w">    </span><span class="p p-Indicator">}</span><span class="err">,</span>
-
-<span class="w">    </span><span class="p p-Indicator">{</span>
-<span class="w">      </span><span class="nv">account             = var.accounts.apps-prd.id</span><span class="p p-Indicator">,</span>
-<span class="w">      </span><span class="nv">permission_set_arn  = module.permission_sets.permission_sets</span><span class="p p-Indicator">[</span><span class="s">&quot;DevOps&quot;</span><span class="p p-Indicator">]</span><span class="nv">.arn</span><span class="p p-Indicator">,</span>
-<span class="w">      </span><span class="nv">permission_set_name = &quot;DevOps&quot;</span><span class="p p-Indicator">,</span>
-<span class="w">      </span><span class="nv">principal_type      = &quot;GROUP&quot;</span><span class="p p-Indicator">,</span>
-<span class="w">      </span><span class="nv">principal_name      = &quot;AWS_DevOps&quot;</span>
-<span class="w">    </span><span class="p p-Indicator">}</span><span class="err">,</span>
-
-<span class="w">    </span><span class="p p-Indicator">{</span>
-<span class="w">      </span><span class="nv">account             = var.accounts.apps-prd.id</span><span class="p p-Indicator">,</span>
-<span class="w">      </span><span class="nv">permission_set_arn  = module.permission_sets.permission_sets</span><span class="p p-Indicator">[</span><span class="s">&quot;Developer_FullAccess&quot;</span><span class="p p-Indicator">]</span><span class="nv">.arn</span><span class="p p-Indicator">,</span>
-<span class="w">      </span><span class="nv">permission_set_name = &quot;Developer_FullAccess&quot;</span><span class="p p-Indicator">,</span>
-<span class="w">      </span><span class="nv">principal_type      = &quot;GROUP&quot;</span><span class="p p-Indicator">,</span>
-<span class="w">      </span><span class="nv">principal_name      = &quot;AWS_Developers&quot;</span>
-<span class="w">    </span><span class="p p-Indicator">}</span><span class="err">,</span>
 </code></pre></div>
-    Note your needs can vary, these permissions are just an example, please be careful with what you are granting here. Apply these changes:
-    <div class="highlight"><pre><span></span><code>leverage<span class="w"> </span>terraform<span class="w"> </span>apply
+5. Since you are using SSO in this project, permissions on the new account must be granted before we can move forward. Add the right permissions to the <code>management/global/sso/account_assignments.tf</code> file. For the example:
+<div class="highlight"><pre><span></span><code><span class="w"> </span><span class="c1"># -------------------------------------------------------------------------</span>
+<span class="w"> </span><span class="c1"># apps-prd account</span>
+<span class="w"> </span><span class="c1"># -------------------------------------------------------------------------</span>
+<span class="w"> </span><span class="p p-Indicator">{</span>
+<span class="w">   </span><span class="nv">account             = var.accounts.apps-prd.id</span><span class="p p-Indicator">,</span>
+<span class="w">   </span><span class="nv">permission_set_arn  = module.permission_sets.permission_sets</span><span class="p p-Indicator">[</span><span class="s">&quot;Administrator&quot;</span><span class="p p-Indicator">]</span><span class="nv">.arn</span><span class="p p-Indicator">,</span>
+<span class="w">   </span><span class="nv">permission_set_name = &quot;Administrator&quot;</span><span class="p p-Indicator">,</span>
+<span class="w">   </span><span class="nv">principal_type      = local.principal_type_group</span>
+<span class="w">   </span><span class="nv">principal_name      = local.groups</span><span class="p p-Indicator">[</span><span class="s">&quot;administrators&quot;</span><span class="p p-Indicator">]</span><span class="nv">.name</span>
+<span class="w"> </span><span class="p p-Indicator">}</span><span class="err">,</span>
+<span class="w"> </span><span class="p p-Indicator">{</span>
+<span class="w">   </span><span class="nv">account             = var.accounts.apps-prd.id</span><span class="p p-Indicator">,</span>
+<span class="w">   </span><span class="nv">permission_set_arn  = module.permission_sets.permission_sets</span><span class="p p-Indicator">[</span><span class="s">&quot;DevOps&quot;</span><span class="p p-Indicator">]</span><span class="nv">.arn</span><span class="p p-Indicator">,</span>
+<span class="w">   </span><span class="nv">permission_set_name = &quot;DevOps&quot;</span><span class="p p-Indicator">,</span>
+<span class="w">   </span><span class="nv">principal_type      = local.principal_type_group</span>
+<span class="w">   </span><span class="nv">principal_name      = local.groups</span><span class="p p-Indicator">[</span><span class="s">&quot;devops&quot;</span><span class="p p-Indicator">]</span><span class="nv">.name</span>
+<span class="w"> </span><span class="p p-Indicator">}</span><span class="err">,</span>
 </code></pre></div>
-    And you must update your AWS config file accordingly by running this:
-    <div class="highlight"><pre><span></span><code>leverage<span class="w"> </span>aws<span class="w"> </span>configure<span class="w"> </span>sso
-</code></pre></div></li>
+Note your needs can vary, these permissions are just an example, please be careful with what you are granting here.</p>
+<p>Apply these changes:
+<div class="highlight"><pre><span></span><code>leverage<span class="w"> </span>terraform<span class="w"> </span>apply
+</code></pre></div>
+And you must update your AWS config file accordingly by running this:
+<div class="highlight"><pre><span></span><code>leverage<span class="w"> </span>aws<span class="w"> </span>configure<span class="w"> </span>sso
+</code></pre></div></p>
+</li>
 </ol>
 <p>Good! Now you are ready to create the initial directory structure for the new account. The next section will guide through those steps.</p>
 <h2 id="create-and-deploy-the-layers-for-the-new-account">Create and deploy the layers for the new account<a class="headerlink" href="#create-and-deploy-the-layers-for-the-new-account" title="Permanent link"> ¶</a></h2>
-<p>In this example we will create the <code>apps-prd</code> account structure by using the <code>apps-devstg</code> as a template.</p>
+<p>In this example we will create the <code>apps-prd</code> account structure by using the <code>shared</code> as a template.</p>
 <h3 id="create-the-initial-directory-structure-for-the-new-account">Create the initial directory structure for the new account<a class="headerlink" href="#create-the-initial-directory-structure-for-the-new-account" title="Permanent link"> ¶</a></h3>
 <ol>
 <li>Ensure you are at the root of this repository</li>
@@ -4802,21 +4840,10 @@ leverage<span class="w"> </span>terraform<span class="w"> </span>apply
 </code></pre></div></li>
 <li>Set up the config files:<ol>
 <li>Create the config files for this account: 
-    <div class="highlight"><pre><span></span><code>cp<span class="w"> </span>-r<span class="w"> </span>apps-devstg/config<span class="w"> </span>apps-prd/config
+    <div class="highlight"><pre><span></span><code>cp<span class="w"> </span>-r<span class="w"> </span>shared/config<span class="w"> </span>apps-prd/config
 </code></pre></div></li>
-<li>Open <code>apps-prd/config/backend.tfvars</code> and replace any occurrences of <code>devstg</code> with <code>prd</code>. (basically, <code>apps-devstg</code> is being replaced with the new name <code>apps-prd</code>)</li>
+<li>Open <code>apps-prd/config/backend.tfvars</code> and replace any occurrences of <code>shared</code> with <code>apps-prd</code>.</li>
 <li>Do the same with <code>apps-prd/config/account.tfvars</code></li>
-<li>If <strong>no SSO</strong> is implemented in the project (i.e. OAAR is being used):<ol>
-<li>Open up <code>apps-prd/config/backend.tfvars</code> again and replace this:
-    <div class="highlight"><pre><span></span><code><span class="l l-Scalar l-Scalar-Plain">profile = &quot;bb-apps-prd-devops&quot;</span>
-</code></pre></div>
-    with this:
-    <div class="highlight"><pre><span></span><code><span class="l l-Scalar l-Scalar-Plain">profile = &quot;bb-apps-prd-oaar&quot;</span>
-</code></pre></div></li>
-<li>In the step above, we are switching to the OAAR (OrganizationalAccountAccessRole) role because we are working with a brand new account that is empty, so, the only way to access it programmatically is through the OAAR role.</li>
-<li>Now it's time to configure your OAAR credentials (if haven't already done so). For that you can follow the steps in <a href="https://leverage.binbash.co/try-leverage/management-account/#update-the-bootstrap-credentials">this section</a> of the official documentation.</li>
-</ol>
-</li>
 </ol>
 </li>
 </ol>
@@ -4824,26 +4851,29 @@ leverage<span class="w"> </span>terraform<span class="w"> </span>apply
 <ol>
 <li>
 <p>Copy the layer from an existing one:
-    <div class="highlight"><pre><span></span><code>cp<span class="w"> </span>-r<span class="w"> </span>apps-devstg/us-east-1/base-tf-backend<span class="w"> </span>apps-prd/us-east-1/base-tf-backend
+    <div class="highlight"><pre><span></span><code>cp<span class="w"> </span>-r<span class="w"> </span>shared/us-east-1/base-tf-backend<span class="w"> </span>apps-prd/us-east-1/base-tf-backend
 </code></pre></div></p>
 <div class="admonition info">
 <p class="admonition-title">Info</p>
-<p>If the source layer was already initialized you should delete the previous Terraform setup using <code>sudo rm -rf .terraform*</code> in the target layer's directory.</p>
+<p>If the source layer was already initialized you should delete the previous Terraform setup using <code>sudo rm -rf .terraform*</code> in the target layer's directory, e.g. <code>rm -rf apps-prd/us-east-1/base-tf-backend/.terraform*</code></p>
 </div>
 </li>
 <li>
 <p>Go to the <code>apps-prd/us-east-1/base-tf-backend</code> directory, open the <code>config.tf</code> file and comment the S3 backend block. E.g.:
     <div class="highlight"><pre><span></span><code><span class="c1">#backend &quot;s3&quot; {</span>
-<span class="c1">#    key = &quot;apps-devstg/tf-backend/terraform.tfstate&quot;</span>
+<span class="c1">#    key = &quot;shared/tf-backend/terraform.tfstate&quot;</span>
 <span class="c1">#}</span>
-</code></pre></div></p>
+</code></pre></div>
+    We need to do this for the first apply of this layer.</p>
 </li>
-<li>Now run the <a href="https://leverage.binbash.co/user-guide/ref-architecture-aws/workflow/">Terraform workflow</a> to initialize and
+<li>
+<p>Now run the <a href="https://leverage.binbash.co/user-guide/ref-architecture-aws/workflow/">Terraform workflow</a> to initialize and
     apply this layer. The flag <code>--skip-validation</code> is needed here since the bucket does not yet exist.
     <div class="highlight"><pre><span></span><code>leverage<span class="w"> </span>terraform<span class="w"> </span>init<span class="w"> </span>--skip-validation
 leverage<span class="w"> </span>terraform<span class="w"> </span>apply
-</code></pre></div></li>
-<li>Open the <code>config.tf</code> file again uncommenting the block commented before and replacing <code>devstg</code> with <code>prd</code>. E.g.:
+</code></pre></div></p>
+</li>
+<li>Open the <code>config.tf</code> file again uncommenting the block commented before and replacing <code>shared</code> with <code>apps-prd</code>. E.g.:
     <div class="highlight"><pre><span></span><code><span class="l l-Scalar l-Scalar-Plain">backend &quot;s3&quot; {</span>
 <span class="w">    </span><span class="l l-Scalar l-Scalar-Plain">key = &quot;apps-prd/tf-backend/terraform.tfstate&quot;</span>
 <span class="l l-Scalar l-Scalar-Plain">}</span>
@@ -4864,59 +4894,54 @@ Do<span class="w"> </span>you<span class="w"> </span>want<span class="w"> </span
 </code></pre></div>
     Enter <code>yes</code> and hit enter.</li>
 </ol>
-<h3 id="create-the-identities-layer">Create the identities layer<a class="headerlink" href="#create-the-identities-layer" title="Permanent link"> ¶</a></h3>
-<ol>
-<li>Copy the layer from an existing one: 
-    From the repository root run: 
-    <div class="highlight"><pre><span></span><code>cp -r apps-devstg/global/base-identities apps-prd/global/base-identities`
-</code></pre></div></li>
-<li>Go to the <code>apps-prd/global/base-identities</code> directory and open the <code>config.tf</code> file. Replace any occurrences of <code>devstg</code> with <code>prd</code>. E.g. this line should be:
-    <div class="highlight"><pre><span></span><code><span class="l l-Scalar l-Scalar-Plain">backend &quot;s3&quot; {</span>
-<span class="w">    </span><span class="l l-Scalar l-Scalar-Plain">key = &quot;apps-prd/identities/terraform.tfstate&quot;</span>
-<span class="l l-Scalar l-Scalar-Plain">}</span>
-</code></pre></div></li>
-<li>Init the layer 
-    <div class="highlight"><pre><span></span><code>leverage<span class="w"> </span>tf<span class="w"> </span>init<span class="w"> </span>-reconfigure<span class="w"> </span>-upgrade
-</code></pre></div></li>
-<li>Import the OAAR role 
-    Run this command:
-    <div class="highlight"><pre><span></span><code>leverage<span class="w"> </span>tf<span class="w"> </span>import<span class="w"> </span>module.iam_assumable_role_oaar.aws_iam_role.this<span class="w"> </span>OrganizationAccountAccessRole
-</code></pre></div></li>
-<li>Finally apply the layer
-    <div class="highlight"><pre><span></span><code>leverage<span class="w"> </span>tf<span class="w"> </span>apply
-</code></pre></div></li>
-</ol>
 <h3 id="create-the-security-base-layer">Create the <code>security-base</code> layer<a class="headerlink" href="#create-the-security-base-layer" title="Permanent link"> ¶</a></h3>
 <ol>
-<li>Copy the layer from an existing one:
+<li>
+<p>Copy the layer from an existing one:
     From the repository root run: 
-    <div class="highlight"><pre><span></span><code>cp<span class="w"> </span>-r<span class="w"> </span>apps-devstg/us-east-1/security-base<span class="w"> </span>apps-prd/us-east-1/security-base
-</code></pre></div></li>
-<li>Go to the <code>apps-prd/us-east-1/security-base</code> directory and open the <code>config.tf</code> file replacing any occurrences of <code>devstg</code> with <code>prd</code>
+    <div class="highlight"><pre><span></span><code>cp<span class="w"> </span>-r<span class="w"> </span>shared/us-east-1/security-base<span class="w"> </span>apps-prd/us-east-1/security-base
+</code></pre></div></p>
+<div class="admonition info">
+<p class="admonition-title">Info</p>
+<p>If the source layer was already initialized you should delete the previous Terraform setup using <code>sudo rm -rf .terraform*</code> in the target layer's directory, e.g. <code>rm -rf apps-prd/us-east-1/security-base/.terraform*</code></p>
+</div>
+</li>
+<li>
+<p>Go to the <code>apps-prd/us-east-1/security-base</code> directory and open the <code>config.tf</code> file replacing any occurrences of <code>shared</code> with <code>apps-prd</code>
     E.g. this line should be:
     <div class="highlight"><pre><span></span><code><span class="l l-Scalar l-Scalar-Plain">backend &quot;s3&quot; {</span>
 <span class="w">    </span><span class="l l-Scalar l-Scalar-Plain">key = &quot;apps-prd/security-base/terraform.tfstate&quot;</span>
 <span class="l l-Scalar l-Scalar-Plain">}</span>
-</code></pre></div></li>
+</code></pre></div></p>
+</li>
 <li>
 <p>Init and apply the layer</p>
-<div class="highlight"><pre><span></span><code>leverage<span class="w"> </span>tf<span class="w"> </span>init<span class="w"> </span>-reconfigure<span class="w"> </span>-upgrade
+<div class="highlight"><pre><span></span><code>leverage<span class="w"> </span>tf<span class="w"> </span>init
 leverage<span class="w"> </span>tf<span class="w"> </span>apply
 </code></pre></div>
 </li>
 </ol>
 <h3 id="create-the-network-layer">Create the <code>network</code> layer<a class="headerlink" href="#create-the-network-layer" title="Permanent link"> ¶</a></h3>
 <ol>
-<li>Copy the layer from an existing one:
+<li>
+<p>Copy the layer from an existing one:
     From the root of the repository run this: 
-    <div class="highlight"><pre><span></span><code>cp<span class="w"> </span>-r<span class="w"> </span>apps-devstg/us-east-1/base-network<span class="w"> </span>apps-prd/us-east-1/base-network
-</code></pre></div></li>
-<li>Go to the <code>apps-prd/us-east-1/base-network</code> directory and open the <code>config.tf</code> file replacing any occurrences of <code>devstg</code> with <code>prd</code>. E.g. this line should be:
+    <div class="highlight"><pre><span></span><code>cp<span class="w"> </span>-r<span class="w"> </span>shared/us-east-1/base-network<span class="w"> </span>apps-prd/us-east-1/base-network
+</code></pre></div></p>
+<div class="admonition info">
+<p class="admonition-title">Info</p>
+<p>If the source layer was already initialized you should delete the previous Terraform setup using <code>sudo rm -rf .terraform*</code> in the target layer's directory, e.g. <code>rm -rf apps-prd/us-east-1/base-network/.terraform*</code></p>
+</div>
+</li>
+<li>
+<p>Go to the <code>apps-prd/us-east-1/base-network</code> directory and open the <code>config.tf</code> file replacing any occurrences of <code>shared</code> with <code>apps-prd</code>. E.g. this line should be:
     <div class="highlight"><pre><span></span><code><span class="l l-Scalar l-Scalar-Plain">backend &quot;s3&quot; {</span>
 <span class="w">    </span><span class="l l-Scalar l-Scalar-Plain">key = &quot;apps-prd/network/terraform.tfstate&quot;</span>
 <span class="l l-Scalar l-Scalar-Plain">}</span>
-</code></pre></div></li>
-<li>Open the file <code>locals.tf</code> and set the new account's CIDRs.
+</code></pre></div></p>
+</li>
+<li>
+<p>Open the file <code>locals.tf</code> and set the new account's CIDRs.
     <div class="highlight"><pre><span></span><code><span class="l l-Scalar l-Scalar-Plain">vpc_cidr_block = &quot;172.19.0.0/20&quot;</span>
 <span class="l l-Scalar l-Scalar-Plain">azs = [</span>
 <span class="w">    </span><span class="l l-Scalar l-Scalar-Plain">&quot;${var.region}a&quot;,</span>
@@ -4941,17 +4966,30 @@ leverage<span class="w"> </span>tf<span class="w"> </span>apply
 <span class="w">    </span><span class="l l-Scalar l-Scalar-Plain">#&quot;172.19.14.0/23&quot;,</span>
 <span class="l l-Scalar l-Scalar-Plain">]</span>
 </code></pre></div>
-    Note here only two AZs are enabled, if needed uncomment the other ones in the three structures.</li>
-<li>Init and apply the layer
-    <div class="highlight"><pre><span></span><code>leverage<span class="w"> </span>tf<span class="w"> </span>init<span class="w"> </span>-reconfigure<span class="w"> </span>-upgrade
+    Note here only two AZs are enabled, if needed uncomment the other ones in the three structures.</p>
+<div class="admonition warning">
+<p class="admonition-title">Do not overlap CIDRs!</p>
+<p>Be careful when chosing CIDRs.
+Avoid overlaping CIDRs between accounts.
+If you need a reference on how to chose the right CIDRs, please see <a href="/user-guide/ref-architecture-aws/features/network/vpc-addressing/">here</a>.</p>
+</div>
+<div class="admonition info">
+<p class="admonition-title">Calculate CIDRs</p>
+<p>To calculate CIDRs you can check <a href="/user-guide/playbooks/VPC-subnet-calculator/">this playbook</a>.</p>
+</div>
+</li>
+<li>
+<p>Init and apply the layer
+    <div class="highlight"><pre><span></span><code>leverage<span class="w"> </span>tf<span class="w"> </span>init
 leverage<span class="w"> </span>tf<span class="w"> </span>apply
-</code></pre></div></li>
-<li>Create the VPC Peering between the new account and the VPC of the Shared account. Edit file <code>shared/us-east-1/base-network/config.tf</code> and add provider and remote state for the created account.
+</code></pre></div></p>
+</li>
+<li>
+<p>Create the VPC Peering between the new account and the VPC of the Shared account. Edit file <code>shared/us-east-1/base-network/config.tf</code> and add provider and remote state for the created account.
     <div class="highlight"><pre><span></span><code><span class="l l-Scalar l-Scalar-Plain">provider &quot;aws&quot; {</span>
 <span class="w">    </span><span class="l l-Scalar l-Scalar-Plain">alias                   = &quot;apps-prd&quot;</span>
 <span class="w">    </span><span class="l l-Scalar l-Scalar-Plain">region                  = var.region</span>
 <span class="w">    </span><span class="l l-Scalar l-Scalar-Plain">profile                 = &quot;${var.project}-apps-prd-devops&quot;</span>
-<span class="w">    </span><span class="l l-Scalar l-Scalar-Plain">shared_credentials_file = &quot;~/.aws/${var.project}/config&quot;</span>
 <span class="l l-Scalar l-Scalar-Plain">}</span>
 
 <span class="l l-Scalar l-Scalar-Plain">data &quot;terraform_remote_state&quot; &quot;apps-prd-vpcs&quot; {</span>
@@ -4976,7 +5014,10 @@ leverage<span class="w"> </span>tf<span class="w"> </span>apply
 <span class="c1">#</span>
 </code></pre></div>
     ...add the related structure:
-    <div class="highlight"><pre><span></span><code><span class="l l-Scalar l-Scalar-Plain">apps-prd-vpcs = {</span>
+    <div class="highlight"><pre><span></span><code><span class="c1">#</span>
+<span class="c1"># Data source definitions</span>
+<span class="c1">#</span>
+<span class="l l-Scalar l-Scalar-Plain">apps-prd-vpcs = {</span>
 <span class="w">    </span><span class="l l-Scalar l-Scalar-Plain">apps-prd-base = {</span>
 <span class="w">    </span><span class="l l-Scalar l-Scalar-Plain">region  = var.region</span>
 <span class="w">    </span><span class="l l-Scalar l-Scalar-Plain">profile = &quot;${var.project}-apps-prd-devops&quot;</span>
@@ -4986,12 +5027,12 @@ leverage<span class="w"> </span>tf<span class="w"> </span>apply
 <span class="w">    </span><span class="l l-Scalar l-Scalar-Plain">}</span>
 <span class="l l-Scalar l-Scalar-Plain">}</span>
 </code></pre></div>
-    Edit file <code>shared/us-east-1/base-network/vpc_peerings.tf</code> and add the peering definition:
+    Edit file <code>shared/us-east-1/base-network/vpc_peerings.tf</code> (if this is your first added account the file won´t exist, please crate it) and add the peering definition:
     <div class="highlight"><pre><span></span><code><span class="c1">#</span>
 <span class="c1"># VPC Peering: AppsPrd VPC =&gt; Shared VPC</span>
 <span class="c1">#</span>
 <span class="l l-Scalar l-Scalar-Plain">module &quot;vpc_peering_apps_prd_to_shared&quot; {</span>
-<span class="w">    </span><span class="l l-Scalar l-Scalar-Plain">source = &quot;github.com/binbashar/terraform-aws-vpc-peering.git?ref=v4.0.1&quot;</span>
+<span class="w">    </span><span class="l l-Scalar l-Scalar-Plain">source = &quot;github.com/binbashar/terraform-aws-vpc-peering.git?ref=v6.0.0&quot;</span>
 
 <span class="w">    </span><span class="l l-Scalar l-Scalar-Plain">for_each = {</span>
 <span class="w">    </span><span class="l l-Scalar l-Scalar-Plain">for k, v in local.apps-prd-vpcs</span><span class="w"> </span><span class="p p-Indicator">:</span>
@@ -5022,24 +5063,9 @@ leverage<span class="w"> </span>tf<span class="w"> </span>apply
 <span class="w">    </span><span class="l l-Scalar l-Scalar-Plain">}</span>
 </code></pre></div>
     Apply the changes (be sure to CD into <code>shared/us-east-1/base-network</code> layer for doing this):
-    <div class="highlight"><pre><span></span><code>leverage<span class="w"> </span>terraform<span class="w"> </span>apply
-</code></pre></div></li>
-</ol>
-<h3 id="replace-temporary-profiles-with-permanent-ones">Replace temporary profiles with permanent ones<a class="headerlink" href="#replace-temporary-profiles-with-permanent-ones" title="Permanent link"> ¶</a></h3>
-<ol>
-<li>If no SSO is implemented in the project (i.e. OAAR is being used), switch back from OAAR to DevOps role</li>
-<li>Open up <code>apps-prd/config/backend.tfvars</code>and replace this:
-    <div class="highlight"><pre><span></span><code><span class="l l-Scalar l-Scalar-Plain">profile = &quot;bb-apps-prd-oaar&quot;</span>
-</code></pre></div>
-    with this:
-    <div class="highlight"><pre><span></span><code><span class="l l-Scalar l-Scalar-Plain">profile = &quot;bb-apps-prd-devops&quot;</span>
-</code></pre></div>
-    This is needed because we only want to use the OAAR role for exceptional cases, not on a daily basis.</li>
-<li>Now, let's configure your DevOps credentials (if you haven't already done so).<ol>
-<li>Log into your security account, create programmatic access keys, and enable MFA.        </li>
-<li>Then run: <code>leverage credentials configure --fetch-mfa-device --type SECURITY</code></li>
-<li>The command above should prompt for your programmatic keys and, with those, Leverage should be able to configure your AWS config and credentials files appropriately.</li>
-</ol>
+    <div class="highlight"><pre><span></span><code>leverage<span class="w"> </span>terraform<span class="w"> </span>init
+leverage<span class="w"> </span>terraform<span class="w"> </span>apply
+</code></pre></div></p>
 </li>
 </ol>
 <h2 id="done">Done!<a class="headerlink" href="#done" title="Permanent link"> ¶</a></h2>
@@ -5048,9 +5074,18 @@ leverage<span class="w"> </span>tf<span class="w"> </span>apply
 <li>A brand new AWS account in your AWS organization.</li>
 <li>Working configuration files for both existing layers and any new layer you add in the future.</li>
 <li>A remote Terraform State Backend for this new account.</li>
-<li>Roles and policies (base identities) that are necessary to access the new account.</li>
+<li>Roles and policies (SSO) that are necessary to access the new account.</li>
 <li>The base networking resources ready to host your compute services.</li>
+<li>The VPC peerings between the new account and shared</li>
 </ol>
+<h2 id="next-steps">Next steps<a class="headerlink" href="#next-steps" title="Permanent link"> ¶</a></h2>
+<p>Now you have a new account created, so what else?</p>
+<p>To keep creating infra on top of this <strong>binbash Leverage Landing Zone</strong> with this new account added, please check:</p>
+<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> <img alt="📚" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@14.1.2/assets/svg/1f4da.svg" title=":books:" /> Check common use cases in <a href="/user-guide/playbooks/">Playbooks</a></li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> <img alt="📚" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@14.1.2/assets/svg/1f4da.svg" title=":books:" /> Review the <a href="/user-guide/ref-architecture-aws/overview/#overview">binbash Leverage architecture</a></li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> <img alt="📚" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@14.1.2/assets/svg/1f4da.svg" title=":books:" /> Go for <a href="/user-guide/ref-architecture-eks/overview/#overview">EKS</a>!</li>
+</ul>
 
 
   

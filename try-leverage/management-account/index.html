@@ -18,7 +18,7 @@
         <link rel="prev" href="../leverage-project-setup/">
       
       
-        <link rel="next" href="../security-and-shared-accounts/">
+        <link rel="next" href="../enabling-sso/">
       
       
       <link rel="icon" href="../../assets/images/logos/favicon.ico">
@@ -626,6 +626,8 @@
       
         
       
+        
+      
     
     
     <li class="md-nav__item md-nav__item--active md-nav__item--nested">
@@ -840,6 +842,26 @@
   
 </nav>
       
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../enabling-sso/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Enable SSO
+  </span>
+  
+
+      </a>
     </li>
   
 
@@ -3965,6 +3987,8 @@
       
         
       
+        
+      
     
     
     <li class="md-nav__item md-nav__item--nested">
@@ -4034,6 +4058,26 @@
   
   <span class="md-ellipsis">
     Start/Stop EC2/RDS instances using schedule or manual endpoint
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../user-guide/playbooks/VPC-subnet-calculator/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Calculate VPC cubnet CIDRs
   </span>
   
 
@@ -4786,7 +4830,7 @@ leverage<span class="w"> </span>terraform<span class="w"> </span>apply
 <p class="admonition-title">More information on <a href="/user-guide/leverage-cli/reference/credentials#configure"><code>credentials configure</code></a></p>
 </div>
 <h3 id="sso-layer">SSO layer<a class="headerlink" href="#sso-layer" title="Permanent link"> ¶</a></h3>
-<p>Before working on the SSO layer you have to navigate to the <a href="https://console.aws.amazon.com/singlesignon/">AWS IAM Identity Center page</a> and enable Single Sign-On (SSO) by clicking on the <code>Enable</code> button. Additionally, to ensure a correct integration, make sure to set the primary region for SSO in AWS console to match the primary region of your Leverage project. e.g. <code>us-east-1</code> for both of them.</p>
+<p>Before working on the SSO layer you have to navigate to the <a href="https://console.aws.amazon.com/singlesignon/">AWS IAM Identity Center page</a>, set the region to the primary region you've chosen and enable Single Sign-On (SSO) by clicking on the <code>Enable</code> button.</p>
 <p>Now back to the terminal. The SSO layer is deployed in two steps. First, switch to the <code>global/sso</code> directory and run the following:
 <div class="highlight"><pre><span></span><code>leverage<span class="w"> </span>terraform<span class="w"> </span>init
 leverage<span class="w"> </span>terraform<span class="w"> </span>apply
@@ -4806,7 +4850,7 @@ leverage<span class="w"> </span>terraform<span class="w"> </span>apply
 </code></pre></div></p>
 <h2 id="next-steps">Next steps<a class="headerlink" href="#next-steps" title="Permanent link"> ¶</a></h2>
 <p>You have successfully orchestrated the <code>management</code> account for your project and configured the credentials for the next steps.</p>
-<p>Next, you will orchestrate the remaining accounts, <code>security</code> and <code>shared</code>.</p>
+<p>Now, let's enable SSO for the rest of the process.</p>
 
 
   
@@ -4853,13 +4897,13 @@ leverage<span class="w"> </span>terraform<span class="w"> </span>apply
         
         
           
-          <a href="../security-and-shared-accounts/" class="md-footer__link md-footer__link--next" aria-label="Next: Configure the Security and Shared accounts" rel="next">
+          <a href="../enabling-sso/" class="md-footer__link md-footer__link--next" aria-label="Next: Enable SSO" rel="next">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 Next
               </span>
               <div class="md-ellipsis">
-                Configure the Security and Shared accounts
+                Enable SSO
               </div>
             </div>
             <div class="md-footer__button md-icon">

@@ -626,6 +626,8 @@
       
         
       
+        
+      
     
     
     <li class="md-nav__item md-nav__item--active md-nav__item--nested">
@@ -817,6 +819,26 @@
   
   <span class="md-ellipsis">
     Configure the Management account
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../enabling-sso/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Enable SSO
   </span>
   
 
@@ -3946,6 +3968,8 @@
       
         
       
+        
+      
     
     
     <li class="md-nav__item md-nav__item--nested">
@@ -4015,6 +4039,26 @@
   
   <span class="md-ellipsis">
     Start/Stop EC2/RDS instances using schedule or manual endpoint
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../user-guide/playbooks/VPC-subnet-calculator/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Calculate VPC cubnet CIDRs
   </span>
   
 
@@ -4694,6 +4738,9 @@ secondary_region: us-west-2
 <p class="admonition-title">The <code>project_name</code> field only accepts lowercase alphanumeric characters and allows hyphens('-'). For instance, valid names could be 'example' or 'leveragedemo' or 'example-demo' </p>
 </div>
 <div class="admonition info">
+<p class="admonition-title">The <code>short_name</code> field only accepts 2 to 4 lowercase alpha characters. For instance, valid names could be 'exam or 'leve or 'ex </p>
+</div>
+<div class="admonition info">
 <p class="admonition-title">We typically use as 1ry <code>us-east-1</code> and 2ry <code>us-west-2</code> as our default regions for the majority of our projects. However, please note that these regions may not be the most fitting choice for your specific use case. For detailed guidance, we recommend following these provided <a href="https://binbash.atlassian.net/wiki/external/2159050753/NGZkZWMzMTA5M2UwNDQ0OTk3MjUwMGY5NjA0YzRjNjk">guidelines</a>.</p>
 </div>
 <p>Another example is below. Note that the <code>management</code>, <code>security</code>, and <code>shared</code> accounts have been updated with slightly different email addresses (actually <code>aws+security@example.com</code> and <code>aws+shared@example.com</code> are email aliases of <code>aws@example.com</code> which is a convenient trick in some cases):
@@ -4724,6 +4771,9 @@ users:
   - devops
 ...
 </code></pre></div></p>
+<div class="admonition info">
+<p class="admonition-title">Note these users will be the ones used later for SSO access.</p>
+</div>
 <div class="admonition info">
 <p class="admonition-title">The project definition file includes other entries but the ones shown above are the most frequently updated.</p>
 </div>

@@ -18,9 +18,11 @@ Options:
 Commands:
   aws          Run AWS CLI commands in a custom containerized environment.
   credentials  Manage AWS cli credentials.
+  kc           Run Kubectl commands in a custom containerized environment.
   kubectl      Run Kubectl commands in a custom containerized environment.
   project      Manage a Leverage project.
   run          Perform specified task(s) and all of its dependencies.
+  shell        Run a shell in a generic container.
   terraform    Run Terraform commands in a custom containerized...
   tf           Run Terraform commands in a custom containerized...
   tfautomv     Run TFAutomv commands in a custom containerized...

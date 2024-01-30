@@ -8,6 +8,16 @@ Some commands can only be run at **layer** level and will not run anywhere else 
 
 The command can also be invoked via its shortened version `tf`.
 
+Since version 1.12, all the subcommands supports `--mount` and `--env-var` parameters in form of tuples:
+
+```bash
+leverage terraform --mount /home/user/bin/ /usr/bin/ --env-var FOO BAR apply
+```
+
+You can also provide them multiple times:
+```bash
+leverage terraform --mount /usr/bin/ /usr/bin/ --mount /etc/config /config --env-var FOO BAR --env-var TEST OK init
+```
 ---
 ## `init`
 

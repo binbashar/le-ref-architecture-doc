@@ -183,6 +183,7 @@ nav:
       - Overview: "user-guide/ref-architecture-aws/overview.md"
       - Project Structure: "user-guide/ref-architecture-aws/dir-structure.md"
       - Configuration: "user-guide/ref-architecture-aws/configuration.md"
+      - Credentials: "user-guide/ref-architecture-aws/credentials.md"
       - Workflow: "user-guide/ref-architecture-aws/workflow.md"
       - Terraform State: "user-guide/ref-architecture-aws/tf-state.md"
       - Features:
@@ -252,6 +253,7 @@ nav:
       - References: "user-guide/ref-architecture-aws/references.md"
     - Reference Architecture for EKS:
       - Overview: "user-guide/ref-architecture-eks/overview.md"
+      - Credentials: "user-guide/ref-architecture-eks/credentials.md"
       - VPC: "user-guide/ref-architecture-eks/vpc.md"
       - Components: "user-guide/ref-architecture-eks/components.md"
       - Upgrading EKS: "user-guide/ref-architecture-eks/cluster-upgrade.md"

@@ -25,7 +25,17 @@ You can add new AWS accounts to your Leverage project by following the steps in 
     leverage terraform init
     leverage terraform apply
     ```
-4. Add the new account to the `config/common.tfvars` file. The new account ID should have been displayed in the output of the previous step so please grab it from there and use it to update said file as in the example below:
+!!! info "Authentication error"
+    Note this layer was first applied before using the boostrap user. Now, that we are working with SSO, credentials have changed. So, if this is the first account you add you'll probably get this error applying: "Error: error configuring S3 Backend: no valid credential sources for S3 Backend found."
+    In this case running `leverage tf init -reconfigure` will fix the issue.
+    
+4. Add the new account to the `<project>/config/common.tfvars` file. The new account ID should have been displayed in the output of the previous step, e.g.:
+   ```shell
+   aws_organizations_account.accounts["apps-prd"]: Creation complete after 14s [id=999999999999]
+   ```
+   **Note** the id, `999999999999`.
+   
+    ...so please grab it from there and use it to update the file as shown below:
     ```shell
     accounts = {
 
@@ -37,34 +47,29 @@ You can add new AWS accounts to your Leverage project by following the steps in 
         }
     }
     ```
-5. If you are using SSO in this project, permissions on the new account must be granted before we can move forward. Add the right permissions to the `management/global/sso/account_assignments.tf` file. For the example:
+5. Since you are using SSO in this project, permissions on the new account must be granted before we can move forward. Add the right permissions to the `management/global/sso/account_assignments.tf` file. For the example:
     ```yaml
-        {
-          account             = var.accounts.apps-prd.id,
-          permission_set_arn  = module.permission_sets.permission_sets["Administrator"].arn,
-          permission_set_name = "Administrator",
-          principal_type      = "GROUP",
-          principal_name      = "AWS_Administrators"
-        },
-    
-        {
-          account             = var.accounts.apps-prd.id,
-          permission_set_arn  = module.permission_sets.permission_sets["DevOps"].arn,
-          permission_set_name = "DevOps",
-          principal_type      = "GROUP",
-          principal_name      = "AWS_DevOps"
-        },
-    
-        {
-          account             = var.accounts.apps-prd.id,
-          permission_set_arn  = module.permission_sets.permission_sets["Developer_FullAccess"].arn,
-          permission_set_name = "Developer_FullAccess",
-          principal_type      = "GROUP",
-          principal_name      = "AWS_Developers"
-        },
-    
+     # -------------------------------------------------------------------------
+     # apps-prd account
+     # -------------------------------------------------------------------------
+     {
+       account             = var.accounts.apps-prd.id,
+       permission_set_arn  = module.permission_sets.permission_sets["Administrator"].arn,
+       permission_set_name = "Administrator",
+       principal_type      = local.principal_type_group
+       principal_name      = local.groups["administrators"].name
+     },
+     {
+       account             = var.accounts.apps-prd.id,
+       permission_set_arn  = module.permission_sets.permission_sets["DevOps"].arn,
+       permission_set_name = "DevOps",
+       principal_type      = local.principal_type_group
+       principal_name      = local.groups["devops"].name
+     },
     ```
-    Note your needs can vary, these permissions are just an example, please be careful with what you are granting here. Apply these changes:
+    Note your needs can vary, these permissions are just an example, please be careful with what you are granting here.
+    
+    Apply these changes:
     ```shell
     leverage terraform apply
     ```
@@ -76,7 +81,7 @@ You can add new AWS accounts to your Leverage project by following the steps in 
 Good! Now you are ready to create the initial directory structure for the new account. The next section will guide through those steps.
 
 ## Create and deploy the layers for the new account
-In this example we will create the `apps-prd` account structure by using the `apps-devstg` as a template.
+In this example we will create the `apps-prd` account structure by using the `shared` as a template.
 
 ### Create the initial directory structure for the new account
 1. Ensure you are at the root of this repository
@@ -87,44 +92,35 @@ In this example we will create the `apps-prd` account structure by using the `ap
 3. Set up the config files:
     1. Create the config files for this account: 
         ```shell
-        cp -r apps-devstg/config apps-prd/config
+        cp -r shared/config apps-prd/config
         ```
-    2. Open `apps-prd/config/backend.tfvars` and replace any occurrences of `devstg` with `prd`. (basically, `apps-devstg` is being replaced with the new name `apps-prd`)
+    2. Open `apps-prd/config/backend.tfvars` and replace any occurrences of `shared` with `apps-prd`.
     3. Do the same with `apps-prd/config/account.tfvars`
-    4. If **no SSO** is implemented in the project (i.e. OAAR is being used):
-        1. Open up `apps-prd/config/backend.tfvars` again and replace this:
-            ```yaml
-            profile = "bb-apps-prd-devops"
-            ```
-            with this:
-            ```yaml
-            profile = "bb-apps-prd-oaar"
-            ```
-        2. In the step above, we are switching to the OAAR (OrganizationalAccountAccessRole) role because we are working with a brand new account that is empty, so, the only way to access it programmatically is through the OAAR role.
-        3. Now it's time to configure your OAAR credentials (if haven't already done so). For that you can follow the steps in [this section](https://leverage.binbash.co/try-leverage/management-account/#update-the-bootstrap-credentials) of the official documentation.
 
 ### Create the Terraform Backend layer
 1. Copy the layer from an existing one:
     ```shell
-    cp -r apps-devstg/us-east-1/base-tf-backend apps-prd/us-east-1/base-tf-backend
+    cp -r shared/us-east-1/base-tf-backend apps-prd/us-east-1/base-tf-backend
     ```
     
     !!! info
-        If the source layer was already initialized you should delete the previous Terraform setup using `sudo rm -rf .terraform*` in the target layer's directory.
+        If the source layer was already initialized you should delete the previous Terraform setup using `sudo rm -rf .terraform*` in the target layer's directory, e.g. `rm -rf apps-prd/us-east-1/base-tf-backend/.terraform* `
     
 2. Go to the `apps-prd/us-east-1/base-tf-backend` directory, open the `config.tf` file and comment the S3 backend block. E.g.:
     ```yaml
     #backend "s3" {
-    #    key = "apps-devstg/tf-backend/terraform.tfstate"
+    #    key = "shared/tf-backend/terraform.tfstate"
     #}
     ```
+    We need to do this for the first apply of this layer.
+    
 3. Now run the [Terraform workflow](https://leverage.binbash.co/user-guide/ref-architecture-aws/workflow/) to initialize and
     apply this layer. The flag `--skip-validation` is needed here since the bucket does not yet exist.
     ```shell
     leverage terraform init --skip-validation
     leverage terraform apply
     ```
-4. Open the `config.tf` file again uncommenting the block commented before and replacing `devstg` with `prd`. E.g.:
+4. Open the `config.tf` file again uncommenting the block commented before and replacing `shared` with `apps-prd`. E.g.:
     ```yaml
     backend "s3" {
         key = "apps-prd/tf-backend/terraform.tfstate"
@@ -148,39 +144,17 @@ In this example we will create the `apps-prd` account structure by using the `ap
     ```
     Enter `yes` and hit enter.
 
-### Create the identities layer
-1. Copy the layer from an existing one: 
-    From the repository root run: 
-    ```shel
-    cp -r apps-devstg/global/base-identities apps-prd/global/base-identities`
-    ```
-2. Go to the `apps-prd/global/base-identities` directory and open the `config.tf` file. Replace any occurrences of `devstg` with `prd`. E.g. this line should be:
-    ```yaml
-    backend "s3" {
-        key = "apps-prd/identities/terraform.tfstate"
-    }
-    ```
-3. Init the layer 
-    ```shell
-    leverage tf init -reconfigure -upgrade
-    ```
-4. Import the OAAR role 
-    Run this command:
-    ```shell
-    leverage tf import module.iam_assumable_role_oaar.aws_iam_role.this OrganizationAccountAccessRole
-    ```
-5. Finally apply the layer
-    ```shell
-    leverage tf apply
-    ```
-
 ### Create the `security-base` layer
 1. Copy the layer from an existing one:
     From the repository root run: 
     ```shell
-    cp -r apps-devstg/us-east-1/security-base apps-prd/us-east-1/security-base
+    cp -r shared/us-east-1/security-base apps-prd/us-east-1/security-base
     ```
-2. Go to the `apps-prd/us-east-1/security-base` directory and open the `config.tf` file replacing any occurrences of `devstg` with `prd`
+
+    !!! info
+        If the source layer was already initialized you should delete the previous Terraform setup using `sudo rm -rf .terraform*` in the target layer's directory, e.g. `rm -rf apps-prd/us-east-1/security-base/.terraform* `
+
+2. Go to the `apps-prd/us-east-1/security-base` directory and open the `config.tf` file replacing any occurrences of `shared` with `apps-prd`
     E.g. this line should be:
     ```yaml
     backend "s3" {
@@ -190,7 +164,7 @@ In this example we will create the `apps-prd` account structure by using the `ap
 3. Init and apply the layer
 
     ```shell
-    leverage tf init -reconfigure -upgrade
+    leverage tf init
     leverage tf apply
     ```
 
@@ -198,9 +172,13 @@ In this example we will create the `apps-prd` account structure by using the `ap
 1. Copy the layer from an existing one:
     From the root of the repository run this: 
     ```shell
-    cp -r apps-devstg/us-east-1/base-network apps-prd/us-east-1/base-network
+    cp -r shared/us-east-1/base-network apps-prd/us-east-1/base-network
     ```
-2. Go to the `apps-prd/us-east-1/base-network` directory and open the `config.tf` file replacing any occurrences of `devstg` with `prd`. E.g. this line should be:
+
+    !!! info
+        If the source layer was already initialized you should delete the previous Terraform setup using `sudo rm -rf .terraform*` in the target layer's directory, e.g. `rm -rf apps-prd/us-east-1/base-network/.terraform* `
+
+2. Go to the `apps-prd/us-east-1/base-network` directory and open the `config.tf` file replacing any occurrences of `shared` with `apps-prd`. E.g. this line should be:
     ```yaml
     backend "s3" {
         key = "apps-prd/network/terraform.tfstate"
@@ -233,18 +211,27 @@ In this example we will create the `apps-prd` account structure by using the `ap
     ]
     ```
     Note here only two AZs are enabled, if needed uncomment the other ones in the three structures.
+    
+    !!! warning "Do not overlap CIDRs!"
+        Be careful when chosing CIDRs.
+        Avoid overlaping CIDRs between accounts.
+        If you need a reference on how to chose the right CIDRs, please see [here](/user-guide/ref-architecture-aws/features/network/vpc-addressing/).
+        
+    !!! info "Calculate CIDRs"
+        To calculate CIDRs you can check [this playbook](/user-guide/playbooks/VPC-subnet-calculator/).
+
 3. Init and apply the layer
     ```shell
-    leverage tf init -reconfigure -upgrade
+    leverage tf init
     leverage tf apply
     ```
+
 4. Create the VPC Peering between the new account and the VPC of the Shared account. Edit file `shared/us-east-1/base-network/config.tf` and add provider and remote state for the created account.
     ```yaml
     provider "aws" {
         alias                   = "apps-prd"
         region                  = var.region
         profile                 = "${var.project}-apps-prd-devops"
-        shared_credentials_file = "~/.aws/${var.project}/config"
     }
     
     data "terraform_remote_state" "apps-prd-vpcs" {
@@ -272,6 +259,9 @@ In this example we will create the `apps-prd` account structure by using the `ap
     ```
     ...add the related structure:
     ```yaml
+    #
+    # Data source definitions
+    #
     apps-prd-vpcs = {
         apps-prd-base = {
         region  = var.region
@@ -282,13 +272,13 @@ In this example we will create the `apps-prd` account structure by using the `ap
         }
     }
     ```
-    Edit file `shared/us-east-1/base-network/vpc_peerings.tf` and add the peering definition:
+    Edit file `shared/us-east-1/base-network/vpc_peerings.tf` (if this is your first added account the file won´t exist, please crate it) and add the peering definition:
     ```yaml
     #
     # VPC Peering: AppsPrd VPC => Shared VPC
     #
     module "vpc_peering_apps_prd_to_shared" {
-        source = "github.com/binbashar/terraform-aws-vpc-peering.git?ref=v4.0.1"
+        source = "github.com/binbashar/terraform-aws-vpc-peering.git?ref=v6.0.0"
         
         for_each = {
         for k, v in local.apps-prd-vpcs :
@@ -321,24 +311,9 @@ In this example we will create the `apps-prd` account structure by using the `ap
     ```
     Apply the changes (be sure to CD into `shared/us-east-1/base-network` layer for doing this):
     ```shell
+    leverage terraform init
     leverage terraform apply
     ```
-
-### Replace temporary profiles with permanent ones
-1. If no SSO is implemented in the project (i.e. OAAR is being used), switch back from OAAR to DevOps role
-2. Open up `apps-prd/config/backend.tfvars`and replace this:
-    ```yaml
-    profile = "bb-apps-prd-oaar"
-    ```
-    with this:
-    ```yaml
-    profile = "bb-apps-prd-devops"
-    ```
-    This is needed because we only want to use the OAAR role for exceptional cases, not on a daily basis.
-3. Now, let's configure your DevOps credentials (if you haven't already done so).
-    1. Log into your security account, create programmatic access keys, and enable MFA.        
-    2. Then run: `leverage credentials configure --fetch-mfa-device --type SECURITY`
-    3. The command above should prompt for your programmatic keys and, with those, Leverage should be able to configure your AWS config and credentials files appropriately.
 
 ## Done!
 That should be it. At this point you should have the following:
@@ -346,5 +321,16 @@ That should be it. At this point you should have the following:
 1. A brand new AWS account in your AWS organization.
 2. Working configuration files for both existing layers and any new layer you add in the future.
 3. A remote Terraform State Backend for this new account.
-4. Roles and policies (base identities) that are necessary to access the new account.
+4. Roles and policies (SSO) that are necessary to access the new account.
 5. The base networking resources ready to host your compute services.
+6. The VPC peerings between the new account and shared
+
+
+## Next steps
+Now you have a new account created, so what else?
+
+To keep creating infra on top of this **binbash Leverage Landing Zone** with this new account added, please check:
+
+- [X] :books: Check common use cases in [Playbooks](/user-guide/playbooks/)
+- [X] :books: Review the [binbash Leverage architecture](/user-guide/ref-architecture-aws/overview/#overview)
+- [X] :books: Go for [EKS](/user-guide/ref-architecture-eks/overview/#overview)!

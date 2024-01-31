@@ -11,40 +11,9 @@ component by component based on the below presented compatibility matrix table.
 
 ## Compatibility Matrix
 
-<table>
-  <tr>
-    <th>Leverage Ref Arch version</th>
-    <th>Leverage CLI</th>
-    <th>Leverage Toolbox<br /><small>image</small><br /><small>version</small></th>
-  </tr>
+If you need to know which Leverage CLI versions are compatible with which Leverage Toolbox Docker Images please refer to the [Release Notes](https://github.com/binbashar/leverage/releases). Just look for the section called "Version Compatibility". Bear in mind though that, at the moment, we do not include a full compatibility table there but at least you should be able to find out what's the Toolbox Image that was used for a given release.
 
-  <tr>
-    <td rowspan="3">v1.12.0</td>
-    <td rowspan="2">v1.9.x</td>
-    <td>`binbash/leverage-toolbox`<br /> ==1.3.5-0.0.2</td>
-  </tr>
-  <tr>
-    <td>`binbash/leverage-toolbox`<br /> ==1.2.7-0.1.1</td>
-  </tr>
-  <tr>
-    <td>v1.8.x</td>
-    <td>`binbash/leverage-toolbox`<br /> ==1.2.7-0.0.x</td>
-  </tr>
-  <tr>
-    <td>v1.8.1</td>
-    <td>v1.7.2</td>
-    <td>`binbash/terraform-awscli-slim`<br /> >=1.1.9</td>
-  </tr>
-  <tr>
-    <td>v1.7.2</td>
-    <td>v1.6.2</td>
-    <td>`binbash/terraform-awscli-slim`<br /> >=1.1.3</td>
-  </tr>
-
-</table>
-
-Releases which are ~~crossed out~~ _should_ work, but are unlikely to get security or other fixes.
-We suggest they should be upgraded soon.
+If you are looking for the versions of the software included in the Toolbox Docker Image then go instead to [the release notes of that repo](https://github.com/binbashar/le-docker-leverage-toolbox/releases) instead.
 
 ## Release Schedule
 

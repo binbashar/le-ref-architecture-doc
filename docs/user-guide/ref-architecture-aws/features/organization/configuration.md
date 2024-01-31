@@ -45,9 +45,9 @@ the aliases automatically implicitly when running Terraform's Leverage code.
             - Activate IAM User and Role Access to Billing Information
             - If needed Update Alternate Contacts 
 
-    2. Via AWS Web Console: in `project_name-management` previously created account (eg, name: `leverage-management`,
+    2. Via [AWS Web Console](https://us-east-1.console.aws.amazon.com/iam/home#/users): in `project_name-management` previously created account (eg, name: `leverage-management`,
     email: `aws@binbash.com.ar`) [create the `mgmt-org-admin` IAM user with Admin privileges](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_users_create.html#id_users_create_console)
-    (admin IAM policy attached), which will be use for the initial AWS Org bootstrapping.
+    (attach the `AdministratorAccess` IAM managed policy and enable Web Console and programmatic access), which will be use for the initial AWS Org bootstrapping.
         - :ledger: **NOTE:** After it’s 1st execution only nominated Org admin users will persist in the `project-management` account.
 
     3. Via AWS Web Console: in `project-management` account create `mgmt-org-admin` IAM user AWS ACCESS KEYS

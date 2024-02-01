@@ -3262,6 +3262,8 @@
       
         
       
+        
+      
     
     
     <li class="md-nav__item md-nav__item--active md-nav__item--nested">
@@ -3793,6 +3795,26 @@
   
   <span class="md-ellipsis">
     kubectl
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../shell/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    shell
   </span>
   
 
@@ -5194,6 +5216,12 @@
 <p>It transparently manages authentication, either Multi-Factor or Single Sign-On, on behalf of the user on commands that require it. SSO authentication takes precedence over MFA when both are active.</p>
 <p>Some commands can only be run at <strong>layer</strong> level and will not run anywhere else in the project.</p>
 <p>The command can also be invoked via its shortened version <code>tf</code>.</p>
+<p>Since version 1.12, all the subcommands supports <code>--mount</code> and <code>--env-var</code> parameters in form of tuples:</p>
+<div class="highlight"><pre><span></span><code>leverage<span class="w"> </span>terraform<span class="w"> </span>--mount<span class="w"> </span>/home/user/bin/<span class="w"> </span>/usr/bin/<span class="w"> </span>--env-var<span class="w"> </span>FOO<span class="w"> </span>BAR<span class="w"> </span>apply
+</code></pre></div>
+<p>You can also provide them multiple times:
+<div class="highlight"><pre><span></span><code>leverage<span class="w"> </span>terraform<span class="w"> </span>--mount<span class="w"> </span>/usr/bin/<span class="w"> </span>/usr/bin/<span class="w"> </span>--mount<span class="w"> </span>/etc/config<span class="w"> </span>/config<span class="w"> </span>--env-var<span class="w"> </span>FOO<span class="w"> </span>BAR<span class="w"> </span>--env-var<span class="w"> </span>TEST<span class="w"> </span>OK<span class="w"> </span>init
+</code></pre></div></p>
 <hr />
 <h2 id="init"><code>init</code><a class="headerlink" href="#init" title="Permanent link"> ¶</a></h2>
 <h3 id="usage">Usage<a class="headerlink" href="#usage" title="Permanent link"> ¶</a></h3>

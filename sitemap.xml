@@ -201,6 +201,11 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://leverage.binbash.co/user-guide/leverage-cli/reference/shell/</loc>
+         <lastmod>2024-02-01</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://leverage.binbash.co/user-guide/leverage-cli/reference/terraform/</loc>
          <lastmod>2024-02-01</lastmod>
          <changefreq>daily</changefreq>

@@ -3974,6 +3974,26 @@
     Leverage CLI can't find the Docker daemon
   </a>
   
+    <nav class="md-nav" aria-label="Leverage CLI can't find the Docker daemon">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#macos-after-docker-desktop-upgrade" class="md-nav__link">
+    MacOS after Docker Desktop upgrade
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#linux-and-docker-in-rootless-mode" class="md-nav__link">
+    Linux and Docker in Rootless mode
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
@@ -4735,6 +4755,26 @@
     Leverage CLI can't find the Docker daemon
   </a>
   
+    <nav class="md-nav" aria-label="Leverage CLI can't find the Docker daemon">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#macos-after-docker-desktop-upgrade" class="md-nav__link">
+    MacOS after Docker Desktop upgrade
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#linux-and-docker-in-rootless-mode" class="md-nav__link">
+    Linux and Docker in Rootless mode
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
@@ -4801,10 +4841,18 @@ You may have more than 1 key associated to the <code>YYY</code> host. Remove the
 <div class="highlight"><pre><span></span><code>$ leverage tf shell
 [17:06:13.754] ERROR    Docker daemon doesn&#39;t seem to be responding. Please check it is up and running correctly before re-running the command.
 </code></pre></div></p>
+<h3 id="macos-after-docker-desktop-upgrade">MacOS after Docker Desktop upgrade<a class="headerlink" href="#macos-after-docker-desktop-upgrade" title="Permanent link"> ¶</a></h3>
 <p>We've seen this happen after a Docker Desktop upgrade. Defaults are changed and the Docker daemon no longer uses Unix sockets but TCP, or perhaps it does use Unix sockets but under a different path or user.</p>
 <p>What has worked for us in order to fix the issue is to make sure the following setting is enabled:
 <img alt="docket-daemon-not-responding" src="/assets/images/screenshots/leverage-docket-desktop-daemon-issue.png" title="Docker daemon not responding" /></p>
 <p>Note: that setting can be accessed by clicking on the Docker Desktop icon tray, and then clicking on "Settings...". Then click on the "Advanced" tab to find the checkbox.</p>
+<h3 id="linux-and-docker-in-rootless-mode">Linux and Docker in Rootless mode<a class="headerlink" href="#linux-and-docker-in-rootless-mode" title="Permanent link"> ¶</a></h3>
+<p>The same problem might come from missing env variable <code>DOCKER_HOST</code>. <code>leverage</code> looks for Docker socket at <code>unix:///var/run/docker.sock</code> unless <code>DOCKER_HOST</code> is provided in environment. If you installed Docker in <a href="https://docs.docker.com/engine/security/rootless/">Rootless mode</a>, you need to remember to add <code>DOCKER_HOST</code> in you rc files:
+<div class="highlight"><pre><span></span><code><span class="nb">export</span><span class="w"> </span><span class="nv">DOCKER_HOST</span><span class="o">=</span>unix:///run/user/1000/docker.sock
+</code></pre></div>
+or prefix the leverage tool with the env var:
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span><span class="nv">DOCKER_HOST</span><span class="o">=</span>unix:///run/user/1000/docker.sock<span class="w"> </span>leverage<span class="w"> </span>tf<span class="w"> </span>shell
+</code></pre></div></p>
 <h2 id="leverage-cli-fails-to-mount-the-ssh-directory">Leverage CLI fails to mount the SSH directory<a class="headerlink" href="#leverage-cli-fails-to-mount-the-ssh-directory" title="Permanent link"> ¶</a></h2>
 <p>The Leverage CLI mounts the <code>~/.ssh</code> directory in order to make the pulling of private Terraform modules work. The error should look similar to the following:
 <div class="highlight"><pre><span></span><code>[18:26:44.416] ERROR    Error creating container:

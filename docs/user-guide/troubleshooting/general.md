@@ -58,7 +58,7 @@ Note: that setting can be accessed by clicking on the Docker Desktop icon tray, 
 
 ### Linux and Docker in Rootless mode
 
-The same problem might come from missing env variable `DOCKER_HOME`. `leverage` looks for Docker socket at `unix:///var/run/docker.sock` unless `DOCKER_HOME` is provided in environment. If you installed Docker in [Rootless mode](https://docs.docker.com/engine/security/rootless/), you need to remember to add `DOCKET_HOME` in you rc files
+The same problem might come from missing env variable `DOCKER_HOST`. `leverage` looks for Docker socket at `unix:///var/run/docker.sock` unless `DOCKER_HOST` is provided in environment. If you installed Docker in [Rootless mode](https://docs.docker.com/engine/security/rootless/), you need to remember to add `DOCKER_HOST` in you rc files:
 ```bash
 export DOCKER_HOST=unix:///run/user/1000/docker.sock
 ```

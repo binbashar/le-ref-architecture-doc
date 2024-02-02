@@ -47,12 +47,25 @@ $ leverage tf shell
 [17:06:13.754] ERROR    Docker daemon doesn't seem to be responding. Please check it is up and running correctly before re-running the command.
 ```
 
+### MacOS after Docker Desktop upgrade
+
 We've seen this happen after a Docker Desktop upgrade. Defaults are changed and the Docker daemon no longer uses Unix sockets but TCP, or perhaps it does use Unix sockets but under a different path or user.
 
 What has worked for us in order to fix the issue is to make sure the following setting is enabled:
 ![docket-daemon-not-responding](/assets/images/screenshots/leverage-docket-desktop-daemon-issue.png "Docker daemon not responding")
 
 Note: that setting can be accessed by clicking on the Docker Desktop icon tray, and then clicking on "Settings...". Then click on the "Advanced" tab to find the checkbox.
+
+### Linux and Docker in Rootless mode
+
+The same problem might come from missing env variable `DOCKER_HOST`. `leverage` looks for Docker socket at `unix:///var/run/docker.sock` unless `DOCKER_HOST` is provided in environment. If you installed Docker in [Rootless mode](https://docs.docker.com/engine/security/rootless/), you need to remember to add `DOCKER_HOST` in you rc files:
+```bash
+export DOCKER_HOST=unix:///run/user/1000/docker.sock
+```
+or prefix the leverage tool with the env var:
+```bash
+$ DOCKER_HOST=unix:///run/user/1000/docker.sock leverage tf shell
+```
 
 ## Leverage CLI fails to mount the SSH directory
 

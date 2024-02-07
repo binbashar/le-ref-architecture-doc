@@ -8,7 +8,7 @@ First and foremost you'll need to create an AWS account for your project.
     
     E.g. if your project is called `binbash` then your account should be `binbash-management`.
 
-Follow [instructions here](/user-guide/ref-architecture-aws/features/organization/configuration/).
+Follow the [instructions here](/user-guide/ref-architecture-aws/features/organization/configuration/).
 
 This will be the management account for your [AWS Organization](https://docs.aws.amazon.com/organizations/latest/userguide/orgs_getting-started_concepts.html) and the email address you use for signing up will be the [root user](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_root-user.html) of this account -- you can see this user represented in the [architecture diagram](../#leverage-landing-zone).
 

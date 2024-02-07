@@ -6,7 +6,7 @@ First and foremost you'll need to create an AWS account for your project.
 !!! attention 
     Note this will be your management account and has to be called `<project-name>-management`.
     
-    E.g. if your project is called `binbash` then your account is `binbash-management`.
+    E.g. if your project is called `binbash` then your account should be `binbash-management`.
 
 Follow [instructions here](/user-guide/ref-architecture-aws/features/organization/configuration/).
 

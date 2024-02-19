@@ -1,7 +1,7 @@
 # Credentials
 
 ## Overview
-Access to EKS is usually achieved via IAM roles. These could be either custom IAM roles that you define, or SSO roles that AWS takes care of creating and managing.
+Access to EKS is usually achieved via IAM roles. These could be either [custom IAM](/user-guide/ref-architecture-aws/features/identities/identities) roles that you define, or [SSO roles](/user-guide/ref-architecture-aws/features/sso/overview) that AWS takes care of creating and managing.
 
 ## Configuration
 Granting different kinds of access to IAM roles can be done as shown [here](https://github.com/binbashar/le-tf-infra-aws/blob/master/apps-devstg/us-east-1/k8s-eks/cluster/locals.tf#L33-L60) where you can define classic IAM roles or SSO roles. Note however that, since the latter are managed by AWS SSO, they could change if they are recreated or reassigned.

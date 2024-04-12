@@ -296,6 +296,9 @@ nav:
       - VPC with no LandingZone: "user-guide/playbooks/VPC-with-no-LandingZone.md"
       - Start/Stop EC2/RDS instances using schedule or manual endpoint: "user-guide/playbooks/schedule-start-stop-ec2.md"
       - Calculate VPC cubnet CIDRs: "user-guide/playbooks/VPC-subnet-calculator.md"
+      - Kubernetes in different stages: "user-guide/playbooks/k8s.md"
+      - Encrypting/decrypting files with SOPS+KMS: "user-guide/playbooks/sops-kms.md"
+      - Enable/Disable nat gateway: "user-guide/playbooks/enable-nat-gateway.md"
   - Work with us:
       - Overview: "work-with-us/index.md"
       - Support: "work-with-us/support.md"

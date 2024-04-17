@@ -1,4 +1,4 @@
-# Kubernetes for starting projects
+# Kubernetes for different stages of your projects
 
 ## Goal
 
@@ -18,7 +18,7 @@ Following we'll explore the three options.
 
 ### Assumptions
 
-We are assuming the [**binbash Leverage**](https://leverage.binbash.co/) [Landing Zone](https://leverage.binbash.co/try-leverage/) is deployed, an account called `apps-devstg` was region `us-east-1` is being used. In any case you can adapt these examples to other scenarios.
+We are assuming the [**binbash Leverage**](https://leverage.binbash.co/) [Landing Zone](https://leverage.binbash.co/try-leverage/) is deployed, an account called `apps-devstg` was created and a region `us-east-1` is being used. In any case you can adapt these examples to other scenarios.
 
 ---
 
@@ -54,18 +54,18 @@ It will be something similar to what is stated [here](/user-guide/ref-architectu
 
 These are the steps:
 
-1. copy the [KOPS layer](https://github.com/binbashar/le-tf-infra-aws/tree/master/apps-devstg/us-east-1/k8s-kops%20--) to your [**binbash Leverage**](https://leverage.binbash.co/) project.
+- 0 - copy the [KOPS layer](https://github.com/binbashar/le-tf-infra-aws/tree/master/apps-devstg/us-east-1/k8s-kops%20--) to your [**binbash Leverage**](https://leverage.binbash.co/) project.
     - paste the layer under the `apps-devstg/us-east-1` account/region directory
     - for easy of use, the `k8s-kops --` can be renamed to `k8s-kops`
-2. apply prerequisites
-3. apply the cluster
-4. apply the extras
+- 1 - apply prerequisites
+- 2 - apply the cluster
+- 3 - apply the extras
 
 Ok, take it easy, now the steps explained.
 
 --- 
 
-#### 1 - Copy the layer
+#### 0 - Copy the layer
 
 A few methods can be used to download the [KOPS layer](https://github.com/binbashar/le-tf-infra-aws/tree/master/apps-devstg/us-east-1/k8s-kops%20--) directory into the [**binbash Leverage**](https://leverage.binbash.co/) project.
 
@@ -74,7 +74,7 @@ E.g. [this addon](https://addons.mozilla.org/en-US/firefox/addon/gitzip/?utm_sou
 !!! warning
     Do not change the `1-prerequisites`, `2-kops`, `3-extras` dir names since scripts depend on these!
 
-#### 2 - Prerequisites
+#### 1 - Prerequisites
 
 To create the KOPS cluster these are the requisites:
 
@@ -90,7 +90,7 @@ To create the KOPS cluster these are the requisites:
     Note a DNS is not needed since this will be a gossip cluster.
 
 !!! Info
-    Note for the bucket the account Terraform backend bucket is used.
+    A new bucket is created so KOPS can store the state there
 
 `cd` into the `1-prerequisites` directory.
 
@@ -99,6 +99,7 @@ By default, the [account base network](https://github.com/binbashar/le-tf-infra-
 Open the `locals.tf` file.
 
 Here these items can be updated:
+
 - versions
 - machine types (and max, min qty for masters and workers autoscaling groups)
 - the number of AZs that will be used for master nodes.
@@ -126,8 +127,10 @@ leverage tf apply
 !!! warning
     You will be prompted to enter the `ssh_pub_key_path`. Here enter the full path (e.g. `/home/user/.ssh/thekey.pub`) for your public SSH key and hit enter.
     
+!!! info
+    Note if for some reason the nat-gateway changes, this layer has to be applied again.
 
-#### Playing with KOPS
+#### 2 - Apply the cluster with KOPS
 
 `cd` into the `2-kops` directory.
 
@@ -142,13 +145,27 @@ Open the `config.tf` file and edit the backend key if needed:
 !!! info
     Remember [**binbash Leverage**](https://leverage.binbash.co/) has its rules for this, the key name should match `<account-name>/[<region>/]<layer-name>/[<sublayer-name>/]terraform.tfstate`. 
 
-Check the template just for checking:
+!!! info
+    If you want to check the configuration:
+
+    ```shell
+    make cluster-template
+    ```
+
+    The final template in file `cluster.yaml`.
+
+If you are happy with the config (or you are not happy but you think the file is ok), let's create the Terraform files!
 
 ```shell
-make cluster-template
+make cluster-updated
 ```
 
-You can see the final template in file `cluster.yaml`.
+Finally, apply the layer:
+
+```shell
+leverage tf init
+leverage tf apply
+```
 
 #### Accessing the cluster
 

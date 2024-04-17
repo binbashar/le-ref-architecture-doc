@@ -8,7 +8,11 @@ Encrypting the SOPS file with a KMS key.
 
 ### Assumptions
 
-We are assuming the [**binbash Leverage**](https://leverage.binbash.co/) [Landing Zone](https://leverage.binbash.co/try-leverage/) is deployed, an account called `apps-devstg` was region `us-east-1` is being used. In any case you can adapt these examples to other scenarios.
+We are assuming the [**binbash Leverage**](https://leverage.binbash.co/) [Landing Zone](https://leverage.binbash.co/try-leverage/) is deployed, an account called `apps-devstg` was created and a region `us-east-1` is being used. In any case you can adapt these examples to other scenarios.
+
+---
+
+---
 
 ### Prerequisites
 

@@ -14,11 +14,25 @@ The target cluster must have [IRSA](https://docs.aws.amazon.com/eks/latest/userg
 
 If this cluster was created using the [**binbash Leverage**](https://leverage.binbash.co/) [Landing Zone](https://leverage.binbash.co/try-leverage/) [EKS layer](https://github.com/binbashar/le-tf-infra-aws/tree/master/apps-devstg/us-east-1/k8s-eks-demoapps) this req is met.
 
+Also the VPC for both K8s cluster should be connected. (e.g. VPCPeerings have to be in place between them)
+
+!!! info
+    Learn how to create `VPCPeerings` using [**binbash Leverage**](https://leverage.binbash.co/) [Landing Zone](https://leverage.binbash.co/try-leverage/) here.
+
 ---
 
 ---
 
 ## How to
+
+There are a few ways to accomplish this. Here are two of them, you can find more [here](https://argo-cd.readthedocs.io/en/stable/operator-manual/declarative-setup/#clusters).
+
+- IAM Roles
+- Bearer tokens
+
+---
+
+### IAM Roles
 
 First we need to understand the how-to do this.
 
@@ -35,7 +49,7 @@ this workflow shows up:
 
 This way, ArgoCD, from the source cluster, can deploy stuff into the target cluster.
 
-## Steps
+#### Steps
 
 These steps were created to match two EKS clusters, in two AWS accounts, created using [**binbash Leverage**](https://leverage.binbash.co/) [Landing Zone](https://leverage.binbash.co/try-leverage/).
 
@@ -45,7 +59,7 @@ ArgoCD will be deployed in `shared` account and will be controlling the cluster 
     - source account: `shared` 
     - target account: `apps-devstg`
 
-### Create the source identities
+##### Create the source identities
 
 !!! info
     This has to be done in `shared` account.
@@ -86,12 +100,12 @@ leverage tf apply
 !!! info
     Note this step creates a role and binds it to the in-cluster serviceaccounts.
 
-### Create the target role and change the `aws_auth` config map
+##### Create the target role and change the `aws_auth` config map
 
 !!! info
     This has to be done in `apps-devstg` account.
 
-#### Create the role
+###### Create the role
 
 Go into the `apps-devstg/global/base-identities` layer.
 
@@ -133,7 +147,7 @@ leverage tf apply
 !!! info
     This step will add a role that can be assumed from the `shared` account.
 
-#### Update the `aws_auth` config map
+###### Update the `aws_auth` config map
 
 cd into layer `apps-devstg/us-east-1/k8s-eks/cluster`.
 
@@ -155,10 +169,16 @@ Apply the layer:
 leverage tf apply
 ```
 
+To recover the the API Server run this:
+
+```shell
+APISERVER=$(leverage kubectl config view --minify -o jsonpath='{.clusters[0].cluster.server}' | sed -E '/^\[/d')
+```
+
 !!! info
     This step will add the role-k8sgroup binding.
     
-### Create the external cluster in ArgoCD
+##### Create the external cluster in ArgoCD
 
 !!! info
     This has to be done in `shared` account.
@@ -166,9 +186,9 @@ leverage tf apply
 In `shared/us-east-1/k8s-eks/k8s-components` layer modify files `cicd-argocd.tf` and `chart-values/argocd.yaml` and add this to the first one:
 
 ```hcl
-#------------------------------------------------------------------------------
-# ArgoCD DEVSTG: GitOps + CD
-#------------------------------------------------------------------------------
+##------------------------------------------------------------------------------
+## ArgoCD DEVSTG: GitOps + CD
+##------------------------------------------------------------------------------
 resource "helm_release" "argocd_devstg" {
   count      = var.enable_argocd_devstg ? 1 : 0
   name       = "argocd-devstg"
@@ -229,11 +249,12 @@ Note these lines:
 ```
 
 Dictionary:
-   - remoteRoleARN: the role created in `apps-devstg` (target) account
-   - remoteClusterName: the target cluster name
-   - remoteServer: the target cluster API URL
-   - remoteName: the target cluster reference name to be shown in ArgoCD UI
-   - remoteClusterCertificate: the target cluster CA Certificate
+
+- remoteRoleARN: the role created in `apps-devstg` (target) account
+- remoteClusterName: the target cluster name (e.g. "staging")
+- remoteServer: the target cluster API URL
+- remoteName: the target server name (the ARN)
+- remoteClusterCertificate: the target cluster CA Certificate on Base64
     
 And this in the second file:
 
@@ -244,6 +265,8 @@ configs:
       server: ${remoteServer}
       labels: {}
       annotations: {}
+      namespaces: namespace1,namespace2
+      clusterResources: false
       config:
         awsAuthConfig:
           clusterName: ${remoteClusterName}
@@ -252,6 +275,10 @@ configs:
           insecure: false
           caData: ${remoteClusterCertificate}
 ```
+
+`clusterResources` false is so that ArgoCD is prevented to manage cluster level resources.
+
+`namespaces` scopes the namespaces on which ArgoCD can deploy resources.
 
 Apply the layer:
 
@@ -263,6 +290,300 @@ leverage tf apply
     This step will create the external-cluster configuration for ArgoCD.<br />
     Now you can see the cluster in the ArgoCD web UI.
     
+---
+
+### Bearer Tokens
+
+This is a simpler (than the previous one) method, but also is less secure.
+
+It uses a bearer token, which should be rotated periodically. (maybe manually or with a custom process)
+
+Given this diagram:
+
+![ArgoCD External Cluster](/assets/diagrams/argocd-externalcluster-token.png)
+
+ArgoCD will call the target cluster directly using the bearer token as authentication.
+
+So, these are the steps:
+
+- create a ServiceAccount and its token in the target cluster
+- create the external cluster in the source cluster's ArgoCD
+
+#### Create the ServiceAccount
+
+!!! info
+    This has to be done in `apps-devstg` account.
+
+ServiceAccount, Role and Rolebinding are needed to gran access to ArgoCD to the target cluster.
+
+In the target cluster identities layer at `apps-devstg/us-east-1/k8s-eks/identities` create a `tf` file and add this:
+
+```hcl
+locals {
+  # namespaces ArgoCD has to manage
+  namespaces = toset(["test"])
+}
+provider  kubernetes {
+    host                   = data.aws_eks_cluster.cluster.endpoint
+    cluster_ca_certificate = base64decode(data.aws_eks_cluster.cluster.certificate_authority.0.data)
+    token                  = data.aws_eks_cluster_auth.cluster.token
+}
+data "aws_eks_cluster" "cluster" {
+  name = data.terraform_remote_state.eks-cluster.outputs.cluster_name
+}
+
+data "aws_eks_cluster_auth" "cluster" {
+  name = data.terraform_remote_state.eks-cluster.outputs.cluster_name
+}
+
+resource "kubernetes_service_account" "argocd-managed" {
+  for_each = local.namespaces
+
+  metadata {
+    name = "argocd-managed"
+    namespace = each.key
+  }
+}
+
+resource "kubernetes_secret" "argocd-managed" {
+  for_each = local.namespaces
+
+  metadata {
+    annotations = {
+      "kubernetes.io/service-account.name" = kubernetes_service_account.argocd-managed[each.key].metadata.0.name
+    }
+
+    generate_name = "argocd-managed-"
+    namespace = each.key
+  }
+
+  type                           = "kubernetes.io/service-account-token"
+  wait_for_service_account_token = true
+}
+
+resource "kubernetes_role" "argocd-managed" {
+  for_each = local.namespaces
+
+  metadata {
+    name      = "argocd-managed-role"
+    namespace = each.key
+  }
+
+  rule {
+   api_groups= ["autoscaling"]
+    resources= ["horizontalpodautoscalers"]
+    verbs= ["create", "get", "list", "update", "delete"]
+  }
+  rule {
+   api_groups= ["policy"]
+    resources= ["poddisruptionbudgets"]
+    verbs= ["create", "get", "list", "update", "delete"]
+  }
+  rule {
+   api_groups= ["rbac.authorization.k8s.io"]
+    resources= ["roles"]
+    verbs= ["create", "get", "list", "update", "delete"]
+  }
+  rule {
+   api_groups= ["networking.istio.io"]
+    resources= ["workloadgroups"]
+    verbs= ["get", "list"]
+  }
+  rule {
+   api_groups= [""]
+    resources= ["serviceaccounts"]
+    verbs= ["create", "get", "list", "update", "delete"]
+  }
+  rule {
+   api_groups= [""]
+    resources= ["persistentvolumeclaims"]
+    verbs= ["create", "get", "list", "update", "delete"]
+  }
+  rule {
+   api_groups= ["apps"]
+    resources= ["replicasets"]
+    verbs= ["create", "get", "list", "update", "delete"]
+  }
+  rule {
+   api_groups= ["rbac.authorization.k8s.io"]
+    resources= ["rolebindings"]
+    verbs= ["create", "get", "list", "update", "delete"]
+  }
+  rule {
+   api_groups= [""]
+    resources= ["resourcequotas"]
+    verbs= ["list"]
+  }
+  rule {
+   api_groups= ["networking.k8s.io"]
+    resources= ["networkpolicies"]
+    verbs= ["create", "get", "list", "update", "delete"]
+  }
+  rule {
+   api_groups= [""]
+    resources= ["replicationcontrollers"]
+    verbs= ["list"]
+  }
+  rule {
+   api_groups= [""]
+    resources= ["limitranges"]
+    verbs= ["list"]
+  }
+  rule {
+   api_groups= [""]
+    resources= ["configmaps", "secrets", "pods"]
+    verbs= ["get", "list", "watch", "create", "update", "patch", "delete"]
+  }
+  rule {
+   api_groups= ["apps"]
+    resources= ["deployments"]
+    verbs= ["get", "list", "watch", "create", "update", "patch", "delete"]
+  }
+}
+
+resource "kubernetes_role_binding" "argocd-managed" {
+  for_each = local.namespaces
+
+  metadata {
+    name      = "${kubernetes_role.argocd-managed[each.key].metadata[0].name}-binding"
+    namespace = each.key
+  }
+
+  role_ref {
+    api_group = "rbac.authorization.k8s.io"
+    kind      = "Role"
+    name      = kubernetes_role.argocd-managed[each.key].metadata[0].name
+  }
+  subject {
+    kind      = "ServiceAccount"
+    name      = "argocd-managed"
+    namespace = each.key
+  }
+}
+```
+
+!!! info
+    This step will create a ServiceAccount, a Role with the needed permissions, the RoleBinding and the secret with the token.<br />
+    Also, multiple namespaces can be specified since these permissions are applied in a per namespace basis.
+
+To recover the token and the API Server run this:
+
+```shell
+NAMESPACE=test
+SECRET=$(leverage kubectl get secret -n ${NAMESPACE} -o jsonpath='{.items[?(@.metadata.generateName==\"argocd-managed-\")].metadata.name}' | sed -E '/^\[/d')
+TOKEN=$(leverage kubectl get secret ${SECRET} -n ${NAMESPACE} -o jsonpath='{.data.token}' | sed -E '/^\[/d' | base64 --decode)
+APISERVER=$(leverage kubectl config view --minify -o jsonpath='{.clusters[0].cluster.server}' | sed -E '/^\[/d')
+```
+
+#### Create the external cluster in ArgoCD
+
+!!! info
+    This has to be done in `shared` account.
+
+In `shared/us-east-1/k8s-eks/k8s-components` layer modify files `cicd-argocd.tf` and `chart-values/argocd.yaml` and add this to the first one:
+
+```hcl
+##------------------------------------------------------------------------------
+## ArgoCD DEVSTG: GitOps + CD
+##------------------------------------------------------------------------------
+resource "helm_release" "argocd_devstg" {
+  count      = var.enable_argocd_devstg ? 1 : 0
+  name       = "argocd-devstg"
+  namespace  = kubernetes_namespace.argocd_devstg[0].id
+  repository = "https://argoproj.github.io/argo-helm"
+  chart      = "argo-cd"
+  version    = "6.7.3"
+  values = [
+    templatefile("chart-values/argocd.yaml", {
+      argoHost                 = "argocd-devstg.${local.environment}.${local.private_base_domain}"
+      ingressClass             = local.private_ingress_class
+      clusterIssuer            = local.clusterissuer_vistapath
+      roleArn                  = data.terraform_remote_state.eks-identities.outputs.argocd_devstg_role_arn
+      remoteServer             = "remoteServer"
+      remoteName               = "remoteName"
+      remoteClusterCertificate = "remoteClusterCertificate"
+      bearerToken              = "bearerToken"
+    }),
+    # We are using a different approach here because it is very tricky to render
+    # properly the multi-line sshPrivateKey using 'templatefile' function
+    yamlencode({
+      configs = {
+        secret = {
+          argocd_devstgServerAdminPassword = data.sops_file.secrets.data["argocd_devstg.serverAdminPassword"]
+        }
+        # Grant Argocd_Devstg access to the infrastructure repo via private SSH key
+        repositories = {
+          webapp = {
+            name          = "webapp"
+            project       = "default"
+            sshPrivateKey = data.sops_file.secrets.data["argocd_devstg.webappRepoDeployKey"]
+            type          = "git"
+            url           = "git@github.com:VistaPath/webapp.git"
+          }
+        }
+      }
+      # Enable SSO via Github
+      server = {
+        config = {
+          url          = "https://argocd_devstg.${local.environment}.${local.private_base_domain}"
+          "dex.config" = data.sops_file.secrets.data["argocd_devstg.dexConfig"]
+        }
+      }
+    })
+  ]
+}
+```
+
+Note these lines:
+
+```hcl
+      remoteServer  = "remoteServer"
+      remoteName    = "remoteName"
+      remoteClusterCertificate = "remoteClusterCertificate"
+      bearerToken = "bearerToken"
+```
+
+Dictionary:
+
+- remoteServer: the target cluster API URL
+- remoteName: the target server name (the ARN)
+- remoteClusterCertificate: the target cluster CA Certificate on Base64
+- bearerToken: the Token generated for the ServiceAccount
+    
+And this in the second file:
+
+```hcl
+configs:
+  clusterCredentials:
+    - name: ${remoteName}
+      server: ${remoteServer}
+      labels: {}
+      annotations: {}
+      namespaces: namespace1,namespace2
+      clusterResources: false
+      config:
+        bearerToken: ${bearerToken}
+        tlsClientConfig:
+          insecure: false
+          caData: ${remoteClusterCertificate}
+```
+
+`clusterResources` false is so that ArgoCD is prevented to manage cluster level resources.
+
+`namespaces` scopes the namespaces on which ArgoCD can deploy resources.
+
+Apply the layer:
+
+```shell
+leverage tf apply
+```
+
+!!! info
+    This step will create the external-cluster configuration for ArgoCD.<br />
+    Now you can see the cluster in the ArgoCD web UI.
+
+---
+
 ## Deploying stuff to the target cluster
 
 To deploy an App to a given cluster, these lines have to be added to the manifest:
@@ -274,7 +595,10 @@ To deploy an App to a given cluster, these lines have to be added to the manifes
         namespace: "appnamespace"
 ```
 
-...being `server` the target cluster API URL.
+Being `spec.destination.server` here the `config.clusterCredentials[*].server` in the ArgoCD's external cluster secret.
+
+
+---
 
 ## References
 

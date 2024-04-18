@@ -71,6 +71,8 @@ A few methods can be used to download the [KOPS layer](https://github.com/binbas
 
 E.g. [this addon](https://addons.mozilla.org/en-US/firefox/addon/gitzip/?utm_source=addons.mozilla.org&utm_medium=referral&utm_content=search) is a nice way to do it.
 
+Paste this layer into the account/region chosen to host this, e.g. `apps-devstg/us-east-1/`, so the final layer is `apps-devstg/us-east-1/k8s-kops/`.
+
 !!! warning
     Do not change the `1-prerequisites`, `2-kops`, `3-extras` dir names since scripts depend on these!
 
@@ -92,9 +94,15 @@ To create the KOPS cluster these are the requisites:
 !!! Info
     A new bucket is created so KOPS can store the state there
 
-`cd` into the `1-prerequisites` directory.
+By default, the [account base network](https://github.com/binbashar/le-tf-infra-aws/tree/master/apps-devstg/us-east-1/base-network) is used. If you want to change this check/modify this resource in `config.tf` file:
 
-By default, the [account base network](https://github.com/binbashar/le-tf-infra-aws/tree/master/apps-devstg/us-east-1/base-network) is used.
+```hcl
+data "terraform_remote_state" "vpc" {
+```
+
+Also, `shared` VPC will be used to allow income traffic from there. This is because in the [**binbash Leverage**](https://leverage.binbash.co/) [Landing Zone](https://leverage.binbash.co/try-leverage/) defaults, the VPN server will be created there.
+
+`cd` into the `1-prerequisites` directory.
 
 Open the `locals.tf` file.
 
@@ -115,7 +123,7 @@ Here set the backend key if needed:
 ```
 
 !!! info
-    Remember [**binbash Leverage**](https://leverage.binbash.co/) has its rules for this, the key name should match `<account-name>/[<region>/]<layer-name>/[<sublayer-name>/]terraform.tfstate`. 
+    Remember [**binbash Leverage**](https://leverage.binbash.co/) has its rules for this, the key name should match `<account-name>/[<region>/]<layer-name>/<sublayer-name>/terraform.tfstate`. 
 
 Init and apply as usual:
 
@@ -125,7 +133,8 @@ leverage tf apply
 ```
 
 !!! warning
-    You will be prompted to enter the `ssh_pub_key_path`. Here enter the full path (e.g. `/home/user/.ssh/thekey.pub`) for your public SSH key and hit enter.
+    You will be prompted to enter the `ssh_pub_key_path`. Here enter the full path (e.g. `/home/user/.ssh/thekey.pub`) for your public SSH key and hit enter.<br />
+    A key managed by KMS can be used here. A regular key-in-a-file is used for this example, but you can change it as per your needs.
     
 !!! info
     Note if for some reason the nat-gateway changes, this layer has to be applied again.
@@ -143,7 +152,7 @@ Open the `config.tf` file and edit the backend key if needed:
 ```
 
 !!! info
-    Remember [**binbash Leverage**](https://leverage.binbash.co/) has its rules for this, the key name should match `<account-name>/[<region>/]<layer-name>/[<sublayer-name>/]terraform.tfstate`. 
+    Remember [**binbash Leverage**](https://leverage.binbash.co/) has its rules for this, the key name should match `<account-name>/[<region>/]<layer-name>/<sublayer-name>/terraform.tfstate`. 
 
 !!! info
     If you want to check the configuration:
@@ -168,7 +177,17 @@ leverage tf apply
 ```
 
 #### Accessing the cluster
+ 
+With the cluster, a Load Balancer was deployed so you can reach the K8s API.
 
+Here there are two questions. One is how to expose the cluster so Apps running in it can be reached.
+
+The other one is how to access the cluster's API.
+    
+For the first one, since this is a `gossip-cluster` and as per the KOPS docs: When using gossip mode, you have to expose the kubernetes API using a loadbalancer. Since there is no hosted zone for gossip-based clusters, you simply use the load balancer address directly. The user experience is identical to standard clusters. kOps will add the ELB DNS name to the kops-generated kubernetes configuration.<br /><br />
+    
+    It can be reached also using a VPN. Check the [**binbash Leverage**](https://leverage.binbash.co/) [Landing Zone](https://leverage.binbash.co/try-leverage/) documentation for this.
+    
 ---
 
 ---

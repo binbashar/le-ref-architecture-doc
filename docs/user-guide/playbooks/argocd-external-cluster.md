@@ -4,6 +4,10 @@
 
 Given an ArgoCD installation created with [**binbash Leverage**](https://leverage.binbash.co/) [Landing Zone](https://leverage.binbash.co/try-leverage/) using the [EKS layer](https://github.com/binbashar/le-tf-infra-aws/tree/master/apps-devstg/us-east-1/k8s-eks-demoapps), add and manage an external Cluster.
 
+There can be a single ArgoCD instance for all cluster or multiple instances installed:
+
+![ArgoCD External Cluster](/assets/diagrams/argocd-externalcluster-bigpicture.png)
+
 ### Assumptions
 
 We are assuming the [**binbash Leverage**](https://leverage.binbash.co/) [Landing Zone](https://leverage.binbash.co/try-leverage/) is deployed, two accounts called `shared` and `apps-devstg` were created and a region `us-east-1` is being used. In any case you can adapt these examples to other scenarios.

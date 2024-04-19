@@ -3177,12 +3177,40 @@
     4) Closing Steps
   </a>
   
-    <nav class="md-nav" aria-label="4) Closing Steps">
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#upgrade-notes" class="md-nav__link">
+    Upgrade Notes
+  </a>
+  
+    <nav class="md-nav" aria-label="Upgrade Notes">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#migration-notes" class="md-nav__link">
-    Migration Notes
+  <a href="#upgrade-to-v121" class="md-nav__link">
+    Upgrade to v1.21
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#upgrade-to-v122" class="md-nav__link">
+    Upgrade to v1.22
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#upgrade-to-v125" class="md-nav__link">
+    Upgrade to v1.25
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#upgrade-to-v126" class="md-nav__link">
+    Upgrade to v1.26
   </a>
   
 </li>
@@ -4912,12 +4940,40 @@
     4) Closing Steps
   </a>
   
-    <nav class="md-nav" aria-label="4) Closing Steps">
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#upgrade-notes" class="md-nav__link">
+    Upgrade Notes
+  </a>
+  
+    <nav class="md-nav" aria-label="Upgrade Notes">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#migration-notes" class="md-nav__link">
-    Migration Notes
+  <a href="#upgrade-to-v121" class="md-nav__link">
+    Upgrade to v1.21
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#upgrade-to-v122" class="md-nav__link">
+    Upgrade to v1.22
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#upgrade-to-v125" class="md-nav__link">
+    Upgrade to v1.25
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#upgrade-to-v126" class="md-nav__link">
+    Upgrade to v1.26
   </a>
   
 </li>
@@ -5022,7 +5078,8 @@ Make a note of the cluster name as you will be using that in subsequent commands
 <p>Now use the following command to get a list of the node groups:
 <div class="highlight"><pre><span></span><code>aws eks list-nodegroups --cluster-name [CLUSTER_NAME] --profile [AWS_PROFILE]
 </code></pre></div></p>
-<p>After that you need to identify the appropriate release version for the upgrade. Use the official documentation to find that: https://docs.aws.amazon.com/eks/latest/userguide/eks-linux-ami-versions.html</p>
+<p>After that, you need to identify the appropriate release version for the upgrade.<br />
+This is determined by the <a href="https://docs.aws.amazon.com/eks/latest/userguide/eks-linux-ami-versions.html">Amazon EKS optimized Amazon Linux AMI version</a>, the precise value can be found in the <code>AMI Details</code> section in the <a href="https://github.com/awslabs/amazon-eks-ami/blob/main/CHANGELOG.md">github repository CHANGELOG</a>. Look for the column named <code>Release version</code> in the first table under the corresponding Kubernetes version collapsed section (indicated by a ▸ symbol).</p>
 <p>With that information you should be ready to trigger the update with the command below:
 <div class="highlight"><pre><span></span><code>aws eks update-nodegroup-version \
     --cluster-name [CLUSTER_NAME] \
@@ -5042,6 +5099,7 @@ The version of the cluster autoscaler should at least match the cluster version 
 <li>Kube-Proxy</li>
 <li>CoreDNS</li>
 <li>VPC CNI</li>
+<li>EBS-CSI driver</li>
 </ul>
 <p>In recent versions EKS is able to manage these components as add-ons which makes their upgrades less involved and which can even be performed through a recent version of the Terraform EKS module. However, we are not currently using EKS Add-ons to manage the installation of these components, we are using the so called self-managed approach, so the upgrade needs to be applied manually.</p>
 <p>Generally speaking, the upgrade procedure could be summed up as follows:</p>
@@ -5055,31 +5113,46 @@ The version of the cluster autoscaler should at least match the cluster version 
 <li>Kube-proxy: <a href="https://docs.aws.amazon.com/eks/latest/userguide/managing-kube-proxy.html#updating-kube-proxy-add-on">check here</a></li>
 <li>CoreDNS: <a href="https://docs.aws.amazon.com/eks/latest/userguide/managing-coredns.html#updating-coredns-add-on">check here</a></li>
 <li>VPC CNI: <a href="https://docs.aws.amazon.com/eks/latest/userguide/managing-vpc-cni.html#updating-vpc-cni-add-on">check here</a></li>
+<li>EBS-CSI driver: <a href="https://docs.aws.amazon.com/eks/latest/userguide/managing-ebs-csi.html#updating-ebs-csi-eks-add-on">check here</a></li>
 </ol>
 <p><strong>IMPORTANT:</strong> be extremely careful when applying these updates, specially with the VPC CNI as the instructions are not easy to follow.</p>
 <h3 id="4-closing-steps">4) Closing Steps<a class="headerlink" href="#4-closing-steps" title="Permanent link"> ¶</a></h3>
 <p>Make sure you notify the team about the upgrade result. Also, do not forget about committing/pushing all code changes to the repository and creating a PR for them.</p>
-<h4 id="migration-notes">Migration Notes<a class="headerlink" href="#migration-notes" title="Permanent link"> ¶</a></h4>
+<h3 id="upgrade-notes">Upgrade Notes<a class="headerlink" href="#upgrade-notes" title="Permanent link"> ¶</a></h3>
 <p>If you found any information you consider it should be added to this document, you are welcome to reflect that here.</p>
-<p><strong>Migration to v1.21</strong></p>
-<p>VPC CNI: The latest available version was v1.11.4 but I was only able to upgrade to v1.9.3. I couldn't move further because v1.10.3 wasn't able to run as it keep throwing the following errors:
+<h5 id="upgrade-to-v121">Upgrade to v1.21<a class="headerlink" href="#upgrade-to-v121" title="Permanent link"> ¶</a></h5>
+<p>VPC CNI: The latest available version was v1.11.4 but it was only able to be upgraded to v1.9.3. It couldn't be moved further because v1.10.3 wasn't able to run as it keep throwing the following errors:
 <div class="highlight"><pre><span></span><code>{&quot;level&quot;:&quot;info&quot;,&quot;ts&quot;:&quot;2022-10-07T15:42:01.802Z&quot;,&quot;caller&quot;:&quot;entrypoint.sh&quot;,&quot;msg&quot;:&quot;Retrying waiting for IPAM-D&quot;}
 panic: runtime error: invalid memory address or nil pointer dereference
 [signal SIGSEGV: segmentation violation code=0x1 addr=0x39 pc=0x560d2186d418]
 </code></pre></div></p>
 <p>Cluster Autoscaler: it is already at v1.23.0. The idea is that this should match with the Kubernetes version but since the version we have has been working well so far, we can keep it and it should cover us until we upgrade Kubernetes to a matching version.</p>
-<p>Managed Nodes failures due to PodEvictionFailure: this one happened twice during a Production cluster upgrade. It seemed to be related to Calico pods using tolerations that are not compatible with Kubernetes typical node upgrade procedure. In short, the pods tolerate the NoSchedule taint and thus refuse to be evicted from the nodes during a drain procedure. The workaround that worked was using a forced upgrade. That is esentially a flag that can be passed via Terraform (or via AWS CLI). A more permanent solution would involve figuring out a proper way to configure Calico pods without the problematic toleration; we just need to keep in mind that we are deploying Calico via the Tigera Operator.</p>
-<p><strong>Migration to v1.22</strong></p>
-<p>Control plane and managed nodes: no issues.
-Cluster Autoscaler: already at v1.23.0.
-Kube-proxy: no issues. Upgraded to v1.22.16-minimal-eksbuild.3.
-CodeDNS: no issues. Upgraded to v1.8.7-eksbuild.1.
+<p>Managed Nodes failures due to PodEvictionFailure: this one happened twice during a Production cluster upgrade. It seemed to be related to Calico pods using tolerations that are not compatible with Kubernetes typical node upgrade procedure. In short, the pods tolerate the NoSchedule taint and thus refuse to be evicted from the nodes during a drain procedure. The workaround that worked was using a forced upgrade. That is essentially a flag that can be passed via Terraform (or via AWS CLI). A more permanent solution would involve figuring out a proper way to configure Calico pods without the problematic toleration; we just need to keep in mind that we are deploying Calico via the Tigera Operator.</p>
+<h5 id="upgrade-to-v122">Upgrade to v1.22<a class="headerlink" href="#upgrade-to-v122" title="Permanent link"> ¶</a></h5>
+<p>Control plane and managed nodes: no issues.<br />
+Cluster Autoscaler: already at v1.23.0.<br />
+Kube-proxy: no issues. Upgraded to v1.22.16-minimal-eksbuild.3.<br />
+CodeDNS: no issues. Upgraded to v1.8.7-eksbuild.1.<br />
 VPC CNI: no issues. Upgraded to latest version available, v1.12.1.</p>
 <p>Outstanding issue: Prometheus/Grafana instance became unresponsive right during the upgrade of the control plane. It was fully inaccessible. A stop and start was needed to bring it back up.</p>
+<h5 id="upgrade-to-v125">Upgrade to v1.25<a class="headerlink" href="#upgrade-to-v125" title="Permanent link"> ¶</a></h5>
+<p>Before upgrading to v1.25 there's two main issues to tackle.<br />
+The main one is the removal of the <code>PodSecurityPolicy</code> resource from the <code>policy/v1beta1</code> API. You should migrate all your PSPs to <a href="https://aws.amazon.com/blogs/containers/implementing-pod-security-standards-in-amazon-eks/"><code>PodSecurityStandards</code></a> or any other Policy-as-code solution for Kubernetes.<br />
+If the only PSP found in the cluster is named <code>eks.privileged</code>, you can skip this step. This is a PSP handled by EKS and will be migrated for you by the platform.<br />
+For more information about this, the <a href="https://docs.aws.amazon.com/eks/latest/userguide/pod-security-policy-removal-faq.html">official EKS PSP removal FAQ</a> can be referenced.<br />
+The second issue to tackle is to upgrade <code>aws-load-balancer-controller</code> to v2.4.7 or later to address the removal of <code>EndpointSlice</code> from the <code>discovery.k8s.io/v1beta1</code> API. This should be done via the corresponding helm-chart.</p>
+<p>After the control plane and managed nodes are upgraded, which should present no issues, the cluster autoscaler needs to be upgraded. Usually we would achieve this by changing the helm-hart version to an appropriate one that deploys the matching version to the cluster, that is, cluster autoscaler v1.25. However, there's no release that covers this scenario, as such, we need to provide the cluster autoscaler image version to the current helm-chart via the <code>image.tag</code> values file variable.</p>
+<p>Addons should present no problems being upgraded to the latest available version.</p>
+<h5 id="upgrade-to-v126">Upgrade to v1.26<a class="headerlink" href="#upgrade-to-v126" title="Permanent link"> ¶</a></h5>
+<p>No extra considerations are needed to upgrade from v1.25 to v1.26. The standard procedure listed above should work with no issues.</p>
 <div class="admonition info">
 <p class="admonition-title">Official AWS procedure</p>
 <p>A step-bystep instructions guide for upgrading an EKS cluster can be found at the following link:
 <a href="https://repost.aws/knowledge-center/eks-plan-upgrade-cluster">https://repost.aws/knowledge-center/eks-plan-upgrade-cluster</a></p>
+</div>
+<div class="admonition info">
+<p class="admonition-title">Official AWS Release Notes</p>
+<p>To be aware of important changes in each new Kubernetes version in standard support, is important to check the <a href="https://docs.aws.amazon.com/eks/latest/userguide/kubernetes-versions-standard.html">AWS release notes for standard support versions</a>.</p>
 </div>
 
 

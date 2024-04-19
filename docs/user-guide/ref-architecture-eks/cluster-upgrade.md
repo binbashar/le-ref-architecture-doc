@@ -79,7 +79,8 @@ Now use the following command to get a list of the node groups:
 aws eks list-nodegroups --cluster-name [CLUSTER_NAME] --profile [AWS_PROFILE]
 ```
 
-After that you need to identify the appropriate release version for the upgrade. Use the official documentation to find that: https://docs.aws.amazon.com/eks/latest/userguide/eks-linux-ami-versions.html
+After that, you need to identify the appropriate release version for the upgrade.  
+This is determined by the [Amazon EKS optimized Amazon Linux AMI version](https://docs.aws.amazon.com/eks/latest/userguide/eks-linux-ami-versions.html), the precise value can be found in the `AMI Details` section in the [github repository CHANGELOG](https://github.com/awslabs/amazon-eks-ami/blob/main/CHANGELOG.md). Look for the column named `Release version` in the first table under the corresponding Kubernetes version collapsed section (indicated by a ▸ symbol).
 
 With that information you should be ready to trigger the update with the command below:
 ```
@@ -104,6 +105,7 @@ Namely these components are:
 - Kube-Proxy
 - CoreDNS
 - VPC CNI
+- EBS-CSI driver
 
 In recent versions EKS is able to manage these components as add-ons which makes their upgrades less involved and which can even be performed through a recent version of the Terraform EKS module. However, we are not currently using EKS Add-ons to manage the installation of these components, we are using the so called self-managed approach, so the upgrade needs to be applied manually.
 
@@ -118,18 +120,19 @@ Now, the recommendation is to refer to the following guides which carefully desc
 1. Kube-proxy: [check here](https://docs.aws.amazon.com/eks/latest/userguide/managing-kube-proxy.html#updating-kube-proxy-add-on)
 2. CoreDNS: [check here](https://docs.aws.amazon.com/eks/latest/userguide/managing-coredns.html#updating-coredns-add-on)
 3. VPC CNI: [check here](https://docs.aws.amazon.com/eks/latest/userguide/managing-vpc-cni.html#updating-vpc-cni-add-on)
+4. EBS-CSI driver: [check here](https://docs.aws.amazon.com/eks/latest/userguide/managing-ebs-csi.html#updating-ebs-csi-eks-add-on)
 
 **IMPORTANT:** be extremely careful when applying these updates, specially with the VPC CNI as the instructions are not easy to follow.
 
 ### 4) Closing Steps
 Make sure you notify the team about the upgrade result. Also, do not forget about committing/pushing all code changes to the repository and creating a PR for them.
 
-#### Migration Notes
+### Upgrade Notes
 If you found any information you consider it should be added to this document, you are welcome to reflect that here.
 
-**Migration to v1.21**
+##### Upgrade to v1.21
 
-VPC CNI: The latest available version was v1.11.4 but I was only able to upgrade to v1.9.3. I couldn't move further because v1.10.3 wasn't able to run as it keep throwing the following errors:
+VPC CNI: The latest available version was v1.11.4 but it was only able to be upgraded to v1.9.3. It couldn't be moved further because v1.10.3 wasn't able to run as it keep throwing the following errors:
 ```
 {"level":"info","ts":"2022-10-07T15:42:01.802Z","caller":"entrypoint.sh","msg":"Retrying waiting for IPAM-D"}
 panic: runtime error: invalid memory address or nil pointer dereference
@@ -138,18 +141,38 @@ panic: runtime error: invalid memory address or nil pointer dereference
 
 Cluster Autoscaler: it is already at v1.23.0. The idea is that this should match with the Kubernetes version but since the version we have has been working well so far, we can keep it and it should cover us until we upgrade Kubernetes to a matching version.
 
-Managed Nodes failures due to PodEvictionFailure: this one happened twice during a Production cluster upgrade. It seemed to be related to Calico pods using tolerations that are not compatible with Kubernetes typical node upgrade procedure. In short, the pods tolerate the NoSchedule taint and thus refuse to be evicted from the nodes during a drain procedure. The workaround that worked was using a forced upgrade. That is esentially a flag that can be passed via Terraform (or via AWS CLI). A more permanent solution would involve figuring out a proper way to configure Calico pods without the problematic toleration; we just need to keep in mind that we are deploying Calico via the Tigera Operator.
+Managed Nodes failures due to PodEvictionFailure: this one happened twice during a Production cluster upgrade. It seemed to be related to Calico pods using tolerations that are not compatible with Kubernetes typical node upgrade procedure. In short, the pods tolerate the NoSchedule taint and thus refuse to be evicted from the nodes during a drain procedure. The workaround that worked was using a forced upgrade. That is essentially a flag that can be passed via Terraform (or via AWS CLI). A more permanent solution would involve figuring out a proper way to configure Calico pods without the problematic toleration; we just need to keep in mind that we are deploying Calico via the Tigera Operator.
 
-**Migration to v1.22**
+##### Upgrade to v1.22
 
-Control plane and managed nodes: no issues.
-Cluster Autoscaler: already at v1.23.0.
-Kube-proxy: no issues. Upgraded to v1.22.16-minimal-eksbuild.3.
-CodeDNS: no issues. Upgraded to v1.8.7-eksbuild.1.
+Control plane and managed nodes: no issues.  
+Cluster Autoscaler: already at v1.23.0.  
+Kube-proxy: no issues. Upgraded to v1.22.16-minimal-eksbuild.3.  
+CodeDNS: no issues. Upgraded to v1.8.7-eksbuild.1.  
 VPC CNI: no issues. Upgraded to latest version available, v1.12.1.
 
 Outstanding issue: Prometheus/Grafana instance became unresponsive right during the upgrade of the control plane. It was fully inaccessible. A stop and start was needed to bring it back up.
 
+##### Upgrade to v1.25
+
+Before upgrading to v1.25 there's two main issues to tackle.  
+The main one is the removal of the `PodSecurityPolicy` resource from the `policy/v1beta1` API. You should migrate all your PSPs to [`PodSecurityStandards`](https://aws.amazon.com/blogs/containers/implementing-pod-security-standards-in-amazon-eks/) or any other Policy-as-code solution for Kubernetes.  
+If the only PSP found in the cluster is named `eks.privileged`, you can skip this step. This is a PSP handled by EKS and will be migrated for you by the platform.  
+For more information about this, the [official EKS PSP removal FAQ](https://docs.aws.amazon.com/eks/latest/userguide/pod-security-policy-removal-faq.html) can be referenced.  
+The second issue to tackle is to upgrade `aws-load-balancer-controller` to v2.4.7 or later to address the removal of `EndpointSlice` from the `discovery.k8s.io/v1beta1` API. This should be done via the corresponding helm-chart.
+
+After the control plane and managed nodes are upgraded, which should present no issues, the cluster autoscaler needs to be upgraded. Usually we would achieve this by changing the helm-hart version to an appropriate one that deploys the matching version to the cluster, that is, cluster autoscaler v1.25. However, there's no release that covers this scenario, as such, we need to provide the cluster autoscaler image version to the current helm-chart via the `image.tag` values file variable.
+
+Addons should present no problems being upgraded to the latest available version.
+
+##### Upgrade to v1.26
+
+No extra considerations are needed to upgrade from v1.25 to v1.26. The standard procedure listed above should work with no issues.
+
+
 !!! info "Official AWS procedure"
     A step-bystep instructions guide for upgrading an EKS cluster can be found at the following link:
     [https://repost.aws/knowledge-center/eks-plan-upgrade-cluster](https://repost.aws/knowledge-center/eks-plan-upgrade-cluster)
+
+!!! info "Official AWS Release Notes"
+    To be aware of important changes in each new Kubernetes version in standard support, is important to check the [AWS release notes for standard support versions](https://docs.aws.amazon.com/eks/latest/userguide/kubernetes-versions-standard.html).

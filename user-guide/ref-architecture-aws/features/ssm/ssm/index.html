@@ -12,28 +12,28 @@
         <meta name="author" content="binbash">
       
       
-        <link rel="canonical" href="https://leverage.binbash.co/work-with-us/leverage-vs-competition/">
+        <link rel="canonical" href="https://leverage.binbash.co/user-guide/ref-architecture-aws/features/ssm/ssm/">
       
       
-        <link rel="prev" href="../releases/versions-compatibility-matrix/">
+        <link rel="prev" href="../../sso/managing-users/">
       
       
-        <link rel="next" href="../contribute/">
+        <link rel="next" href="../../identities/overview/">
       
       
-      <link rel="icon" href="../../assets/images/logos/favicon.ico">
+      <link rel="icon" href="../../../../../assets/images/logos/favicon.ico">
       <meta name="generator" content="mkdocs-1.5.2, mkdocs-material-9.2.8">
     
     
       
-        <title>binbash Leverage - binbash Leverage™</title>
+        <title>SSM - binbash Leverage™</title>
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.046329b4.min.css">
+      <link rel="stylesheet" href="../../../../../assets/stylesheets/main.046329b4.min.css">
       
         
-        <link rel="stylesheet" href="../../assets/stylesheets/palette.85d0ee34.min.css">
+        <link rel="stylesheet" href="../../../../../assets/stylesheets/palette.85d0ee34.min.css">
       
       
 
@@ -52,9 +52,9 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/extra.css">
+      <link rel="stylesheet" href="../../../../../assets/stylesheets/extra.css">
     
-    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../../../../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
   
@@ -71,35 +71,6 @@
     
     
     
-
-  <!-- Determine title -->
-  
-  
-    
-  
-
-  <!-- The image needs to have an absolute URL -->
-  
-
-  <!-- Open graph meta tags -->
-  <meta property="og:type" content="website" />
-  <meta property="og:title" content="binbash Leverage™ - Leverage vs Competition" />
-  <meta property="og:description" content="binbash Leverage Reference Architecture Documentation" />
-  <meta property="og:url" content="https://leverage.binbash.co/work-with-us/leverage-vs-competition/" />
-  <meta property="og:image" content="https://leverage.binbash.co/assets/images/illustrations/banner.png" />
-  <meta property="og:image:type" content="image/png" />
-  <meta property="og:image:width" content="1080" />
-  <meta property="og:image:height" content="568" />
-
-  <!-- google-site-verification meta-tag -->
-  <meta name="google-site-verification" content="-Rj8YMCn9uu5IwOFdC-WfAzXp4ZOMJtYKxU40ZgcJIU" />
-
-<!-- Extra stylesheets -->
-<!--  <link
-    rel="stylesheet"
-    href="../../assets/stylesheets/overrides.css"
-  />-->
-
   </head>
   
   
@@ -121,35 +92,13 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#aws-ssm" class="md-skip">
+          Skip to content
+        </a>
+      
     </div>
     <div data-md-component="announce">
-      
-        <aside class="md-banner">
-          <div class="md-banner__inner md-grid md-typeset">
-            
-            
-  <!-- Extra stylesing -->
-  <style>
-      .md-announce a,
-      .md-announce a:focus,
-      .md-announce a:hover{color:currentColor}.md-announce
-      strong{white-space:nowrap}.md-announce
-  </style>
-
-<a href="https://www.linkedin.com/company/binbash">
-  <p style="color: #D5EE1C">For updates follow <strong style="color: #D5EE1C">@binbash</strong> on
-    <span class="twemoji linkedin" style="color: #0e76a8">
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M100.28 448H7.4V148.9h92.88zM53.79 108.1C24.09 108.1 0 83.5 0 53.8a53.79 53.79 0 0 1 107.58 0c0 29.7-24.1 54.3-53.79 54.3zM447.9 448h-92.68V302.4c0-34.7-.7-79.2-48.29-79.2-48.29 0-55.69 37.7-55.69 76.7V448h-92.78V148.9h89.08v40.8h1.3c12.4-23.5 42.69-48.3 87.88-48.3 94 0 111.28 61.9 111.28 142.3V448z"/></svg>
-    </span>
-    <strong style="color: white">LinkedIn</strong>
-  </p>
-</a>
-
-
-
-          </div>
-          
-        </aside>
       
     </div>
     
@@ -158,7 +107,7 @@
 
 <header class="md-header" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="../.." title="binbash Leverage™" class="md-header__button md-logo" aria-label="binbash Leverage™" data-md-component="logo">
+    <a href="../../../../.." title="binbash Leverage™" class="md-header__button md-logo" aria-label="binbash Leverage™" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m19 2-5 4.5v11l5-4.5V2M6.5 5C4.55 5 2.45 5.4 1 6.5v14.66c0 .25.25.5.5.5.1 0 .15-.07.25-.07 1.35-.65 3.3-1.09 4.75-1.09 1.95 0 4.05.4 5.5 1.5 1.35-.85 3.8-1.5 5.5-1.5 1.65 0 3.35.31 4.75 1.06.1.05.15.03.25.03.25 0 .5-.25.5-.5V6.5c-.6-.45-1.25-.75-2-1V19c-1.1-.35-2.3-.5-3.5-.5-1.7 0-4.15.65-5.5 1.5V6.5C10.55 5.4 8.45 5 6.5 5Z"/></svg>
@@ -178,7 +127,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              binbash Leverage
+              SSM
             
           </span>
         </div>
@@ -296,8 +245,6 @@
     <div class="md-container" data-md-component="container">
       
       
-
-
         
           
             
@@ -312,7 +259,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../.." class="md-tabs__link">
+        <a href="../../../../.." class="md-tabs__link">
           
   
     
@@ -332,7 +279,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../try-leverage/" class="md-tabs__link">
+        <a href="../../../../../try-leverage/" class="md-tabs__link">
           
   
     
@@ -352,32 +299,12 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../concepts/" class="md-tabs__link">
+        <a href="../../../../../concepts/" class="md-tabs__link">
           
   
     
   
   Concepts
-
-        </a>
-      </li>
-    
-  
-
-      
-        
-  
-  
-  
-    
-    
-      <li class="md-tabs__item">
-        <a href="../../user-guide/" class="md-tabs__link">
-          
-  
-    
-  
-  User Guide
 
         </a>
       </li>
@@ -394,7 +321,27 @@
     
     
       <li class="md-tabs__item md-tabs__item--active">
-        <a href="../" class="md-tabs__link">
+        <a href="../../../../" class="md-tabs__link">
+          
+  
+    
+  
+  User Guide
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../../../work-with-us/" class="md-tabs__link">
           
   
     
@@ -413,2131 +360,6 @@
           
         
       
-
-<!-- Additional styles for landing page -->
-<style>
-
-    .d-flex {
-        display: flex;
-    }
-
-    .cursor-pointer {
-        cursor: pointer;
-    }
-
-    .ml-0 {
-        margin-left: 0rem;
-    }
-    .ml-1 {
-        margin-left: 0.25rem;
-    }
-    .ml-2 {
-        margin-left: 0.5rem;
-    }
-    .ml-3 {
-        margin-left: 1rem;
-    }
-    .ml-4 {
-        margin-left: 1.5rem;
-    }
-    .ml-5 {
-        margin-left: 3rem;
-    }
-
-    .mr-0 {
-        margin-right: 0rem;
-    }
-    .mr-1 {
-        margin-right: 0.25rem;
-    }
-    .mr-2 {
-        margin-right: 0.5rem;
-    }
-    .mr-3 {
-        margin-right: 1rem;
-    }
-    .mr-4 {
-        margin-right: 1.5rem;
-    }
-    .mr-5 {
-        margin-right: 3rem;
-    }
-
-    .pl-0 {
-        padding-left: 0rem;
-    }
-    .pl-1 {
-        padding-left: 0.25rem;
-    }
-    .pl-2 {
-        padding-left: 0.5rem;
-    }
-    .pl-3 {
-        padding-left: 1rem;
-    }
-    .pl-4 {
-        padding-left: 1.5rem;
-    }
-    .pl-5 {
-        padding-left: 3rem;
-    }
-
-    .pr-0 {
-        padding-right: 0rem;
-    }
-    .pr-1 {
-        padding-right: 0.25rem;
-    }
-    .pr-2 {
-        padding-right: 0.5rem;
-    }
-    .pr-3 {
-        padding-right: 1rem;
-    }
-    .pr-4 {
-        padding-right: 1.5rem;
-    }
-    .pr-5 {
-        padding-right: 3rem;
-    }
-
-
-    .mt-0 {
-        margin-top: 0rem;
-    }
-    .mt-1 {
-        margin-top: 0.25rem;
-    }
-    .mt-2 {
-        margin-top: 0.5rem;
-    }
-    .mt-3 {
-        margin-top: 1rem;
-    }
-    .mt-4 {
-        margin-top: 1.5rem;
-    }
-    .mt-5 {
-        margin-top: 3rem;
-    }
-
-
-    .pt-0 {
-        padding-top: 0rem;
-    }
-    .pt-1 {
-        padding-top: 0.25rem;
-    }
-    .pt-2 {
-        padding-top: 0.5rem;
-    }
-    .pt-3 {
-        padding-top: 1rem;
-    }
-    .pt-4 {
-        padding-top: 1.5rem;
-    }
-    .pt-5 {
-        padding-top: 3rem;
-    }
-
-    .mb-0 {
-        margin-bottom: 0rem;
-    }
-    .mb-1 {
-        margin-bottom: 0.25rem;
-    }
-    .mb-2 {
-        margin-bottom: 0.5rem;
-    }
-    .mb-3 {
-        margin-bottom: 1rem;
-    }
-    .mb-4 {
-        margin-bottom: 1.5rem;
-    }
-    .mb-5 {
-        margin-bottom: 3rem;
-    }
-
-
-    .pb-0 {
-        padding-bottom: 0rem;
-    }
-    .pb-1 {
-        padding-bottom: 0.25rem;
-    }
-    .pb-2 {
-        padding-bottom: 0.5rem;
-    }
-    .pb-3 {
-        padding-bottom: 1rem;
-    }
-    .pb-4 {
-        padding-bottom: 1.5rem;
-    }
-    .pb-5 {
-        padding-bottom: 3rem;
-    }
-
-
-
-    .mx-0 {
-        margin-left: 0rem;
-        margin-right: 0rem;
-    }
-    .mx-1 {
-        margin-left: 0.25rem;
-        margin-right: 0.25rem;
-    }
-    .mx-2 {
-        margin-left: 0.5rem;
-        margin-right: 0.5rem;
-    }
-    .mx-3 {
-        margin-left: 1rem;
-        margin-right: 1rem;
-    }
-    .mx-4 {
-        margin-left: 1.5rem;
-        margin-right: 1.5rem;
-    }
-    .mx-5 {
-        margin-left: 3rem;
-        margin-right: 3rem;
-    }
-
-    .px-0 {
-        padding-left: 0rem;
-        padding-right: 0rem;
-    }
-    .px-1 {
-        padding-left: 0.25rem;
-        padding-right: 0.25rem;
-    }
-    .px-2 {
-        padding-left: 0.5rem;
-        padding-right: 0.5rem;
-    }
-    .px-3 {
-        padding-left: 1rem;
-        padding-right: 1rem;
-    }
-    .px-4 {
-        padding-left: 1.5rem;
-        padding-right: 1.5rem;
-    }
-    .px-5 {
-        padding-left: 3rem;
-        padding-right: 3rem;
-    }
-
-
-
-    .my-0 {
-        margin-top: 0rem;
-        margin-bottom: 0rem;
-    }
-    .my-1 {
-        margin-top: 0.25rem;
-        margin-bottom: 0.25rem;
-    }
-    .my-2 {
-        margin-top: 0.5rem;
-        margin-bottom: 0.5rem;
-    }
-    .my-3 {
-        margin-top: 1rem;
-        margin-bottom: 1rem;
-    }
-    .my-4 {
-        margin-top: 1.5rem;
-        margin-bottom: 1.5rem;
-    }
-    .my-5 {
-        margin-top: 3rem;
-        margin-bottom: 3rem;
-    }
-
-
-    .py-0 {
-        padding-top: 0rem;
-        padding-bottom: 0rem;
-    }
-    .py-1 {
-        padding-top: 0.25rem;
-        padding-bottom: 0.25rem;
-    }
-    .py-2 {
-        padding-top: 0.5rem;
-        padding-bottom: 0.5rem;
-    }
-    .py-3 {
-        padding-top: 1rem;
-        padding-bottom: 1rem;
-    }
-    .py-4 {
-        padding-top: 1.5rem;
-        padding-bottom: 1.5rem;
-    }
-    .py-5 {
-        padding-top: 3rem;
-        padding-bottom: 3rem;
-    }
-
-    .mx-auto {
-        margin-left: auto;
-        margin-right: auto;
-    }
-
-    .ml-auto {
-        margin-left: auto;
-    }
-
-    .mr-auto {
-        margin-right: auto;
-    }
-
-    .conteiner {
-        display: flex;
-        flex-flow: column;
-    }
-
-    .conteiner-row {
-        display: flex;
-        flex-flow: row;
-    }
-
-    .display-1 {
-        font-size: 6rem;
-    }
-
-    .display-2 {
-        font-size: 5rem;
-    }
-
-    .display-3 {
-        font-size: 4rem;
-    }
-
-    .display-4 {
-        font-size: 3rem;
-    }
-
-    .h1 {
-        font-size: 2.2rem;
-    }
-
-    .h2 {
-        font-size: 1.5rem;
-    }
-
-    .h3 {
-        font-size: 1rem;
-    }
-
-    .h4 {
-        font-size: 0.5rem;
-    }
-
-    .h5 {
-        font-size: 0.25rem;
-    }
-
-    .t-b {
-        font-weight: bold;
-    }
-
-    .text-pink {
-        color: #d328ae;
-    }
-
-    .text-white {
-        color: #fff;
-    }
-
-    .text-dark {
-        color: #000;
-    }
-
-    .text-align-center {
-        text-align: center;
-    }
-
-    .text-start {
-        text-align: start;
-    }
-
-    .text-end {
-        text-align: end;
-    }
-
-    @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Koulen&family=Lato&family=Nunito&family=Playfair+Display:ital@1&family=Prata&family=Raleway:ital,wght@1,100&family=Roboto&family=Roboto+Condensed&family=Teko&display=swap');
-
-    .btn-dark {
-        font-family: Roboto, sans-serif;
-        font-weight: 600;
-        font-size: 14px;
-        color: #fff;
-        background-color: #000000;
-        padding: 10px 30px;
-        border: solid #000 2px;
-        box-shadow: rgb(0, 0, 0) 0px 0px 0px 0px;
-        border-radius: 8px;
-        transition : 1000ms;
-        transform: translateY(0);
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        cursor: pointer;
-    }
-
-    .btn-dark:hover{
-        transition : 1000ms;
-        padding: 10px 50px;
-        transform : translateY(-0px);
-        background-color: #121212;
-        color: #ffffff;
-        border: solid 2px #292929;
-    }
-
-
-    .btn-warning {
-        font-family: Roboto, sans-serif;
-        font-weight: 600;
-        font-size: 14px;
-        color: #000000;
-        background-color: #bdd61c;
-        padding: 10px 30px;
-        border: solid #bdd61c 2px;
-        box-shadow: rgb(0, 0, 0) 0px 0px 0px 0px;
-        border-radius: 8px;
-        transition : 1000ms;
-        transform: translateY(0);
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        cursor: pointer;
-    }
-
-    .btn-warning:hover{
-        transition : 1000ms;
-        padding: 10px 50px;
-        transform : translateY(-0px);
-        background-color: #e1ff00;
-        color: #000000;
-        border: solid 2px #bdd61c;
-    }
-
-    .btn-white {
-        font-family: Roboto, sans-serif;
-        font-weight: 600;
-        font-size: 14px;
-        color: #000000;
-        background-color: #ffffff;
-        padding: 10px 30px;
-        border: solid #ffffff 2px;
-        box-shadow: rgb(0, 0, 0) 0px 0px 0px 0px;
-        border-radius: 8px;
-        transition : 1000ms;
-        transform: translateY(0);
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        cursor: pointer;
-        }
-
-    .btn-white:hover{
-        transition : 1000ms;
-        padding: 10px 50px;
-        transform : translateY(-0px);
-        background-color: #fff;
-        color: #0d0d0d;
-        border: solid 2px #ababab;
-    }
-
-    .btn-rainbow {
-        border-radius: 10px;
-        padding: 1rem;
-        font-family: Roboto, sans-serif;
-        font-weight: 600;
-        font-size: 14px;
-        padding: 10px 30px;
-        color: #fff;
-        box-shadow: 0 0 6px 0 rgba(157, 96, 212, 0.5);
-        border: solid 3px transparent;
-        background-image: linear-gradient(rgba(255, 255, 255, 0), rgba(255, 255, 255, 0)), linear-gradient(101deg, #ff48fa, #BDD61C);
-        background-origin: border-box;
-        background-clip: content-box, border-box;
-        box-shadow: 2px 1000px 1px #181917 inset;
-    }
-
-
-
-    .btn-rainbow:hover {
-        box-shadow: none;
-        color: white;
-        transition : 1000ms;
-        transform : translateY(-0px);
-    }
-
-
-    .box-shadow {
-        box-shadow: -5px 5px 10px 1px rgb(0 0 0 / 75%);
-    }
-
-
-    .first-gradiant-body {
-        background: hsla(316, 100%, 63%, 1);
-        background: linear-gradient(0deg, hsla(316, 100%, 63%, 1) 0%, hsla(2, 62%, 69%, 1) 33%, hsla(68, 77%, 47%, 1) 87%);
-    }
-
-    .second-gradiant-body {
-        background: hsla(316, 100%, 63%, 1);
-        background: linear-gradient(180deg, hsla(316, 100%, 63%, 1) 0%, hsla(2, 62%, 69%, 1) 33%, hsla(68, 77%, 47%, 1) 87%);
-    }
-
-    .stack-tenology-gradient {
-        background: hsla(316, 100%, 63%, 1);
-        background: linear-gradient(90deg, hsla(316, 100%, 63%, 1) 0%, hsla(2, 62%, 69%, 1) 33%, hsla(68, 77%, 47%, 1) 87%);
-    }
-
-    .third-dark-body {
-        background-color: #181917;
-    }
-
-    .four-gray-body {
-        background-color: #D0D0D0;
-    }
-
-    .bg-dark {
-        background-color: #181917;
-    }
-
-    .w-100 {
-        width: 100%;
-    }
-
-    .w-70 {
-        width: 70%;
-    }
-
-    .w-50 {
-        width: 50%;
-    }
-
-    .w-25 {
-        width: 25%;
-    }
-
-    .w-10 {
-        width: 10%;
-    }
-
-    .ctx-header-text {
-        flex:60%;
-        order:0;
-        display:flex;
-        color: #000
-    }
-
-    .ctx-header-img {
-        flex:40%;
-        order:1;
-        display:flex;
-        flex-flow:column;
-    }
-
-    .ctx-card-white-1 {
-        flex:50%;
-        order:0;
-        justify-content: center;
-    }
-
-    .ctx-what-is {
-        order:0;
-        flex: 50%;
-        width: 50%;
-    }
-
-    .laverage-header-img {
-        width: 55%;
-        margin-left: auto;
-    }
-
-    .laverage-mac-img {
-        width: 200%;
-        margin-left: auto;
-    }
-
-    .why-laverage-img {
-        width: 25%;
-        left: 60%;
-        position: relative;
-    }
-
-    .laverage-mac2-img {
-        width: 60%;
-        left: 10%;
-        position: relative;
-    }
-
-    .card-white {
-        width: 100%;
-        background-color: white;
-        border-radius: 60px 0px 60px 0px;
-    }
-
-    .card-rainbow {
-        position: relative;
-        bottom: -170px;
-        border-radius: 15px;
-        width: 80%;
-        min-height: 600px;
-    }
-
-    .leverage-title-logo {
-        margin-bottom: -10px;
-    }
-
-    .md-main {
-        padding: 0px;
-    }
-
-    .md-footer {
-        display: none;
-    }
-
-    .item-social-media:hover {
-        background-color: #6a7a00;
-        border-radius: 10px;
-    }
-
-    .item-text-footer:hover {
-        color:#c8ff00
-    }
-
-
-    @media (min-width: 1220px) {
-
-        .conteiner-row-lg {
-            display: flex;
-            flex-flow: row;
-        }
-
-        .d-xl-none {
-            display: none;
-        }
-
-        .pt-lg-5 {
-            padding-top: 3rem;
-        }
-
-        .my-xl-5 {
-            margin-top: 3rem;
-            margin-bottom: 3rem;
-        }
-
-        .my-xl-4 {
-            margin-top: 1.5rem;
-            margin-bottom: 1.5rem;
-        }
-
-        .my-xl-0 {
-            margin-left: 0rem;
-            margin-right: 0rem;
-        }
-
-        .mx-xl-auto {
-            margin-left: auto;
-            margin-right: auto;
-        }
-
-        .mx-xl-0 {
-            margin-left: 0rem;
-            margin-right: 0rem;
-        }
-
-        .text-end-xl {
-            text-align: end;
-        }
-
-        .text-start-xl {
-            text-align: start;
-        }
-
-        .btn-xl-large:hover {
-            font-size: 22px;
-            padding: 15px 50px;
-        }
-
-        .btn-lg-large {
-            font-size: 22px;
-            padding: 15px 30px;
-        }
-
-        .btn-rainbow-custom {
-            margin-top: 15rem;
-        }
-
-        .md-main {
-            display: none;
-        }
-
-        .md-header__title .md-header__ellipsis .md-header__topic{
-            background-image: url(../assets/images/logos/binbash-nav-icon.svg);
-            height: 40px;
-            width: 150px;
-            background-repeat: no-repeat;
-            margin-top: 10px;
-        }
-
-        .md-header__topic .md-ellipsis {
-            display: none;
-        }
-    }
-
-    @media (min-width: 960px) and (max-width: 1219px)  {
-
-        .conteiner-row-xl{
-            display: flex;
-            flex-flow: row;
-        }
-
-        .d-lg-none {
-            display: none;
-        }
-        .d-xl {
-            display: none;
-        }
-
-        .pt-lg-5 {
-            padding-top: 3rem;
-        }
-
-        .my-lg-5 {
-            margin-top: 3rem;
-            margin-bottom: 3rem;
-        }
-
-        .my-lg-4 {
-            margin-top: 1.5rem;
-            margin-bottom: 1.5rem;
-        }
-
-        .mx-lg-0 {
-            margin-left: 0rem;
-            margin-right: 0rem;
-        }
-
-        .mx-lg-5 {
-            margin-left: 3rem;
-            margin-right: 3rem;
-        }
-
-        .ctx-card-white-1 {
-            flex:100%;
-        }
-
-        .text-end-lg {
-            text-align: end;
-        }
-
-        .text-start-lg {
-            text-align: start;
-        }
-
-        .btn-xl-large:hover {
-            font-size: 22px;
-            padding: 15px 50px;
-        }
-
-        .btn-lg-large {
-            font-size: 22px;
-            padding: 15px 30px;
-        }
-
-        .btn-rainbow-custom {
-            margin-top: 15rem;
-        }
-
-    }
-
-    @media (min-width: 720px) and (max-width: 959px) {
-        .d-md-none {
-            display: none;
-        }
-        .d-xl {
-            display: none;
-        }
-        .d-lg {
-            display: none;
-        }
-
-        .my-md-5 {
-            margin-top: 3rem;
-            margin-bottom: 3rem;
-        }
-
-        .mx-md-auto {
-            margin-left: auto;
-            margin-right: auto;
-        }
-
-        .ctx-header-text {
-            flex:100%;
-        }
-
-        .ul-home {
-            width: 300px;
-        }
-
-        .ctx-what-is {
-            width: 70%;
-        }
-
-        .why-laverage-img {
-            width: 60%;
-            left: 0%;
-            position: relative;
-            margin-left: auto;
-            margin-right: auto;
-        }
-
-        .laverage-mac2-img {
-            width: 100%;
-            left: 0%;
-            position: relative;
-        }
-
-        .laverage-header-img {
-            width: 35%;
-        }
-
-    }
-
-     @media (min-width: 540px) and (max-width: 719px) {
-        .d-sm-none {
-            display: none;
-        }
-        .d-xl {
-            display: none;
-        }
-        .d-lg {
-            display: none;
-        }
-        .d-md {
-            display: none;
-        }
-
-        .mx-sm-auto {
-            margin-left: auto;
-            margin-right: auto;
-        }
-
-        .my-sm-5 {
-            margin-top: 3rem;
-            margin-bottom: 3rem;
-        }
-
-        .ul-home {
-            width: 300px;
-        }
-
-        .ctx-what-is {
-            width: 70%;
-        }
-
-        .why-laverage-img {
-            width: 60%;
-            left: 0%;
-            position: relative;
-            margin-left: auto;
-            margin-right: auto;
-        }
-
-        .laverage-mac2-img {
-            width: 100%;
-            left: 0%;
-            position: relative;
-        }
-
-        .laverage-header-img {
-            width: 35%;
-        }
-
-    }
-
-
-     @media (min-width: 300px) and (max-width: 539px) {
-        .d-xs-none {
-            display: none;
-        }
-        .d-xl {
-            display: none;
-        }
-        .d-lg {
-            display: none;
-        }
-        .d-md {
-            display: none;
-        }
-        .d-sm {
-            display: none;
-        }
-
-        .text-xs-center {
-            text-align: center;
-        }
-
-        .h1 {
-            font-size: 2.2rem;
-        }
-
-        .leverage-title-logo {
-            margin-bottom: -5px;
-        }
-
-        .conteiner-xs {
-            display: flex;
-            flex-flow: column;
-        }
-
-        .mx-xs-auto {
-            margin-left: auto;
-            margin-right: auto;
-        }
-
-        .my-xs-5 {
-            margin-top: 3rem;
-            margin-bottom: 3rem;
-        }
-
-        .ul-home {
-            width: 300px;
-        }
-
-        .ctx-what-is {
-            width: 70%;
-        }
-
-        .laverage-mac-img {
-            width: 300%;
-        }
-
-        .why-laverage-img {
-            width: 60%;
-            left: 0%;
-            position: relative;
-            margin-left: auto;
-            margin-right: auto;
-        }
-
-        .laverage-mac2-img {
-            width: 100%;
-            left: 0%;
-            position: relative;
-        }
-
-
-    }
-
-
-
-
-
-    .md-header {
-        position: initial
-    }
-
-    .md-main__inner {
-        margin: 0
-    }
-
-    .md-footer-copyright {
-        display: none
-    }
-
-    .md-footer-nav__inner {
-        display: none
-    }
-
-    .md-content {
-        display: none
-    }
-
-    .md-footer-meta__inner {
-        align-content: center;
-        display: flex;
-        align-items: center;
-        justify-content: center
-    }
-
-    /*
-     Table of content font color
-    */
-    a.md-nav__link {
-        color: #303C55;
-        text-decoration: none;
-    }
-
-    .tx-container {
-        --md-primary-fg-color: #181917;
-        height: fit-content;
-        padding-top: 0rem;
-        background: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1123 258'><path d='M1124,2c0,0 0,256 0,256l-1125,0l0,-48c0,0 16,5 55,5c116,0 197,-92 325,-92c121,0 114,46 254,46c140,0 214,-167 572,-166Z' style='fill: white' /></svg>") no-repeat bottom, linear-gradient(to bottom, var(--md-primary-fg-color), #2a978d 99%, #fff 99%)
-    }
-
-    .tx-hero {
-        color: var(--md-primary-bg-color);
-        justify-content: right;
-    }
-
-    .tx-hero h1 {
-        margin-bottom: 0rem;
-        color: currentColor;
-        font-weight: 700
-    }
-
-    .tx-hero__content {
-        padding-bottom: 9rem;
-        justify-content: left;
-        padding-right: 3rem;
-    }
-
-    .tx-hero__content_small {
-        justify-content: left;
-        padding-right: 3rem;
-    }
-
-    .tx-hero__image {
-        max-width: 100%;
-        max-height: 100%;
-        order: 1;
-        padding-right: 2.5rem;
-    }
-
-    .tx-hero .md-button {
-        margin-top: .5rem;
-        margin-right: .5rem;
-        color: var(--md-primary-bg-color)
-    }
-
-    .tx-hero .md-button--primary {
-        background-color: var(--md-primary-bg-color);
-        color: hsla(280deg, 37%, 48%, 1);
-        border-color: var(--md-primary-bg-color)
-    }
-
-    .tx-hero .md-button:focus,
-    .tx-hero .md-button:hover {
-        background-color: var(--md-accent-fg-color);
-        color: var(--md-default-bg-color);
-        border-color: var(--md-accent-fg-color)
-    }
-
-    .tx-container-2 {
-        padding: 0rem;
-        background-color: white;
-        margin-bottom: 0px;
-    }
-
-    .tx-hero__image-2 {
-        max-width: 100%;
-        max-height: 100%;
-        order: 1;
-        padding-right: 0.5rem;
-        padding-left: 0rem;
-        padding-top: 10px;
-        padding-bottom: 10px;
-        float: left;
-    }
-
-    .tx-hero__content-2 {
-        margin-left: 50px;
-        justify-content: left;
-        color: #2a978d;
-        font-weight: 300;
-        padding: 0 0px;
-        padding-bottom: 40px;
-        word-break: break-word;
-        float: right;
-    }
-
-    .tx-hero__content-2 h1 {
-        margin-top: 50px;
-        color: #2a978d;
-        font-weight: 600;
-        font-size: 36px;
-        white-space: nowrap;
-        overflow: hidden;
-        text-overflow: ellipsis;
-        line-height: normal;
-        /*font-family: inherit;*/
-    }
-
-    .tx-hero__content-2 p {
-        font-size: 17px;
-        line-height: 1.8em;
-        text-rendering: optimizeLegibility;
-        color: black;
-        display: block;
-    }
-
-    .tx-hero__content-2 a:link {
-        color: #2a978d;
-    }
-
-    .tx-hero__content-2 a:visited {
-        color: #2a978d;
-    }
-
-    .tx-container-3 {
-        --md-primary-fg-color: #181917;
-        height: auto;
-        background: linear-gradient(to bottom, var(--md-primary-fg-color), #181917 100%, #fff 99%);
-    }
-
-    .tx-container-4 {
-        height: auto;
-        background: linear-gradient(to bottom, #2a978d, #181917 99%, #fff 99%);
-    }
-
-    .tx-container-testimonial {
-        height: auto;
-        background: #EDEFF0;
-    }
-
-    .tx-hero__image-3 {
-        max-width: 100%;
-        max-height: 100%;
-        order: 1;
-        padding-right: 2.5rem;
-        padding-top: 30px;
-        padding-bottom: 30px;
-    }
-
-    .tx-hero__image-4 {
-        max-width: 100%;
-        max-height: 100%;
-        order: 1;
-        padding-right: 2.5rem;
-        padding-top: 5px;
-        padding-bottom: 15px;
-    }
-
-    .tx-footer {
-        margin: 0px 0rem;
-        background-color: white;
-        height: 40px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-    }
-
-    .tx-hero__content-footer {
-        justify-content: left;
-        color: #2a978d;
-        font-weight: 300;
-        padding: 0 0px;
-        word-break: break-word;
-        float: left;
-    }
-
-    .tx-footer p {
-        font-size: 12px;
-        line-height: 1.8em;
-        text-rendering: optimizeLegibility;
-        color: black;
-        display: block;
-        font-family: inherit;
-    }
-
-    /**/
-    /*Adjusting Mobile UI */
-    /**/
-    @media screen and (max-width: 30em) {
-        .tx-hero h1 {
-            font-size: 1.4rem
-        }
-
-        .tx-hero__content {
-            margin-left: 20px;
-            margin-right: 20px;
-        }
-
-        .tx-hero__content_small {
-            margin-bottom: 50px;
-            margin-left: 20px;
-            margin-right: 20px;
-            font-size: 1.1rem;
-        }
-
-        .tx-hero__content-2 {
-            margin-left: 20px;
-            margin-right: 20px;
-        }
-
-        .tx-hero__content-3 {
-            margin-left: 20px;
-            margin-right: 20px;
-        }
-
-        .md-typeset .md-button {
-            font-size: 14px;
-        }
-    }
-
-    @media screen and (min-width: 60em) {
-        .md-sidebar--secondary {
-            display: none
-        }
-
-        .tx-hero {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .tx-hero__content {
-            max-width: 28rem;
-            margin-top: 3.5rem;
-            margin-bottom: 3.5rem;
-            margin-left: 1.0rem;
-            margin-right: 4.0rem;
-            align-items: center;
-        }
-    }
-
-    @media screen and (min-width: 76.25em) {
-        .md-sidebar--primary {
-            display: none
-        }
-
-        .top-hr {
-            width: 100%;
-            display: flex;
-            max-width: 61rem;
-            margin-right: auto;
-            margin-left: auto;
-            padding: 0 .2rem;
-        }
-
-        .bottom-hr {
-            margin-top: 10px;
-            width: 100%;
-            display: flex;
-            max-width: 61rem;
-            margin-right: auto;
-            margin-left: auto;
-            padding: 0 .2rem;
-        }
-    }
-
-    .text-center {
-        text-align: center;
-        padding-right: 15px;
-        padding-left: 15px;
-        margin-right: auto;
-        margin-left: auto;
-        margin-top: 15px;
-        font-size: 23px;
-        font-weight: 300;
-        padding-bottom: 10px;
-    }
-
-    .logos {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        flex-flow: row wrap;
-        margin: 0 auto;
-    }
-
-    .logos img {
-        flex: 1 1 auto;
-        padding: 25px;
-        max-height: 130px;
-        vertical-align: middle;
-    }
-</style>
-
-<!-- Table Style -->
-<style>
-    .table-wrapper{
-        margin: 10px 70px 70px;
-        box-shadow: 0px 35px 50px rgba( 0, 0, 0, 0.2 );
-    }
-
-    .fl-table {
-        border-radius: 5px;
-        font-size: 16px;
-        font-weight: normal;
-        border: none;
-        border-collapse: collapse;
-        width: 100%;
-        max-width: 100%;
-        white-space: nowrap;
-        background-color: white;
-    }
-
-    .fl-table td, .fl-table th {
-        text-align: left;
-        padding: 8px;
-    }
-
-    .fl-table td {
-        border-right: 1px solid #f8f8f8;
-        font-size: 16px;
-    }
-
-    .fl-table thead th {
-        color: #181917;
-        background: #D5EE1C;
-    }
-
-
-    .fl-table thead th:nth-child(odd) {
-        color: #ffffff;
-        background: #181917;
-    }
-
-    .fl-table tr:nth-child(even) {
-        background: #F8F8F8;
-    }
-
-    /* Responsive */
-
-    @media (max-width: 767px) {
-        .fl-table {
-            display: block;
-            width: 100%;
-        }
-        .table-wrapper:before{
-            content: "Scroll horizontally >";
-            display: block;
-            text-align: right;
-            font-size: 10px;
-            color: white;
-            padding: 0 0 10px;
-        }
-        .fl-table thead, .fl-table tbody, .fl-table thead th {
-            display: block;
-        }
-        .fl-table thead th:last-child{
-            border-bottom: none;
-        }
-        .fl-table thead {
-            float: left;
-        }
-        .fl-table tbody {
-            width: auto;
-            position: relative;
-            overflow-x: auto;
-        }
-        .fl-table td, .fl-table th {
-            padding: 20px .625em .625em .625em;
-            height: 90px;
-            vertical-align: middle;
-            box-sizing: border-box;
-            overflow-x: hidden;
-            overflow-y: auto;
-            width: 110px;
-            font-size: 8px;
-            text-overflow: ellipsis;
-        }
-        .fl-table thead th {
-            text-align: left;
-            border-bottom: 1px solid #f7f7f9;
-        }
-        .fl-table tbody tr {
-            display: table-cell;
-        }
-        .fl-table tbody tr:nth-child(odd) {
-            background: none;
-        }
-        .fl-table tr:nth-child(even) {
-            background: transparent;
-        }
-        .fl-table tr td:nth-child(odd) {
-            background: #F8F8F8;
-            border-right: 1px solid #E6E4E4;
-        }
-        .fl-table tr td:nth-child(even) {
-            border-right: 1px solid #E6E4E4;
-        }
-        .fl-table tbody td {
-            display: block;
-            text-align: center;
-        }
-    }
-
-</style>
-
-<!-- Testimonial Section Style -->
-<style>
-    *{
-        box-sizing: border-box
-    }
-    body{
-        margin: 0;
-        padding: 0;
-        font-family: Helvetica;
-        font-weight: 100;
-        color: #777;
-    }
-    .container-testimonial{
-        background: rgb(237, 239, 240);
-        height: 50vh;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        margin-bottom: 30px;
-        margin-left: 150px;
-        margin-right: 150px;
-
-    }
-
-    .testimonial-header{
-        margin-top: 50px;
-        margin-bottom: 30px;
-        border-radius: 10px;
-        position: center;
-        justify-content:center;
-        font-size: 42px;
-        color: #2a978d;
-    }
-
-    .testimonial-card{
-        min-height: 400px;
-        width: 350px;
-        background-color: white;
-        border-radius: 10px;
-        box-shadow: 0 8px 30px rgba(0,0,0,.3);
-        display: flex;
-        flex-flow: column;
-        justify-content:space-between;
-        margin-left: 10px;
-    }
-
-    .text{
-        padding: 2em;
-        line-height: 1.7em;
-        position: relative;
-        font-size: 14px;
-        color: #181917;
-        margin-bottom: 50px;
-    }
-    .image{
-        background-color:tomato;
-        height: 120px;
-        width: 120px;
-        border-radius: 50%;
-        border: 5px solid white;
-        position: absolute;
-        top: -50%;
-        left: 50%;
-        transform: translateX(-50%);
-        display:flex;
-        justify-content:center;
-    }
-
-    .footer{
-        background: linear-gradient(90deg, #181917 0%, #2a978d 100%);
-        height: 165px;
-        border-radius: 0 0 10px 10px;
-        position:relative;
-    }
-
-    .quote{
-        font-size: 400%;
-        float: right;
-        opacity: .1;
-        transform: rotate(10deg) translate(-10px, -40px);
-        color:#4D3FA3;
-    }
-
-    .person{
-        color:white;
-        position: absolute;
-        margin-top: 0px;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -100%);
-        font-size: 1rem;
-        font-weight: 550;
-    }
-
-    .person-title{
-        color:white;
-        position: absolute;
-        margin-top: 10px;
-        top: 90%;
-        left: 50%;
-        transform: translate(-50%, -100%);
-        font-size:0.7rem;
-        font-weight: 300;
-    }
-
-    @media screen and (max-width: 30em) {
-        .container-testimonial{
-            background: rgb(237, 239, 240);
-            height: 50vh;
-            display: table;
-            align-items: center;
-            justify-content: left;
-            margin-bottom: 30px;
-            margin-left: 5px;
-            margin-right: 5px;
-        }
-
-        .testimonial-card {
-            min-height: 400px;
-            width: 350px;
-            background-color: white;
-            border-radius: 10px;
-            box-shadow: 0 8px 30px rgb(0 0 0 / 30%);
-            display: flex;
-            flex-flow: column;
-            justify-content: space-between;
-            margin-left: 10px;
-            margin-bottom: 5px;
-    }
-        .testimonial-header{
-            margin-top: 50px;
-            margin-bottom: 30px;
-            border-radius: 10px;
-            position: center;
-            justify-content:center;
-            font-size: 24px;
-            color: #2a978d;
-        }
-    }
-
-    @media only screen and (min-width: 481px) and (max-width: 1600px) {
-        .container-testimonial{
-            background: rgb(237, 239, 240);
-            height: 50vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-top: 100px;
-            margin-bottom: 100px;
-            margin-left: 150px;
-            margin-right: 150px;
-        }
-    }
-
-</style>
-
-<!-- Subscription Section Style -->
-<style>
-    * {
-        margin: 0;
-        padding: 0;
-        -webkit-box-sizing: border-box;
-        -moz-box-sizing: border-box;
-        box-sizing: border-box;
-    }
-
-    body {
-        background: #FFFFFF;
-        color: #FFF;
-        font-size: 62.5%;
-        font-family: 'Roboto', Arial, Helvetica, Sans-serif, Verdana;
-    }
-
-    ul {
-        list-style-type: none;
-    }
-
-    .pricing-table-title {
-        text-transform: uppercase;
-        font-weight: 700;
-        font-size: 2.6em;
-        color: #2a978d;
-        margin-top: 15px;
-        text-align: left;
-        margin-bottom: 25px;
-        text-shadow: 0 1px 1px rgba(0, 0, 0, 0.4);
-    }
-
-    .pricing-table-title a {
-        font-size: 0.6em;
-    }
-
-    .clearfix:after {
-        content: '';
-        display: block;
-        height: 0;
-        width: 0;
-        clear: both;
-    }
-
-    /** ========================
-     * Container
-     ============================*/
-    .pricing-wrapper {
-        width: 1360px;
-        padding-bottom: 40px;
-        margin: 40px auto 0;
-    }
-
-    .pricing-table {
-        margin: 0 10px;
-        text-align: center;
-        width: 300px;
-        float: left;
-        -webkit-box-shadow: 0 0 15px rgba(0, 0, 0, 0.4);
-        box-shadow: 0 0 15px rgba(0, 0, 0, 0.4);
-        -webkit-transition: all 0.25s ease;
-        -o-transition: all 0.25s ease;
-        transition: all 0.25s ease;
-    }
-
-    .pricing-table:hover {
-        -webkit-transform: scale(1.06);
-        -ms-transform: scale(1.06);
-        -o-transform: scale(1.06);
-        transform: scale(1.06);
-    }
-
-    .pricing-title {
-        color: #FFF;
-        background: #172a45;
-        padding: 20px 0;
-        font-size: 2em;
-        text-transform: uppercase;
-        text-shadow: 0 1px 1px rgba(0, 0, 0, 0.4);
-    }
-
-    .pricing-table.recommended .pricing-title {
-        background: #2a978d;
-    }
-
-    .pricing-table.recommended .pricing-action {
-        background: #2a978d;
-    }
-
-    .pricing-table .price {
-        background: #403e3d;
-        font-size: 3.4em;
-        font-weight: 700;
-        padding: 20px 0;
-        text-shadow: 0 1px 1px rgba(0, 0, 0, 0.4);
-    }
-
-    .pricing-table .price sup {
-        font-size: 0.4em;
-        position: relative;
-        left: 5px;
-    }
-
-    .table-list {
-        background: #FFF;
-        color: #403d3a;
-    }
-
-    .table-list li {
-        font-size: 1.4em;
-        font-weight: 700;
-        padding: 12px 8px;
-    }
-
-/*    .table-list li:before {
-        content: "\f00c";
-        font-family: 'FontAwesome';
-        color: #3fab91;
-        display: inline-block;
-        position: relative;
-        right: 5px;
-        font-size: 16px;
-    }*/
-
-    .table-list li span {
-        font-weight: 400;
-    }
-
-    .table-list li span.unlimited {
-        color: #FFF;
-        background: #172a45;
-        font-size: 0.9em;
-        padding: 5px 7px;
-        display: inline-block;
-        -webkit-border-radius: 38px;
-        -moz-border-radius: 38px;
-        border-radius: 38px;
-    }
-
-
-    .table-list li:nth-child(2n) {
-        background: #F0F0F0;
-    }
-
-    .table-buy {
-        background: #FFF;
-        padding: 15px;
-        text-align: left;
-        overflow: hidden;
-    }
-
-    .table-buy p {
-        float: left;
-        color: #37353a;
-        font-weight: 700;
-        font-size: 2.4em;
-    }
-
-    .table-buy p sup {
-        font-size: 0.5em;
-        position: relative;
-        left: 5px;
-    }
-
-    .table-buy .pricing-action {
-        float: right;
-        color: #FFF;
-        background: #172a45;
-        padding: 10px 16px;
-        -webkit-border-radius: 2px;
-        -moz-border-radius: 2px;
-        border-radius: 2px;
-        font-weight: 700;
-        font-size: 1.4em;
-        text-shadow: 0 1px 1px rgba(0, 0, 0, 0.4);
-        -webkit-transition: all 0.25s ease;
-        -o-transition: all 0.25s ease;
-        transition: all 0.25s ease;
-    }
-
-    .table-buy .pricing-action:hover {
-        background: #2a978d;
-    }
-
-    .recommended .table-buy .pricing-action:hover {
-        background: #172a45;
-    }
-
-    /** ================
-     * Responsive
-     ===================*/
-    @media only screen and (min-width: 768px) and (max-width: 959px) {
-        .pricing-wrapper {
-            width: 768px;
-        }
-
-        .pricing-table {
-            width: 236px;
-        }
-
-        .table-list li {
-            font-size: 1.3em;
-        }
-
-    }
-
-    @media only screen and (max-width: 767px) {
-        .pricing-wrapper {
-            width: 420px;
-        }
-
-        .pricing-table {
-            display: block;
-            float: none;
-            margin: 0 0 20px 0;
-            width: 100%;
-        }
-    }
-
-    @media only screen and (max-width: 479px) {
-        .pricing-wrapper {
-            width: 300px;
-        }
-    }
-</style>
-
-<!-- Subscription Section Tooltip Style -->
-<style>
-    /*
-  You want a simple and fancy tooltip?
-  Just copy all [data-tooltip] blocks:
-*/
-    [data-tooltip] {
-        position: relative;
-        z-index: 10;
-    }
-
-    /* Positioning and visibility settings of the tooltip */
-    [data-tooltip]:before,
-    [data-tooltip]:after {
-        position: absolute;
-        visibility: hidden;
-        opacity: 0;
-        left: 50%;
-        bottom: calc(100% + 5px); /* 5px is the size of the arrow */
-        pointer-events: none;
-        transition: 0.2s;
-        will-change: transform;
-    }
-
-    /* The actual tooltip with a dynamic width */
-    [data-tooltip]:before {
-        content: attr(data-tooltip);
-        padding: 10px 18px;
-        min-width: 50px;
-        max-width: 300px;
-        width: max-content;
-        width: -moz-max-content;
-        border-radius: 6px;
-        font-size: 14px;
-        background-color: rgba(59, 72, 80, 0.9);
-        background-image: linear-gradient(30deg,
-        rgba(59, 72, 80, 0.44),
-        rgba(59, 68, 75, 0.44),
-        rgba(60, 82, 88, 0.44));
-        box-shadow: 0px 0px 24px rgba(0, 0, 0, 0.2);
-        color: #fff;
-        text-align: center;
-        white-space: pre-wrap;
-        transform: translate(-50%, -5px) scale(0.5);
-    }
-
-    /* Tooltip arrow */
-    [data-tooltip]:after {
-        content: '';
-        border-style: solid;
-        border-width: 5px 5px 0px 5px; /* CSS triangle */
-        border-color: rgba(55, 64, 70, 0.9) transparent transparent transparent;
-        transition-duration: 0s; /* If the mouse leaves the element,
-                              the transition effects for the
-                              tooltip arrow are "turned off" */
-        transform-origin: top;   /* Orientation setting for the
-                              slide-down effect */
-        transform: translateX(-50%) scaleY(0);
-    }
-
-    /* Tooltip becomes visible at hover */
-    [data-tooltip]:hover:before,
-    [data-tooltip]:hover:after {
-        visibility: visible;
-        opacity: 1;
-    }
-    /* Scales from 0.5 to 1 -> grow effect */
-    [data-tooltip]:hover:before {
-        transition-delay: 0.3s;
-        transform: translate(-50%, -5px) scale(1);
-    }
-    /*
-      Arrow slide down effect only on mouseenter (NOT on mouseleave)
-    */
-    [data-tooltip]:hover:after {
-        transition-delay: 0.5s; /* Starting after the grow effect */
-        transition-duration: 0.2s;
-        transform: translateX(-50%) scaleY(1);
-    }
-    /*
-      That's it.
-    */
-
-    /*
-      If you want some adjustability
-      here are some orientation settings you can use:
-    */
-
-    /* LEFT */
-    /* Tooltip + arrow */
-    [data-tooltip-location="left"]:before,
-    [data-tooltip-location="left"]:after {
-        left: auto;
-        right: calc(100% + 5px);
-        bottom: 50%;
-    }
-
-    /* Tooltip */
-    [data-tooltip-location="left"]:before {
-        transform: translate(-5px, 50%) scale(0.5);
-    }
-    [data-tooltip-location="left"]:hover:before {
-        transform: translate(-5px, 50%) scale(1);
-    }
-
-    /* Arrow */
-    [data-tooltip-location="left"]:after {
-        border-width: 5px 0px 5px 5px;
-        border-color: transparent transparent transparent rgba(55, 64, 70, 0.9);
-        transform-origin: left;
-        transform: translateY(50%) scaleX(0);
-    }
-    [data-tooltip-location="left"]:hover:after {
-        transform: translateY(50%) scaleX(1);
-    }
-
-    /* RIGHT */
-    [data-tooltip-location="right"]:before,
-    [data-tooltip-location="right"]:after {
-        left: calc(100% + 5px);
-        bottom: 50%;
-    }
-
-    [data-tooltip-location="right"]:before {
-        transform: translate(5px, 50%) scale(0.5);
-    }
-    [data-tooltip-location="right"]:hover:before {
-        transform: translate(5px, 50%) scale(1);
-    }
-
-    [data-tooltip-location="right"]:after {
-        border-width: 5px 5px 5px 0px;
-        border-color: transparent rgba(55, 64, 70, 0.9) transparent transparent;
-        transform-origin: right;
-        transform: translateY(50%) scaleX(0);
-    }
-    [data-tooltip-location="right"]:hover:after {
-        transform: translateY(50%) scaleX(1);
-    }
-
-    @media (max-height: 450px) {
-        main {
-            margin: 2rem 0;
-        }
-    }
-
-    @media (max-width: 800px) {
-        html {
-            font-size: 0.9em;
-        }
-    }
-
-    /* Thumbnail settings */
-    @media (max-width: 750px) {
-        html {
-            animation-duration: 0.6s;
-            font-size: 1em;
-        }
-        body {
-            display: flex;
-            background: none;
-            height: 100%;
-            margin: 0px;
-        }
-        main {
-            font-size: 1.1em;
-            padding: 6%;
-        }
-        .info-wrapper p:before,
-        .info-wrapper p:after {
-            display: none;
-        }
-        .example-elements {
-            max-width: 150px;
-            font-size: 22px;
-        }
-        .example-elements a, button {
-            display: none;
-        }
-        .example-elements p:before,
-        .example-elements p:after {
-            visibility: visible;
-            opacity: 1;
-        }
-        .example-elements p:before {
-            content: "Tooltip";
-            font-size: 20px;
-            transform: translate(-50%, -5px) scale(1);
-        }
-        .example-elements p:after {
-            transform: translate(-50%, -1px) scaleY(1);
-        }
-
-
-        [data-tooltip]:after {
-            bottom: calc(100% + 3px);
-        }
-        [data-tooltip]:after {
-            border-width: 7px 7px 0px 7px;
-        }
-    }
-</style>
-
-
-<!-- COMPARISON TABLE -->
-<section class="tx-container-2">
-    <div class="md-grid md-typeset">
-        <br>
-        <h1 id="comparison-table"
-            style="text-align: center; color: #181917; font-weight: 600">
-            Leverage competitive advantages
-        </h1>
-
-        <h4
-            style="text-align: left; color: #181917; font-weight: 300; margin-left: 60px">
-            ✅ Reduce the staff/skilling issue gap <br>
-
-            ✅ Avoid from scratch and custom solutions hidden costs
-            (in many cases hundreds of thousands of dollars to implement)<br>
-
-            ✅ Leverage is several orders of
-            magnitude less expensive (either time, money and risk) to
-            implement than a custom AWS solution for your business<br>
-        </h4>
-
-
-        <div class="table-wrapper" style="color: #181917">
-            <table class="fl-table">
-                <thead>
-                <tr>
-                    <th style="text-align: center">FEATURE</th>
-                    <th style="text-align: center">DO IT YOURSELF (in house)</th>
-                    <th style="text-align: center">EXTERNAL CONSULTANT / <br>
-                        CONSULTING FIRM</th>
-                    <th style="text-align: center"><strong>BINBASH LEVERAGE</strong></th>
-                </tr>
-                </thead>
-                <tbody>
-                <tr>
-                    <td><strong>STARTING POINT</strong></td>
-                    <td>From scratch</td>
-                    <td>From scratch</td>
-                    <td><a href="https://github.com/binbashar">
-                        ✅ Leverage 5+ years and 140+ Open Source<br>
-                        repos of production ready code
-                    </a></td>
-                </tr>
-                <tr>
-                    <td><strong>INCENTIVES</strong></td>
-                    <td>Minimize investment of time</td>
-                    <td>Maximize billable hours</td>
-                    <td><a href="https://leverage.binbash.com.ar/#tech-stack">
-                        ✅ Maximize utility w/ reusable components<br>
-                        (IaC library) + Cross project reference<br>
-                        architecture under best practices
-                    </a></td>
-                </tr>
-                <tr>
-                    <td><strong>SCOPE OF WORK</strong></td>
-                    <td>Varies depending on team knowledge<br>
-                        and time available</td>
-                    <td>Varies depending on consultant<br>
-                        knowledge and budget available</td>
-                    <td><a href="https://leverage.binbash.com.ar/how-it-works/ref-architecture/">
-                        ✅ End-to-end, modular architecture that<br>
-                        fulfills a production-ready solution<br>
-                        roadmap fully based on the<br>
-                        AWS Well-Architected Framework
-                    </a></td>
-                </tr>
-                <tr>
-                    <td><strong>TIME TO LAUNCH & PROD GO LIVE!</strong></td>
-                    <td>3 – 12 months (highly variable)</td>
-                    <td>3 – 12 months (highly variable)</td>
-                    <td><a href="https://leverage.binbash.com.ar/work-with-us/">
-                        ✅ 1 – 3 months (highly predictable<br>
-                        depending on your project complexity needs)
-                    </a></td>
-                </tr>
-                <tr>
-                    <td><strong>MONTHLY COST</strong></td>
-                    <td>$14,000 – $32,000 per month<br>
-                        (2 Sr DevOps Engineers / SRE / Cloud<br>
-                        Architects, $80k–$150k /year)</td>
-                    <td>$32,000 – $64,000 per month<br>
-                        (2 Sr DevOps, SRE or Cloud Consultants,<br>
-                        $100–$200 /hour)</td>
-                    <td>✅ $0 – $10,800 per month<br>
-                        (Leverage Support team, $80 – 90 / hour)<br>
-                        <a href="https://leverage.binbash.com.ar/work-with-us/subscription-plans/">
-                            - Subscription Plans</a><br>
-                        <a href="https://leverage.binbash.com.ar/work-with-us/faqs/#rates-and-billing">
-                            - Rates and Billing</a>
-                        </a></td>
-                </tr>
-                <tr>
-                    <td><strong>DOCS & TESTS</strong></td>
-                    <td>❌ None</td>
-                    <td>❌️ None</td>
-                    <td><a href="https://leverage.binbash.com.ar">
-                        ✅ Complete documentation and automated tests<br>
-                        Better code quality and modules library<br>
-                        maturity (proven and tested).
-                    </a></td>
-                </tr>
-                <tr>
-                    <td><strong>AUTOMATED DEPLOYMENT</strong></td>
-                    <td>❌ None</td>
-                    <td>❌ None</td>
-                    <td>✅ <a href="https://github.com/binbashar/leverage">
-                        Leverage CLI (Command Line Interface)</a>
-                    </td>
-                </tr>
-                <tr>
-                    <td><strong>SECURITY & BEST PRACTICES</strong></td>
-                    <td>Varies depending on team knowledge<br>
-                        and time available</td>
-                    <td>Varies depending on consultant
-                        <br> knowledge and budget available</td>
-                    <td>✅ Security by design based on: <br>
-                        <a href="https://docs.aws.amazon.com/prescriptive-guidance/latest/security-reference-architecture/architecture.html">
-                            - AWS Security Reference Architecture</a><br>
-                        <a href="https://aws.amazon.com/architecture/well-architected/">
-                            - AWS Well-Architected Framework</a>
-                    </td>
-                </tr>
-                <tr>
-                    <td><strong>CONFIGURABLE BEHAVIOUR</strong></td>
-                    <td>❌ None</td>
-                    <td>❌ None</td>
-                    <td>Composable, extensible & customizable <br>
-                        (Provides reasonable defaults, but it’s<br>
-                        very configurable in case you need more control)</td>
-                </tr>
-                <tr>
-                    <td><strong>INFRA AS CODE (IAC) & VERSIONING</strong></td>
-                    <td>Varies depending on team knowledge<br>
-                        and time available</td>
-                    <td>Varies depending on consultant<br>
-                        knowledge and budget available</td>
-                    <td>100% Infra as Code (IaC) versioned approach</td>
-                </tr>
-                <tr>
-                    <td><strong>SUPPORT & MAINTENANCE</strong></td>
-                    <td>❌ None</td>
-                    <td>❌️ None<br>
-                        (or paying even more money)</td>
-                    <td>
-                        ✅ On-going maintenance, continuous updates<br>
-                        and improvements, version upgrades and<br>
-                        security patches
-                    </td>
-                </tr>
-                <tbody>
-            </table>
-        </div>
-    </div>
-</section>
-
-<!-- Footer Section -->
-<section class="tx-footer">
-    <div class="md-grid md-typeset">
-        <div class="tx-hero">
-            <!-- Hero content -->
-            <div class="tx-hero__content-footer">
-                <p style="text-align:center;">
-                    © 2021
-                    <strong>
-                        <a href="https://www.binbash.com.ar">Binbashar, Inc</a>
-                    </strong>. All rights reserved
-
-                    || Contact us 📧
-                    <strong>
-                        <a href="https://mail.google.com/mail/?view=cm&fs=1&to=info@binbash.com.ar&su=Leverage Contact
-                                &body=Dear Leverage Team,">info@binbash.com.ar</a>
-                    </strong>.
-                </p>
-            </div>
-        </div>
-    </div>
-</section>
-
       <main class="md-main" data-md-component="main">
         <div class="md-main__inner md-grid">
           
@@ -2554,7 +376,7 @@
 
 <nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="../.." title="binbash Leverage™" class="md-nav__button md-logo" aria-label="binbash Leverage™" data-md-component="logo">
+    <a href="../../../../.." title="binbash Leverage™" class="md-nav__button md-logo" aria-label="binbash Leverage™" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m19 2-5 4.5v11l5-4.5V2M6.5 5C4.55 5 2.45 5.4 1 6.5v14.66c0 .25.25.5.5.5.1 0 .15-.07.25-.07 1.35-.65 3.3-1.09 4.75-1.09 1.95 0 4.05.4 5.5 1.5 1.35-.85 3.8-1.5 5.5-1.5 1.65 0 3.35.31 4.75 1.06.1.05.15.03.25.03.25 0 .5-.25.5-.5V6.5c-.6-.45-1.25-.75-2-1V19c-1.1-.35-2.3-.5-3.5-.5-1.7 0-4.15.65-5.5 1.5V6.5C10.55 5.4 8.45 5 6.5 5Z"/></svg>
@@ -2624,7 +446,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../.." class="md-nav__link ">
+            <a href="../../../../.." class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -2655,7 +477,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../concepts/" class="md-nav__link">
+      <a href="../../../../../concepts/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2675,7 +497,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../try-leverage/" class="md-nav__link">
+      <a href="../../../../../try-leverage/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2695,7 +517,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../how-it-works/ref-architecture/" class="md-nav__link">
+      <a href="../../../../../how-it-works/ref-architecture/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2715,7 +537,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../user-guide/" class="md-nav__link">
+      <a href="../../../../" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2735,7 +557,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../" class="md-nav__link">
+      <a href="../../../../../work-with-us/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2755,7 +577,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../license/" class="md-nav__link">
+      <a href="../../../../../license/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2817,7 +639,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../try-leverage/" class="md-nav__link ">
+            <a href="../../../../../try-leverage/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -2848,7 +670,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../try-leverage/aws-account-setup/" class="md-nav__link">
+      <a href="../../../../../try-leverage/aws-account-setup/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2868,7 +690,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../try-leverage/local-setup/" class="md-nav__link">
+      <a href="../../../../../try-leverage/local-setup/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2888,7 +710,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../try-leverage/leverage-project-setup/" class="md-nav__link">
+      <a href="../../../../../try-leverage/leverage-project-setup/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2908,7 +730,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../try-leverage/management-account/" class="md-nav__link">
+      <a href="../../../../../try-leverage/management-account/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2928,7 +750,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../try-leverage/enabling-sso/" class="md-nav__link">
+      <a href="../../../../../try-leverage/enabling-sso/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2948,7 +770,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../try-leverage/security-and-shared-accounts/" class="md-nav__link">
+      <a href="../../../../../try-leverage/security-and-shared-accounts/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2968,7 +790,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../try-leverage/post-deployment/" class="md-nav__link">
+      <a href="../../../../../try-leverage/post-deployment/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2988,7 +810,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../try-leverage/add-aws-accounts/" class="md-nav__link">
+      <a href="../../../../../try-leverage/add-aws-accounts/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3044,7 +866,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../concepts/" class="md-nav__link ">
+            <a href="../../../../../concepts/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -3075,7 +897,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../concepts/what-is-leverage/" class="md-nav__link">
+      <a href="../../../../../concepts/what-is-leverage/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3095,7 +917,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../concepts/why-leverage/" class="md-nav__link">
+      <a href="../../../../../concepts/why-leverage/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3115,7 +937,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../concepts/what-leverage-can-do-for-you/" class="md-nav__link">
+      <a href="../../../../../concepts/what-leverage-can-do-for-you/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3135,7 +957,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../concepts/our-tech-stack/" class="md-nav__link">
+      <a href="../../../../../concepts/our-tech-stack/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3155,7 +977,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../concepts/next-steps/" class="md-nav__link">
+      <a href="../../../../../concepts/next-steps/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3180,6 +1002,8 @@
       
   
   
+    
+  
   
     
     
@@ -3204,18 +1028,18 @@
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
         
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../user-guide/" class="md-nav__link ">
+            <a href="../../../../" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -3231,7 +1055,7 @@
             
           </div>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_4">
             <span class="md-nav__icon md-icon"></span>
             User Guide
@@ -3244,6 +1068,8 @@
                 
   
   
+    
+  
   
     
     
@@ -3266,13 +1092,13 @@
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_2" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_2" checked>
         
           <label class="md-nav__link" for="__nav_4_2" id="__nav_4_2_label" tabindex="0">
             
@@ -3285,7 +1111,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_2_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_2_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_4_2">
             <span class="md-nav__icon md-icon"></span>
             Reference Architecture for AWS
@@ -3298,7 +1124,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../user-guide/ref-architecture-aws/overview/" class="md-nav__link">
+      <a href="../../../overview/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3318,7 +1144,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../user-guide/ref-architecture-aws/dir-structure/" class="md-nav__link">
+      <a href="../../../dir-structure/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3338,7 +1164,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../user-guide/ref-architecture-aws/configuration/" class="md-nav__link">
+      <a href="../../../configuration/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3358,7 +1184,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../user-guide/ref-architecture-aws/credentials/" class="md-nav__link">
+      <a href="../../../credentials/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3378,7 +1204,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../user-guide/ref-architecture-aws/workflow/" class="md-nav__link">
+      <a href="../../../workflow/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3398,7 +1224,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../user-guide/ref-architecture-aws/tf-state/" class="md-nav__link">
+      <a href="../../../tf-state/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3416,6 +1242,8 @@
                 
   
   
+    
+  
   
     
     
@@ -3456,18 +1284,18 @@
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_2_7" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_2_7" checked>
         
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../user-guide/ref-architecture-aws/features/" class="md-nav__link ">
+            <a href="../../" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -3483,7 +1311,7 @@
             
           </div>
         
-        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_4_2_7_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_4_2_7_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_4_2_7">
             <span class="md-nav__icon md-icon"></span>
             Features
@@ -3544,7 +1372,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../user-guide/ref-architecture-aws/features/organization/overview/" class="md-nav__link">
+      <a href="../../organization/overview/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3564,7 +1392,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../user-guide/ref-architecture-aws/features/organization/accounts/" class="md-nav__link">
+      <a href="../../organization/accounts/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3584,7 +1412,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../user-guide/ref-architecture-aws/features/organization/configuration/" class="md-nav__link">
+      <a href="../../organization/configuration/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3604,7 +1432,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../user-guide/ref-architecture-aws/features/organization/billing/" class="md-nav__link">
+      <a href="../../organization/billing/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3624,7 +1452,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../user-guide/ref-architecture-aws/features/organization/legacy-accounts/" class="md-nav__link">
+      <a href="../../organization/legacy-accounts/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3694,7 +1522,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../user-guide/ref-architecture-aws/features/sso/overview/" class="md-nav__link">
+      <a href="../../sso/overview/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3714,7 +1542,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../user-guide/ref-architecture-aws/features/sso/configuration/" class="md-nav__link">
+      <a href="../../sso/configuration/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3734,7 +1562,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../user-guide/ref-architecture-aws/features/sso/managing-users/" class="md-nav__link">
+      <a href="../../sso/managing-users/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3760,9 +1588,29 @@
                 
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="../../user-guide/ref-architecture-aws/features/ssm/ssm/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    SSM
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   <span class="md-ellipsis">
@@ -3771,6 +1619,150 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#introduction" class="md-nav__link">
+    Introduction
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#overview" class="md-nav__link">
+    Overview
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#key-features" class="md-nav__link">
+    Key features
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#command" class="md-nav__link">
+    Command
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#advantages-of-terminal-access" class="md-nav__link">
+    Advantages of Terminal Access
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#security-and-management-benefits" class="md-nav__link">
+    Security and Management Benefits
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#getting-started" class="md-nav__link">
+    Getting Started
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#prerequisites" class="md-nav__link">
+    Prerequisites
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#getting-started-guide" class="md-nav__link">
+    Getting Started Guide
+  </a>
+  
+    <nav class="md-nav" aria-label="Getting Started Guide">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#step-1-initialize-environment-variables" class="md-nav__link">
+    Step 1: Initialize Environment Variables
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-2-authenticate-via-sso" class="md-nav__link">
+    Step 2: Authenticate via SSO
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-3-export-aws-credentials" class="md-nav__link">
+    Step 3: Export AWS Credentials
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-4-validate-identity-optional" class="md-nav__link">
+    Step 4: Validate Identity (Optional)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-5-start-an-ssm-session" class="md-nav__link">
+    Step 5: Start an SSM Session
+  </a>
+  
+    <nav class="md-nav" aria-label="Step 5: Start an SSM Session">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#command-syntax" class="md-nav__link">
+    Command syntax
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-command" class="md-nav__link">
+    Example command
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -3828,7 +1820,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../user-guide/ref-architecture-aws/features/identities/overview/" class="md-nav__link">
+      <a href="../../identities/overview/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3848,7 +1840,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../user-guide/ref-architecture-aws/features/identities/gpg/" class="md-nav__link">
+      <a href="../../identities/gpg/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3868,7 +1860,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../user-guide/ref-architecture-aws/features/identities/identities/" class="md-nav__link">
+      <a href="../../identities/identities/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3888,7 +1880,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../user-guide/ref-architecture-aws/features/identities/credentials/" class="md-nav__link">
+      <a href="../../identities/credentials/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3908,7 +1900,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../user-guide/ref-architecture-aws/features/identities/roles/" class="md-nav__link">
+      <a href="../../identities/roles/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3936,7 +1928,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../user-guide/ref-architecture-aws/features/costs/costs/" class="md-nav__link">
+      <a href="../../costs/costs/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -4004,7 +1996,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../user-guide/ref-architecture-aws/features/security/overview/" class="md-nav__link">
+      <a href="../../security/overview/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -4024,7 +2016,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../user-guide/ref-architecture-aws/features/security/vpn/" class="md-nav__link">
+      <a href="../../security/vpn/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -4044,7 +2036,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../user-guide/ref-architecture-aws/features/security/audit-cloudtrail/" class="md-nav__link">
+      <a href="../../security/audit-cloudtrail/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -4064,7 +2056,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../user-guide/ref-architecture-aws/features/security/certificates/" class="md-nav__link">
+      <a href="../../security/certificates/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -4084,7 +2076,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../user-guide/ref-architecture-aws/features/security/iam-access-analyzer/" class="md-nav__link">
+      <a href="../../security/iam-access-analyzer/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -4104,7 +2096,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../user-guide/ref-architecture-aws/features/security/firewall-manager/" class="md-nav__link">
+      <a href="../../security/firewall-manager/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -4182,7 +2174,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../user-guide/ref-architecture-aws/features/network/vpc-addressing/" class="md-nav__link">
+      <a href="../../network/vpc-addressing/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -4202,7 +2194,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../user-guide/ref-architecture-aws/features/network/vpc-peering/" class="md-nav__link">
+      <a href="../../network/vpc-peering/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -4222,7 +2214,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../user-guide/ref-architecture-aws/features/network/vpc-topology/" class="md-nav__link">
+      <a href="../../network/vpc-topology/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -4242,7 +2234,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../user-guide/ref-architecture-aws/features/network/vpc-traffic-out/" class="md-nav__link">
+      <a href="../../network/vpc-traffic-out/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -4262,7 +2254,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../user-guide/ref-architecture-aws/features/network/dns/" class="md-nav__link">
+      <a href="../../network/dns/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -4282,7 +2274,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../user-guide/ref-architecture-aws/features/network/tgw-topology/" class="md-nav__link">
+      <a href="../../network/tgw-topology/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -4302,7 +2294,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../user-guide/ref-architecture-aws/features/network/network-nacl/" class="md-nav__link">
+      <a href="../../network/network-nacl/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -4330,7 +2322,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../user-guide/ref-architecture-aws/features/secrets/secrets/" class="md-nav__link">
+      <a href="../../secrets/secrets/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -4398,7 +2390,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../user-guide/ref-architecture-aws/features/compute/overview/" class="md-nav__link">
+      <a href="../../compute/overview/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -4418,7 +2410,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../user-guide/ref-architecture-aws/features/compute/k8s-eks/" class="md-nav__link">
+      <a href="../../compute/k8s-eks/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -4438,7 +2430,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../user-guide/ref-architecture-aws/features/compute/k8s-kops/" class="md-nav__link">
+      <a href="../../compute/k8s-kops/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -4458,7 +2450,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../user-guide/ref-architecture-aws/features/compute/k8s-service-mesh/" class="md-nav__link">
+      <a href="../../compute/k8s-service-mesh/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -4478,7 +2470,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../user-guide/ref-architecture-aws/features/compute/serverless/" class="md-nav__link">
+      <a href="../../compute/serverless/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -4498,7 +2490,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../user-guide/ref-architecture-aws/features/compute/tools/" class="md-nav__link">
+      <a href="../../compute/tools/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -4568,7 +2560,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../user-guide/ref-architecture-aws/features/database/database/" class="md-nav__link">
+      <a href="../../database/database/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -4588,7 +2580,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../user-guide/ref-architecture-aws/features/database/mysql/" class="md-nav__link">
+      <a href="../../database/mysql/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -4608,7 +2600,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../user-guide/ref-architecture-aws/features/database/postgres/" class="md-nav__link">
+      <a href="../../database/postgres/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -4636,7 +2628,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../user-guide/ref-architecture-aws/features/storage/storage/" class="md-nav__link">
+      <a href="../../storage/storage/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -4656,7 +2648,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../user-guide/ref-architecture-aws/features/cdn/cdn/" class="md-nav__link">
+      <a href="../../cdn/cdn/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -4718,7 +2710,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../user-guide/ref-architecture-aws/features/ci-cd/argocd/" class="md-nav__link">
+      <a href="../../ci-cd/argocd/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -4738,7 +2730,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../user-guide/ref-architecture-aws/features/ci-cd/jenkins-argocd/" class="md-nav__link">
+      <a href="../../ci-cd/jenkins-argocd/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -4758,7 +2750,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../user-guide/ref-architecture-aws/features/ci-cd/jenkins-spinnaker/" class="md-nav__link">
+      <a href="../../ci-cd/jenkins-spinnaker/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -4832,7 +2824,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../user-guide/ref-architecture-aws/features/monitoring/monitoring/" class="md-nav__link">
+      <a href="../../monitoring/monitoring/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -4852,7 +2844,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../user-guide/ref-architecture-aws/features/monitoring/metrics/" class="md-nav__link">
+      <a href="../../monitoring/metrics/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -4872,7 +2864,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../user-guide/ref-architecture-aws/features/monitoring/logs/" class="md-nav__link">
+      <a href="../../monitoring/logs/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -4892,7 +2884,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../user-guide/ref-architecture-aws/features/monitoring/tracing/" class="md-nav__link">
+      <a href="../../monitoring/tracing/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -4912,7 +2904,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../user-guide/ref-architecture-aws/features/monitoring/apm/" class="md-nav__link">
+      <a href="../../monitoring/apm/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -4982,7 +2974,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../user-guide/ref-architecture-aws/features/reliability/backups/" class="md-nav__link">
+      <a href="../../reliability/backups/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -5002,7 +2994,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../user-guide/ref-architecture-aws/features/reliability/dr/" class="md-nav__link">
+      <a href="../../reliability/dr/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -5022,7 +3014,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../user-guide/ref-architecture-aws/features/reliability/high-availability/" class="md-nav__link">
+      <a href="../../reliability/high-availability/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -5058,7 +3050,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../user-guide/ref-architecture-aws/references/" class="md-nav__link">
+      <a href="../../../references/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -5132,7 +3124,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../user-guide/ref-architecture-eks/overview/" class="md-nav__link">
+      <a href="../../../../ref-architecture-eks/overview/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -5152,7 +3144,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../user-guide/ref-architecture-eks/credentials/" class="md-nav__link">
+      <a href="../../../../ref-architecture-eks/credentials/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -5172,7 +3164,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../user-guide/ref-architecture-eks/vpc/" class="md-nav__link">
+      <a href="../../../../ref-architecture-eks/vpc/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -5192,7 +3184,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../user-guide/ref-architecture-eks/components/" class="md-nav__link">
+      <a href="../../../../ref-architecture-eks/components/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -5212,7 +3204,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../user-guide/ref-architecture-eks/cluster-upgrade/" class="md-nav__link">
+      <a href="../../../../ref-architecture-eks/cluster-upgrade/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -5280,7 +3272,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../user-guide/ref-architecture-ansible/overview/" class="md-nav__link">
+      <a href="../../../../ref-architecture-ansible/overview/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -5300,7 +3292,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../user-guide/ref-architecture-ansible/workflow/" class="md-nav__link">
+      <a href="../../../../ref-architecture-ansible/workflow/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -5380,7 +3372,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../user-guide/leverage-cli/overview/" class="md-nav__link">
+      <a href="../../../../leverage-cli/overview/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -5400,7 +3392,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../user-guide/leverage-cli/installation/" class="md-nav__link">
+      <a href="../../../../leverage-cli/installation/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -5420,7 +3412,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../user-guide/leverage-cli/basic-features/" class="md-nav__link">
+      <a href="../../../../leverage-cli/basic-features/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -5492,7 +3484,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../user-guide/leverage-cli/reference/project/" class="md-nav__link">
+      <a href="../../../../leverage-cli/reference/project/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -5512,7 +3504,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../user-guide/leverage-cli/reference/credentials/" class="md-nav__link">
+      <a href="../../../../leverage-cli/reference/credentials/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -5532,7 +3524,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../user-guide/leverage-cli/reference/aws/" class="md-nav__link">
+      <a href="../../../../leverage-cli/reference/aws/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -5592,7 +3584,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../user-guide/leverage-cli/reference/terraform/" class="md-nav__link">
+      <a href="../../../../leverage-cli/reference/terraform/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -5612,7 +3604,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../user-guide/leverage-cli/reference/terraform/layers/" class="md-nav__link">
+      <a href="../../../../leverage-cli/reference/terraform/layers/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -5640,7 +3632,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../user-guide/leverage-cli/reference/tfautomv/" class="md-nav__link">
+      <a href="../../../../leverage-cli/reference/tfautomv/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -5660,7 +3652,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../user-guide/leverage-cli/reference/run/" class="md-nav__link">
+      <a href="../../../../leverage-cli/reference/run/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -5680,7 +3672,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../user-guide/leverage-cli/reference/kubectl/" class="md-nav__link">
+      <a href="../../../../leverage-cli/reference/kubectl/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -5700,7 +3692,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../user-guide/leverage-cli/reference/shell/" class="md-nav__link">
+      <a href="../../../../leverage-cli/reference/shell/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -5770,7 +3762,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../user-guide/leverage-cli/extending-leverage/how-to-extend/" class="md-nav__link">
+      <a href="../../../../leverage-cli/extending-leverage/how-to-extend/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -5790,7 +3782,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../user-guide/leverage-cli/extending-leverage/build.env/" class="md-nav__link">
+      <a href="../../../../leverage-cli/extending-leverage/build.env/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -5810,7 +3802,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../user-guide/leverage-cli/extending-leverage/tasks/" class="md-nav__link">
+      <a href="../../../../leverage-cli/extending-leverage/tasks/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -5838,7 +3830,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../user-guide/leverage-cli/private-repositories/" class="md-nav__link">
+      <a href="../../../../leverage-cli/private-repositories/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -5858,7 +3850,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../user-guide/leverage-cli/shell/" class="md-nav__link">
+      <a href="../../../../leverage-cli/shell/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -5878,7 +3870,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../user-guide/leverage-cli/history/" class="md-nav__link">
+      <a href="../../../../leverage-cli/history/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -5950,7 +3942,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../user-guide/infra-as-code-library/overview/" class="md-nav__link">
+      <a href="../../../../infra-as-code-library/overview/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -5970,7 +3962,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../user-guide/infra-as-code-library/infra-as-code-library-forks/" class="md-nav__link">
+      <a href="../../../../infra-as-code-library/infra-as-code-library-forks/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -5990,7 +3982,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../user-guide/infra-as-code-library/infra-as-code-library-specs/" class="md-nav__link">
+      <a href="../../../../infra-as-code-library/infra-as-code-library-specs/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -6010,7 +4002,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../user-guide/infra-as-code-library/modules-library-by-technology/" class="md-nav__link">
+      <a href="../../../../infra-as-code-library/modules-library-by-technology/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -6061,7 +4053,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../user-guide/troubleshooting/" class="md-nav__link ">
+            <a href="../../../../troubleshooting/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -6092,7 +4084,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../user-guide/troubleshooting/general/" class="md-nav__link">
+      <a href="../../../../troubleshooting/general/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -6112,7 +4104,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../user-guide/troubleshooting/credentials/" class="md-nav__link">
+      <a href="../../../../troubleshooting/credentials/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -6165,7 +4157,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../user-guide/playbooks/" class="md-nav__link ">
+            <a href="../../../../playbooks/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -6196,7 +4188,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../user-guide/playbooks/VPC-with-no-LandingZone/" class="md-nav__link">
+      <a href="../../../../playbooks/VPC-with-no-LandingZone/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -6216,7 +4208,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../user-guide/playbooks/schedule-start-stop-ec2/" class="md-nav__link">
+      <a href="../../../../playbooks/schedule-start-stop-ec2/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -6236,7 +4228,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../user-guide/playbooks/VPC-subnet-calculator/" class="md-nav__link">
+      <a href="../../../../playbooks/VPC-subnet-calculator/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -6269,8 +4261,6 @@
       
   
   
-    
-  
   
     
     
@@ -6297,18 +4287,18 @@
       
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
         
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../" class="md-nav__link ">
+            <a href="../../../../../work-with-us/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -6324,7 +4314,7 @@
             
           </div>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_5">
             <span class="md-nav__icon md-icon"></span>
             Work with us
@@ -6339,7 +4329,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../support/" class="md-nav__link">
+      <a href="../../../../../work-with-us/support/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -6399,7 +4389,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../releases/releases-and-versions/" class="md-nav__link">
+      <a href="../../../../../work-with-us/releases/releases-and-versions/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -6419,7 +4409,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../releases/versions-compatibility-matrix/" class="md-nav__link">
+      <a href="../../../../../work-with-us/releases/versions-compatibility-matrix/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -6445,16 +4435,9 @@
                 
   
   
-    
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../../../../../work-with-us/leverage-vs-competition/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -6463,7 +4446,6 @@
   
 
       </a>
-      
     </li>
   
 
@@ -6475,7 +4457,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../contribute/" class="md-nav__link">
+      <a href="../../../../../work-with-us/contribute/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -6583,7 +4565,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../roadmap/ref-arch/overview/" class="md-nav__link">
+      <a href="../../../../../work-with-us/roadmap/ref-arch/overview/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -6603,7 +4585,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../roadmap/ref-arch/operational-excellence/" class="md-nav__link">
+      <a href="../../../../../work-with-us/roadmap/ref-arch/operational-excellence/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -6623,7 +4605,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../roadmap/ref-arch/reliability-performance/" class="md-nav__link">
+      <a href="../../../../../work-with-us/roadmap/ref-arch/reliability-performance/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -6643,7 +4625,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../roadmap/ref-arch/security/" class="md-nav__link">
+      <a href="../../../../../work-with-us/roadmap/ref-arch/security/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -6663,7 +4645,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../roadmap/ref-arch/cost-optimization/" class="md-nav__link">
+      <a href="../../../../../work-with-us/roadmap/ref-arch/cost-optimization/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -6683,7 +4665,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../roadmap/ref-arch/demo-apps/" class="md-nav__link">
+      <a href="../../../../../work-with-us/roadmap/ref-arch/demo-apps/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -6711,7 +4693,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../roadmap/leverage-cli/overview/" class="md-nav__link">
+      <a href="../../../../../work-with-us/roadmap/leverage-cli/overview/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -6739,7 +4721,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../careers/" class="md-nav__link">
+      <a href="../../../../../work-with-us/careers/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -6759,7 +4741,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../faqs/" class="md-nav__link">
+      <a href="../../../../../work-with-us/faqs/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -6817,6 +4799,140 @@
   
   
   
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#introduction" class="md-nav__link">
+    Introduction
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#overview" class="md-nav__link">
+    Overview
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#key-features" class="md-nav__link">
+    Key features
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#command" class="md-nav__link">
+    Command
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#advantages-of-terminal-access" class="md-nav__link">
+    Advantages of Terminal Access
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#security-and-management-benefits" class="md-nav__link">
+    Security and Management Benefits
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#getting-started" class="md-nav__link">
+    Getting Started
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#prerequisites" class="md-nav__link">
+    Prerequisites
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#getting-started-guide" class="md-nav__link">
+    Getting Started Guide
+  </a>
+  
+    <nav class="md-nav" aria-label="Getting Started Guide">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#step-1-initialize-environment-variables" class="md-nav__link">
+    Step 1: Initialize Environment Variables
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-2-authenticate-via-sso" class="md-nav__link">
+    Step 2: Authenticate via SSO
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-3-export-aws-credentials" class="md-nav__link">
+    Step 3: Export AWS Credentials
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-4-validate-identity-optional" class="md-nav__link">
+    Step 4: Validate Identity (Optional)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-5-start-an-ssm-session" class="md-nav__link">
+    Step 5: Start an SSM Session
+  </a>
+  
+    <nav class="md-nav" aria-label="Step 5: Start an SSM Session">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#command-syntax" class="md-nav__link">
+    Command syntax
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-command" class="md-nav__link">
+    Example command
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
   
 </nav>
                   </div>
@@ -6831,7 +4947,7 @@
                   
 
   
-    <a href="https://github.com/binbashar/le-ref-architecture-doc/edit/master/docs/work-with-us/leverage-vs-competition.md" title="Edit this page" class="md-content__button md-icon">
+    <a href="https://github.com/binbashar/le-ref-architecture-doc/edit/master/docs/user-guide/ref-architecture-aws/features/ssm/ssm.md" title="Edit this page" class="md-content__button md-icon">
       
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4v-2m10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1 2.1 2.1Z"/></svg>
     </a>
@@ -6839,9 +4955,112 @@
   
 
 
-  <h1>Leverage vs Competition</h1>
-
-
+<h1 id="aws-ssm">AWS SSM<a class="headerlink" href="#aws-ssm" title="Permanent link"> ¶</a></h1>
+<h2 id="introduction">Introduction<a class="headerlink" href="#introduction" title="Permanent link"> ¶</a></h2>
+<p>Welcome to the comprehensive guide for using the AWS Systems Manager (SSM) through the Leverage framework integrated
+with AWS Single Sign-On (SSO). This documentation is designed to facilitate a smooth and secure setup for managing EC2
+instances, leveraging advanced SSO capabilities for enhanced security and efficiency.</p>
+<h2 id="overview">Overview<a class="headerlink" href="#overview" title="Permanent link"> ¶</a></h2>
+<p>The AWS Systems Manager (SSM) provides a powerful interface for managing cloud resources. By initiating an SSM session
+using the leverage aws sso configure command, you can securely configure and manage your instances using single sign-on
+credentials. This integration simplifies the authentication process and enhances security, making it an essential tool
+for administrators and operations teams.</p>
+<h2 id="key-features">Key features<a class="headerlink" href="#key-features" title="Permanent link"> ¶</a></h2>
+<ul>
+<li><em>SSO Integration:</em> Utilize the Leverage framework to integrate AWS SSO, simplifying the login process and reducing the
+  need for multiple credentials.</li>
+<li><em>Interactive Command Sessions:</em> The start-session command requires the Session Manager plugin and is interactive,
+  ensuring secure and direct command execution.</li>
+</ul>
+<h2 id="command">Command<a class="headerlink" href="#command" title="Permanent link"> ¶</a></h2>
+<p>This command configures your AWS CLI to use SSO for authentication, streamlining access management across your AWS
+resources.</p>
+<div class="highlight"><pre><span></span><code>leverage<span class="w"> </span>aws<span class="w"> </span>sso<span class="w"> </span>configure
+</code></pre></div>
+<h2 id="advantages-of-terminal-access">Advantages of Terminal Access<a class="headerlink" href="#advantages-of-terminal-access" title="Permanent link"> ¶</a></h2>
+<p>While it is possible to connect to SSM through a web browser, using the terminal offers several benefits:</p>
+<ul>
+<li><em>Direct Shell Access:</em> Provides real-time, interactive management capabilities.</li>
+<li><em>Operational Efficiency:</em> Enhances workflows by allowing quick and direct command executions.</li>
+</ul>
+<h2 id="security-and-management-benefits">Security and Management Benefits<a class="headerlink" href="#security-and-management-benefits" title="Permanent link"> ¶</a></h2>
+<p>Adopting this integrated approach offers significant advantages:</p>
+<ul>
+<li><em>Increased Security:</em> By using SSO, the system minimizes risks associated with multiple credential sets and potential
+  unauthorized access.</li>
+<li><em>Efficient Management:</em> Centralizes control over AWS resources, reducing complexity and improving oversight.</li>
+</ul>
+<h2 id="getting-started">Getting Started<a class="headerlink" href="#getting-started" title="Permanent link"> ¶</a></h2>
+<p>This guide is structured into detailed sections that cover:</p>
+<ul>
+<li><em>Pre-requisites:</em> Requirements needed before you begin.</li>
+<li><em>Variable Initialization:</em> Setup and explanation of the necessary variables.</li>
+<li><em>Authentication via SSO:</em> How to authenticate using the leverage aws sso configure command.</li>
+<li><em>Exporting AWS Credentials:</em> Guidelines for correctly exporting AWS credentials for session management.</li>
+<li><em>Session Handling:</em> Detailed instructions for starting, managing, and terminating SSM sessions.</li>
+</ul>
+<p>Each section aims to provide step-by-step instructions to ensure you are well-prepared to use the AWS SSM configuration
+tool effectively.</p>
+<p>Navigate through the subsections for detailed information relevant to each stage of the setup process and refer back to
+this guide as needed to enhance your experience and utilization of AWS SSM capabilities.</p>
+<h2 id="prerequisites">Prerequisites<a class="headerlink" href="#prerequisites" title="Permanent link"> ¶</a></h2>
+<p>Before you begin, ensure that you have the necessary tools and permissions set up:</p>
+<ul>
+<li><em>SSM Plugin for AWS CLI:</em> Crucial for starting SSM sessions from the command line. Install it by following the steps
+  on
+  the <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/session-manager-working-with-install-plugin.html">AWS Documentation site</a>.</li>
+</ul>
+<h2 id="getting-started-guide">Getting Started Guide<a class="headerlink" href="#getting-started-guide" title="Permanent link"> ¶</a></h2>
+<h3 id="step-1-initialize-environment-variables">Step 1: Initialize Environment Variables<a class="headerlink" href="#step-1-initialize-environment-variables" title="Permanent link"> ¶</a></h3>
+<p>Set up all necessary variables used throughout the session. These include directories, profiles, and configuration
+settings essential for the script’s functionality.</p>
+<div class="highlight"><pre><span></span><code><span class="nv">PROJECT_SHORT</span><span class="o">=</span><span class="s2">&quot;bb&quot;</span>
+<span class="nv">FOLDER</span><span class="o">=</span><span class="s2">&quot;le-tf-infra-aws&quot;</span>
+<span class="nv">COMMON_CONFIG_FILE</span><span class="o">=</span><span class="s2">&quot;</span><span class="nv">$FOLDER</span><span class="s2">/config/common.tfvars&quot;</span>
+<span class="nv">REPO_URL</span><span class="o">=</span><span class="s2">&quot;git@github.com:binbashar/</span><span class="nv">$FOLDER</span><span class="s2">.git&quot;</span>
+<span class="nv">AWS_CREDS_DIR</span><span class="o">=</span><span class="s2">&quot;~/.aws/</span><span class="nv">$PROJECT_SHORT</span><span class="s2">&quot;</span>
+<span class="nv">AWS_PROFILE</span><span class="o">=</span><span class="s2">&quot;</span><span class="nv">$PROJECT_SHORT</span><span class="s2">-shared-devops&quot;</span>
+<span class="nv">SKIP_VALIDATION</span><span class="o">=</span><span class="s2">&quot;yes&quot;</span>
+</code></pre></div>
+<h3 id="step-2-authenticate-via-sso">Step 2: Authenticate via SSO<a class="headerlink" href="#step-2-authenticate-via-sso" title="Permanent link"> ¶</a></h3>
+<p>Navigate to the required layer directory and perform authentication using AWS SSO. This step verifies your credentials
+and ensures that subsequent operations are secure.</p>
+<div class="highlight"><pre><span></span><code><span class="nb">cd</span><span class="w"> </span><span class="nv">$FOLDER</span>/shared/us-east-1/tools-vpn-server
+leverage<span class="w"> </span>aws<span class="w"> </span>sso<span class="w"> </span>configure
+</code></pre></div>
+<h3 id="step-3-export-aws-credentials">Step 3: Export AWS Credentials<a class="headerlink" href="#step-3-export-aws-credentials" title="Permanent link"> ¶</a></h3>
+<p>Export the AWS credentials as environment variables to enable the AWS CLI and other tools to use them for session
+management.</p>
+<div class="highlight"><pre><span></span><code><span class="nb">export</span><span class="w"> </span><span class="nv">AWS_SHARED_CREDENTIALS_FILE</span><span class="o">=</span><span class="s2">&quot;</span><span class="nv">$AWS_CREDS_DIR</span><span class="s2">/credentials&quot;</span>
+<span class="nb">export</span><span class="w"> </span><span class="nv">AWS_CONFIG_FILE</span><span class="o">=</span><span class="s2">&quot;</span><span class="nv">$AWS_CREDS_DIR</span><span class="s2">/config&quot;</span>
+</code></pre></div>
+<h3 id="step-4-validate-identity-optional">Step 4: Validate Identity (Optional)<a class="headerlink" href="#step-4-validate-identity-optional" title="Permanent link"> ¶</a></h3>
+<p>Optionally, you can validate your AWS identity to ensure that your configuration is correct. This step is recommended to
+avoid issues in later stages.</p>
+<div class="highlight"><pre><span></span><code>aws<span class="w"> </span>sts<span class="w"> </span>get-caller-identity<span class="w"> </span>--profile<span class="w"> </span><span class="nv">$AWS_PROFILE</span>
+</code></pre></div>
+<h3 id="step-5-start-an-ssm-session">Step 5: Start an SSM Session<a class="headerlink" href="#step-5-start-an-ssm-session" title="Permanent link"> ¶</a></h3>
+<p>Now that the setup is complete, you can start an SSM session. This is the final step and allows you to manage your AWS
+resources securely.</p>
+<h4 id="command-syntax">Command syntax<a class="headerlink" href="#command-syntax" title="Permanent link"> ¶</a></h4>
+<div class="highlight"><pre><span></span><code>aws<span class="w"> </span>ssm<span class="w"> </span>start-session<span class="w"> </span>--target<span class="w"> </span>&lt;instance-id&gt;<span class="w"> </span>--profile<span class="w"> </span>&lt;aws-profile&gt;<span class="w"> </span>--region<span class="w"> </span>&lt;aws-region&gt;
+</code></pre></div>
+<h4 id="example-command">Example command<a class="headerlink" href="#example-command" title="Permanent link"> ¶</a></h4>
+<p>Consider the following settings as an example:</p>
+<ul>
+<li><em>Instance ID:</em> <strong>i-0123456789abcdef0</strong></li>
+<li><em>AWS Profile:</em> <strong>devops-profile</strong></li>
+<li><em>AWS Region:</em> <strong>us-west-2</strong></li>
+</ul>
+<div class="highlight"><pre><span></span><code>aws<span class="w"> </span>ssm<span class="w"> </span>start-session<span class="w"> </span>--target<span class="w"> </span>i-0123456789abcdef0<span class="w"> </span>--profile<span class="w"> </span>devops-profile<span class="w"> </span>--region<span class="w"> </span>us-west-2
+</code></pre></div>
+<p>This command initiates a secure session to the specified EC2 instance using SSM. It's a crucial tool for managing your
+servers securely without the need for direct SSH access. Ensure that your permissions and profiles are correctly
+configured to use this feature effectively.</p>
+<p>By following these steps, you can efficiently set up and use the AWS SSM configuration tool for enhanced security and
+management of your cloud resources.</p>
+<p>For a complete view of the script and additional configurations, please refer to
+the <a href="https://gist.github.com/exequielrafaela/2d963c6f12186a1492f870ce2f9f9dde">full Gist</a>.</p>
 
 
   
@@ -6871,7 +5090,7 @@
       <nav class="md-footer__inner md-grid" aria-label="Footer" >
         
           
-          <a href="../releases/versions-compatibility-matrix/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Versions compatibility matrix" rel="prev">
+          <a href="../../sso/managing-users/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Onboarding Users" rel="prev">
             <div class="md-footer__button md-icon">
               
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
@@ -6881,20 +5100,20 @@
                 Previous
               </span>
               <div class="md-ellipsis">
-                Versions compatibility matrix
+                Onboarding Users
               </div>
             </div>
           </a>
         
         
           
-          <a href="../contribute/" class="md-footer__link md-footer__link--next" aria-label="Next: Contribute" rel="next">
+          <a href="../../identities/overview/" class="md-footer__link md-footer__link--next" aria-label="Next: Overview" rel="next">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 Next
               </span>
               <div class="md-ellipsis">
-                Contribute
+                Overview
               </div>
             </div>
             <div class="md-footer__button md-icon">
@@ -7023,10 +5242,10 @@
       <div class="md-dialog__inner md-typeset"></div>
     </div>
     
-    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs", "navigation.instant", "navigation.tracking", "navigation.indexes", "navigation.top", "navigation.footer", "header.autohide", "content.action.edit", "content.code.annotate"], "search": "../../assets/javascripts/workers/search.dfff1995.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    <script id="__config" type="application/json">{"base": "../../../../..", "features": ["navigation.tabs", "navigation.instant", "navigation.tracking", "navigation.indexes", "navigation.top", "navigation.footer", "header.autohide", "content.action.edit", "content.code.annotate"], "search": "../../../../../assets/javascripts/workers/search.dfff1995.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
-      <script src="../../assets/javascripts/bundle.dff1b7c8.min.js"></script>
+      <script src="../../../../../assets/javascripts/bundle.dff1b7c8.min.js"></script>
       
     
   </body>

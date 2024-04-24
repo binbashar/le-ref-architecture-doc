@@ -198,6 +198,7 @@ nav:
           - Overview: "user-guide/ref-architecture-aws/features/sso/overview.md"
           - Configuration: "user-guide/ref-architecture-aws/features/sso/configuration.md"
           - Onboarding Users: "user-guide/ref-architecture-aws/features/sso/managing-users.md"
+        - SSM: "user-guide/ref-architecture-aws/features/ssm/ssm.md"
         - Identities:
           - Overview: "user-guide/ref-architecture-aws/features/identities/overview.md"
           - GPG Keys: "user-guide/ref-architecture-aws/features/identities/gpg.md"

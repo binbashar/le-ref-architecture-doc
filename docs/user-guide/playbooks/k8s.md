@@ -96,7 +96,7 @@ To create the KOPS cluster these are the requisites:
 
 By default, the [account base network](https://github.com/binbashar/le-tf-infra-aws/tree/master/apps-devstg/us-east-1/base-network) is used. If you want to change this check/modify this resource in `config.tf` file:
 
-```hcl
+```terraform
 data "terraform_remote_state" "vpc" {
 ```
 
@@ -116,7 +116,7 @@ Open the `config.tf` file.
 
 Here set the backend key if needed:
 
-```hcl
+```terraform
   backend "s3" {
     key = "apps-devstg/us-east-1/k8s-kops/prerequisites/terraform.tfstate"
   }

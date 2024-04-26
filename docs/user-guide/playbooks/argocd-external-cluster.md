@@ -76,7 +76,7 @@ So, go into this layer and edit the `ids_argocd.tf` file.
 
 Here the ServiceAccount used have to be modified to include all the posibilities in the `argocd` namespace:
 
-```hcl
+```terraform
 module "role_argocd_devstg" {
   source = "github.com/binbashar/terraform-aws-iam.git//modules/iam-assumable-role-with-oidc?ref=v5.37.1"
 
@@ -115,7 +115,7 @@ Go into the `apps-devstg/global/base-identities` layer.
 
 In file `roles.tf` add this resource:
 
-```hcl
+```terraform
 module "iam_assumable_role_argocd" {
   source = "github.com/binbashar/terraform-aws-iam.git//modules/iam-assumable-role?ref=v4.1.0"
 
@@ -157,7 +157,7 @@ cd into layer `apps-devstg/us-east-1/k8s-eks/cluster`.
 
 Edit file `locals.tf`, under `map_roles` list add this:
 
-```hcl
+```terraform
     {
       rolearn  = "arn:aws:iam::${var.accounts.apps-devstg.id}:role/ArgoCD"
       username = "ArgoCD"
@@ -189,7 +189,7 @@ APISERVER=$(leverage kubectl config view --minify -o jsonpath='{.clusters[0].clu
 
 In `shared/us-east-1/k8s-eks/k8s-components` layer modify files `cicd-argocd.tf` and `chart-values/argocd.yaml` and add this to the first one:
 
-```hcl
+```terraform
 ##------------------------------------------------------------------------------
 ## ArgoCD DEVSTG: GitOps + CD
 ##------------------------------------------------------------------------------
@@ -244,7 +244,7 @@ resource "helm_release" "argocd_devstg" {
 
 Note these lines:
 
-```hcl
+```terraform
       remoteRoleARN = "role"
       remoteClusterName   = "clustername"
       remoteServer  = "remoteServer"
@@ -262,7 +262,7 @@ Dictionary:
     
 And this in the second file:
 
-```hcl
+```terraform
 configs:
   clusterCredentials:
     - name: ${remoteName}
@@ -318,11 +318,15 @@ So, these are the steps:
 !!! info
     This has to be done in `apps-devstg` account.
 
-ServiceAccount, Role and Rolebinding are needed to gran access to ArgoCD to the target cluster.
+There are two ways to grant access. Cluster level or namespace scoped.
+
+If namespace scoped ServiceAccount, Role and Rolebinding are needed to grant access to ArgoCD to the target cluster. If cluster level then ServiceAccount, ClusterRole and ClusterRolebinding. The former needs the namespaces to be created beforehand. The later allows ArgoCD to create the namespaces.
 
 In the target cluster identities layer at `apps-devstg/us-east-1/k8s-eks/identities` create a `tf` file and add this:
 
-```hcl
+The following example is for namespace scoped way.
+
+```terraform
 locals {
   # namespaces ArgoCD has to manage
   namespaces = toset(["test"])
@@ -374,74 +378,9 @@ resource "kubernetes_role" "argocd-managed" {
   }
 
   rule {
-   api_groups= ["autoscaling"]
-    resources= ["horizontalpodautoscalers"]
-    verbs= ["create", "get", "list", "update", "delete"]
-  }
-  rule {
-   api_groups= ["policy"]
-    resources= ["poddisruptionbudgets"]
-    verbs= ["create", "get", "list", "update", "delete"]
-  }
-  rule {
-   api_groups= ["rbac.authorization.k8s.io"]
-    resources= ["roles"]
-    verbs= ["create", "get", "list", "update", "delete"]
-  }
-  rule {
-   api_groups= ["networking.istio.io"]
-    resources= ["workloadgroups"]
-    verbs= ["get", "list"]
-  }
-  rule {
-   api_groups= [""]
-    resources= ["serviceaccounts"]
-    verbs= ["create", "get", "list", "update", "delete"]
-  }
-  rule {
-   api_groups= [""]
-    resources= ["persistentvolumeclaims"]
-    verbs= ["create", "get", "list", "update", "delete"]
-  }
-  rule {
-   api_groups= ["apps"]
-    resources= ["replicasets"]
-    verbs= ["create", "get", "list", "update", "delete"]
-  }
-  rule {
-   api_groups= ["rbac.authorization.k8s.io"]
-    resources= ["rolebindings"]
-    verbs= ["create", "get", "list", "update", "delete"]
-  }
-  rule {
-   api_groups= [""]
-    resources= ["resourcequotas"]
-    verbs= ["list"]
-  }
-  rule {
-   api_groups= ["networking.k8s.io"]
-    resources= ["networkpolicies"]
-    verbs= ["create", "get", "list", "update", "delete"]
-  }
-  rule {
-   api_groups= [""]
-    resources= ["replicationcontrollers"]
-    verbs= ["list"]
-  }
-  rule {
-   api_groups= [""]
-    resources= ["limitranges"]
-    verbs= ["list"]
-  }
-  rule {
-   api_groups= [""]
-    resources= ["configmaps", "secrets", "pods"]
-    verbs= ["get", "list", "watch", "create", "update", "patch", "delete"]
-  }
-  rule {
-   api_groups= ["apps"]
-    resources= ["deployments"]
-    verbs= ["get", "list", "watch", "create", "update", "patch", "delete"]
+   api_groups= ["*"]
+    resources= ["*"]
+    verbs= ["*"]
   }
 }
 
@@ -466,9 +405,77 @@ resource "kubernetes_role_binding" "argocd-managed" {
 }
 ```
 
+
+The following example is for cluster level way.
+
+```terraform
+provider  kubernetes {
+    host                   = data.aws_eks_cluster.cluster.endpoint
+    cluster_ca_certificate = base64decode(data.aws_eks_cluster.cluster.certificate_authority.0.data)
+    token                  = data.aws_eks_cluster_auth.cluster.token
+}
+data "aws_eks_cluster" "cluster" {
+  name = data.terraform_remote_state.eks-cluster.outputs.cluster_name
+}
+
+data "aws_eks_cluster_auth" "cluster" {
+  name = data.terraform_remote_state.eks-cluster.outputs.cluster_name
+}
+
+resource "kubernetes_service_account" "argocd-managed" {
+  metadata {
+    name = "argocd-managed"
+    namespace = "kube-system"
+  }
+}
+
+resource "kubernetes_secret" "argocd-managed" {
+  metadata {
+    annotations = {
+      "kubernetes.io/service-account.name" = kubernetes_service_account.argocd-managed.metadata.0.name
+    }
+
+    generate_name = "argocd-managed-"
+    namespace = "kube-system"
+  }
+
+  type                           = "kubernetes.io/service-account-token"
+  wait_for_service_account_token = true
+}
+
+resource "kubernetes_cluster_role" "argocd-managed" {
+  metadata {
+    name      = "argocd-managed-role"
+  }
+
+  rule {
+   api_groups= ["*"]
+    resources= ["*"]
+    verbs= ["*"]
+  }
+}
+
+resource "kubernetes_cluster_role_binding" "argocd-managed" {
+  metadata {
+    name      = "${kubernetes_role.argocd-managed.metadata[0].name}-binding"
+  }
+
+  role_ref {
+    api_group = "rbac.authorization.k8s.io"
+    kind      = "ClusterRole"
+    name      = kubernetes_role.argocd-managed.metadata[0].name
+  }
+  subject {
+    kind      = "ServiceAccount"
+    name      = "argocd-managed"
+    namespace = "kube-system"
+  }
+}
+```
+
 !!! info
-    This step will create a ServiceAccount, a Role with the needed permissions, the RoleBinding and the secret with the token.<br />
-    Also, multiple namespaces can be specified since these permissions are applied in a per namespace basis.
+    This step will create a ServiceAccount, a Role with the needed permissions, the RoleBinding and the secret with the token. (or clusterrole and clusterrolebinding)<br />
+    Also, multiple namespaces can be specified for namespace scoped way.
 
 To recover the token and the API Server run this:
 
@@ -486,7 +493,7 @@ APISERVER=$(leverage kubectl config view --minify -o jsonpath='{.clusters[0].clu
 
 In `shared/us-east-1/k8s-eks/k8s-components` layer modify files `cicd-argocd.tf` and `chart-values/argocd.yaml` and add this to the first one:
 
-```hcl
+```terraform
 ##------------------------------------------------------------------------------
 ## ArgoCD DEVSTG: GitOps + CD
 ##------------------------------------------------------------------------------
@@ -540,7 +547,7 @@ resource "helm_release" "argocd_devstg" {
 
 Note these lines:
 
-```hcl
+```terraform
       remoteServer  = "remoteServer"
       remoteName    = "remoteName"
       remoteClusterCertificate = "remoteClusterCertificate"
@@ -556,7 +563,7 @@ Dictionary:
     
 And this in the second file:
 
-```hcl
+```terraform
 configs:
   clusterCredentials:
     - name: ${remoteName}

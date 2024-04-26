@@ -58,7 +58,13 @@ From the new shell encrypt your file:
 AWS_PROFILE=bb-apps-devstg-devops /extrabin/sops --encrypt --kms {your-kms-arn-here} secrets.yaml > secrets.enc.yaml
 ```
 
-## Decrypt the file
+!!! info
+    Since [**binbash Leverage**](https://leverage.binbash.co/) [Landing Zone](https://leverage.binbash.co/try-leverage/) is being used, the default key for the account+region has an alias: `${var.project}_${var.environment}_${var.kms_key_name}_key`, in this case is `vp_apps-devstg_default_key`, so `arn:aws:kms:<region>:<account>:alias/vp_apps-devstg_default_key` should be used.
+    
+!!! info
+    To use this file with Terraform, edit the `secrets.enc.yaml` and at the bottom, edit the line with `aws_profile` and set there the AWS Profile you've used to encrypt the file.
+
+##  Decrypt the file
 
 From the shell decrypt your file:
 
@@ -76,14 +82,14 @@ First your user (the one used to run [**binbash Leverage**](https://leverage.bin
 
 Then, open the file:
 
-```hcl
+```terraform
 data "sops_file" "secrets" {
   source_file = "secrets.enc.yaml"
 }
 ```
 
 ...and use it:
-```hcl
+```terraform
 output "thevalue" {
     value = data.sops_file.secrets.data["topic.subtopic"]
 }

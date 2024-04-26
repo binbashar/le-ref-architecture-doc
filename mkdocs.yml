@@ -300,6 +300,7 @@ nav:
       - Encrypting/decrypting files with SOPS+KMS: "user-guide/playbooks/sops-kms.md"
       - Enable/Disable nat gateway: "user-guide/playbooks/enable-nat-gateway.md"
       - ArgoCD add external cluster: "user-guide/playbooks/argocd-external-cluster.md"
+      - VPN Server: "user-guide/playbooks/VPN-server.md"
   - Work with us:
       - Overview: "work-with-us/index.md"
       - Support: "work-with-us/support.md"

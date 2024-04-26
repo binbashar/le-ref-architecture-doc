@@ -27,7 +27,7 @@ Check a file called `terraform.auto.tfvars` exists. If it does not, create it.
 
 Edit the file and set this content:
 
-```hcl
+```terraform
 vpc_enable_nat_gateway = true
 ```
 
@@ -41,6 +41,6 @@ leverage tf apply
 
 Do the same as before but setting this in the `tfvars` file:
 
-```hcl
+```terraform
 vpc_enable_nat_gateway = false
 ```

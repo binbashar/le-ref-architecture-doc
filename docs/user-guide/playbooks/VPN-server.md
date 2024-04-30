@@ -21,11 +21,11 @@ It is a "Pritunl" server.
 All the networks that should be accessible from the VPN must:
 
 - be "peered" to the `shared` base-network VPC
-- its CIDR has to be added to the "Pritunl" server
+- their CIDR have to be added to the "Pritunl" server
 
 This Pritunl server will be deployed in an EC2 instance.
 
-Note this instance can be started/stopped in an scheduled fasion, see [here](/user-guide/playbooks/schedule-start-stop-ec2) for more info. Note also that if the instance is stopped when it is started again the IP will change. So, to keep the IP between runs, an EIP should be used.
+Note this instance can be started/stopped in an scheduled fashion, see [here](/user-guide/playbooks/schedule-start-stop-ec2) for more info. (Note also, if no EIP is being used, when the instance is stopped and then started again the IP will change.)
 
 These are the steps:
 
@@ -48,7 +48,7 @@ Paste this layer into the account/region chosen to host this, e.g. `shared/us-ea
 
 #### Update the layer
 
-Change as per your needs. At a minimum, change the S3 backend key in `config.tf` file and in file `ec2.tf` update the object `dns_records_internal_hosted_zone` with your own domain.
+Change as per your needs. At a minimum, change the S3 backend key in `config.tf` file and in file `ec2.tf` update the objects `dns_records_public_hosted_zone` and `dns_records_internal_hosted_zone` with your own domain.
 
 Also, temporarily, allow access to port 22 (SSH) from Internet, so we can access the instance with Ansible.
 
@@ -100,6 +100,32 @@ To do this, in file `ec2.tf` chage this:
   }]
 ```
 
+Also, to access in port 443 this need to be changed from this:
+
+```terraform
+    {
+      from_port = 443, # Pritunl VPN Server UI
+      to_port   = 443,
+      protocol  = "tcp",
+      #cidr_blocks = ["0.0.0.0/0"], # Public temporally accessible for new users setup (when needed)
+      cidr_blocks = [data.terraform_remote_state.vpc.outputs.vpc_cidr_block],
+      description = "Allow Pritunl HTTPS UI"
+    },
+```
+
+to this
+
+```terraform
+    {
+      from_port = 443, # Pritunl VPN Server UI
+      to_port   = 443,
+      protocol  = "tcp",
+      cidr_blocks = ["0.0.0.0/0"], # Public temporally accessible for new users setup (when needed)
+      #cidr_blocks = [data.terraform_remote_state.vpc.outputs.vpc_cidr_block],
+      description = "Allow Pritunl HTTPS UI"
+    },
+```
+
 !!! info
     Replace the domain with your own. A public record is being created so we can reach the server.
 
@@ -126,7 +152,7 @@ Copy the content of the public key.
 
 Access the EC2 instance from [AWS Web Console](https://us-east-1.console.aws.amazon.com/ec2/home?region=us-east-1#Home:). (use the `shared` account)
 
-Connect to the instance (connect button) using SSM.
+Connect to the instance (connect button) using SSM (Session Manager).
 
 Once in the instance terminal, paste the copied content in the to the authorized keys file:
 
@@ -185,6 +211,9 @@ echo 'your-password-here' > .vault_pass
 ansible-vault encrypt --vault-password-file=.vault_pass --encrypt-vault-id=default group_vars/secrets.enc.yml
 ```
 
+!!! info
+    If you need to decrypt it to edit: `ansible-vault decrypt --vault-password-file=.vault_pass group_vars/secrets.enc.yml `
+
 - edit `ansible.cfg` file and set the `vault_password_file` to the right path (pointing to `.vault_pass` file)
 - edit `setup.yaml` file and update the host sections so the public access is used:
 
@@ -209,28 +238,15 @@ ansible-playbook setup.yml
 
 `ssh` into the server and run this command: 
 
-#```shell
-#sudo pritunl setup-key
-#```
-#
-#Grab the key and go to:
-#
-#`https://your-url`
-#
-#Enter the key.
-#
-#
-#wait for it to configure
-#
-#go back to the server and run 
-
 ```shell
 sudo pritunl default-password
 ```
 
-grab the user and password and use them as credentials in the web page!
+Grab the user and password and use them as credentials in the web page at your public domain!
 
-In the initial setup page set the "Lets Encrypt Domain" and (if needed) change the password.
+In the initial setup page and change the password and enter the domain in "Lets Encrypt Domain".
+
+Hit Save.
 
 ##### A user and an organization
 
@@ -256,11 +272,34 @@ Go to Servers and hit "Add Server".
 
 Enter the name, check "Enable Google Authenticator" and add it.
 
+!!! info
+    Note the Port and Protocol has to be in the range stated in the VPN Server layer, in the `ec2.tf` file under this block:
+    ```terraform
+    {
+      from_port   = 15255, # Pritunl VPN Server public UDP service ports -> pritunl.server.admin org
+      to_port     = 15257, # Pritunl VPN Server public UDP service ports -> pritunl.server.devops org
+      protocol    = "udp",
+      cidr_blocks = ["0.0.0.0/0"],
+      description = "Allow Pritunl Service"
+    }
+    ```
+
 Hit Attach Organization and attach the organization you've created.
 
 Hit Attach.
 
 Now hit Start Server.
+
+##### A note on AWS private DNS
+
+To use a Route53 private zone (where your private addresses are set), these steps have to be followed:
+
+- Edit the server 
+- In the "DNS Server" box (where `8.8.8.8` is set) add the internal DNS for the VPC
+  - the internal DNS is x.x.x.2, e.g. if the VPC in which your VPN Server is is 172.18.0.0/16, then your DNS is 172.18.0.2
+  - for the example, the final text is `172.18.0.2, 8.8.8.8` (note we are adding the `8.8.8.8` as a secondary DNS)
+- Add a specific route for the DNS server, for the example `172.18.0.2/32`
+- Then add all the other routes you need to access your resources, e.g. to access the VPN Server's VPC this route must be added: `172.18.0.0/16`
 
 ##### Use the user to log into the VPN
 
@@ -276,6 +315,37 @@ The user has to create an OTP with an app such as Authy, enter a PIN, copy the "
     
 Start the VPN and enjoy being secure!
 
+## Set back security
+
+Set back all the configurations to access the server and apply the layer:
+
+
+```terraform
+    {
+      from_port = 22, # SSH
+      to_port   = 22,
+      protocol  = "tcp",
+      #cidr_blocks = ["0.0.0.0/0"],
+      cidr_blocks = [data.terraform_remote_state.vpc.outputs.vpc_cidr_block],
+      description = "Allow SSH"
+    },
+    
+  /*  dns_records_public_hosted_zone = [{
+    zone_id = data.terraform_remote_state.dns.outputs.aws_public_zone_id[0],
+    name    = "vpn.aws.binbash.co",
+    type    = "A",
+    ttl     = 300
+  }]*/
+
+    {
+      from_port = 443, # Pritunl VPN Server UI
+      to_port   = 443,
+      protocol  = "tcp",
+      #cidr_blocks = ["0.0.0.0/0"], # Public temporally accessible for new users setup (when needed)
+      cidr_blocks = [data.terraform_remote_state.vpc.outputs.vpc_cidr_block],
+      description = "Allow Pritunl HTTPS UI"
+    },
+```
 ## Note about Routes
 
 When you create a Pritunl VPN server, a VPN network CIDR is used, let's say `192.168.122.0/24`.
@@ -305,3 +375,15 @@ Start the server.
 Also note the route `0.0.0.0./0` is added by default. This means all traffic go through the VPN server.
 
 You can remove this and allow just the internal CIDRs.
+
+## Lets Encrypt Domain
+
+- must temporally open port 80 to the world (line 52)
+- must temporally open port 443 to the world (line 59)
+- must uncomment public DNS record block (lines 105-112)
+- make apply
+- connect to the VPN and ssh to the Pritunl EC2
+- run '$sudo pritunl reset-ssl-cert'
+- force SSL cert update (manually via UI or via API call)
+  in the case of using the UI, set the "Lets Encrypt Domain" field with the vpn domain and click on save
+- rollback steps a,b & c + make apply

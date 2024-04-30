@@ -21,7 +21,7 @@ If this cluster was created using the [**binbash Leverage**](https://leverage.bi
 Also the VPC for both K8s cluster should be connected. (e.g. VPCPeerings have to be in place between them)
 
 !!! info
-    Learn how to create `VPCPeerings` using [**binbash Leverage**](https://leverage.binbash.co/) [Landing Zone](https://leverage.binbash.co/try-leverage/) here.
+    Learn how to create `VPCPeerings` using [**binbash Leverage**](https://leverage.binbash.co/) [Landing Zone](https://leverage.binbash.co/try-leverage/) [here](/user-guide/ref-architecture-aws/features/network/vpc-peering/#next-steps).
 
 ---
 

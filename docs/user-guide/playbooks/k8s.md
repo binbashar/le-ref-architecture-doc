@@ -32,6 +32,8 @@ A cluster with one node (master/worker) is deployed here.
 
 Cluster autoscaler can be used with K3s to scale nodes, but it requires a lot of work that justifies going to KOPS.
 
+[TBD]
+
 ---
 
 ---
@@ -46,7 +48,7 @@ A [gossip-cluster](https://kops.sigs.k8s.io/gossip/) (not exposed to Internet cl
 
 More master nodes can be deployed. (i.e. one per AZ, actually three are recommended for production grade clusters)
 
-It will be something similar to what is stated [here](/user-guide/ref-architecture-aws/features/compute/k8s-kops/), but with one master and one worker.
+It will be something similar to what is stated [here](/user-guide/ref-architecture-aws/features/compute/k8s-kops/), but with one master, one worker, and the LB for the API in the private network.
 
 ![leverage-aws-k8s-kops](/assets/images/diagrams/aws-k8s-kops.png "Leverage"){: style="width:950px"}
 
@@ -138,6 +140,9 @@ leverage tf apply
     
 !!! info
     Note if for some reason the nat-gateway changes, this layer has to be applied again.
+    
+!!! info
+    Note the role `AWSReservedSSO_DevOps` (the one created in the SSO for Devops) is added as `system:masters`. If you want to change the role, check the `devopsrole` in `data.tf` file.
 
 #### 2 - Apply the cluster with KOPS
 
@@ -166,7 +171,7 @@ Open the `config.tf` file and edit the backend key if needed:
 If you are happy with the config (or you are not happy but you think the file is ok), let's create the Terraform files!
 
 ```shell
-make cluster-updated
+make cluster-update
 ```
 
 Finally, apply the layer:
@@ -176,18 +181,71 @@ leverage tf init
 leverage tf apply
 ```
 
+Cluster can be checked with this command:
+
+```shell
+make kops-cmd KOPS_CMD="validate cluster"
+```
 #### Accessing the cluster
  
-With the cluster, a Load Balancer was deployed so you can reach the K8s API.
+Here there are two questions. 
 
-Here there are two questions. One is how to expose the cluster so Apps running in it can be reached.
+One is how to expose the cluster so Apps running in it can be reached.
 
 The other one is how to access the cluster's API.
     
-For the first one, since this is a `gossip-cluster` and as per the KOPS docs: When using gossip mode, you have to expose the kubernetes API using a loadbalancer. Since there is no hosted zone for gossip-based clusters, you simply use the load balancer address directly. The user experience is identical to standard clusters. kOps will add the ELB DNS name to the kops-generated kubernetes configuration.<br /><br />
+For the first one:
+
+    since this is a `gossip-cluster` and as per the KOPS docs: When using gossip mode, you have to expose the kubernetes API using a loadbalancer. Since there is no hosted zone for gossip-based clusters, you simply use the load balancer address directly. The user experience is identical to standard clusters. kOps will add the ELB DNS name to the kops-generated kubernetes configuration.
     
-    It can be reached also using a VPN. Check the [**binbash Leverage**](https://leverage.binbash.co/) [Landing Zone](https://leverage.binbash.co/try-leverage/) documentation for this.
-    
+So, we need to create a LB with public access.
+
+For the second one, we need to access the VPN (we have set the access to the used network previously), and hit the LB. With the cluster, a Load Balancer was deployed so you can reach the K8s API.
+
+##### Access the API
+
+Run:
+
+```shell
+make kops-kubeconfig
+```
+
+A file named as the cluster is created with the kubeconfig content (admin user, so keep it safe). So export it and use it!
+
+```shell
+export KUBECONFIG=$(pwd)/clustername.k8s.local
+kubectl get ns
+```
+
+!!! warning
+    You have to be connected to the VPN to reach your cluster!
+ 
+##### Access Apps
+
+You should use some sort of ingress controller (e.g. Traefik, Nginx) and set ingresses for the apps. (see Extras)
+
+
+#### 3 - Extras
+
+Copy the KUBECONFIG file to the `3-extras` directory, e.g.:
+
+```shell
+cp ${KUBECONFIG} ../3-extras/
+```
+
+`cd` into `3-extras`.
+
+Set the name for this file and the context in the file `config.tf`.
+
+Set what extras you want to install (e.g. `traefik = true`) and run the layer as usual:
+
+```shell
+leverage tf init
+leverage tf apply
+```
+
+You are done!
+
 ---
 
 ---
@@ -197,3 +255,37 @@ For the first one, since this is a `gossip-cluster` and as per the KOPS docs: Wh
 See also [here](/user-guide/ref-architecture-eks/overview/).
 
 ### Goal
+
+A cluster with one node (worker) and the control plane managed by AWS is deployed here.
+
+Cluster autoscaler is used to create more nodes.
+
+### Procedure
+
+These are the steps:
+
+- 0 - copy the [K8s EKS layer](https://github.com/binbashar/le-tf-infra-aws/tree/master/apps-devstg/us-east-1/k8s-eks) to your [**binbash Leverage**](https://leverage.binbash.co/) project.
+    - paste the layer under the `apps-devstg/us-east-1` account/region directory
+- 1 - apply layers
+- 2 - access the cluster
+
+--- 
+
+#### 0 - Copy the layer
+
+A few methods can be used to download the [KOPS layer](https://github.com/binbashar/le-tf-infra-aws/tree/master/apps-devstg/us-east-1/k8s-eks) directory into the [**binbash Leverage**](https://leverage.binbash.co/) project.
+
+E.g. [this addon](https://addons.mozilla.org/en-US/firefox/addon/gitzip/?utm_source=addons.mozilla.org&utm_medium=referral&utm_content=search) is a nice way to do it.
+
+Paste this layer into the account/region chosen to host this, e.g. `apps-devstg/us-east-1/`, so the final layer is `apps-devstg/us-east-1/k8s-eks/`.
+
+#### 1 - Apply layers
+
+First go into each layer and config the Terraform S3 background key, CIDR for the network, names, addons, etc.
+
+Then apply layers as follow:
+
+```shell
+leverage tf init --layers network,cluster,identities,addons,k8s-components
+leverage tf apply --layers network,cluster,identities,addons,k8s-components
+```

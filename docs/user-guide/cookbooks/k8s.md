@@ -88,7 +88,7 @@ To create the KOPS cluster these are the requisites:
 - an SSH key (you have to create it, )
 
 !!! Warning
-    If the nat-gateway is not in place check how to enable it using the [**binbash Leverage**](https://leverage.binbash.co/) network layer [here](/user-guide/playbooks/enable-nat-gateway).
+    If the nat-gateway is not in place check how to enable it using the [**binbash Leverage**](https://leverage.binbash.co/) network layer [here](/user-guide/cookbooks/enable-nat-gateway).
     
 !!! Info
     Note a DNS is not needed since this will be a gossip cluster.

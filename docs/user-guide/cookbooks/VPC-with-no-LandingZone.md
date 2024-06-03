@@ -4,7 +4,7 @@
 
 Do you want to try [**binbash Leverage**](/) but you are not willing to transform yet your already existent infra to the [**binbash Leverage Landing Zone**](/try-leverage/) (honoring the [AWS Well Architected Framework](https://docs.aws.amazon.com/wellarchitected/latest/framework/welcome.html))?
 
-With this playbook you will create a VPC with all the benefits **binbash Leverage** [network layer](/user-guide/ref-architecture-aws/features/network/vpc-addressing/) provides.
+With this cookbook you will create a VPC with all the benefits **binbash Leverage** [network layer](/user-guide/ref-architecture-aws/features/network/vpc-addressing/) provides.
 
 
 !!! info "If you want to use the Full **binbash Leverage Landing Zone** please visit the [Try Leverage section](/try-leverage/)"

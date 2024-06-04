@@ -169,6 +169,9 @@ Addons should present no problems being upgraded to the latest available version
 
 No extra considerations are needed to upgrade from v1.25 to v1.26. The standard procedure listed above should work with no issues.
 
+##### Upgrade to v1.27
+
+In a similar fashion to the previous upgrade notes, the standard procedure listed above should work with no issues.
 
 !!! info "Official AWS procedure"
     A step-bystep instructions guide for upgrading an EKS cluster can be found at the following link:

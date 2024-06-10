@@ -1664,6 +1664,33 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#additional-steps" class="md-nav__link">
+    Additional Steps
+  </a>
+  
+    <nav class="md-nav" aria-label="Additional Steps">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#configuring-mfa" class="md-nav__link">
+    Configuring MFA
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#configure-session-settings" class="md-nav__link">
+    Configure session settings
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -4836,6 +4863,33 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#additional-steps" class="md-nav__link">
+    Additional Steps
+  </a>
+  
+    <nav class="md-nav" aria-label="Additional Steps">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#configuring-mfa" class="md-nav__link">
+    Configuring MFA
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#configure-session-settings" class="md-nav__link">
+    Configure session settings
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -4935,6 +4989,20 @@
 <p>These credentials are short lived (30 minutes) for security reasons, and will be refreshed automatically whenever they expire.</p>
 <h3 id="4-logging-out">4. Logging out<a class="headerlink" href="#4-logging-out" title="Permanent link"> ¶</a></h3>
 <p>When the user has finished working, running <code>leverage sso logout</code> wipes out all remaining valid credentials and voids the token obtained from logging in.</p>
+<h2 id="additional-steps">Additional Steps<a class="headerlink" href="#additional-steps" title="Permanent link"> ¶</a></h2>
+<p>Further steps are required before you can safely start onboarding users and allowing them to sign in.</p>
+<p><strong>Important:</strong> most of the following steps need to be applied manually because the Terraform AWS provider does not support them yet.</p>
+<h3 id="configuring-mfa">Configuring MFA<a class="headerlink" href="#configuring-mfa" title="Permanent link"> ¶</a></h3>
+<p>Enabling and requiring MFA is highly recommended. We typically choose these following guidelines:</p>
+<ul>
+<li>Prompt users for MFA: Only when their sign-in context changes (context-aware).</li>
+<li>Users can authenticate with these MFA types: we allow security keys, built-in authenticators (such as fingerprint or retina/face scans), and authenticator apps.</li>
+<li>If a user does not yet have a registered MFA device: require them to register an MFA device at sign in.</li>
+<li>Who can manage MFA devices: users and administrators can add and manage MFA devices.</li>
+</ul>
+<p>Refer to <a href="https://docs.aws.amazon.com/singlesignon/latest/userguide/enable-mfa.html">the official documentation</a> for more details.</p>
+<h3 id="configure-session-settings">Configure session settings<a class="headerlink" href="#configure-session-settings" title="Permanent link"> ¶</a></h3>
+<p>By default, the SSO session is set to last 12 hours. This is a good default but we still prefer to share this decision making with the Client -- e.g. focal point, dev/qa team, data science teams. They might factor in considerations such as security/compliance, UX/DevEx, operational needs, technical constraints, administration overheads, cost considerations, and more.</p>
 
 
   

@@ -94,3 +94,22 @@ These credentials are short lived (30 minutes) for security reasons, and will be
 
 ### 4. Logging out
 When the user has finished working, running `leverage sso logout` wipes out all remaining valid credentials and voids the token obtained from logging in.
+
+
+## Additional Steps
+Further steps are required before you can safely start onboarding users and allowing them to sign in.
+
+**Important:** most of the following steps need to be applied manually because the Terraform AWS provider does not support them yet.
+
+### Configuring MFA
+Enabling and requiring MFA is highly recommended. We typically choose these following guidelines:
+
+* Prompt users for MFA: Only when their sign-in context changes (context-aware).
+* Users can authenticate with these MFA types: we allow security keys, built-in authenticators (such as fingerprint or retina/face scans), and authenticator apps.
+* If a user does not yet have a registered MFA device: require them to register an MFA device at sign in.
+* Who can manage MFA devices: users and administrators can add and manage MFA devices.
+
+Refer to [the official documentation](https://docs.aws.amazon.com/singlesignon/latest/userguide/enable-mfa.html) for more details.
+
+### Configure session settings
+By default, the SSO session is set to last 12 hours. This is a good default but we still prefer to share this decision making with the Client -- e.g. focal point, dev/qa team, data science teams. They might factor in considerations such as security/compliance, UX/DevEx, operational needs, technical constraints, administration overheads, cost considerations, and more.

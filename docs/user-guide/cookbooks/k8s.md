@@ -89,6 +89,15 @@ To create the KOPS cluster these are the requisites:
 
 !!! Warning
     If the nat-gateway is not in place check how to enable it using the [**binbash Leverage**](https://leverage.binbash.co/) network layer [here](/user-guide/cookbooks/enable-nat-gateway).
+
+!!! Warning
+    If you will activate **Karpenter** you need to tag the target subnets (i.e. the private subnets in your VPC) with:
+    ```hcl
+        "kops.k8s.io/instance-group/nodes"     = "true"
+        "kubernetes.io/cluster/<cluster-name>" = "true"
+    ```
+    <br />
+    We are assuming here the worker Instance Group is called `nodes`. If you change the name or have more than one Instance Group you need to adapt the first tag.
     
 !!! Info
     Note a DNS is not needed since this will be a gossip cluster.

@@ -37,4 +37,4 @@ Finally the `/23` are being used for each subnet.
 
 Note we are using the first two subnet addresses for each `/21`. This is due to we are reserving the other two to allow adding more AZs in the future. (up to two in this case)
 
-If you want you can take as a reference [this page](http://localhost:8000/user-guide/ref-architecture-aws/features/network/vpc-addressing/) to select CIDRs for each account.
+If you want you can take as a reference [this page](/user-guide/ref-architecture-aws/features/network/vpc-addressing/) to select CIDRs for each account.

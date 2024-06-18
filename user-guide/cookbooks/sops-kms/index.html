@@ -12,13 +12,13 @@
         <meta name="author" content="binbash">
       
       
-        <link rel="canonical" href="https://leverage.binbash.co/user-guide/playbooks/VPC-subnet-calculator/">
+        <link rel="canonical" href="https://leverage.binbash.co/user-guide/cookbooks/sops-kms/">
       
       
-        <link rel="prev" href="../schedule-start-stop-ec2/">
+        <link rel="prev" href="../k8s/">
       
       
-        <link rel="next" href="../../../work-with-us/">
+        <link rel="next" href="../enable-nat-gateway/">
       
       
       <link rel="icon" href="../../../assets/images/logos/favicon.ico">
@@ -26,7 +26,7 @@
     
     
       
-        <title>Calculate VPC cubnet CIDRs - binbash Leverage™</title>
+        <title>Encrypting/decrypting files with SOPS+KMS - binbash Leverage™</title>
       
     
     
@@ -93,7 +93,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#how-to-calculate-the-vpc-subnet-cidrs" class="md-skip">
+        <a href="#encrypt-and-decrypt-sops-files-with-aws-kms" class="md-skip">
           Skip to content
         </a>
       
@@ -127,7 +127,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Calculate VPC cubnet CIDRs
+              Encrypting/decrypting files with SOPS+KMS
             
           </span>
         </div>
@@ -3978,6 +3978,14 @@
       
         
       
+        
+      
+        
+      
+        
+      
+        
+      
     
     
     <li class="md-nav__item md-nav__item--active md-nav__item--nested">
@@ -3995,7 +4003,7 @@
               
   
   <span class="md-ellipsis">
-    Playbooks
+    Cookbooks
   </span>
   
 
@@ -4010,7 +4018,7 @@
         <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_8_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_4_8">
             <span class="md-nav__icon md-icon"></span>
-            Playbooks
+            Cookbooks
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
@@ -4060,6 +4068,46 @@
                 
   
   
+  
+    <li class="md-nav__item">
+      <a href="../VPC-subnet-calculator/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Calculate VPC cubnet CIDRs
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../k8s/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Kubernetes in different stages
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
     
   
   
@@ -4071,16 +4119,168 @@
         
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Encrypting/decrypting files with SOPS+KMS
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
         
   
   <span class="md-ellipsis">
-    Calculate VPC cubnet CIDRs
+    Encrypting/decrypting files with SOPS+KMS
   </span>
   
 
       </a>
       
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#goal" class="md-nav__link">
+    Goal
+  </a>
+  
+    <nav class="md-nav" aria-label="Goal">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#assumptions" class="md-nav__link">
+    Assumptions
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#prerequisites" class="md-nav__link">
+    Prerequisites
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sops" class="md-nav__link">
+    SOPS
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-to" class="md-nav__link">
+    How to
+  </a>
+  
+    <nav class="md-nav" aria-label="How to">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#the-source-file" class="md-nav__link">
+    The source file
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#access-the-shell" class="md-nav__link">
+    Access the shell
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#encrypt-the-file" class="md-nav__link">
+    Encrypt the file
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#decrypt-the-file" class="md-nav__link">
+    Decrypt the file
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-to-use-it-with-leverage" class="md-nav__link">
+    How to use it with Leverage
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../enable-nat-gateway/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Enable/Disable nat gateway
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../argocd-external-cluster/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    ArgoCD add external cluster
+  </span>
+  
+
+      </a>
     </li>
   
 
@@ -4646,6 +4846,96 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#goal" class="md-nav__link">
+    Goal
+  </a>
+  
+    <nav class="md-nav" aria-label="Goal">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#assumptions" class="md-nav__link">
+    Assumptions
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#prerequisites" class="md-nav__link">
+    Prerequisites
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sops" class="md-nav__link">
+    SOPS
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-to" class="md-nav__link">
+    How to
+  </a>
+  
+    <nav class="md-nav" aria-label="How to">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#the-source-file" class="md-nav__link">
+    The source file
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#access-the-shell" class="md-nav__link">
+    Access the shell
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#encrypt-the-file" class="md-nav__link">
+    Encrypt the file
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#decrypt-the-file" class="md-nav__link">
+    Decrypt the file
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-to-use-it-with-leverage" class="md-nav__link">
+    How to use it with Leverage
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -4659,7 +4949,7 @@
                   
 
   
-    <a href="https://github.com/binbashar/le-ref-architecture-doc/edit/master/docs/user-guide/playbooks/VPC-subnet-calculator.md" title="Edit this page" class="md-content__button md-icon">
+    <a href="https://github.com/binbashar/le-ref-architecture-doc/edit/master/docs/user-guide/cookbooks/sops-kms.md" title="Edit this page" class="md-content__button md-icon">
       
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4v-2m10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1 2.1 2.1Z"/></svg>
     </a>
@@ -4667,35 +4957,68 @@
   
 
 
-<h1 id="how-to-calculate-the-vpc-subnet-cidrs">How to calculate the VPC subnet CIDRs?<a class="headerlink" href="#how-to-calculate-the-vpc-subnet-cidrs" title="Permanent link"> ¶</a></h1>
-<p>To calculate subnets <a href="https://www.davidc.net/sites/default/subnets/subnets.html?network=172.18.0.0&amp;mask=20&amp;division=15.7231">this calculator</a> can be used</p>
-<p>Note in this link a few params were added: the base network and mask, and the division number. In this case the example is for the <code>shared</code> account networking.</p>
-<p>This table will be shown: 
-<img alt="subnet-cidr-calculator" src="/assets/images/screenshots/subnet-cidr-calculator.png" style="width:950px" title="Subnet CIDR calculator" /></p>
-<p>Note how this information is set in the tf file:</p>
-<div class="highlight"><pre><span></span><code><span class="w">  </span><span class="l l-Scalar l-Scalar-Plain">vpc_cidr_block = &quot;172.18.0.0/20&quot;</span>
-<span class="w">  </span><span class="l l-Scalar l-Scalar-Plain">azs = [</span>
-<span class="w">    </span><span class="l l-Scalar l-Scalar-Plain">&quot;${var.region}a&quot;,</span>
-<span class="w">    </span><span class="l l-Scalar l-Scalar-Plain">&quot;${var.region}b&quot;</span>
-<span class="w">  </span><span class="l l-Scalar l-Scalar-Plain">]</span>
-
-<span class="w">  </span><span class="l l-Scalar l-Scalar-Plain">private_subnets_cidr = [&quot;172.18.0.0/21&quot;]</span>
-<span class="w">  </span><span class="l l-Scalar l-Scalar-Plain">private_subnets = [</span>
-<span class="w">    </span><span class="l l-Scalar l-Scalar-Plain">&quot;172.18.0.0/23&quot;,</span>
-<span class="w">    </span><span class="l l-Scalar l-Scalar-Plain">&quot;172.18.2.0/23&quot;</span>
-<span class="w">  </span><span class="l l-Scalar l-Scalar-Plain">]</span>
-
-<span class="w">  </span><span class="l l-Scalar l-Scalar-Plain">public_subnets_cidr = [&quot;172.18.8.0/21&quot;]</span>
-<span class="w">  </span><span class="l l-Scalar l-Scalar-Plain">public_subnets = [</span>
-<span class="w">    </span><span class="l l-Scalar l-Scalar-Plain">&quot;172.18.8.0/23&quot;,</span>
-<span class="w">    </span><span class="l l-Scalar l-Scalar-Plain">&quot;172.18.10.0/23&quot;</span>
-<span class="w">  </span><span class="l l-Scalar l-Scalar-Plain">]</span>
+<h1 id="encrypt-and-decrypt-sops-files-with-aws-kms">Encrypt and decrypt SOPS files with AWS KMS<a class="headerlink" href="#encrypt-and-decrypt-sops-files-with-aws-kms" title="Permanent link"> ¶</a></h1>
+<h2 id="goal">Goal<a class="headerlink" href="#goal" title="Permanent link"> ¶</a></h2>
+<p>Using a SOPS file to store secrets in the git repository.</p>
+<p>Encrypting the SOPS file with a KMS key.</p>
+<h3 id="assumptions">Assumptions<a class="headerlink" href="#assumptions" title="Permanent link"> ¶</a></h3>
+<p>We are assuming the <a href="https://leverage.binbash.co/"><strong>binbash Leverage</strong></a> <a href="https://leverage.binbash.co/try-leverage/">Landing Zone</a> is deployed, an account called <code>apps-devstg</code> was created and a region <code>us-east-1</code> is being used. In any case you can adapt these examples to other scenarios.</p>
+<h3 id="prerequisites">Prerequisites<a class="headerlink" href="#prerequisites" title="Permanent link"> ¶</a></h3>
+<ul>
+<li>you need SOPS installed<ul>
+<li>to avoid dependencies when using the <a href="https://leverage.binbash.co/"><strong>binbash Leverage</strong></a> <a href="http://localhost:8000/user-guide/leverage-cli/reference/shell/#overview">shell</a> command, we recommend to download the binary from <a href="https://github.com/getsops/sops/releases">here</a>.</li>
+</ul>
+</li>
+<li>a KMS key created, we have done this using the <a href="https://leverage.binbash.co/"><strong>binbash Leverage</strong></a> <a href="https://github.com/binbashar/le-tf-infra-aws/tree/master/apps-devstg/us-east-1/security-keys">security-keys</a> layer.</li>
+</ul>
+<h2 id="sops">SOPS<a class="headerlink" href="#sops" title="Permanent link"> ¶</a></h2>
+<p>To know more about SOPS read <a href="https://github.com/getsops/sops">here</a>.</p>
+<hr />
+<hr />
+<h2 id="how-to">How to<a class="headerlink" href="#how-to" title="Permanent link"> ¶</a></h2>
+<p>We will be using <a href="https://leverage.binbash.co/"><strong>binbash Leverage</strong></a> <a href="http://localhost:8000/user-guide/leverage-cli/reference/shell/#overview">shell</a> command to achieve this.</p>
+<h3 id="the-source-file">The source file<a class="headerlink" href="#the-source-file" title="Permanent link"> ¶</a></h3>
+<p>First, in the layer where you need the SOPS file, create a sample yaml, e.g. a file <code>secrets.yaml</code>:</p>
+<div class="highlight"><pre><span></span><code><span class="nt">topic</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">subtopic</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">value</span>
 </code></pre></div>
-<p>Note the main CIDR is being used for the VPC. See on the left how the <code>/20</code> encompasses all the rows.</p>
-<p>Then two divisions for <code>/21</code>. Note the first subnet address of the first row for each one is being used for <code>private_subnets_cidr</code> and <code>public_subnets_cidr</code>.</p>
-<p>Finally the <code>/23</code> are being used for each subnet.</p>
-<p>Note we are using the first two subnet addresses for each <code>/21</code>. This is due to we are reserving the other two to allow adding more AZs in the future. (up to two in this case)</p>
-<p>If you want you can take as a reference <a href="http://localhost:8000/user-guide/ref-architecture-aws/features/network/vpc-addressing/">this page</a> to select CIDRs for each account.</p>
+<h2 id="access-the-shell">Access the shell<a class="headerlink" href="#access-the-shell" title="Permanent link"> ¶</a></h2>
+<p>First, be sure your credentials are up to date. You can run a <code>leverage tf plan</code> and they will be updated.</p>
+<p>Run the shell command:</p>
+<div class="highlight"><pre><span></span><code>leverage<span class="w"> </span>shell<span class="w"> </span>--mount<span class="w"> </span>/<span class="o">{</span>path-to-your-tools-directory<span class="o">}</span>/sops/<span class="w"> </span>/extrabin
+</code></pre></div>
+<h2 id="encrypt-the-file">Encrypt the file<a class="headerlink" href="#encrypt-the-file" title="Permanent link"> ¶</a></h2>
+<p>Note for encrypting you need to specify an AWS Profile. In the <a href="https://leverage.binbash.co/"><strong>binbash Leverage</strong></a> context profiles are like this: <code>{short-project-name}-{account}-{role}</code>.
+For example, for my <code>apps-devstg</code> account, using the role <code>devops</code>, in my project <code>bb</code>, the profile is: <code>bb-apps-devstg-devops</code>.</p>
+<p>From the new shell encrypt your file:</p>
+<div class="highlight"><pre><span></span><code><span class="nv">AWS_PROFILE</span><span class="o">=</span>bb-apps-devstg-devops<span class="w"> </span>/extrabin/sops<span class="w"> </span>--encrypt<span class="w"> </span>--kms<span class="w"> </span><span class="o">{</span>your-kms-arn-here<span class="o">}</span><span class="w"> </span>secrets.yaml<span class="w"> </span>&gt;<span class="w"> </span>secrets.enc.yaml
+</code></pre></div>
+<div class="admonition info">
+<p class="admonition-title">Info</p>
+<p>Since <a href="https://leverage.binbash.co/"><strong>binbash Leverage</strong></a> <a href="https://leverage.binbash.co/try-leverage/">Landing Zone</a> is being used, the default key for the account+region has an alias: <code>${var.project}_${var.environment}_${var.kms_key_name}_key</code>, in this case is <code>vp_apps-devstg_default_key</code>, so <code>arn:aws:kms:&lt;region&gt;:&lt;account&gt;:alias/vp_apps-devstg_default_key</code> should be used.</p>
+</div>
+<div class="admonition info">
+<p class="admonition-title">Info</p>
+<p>To use this file with Terraform, edit the <code>secrets.enc.yaml</code> and at the bottom, edit the line with <code>aws_profile</code> and set there the AWS Profile you've used to encrypt the file.</p>
+</div>
+<h2 id="decrypt-the-file">Decrypt the file<a class="headerlink" href="#decrypt-the-file" title="Permanent link"> ¶</a></h2>
+<p>From the shell decrypt your file:</p>
+<div class="highlight"><pre><span></span><code><span class="nv">AWS_PROFILE</span><span class="o">=</span>bb-apps-devstg-devops<span class="w"> </span>/extrabin/sops<span class="w"> </span>--decrypt<span class="w"> </span>secrets.enc.yaml
+</code></pre></div>
+<h2 id="how-to-use-it-with-leverage">How to use it with Leverage<a class="headerlink" href="#how-to-use-it-with-leverage" title="Permanent link"> ¶</a></h2>
+<p>Now that the secret is stored in a secure file, it can be used.</p>
+<p>The example here is prety simple, just getting the value and sending it to an output. But it can be used in any other resource.</p>
+<p>First your user (the one used to run <a href="https://leverage.binbash.co/"><strong>binbash Leverage</strong></a> ) needs access to the used KMS key.</p>
+<p>Then, open the file:</p>
+<div class="highlight"><pre><span></span><code><span class="kr">data</span><span class="w"> </span><span class="nc">&quot;sops_file&quot;</span><span class="w"> </span><span class="nv">&quot;secrets&quot;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="na">source_file</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;secrets.enc.yaml&quot;</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>...and use it:
+<div class="highlight"><pre><span></span><code><span class="kr">output</span><span class="w"> </span><span class="nv">&quot;thevalue&quot;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="na">value</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">data.sops_file.secrets.data</span><span class="p">[</span><span class="s2">&quot;topic.subtopic&quot;</span><span class="p">]</span>
+<span class="p">}</span>
+</code></pre></div></p>
 
 
   
@@ -4725,7 +5048,7 @@
       <nav class="md-footer__inner md-grid" aria-label="Footer" >
         
           
-          <a href="../schedule-start-stop-ec2/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Start/Stop EC2/RDS instances using schedule or manual endpoint" rel="prev">
+          <a href="../k8s/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Kubernetes in different stages" rel="prev">
             <div class="md-footer__button md-icon">
               
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
@@ -4735,20 +5058,20 @@
                 Previous
               </span>
               <div class="md-ellipsis">
-                Start/Stop EC2/RDS instances using schedule or manual endpoint
+                Kubernetes in different stages
               </div>
             </div>
           </a>
         
         
           
-          <a href="../../../work-with-us/" class="md-footer__link md-footer__link--next" aria-label="Next: Overview" rel="next">
+          <a href="../enable-nat-gateway/" class="md-footer__link md-footer__link--next" aria-label="Next: Enable/Disable nat gateway" rel="next">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 Next
               </span>
               <div class="md-ellipsis">
-                Overview
+                Enable/Disable nat gateway
               </div>
             </div>
             <div class="md-footer__button md-icon">

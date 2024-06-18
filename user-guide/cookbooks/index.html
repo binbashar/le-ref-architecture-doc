@@ -12,28 +12,28 @@
         <meta name="author" content="binbash">
       
       
-        <link rel="canonical" href="https://leverage.binbash.co/user-guide/playbooks/schedule-start-stop-ec2/">
+        <link rel="canonical" href="https://leverage.binbash.co/user-guide/cookbooks/">
       
       
-        <link rel="prev" href="../VPC-with-no-LandingZone/">
+        <link rel="prev" href="../troubleshooting/credentials/">
       
       
-        <link rel="next" href="../VPC-subnet-calculator/">
+        <link rel="next" href="VPC-with-no-LandingZone/">
       
       
-      <link rel="icon" href="../../../assets/images/logos/favicon.ico">
+      <link rel="icon" href="../../assets/images/logos/favicon.ico">
       <meta name="generator" content="mkdocs-1.5.2, mkdocs-material-9.2.8">
     
     
       
-        <title>Start/Stop EC2/RDS instances using schedule or manual endpoint - binbash Leverage™</title>
+        <title>Overview - binbash Leverage™</title>
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/main.046329b4.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.046329b4.min.css">
       
         
-        <link rel="stylesheet" href="../../../assets/stylesheets/palette.85d0ee34.min.css">
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.85d0ee34.min.css">
       
       
 
@@ -52,9 +52,9 @@
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/extra.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/extra.css">
     
-    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
   
@@ -93,7 +93,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#startstop-ec2rds-instances-using-schedule-or-manual-endpoint" class="md-skip">
+        <a href="#cookbooks" class="md-skip">
           Skip to content
         </a>
       
@@ -107,7 +107,7 @@
 
 <header class="md-header" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="../../.." title="binbash Leverage™" class="md-header__button md-logo" aria-label="binbash Leverage™" data-md-component="logo">
+    <a href="../.." title="binbash Leverage™" class="md-header__button md-logo" aria-label="binbash Leverage™" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m19 2-5 4.5v11l5-4.5V2M6.5 5C4.55 5 2.45 5.4 1 6.5v14.66c0 .25.25.5.5.5.1 0 .15-.07.25-.07 1.35-.65 3.3-1.09 4.75-1.09 1.95 0 4.05.4 5.5 1.5 1.35-.85 3.8-1.5 5.5-1.5 1.65 0 3.35.31 4.75 1.06.1.05.15.03.25.03.25 0 .5-.25.5-.5V6.5c-.6-.45-1.25-.75-2-1V19c-1.1-.35-2.3-.5-3.5-.5-1.7 0-4.15.65-5.5 1.5V6.5C10.55 5.4 8.45 5 6.5 5Z"/></svg>
@@ -127,7 +127,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Start/Stop EC2/RDS instances using schedule or manual endpoint
+              Overview
             
           </span>
         </div>
@@ -259,7 +259,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../.." class="md-tabs__link">
+        <a href="../.." class="md-tabs__link">
           
   
     
@@ -279,7 +279,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../../try-leverage/" class="md-tabs__link">
+        <a href="../../try-leverage/" class="md-tabs__link">
           
   
     
@@ -299,7 +299,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../../concepts/" class="md-tabs__link">
+        <a href="../../concepts/" class="md-tabs__link">
           
   
     
@@ -321,7 +321,7 @@
     
     
       <li class="md-tabs__item md-tabs__item--active">
-        <a href="../../" class="md-tabs__link">
+        <a href="../" class="md-tabs__link">
           
   
     
@@ -341,7 +341,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../../work-with-us/" class="md-tabs__link">
+        <a href="../../work-with-us/" class="md-tabs__link">
           
   
     
@@ -376,7 +376,7 @@
 
 <nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="../../.." title="binbash Leverage™" class="md-nav__button md-logo" aria-label="binbash Leverage™" data-md-component="logo">
+    <a href="../.." title="binbash Leverage™" class="md-nav__button md-logo" aria-label="binbash Leverage™" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m19 2-5 4.5v11l5-4.5V2M6.5 5C4.55 5 2.45 5.4 1 6.5v14.66c0 .25.25.5.5.5.1 0 .15-.07.25-.07 1.35-.65 3.3-1.09 4.75-1.09 1.95 0 4.05.4 5.5 1.5 1.35-.85 3.8-1.5 5.5-1.5 1.65 0 3.35.31 4.75 1.06.1.05.15.03.25.03.25 0 .5-.25.5-.5V6.5c-.6-.45-1.25-.75-2-1V19c-1.1-.35-2.3-.5-3.5-.5-1.7 0-4.15.65-5.5 1.5V6.5C10.55 5.4 8.45 5 6.5 5Z"/></svg>
@@ -446,7 +446,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../.." class="md-nav__link ">
+            <a href="../.." class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -477,7 +477,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../concepts/" class="md-nav__link">
+      <a href="../../concepts/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -497,7 +497,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../try-leverage/" class="md-nav__link">
+      <a href="../../try-leverage/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -517,7 +517,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../how-it-works/ref-architecture/" class="md-nav__link">
+      <a href="../../how-it-works/ref-architecture/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -537,7 +537,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../" class="md-nav__link">
+      <a href="../" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -557,7 +557,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../work-with-us/" class="md-nav__link">
+      <a href="../../work-with-us/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -577,7 +577,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../license/" class="md-nav__link">
+      <a href="../../license/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -639,7 +639,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../../try-leverage/" class="md-nav__link ">
+            <a href="../../try-leverage/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -670,7 +670,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../try-leverage/aws-account-setup/" class="md-nav__link">
+      <a href="../../try-leverage/aws-account-setup/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -690,7 +690,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../try-leverage/local-setup/" class="md-nav__link">
+      <a href="../../try-leverage/local-setup/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -710,7 +710,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../try-leverage/leverage-project-setup/" class="md-nav__link">
+      <a href="../../try-leverage/leverage-project-setup/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -730,7 +730,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../try-leverage/management-account/" class="md-nav__link">
+      <a href="../../try-leverage/management-account/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -750,7 +750,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../try-leverage/enabling-sso/" class="md-nav__link">
+      <a href="../../try-leverage/enabling-sso/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -770,7 +770,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../try-leverage/security-and-shared-accounts/" class="md-nav__link">
+      <a href="../../try-leverage/security-and-shared-accounts/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -790,7 +790,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../try-leverage/post-deployment/" class="md-nav__link">
+      <a href="../../try-leverage/post-deployment/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -810,7 +810,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../try-leverage/add-aws-accounts/" class="md-nav__link">
+      <a href="../../try-leverage/add-aws-accounts/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -866,7 +866,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../../concepts/" class="md-nav__link ">
+            <a href="../../concepts/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -897,7 +897,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../concepts/what-is-leverage/" class="md-nav__link">
+      <a href="../../concepts/what-is-leverage/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -917,7 +917,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../concepts/why-leverage/" class="md-nav__link">
+      <a href="../../concepts/why-leverage/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -937,7 +937,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../concepts/what-leverage-can-do-for-you/" class="md-nav__link">
+      <a href="../../concepts/what-leverage-can-do-for-you/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -957,7 +957,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../concepts/our-tech-stack/" class="md-nav__link">
+      <a href="../../concepts/our-tech-stack/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -977,7 +977,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../concepts/next-steps/" class="md-nav__link">
+      <a href="../../concepts/next-steps/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1039,7 +1039,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../" class="md-nav__link ">
+            <a href="../" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -1122,7 +1122,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../ref-architecture-aws/overview/" class="md-nav__link">
+      <a href="../ref-architecture-aws/overview/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1142,7 +1142,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../ref-architecture-aws/dir-structure/" class="md-nav__link">
+      <a href="../ref-architecture-aws/dir-structure/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1162,7 +1162,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../ref-architecture-aws/configuration/" class="md-nav__link">
+      <a href="../ref-architecture-aws/configuration/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1182,7 +1182,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../ref-architecture-aws/credentials/" class="md-nav__link">
+      <a href="../ref-architecture-aws/credentials/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1202,7 +1202,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../ref-architecture-aws/workflow/" class="md-nav__link">
+      <a href="../ref-architecture-aws/workflow/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1222,7 +1222,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../ref-architecture-aws/tf-state/" class="md-nav__link">
+      <a href="../ref-architecture-aws/tf-state/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1291,7 +1291,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../ref-architecture-aws/features/" class="md-nav__link ">
+            <a href="../ref-architecture-aws/features/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -1368,7 +1368,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../ref-architecture-aws/features/organization/overview/" class="md-nav__link">
+      <a href="../ref-architecture-aws/features/organization/overview/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1388,7 +1388,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../ref-architecture-aws/features/organization/accounts/" class="md-nav__link">
+      <a href="../ref-architecture-aws/features/organization/accounts/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1408,7 +1408,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../ref-architecture-aws/features/organization/configuration/" class="md-nav__link">
+      <a href="../ref-architecture-aws/features/organization/configuration/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1428,7 +1428,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../ref-architecture-aws/features/organization/billing/" class="md-nav__link">
+      <a href="../ref-architecture-aws/features/organization/billing/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1448,7 +1448,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../ref-architecture-aws/features/organization/legacy-accounts/" class="md-nav__link">
+      <a href="../ref-architecture-aws/features/organization/legacy-accounts/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1518,7 +1518,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../ref-architecture-aws/features/sso/overview/" class="md-nav__link">
+      <a href="../ref-architecture-aws/features/sso/overview/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1538,7 +1538,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../ref-architecture-aws/features/sso/configuration/" class="md-nav__link">
+      <a href="../ref-architecture-aws/features/sso/configuration/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1558,7 +1558,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../ref-architecture-aws/features/sso/managing-users/" class="md-nav__link">
+      <a href="../ref-architecture-aws/features/sso/managing-users/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1586,7 +1586,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../ref-architecture-aws/features/ssm/ssm/" class="md-nav__link">
+      <a href="../ref-architecture-aws/features/ssm/ssm/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1652,7 +1652,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../ref-architecture-aws/features/identities/overview/" class="md-nav__link">
+      <a href="../ref-architecture-aws/features/identities/overview/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1672,7 +1672,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../ref-architecture-aws/features/identities/gpg/" class="md-nav__link">
+      <a href="../ref-architecture-aws/features/identities/gpg/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1692,7 +1692,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../ref-architecture-aws/features/identities/identities/" class="md-nav__link">
+      <a href="../ref-architecture-aws/features/identities/identities/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1712,7 +1712,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../ref-architecture-aws/features/identities/credentials/" class="md-nav__link">
+      <a href="../ref-architecture-aws/features/identities/credentials/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1732,7 +1732,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../ref-architecture-aws/features/identities/roles/" class="md-nav__link">
+      <a href="../ref-architecture-aws/features/identities/roles/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1760,7 +1760,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../ref-architecture-aws/features/costs/costs/" class="md-nav__link">
+      <a href="../ref-architecture-aws/features/costs/costs/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1828,7 +1828,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../ref-architecture-aws/features/security/overview/" class="md-nav__link">
+      <a href="../ref-architecture-aws/features/security/overview/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1848,7 +1848,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../ref-architecture-aws/features/security/vpn/" class="md-nav__link">
+      <a href="../ref-architecture-aws/features/security/vpn/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1868,7 +1868,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../ref-architecture-aws/features/security/audit-cloudtrail/" class="md-nav__link">
+      <a href="../ref-architecture-aws/features/security/audit-cloudtrail/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1888,7 +1888,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../ref-architecture-aws/features/security/certificates/" class="md-nav__link">
+      <a href="../ref-architecture-aws/features/security/certificates/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1908,7 +1908,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../ref-architecture-aws/features/security/iam-access-analyzer/" class="md-nav__link">
+      <a href="../ref-architecture-aws/features/security/iam-access-analyzer/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1928,7 +1928,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../ref-architecture-aws/features/security/firewall-manager/" class="md-nav__link">
+      <a href="../ref-architecture-aws/features/security/firewall-manager/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2006,7 +2006,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../ref-architecture-aws/features/network/vpc-addressing/" class="md-nav__link">
+      <a href="../ref-architecture-aws/features/network/vpc-addressing/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2026,7 +2026,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../ref-architecture-aws/features/network/vpc-peering/" class="md-nav__link">
+      <a href="../ref-architecture-aws/features/network/vpc-peering/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2046,7 +2046,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../ref-architecture-aws/features/network/vpc-topology/" class="md-nav__link">
+      <a href="../ref-architecture-aws/features/network/vpc-topology/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2066,7 +2066,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../ref-architecture-aws/features/network/vpc-traffic-out/" class="md-nav__link">
+      <a href="../ref-architecture-aws/features/network/vpc-traffic-out/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2086,7 +2086,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../ref-architecture-aws/features/network/dns/" class="md-nav__link">
+      <a href="../ref-architecture-aws/features/network/dns/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2106,7 +2106,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../ref-architecture-aws/features/network/tgw-topology/" class="md-nav__link">
+      <a href="../ref-architecture-aws/features/network/tgw-topology/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2126,7 +2126,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../ref-architecture-aws/features/network/network-nacl/" class="md-nav__link">
+      <a href="../ref-architecture-aws/features/network/network-nacl/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2154,7 +2154,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../ref-architecture-aws/features/secrets/secrets/" class="md-nav__link">
+      <a href="../ref-architecture-aws/features/secrets/secrets/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2222,7 +2222,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../ref-architecture-aws/features/compute/overview/" class="md-nav__link">
+      <a href="../ref-architecture-aws/features/compute/overview/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2242,7 +2242,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../ref-architecture-aws/features/compute/k8s-eks/" class="md-nav__link">
+      <a href="../ref-architecture-aws/features/compute/k8s-eks/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2262,7 +2262,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../ref-architecture-aws/features/compute/k8s-kops/" class="md-nav__link">
+      <a href="../ref-architecture-aws/features/compute/k8s-kops/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2282,7 +2282,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../ref-architecture-aws/features/compute/k8s-service-mesh/" class="md-nav__link">
+      <a href="../ref-architecture-aws/features/compute/k8s-service-mesh/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2302,7 +2302,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../ref-architecture-aws/features/compute/serverless/" class="md-nav__link">
+      <a href="../ref-architecture-aws/features/compute/serverless/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2322,7 +2322,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../ref-architecture-aws/features/compute/tools/" class="md-nav__link">
+      <a href="../ref-architecture-aws/features/compute/tools/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2392,7 +2392,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../ref-architecture-aws/features/database/database/" class="md-nav__link">
+      <a href="../ref-architecture-aws/features/database/database/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2412,7 +2412,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../ref-architecture-aws/features/database/mysql/" class="md-nav__link">
+      <a href="../ref-architecture-aws/features/database/mysql/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2432,7 +2432,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../ref-architecture-aws/features/database/postgres/" class="md-nav__link">
+      <a href="../ref-architecture-aws/features/database/postgres/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2460,7 +2460,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../ref-architecture-aws/features/storage/storage/" class="md-nav__link">
+      <a href="../ref-architecture-aws/features/storage/storage/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2480,7 +2480,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../ref-architecture-aws/features/cdn/cdn/" class="md-nav__link">
+      <a href="../ref-architecture-aws/features/cdn/cdn/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2542,7 +2542,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../ref-architecture-aws/features/ci-cd/argocd/" class="md-nav__link">
+      <a href="../ref-architecture-aws/features/ci-cd/argocd/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2562,7 +2562,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../ref-architecture-aws/features/ci-cd/jenkins-argocd/" class="md-nav__link">
+      <a href="../ref-architecture-aws/features/ci-cd/jenkins-argocd/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2582,7 +2582,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../ref-architecture-aws/features/ci-cd/jenkins-spinnaker/" class="md-nav__link">
+      <a href="../ref-architecture-aws/features/ci-cd/jenkins-spinnaker/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2656,7 +2656,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../ref-architecture-aws/features/monitoring/monitoring/" class="md-nav__link">
+      <a href="../ref-architecture-aws/features/monitoring/monitoring/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2676,7 +2676,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../ref-architecture-aws/features/monitoring/metrics/" class="md-nav__link">
+      <a href="../ref-architecture-aws/features/monitoring/metrics/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2696,7 +2696,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../ref-architecture-aws/features/monitoring/logs/" class="md-nav__link">
+      <a href="../ref-architecture-aws/features/monitoring/logs/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2716,7 +2716,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../ref-architecture-aws/features/monitoring/tracing/" class="md-nav__link">
+      <a href="../ref-architecture-aws/features/monitoring/tracing/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2736,7 +2736,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../ref-architecture-aws/features/monitoring/apm/" class="md-nav__link">
+      <a href="../ref-architecture-aws/features/monitoring/apm/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2806,7 +2806,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../ref-architecture-aws/features/reliability/backups/" class="md-nav__link">
+      <a href="../ref-architecture-aws/features/reliability/backups/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2826,7 +2826,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../ref-architecture-aws/features/reliability/dr/" class="md-nav__link">
+      <a href="../ref-architecture-aws/features/reliability/dr/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2846,7 +2846,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../ref-architecture-aws/features/reliability/high-availability/" class="md-nav__link">
+      <a href="../ref-architecture-aws/features/reliability/high-availability/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2882,7 +2882,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../ref-architecture-aws/references/" class="md-nav__link">
+      <a href="../ref-architecture-aws/references/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2956,7 +2956,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../ref-architecture-eks/overview/" class="md-nav__link">
+      <a href="../ref-architecture-eks/overview/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2976,7 +2976,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../ref-architecture-eks/credentials/" class="md-nav__link">
+      <a href="../ref-architecture-eks/credentials/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2996,7 +2996,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../ref-architecture-eks/vpc/" class="md-nav__link">
+      <a href="../ref-architecture-eks/vpc/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3016,7 +3016,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../ref-architecture-eks/components/" class="md-nav__link">
+      <a href="../ref-architecture-eks/components/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3036,7 +3036,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../ref-architecture-eks/cluster-upgrade/" class="md-nav__link">
+      <a href="../ref-architecture-eks/cluster-upgrade/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3104,7 +3104,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../ref-architecture-ansible/overview/" class="md-nav__link">
+      <a href="../ref-architecture-ansible/overview/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3124,7 +3124,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../ref-architecture-ansible/workflow/" class="md-nav__link">
+      <a href="../ref-architecture-ansible/workflow/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3204,7 +3204,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../leverage-cli/overview/" class="md-nav__link">
+      <a href="../leverage-cli/overview/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3224,7 +3224,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../leverage-cli/installation/" class="md-nav__link">
+      <a href="../leverage-cli/installation/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3244,7 +3244,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../leverage-cli/basic-features/" class="md-nav__link">
+      <a href="../leverage-cli/basic-features/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3316,7 +3316,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../leverage-cli/reference/project/" class="md-nav__link">
+      <a href="../leverage-cli/reference/project/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3336,7 +3336,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../leverage-cli/reference/credentials/" class="md-nav__link">
+      <a href="../leverage-cli/reference/credentials/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3356,7 +3356,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../leverage-cli/reference/aws/" class="md-nav__link">
+      <a href="../leverage-cli/reference/aws/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3416,7 +3416,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../leverage-cli/reference/terraform/" class="md-nav__link">
+      <a href="../leverage-cli/reference/terraform/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3436,7 +3436,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../leverage-cli/reference/terraform/layers/" class="md-nav__link">
+      <a href="../leverage-cli/reference/terraform/layers/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3464,7 +3464,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../leverage-cli/reference/tfautomv/" class="md-nav__link">
+      <a href="../leverage-cli/reference/tfautomv/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3484,7 +3484,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../leverage-cli/reference/run/" class="md-nav__link">
+      <a href="../leverage-cli/reference/run/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3504,7 +3504,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../leverage-cli/reference/kubectl/" class="md-nav__link">
+      <a href="../leverage-cli/reference/kubectl/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3524,7 +3524,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../leverage-cli/reference/shell/" class="md-nav__link">
+      <a href="../leverage-cli/reference/shell/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3594,7 +3594,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../leverage-cli/extending-leverage/how-to-extend/" class="md-nav__link">
+      <a href="../leverage-cli/extending-leverage/how-to-extend/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3614,7 +3614,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../leverage-cli/extending-leverage/build.env/" class="md-nav__link">
+      <a href="../leverage-cli/extending-leverage/build.env/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3634,7 +3634,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../leverage-cli/extending-leverage/tasks/" class="md-nav__link">
+      <a href="../leverage-cli/extending-leverage/tasks/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3662,7 +3662,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../leverage-cli/private-repositories/" class="md-nav__link">
+      <a href="../leverage-cli/private-repositories/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3682,7 +3682,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../leverage-cli/shell/" class="md-nav__link">
+      <a href="../leverage-cli/shell/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3702,7 +3702,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../leverage-cli/history/" class="md-nav__link">
+      <a href="../leverage-cli/history/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3774,7 +3774,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../infra-as-code-library/overview/" class="md-nav__link">
+      <a href="../infra-as-code-library/overview/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3794,7 +3794,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../infra-as-code-library/infra-as-code-library-forks/" class="md-nav__link">
+      <a href="../infra-as-code-library/infra-as-code-library-forks/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3814,7 +3814,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../infra-as-code-library/infra-as-code-library-specs/" class="md-nav__link">
+      <a href="../infra-as-code-library/infra-as-code-library-specs/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3834,7 +3834,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../infra-as-code-library/modules-library-by-technology/" class="md-nav__link">
+      <a href="../infra-as-code-library/modules-library-by-technology/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3885,7 +3885,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../troubleshooting/" class="md-nav__link ">
+            <a href="../troubleshooting/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -3916,7 +3916,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../troubleshooting/general/" class="md-nav__link">
+      <a href="../troubleshooting/general/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3936,7 +3936,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../troubleshooting/credentials/" class="md-nav__link">
+      <a href="../troubleshooting/credentials/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3978,6 +3978,14 @@
       
         
       
+        
+      
+        
+      
+        
+      
+        
+      
     
     
     <li class="md-nav__item md-nav__item--active md-nav__item--nested">
@@ -3991,17 +3999,17 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../" class="md-nav__link ">
+            <a href="./" class="md-nav__link md-nav__link--active">
               
   
   <span class="md-ellipsis">
-    Playbooks
+    Cookbooks
   </span>
   
 
             </a>
             
-              <label class="md-nav__link " for="__nav_4_8">
+              <label class="md-nav__link md-nav__link--active" for="__nav_4_8">
                 <span class="md-nav__icon md-icon"></span>
               </label>
             
@@ -4010,7 +4018,7 @@
         <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_8_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_4_8">
             <span class="md-nav__icon md-icon"></span>
-            Playbooks
+            Cookbooks
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
@@ -4022,7 +4030,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../VPC-with-no-LandingZone/" class="md-nav__link">
+      <a href="VPC-with-no-LandingZone/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -4040,29 +4048,9 @@
                 
   
   
-    
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  <span class="md-ellipsis">
-    Start/Stop EC2/RDS instances using schedule or manual endpoint
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="schedule-start-stop-ec2/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -4071,81 +4059,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#what" class="md-nav__link">
-    What?
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#why" class="md-nav__link">
-    Why?
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#how" class="md-nav__link">
-    How?
-  </a>
-  
-    <nav class="md-nav" aria-label="How?">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#pre-requisites" class="md-nav__link">
-    Pre-requisites
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#the-scheduler-layer" class="md-nav__link">
-    The scheduler layer
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#set-the-tags" class="md-nav__link">
-    Set the tags
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#set-the-schedule" class="md-nav__link">
-    Set the schedule
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -4157,11 +4070,91 @@
   
   
     <li class="md-nav__item">
-      <a href="../VPC-subnet-calculator/" class="md-nav__link">
+      <a href="VPC-subnet-calculator/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
     Calculate VPC cubnet CIDRs
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="k8s/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Kubernetes in different stages
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="sops-kms/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Encrypting/decrypting files with SOPS+KMS
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="enable-nat-gateway/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Enable/Disable nat gateway
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="argocd-external-cluster/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    ArgoCD add external cluster
   </span>
   
 
@@ -4227,7 +4220,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../../work-with-us/" class="md-nav__link ">
+            <a href="../../work-with-us/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -4258,7 +4251,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../work-with-us/support/" class="md-nav__link">
+      <a href="../../work-with-us/support/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -4318,7 +4311,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../work-with-us/releases/releases-and-versions/" class="md-nav__link">
+      <a href="../../work-with-us/releases/releases-and-versions/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -4338,7 +4331,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../work-with-us/releases/versions-compatibility-matrix/" class="md-nav__link">
+      <a href="../../work-with-us/releases/versions-compatibility-matrix/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -4366,7 +4359,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../work-with-us/leverage-vs-competition/" class="md-nav__link">
+      <a href="../../work-with-us/leverage-vs-competition/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -4386,7 +4379,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../work-with-us/contribute/" class="md-nav__link">
+      <a href="../../work-with-us/contribute/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -4494,7 +4487,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../work-with-us/roadmap/ref-arch/overview/" class="md-nav__link">
+      <a href="../../work-with-us/roadmap/ref-arch/overview/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -4514,7 +4507,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../work-with-us/roadmap/ref-arch/operational-excellence/" class="md-nav__link">
+      <a href="../../work-with-us/roadmap/ref-arch/operational-excellence/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -4534,7 +4527,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../work-with-us/roadmap/ref-arch/reliability-performance/" class="md-nav__link">
+      <a href="../../work-with-us/roadmap/ref-arch/reliability-performance/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -4554,7 +4547,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../work-with-us/roadmap/ref-arch/security/" class="md-nav__link">
+      <a href="../../work-with-us/roadmap/ref-arch/security/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -4574,7 +4567,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../work-with-us/roadmap/ref-arch/cost-optimization/" class="md-nav__link">
+      <a href="../../work-with-us/roadmap/ref-arch/cost-optimization/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -4594,7 +4587,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../work-with-us/roadmap/ref-arch/demo-apps/" class="md-nav__link">
+      <a href="../../work-with-us/roadmap/ref-arch/demo-apps/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -4622,7 +4615,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../work-with-us/roadmap/leverage-cli/overview/" class="md-nav__link">
+      <a href="../../work-with-us/roadmap/leverage-cli/overview/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -4650,7 +4643,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../work-with-us/careers/" class="md-nav__link">
+      <a href="../../work-with-us/careers/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -4670,7 +4663,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../work-with-us/faqs/" class="md-nav__link">
+      <a href="../../work-with-us/faqs/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -4731,69 +4724,6 @@
     
   
   
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#what" class="md-nav__link">
-    What?
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#why" class="md-nav__link">
-    Why?
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#how" class="md-nav__link">
-    How?
-  </a>
-  
-    <nav class="md-nav" aria-label="How?">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#pre-requisites" class="md-nav__link">
-    Pre-requisites
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#the-scheduler-layer" class="md-nav__link">
-    The scheduler layer
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#set-the-tags" class="md-nav__link">
-    Set the tags
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#set-the-schedule" class="md-nav__link">
-    Set the schedule
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-    </ul>
-  
 </nav>
                   </div>
                 </div>
@@ -4807,7 +4737,7 @@
                   
 
   
-    <a href="https://github.com/binbashar/le-ref-architecture-doc/edit/master/docs/user-guide/playbooks/schedule-start-stop-ec2.md" title="Edit this page" class="md-content__button md-icon">
+    <a href="https://github.com/binbashar/le-ref-architecture-doc/edit/master/docs/user-guide/cookbooks/index.md" title="Edit this page" class="md-content__button md-icon">
       
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4v-2m10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1 2.1 2.1Z"/></svg>
     </a>
@@ -4815,48 +4745,16 @@
   
 
 
-<h1 id="startstop-ec2rds-instances-using-schedule-or-manual-endpoint">Start/Stop EC2/RDS instances using schedule or manual endpoint<a class="headerlink" href="#startstop-ec2rds-instances-using-schedule-or-manual-endpoint" title="Permanent link"> ¶</a></h1>
-<h2 id="what">What?<a class="headerlink" href="#what" title="Permanent link"> ¶</a></h2>
-<p>You have EC2 instances (or RDS) that are not being used all the time... so why to keep them up and running and billing?
-Here we'll create a simple schedule to turn them off/on. (also with an HTTP endpoint to do it so manually)</p>
-<h2 id="why">Why?<a class="headerlink" href="#why" title="Permanent link"> ¶</a></h2>
-<p>To keep your billing under control!</p>
-<h2 id="how">How?<a class="headerlink" href="#how" title="Permanent link"> ¶</a></h2>
-<h3 id="pre-requisites">Pre-requisites<a class="headerlink" href="#pre-requisites" title="Permanent link"> ¶</a></h3>
-<p>All the instances you want to start stop have to be tagged accordingly. For this example we'll use these tags:</p>
-<div class="highlight"><pre><span></span><code><span class="w">    </span><span class="l l-Scalar l-Scalar-Plain">ScheduleStopDaily   = true</span>
-<span class="w">    </span><span class="l l-Scalar l-Scalar-Plain">ScheduleStartManual = true</span>
-</code></pre></div>
-<h3 id="the-scheduler-layer">The scheduler layer<a class="headerlink" href="#the-scheduler-layer" title="Permanent link"> ¶</a></h3>
-<p>In your  <a href="https://leverage.binbash.co/"><strong>binbash Leverage</strong></a>  infra repository, under your desired account and region, copy <a href="https://github.com/binbashar/le-tf-infra-aws/tree/master/shared/us-east-1/tools-cloud-scheduler-stop-start">this layer</a>.</p>
-<p>You can download a directory from a git repository using <a href="https://addons.mozilla.org/en-US/firefox/addon/gitzip/">this Firefox addon</a> or any method you want.</p>
-<p>Remember, if the <code>common-variables.tf</code> file delete the file and soft-link it to the homonymous file in the root <code>config</code> dir: e.g. <code>common-variables.tf -&gt; ../../../config/common-variables.tf</code></p>
-<h3 id="set-the-tags">Set the tags<a class="headerlink" href="#set-the-tags" title="Permanent link"> ¶</a></h3>
-<p>In the <code>tools-cloud-scheduler-stop-start</code> layer edit the <code>main.tf</code> file.
-There are two resources:
-- <code>schedule_ec2_stop_daily_midnight</code> to stop the instances
-- <code>schedule_ec2_start_daily_morning</code> to start the instances</p>
-<p>You can change these names. If you do so remember to change all the references to them.</p>
-<p>In the <code>resource_tags</code> element set the right tags. E.g. this:
-<div class="highlight"><pre><span></span><code><span class="w">  </span><span class="l l-Scalar l-Scalar-Plain">resources_tag = {</span>
-<span class="w">    </span><span class="l l-Scalar l-Scalar-Plain">key   = &quot;ScheduleStopDaily&quot;</span>
-<span class="w">    </span><span class="l l-Scalar l-Scalar-Plain">value = &quot;true&quot;</span>
-<span class="w">  </span><span class="l l-Scalar l-Scalar-Plain">}</span>
-</code></pre></div>
-in the <code>schedule_ec2_stop_daily_midnight</code> resource means this resource will stop instances with tag: <code>ScheduleStopDaily=true</code>.</p>
-<h3 id="set-the-schedule">Set the schedule<a class="headerlink" href="#set-the-schedule" title="Permanent link"> ¶</a></h3>
-<p>Note this line:
-<div class="highlight"><pre><span></span><code><span class="w">  </span><span class="l l-Scalar l-Scalar-Plain">cloudwatch_schedule_expression = &quot;cron(0 23 * * ? *)&quot;</span>
-</code></pre></div></p>
-<p>Here you can set the schedule in a cron-like fashion.</p>
-<p>If it is <code>none</code> it won't create a schedule (e.g. if you only need http endpoint):
-<div class="highlight"><pre><span></span><code><span class="w">  </span><span class="l l-Scalar l-Scalar-Plain">cloudwatch_schedule_expression = &quot;none&quot;</span>
-</code></pre></div></p>
-<p>Then if you set this:
-<div class="highlight"><pre><span></span><code><span class="w">  </span><span class="l l-Scalar l-Scalar-Plain">http_trigger = true</span>
-</code></pre></div></p>
-<p>A HTTP endpoint will be created to trigger the corresponding action.</p>
-<p>If an endpoint was created then in the outputs the URL will be shown.</p>
+<h1 id="cookbooks">Cookbooks<a class="headerlink" href="#cookbooks" title="Permanent link"> ¶</a></h1>
+<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> <a href="VPC-with-no-LandingZone/">VPC with no Landing Zone</a></li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> <a href="schedule-start-stop-ec2/">Start/Stop EC2/RDS instances using schedule or manual endpoint</a></li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> <a href="VPC-subnet-calculator/">Calculate VPC subnet CIDRs</a></li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> <a href="k8s/">Kubernetes in different stages</a></li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> <a href="sops-kms/">Encrypting/decrypting files with SOPS+KMS</a></li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> <a href="enable-nat-gateway/">Enable/Disable nat gateway</a></li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> <a href="argocd-external-cluster/">ArgoCD add external cluster</a></li>
+</ul>
 
 
   
@@ -4886,7 +4784,7 @@ in the <code>schedule_ec2_stop_daily_midnight</code> resource means this resourc
       <nav class="md-footer__inner md-grid" aria-label="Footer" >
         
           
-          <a href="../VPC-with-no-LandingZone/" class="md-footer__link md-footer__link--prev" aria-label="Previous: VPC with no LandingZone" rel="prev">
+          <a href="../troubleshooting/credentials/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Credentials" rel="prev">
             <div class="md-footer__button md-icon">
               
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
@@ -4896,20 +4794,20 @@ in the <code>schedule_ec2_stop_daily_midnight</code> resource means this resourc
                 Previous
               </span>
               <div class="md-ellipsis">
-                VPC with no LandingZone
+                Credentials
               </div>
             </div>
           </a>
         
         
           
-          <a href="../VPC-subnet-calculator/" class="md-footer__link md-footer__link--next" aria-label="Next: Calculate VPC cubnet CIDRs" rel="next">
+          <a href="VPC-with-no-LandingZone/" class="md-footer__link md-footer__link--next" aria-label="Next: VPC with no LandingZone" rel="next">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 Next
               </span>
               <div class="md-ellipsis">
-                Calculate VPC cubnet CIDRs
+                VPC with no LandingZone
               </div>
             </div>
             <div class="md-footer__button md-icon">
@@ -5038,10 +4936,10 @@ in the <code>schedule_ec2_stop_daily_midnight</code> resource means this resourc
       <div class="md-dialog__inner md-typeset"></div>
     </div>
     
-    <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.tabs", "navigation.instant", "navigation.tracking", "navigation.indexes", "navigation.top", "navigation.footer", "header.autohide", "content.action.edit", "content.code.annotate"], "search": "../../../assets/javascripts/workers/search.dfff1995.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs", "navigation.instant", "navigation.tracking", "navigation.indexes", "navigation.top", "navigation.footer", "header.autohide", "content.action.edit", "content.code.annotate"], "search": "../../assets/javascripts/workers/search.dfff1995.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
-      <script src="../../../assets/javascripts/bundle.dff1b7c8.min.js"></script>
+      <script src="../../assets/javascripts/bundle.dff1b7c8.min.js"></script>
       
     
   </body>

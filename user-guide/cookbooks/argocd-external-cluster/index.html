@@ -1,0 +1,5794 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="binbash Leverage Reference Architecture Documentation">
+      
+      
+        <meta name="author" content="binbash">
+      
+      
+        <link rel="canonical" href="https://leverage.binbash.co/user-guide/cookbooks/argocd-external-cluster/">
+      
+      
+        <link rel="prev" href="../enable-nat-gateway/">
+      
+      
+        <link rel="next" href="../../../work-with-us/">
+      
+      
+      <link rel="icon" href="../../../assets/images/logos/favicon.ico">
+      <meta name="generator" content="mkdocs-1.5.2, mkdocs-material-9.2.8">
+    
+    
+      
+        <title>ArgoCD add external cluster - binbash Leverage™</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.046329b4.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.85d0ee34.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+  
+
+
+  
+  
+
+<script id="__analytics">function __md_analytics(){function n(){dataLayer.push(arguments)}window.dataLayer=window.dataLayer||[],n("js",new Date),n("config","G-59Q4SYRB5W"),document.addEventListener("DOMContentLoaded",function(){document.forms.search&&document.forms.search.query.addEventListener("blur",function(){this.value&&n("event","search",{search_term:this.value})}),document$.subscribe(function(){var a=document.forms.feedback;if(void 0!==a)for(var e of a.querySelectorAll("[type=submit]"))e.addEventListener("click",function(e){e.preventDefault();var t=document.location.pathname,e=this.getAttribute("data-md-value");n("event","feedback",{page:t,data:e}),a.firstElementChild.disabled=!0;e=a.querySelector(".md-feedback__note [data-md-value='"+e+"']");e&&(e.hidden=!1)}),a.hidden=!1}),location$.subscribe(function(e){n("config","G-59Q4SYRB5W",{page_path:e.pathname})})});var e=document.createElement("script");e.async=!0,e.src="https://www.googletagmanager.com/gtag/js?id=G-59Q4SYRB5W",document.getElementById("__analytics").insertAdjacentElement("afterEnd",e)}</script>
+  
+    <script>"undefined"!=typeof __md_analytics&&__md_analytics()</script>
+  
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="deep-purple">
+  
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#how-to-add-an-external-cluster-to-argocd-to-manage-it" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../.." title="binbash Leverage™" class="md-header__button md-logo" aria-label="binbash Leverage™" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m19 2-5 4.5v11l5-4.5V2M6.5 5C4.55 5 2.45 5.4 1 6.5v14.66c0 .25.25.5.5.5.1 0 .15-.07.25-.07 1.35-.65 3.3-1.09 4.75-1.09 1.95 0 4.05.4 5.5 1.5 1.35-.85 3.8-1.5 5.5-1.5 1.65 0 3.35.31 4.75 1.06.1.05.15.03.25.03.25 0 .5-.25.5-.5V6.5c-.6-.45-1.25-.75-2-1V19c-1.1-.35-2.3-.5-3.5-.5-1.7 0-4.15.65-5.5 1.5V6.5C10.55 5.4 8.45 5 6.5 5Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            binbash Leverage™
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              ArgoCD add external cluster
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="deep-purple"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_2" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 6H7c-3.31 0-6 2.69-6 6s2.69 6 6 6h10c3.31 0 6-2.69 6-6s-2.69-6-6-6zm0 10H7c-2.21 0-4-1.79-4-4s1.79-4 4-4h10c2.21 0 4 1.79 4 4s-1.79 4-4 4zM7 9c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="teal"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_2">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 7H7a5 5 0 0 0-5 5 5 5 0 0 0 5 5h10a5 5 0 0 0 5-5 5 5 0 0 0-5-5m0 8a3 3 0 0 1-3-3 3 3 0 0 1 3-3 3 3 0 0 1 3 3 3 3 0 0 1-3 3Z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <div class="md-header__option">
+  <div class="md-select">
+    
+    <button class="md-header__button md-icon" aria-label="Select language">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m12.87 15.07-2.54-2.51.03-.03A17.52 17.52 0 0 0 14.07 6H17V4h-7V2H8v2H1v2h11.17C11.5 7.92 10.44 9.75 9 11.35 8.07 10.32 7.3 9.19 6.69 8h-2c.73 1.63 1.73 3.17 2.98 4.56l-5.09 5.02L4 19l5-5 3.11 3.11.76-2.04M18.5 10h-2L12 22h2l1.12-3h4.75L21 22h2l-4.5-12m-2.62 7 1.62-4.33L19.12 17h-3.24Z"/></svg>
+    </button>
+    <div class="md-select__inner">
+      <ul class="md-select__list">
+        
+          <li class="md-select__item">
+            <a href="/" hreflang="en" class="md-select__link">
+              English
+            </a>
+          </li>
+        
+          <li class="md-select__item">
+            <a href="/es" hreflang="es" class="md-select__link">
+              Spanish
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</div>
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/binbashar/le-ref-architecture-doc" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    binbashar/le-ref-architecture-doc
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../.." class="md-tabs__link">
+          
+  
+    
+  
+  Home
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../try-leverage/" class="md-tabs__link">
+          
+  
+    
+  
+  Try Leverage
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../concepts/" class="md-tabs__link">
+          
+  
+    
+  
+  Concepts
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../../" class="md-tabs__link">
+          
+  
+    
+  
+  User Guide
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../work-with-us/" class="md-tabs__link">
+          
+  
+    
+  
+  Work with us
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="binbash Leverage™" class="md-nav__button md-logo" aria-label="binbash Leverage™" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m19 2-5 4.5v11l5-4.5V2M6.5 5C4.55 5 2.45 5.4 1 6.5v14.66c0 .25.25.5.5.5.1 0 .15-.07.25-.07 1.35-.65 3.3-1.09 4.75-1.09 1.95 0 4.05.4 5.5 1.5 1.35-.85 3.8-1.5 5.5-1.5 1.65 0 3.35.31 4.75 1.06.1.05.15.03.25.03.25 0 .5-.25.5-.5V6.5c-.6-.45-1.25-.75-2-1V19c-1.1-.35-2.3-.5-3.5-.5-1.7 0-4.15.65-5.5 1.5V6.5C10.55 5.4 8.45 5 6.5 5Z"/></svg>
+
+    </a>
+    binbash Leverage™
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/binbashar/le-ref-architecture-doc" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    binbashar/le-ref-architecture-doc
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../.." class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Home
+  </span>
+  
+
+            </a>
+            
+              <label class="md-nav__link " for="__nav_1">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_1">
+            <span class="md-nav__icon md-icon"></span>
+            Home
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../concepts/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Welcome
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../try-leverage/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    First steps
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../how-it-works/ref-architecture/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    How it works
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    User guide
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../work-with-us/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Work with us
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../license/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    License
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../try-leverage/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Try Leverage
+  </span>
+  
+
+            </a>
+            
+              <label class="md-nav__link " for="__nav_2">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            Try Leverage
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../try-leverage/aws-account-setup/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Creating your AWS Management account
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../try-leverage/local-setup/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Install Leverage CLI
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../try-leverage/leverage-project-setup/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Create a Leverage project
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../try-leverage/management-account/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Configure the Management account
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../try-leverage/enabling-sso/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Enable SSO
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../try-leverage/security-and-shared-accounts/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Configure the Security and Shared accounts
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../try-leverage/post-deployment/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Post-deployment
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../try-leverage/add-aws-accounts/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Add more AWS Accounts
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../concepts/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Concepts
+  </span>
+  
+
+            </a>
+            
+              <label class="md-nav__link " for="__nav_3">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            Concepts
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../concepts/what-is-leverage/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    What is Leverage?
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../concepts/why-leverage/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Why Leverage?
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../concepts/what-leverage-can-do-for-you/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    What can Leverange do for you?
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../concepts/our-tech-stack/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Our Tech Stack
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../concepts/next-steps/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Next Steps
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    User Guide
+  </span>
+  
+
+            </a>
+            
+              <label class="md-nav__link " for="__nav_4">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            User Guide
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_2" >
+        
+          <label class="md-nav__link" for="__nav_4_2" id="__nav_4_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Reference Architecture for AWS
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_2">
+            <span class="md-nav__icon md-icon"></span>
+            Reference Architecture for AWS
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ref-architecture-aws/overview/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Overview
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ref-architecture-aws/dir-structure/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Project Structure
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ref-architecture-aws/configuration/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Configuration
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ref-architecture-aws/credentials/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Credentials
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ref-architecture-aws/workflow/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Workflow
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ref-architecture-aws/tf-state/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Terraform State
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_2_7" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../ref-architecture-aws/features/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Features
+  </span>
+  
+
+            </a>
+            
+              <label class="md-nav__link " for="__nav_4_2_7">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_4_2_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_2_7">
+            <span class="md-nav__icon md-icon"></span>
+            Features
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_2_7_2" >
+        
+          <label class="md-nav__link" for="__nav_4_2_7_2" id="__nav_4_2_7_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    AWS Organizations
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="4" aria-labelledby="__nav_4_2_7_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_2_7_2">
+            <span class="md-nav__icon md-icon"></span>
+            AWS Organizations
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ref-architecture-aws/features/organization/overview/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Overview
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ref-architecture-aws/features/organization/accounts/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Managing Accounts
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ref-architecture-aws/features/organization/configuration/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Configuration
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ref-architecture-aws/features/organization/billing/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Billing
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ref-architecture-aws/features/organization/legacy-accounts/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Legacy Accounts
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_2_7_3" >
+        
+          <label class="md-nav__link" for="__nav_4_2_7_3" id="__nav_4_2_7_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    SSO
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="4" aria-labelledby="__nav_4_2_7_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_2_7_3">
+            <span class="md-nav__icon md-icon"></span>
+            SSO
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ref-architecture-aws/features/sso/overview/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Overview
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ref-architecture-aws/features/sso/configuration/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Configuration
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ref-architecture-aws/features/sso/managing-users/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Onboarding Users
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ref-architecture-aws/features/ssm/ssm/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    SSM
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_2_7_5" >
+        
+          <label class="md-nav__link" for="__nav_4_2_7_5" id="__nav_4_2_7_5_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Identities
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="4" aria-labelledby="__nav_4_2_7_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_2_7_5">
+            <span class="md-nav__icon md-icon"></span>
+            Identities
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ref-architecture-aws/features/identities/overview/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Overview
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ref-architecture-aws/features/identities/gpg/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    GPG Keys
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ref-architecture-aws/features/identities/identities/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Identities
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ref-architecture-aws/features/identities/credentials/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Credentials
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ref-architecture-aws/features/identities/roles/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    IAM Roles
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ref-architecture-aws/features/costs/costs/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Costs
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_2_7_7" >
+        
+          <label class="md-nav__link" for="__nav_4_2_7_7" id="__nav_4_2_7_7_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Security
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="4" aria-labelledby="__nav_4_2_7_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_2_7_7">
+            <span class="md-nav__icon md-icon"></span>
+            Security
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ref-architecture-aws/features/security/overview/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Overview
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ref-architecture-aws/features/security/vpn/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    VPN
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ref-architecture-aws/features/security/audit-cloudtrail/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    CloudTrail
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ref-architecture-aws/features/security/certificates/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Certificates
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ref-architecture-aws/features/security/iam-access-analyzer/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    IAM Access Anayzer
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ref-architecture-aws/features/security/firewall-manager/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Firewall Manager
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_2_7_8" >
+        
+          <label class="md-nav__link" for="__nav_4_2_7_8" id="__nav_4_2_7_8_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Network
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="4" aria-labelledby="__nav_4_2_7_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_2_7_8">
+            <span class="md-nav__icon md-icon"></span>
+            Network
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ref-architecture-aws/features/network/vpc-addressing/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    VPC
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ref-architecture-aws/features/network/vpc-peering/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    VPC Peering
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ref-architecture-aws/features/network/vpc-topology/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    VPC Topology
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ref-architecture-aws/features/network/vpc-traffic-out/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    VPC Traffic Out
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ref-architecture-aws/features/network/dns/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    DNS
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ref-architecture-aws/features/network/tgw-topology/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Transit Gateway
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ref-architecture-aws/features/network/network-nacl/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Network ACLs (NACLs)
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ref-architecture-aws/features/secrets/secrets/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Secrets
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_2_7_10" >
+        
+          <label class="md-nav__link" for="__nav_4_2_7_10" id="__nav_4_2_7_10_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Compute
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="4" aria-labelledby="__nav_4_2_7_10_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_2_7_10">
+            <span class="md-nav__icon md-icon"></span>
+            Compute
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ref-architecture-aws/features/compute/overview/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Overview
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ref-architecture-aws/features/compute/k8s-eks/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    K8s EKS
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ref-architecture-aws/features/compute/k8s-kops/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    K8s Kops
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ref-architecture-aws/features/compute/k8s-service-mesh/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    K8s Service Mesh
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ref-architecture-aws/features/compute/serverless/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Serverless
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ref-architecture-aws/features/compute/tools/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Tools
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_2_7_11" >
+        
+          <label class="md-nav__link" for="__nav_4_2_7_11" id="__nav_4_2_7_11_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Database
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="4" aria-labelledby="__nav_4_2_7_11_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_2_7_11">
+            <span class="md-nav__icon md-icon"></span>
+            Database
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ref-architecture-aws/features/database/database/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Databases
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ref-architecture-aws/features/database/mysql/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    MySQL
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ref-architecture-aws/features/database/postgres/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    PostgresSQL
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ref-architecture-aws/features/storage/storage/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Storage
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ref-architecture-aws/features/cdn/cdn/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    CDN
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_2_7_14" >
+        
+          <label class="md-nav__link" for="__nav_4_2_7_14" id="__nav_4_2_7_14_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    CI/CD
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="4" aria-labelledby="__nav_4_2_7_14_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_2_7_14">
+            <span class="md-nav__icon md-icon"></span>
+            CI/CD
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ref-architecture-aws/features/ci-cd/argocd/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    ArgoCD
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ref-architecture-aws/features/ci-cd/jenkins-argocd/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Jenkins & ArgoCD
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ref-architecture-aws/features/ci-cd/jenkins-spinnaker/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Jenkins & Spinnaker
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_2_7_15" >
+        
+          <label class="md-nav__link" for="__nav_4_2_7_15" id="__nav_4_2_7_15_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Monitoring
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="4" aria-labelledby="__nav_4_2_7_15_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_2_7_15">
+            <span class="md-nav__icon md-icon"></span>
+            Monitoring
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ref-architecture-aws/features/monitoring/monitoring/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Monitoring
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ref-architecture-aws/features/monitoring/metrics/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Metrics
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ref-architecture-aws/features/monitoring/logs/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Logs
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ref-architecture-aws/features/monitoring/tracing/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Tracing
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ref-architecture-aws/features/monitoring/apm/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    APM
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_2_7_16" >
+        
+          <label class="md-nav__link" for="__nav_4_2_7_16" id="__nav_4_2_7_16_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Reliability
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="4" aria-labelledby="__nav_4_2_7_16_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_2_7_16">
+            <span class="md-nav__icon md-icon"></span>
+            Reliability
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ref-architecture-aws/features/reliability/backups/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Backups
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ref-architecture-aws/features/reliability/dr/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Disaster Recovery
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ref-architecture-aws/features/reliability/high-availability/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    High Availability
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ref-architecture-aws/references/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    References
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_3" >
+        
+          <label class="md-nav__link" for="__nav_4_3" id="__nav_4_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Reference Architecture for EKS
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_3">
+            <span class="md-nav__icon md-icon"></span>
+            Reference Architecture for EKS
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ref-architecture-eks/overview/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Overview
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ref-architecture-eks/credentials/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Credentials
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ref-architecture-eks/vpc/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    VPC
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ref-architecture-eks/components/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Components
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ref-architecture-eks/cluster-upgrade/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Upgrading EKS
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_4" >
+        
+          <label class="md-nav__link" for="__nav_4_4" id="__nav_4_4_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Reference Architecture for Ansible
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_4">
+            <span class="md-nav__icon md-icon"></span>
+            Reference Architecture for Ansible
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ref-architecture-ansible/overview/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Overview
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ref-architecture-ansible/workflow/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Workflow
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_5" >
+        
+          <label class="md-nav__link" for="__nav_4_5" id="__nav_4_5_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Leverage CLI
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_5">
+            <span class="md-nav__icon md-icon"></span>
+            Leverage CLI
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../leverage-cli/overview/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Overview
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../leverage-cli/installation/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Installation
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../leverage-cli/basic-features/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Basic features
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_5_4" >
+        
+          <label class="md-nav__link" for="__nav_4_5_4" id="__nav_4_5_4_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Commands Reference
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_4_5_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_5_4">
+            <span class="md-nav__icon md-icon"></span>
+            Commands Reference
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../leverage-cli/reference/project/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    project
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../leverage-cli/reference/credentials/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    credentials
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../leverage-cli/reference/aws/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    aws
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_5_4_4" >
+        
+          <label class="md-nav__link" for="__nav_4_5_4_4" id="__nav_4_5_4_4_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    terraform
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="4" aria-labelledby="__nav_4_5_4_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_5_4_4">
+            <span class="md-nav__icon md-icon"></span>
+            terraform
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../leverage-cli/reference/terraform/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    commands
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../leverage-cli/reference/terraform/layers/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    layers
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../leverage-cli/reference/tfautomv/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    tfautomv
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../leverage-cli/reference/run/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    run
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../leverage-cli/reference/kubectl/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    kubectl
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../leverage-cli/reference/shell/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    shell
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_5_5" >
+        
+          <label class="md-nav__link" for="__nav_4_5_5" id="__nav_4_5_5_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Extending Leverage
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_4_5_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_5_5">
+            <span class="md-nav__icon md-icon"></span>
+            Extending Leverage
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../leverage-cli/extending-leverage/how-to-extend/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    How to extend Leverage
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../leverage-cli/extending-leverage/build.env/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    The build.env file
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../leverage-cli/extending-leverage/tasks/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Custom tasks
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../leverage-cli/private-repositories/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Private Repositories
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../leverage-cli/shell/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Getting shell access
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../leverage-cli/history/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    A bit of history
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_6" >
+        
+          <label class="md-nav__link" for="__nav_4_6" id="__nav_4_6_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Infra-as-Code Library
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_6">
+            <span class="md-nav__icon md-icon"></span>
+            Infra-as-Code Library
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../infra-as-code-library/overview/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Overview
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../infra-as-code-library/infra-as-code-library-forks/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Forks workflow
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../infra-as-code-library/infra-as-code-library-specs/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Specifications
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../infra-as-code-library/modules-library-by-technology/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Modules by Technology
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_7" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../troubleshooting/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Troubleshooting
+  </span>
+  
+
+            </a>
+            
+              <label class="md-nav__link " for="__nav_4_7">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_7">
+            <span class="md-nav__icon md-icon"></span>
+            Troubleshooting
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../troubleshooting/general/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    General
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../troubleshooting/credentials/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Credentials
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_8" checked>
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Cookbooks
+  </span>
+  
+
+            </a>
+            
+              <label class="md-nav__link " for="__nav_4_8">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_8_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4_8">
+            <span class="md-nav__icon md-icon"></span>
+            Cookbooks
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../VPC-with-no-LandingZone/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    VPC with no LandingZone
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../schedule-start-stop-ec2/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Start/Stop EC2/RDS instances using schedule or manual endpoint
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../VPC-subnet-calculator/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Calculate VPC cubnet CIDRs
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../k8s/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Kubernetes in different stages
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sops-kms/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Encrypting/decrypting files with SOPS+KMS
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../enable-nat-gateway/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Enable/Disable nat gateway
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    ArgoCD add external cluster
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    ArgoCD add external cluster
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#goal" class="md-nav__link">
+    Goal
+  </a>
+  
+    <nav class="md-nav" aria-label="Goal">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#assumptions" class="md-nav__link">
+    Assumptions
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#requirements" class="md-nav__link">
+    Requirements
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-to" class="md-nav__link">
+    How to
+  </a>
+  
+    <nav class="md-nav" aria-label="How to">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#iam-roles" class="md-nav__link">
+    IAM Roles
+  </a>
+  
+    <nav class="md-nav" aria-label="IAM Roles">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#steps" class="md-nav__link">
+    Steps
+  </a>
+  
+    <nav class="md-nav" aria-label="Steps">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#create-the-source-identities" class="md-nav__link">
+    Create the source identities
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#create-the-target-role-and-change-the-aws_auth-config-map" class="md-nav__link">
+    Create the target role and change the aws_auth config map
+  </a>
+  
+    <nav class="md-nav" aria-label="Create the target role and change the aws_auth config map">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#create-the-role" class="md-nav__link">
+    Create the role
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#update-the-aws_auth-config-map" class="md-nav__link">
+    Update the aws_auth config map
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#create-the-external-cluster-in-argocd" class="md-nav__link">
+    Create the external cluster in ArgoCD
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bearer-tokens" class="md-nav__link">
+    Bearer Tokens
+  </a>
+  
+    <nav class="md-nav" aria-label="Bearer Tokens">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#create-the-serviceaccount" class="md-nav__link">
+    Create the ServiceAccount
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#create-the-external-cluster-in-argocd_1" class="md-nav__link">
+    Create the external cluster in ArgoCD
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#deploying-stuff-to-the-target-cluster" class="md-nav__link">
+    Deploying stuff to the target cluster
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#references" class="md-nav__link">
+    References
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../work-with-us/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Work with us
+  </span>
+  
+
+            </a>
+            
+              <label class="md-nav__link " for="__nav_5">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            Work with us
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../work-with-us/support/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Support
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_3" >
+        
+          <label class="md-nav__link" for="__nav_5_3" id="__nav_5_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Releases
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_3">
+            <span class="md-nav__icon md-icon"></span>
+            Releases
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../work-with-us/releases/releases-and-versions/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Releases and Versions
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../work-with-us/releases/versions-compatibility-matrix/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Versions compatibility matrix
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../work-with-us/leverage-vs-competition/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Leverage vs Competition
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../work-with-us/contribute/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Contribute
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_6" >
+        
+          <label class="md-nav__link" for="__nav_5_6" id="__nav_5_6_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Roadmap
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_6">
+            <span class="md-nav__icon md-icon"></span>
+            Roadmap
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_6_1" >
+        
+          <label class="md-nav__link" for="__nav_5_6_1" id="__nav_5_6_1_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Reference Architecture
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_5_6_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_6_1">
+            <span class="md-nav__icon md-icon"></span>
+            Reference Architecture
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../work-with-us/roadmap/ref-arch/overview/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Overview
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../work-with-us/roadmap/ref-arch/operational-excellence/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Operational Excellence
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../work-with-us/roadmap/ref-arch/reliability-performance/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Reliability & Performance
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../work-with-us/roadmap/ref-arch/security/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Security
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../work-with-us/roadmap/ref-arch/cost-optimization/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Cost Optimization
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../work-with-us/roadmap/ref-arch/demo-apps/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Demo Applications
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../work-with-us/roadmap/leverage-cli/overview/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Leverage CLI
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../work-with-us/careers/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Careers
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../work-with-us/faqs/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    FAQs
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://www.binbash.co/contact" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Contact Us
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#goal" class="md-nav__link">
+    Goal
+  </a>
+  
+    <nav class="md-nav" aria-label="Goal">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#assumptions" class="md-nav__link">
+    Assumptions
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#requirements" class="md-nav__link">
+    Requirements
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-to" class="md-nav__link">
+    How to
+  </a>
+  
+    <nav class="md-nav" aria-label="How to">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#iam-roles" class="md-nav__link">
+    IAM Roles
+  </a>
+  
+    <nav class="md-nav" aria-label="IAM Roles">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#steps" class="md-nav__link">
+    Steps
+  </a>
+  
+    <nav class="md-nav" aria-label="Steps">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#create-the-source-identities" class="md-nav__link">
+    Create the source identities
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#create-the-target-role-and-change-the-aws_auth-config-map" class="md-nav__link">
+    Create the target role and change the aws_auth config map
+  </a>
+  
+    <nav class="md-nav" aria-label="Create the target role and change the aws_auth config map">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#create-the-role" class="md-nav__link">
+    Create the role
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#update-the-aws_auth-config-map" class="md-nav__link">
+    Update the aws_auth config map
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#create-the-external-cluster-in-argocd" class="md-nav__link">
+    Create the external cluster in ArgoCD
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bearer-tokens" class="md-nav__link">
+    Bearer Tokens
+  </a>
+  
+    <nav class="md-nav" aria-label="Bearer Tokens">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#create-the-serviceaccount" class="md-nav__link">
+    Create the ServiceAccount
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#create-the-external-cluster-in-argocd_1" class="md-nav__link">
+    Create the external cluster in ArgoCD
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#deploying-stuff-to-the-target-cluster" class="md-nav__link">
+    Deploying stuff to the target cluster
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#references" class="md-nav__link">
+    References
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+  
+    <a href="https://github.com/binbashar/le-ref-architecture-doc/edit/master/docs/user-guide/cookbooks/argocd-external-cluster.md" title="Edit this page" class="md-content__button md-icon">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4v-2m10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1 2.1 2.1Z"/></svg>
+    </a>
+  
+  
+
+
+<h1 id="how-to-add-an-external-cluster-to-argocd-to-manage-it">How to add an external cluster to ArgoCD to manage it<a class="headerlink" href="#how-to-add-an-external-cluster-to-argocd-to-manage-it" title="Permanent link"> ¶</a></h1>
+<h2 id="goal">Goal<a class="headerlink" href="#goal" title="Permanent link"> ¶</a></h2>
+<p>Given an ArgoCD installation created with <a href="https://leverage.binbash.co/"><strong>binbash Leverage</strong></a> <a href="https://leverage.binbash.co/try-leverage/">Landing Zone</a> using the <a href="https://github.com/binbashar/le-tf-infra-aws/tree/master/apps-devstg/us-east-1/k8s-eks-demoapps">EKS layer</a>, add and manage an external Cluster.</p>
+<p>There can be a single ArgoCD instance for all cluster or multiple instances installed:</p>
+<p><img alt="ArgoCD External Cluster" src="/assets/diagrams/argocd-externalcluster-bigpicture.png" /></p>
+<h3 id="assumptions">Assumptions<a class="headerlink" href="#assumptions" title="Permanent link"> ¶</a></h3>
+<p>We are assuming the <a href="https://leverage.binbash.co/"><strong>binbash Leverage</strong></a> <a href="https://leverage.binbash.co/try-leverage/">Landing Zone</a> is deployed, two accounts called <code>shared</code> and <code>apps-devstg</code> were created and a region <code>us-east-1</code> is being used. In any case you can adapt these examples to other scenarios.</p>
+<h3 id="requirements">Requirements<a class="headerlink" href="#requirements" title="Permanent link"> ¶</a></h3>
+<p>The target cluster must have <a href="https://docs.aws.amazon.com/eks/latest/userguide/iam-roles-for-service-accounts.html">IRSA</a> enabled.</p>
+<p>If this cluster was created using the <a href="https://leverage.binbash.co/"><strong>binbash Leverage</strong></a> <a href="https://leverage.binbash.co/try-leverage/">Landing Zone</a> <a href="https://github.com/binbashar/le-tf-infra-aws/tree/master/apps-devstg/us-east-1/k8s-eks-demoapps">EKS layer</a> this req is met.</p>
+<p>Also the VPC for both K8s cluster should be connected. (e.g. VPCPeerings have to be in place between them)</p>
+<div class="admonition info">
+<p class="admonition-title">Info</p>
+<p>Learn how to create <code>VPCPeerings</code> using <a href="https://leverage.binbash.co/"><strong>binbash Leverage</strong></a> <a href="https://leverage.binbash.co/try-leverage/">Landing Zone</a> <a href="/user-guide/ref-architecture-aws/features/network/vpc-peering/#next-steps">here</a>.</p>
+</div>
+<hr />
+<hr />
+<h2 id="how-to">How to<a class="headerlink" href="#how-to" title="Permanent link"> ¶</a></h2>
+<p>There are a few ways to accomplish this. Here are two of them, you can find more <a href="https://argo-cd.readthedocs.io/en/stable/operator-manual/declarative-setup/#clusters">here</a>.</p>
+<ul>
+<li>IAM Roles</li>
+<li>Bearer tokens</li>
+</ul>
+<hr />
+<h3 id="iam-roles">IAM Roles<a class="headerlink" href="#iam-roles" title="Permanent link"> ¶</a></h3>
+<p>First we need to understand the how-to do this.</p>
+<p>Given this diagram:</p>
+<p><img alt="ArgoCD External Cluster" src="/assets/diagrams/argocd-externalcluster-basic.png" /></p>
+<p>this workflow shows up:</p>
+<ul>
+<li>ArgoCD deployment, in Kubernetes, has a ServiceAccount</li>
+<li>this ServiceAccount is bound to an IAM Role that we'll call source</li>
+<li>the source Role can assume a second Role taht we'll call target</li>
+<li>the target Role can assume RBAC permissions using the <code>aws_auth</code> config map in the target cluster</li>
+</ul>
+<p>This way, ArgoCD, from the source cluster, can deploy stuff into the target cluster.</p>
+<h4 id="steps">Steps<a class="headerlink" href="#steps" title="Permanent link"> ¶</a></h4>
+<p>These steps were created to match two EKS clusters, in two AWS accounts, created using <a href="https://leverage.binbash.co/"><strong>binbash Leverage</strong></a> <a href="https://leverage.binbash.co/try-leverage/">Landing Zone</a>.</p>
+<p>ArgoCD will be deployed in <code>shared</code> account and will be controlling the cluster in <code>apps-devstg</code>.</p>
+<div class="admonition info">
+<p class="admonition-title">Info</p>
+<ul>
+<li>source account: <code>shared</code> </li>
+<li>target account: <code>apps-devstg</code></li>
+</ul>
+</div>
+<h5 id="create-the-source-identities">Create the source identities<a class="headerlink" href="#create-the-source-identities" title="Permanent link"> ¶</a></h5>
+<div class="admonition info">
+<p class="admonition-title">Info</p>
+<p>This has to be done in <code>shared</code> account.</p>
+</div>
+<p>ArgoCD should be deployed using the <code>shared/us-east-1/k8s-eks/k8s-components</code> layer. </p>
+<p>The identities to be used by ArgoCD have to be updated in the <code>shared/us-east-1/k8s-eks/identities</code> layer.</p>
+<p>So, go into this layer and edit the <code>ids_argocd.tf</code> file.</p>
+<p>Here the ServiceAccount used have to be modified to include all the posibilities in the <code>argocd</code> namespace:</p>
+<div class="highlight"><pre><span></span><code><span class="kr">module</span><span class="w"> </span><span class="nv">&quot;role_argocd_devstg&quot;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="na">source</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;github.com/binbashar/terraform-aws-iam.git//modules/iam-assumable-role-with-oidc?ref=v5.37.1&quot;</span>
+
+<span class="w">  </span><span class="na">create_role</span><span class="w">  </span><span class="o">=</span><span class="w"> </span><span class="no">true</span>
+<span class="w">  </span><span class="na">role_name</span><span class="w">    </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;${local.environment}-argocd-devstg&quot;</span>
+<span class="w">  </span><span class="na">provider_url</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">replace</span><span class="p">(</span><span class="nv">data.terraform_remote_state.eks-cluster.outputs.cluster_oidc_issuer_url</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;https://&quot;, &quot;&quot;</span><span class="p">)</span>
+
+<span class="w">  </span><span class="na">role_policy_arns</span><span class="w">              </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="nv">aws_iam_policy.argocd_devstg.arn</span><span class="p">]</span>
+<span class="w">  </span><span class="na">oidc_fully_qualified_subjects</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;system:serviceaccount:argocd-devstg:*&quot;</span><span class="p">]</span>
+
+<span class="w">  </span><span class="na">tags</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">local.tags_cluster_autoscaler</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>Note all the <code>argocd</code> namespace's ServiceAccounts were added to <code>oidc_fully_qualified_subjects</code> (because different ArgoCD components use different SAs), and they will be capable of assume the role <code>${local.environment}-argocd-devstg</code>. (Since we are working in <code>shared</code> the role will be <code>shared-argocd-devstg</code>)</p>
+<p>This role lives in <code>shared</code> account.</p>
+<p>Apply the layer:</p>
+<div class="highlight"><pre><span></span><code>leverage<span class="w"> </span>tf<span class="w"> </span>apply
+</code></pre></div>
+<div class="admonition info">
+<p class="admonition-title">Info</p>
+<p>Note this step creates a role and binds it to the in-cluster serviceaccounts.</p>
+</div>
+<h5 id="create-the-target-role-and-change-the-aws_auth-config-map">Create the target role and change the <code>aws_auth</code> config map<a class="headerlink" href="#create-the-target-role-and-change-the-aws_auth-config-map" title="Permanent link"> ¶</a></h5>
+<div class="admonition info">
+<p class="admonition-title">Info</p>
+<p>This has to be done in <code>apps-devstg</code> account.</p>
+</div>
+<h6 id="create-the-role">Create the role<a class="headerlink" href="#create-the-role" title="Permanent link"> ¶</a></h6>
+<p>Go into the <code>apps-devstg/global/base-identities</code> layer.</p>
+<p>In file <code>roles.tf</code> add this resource:</p>
+<div class="highlight"><pre><span></span><code><span class="kr">module</span><span class="w"> </span><span class="nv">&quot;iam_assumable_role_argocd&quot;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="na">source</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;github.com/binbashar/terraform-aws-iam.git//modules/iam-assumable-role?ref=v4.1.0&quot;</span>
+
+<span class="w">  </span><span class="na">trusted_role_arns</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span>
+<span class="w">    </span><span class="s2">&quot;arn:aws:iam::${var.accounts.shared.id}:root&quot;</span>
+<span class="w">  </span><span class="p">]</span>
+
+<span class="w">  </span><span class="na">create_role</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="no">true</span>
+<span class="w">  </span><span class="na">role_name</span><span class="w">   </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;ArgoCD&quot;</span>
+<span class="w">  </span><span class="na">role_path</span><span class="w">   </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;/&quot;</span>
+
+<span class="c1">  #</span>
+<span class="c1">  # MFA setup</span>
+<span class="c1">  #</span>
+<span class="w">  </span><span class="na">role_requires_mfa</span><span class="w">    </span><span class="o">=</span><span class="w"> </span><span class="no">false</span>
+<span class="w">  </span><span class="na">mfa_age</span><span class="w">              </span><span class="o">=</span><span class="w"> </span><span class="m">43200</span><span class="c1"> # Maximum CLI/API session duration in seconds between 3600 and 43200</span>
+<span class="w">  </span><span class="na">max_session_duration</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">3600</span><span class="c1">  # Max age of valid MFA (in seconds) for roles which require MFA</span>
+<span class="w">  </span><span class="na">custom_role_policy_arns</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span>
+<span class="nb">  </span><span class="p">]</span>
+
+<span class="w">  </span><span class="na">tags</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">local.tags</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>Note MFA is deactivated since this is a programatic access role. Also no policies are added since we need to assume it just to access the cluster.</p>
+<p>Apply the layer:</p>
+<div class="highlight"><pre><span></span><code>leverage<span class="w"> </span>tf<span class="w"> </span>apply
+</code></pre></div>
+<div class="admonition info">
+<p class="admonition-title">Info</p>
+<p>This step will add a role that can be assumed from the <code>shared</code> account.</p>
+</div>
+<h6 id="update-the-aws_auth-config-map">Update the <code>aws_auth</code> config map<a class="headerlink" href="#update-the-aws_auth-config-map" title="Permanent link"> ¶</a></h6>
+<p>cd into layer <code>apps-devstg/us-east-1/k8s-eks/cluster</code>.</p>
+<p>Edit file <code>locals.tf</code>, under <code>map_roles</code> list add this:</p>
+<div class="highlight"><pre><span></span><code><span class="w">    </span><span class="p">{</span>
+<span class="w">      </span><span class="na">rolearn</span><span class="w">  </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;arn:aws:iam::${var.accounts.apps-devstg.id}:role/ArgoCD&quot;</span>
+<span class="w">      </span><span class="na">username</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;ArgoCD&quot;</span>
+<span class="w">      </span><span class="na">groups</span><span class="w">   </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;system:masters&quot;</span><span class="p">]</span>
+<span class="w">    </span><span class="p">},</span>
+</code></pre></div>
+<p>You can narrow the access modifying <code>groups</code> as per your own needs.</p>
+<p>Apply the layer:</p>
+<div class="highlight"><pre><span></span><code>leverage<span class="w"> </span>tf<span class="w"> </span>apply
+</code></pre></div>
+<p>To recover the the API Server run this:</p>
+<div class="highlight"><pre><span></span><code><span class="nv">APISERVER</span><span class="o">=</span><span class="k">$(</span>leverage<span class="w"> </span>kubectl<span class="w"> </span>config<span class="w"> </span>view<span class="w"> </span>--minify<span class="w"> </span>-o<span class="w"> </span><span class="nv">jsonpath</span><span class="o">=</span><span class="s1">&#39;{.clusters[0].cluster.server}&#39;</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>sed<span class="w"> </span>-E<span class="w"> </span><span class="s1">&#39;/^\[/d&#39;</span><span class="k">)</span>
+</code></pre></div>
+<div class="admonition info">
+<p class="admonition-title">Info</p>
+<p>This step will add the role-k8sgroup binding.</p>
+</div>
+<h5 id="create-the-external-cluster-in-argocd">Create the external cluster in ArgoCD<a class="headerlink" href="#create-the-external-cluster-in-argocd" title="Permanent link"> ¶</a></h5>
+<div class="admonition info">
+<p class="admonition-title">Info</p>
+<p>This has to be done in <code>shared</code> account.</p>
+</div>
+<p>In <code>shared/us-east-1/k8s-eks/k8s-components</code> layer modify files <code>cicd-argocd.tf</code> and <code>chart-values/argocd.yaml</code> and add this to the first one:</p>
+<div class="highlight"><pre><span></span><code><span class="c1">##------------------------------------------------------------------------------</span>
+<span class="c1">## ArgoCD DEVSTG: GitOps + CD</span>
+<span class="c1">##------------------------------------------------------------------------------</span>
+<span class="kr">resource</span><span class="w"> </span><span class="nc">&quot;helm_release&quot;</span><span class="w"> </span><span class="nv">&quot;argocd_devstg&quot;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="na">count</span><span class="w">      </span><span class="o">=</span><span class="w"> </span><span class="nv">var.enable_argocd_devstg</span><span class="w"> </span><span class="p">?</span><span class="w"> </span><span class="m">1</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="m">0</span>
+<span class="w">  </span><span class="na">name</span><span class="w">       </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;argocd-devstg&quot;</span>
+<span class="w">  </span><span class="na">namespace</span><span class="w">  </span><span class="o">=</span><span class="w"> </span><span class="nv">kubernetes_namespace.argocd_devstg[0].id</span>
+<span class="w">  </span><span class="na">repository</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;https://argoproj.github.io/argo-helm&quot;</span>
+<span class="w">  </span><span class="na">chart</span><span class="w">      </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;argo-cd&quot;</span>
+<span class="w">  </span><span class="na">version</span><span class="w">    </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;6.7.3&quot;</span>
+<span class="w">  </span><span class="na">values</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span>
+<span class="w">    </span><span class="nf">templatefile</span><span class="p">(</span><span class="s2">&quot;chart-values/argocd.yaml&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="na">argoHost</span><span class="w">      </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;argocd-devstg.${local.environment}.${local.private_base_domain}&quot;</span>
+<span class="w">      </span><span class="na">ingressClass</span><span class="w">  </span><span class="o">=</span><span class="w"> </span><span class="nv">local.private_ingress_class</span>
+<span class="w">      </span><span class="na">clusterIssuer</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">local.clusterissuer_vistapath</span>
+<span class="w">      </span><span class="na">roleArn</span><span class="w">       </span><span class="o">=</span><span class="w"> </span><span class="nv">data.terraform_remote_state.eks-identities.outputs.argocd_devstg_role_arn</span>
+<span class="w">      </span><span class="na">remoteRoleARN</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;role&quot;</span>
+<span class="w">      </span><span class="na">remoteClusterName</span><span class="w">   </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;clustername&quot;</span>
+<span class="w">      </span><span class="na">remoteServer</span><span class="w">  </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;remoteServer&quot;</span>
+<span class="w">      </span><span class="na">remoteName</span><span class="w">    </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;remoteName&quot;</span>
+<span class="w">      </span><span class="na">remoteClusterCertificate</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;remoteClusterCertificate&quot;</span>
+<span class="w">    </span><span class="p">}),</span>
+<span class="c1">    # We are using a different approach here because it is very tricky to render</span>
+<span class="c1">    # properly the multi-line sshPrivateKey using &#39;templatefile&#39; function</span>
+<span class="w">    </span><span class="nf">yamlencode</span><span class="p">({</span>
+<span class="w">      </span><span class="nb">configs</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nb">secret</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
+<span class="w">          </span><span class="na">argocd_devstgServerAdminPassword</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">data.sops_file.secrets.data</span><span class="p">[</span><span class="s2">&quot;argocd_devstg.serverAdminPassword&quot;</span><span class="p">]</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="c1">        # Grant Argocd_Devstg access to the infrastructure repo via private SSH key</span>
+<span class="w">        </span><span class="nb">repositories</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
+<span class="w">          </span><span class="nb">webapp</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="na">name</span><span class="w">          </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;webapp&quot;</span>
+<span class="w">            </span><span class="na">project</span><span class="w">       </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;default&quot;</span>
+<span class="w">            </span><span class="na">sshPrivateKey</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">data.sops_file.secrets.data</span><span class="p">[</span><span class="s2">&quot;argocd_devstg.webappRepoDeployKey&quot;</span><span class="p">]</span>
+<span class="w">            </span><span class="na">type</span><span class="w">          </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;git&quot;</span>
+<span class="w">            </span><span class="na">url</span><span class="w">           </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;git@github.com:VistaPath/webapp.git&quot;</span>
+<span class="w">          </span><span class="p">}</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">      </span><span class="p">}</span>
+<span class="c1">      # Enable SSO via Github</span>
+<span class="w">      </span><span class="nb">server</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nb">config</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
+<span class="w">          </span><span class="na">url</span><span class="w">          </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;https://argocd_devstg.${local.environment}.${local.private_base_domain}&quot;</span>
+<span class="w">          </span><span class="s2">&quot;dex.config&quot;</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">data.sops_file.secrets.data</span><span class="p">[</span><span class="s2">&quot;argocd_devstg.dexConfig&quot;</span><span class="p">]</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">      </span><span class="p">}</span>
+<span class="w">    </span><span class="p">})</span>
+<span class="w">  </span><span class="p">]</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>Note these lines:</p>
+<div class="highlight"><pre><span></span><code><span class="w">      </span><span class="na">remoteRoleARN</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;role&quot;</span>
+<span class="w">      </span><span class="na">remoteClusterName</span><span class="w">   </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;clustername&quot;</span>
+<span class="w">      </span><span class="na">remoteServer</span><span class="w">  </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;remoteServer&quot;</span>
+<span class="w">      </span><span class="na">remoteName</span><span class="w">    </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;remoteName&quot;</span>
+<span class="w">      </span><span class="na">remoteClusterCertificate</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;remoteClusterCertificate&quot;</span>
+</code></pre></div>
+<p>Dictionary:</p>
+<ul>
+<li>remoteRoleARN: the role created in <code>apps-devstg</code> (target) account</li>
+<li>remoteClusterName: the target cluster name (e.g. "staging")</li>
+<li>remoteServer: the target cluster API URL</li>
+<li>remoteName: the target server name (the ARN)</li>
+<li>remoteClusterCertificate: the target cluster CA Certificate on Base64</li>
+</ul>
+<p>And this in the second file:</p>
+<div class="highlight"><pre><span></span><code><span class="err">configs</span><span class="p">:</span>
+<span class="w">  </span><span class="err">clusterCredentials</span><span class="p">:</span>
+<span class="w">    </span><span class="err">-</span><span class="w"> </span><span class="err">name</span><span class="p">:</span><span class="w"> </span><span class="err">$</span><span class="p">{</span><span class="err">remoteName</span><span class="p">}</span>
+<span class="w">      </span><span class="err">server</span><span class="p">:</span><span class="w"> </span><span class="err">$</span><span class="p">{</span><span class="err">remoteServer</span><span class="p">}</span>
+<span class="w">      </span><span class="err">labels</span><span class="p">:</span><span class="w"> </span><span class="p">{}</span>
+<span class="w">      </span><span class="err">annotations</span><span class="p">:</span><span class="w"> </span><span class="p">{}</span>
+<span class="w">      </span><span class="err">namespaces</span><span class="p">:</span><span class="w"> </span><span class="err">namespace</span><span class="m">1</span><span class="p">,</span><span class="err">namespace</span><span class="m">2</span>
+<span class="w">      </span><span class="err">clusterResources</span><span class="p">:</span><span class="w"> </span><span class="no">false</span>
+<span class="w">      </span><span class="err">config</span><span class="p">:</span>
+<span class="w">        </span><span class="err">awsAuthConfig</span><span class="p">:</span>
+<span class="w">          </span><span class="err">clusterName</span><span class="p">:</span><span class="w"> </span><span class="err">$</span><span class="p">{</span><span class="err">remoteClusterName</span><span class="p">}</span>
+<span class="w">          </span><span class="err">roleARN</span><span class="p">:</span><span class="w"> </span><span class="err">$</span><span class="p">{</span><span class="err">remoteRoleARN</span><span class="p">}</span>
+<span class="w">        </span><span class="err">tlsClientConfig</span><span class="p">:</span>
+<span class="w">          </span><span class="err">insecure</span><span class="p">:</span><span class="w"> </span><span class="no">false</span>
+<span class="w">          </span><span class="err">caData</span><span class="p">:</span><span class="w"> </span><span class="err">$</span><span class="p">{</span><span class="err">remoteClusterCertificate</span><span class="p">}</span>
+</code></pre></div>
+<p><code>clusterResources</code> false is so that ArgoCD is prevented to manage cluster level resources.</p>
+<p><code>namespaces</code> scopes the namespaces on which ArgoCD can deploy resources.</p>
+<p>Apply the layer:</p>
+<div class="highlight"><pre><span></span><code>leverage<span class="w"> </span>tf<span class="w"> </span>apply
+</code></pre></div>
+<div class="admonition info">
+<p class="admonition-title">Info</p>
+<p>This step will create the external-cluster configuration for ArgoCD.<br />
+Now you can see the cluster in the ArgoCD web UI.</p>
+</div>
+<hr />
+<h3 id="bearer-tokens">Bearer Tokens<a class="headerlink" href="#bearer-tokens" title="Permanent link"> ¶</a></h3>
+<p>This is a simpler (than the previous one) method, but also is less secure.</p>
+<p>It uses a bearer token, which should be rotated periodically. (maybe manually or with a custom process)</p>
+<p>Given this diagram:</p>
+<p><img alt="ArgoCD External Cluster" src="/assets/diagrams/argocd-externalcluster-token.png" /></p>
+<p>ArgoCD will call the target cluster directly using the bearer token as authentication.</p>
+<p>So, these are the steps:</p>
+<ul>
+<li>create a ServiceAccount and its token in the target cluster</li>
+<li>create the external cluster in the source cluster's ArgoCD</li>
+</ul>
+<h4 id="create-the-serviceaccount">Create the ServiceAccount<a class="headerlink" href="#create-the-serviceaccount" title="Permanent link"> ¶</a></h4>
+<div class="admonition info">
+<p class="admonition-title">Info</p>
+<p>This has to be done in <code>apps-devstg</code> account.</p>
+</div>
+<p>There are two ways to grant access. Cluster level or namespace scoped.</p>
+<p>If namespace scoped ServiceAccount, Role and Rolebinding are needed to grant access to ArgoCD to the target cluster. If cluster level then ServiceAccount, ClusterRole and ClusterRolebinding. The former needs the namespaces to be created beforehand. The later allows ArgoCD to create the namespaces.</p>
+<p>In the target cluster identities layer at <code>apps-devstg/us-east-1/k8s-eks/identities</code> create a <code>tf</code> file and add this:</p>
+<p>The following example is for namespace scoped way.</p>
+<div class="highlight"><pre><span></span><code><span class="nb">locals</span><span class="w"> </span><span class="p">{</span>
+<span class="c1">  # namespaces ArgoCD has to manage</span>
+<span class="w">  </span><span class="na">namespaces</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">toset</span><span class="p">([</span><span class="s2">&quot;test&quot;</span><span class="p">])</span>
+<span class="p">}</span>
+<span class="err">provider</span><span class="w">  </span><span class="nb">kubernetes</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="na">host</span><span class="w">                   </span><span class="o">=</span><span class="w"> </span><span class="nv">data.aws_eks_cluster.cluster.endpoint</span>
+<span class="w">    </span><span class="na">cluster_ca_certificate</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">base64decode</span><span class="p">(</span><span class="nv">data.aws_eks_cluster.cluster.certificate_authority.0.data</span><span class="p">)</span>
+<span class="w">    </span><span class="na">token</span><span class="w">                  </span><span class="o">=</span><span class="w"> </span><span class="nv">data.aws_eks_cluster_auth.cluster.token</span>
+<span class="p">}</span>
+<span class="kr">data</span><span class="w"> </span><span class="nc">&quot;aws_eks_cluster&quot;</span><span class="w"> </span><span class="nv">&quot;cluster&quot;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="na">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">data.terraform_remote_state.eks-cluster.outputs.cluster_name</span>
+<span class="p">}</span>
+
+<span class="kr">data</span><span class="w"> </span><span class="nc">&quot;aws_eks_cluster_auth&quot;</span><span class="w"> </span><span class="nv">&quot;cluster&quot;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="na">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">data.terraform_remote_state.eks-cluster.outputs.cluster_name</span>
+<span class="p">}</span>
+
+<span class="kr">resource</span><span class="w"> </span><span class="nc">&quot;kubernetes_service_account&quot;</span><span class="w"> </span><span class="nv">&quot;argocd-managed&quot;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="na">for_each</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">local.namespaces</span>
+
+<span class="w">  </span><span class="nb">metadata</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="na">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;argocd-managed&quot;</span>
+<span class="w">    </span><span class="na">namespace</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">each.key</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">}</span>
+
+<span class="kr">resource</span><span class="w"> </span><span class="nc">&quot;kubernetes_secret&quot;</span><span class="w"> </span><span class="nv">&quot;argocd-managed&quot;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="na">for_each</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">local.namespaces</span>
+
+<span class="w">  </span><span class="nb">metadata</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nb">annotations</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="s2">&quot;kubernetes.io/service-account.name&quot;</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">kubernetes_service_account.argocd-managed[each.key].metadata.0.name</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="na">generate_name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;argocd-managed-&quot;</span>
+<span class="w">    </span><span class="na">namespace</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">each.key</span>
+<span class="w">  </span><span class="p">}</span>
+
+<span class="w">  </span><span class="na">type</span><span class="w">                           </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;kubernetes.io/service-account-token&quot;</span>
+<span class="w">  </span><span class="na">wait_for_service_account_token</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="no">true</span>
+<span class="p">}</span>
+
+<span class="kr">resource</span><span class="w"> </span><span class="nc">&quot;kubernetes_role&quot;</span><span class="w"> </span><span class="nv">&quot;argocd-managed&quot;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="na">for_each</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">local.namespaces</span>
+
+<span class="w">  </span><span class="nb">metadata</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="na">name</span><span class="w">      </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;argocd-managed-role&quot;</span>
+<span class="w">    </span><span class="na">namespace</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">each.key</span>
+<span class="w">  </span><span class="p">}</span>
+
+<span class="w">  </span><span class="nb">rule</span><span class="w"> </span><span class="p">{</span>
+<span class="w">   </span><span class="na">api_groups</span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;*&quot;</span><span class="p">]</span>
+<span class="w">    </span><span class="na">resources</span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;*&quot;</span><span class="p">]</span>
+<span class="w">    </span><span class="na">verbs</span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;*&quot;</span><span class="p">]</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">}</span>
+
+<span class="kr">resource</span><span class="w"> </span><span class="nc">&quot;kubernetes_role_binding&quot;</span><span class="w"> </span><span class="nv">&quot;argocd-managed&quot;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="na">for_each</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">local.namespaces</span>
+
+<span class="w">  </span><span class="nb">metadata</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="na">name</span><span class="w">      </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;${kubernetes_role.argocd-managed[each.key].metadata[0].name}-binding&quot;</span>
+<span class="w">    </span><span class="na">namespace</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">each.key</span>
+<span class="w">  </span><span class="p">}</span>
+
+<span class="w">  </span><span class="nb">role_ref</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="na">api_group</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;rbac.authorization.k8s.io&quot;</span>
+<span class="w">    </span><span class="na">kind</span><span class="w">      </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;Role&quot;</span>
+<span class="w">    </span><span class="na">name</span><span class="w">      </span><span class="o">=</span><span class="w"> </span><span class="nv">kubernetes_role.argocd-managed[each.key].metadata[0].name</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="w">  </span><span class="nb">subject</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="na">kind</span><span class="w">      </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;ServiceAccount&quot;</span>
+<span class="w">    </span><span class="na">name</span><span class="w">      </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;argocd-managed&quot;</span>
+<span class="w">    </span><span class="na">namespace</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">each.key</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>The following example is for cluster level way.</p>
+<div class="highlight"><pre><span></span><code><span class="err">provider</span><span class="w">  </span><span class="nb">kubernetes</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="na">host</span><span class="w">                   </span><span class="o">=</span><span class="w"> </span><span class="nv">data.aws_eks_cluster.cluster.endpoint</span>
+<span class="w">    </span><span class="na">cluster_ca_certificate</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">base64decode</span><span class="p">(</span><span class="nv">data.aws_eks_cluster.cluster.certificate_authority.0.data</span><span class="p">)</span>
+<span class="w">    </span><span class="na">token</span><span class="w">                  </span><span class="o">=</span><span class="w"> </span><span class="nv">data.aws_eks_cluster_auth.cluster.token</span>
+<span class="p">}</span>
+<span class="kr">data</span><span class="w"> </span><span class="nc">&quot;aws_eks_cluster&quot;</span><span class="w"> </span><span class="nv">&quot;cluster&quot;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="na">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">data.terraform_remote_state.eks-cluster.outputs.cluster_name</span>
+<span class="p">}</span>
+
+<span class="kr">data</span><span class="w"> </span><span class="nc">&quot;aws_eks_cluster_auth&quot;</span><span class="w"> </span><span class="nv">&quot;cluster&quot;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="na">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">data.terraform_remote_state.eks-cluster.outputs.cluster_name</span>
+<span class="p">}</span>
+
+<span class="kr">resource</span><span class="w"> </span><span class="nc">&quot;kubernetes_service_account&quot;</span><span class="w"> </span><span class="nv">&quot;argocd-managed&quot;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="nb">metadata</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="na">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;argocd-managed&quot;</span>
+<span class="w">    </span><span class="na">namespace</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;kube-system&quot;</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">}</span>
+
+<span class="kr">resource</span><span class="w"> </span><span class="nc">&quot;kubernetes_secret&quot;</span><span class="w"> </span><span class="nv">&quot;argocd-managed&quot;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="nb">metadata</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nb">annotations</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="s2">&quot;kubernetes.io/service-account.name&quot;</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">kubernetes_service_account.argocd-managed.metadata.0.name</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="na">generate_name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;argocd-managed-&quot;</span>
+<span class="w">    </span><span class="na">namespace</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;kube-system&quot;</span>
+<span class="w">  </span><span class="p">}</span>
+
+<span class="w">  </span><span class="na">type</span><span class="w">                           </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;kubernetes.io/service-account-token&quot;</span>
+<span class="w">  </span><span class="na">wait_for_service_account_token</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="no">true</span>
+<span class="p">}</span>
+
+<span class="kr">resource</span><span class="w"> </span><span class="nc">&quot;kubernetes_cluster_role&quot;</span><span class="w"> </span><span class="nv">&quot;argocd-managed&quot;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="nb">metadata</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="na">name</span><span class="w">      </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;argocd-managed-role&quot;</span>
+<span class="w">  </span><span class="p">}</span>
+
+<span class="w">  </span><span class="nb">rule</span><span class="w"> </span><span class="p">{</span>
+<span class="w">   </span><span class="na">api_groups</span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;*&quot;</span><span class="p">]</span>
+<span class="w">    </span><span class="na">resources</span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;*&quot;</span><span class="p">]</span>
+<span class="w">    </span><span class="na">verbs</span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;*&quot;</span><span class="p">]</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">}</span>
+
+<span class="kr">resource</span><span class="w"> </span><span class="nc">&quot;kubernetes_cluster_role_binding&quot;</span><span class="w"> </span><span class="nv">&quot;argocd-managed&quot;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="nb">metadata</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="na">name</span><span class="w">      </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;${kubernetes_role.argocd-managed.metadata[0].name}-binding&quot;</span>
+<span class="w">  </span><span class="p">}</span>
+
+<span class="w">  </span><span class="nb">role_ref</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="na">api_group</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;rbac.authorization.k8s.io&quot;</span>
+<span class="w">    </span><span class="na">kind</span><span class="w">      </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;ClusterRole&quot;</span>
+<span class="w">    </span><span class="na">name</span><span class="w">      </span><span class="o">=</span><span class="w"> </span><span class="nv">kubernetes_role.argocd-managed.metadata[0].name</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="w">  </span><span class="nb">subject</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="na">kind</span><span class="w">      </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;ServiceAccount&quot;</span>
+<span class="w">    </span><span class="na">name</span><span class="w">      </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;argocd-managed&quot;</span>
+<span class="w">    </span><span class="na">namespace</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;kube-system&quot;</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<div class="admonition info">
+<p class="admonition-title">Info</p>
+<p>This step will create a ServiceAccount, a Role with the needed permissions, the RoleBinding and the secret with the token. (or clusterrole and clusterrolebinding)<br />
+Also, multiple namespaces can be specified for namespace scoped way.</p>
+</div>
+<p>To recover the token and the API Server run this:</p>
+<div class="highlight"><pre><span></span><code><span class="nv">NAMESPACE</span><span class="o">=</span><span class="nb">test</span>
+<span class="nv">SECRET</span><span class="o">=</span><span class="k">$(</span>leverage<span class="w"> </span>kubectl<span class="w"> </span>get<span class="w"> </span>secret<span class="w"> </span>-n<span class="w"> </span><span class="si">${</span><span class="nv">NAMESPACE</span><span class="si">}</span><span class="w"> </span>-o<span class="w"> </span><span class="nv">jsonpath</span><span class="o">=</span><span class="s1">&#39;{.items[?(@.metadata.generateName==\&quot;argocd-managed-\&quot;)].metadata.name}&#39;</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>sed<span class="w"> </span>-E<span class="w"> </span><span class="s1">&#39;/^\[/d&#39;</span><span class="k">)</span>
+<span class="nv">TOKEN</span><span class="o">=</span><span class="k">$(</span>leverage<span class="w"> </span>kubectl<span class="w"> </span>get<span class="w"> </span>secret<span class="w"> </span><span class="si">${</span><span class="nv">SECRET</span><span class="si">}</span><span class="w"> </span>-n<span class="w"> </span><span class="si">${</span><span class="nv">NAMESPACE</span><span class="si">}</span><span class="w"> </span>-o<span class="w"> </span><span class="nv">jsonpath</span><span class="o">=</span><span class="s1">&#39;{.data.token}&#39;</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>sed<span class="w"> </span>-E<span class="w"> </span><span class="s1">&#39;/^\[/d&#39;</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>base64<span class="w"> </span>--decode<span class="k">)</span>
+<span class="nv">APISERVER</span><span class="o">=</span><span class="k">$(</span>leverage<span class="w"> </span>kubectl<span class="w"> </span>config<span class="w"> </span>view<span class="w"> </span>--minify<span class="w"> </span>-o<span class="w"> </span><span class="nv">jsonpath</span><span class="o">=</span><span class="s1">&#39;{.clusters[0].cluster.server}&#39;</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>sed<span class="w"> </span>-E<span class="w"> </span><span class="s1">&#39;/^\[/d&#39;</span><span class="k">)</span>
+</code></pre></div>
+<h4 id="create-the-external-cluster-in-argocd_1">Create the external cluster in ArgoCD<a class="headerlink" href="#create-the-external-cluster-in-argocd_1" title="Permanent link"> ¶</a></h4>
+<div class="admonition info">
+<p class="admonition-title">Info</p>
+<p>This has to be done in <code>shared</code> account.</p>
+</div>
+<p>In <code>shared/us-east-1/k8s-eks/k8s-components</code> layer modify files <code>cicd-argocd.tf</code> and <code>chart-values/argocd.yaml</code> and add this to the first one:</p>
+<div class="highlight"><pre><span></span><code><span class="c1">##------------------------------------------------------------------------------</span>
+<span class="c1">## ArgoCD DEVSTG: GitOps + CD</span>
+<span class="c1">##------------------------------------------------------------------------------</span>
+<span class="kr">resource</span><span class="w"> </span><span class="nc">&quot;helm_release&quot;</span><span class="w"> </span><span class="nv">&quot;argocd_devstg&quot;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="na">count</span><span class="w">      </span><span class="o">=</span><span class="w"> </span><span class="nv">var.enable_argocd_devstg</span><span class="w"> </span><span class="p">?</span><span class="w"> </span><span class="m">1</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="m">0</span>
+<span class="w">  </span><span class="na">name</span><span class="w">       </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;argocd-devstg&quot;</span>
+<span class="w">  </span><span class="na">namespace</span><span class="w">  </span><span class="o">=</span><span class="w"> </span><span class="nv">kubernetes_namespace.argocd_devstg[0].id</span>
+<span class="w">  </span><span class="na">repository</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;https://argoproj.github.io/argo-helm&quot;</span>
+<span class="w">  </span><span class="na">chart</span><span class="w">      </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;argo-cd&quot;</span>
+<span class="w">  </span><span class="na">version</span><span class="w">    </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;6.7.3&quot;</span>
+<span class="w">  </span><span class="na">values</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span>
+<span class="w">    </span><span class="nf">templatefile</span><span class="p">(</span><span class="s2">&quot;chart-values/argocd.yaml&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="na">argoHost</span><span class="w">                 </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;argocd-devstg.${local.environment}.${local.private_base_domain}&quot;</span>
+<span class="w">      </span><span class="na">ingressClass</span><span class="w">             </span><span class="o">=</span><span class="w"> </span><span class="nv">local.private_ingress_class</span>
+<span class="w">      </span><span class="na">clusterIssuer</span><span class="w">            </span><span class="o">=</span><span class="w"> </span><span class="nv">local.clusterissuer_vistapath</span>
+<span class="w">      </span><span class="na">roleArn</span><span class="w">                  </span><span class="o">=</span><span class="w"> </span><span class="nv">data.terraform_remote_state.eks-identities.outputs.argocd_devstg_role_arn</span>
+<span class="w">      </span><span class="na">remoteServer</span><span class="w">             </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;remoteServer&quot;</span>
+<span class="w">      </span><span class="na">remoteName</span><span class="w">               </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;remoteName&quot;</span>
+<span class="w">      </span><span class="na">remoteClusterCertificate</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;remoteClusterCertificate&quot;</span>
+<span class="w">      </span><span class="na">bearerToken</span><span class="w">              </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;bearerToken&quot;</span>
+<span class="w">    </span><span class="p">}),</span>
+<span class="c1">    # We are using a different approach here because it is very tricky to render</span>
+<span class="c1">    # properly the multi-line sshPrivateKey using &#39;templatefile&#39; function</span>
+<span class="w">    </span><span class="nf">yamlencode</span><span class="p">({</span>
+<span class="w">      </span><span class="nb">configs</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nb">secret</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
+<span class="w">          </span><span class="na">argocd_devstgServerAdminPassword</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">data.sops_file.secrets.data</span><span class="p">[</span><span class="s2">&quot;argocd_devstg.serverAdminPassword&quot;</span><span class="p">]</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="c1">        # Grant Argocd_Devstg access to the infrastructure repo via private SSH key</span>
+<span class="w">        </span><span class="nb">repositories</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
+<span class="w">          </span><span class="nb">webapp</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="na">name</span><span class="w">          </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;webapp&quot;</span>
+<span class="w">            </span><span class="na">project</span><span class="w">       </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;default&quot;</span>
+<span class="w">            </span><span class="na">sshPrivateKey</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">data.sops_file.secrets.data</span><span class="p">[</span><span class="s2">&quot;argocd_devstg.webappRepoDeployKey&quot;</span><span class="p">]</span>
+<span class="w">            </span><span class="na">type</span><span class="w">          </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;git&quot;</span>
+<span class="w">            </span><span class="na">url</span><span class="w">           </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;git@github.com:VistaPath/webapp.git&quot;</span>
+<span class="w">          </span><span class="p">}</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">      </span><span class="p">}</span>
+<span class="c1">      # Enable SSO via Github</span>
+<span class="w">      </span><span class="nb">server</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nb">config</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
+<span class="w">          </span><span class="na">url</span><span class="w">          </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;https://argocd_devstg.${local.environment}.${local.private_base_domain}&quot;</span>
+<span class="w">          </span><span class="s2">&quot;dex.config&quot;</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">data.sops_file.secrets.data</span><span class="p">[</span><span class="s2">&quot;argocd_devstg.dexConfig&quot;</span><span class="p">]</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">      </span><span class="p">}</span>
+<span class="w">    </span><span class="p">})</span>
+<span class="w">  </span><span class="p">]</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>Note these lines:</p>
+<div class="highlight"><pre><span></span><code><span class="w">      </span><span class="na">remoteServer</span><span class="w">  </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;remoteServer&quot;</span>
+<span class="w">      </span><span class="na">remoteName</span><span class="w">    </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;remoteName&quot;</span>
+<span class="w">      </span><span class="na">remoteClusterCertificate</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;remoteClusterCertificate&quot;</span>
+<span class="w">      </span><span class="na">bearerToken</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;bearerToken&quot;</span>
+</code></pre></div>
+<p>Dictionary:</p>
+<ul>
+<li>remoteServer: the target cluster API URL</li>
+<li>remoteName: the target server name (the ARN)</li>
+<li>remoteClusterCertificate: the target cluster CA Certificate on Base64</li>
+<li>bearerToken: the Token generated for the ServiceAccount</li>
+</ul>
+<p>And this in the second file:</p>
+<div class="highlight"><pre><span></span><code><span class="err">configs</span><span class="p">:</span>
+<span class="w">  </span><span class="err">clusterCredentials</span><span class="p">:</span>
+<span class="w">    </span><span class="err">-</span><span class="w"> </span><span class="err">name</span><span class="p">:</span><span class="w"> </span><span class="err">$</span><span class="p">{</span><span class="err">remoteName</span><span class="p">}</span>
+<span class="w">      </span><span class="err">server</span><span class="p">:</span><span class="w"> </span><span class="err">$</span><span class="p">{</span><span class="err">remoteServer</span><span class="p">}</span>
+<span class="w">      </span><span class="err">labels</span><span class="p">:</span><span class="w"> </span><span class="p">{}</span>
+<span class="w">      </span><span class="err">annotations</span><span class="p">:</span><span class="w"> </span><span class="p">{}</span>
+<span class="w">      </span><span class="err">namespaces</span><span class="p">:</span><span class="w"> </span><span class="err">namespace</span><span class="m">1</span><span class="p">,</span><span class="err">namespace</span><span class="m">2</span>
+<span class="w">      </span><span class="err">clusterResources</span><span class="p">:</span><span class="w"> </span><span class="no">false</span>
+<span class="w">      </span><span class="err">config</span><span class="p">:</span>
+<span class="w">        </span><span class="err">bearerToken</span><span class="p">:</span><span class="w"> </span><span class="err">$</span><span class="p">{</span><span class="err">bearerToken</span><span class="p">}</span>
+<span class="w">        </span><span class="err">tlsClientConfig</span><span class="p">:</span>
+<span class="w">          </span><span class="err">insecure</span><span class="p">:</span><span class="w"> </span><span class="no">false</span>
+<span class="w">          </span><span class="err">caData</span><span class="p">:</span><span class="w"> </span><span class="err">$</span><span class="p">{</span><span class="err">remoteClusterCertificate</span><span class="p">}</span>
+</code></pre></div>
+<p><code>clusterResources</code> false is so that ArgoCD is prevented to manage cluster level resources.</p>
+<p><code>namespaces</code> scopes the namespaces on which ArgoCD can deploy resources.</p>
+<p>Apply the layer:</p>
+<div class="highlight"><pre><span></span><code>leverage<span class="w"> </span>tf<span class="w"> </span>apply
+</code></pre></div>
+<div class="admonition info">
+<p class="admonition-title">Info</p>
+<p>This step will create the external-cluster configuration for ArgoCD.<br />
+Now you can see the cluster in the ArgoCD web UI.</p>
+</div>
+<hr />
+<h2 id="deploying-stuff-to-the-target-cluster">Deploying stuff to the target cluster<a class="headerlink" href="#deploying-stuff-to-the-target-cluster" title="Permanent link"> ¶</a></h2>
+<p>To deploy an App to a given cluster, these lines have to be added to the manifest:</p>
+<div class="highlight"><pre><span></span><code><span class="w">    </span><span class="nt">spec</span><span class="p">:</span>
+<span class="w">      </span><span class="nt">destination</span><span class="p">:</span>
+<span class="w">        </span><span class="nt">server</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;https://kubernetes.default.svc&quot;</span>
+<span class="w">        </span><span class="nt">namespace</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;appnamespace&quot;</span>
+</code></pre></div>
+<p>Being <code>spec.destination.server</code> here the <code>config.clusterCredentials[*].server</code> in the ArgoCD's external cluster secret.</p>
+<hr />
+<h2 id="references">References<a class="headerlink" href="#references" title="Permanent link"> ¶</a></h2>
+<p><a href="https://argo-cd.readthedocs.io/en/stable/operator-manual/declarative-setup/#eks">ArgoCD documentation</a>.</p>
+
+
+  
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+            
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12Z"/></svg>
+            Back to top
+          </button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href="../enable-nat-gateway/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Enable/Disable nat gateway" rel="prev">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                Enable/Disable nat gateway
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../../../work-with-us/" class="md-footer__link md-footer__link--next" aria-label="Next: Overview" rel="next">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                Overview
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2017-2023 <a href="https://www.binbash.co">binbash</a>
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        <div class="md-social">
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://www.binbash.co" target="_blank" rel="noopener" title="www.binbash.co" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8h5Z"/></svg>
+    </a>
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://github.com/binbashar" target="_blank" rel="noopener" title="github.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2A10 10 0 0 0 2 12c0 4.42 2.87 8.17 6.84 9.5.5.08.66-.23.66-.5v-1.69c-2.77.6-3.36-1.34-3.36-1.34-.46-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.87 1.52 2.34 1.07 2.91.83.09-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.92 0-1.11.38-2 1.03-2.71-.1-.25-.45-1.29.1-2.64 0 0 .84-.27 2.75 1.02.79-.22 1.65-.33 2.5-.33.85 0 1.71.11 2.5.33 1.91-1.29 2.75-1.02 2.75-1.02.55 1.35.2 2.39.1 2.64.65.71 1.03 1.6 1.03 2.71 0 3.82-2.34 4.66-4.57 4.91.36.31.69.92.69 1.85V21c0 .27.16.59.67.5C19.14 20.16 22 16.42 22 12A10 10 0 0 0 12 2Z"/></svg>
+    </a>
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://www.linkedin.com/company/binbash" target="_blank" rel="noopener" title="www.linkedin.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.32 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.79M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77Z"/></svg>
+    </a>
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://join.slack.com/t/binbashar/shared_invite/zt-fw1692b6-9k4ADsWJ47lKacszphXM1w" target="_blank" rel="noopener" title="join.slack.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M6 15a2 2 0 0 1-2 2 2 2 0 0 1-2-2 2 2 0 0 1 2-2h2v2m1 0a2 2 0 0 1 2-2 2 2 0 0 1 2 2v5a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-5m2-8a2 2 0 0 1-2-2 2 2 0 0 1 2-2 2 2 0 0 1 2 2v2H9m0 1a2 2 0 0 1 2 2 2 2 0 0 1-2 2H4a2 2 0 0 1-2-2 2 2 0 0 1 2-2h5m8 2a2 2 0 0 1 2-2 2 2 0 0 1 2 2 2 2 0 0 1-2 2h-2v-2m-1 0a2 2 0 0 1-2 2 2 2 0 0 1-2-2V5a2 2 0 0 1 2-2 2 2 0 0 1 2 2v5m-2 8a2 2 0 0 1 2 2 2 2 0 0 1-2 2 2 2 0 0 1-2-2v-2h2m0-1a2 2 0 0 1-2-2 2 2 0 0 1 2-2h5a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-5Z"/></svg>
+    </a>
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://www.youtube.com/channel/UCUjQ3duzxQB_VtNsKNqPwDA/playlists" target="_blank" rel="noopener" title="www.youtube.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m10 15 5.19-3L10 9v6m11.56-7.83c.13.47.22 1.1.28 1.9.07.8.1 1.49.1 2.09L22 12c0 2.19-.16 3.8-.44 4.83-.25.9-.83 1.48-1.73 1.73-.47.13-1.33.22-2.65.28-1.3.07-2.49.1-3.59.1L12 19c-4.19 0-6.8-.16-7.83-.44-.9-.25-1.48-.83-1.73-1.73-.13-.47-.22-1.1-.28-1.9-.07-.8-.1-1.49-.1-2.09L2 12c0-2.19.16-3.8.44-4.83.25-.9.83-1.48 1.73-1.73.47-.13 1.33-.22 2.65-.28 1.3-.07 2.49-.1 3.59-.1L12 5c4.19 0 6.8.16 7.83.44.9.25 1.48.83 1.73 1.73Z"/></svg>
+    </a>
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://medium.com/binbash-inc" target="_blank" rel="noopener" title="medium.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M180.5 74.262C80.813 74.262 0 155.633 0 256s80.819 181.738 180.5 181.738S361 356.373 361 256 280.191 74.262 180.5 74.262Zm288.25 10.646c-49.845 0-90.245 76.619-90.245 171.095s40.406 171.1 90.251 171.1 90.251-76.619 90.251-171.1H559c0-94.503-40.4-171.095-90.248-171.095Zm139.506 17.821c-17.526 0-31.735 68.628-31.735 153.274s14.2 153.274 31.735 153.274S640 340.631 640 256c0-84.649-14.215-153.271-31.742-153.271Z"/></svg>
+    </a>
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://twitter.com/binbash_devops" target="_blank" rel="noopener" title="twitter.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M22.46 6c-.77.35-1.6.58-2.46.69.88-.53 1.56-1.37 1.88-2.38-.83.5-1.75.85-2.72 1.05C18.37 4.5 17.26 4 16 4c-2.35 0-4.27 1.92-4.27 4.29 0 .34.04.67.11.98C8.28 9.09 5.11 7.38 3 4.79c-.37.63-.58 1.37-.58 2.15 0 1.49.75 2.81 1.91 3.56-.71 0-1.37-.2-1.95-.5v.03c0 2.08 1.48 3.82 3.44 4.21a4.22 4.22 0 0 1-1.93.07 4.28 4.28 0 0 0 4 2.98 8.521 8.521 0 0 1-5.33 1.84c-.34 0-.68-.02-1.02-.06C3.44 20.29 5.7 21 8.12 21 16 21 20.33 14.46 20.33 8.79c0-.19 0-.37-.01-.56.84-.6 1.56-1.36 2.14-2.23Z"/></svg>
+    </a>
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://hub.docker.com/orgs/binbash" target="_blank" rel="noopener" title="hub.docker.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21.81 10.25c-.06-.04-.56-.43-1.64-.43-.28 0-.56.03-.84.08-.21-1.4-1.38-2.11-1.43-2.14l-.29-.17-.18.27c-.24.36-.43.77-.51 1.19-.2.8-.08 1.56.33 2.21-.49.28-1.29.35-1.46.35H2.62c-.34 0-.62.28-.62.63 0 1.15.18 2.3.58 3.38.45 1.19 1.13 2.07 2 2.61.98.6 2.59.94 4.42.94.79 0 1.61-.07 2.42-.22 1.12-.2 2.2-.59 3.19-1.16A8.3 8.3 0 0 0 16.78 16c1.05-1.17 1.67-2.5 2.12-3.65h.19c1.14 0 1.85-.46 2.24-.85.26-.24.45-.53.59-.87l.08-.24-.19-.14m-17.96.99h1.76c.08 0 .16-.07.16-.16V9.5c0-.08-.07-.16-.16-.16H3.85c-.09 0-.16.07-.16.16v1.58c.01.09.07.16.16.16m2.43 0h1.76c.08 0 .16-.07.16-.16V9.5c0-.08-.07-.16-.16-.16H6.28c-.09 0-.16.07-.16.16v1.58c.01.09.07.16.16.16m2.47 0h1.75c.1 0 .17-.07.17-.16V9.5c0-.08-.06-.16-.17-.16H8.75c-.08 0-.15.07-.15.16v1.58c0 .09.06.16.15.16m2.44 0h1.77c.08 0 .15-.07.15-.16V9.5c0-.08-.06-.16-.15-.16h-1.77c-.08 0-.15.07-.15.16v1.58c0 .09.07.16.15.16M6.28 9h1.76c.08 0 .16-.09.16-.18V7.25c0-.09-.07-.16-.16-.16H6.28c-.09 0-.16.06-.16.16v1.57c.01.09.07.18.16.18m2.47 0h1.75c.1 0 .17-.09.17-.18V7.25c0-.09-.06-.16-.17-.16H8.75c-.08 0-.15.06-.15.16v1.57c0 .09.06.18.15.18m2.44 0h1.77c.08 0 .15-.09.15-.18V7.25c0-.09-.07-.16-.15-.16h-1.77c-.08 0-.15.06-.15.16v1.57c0 .09.07.18.15.18m0-2.28h1.77c.08 0 .15-.07.15-.16V5c0-.1-.07-.17-.15-.17h-1.77c-.08 0-.15.06-.15.17v1.56c0 .08.07.16.15.16m2.46 4.52h1.76c.09 0 .16-.07.16-.16V9.5c0-.08-.07-.16-.16-.16h-1.76c-.08 0-.15.07-.15.16v1.58c0 .09.07.16.15.16"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.tabs", "navigation.instant", "navigation.tracking", "navigation.indexes", "navigation.top", "navigation.footer", "header.autohide", "content.action.edit", "content.code.annotate"], "search": "../../../assets/javascripts/workers/search.dfff1995.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.dff1b7c8.min.js"></script>
+      
+    
+  </body>
+</html>

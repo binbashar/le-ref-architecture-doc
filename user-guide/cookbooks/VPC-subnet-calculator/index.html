@@ -12,13 +12,13 @@
         <meta name="author" content="binbash">
       
       
-        <link rel="canonical" href="https://leverage.binbash.co/user-guide/playbooks/VPC-with-no-LandingZone/">
+        <link rel="canonical" href="https://leverage.binbash.co/user-guide/cookbooks/VPC-subnet-calculator/">
       
       
-        <link rel="prev" href="../">
+        <link rel="prev" href="../schedule-start-stop-ec2/">
       
       
-        <link rel="next" href="../schedule-start-stop-ec2/">
+        <link rel="next" href="../k8s/">
       
       
       <link rel="icon" href="../../../assets/images/logos/favicon.ico">
@@ -26,7 +26,7 @@
     
     
       
-        <title>VPC with no LandingZone - binbash Leverage™</title>
+        <title>Calculate VPC cubnet CIDRs - binbash Leverage™</title>
       
     
     
@@ -93,7 +93,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#vpc-with-no-landing-zone" class="md-skip">
+        <a href="#how-to-calculate-the-vpc-subnet-cidrs" class="md-skip">
           Skip to content
         </a>
       
@@ -127,7 +127,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              VPC with no LandingZone
+              Calculate VPC cubnet CIDRs
             
           </span>
         </div>
@@ -3978,6 +3978,14 @@
       
         
       
+        
+      
+        
+      
+        
+      
+        
+      
     
     
     <li class="md-nav__item md-nav__item--active md-nav__item--nested">
@@ -3995,7 +4003,7 @@
               
   
   <span class="md-ellipsis">
-    Playbooks
+    Cookbooks
   </span>
   
 
@@ -4010,7 +4018,7 @@
         <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_8_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_4_8">
             <span class="md-nav__icon md-icon"></span>
-            Playbooks
+            Cookbooks
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
@@ -4020,29 +4028,9 @@
                 
   
   
-    
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  <span class="md-ellipsis">
-    VPC with no LandingZone
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../VPC-with-no-LandingZone/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -4051,108 +4039,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#what" class="md-nav__link">
-    What
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#why" class="md-nav__link">
-    Why
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#how" class="md-nav__link">
-    How
-  </a>
-  
-    <nav class="md-nav" aria-label="How">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#objective" class="md-nav__link">
-    Objective
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#what-you-need" class="md-nav__link">
-    What you need:
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#common-process" class="md-nav__link">
-    Common Process
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#vpc-process" class="md-nav__link">
-    VPC Process
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#ec2-process" class="md-nav__link">
-    EC2 Process
-  </a>
-  
-    <nav class="md-nav" aria-label="EC2 Process">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#get-the-layer" class="md-nav__link">
-    Get the layer
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#prepare-the-layer" class="md-nav__link">
-    Prepare the layer
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -4182,13 +4068,103 @@
                 
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="../VPC-subnet-calculator/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   <span class="md-ellipsis">
     Calculate VPC cubnet CIDRs
+  </span>
+  
+
+      </a>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../k8s/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Kubernetes in different stages
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sops-kms/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Encrypting/decrypting files with SOPS+KMS
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../enable-nat-gateway/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Enable/Disable nat gateway
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../argocd-external-cluster/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    ArgoCD add external cluster
   </span>
   
 
@@ -4758,96 +4734,6 @@
     
   
   
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#what" class="md-nav__link">
-    What
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#why" class="md-nav__link">
-    Why
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#how" class="md-nav__link">
-    How
-  </a>
-  
-    <nav class="md-nav" aria-label="How">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#objective" class="md-nav__link">
-    Objective
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#what-you-need" class="md-nav__link">
-    What you need:
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#common-process" class="md-nav__link">
-    Common Process
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#vpc-process" class="md-nav__link">
-    VPC Process
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#ec2-process" class="md-nav__link">
-    EC2 Process
-  </a>
-  
-    <nav class="md-nav" aria-label="EC2 Process">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#get-the-layer" class="md-nav__link">
-    Get the layer
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#prepare-the-layer" class="md-nav__link">
-    Prepare the layer
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-    </ul>
-  
 </nav>
                   </div>
                 </div>
@@ -4861,7 +4747,7 @@
                   
 
   
-    <a href="https://github.com/binbashar/le-ref-architecture-doc/edit/master/docs/user-guide/playbooks/VPC-with-no-LandingZone.md" title="Edit this page" class="md-content__button md-icon">
+    <a href="https://github.com/binbashar/le-ref-architecture-doc/edit/master/docs/user-guide/cookbooks/VPC-subnet-calculator.md" title="Edit this page" class="md-content__button md-icon">
       
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4v-2m10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1 2.1 2.1Z"/></svg>
     </a>
@@ -4869,264 +4755,35 @@
   
 
 
-<h1 id="vpc-with-no-landing-zone">VPC with no Landing Zone<a class="headerlink" href="#vpc-with-no-landing-zone" title="Permanent link"> ¶</a></h1>
-<h2 id="what">What<a class="headerlink" href="#what" title="Permanent link"> ¶</a></h2>
-<p>Do you want to try <a href="/"><strong>binbash Leverage</strong></a> but you are not willing to transform yet your already existent infra to the <a href="/try-leverage/"><strong>binbash Leverage Landing Zone</strong></a> (honoring the <a href="https://docs.aws.amazon.com/wellarchitected/latest/framework/welcome.html">AWS Well Architected Framework</a>)?</p>
-<p>With this playbook you will create a VPC with all the benefits <strong>binbash Leverage</strong> <a href="/user-guide/ref-architecture-aws/features/network/vpc-addressing/">network layer</a> provides.</p>
-<div class="admonition info">
-<p class="admonition-title">If you want to use the Full <strong>binbash Leverage Landing Zone</strong> please visit the <a href="/try-leverage/">Try Leverage section</a></p>
-<p>This will give you the full power of <strong>binbash Leverage</strong> and the <a href="https://docs.aws.amazon.com/wellarchitected/latest/framework/welcome.html">AWS Well Architected Framework</a>.</p>
-</div>
-<h2 id="why">Why<a class="headerlink" href="#why" title="Permanent link"> ¶</a></h2>
-<p>Maybe because you found <strong>binbash Leverage</strong> but you want to try it out first before you convert your base infra.</p>
-<h2 id="how">How<a class="headerlink" href="#how" title="Permanent link"> ¶</a></h2>
-<h3 id="objective">Objective<a class="headerlink" href="#objective" title="Permanent link"> ¶</a></h3>
-<p>We will create a simple VPC (with all its resources) and an will add an EC2 instance to it so we can test it for real.</p>
-<h3 id="what-you-need">What you need:<a class="headerlink" href="#what-you-need" title="Permanent link"> ¶</a></h3>
-<ul>
-<li>an AWS account</li>
-<li>a user with programmatic access keys and the keys</li>
-<li><strong>binbash Leverage</strong></li>
-</ul>
-<h3 id="common-process">Common Process<a class="headerlink" href="#common-process" title="Permanent link"> ¶</a></h3>
-<p>Ok, just <a href="/try-leverage/local-setup/">install binbash Leverage</a> and <a href="/try-leverage/leverage-project-setup/">create the Leverage project</a>. When creating credentials, do it for MANAGEMENT type. 
-Basically:
-<div class="highlight"><pre><span></span><code>mkdir<span class="w"> </span>project<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="nb">cd</span><span class="w"> </span>project
-leverage<span class="w"> </span>project<span class="w"> </span>init
-<span class="c1">## edit the yaml file</span>
-leverage<span class="w"> </span>project<span class="w"> </span>create
-leverage<span class="w"> </span>credentials<span class="w"> </span>configure<span class="w"> </span>--type<span class="w"> </span>MANAGEMENT
-</code></pre></div></p>
-<p>You end up with this structure:
-<div class="highlight"><pre><span></span><code>❯<span class="w"> </span>tree<span class="w"> </span>-L<span class="w"> </span><span class="m">2</span><span class="w"> </span>.
-.
-├──<span class="w"> </span>build.env
-├──<span class="w"> </span>config
-│<span class="w">   </span>└──<span class="w"> </span>common.tfvars
-├──<span class="w"> </span>management
-│<span class="w">   </span>├──<span class="w"> </span>config
-│<span class="w">   </span>├──<span class="w"> </span>global
-│<span class="w">   </span>└──<span class="w"> </span>us-east-1
-├──<span class="w"> </span>Pipfile
-├──<span class="w"> </span>Pipfile.lock
-├──<span class="w"> </span>project.yaml
-├──<span class="w"> </span>security
-│<span class="w">   </span>├──<span class="w"> </span>config
-│<span class="w">   </span>└──<span class="w"> </span>us-east-1
-└──<span class="w"> </span>shared
-<span class="w">    </span>├──<span class="w"> </span>config
-<span class="w">    </span>└──<span class="w"> </span>us-east-1
-</code></pre></div></p>
-<p>Create a dummy account dir.</p>
-<p>Despite we won't create a real account (since there is no Landing Zone), we'll have to create a dir to hold all the layers we need.</p>
-<div class="highlight"><pre><span></span><code>mkdir<span class="w"> </span>-p<span class="w"> </span>apps-dummy/us-east-1/
-</code></pre></div>
-<p>Copy the config files:</p>
-<div class="highlight"><pre><span></span><code>cp<span class="w"> </span>-r<span class="w"> </span>shared/config<span class="w"> </span>apps-dummy/
-</code></pre></div>
-<p>In <code>config/account.tfvars</code> change this:
-<div class="highlight"><pre><span></span><code><span class="c1">## Environment Name</span>
-<span class="l l-Scalar l-Scalar-Plain">environment = &quot;shared&quot;</span>
-</code></pre></div>
-to this
-<div class="highlight"><pre><span></span><code><span class="c1">## Environment Name</span>
-<span class="l l-Scalar l-Scalar-Plain">environment = &quot;apps-dummy&quot;</span>
-</code></pre></div>
-(note the environment is the same as the created dir)</p>
-<p>In <code>config/backend.tfvars</code> change this:
-<div class="highlight"><pre><span></span><code><span class="l l-Scalar l-Scalar-Plain">profile = &quot;bm-shared-oaar&quot;</span>
-</code></pre></div>
-to this:
-<div class="highlight"><pre><span></span><code><span class="l l-Scalar l-Scalar-Plain">profile = &quot;bm-management&quot;</span>
-</code></pre></div></p>
-<h3 id="vpc-process">VPC Process<a class="headerlink" href="#vpc-process" title="Permanent link"> ¶</a></h3>
-<p>Copy the network layer:</p>
-<div class="highlight"><pre><span></span><code>cp<span class="w"> </span>-r<span class="w"> </span>shared/us-east-1/base-network<span class="w"> </span>apps-dummy/us-east-1/
-</code></pre></div>
-<p>Go into the layer:</p>
-<div class="highlight"><pre><span></span><code>cp<span class="w"> </span>-r<span class="w"> </span>shared/us-east-1/base-network<span class="w"> </span>apps-dummy/us-east-1/
-<span class="nb">cd</span><span class="w"> </span>apps-dummy/us-east-1/base-network
-</code></pre></div>
-<p>Since we are testing we won't use the S3 backend (we didn't create the bucket, but you can do it easily with the <code>base-tf-backend</code> layer), so comment this line in <code>config.tf</code> file:</p>
-<div class="highlight"><pre><span></span><code><span class="w">  </span><span class="c1">#backend &quot;s3&quot; {</span>
-<span class="w">  </span><span class="c1">#  key = &quot;shared/network/terraform.tfstate&quot;</span>
-<span class="w">  </span><span class="c1">#}</span>
-</code></pre></div>
-<p>Initialize the layer:</p>
-<div class="highlight"><pre><span></span><code>leverage<span class="w"> </span>tf<span class="w"> </span>init<span class="w"> </span>--skip-validation
-</code></pre></div>
-<p>Note the <code>skip-validation</code> flag. This is needed since we are using local tfstate.</p>
-<p>Plan it:
-<div class="highlight"><pre><span></span><code>leverage<span class="w"> </span>tf<span class="w"> </span>plan
-</code></pre></div></p>
-<p>If you are happy (or you are unhappy but you are ok with the plan), apply it:
-<div class="highlight"><pre><span></span><code>leverage<span class="w"> </span>tf<span class="w"> </span>apply
-</code></pre></div></p>
-<p>You should end up with something like this:
-<div class="highlight"><pre><span></span><code>Apply<span class="w"> </span>complete!<span class="w"> </span>Resources:<span class="w"> </span><span class="m">20</span><span class="w"> </span>added,<span class="w"> </span><span class="m">0</span><span class="w"> </span>changed,<span class="w"> </span><span class="m">0</span><span class="w"> </span>destroyed.
+<h1 id="how-to-calculate-the-vpc-subnet-cidrs">How to calculate the VPC subnet CIDRs?<a class="headerlink" href="#how-to-calculate-the-vpc-subnet-cidrs" title="Permanent link"> ¶</a></h1>
+<p>To calculate subnets <a href="https://www.davidc.net/sites/default/subnets/subnets.html?network=172.18.0.0&amp;mask=20&amp;division=15.7231">this calculator</a> can be used</p>
+<p>Note in this link a few params were added: the base network and mask, and the division number. In this case the example is for the <code>shared</code> account networking.</p>
+<p>This table will be shown: 
+<img alt="subnet-cidr-calculator" src="/assets/images/screenshots/subnet-cidr-calculator.png" style="width:950px" title="Subnet CIDR calculator" /></p>
+<p>Note how this information is set in the tf file:</p>
+<div class="highlight"><pre><span></span><code><span class="w">  </span><span class="l l-Scalar l-Scalar-Plain">vpc_cidr_block = &quot;172.18.0.0/20&quot;</span>
+<span class="w">  </span><span class="l l-Scalar l-Scalar-Plain">azs = [</span>
+<span class="w">    </span><span class="l l-Scalar l-Scalar-Plain">&quot;${var.region}a&quot;,</span>
+<span class="w">    </span><span class="l l-Scalar l-Scalar-Plain">&quot;${var.region}b&quot;</span>
+<span class="w">  </span><span class="l l-Scalar l-Scalar-Plain">]</span>
 
-Outputs:
+<span class="w">  </span><span class="l l-Scalar l-Scalar-Plain">private_subnets_cidr = [&quot;172.18.0.0/21&quot;]</span>
+<span class="w">  </span><span class="l l-Scalar l-Scalar-Plain">private_subnets = [</span>
+<span class="w">    </span><span class="l l-Scalar l-Scalar-Plain">&quot;172.18.0.0/23&quot;,</span>
+<span class="w">    </span><span class="l l-Scalar l-Scalar-Plain">&quot;172.18.2.0/23&quot;</span>
+<span class="w">  </span><span class="l l-Scalar l-Scalar-Plain">]</span>
 
-<span class="nv">availability_zones</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">[</span>
-<span class="w">  </span><span class="s2">&quot;us-east-1a&quot;</span>,
-<span class="w">  </span><span class="s2">&quot;us-east-1b&quot;</span>,
-<span class="o">]</span>
-<span class="nv">nat_gateway_ids</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">[]</span>
-<span class="nv">private_route_table_ids</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">[</span>
-<span class="w">  </span><span class="s2">&quot;rtb-065deXXXXXXX86b6d&quot;</span>,
-<span class="o">]</span>
-<span class="nv">private_subnets</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">[</span>
-<span class="w">  </span><span class="s2">&quot;subnet-0aXXXXXXXXXXd80a6&quot;</span>,
-<span class="w">  </span><span class="s2">&quot;subnet-0bXXXXXXXXXX0ff67&quot;</span>,
-<span class="o">]</span>
-<span class="nv">private_subnets_cidr</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">[</span>
-<span class="w">  </span><span class="s2">&quot;172.18.0.0/21&quot;</span>,
-<span class="o">]</span>
-<span class="nv">public_route_table_ids</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">[</span>
-<span class="w">  </span><span class="s2">&quot;rtb-01XXXXXXXXXXXX887&quot;</span>,
-<span class="o">]</span>
-<span class="nv">public_subnets</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">[</span>
-<span class="w">  </span><span class="s2">&quot;subnet-0648XXXXXXXXX69&quot;</span>,
-<span class="w">  </span><span class="s2">&quot;subnet-0297XXXXXXXXf10&quot;</span>,
-<span class="o">]</span>
-<span class="nv">public_subnets_cidr</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">[</span>
-<span class="w">  </span><span class="s2">&quot;172.18.8.0/21&quot;</span>,
-<span class="o">]</span>
-<span class="nv">vpc_cidr_block</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;172.18.0.0/20&quot;</span>
-<span class="nv">vpc_id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;vpc-0aXXXXXXXXXX06d8f&quot;</span>
-<span class="nv">vpc_name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;bm-apps-dummy-vpc&quot;</span>
-</code></pre></div></p>
-<h3 id="ec2-process">EC2 Process<a class="headerlink" href="#ec2-process" title="Permanent link"> ¶</a></h3>
-<p>Great, now we can go for the EC2!</p>
-<h4 id="get-the-layer">Get the layer<a class="headerlink" href="#get-the-layer" title="Permanent link"> ¶</a></h4>
-<p>For this step we'll go for a layer that can be found in the <strong>binbash Leverage RefArch</strong> under <a href="https://github.com/binbashar/le-tf-infra-aws/tree/master/apps-devstg/us-east-1/ec2-fleet-ansible%20--">this directory</a>.</p>
-<p>You can download a directory from a git repository using <a href="https://addons.mozilla.org/en-US/firefox/addon/gitzip/">this Firefox addon</a> or any method you want.</p>
-<p>Note when you copy the layer (e.g. with gitzip), the file <code>common-variables.tf</code> , which is a soft link, was probably copied as a regular file. 
-If this happens, delete it:</p>
-<div class="highlight"><pre><span></span><code><span class="nb">cd</span><span class="w"> </span>ec2-fleet-ansible<span class="se">\ </span>--
-rm<span class="w"> </span>common-variables.tf
+<span class="w">  </span><span class="l l-Scalar l-Scalar-Plain">public_subnets_cidr = [&quot;172.18.8.0/21&quot;]</span>
+<span class="w">  </span><span class="l l-Scalar l-Scalar-Plain">public_subnets = [</span>
+<span class="w">    </span><span class="l l-Scalar l-Scalar-Plain">&quot;172.18.8.0/23&quot;,</span>
+<span class="w">    </span><span class="l l-Scalar l-Scalar-Plain">&quot;172.18.10.0/23&quot;</span>
+<span class="w">  </span><span class="l l-Scalar l-Scalar-Plain">]</span>
 </code></pre></div>
-<h4 id="prepare-the-layer">Prepare the layer<a class="headerlink" href="#prepare-the-layer" title="Permanent link"> ¶</a></h4>
-<p>Again, since we are not running the whole <strong>binbash Leverage Landing Zone</strong> we need to comment out these lines in <code>config.tf</code>:</p>
-<div class="highlight"><pre><span></span><code><span class="w">  </span><span class="c1">#backend &quot;s3&quot; {</span>
-<span class="w">  </span><span class="c1">#  key = &quot;apps-devstg/ec2-fleet-ansible/terraform.tfstate&quot;</span>
-<span class="w">  </span><span class="c1">#}</span>
-</code></pre></div>
-<p>Also in this file, comment out these two resources:
-<div class="highlight"><pre><span></span><code><span class="l l-Scalar l-Scalar-Plain">data &quot;terraform_remote_state&quot; &quot;security&quot; {</span>
-<span class="l l-Scalar l-Scalar-Plain">data &quot;terraform_remote_state&quot; &quot;vpc-shared&quot; {</span>
-</code></pre></div></p>
-<p>And change <code>vpc</code> to be like this:
-<div class="highlight"><pre><span></span><code><span class="l l-Scalar l-Scalar-Plain">data &quot;terraform_remote_state&quot; &quot;vpc&quot; {</span>
-<span class="w">  </span><span class="l l-Scalar l-Scalar-Plain">backend = &quot;local&quot;</span>
-<span class="w">  </span><span class="l l-Scalar l-Scalar-Plain">config = {</span>
-<span class="w">    </span><span class="l l-Scalar l-Scalar-Plain">path = &quot;../base-network/terraform.tfstate&quot;</span>
-<span class="w">  </span><span class="l l-Scalar l-Scalar-Plain">}</span>
-<span class="l l-Scalar l-Scalar-Plain">}</span>
-</code></pre></div>
-Again, since we are not using the full <strong>binbash Leverage</strong> capabilities, we are not using the S3 Terraform backend, thus the backend is local.</p>
-<p>In <code>ec2_fleet.tf</code> update module version like this:
-<div class="highlight"><pre><span></span><code><span class="w">  </span><span class="l l-Scalar l-Scalar-Plain">source = &quot;github.com/binbashar/terraform-aws-ec2-instance.git?ref=v5.5.0&quot;</span>
-</code></pre></div></p>
-<p>Init the layer:
-<div class="highlight"><pre><span></span><code>leverage<span class="w"> </span>tf<span class="w"> </span>init<span class="w"> </span>--skip-validation
-</code></pre></div>
-(same as before with the skip flag)</p>
-<p>Now, we need some common and specific vars that are not set.</p>
-<p>So, create a <code>variables.tf</code> file with this content:</p>
-<p><div class="highlight"><pre><span></span><code><span class="l l-Scalar l-Scalar-Plain">variable &quot;environment&quot; {</span>
-<span class="w">  </span><span class="l l-Scalar l-Scalar-Plain">type        = string</span>
-<span class="w">  </span><span class="l l-Scalar l-Scalar-Plain">description = &quot;Environment Name&quot;</span>
-<span class="l l-Scalar l-Scalar-Plain">}</span>
-<span class="l l-Scalar l-Scalar-Plain">variable &quot;profile&quot; {</span>
-<span class="w">  </span><span class="l l-Scalar l-Scalar-Plain">type        = string</span>
-<span class="w">  </span><span class="l l-Scalar l-Scalar-Plain">description = &quot;AWS Profile (required by the backend but also used for other resources)&quot;</span>
-<span class="l l-Scalar l-Scalar-Plain">}</span>
-<span class="l l-Scalar l-Scalar-Plain">variable &quot;region&quot; {</span>
-<span class="w">  </span><span class="l l-Scalar l-Scalar-Plain">type        = string</span>
-<span class="w">  </span><span class="l l-Scalar l-Scalar-Plain">description = &quot;AWS Region&quot;</span>
-<span class="l l-Scalar l-Scalar-Plain">}</span>
-<span class="l l-Scalar l-Scalar-Plain">##=============================#</span>
-<span class="l l-Scalar l-Scalar-Plain">##  EC2 Attributes</span><span class="w">             </span><span class="c1">#</span>
-<span class="c1">##=============================#</span>
-<span class="l l-Scalar l-Scalar-Plain">variable &quot;aws_ami_os_id&quot; {</span>
-<span class="w">  </span><span class="l l-Scalar l-Scalar-Plain">type        = string</span>
-<span class="w">  </span><span class="l l-Scalar l-Scalar-Plain">description = &quot;AWS AMI Operating System Identificator&quot;</span>
-<span class="w">  </span><span class="l l-Scalar l-Scalar-Plain">default     = &quot;ubuntu/images/hvm-ssd/ubuntu-jammy-22.04-amd64-server-*&quot;</span>
-<span class="l l-Scalar l-Scalar-Plain">}</span>
-
-<span class="l l-Scalar l-Scalar-Plain">variable &quot;aws_ami_os_owner&quot; {</span>
-<span class="w">  </span><span class="l l-Scalar l-Scalar-Plain">type        = string</span>
-<span class="w">  </span><span class="l l-Scalar l-Scalar-Plain">description = &quot;AWS AMI Operating System Owner, eg</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">099720109477 for Canonical &quot;</span>
-<span class="w">  </span><span class="l l-Scalar l-Scalar-Plain">default     = &quot;099720109477&quot;</span>
-<span class="err">}</span>
-
-<span class="c1">## security.tf file</span>
-<span class="c1">##=============================#</span>
-<span class="c1">##  SSM Attributes             #</span>
-<span class="c1">##=============================#</span>
-<span class="l l-Scalar l-Scalar-Plain">variable &quot;instance_profile&quot; {</span>
-<span class="w">  </span><span class="l l-Scalar l-Scalar-Plain">type        = string</span>
-<span class="w">  </span><span class="l l-Scalar l-Scalar-Plain">description = &quot;Whether or not to create the EC2 profile, use null or &#39;true&#39;&quot;</span>
-<span class="w">  </span><span class="l l-Scalar l-Scalar-Plain">default     = &quot;true&quot;</span>
-<span class="err">}</span>
-
-<span class="l l-Scalar l-Scalar-Plain">variable &quot;prefix&quot; {</span>
-<span class="w">  </span><span class="l l-Scalar l-Scalar-Plain">type        = string</span>
-<span class="w">  </span><span class="l l-Scalar l-Scalar-Plain">description = &quot;EC2 profile prefix&quot;</span>
-<span class="w">  </span><span class="l l-Scalar l-Scalar-Plain">default     = &quot;fleet-ansible&quot;</span>
-<span class="err">}</span>
-
-<span class="l l-Scalar l-Scalar-Plain">variable &quot;name&quot; {</span>
-<span class="w">  </span><span class="l l-Scalar l-Scalar-Plain">type        = string</span>
-<span class="w">  </span><span class="l l-Scalar l-Scalar-Plain">description = &quot;EC2 profile name&quot;</span>
-<span class="w">  </span><span class="l l-Scalar l-Scalar-Plain">default     = &quot;ssm-demo&quot;</span>
-<span class="err">}</span>
-
-<span class="l l-Scalar l-Scalar-Plain">variable &quot;enable_ssm_access&quot; {</span>
-<span class="w">  </span><span class="l l-Scalar l-Scalar-Plain">type        = bool</span>
-<span class="w">  </span><span class="l l-Scalar l-Scalar-Plain">description = &quot;Whether or not to attach SSM policy to EC2 profile IAM role, use false or true&quot;</span>
-<span class="w">  </span><span class="l l-Scalar l-Scalar-Plain">default     = true</span>
-<span class="err">}</span>
-</code></pre></div>
-(set the Ubuntu image as per your needs)</p>
-<p>In <code>ec2_fleet.tf</code> file comment these lines:</p>
-<p><div class="highlight"><pre><span></span><code><span class="w"> </span><span class="c1"># data.terraform_remote_state.vpc-shared.outputs.vpc_cidr_block</span>
-
-<span class="w"> </span><span class="c1"># key_name               = data.terraform_remote_state.security.outputs.aws_key_pair_name</span>
-</code></pre></div>
-...again, due to the lack of the whole <strong>binbash Leverage Landing Zone</strong>... </p>
-<p>If you plan to access the instance from the Internet (EC2 in a public subnet)(e.g. to use Ansible), you change the first line to <code>"0.0.0.0/0"</code>. (or better, a specific public IP)</p>
-<p>If you want to add an SSH key (e.g. to use Ansible), you can <a href="https://www.ssh.com/academy/ssh/keygen">generate a new SSH key</a>, add a resource like this:
-<div class="highlight"><pre><span></span><code><span class="l l-Scalar l-Scalar-Plain">resource &quot;aws_key_pair&quot; &quot;devops&quot; {</span>
-<span class="w">  </span><span class="l l-Scalar l-Scalar-Plain">key_name   = &quot;devops-key&quot;</span>
-<span class="w">  </span><span class="l l-Scalar l-Scalar-Plain">public_key = &quot;ssh-ed25519 AAAAC3N9999999999999999999999999eF Binbash-AWS-instances&quot;</span>
-<span class="l l-Scalar l-Scalar-Plain">}</span>
-</code></pre></div>
-And replace the line in <code>ec2_fleet.tf</code> with this one:
-<div class="highlight"><pre><span></span><code><span class="w">  </span><span class="l l-Scalar l-Scalar-Plain">key_name               = aws_key_pair.devops.key_name</span>
-</code></pre></div></p>
-<p>In the same file, change <code>instance_type</code> as per your needs.</p>
-<p>Also you can add this 
-* * *to the <code>ec2_ansible_fleet</code> resource:
-<div class="highlight"><pre><span></span><code><span class="w">  </span><span class="l l-Scalar l-Scalar-Plain">create_spot_instance = true</span>
-</code></pre></div>
-to create spot instances....
-and this
-<div class="highlight"><pre><span></span><code><span class="w">  </span><span class="l l-Scalar l-Scalar-Plain">create_iam_instance_profile = true</span>
-<span class="w">  </span><span class="l l-Scalar l-Scalar-Plain">iam_role_description        = &quot;IAM role for EC2 instance&quot;</span>
-<span class="w">  </span><span class="l l-Scalar l-Scalar-Plain">iam_role_policies = {</span>
-<span class="w">    </span><span class="l l-Scalar l-Scalar-Plain">AmazonSSMManagedInstanceCore = &quot;arn:aws:iam::aws:policy/AmazonSSMManagedInstanceCore&quot;</span>
-<span class="w">  </span><span class="l l-Scalar l-Scalar-Plain">}</span>
-</code></pre></div>
-to add SSM access.</p>
-<p>In <code>locals.tf</code> file check the variable <code>multiple_instances</code>. There the EC2 instances are defined, by default there are four.
-Remember to set the subnets in which the instances will be created.</p>
-<p>Finally, apply the layer:</p>
-<div class="highlight"><pre><span></span><code>leverage<span class="w"> </span>tf<span class="w"> </span>apply
-</code></pre></div>
-<p>Check your public IP and try to SSH into your new instance!</p>
-<p>Have fun!</p>
+<p>Note the main CIDR is being used for the VPC. See on the left how the <code>/20</code> encompasses all the rows.</p>
+<p>Then two divisions for <code>/21</code>. Note the first subnet address of the first row for each one is being used for <code>private_subnets_cidr</code> and <code>public_subnets_cidr</code>.</p>
+<p>Finally the <code>/23</code> are being used for each subnet.</p>
+<p>Note we are using the first two subnet addresses for each <code>/21</code>. This is due to we are reserving the other two to allow adding more AZs in the future. (up to two in this case)</p>
+<p>If you want you can take as a reference <a href="/user-guide/ref-architecture-aws/features/network/vpc-addressing/">this page</a> to select CIDRs for each account.</p>
 
 
   
@@ -5156,7 +4813,7 @@ Remember to set the subnets in which the instances will be created.</p>
       <nav class="md-footer__inner md-grid" aria-label="Footer" >
         
           
-          <a href="../" class="md-footer__link md-footer__link--prev" aria-label="Previous: Overview" rel="prev">
+          <a href="../schedule-start-stop-ec2/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Start/Stop EC2/RDS instances using schedule or manual endpoint" rel="prev">
             <div class="md-footer__button md-icon">
               
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
@@ -5166,20 +4823,20 @@ Remember to set the subnets in which the instances will be created.</p>
                 Previous
               </span>
               <div class="md-ellipsis">
-                Overview
+                Start/Stop EC2/RDS instances using schedule or manual endpoint
               </div>
             </div>
           </a>
         
         
           
-          <a href="../schedule-start-stop-ec2/" class="md-footer__link md-footer__link--next" aria-label="Next: Start/Stop EC2/RDS instances using schedule or manual endpoint" rel="next">
+          <a href="../k8s/" class="md-footer__link md-footer__link--next" aria-label="Next: Kubernetes in different stages" rel="next">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 Next
               </span>
               <div class="md-ellipsis">
-                Start/Stop EC2/RDS instances using schedule or manual endpoint
+                Kubernetes in different stages
               </div>
             </div>
             <div class="md-footer__button md-icon">

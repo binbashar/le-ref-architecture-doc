@@ -301,6 +301,7 @@ nav:
       - Encrypting/decrypting files with SOPS+KMS: "user-guide/cookbooks/sops-kms.md"
       - Enable/Disable nat gateway: "user-guide/cookbooks/enable-nat-gateway.md"
       - ArgoCD add external cluster: "user-guide/cookbooks/argocd-external-cluster.md"
+      - VPN Server: "user-guide/cookbooks/VPN-server.md"
   - Work with us:
       - Overview: "work-with-us/index.md"
       - Support: "work-with-us/support.md"

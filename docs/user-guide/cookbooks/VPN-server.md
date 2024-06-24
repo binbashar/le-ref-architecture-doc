@@ -25,7 +25,7 @@ All the networks that should be accessible from the VPN must:
 
 This Pritunl server will be deployed in an EC2 instance.
 
-Note this instance can be started/stopped in an scheduled fashion, see [here](/user-guide/playbooks/schedule-start-stop-ec2) for more info. (Note also, if no EIP is being used, when the instance is stopped and then started again the IP will change.)
+Note this instance can be started/stopped in an scheduled fashion, see [here](/user-guide/cookbooks/schedule-start-stop-ec2) for more info. (Note also, if no EIP is being used, when the instance is stopped and then started again the IP will change.)
 
 These are the steps:
 
@@ -181,58 +181,16 @@ When prompted to accept the fingerprint, type "yes" and hit enter.
 !!! info
     It seems to be obvious but... you need Ansible installed.
     
-This Ansible repo will be used here: [Pritunl VPN Server Playbook](https://gitlab.com/ansible-kungfoo/ansible-pritunl-vpn-server)
+This Ansible repo will be used here: [Pritunl VPN Server Playbook](https://github.com/binbashar/le-ansible-infra/tree/master/vpn-pritunl)
 
-Copy the [VPN ansible repository](https://gitlab.com/ansible-kungfoo/ansible-pritunl-vpn-server) into your project repository. (e.g. you can create an `ansible` directory inside your [**binbash Leverage**](https://leverage.binbash.co/) project repository, so all your infraesctructure code is in the same place)
+!!! alert
+    This is a private repository, please get in touch with us to get access to it!
 
-`cd` into the `ansible-pritunl-vpn-server` directory.
+Copy the playbooks into your project repository. (e.g. you can create an `ansible` directory inside your [**binbash Leverage**](https://leverage.binbash.co/) project repository, so all your infraesctructure code is in the same place)
 
-If you don´t have your password file just create it:
+`cd` into the `ansible-pritunl-vpn-server` (or the name you've chosen) directory.
 
-```shell
-echo 'your-password-here' > .vault_pass
-```
-
-!!! warning
-    Keep your password safe and avoid uploading it to the repo adding the file to the `.gitignore` file: `echo ".vault_pass" >> ../../.gitignore` (check the path)
-    
-
-- copy `.hosts.example` to `.hosts`
-- copy `.config.cfg.example` to `.config.cfg`
-- copy `group_vars/all.yml.example` to `group_vars/all.yml`
-- copy `group_vars/secrets.enc.yml.example` to `group_vars/secrets.enc.yml`
-
-- edit `.hosts` file and change the `ansible_host` and `ansible_ssh_private_key_file` parameters, the former with the host names you selected before, the later with the path to your private key.
-- edit `group_vars/all.yaml` file and update the values as per your needs
-- edit the `group_vars/secrets.enc.yml` with the passwords for your users ([a-zA-Z0-9])
-- encrypt the `group_vars/secrets.enc.yml` file:
-
-```shell
-ansible-vault encrypt --vault-password-file=.vault_pass --encrypt-vault-id=default group_vars/secrets.enc.yml
-```
-
-!!! info
-    If you need to decrypt it to edit: `ansible-vault decrypt --vault-password-file=.vault_pass group_vars/secrets.enc.yml `
-
-- edit `ansible.cfg` file and set the `vault_password_file` to the right path (pointing to `.vault_pass` file)
-- edit `setup.yaml` file and update the host sections so the public access is used:
-
-```yaml
-  hosts:
-    # At first, you provision the instance through its public DNS name
-    - pritunl_public
-    # After that, you can use the private one
-    #- pritunl_private
-```
-
-!!! info
-    This first time the public access has to be used since we don't have VPN now!
-    
-Run the playbooks:
-
-```shell
-ansible-playbook setup.yml
-```
+Follow the steps in the repository README file to install the server.
 
 #### Connect and configure the server
 

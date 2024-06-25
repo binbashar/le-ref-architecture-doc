@@ -183,8 +183,12 @@ When prompted to accept the fingerprint, type "yes" and hit enter.
     
 This Ansible repo will be used here: [Pritunl VPN Server Playbook](https://github.com/binbashar/le-ansible-infra/tree/master/vpn-pritunl)
 
-!!! alert
-    This is a private repository, please get in touch with us to get access to it!
+!!! note
+    This is a **private repository**, please get in touch with us to get access to it!<br />
+    
+    - [https://www.binbash.co/es/contact](https://www.binbash.co/es/contact){:target="_blank"}
+    
+    - [leverage@binbash.co](mailto:leverage@binbash.co)
 
 Copy the playbooks into your project repository. (e.g. you can create an `ansible` directory inside your [**binbash Leverage**](https://leverage.binbash.co/) project repository, so all your infraesctructure code is in the same place)
 

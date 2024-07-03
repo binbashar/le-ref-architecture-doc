@@ -4025,6 +4025,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#leverage-cli-fails-because-of-missing-gitconfig" class="md-nav__link">
+    Leverage CLI fails because of missing .gitconfig
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -4916,6 +4923,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#leverage-cli-fails-because-of-missing-gitconfig" class="md-nav__link">
+    Leverage CLI fails because of missing .gitconfig
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -4979,7 +4993,11 @@ You may have more than 1 key associated to the <code>YYY</code> host. Remove the
 <img alt="docket-daemon-not-responding" src="/assets/images/screenshots/leverage-docket-desktop-daemon-issue.png" title="Docker daemon not responding" /></p>
 <p>Note: that setting can be accessed by clicking on the Docker Desktop icon tray, and then clicking on "Settings...". Then click on the "Advanced" tab to find the checkbox.</p>
 <h3 id="linux-and-docker-in-rootless-mode">Linux and Docker in Rootless mode<a class="headerlink" href="#linux-and-docker-in-rootless-mode" title="Permanent link"> ¶</a></h3>
-<p>The same problem might come from missing env variable <code>DOCKER_HOST</code>. <code>leverage</code> looks for Docker socket at <code>unix:///var/run/docker.sock</code> unless <code>DOCKER_HOST</code> is provided in environment. If you installed Docker in <a href="https://docs.docker.com/engine/security/rootless/">Rootless mode</a>, you need to remember to add <code>DOCKER_HOST</code> in you rc files:
+<p>First make sure the user is added to the docker group: </p>
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>sudo<span class="w"> </span>usermod<span class="w"> </span>-aG<span class="w"> </span>docker<span class="w"> </span><span class="nv">$USER</span>
+$<span class="w"> </span>newgrp<span class="w"> </span>docker
+</code></pre></div>
+<p>If that does not solve it, then the same problem might come from missing env variable <code>DOCKER_HOST</code>. <code>leverage</code> looks for Docker socket at <code>unix:///var/run/docker.sock</code> unless <code>DOCKER_HOST</code> is provided in environment. If you installed Docker in <a href="https://docs.docker.com/engine/security/rootless/">Rootless mode</a>, you need to remember to add <code>DOCKER_HOST</code> in you rc files:
 <div class="highlight"><pre><span></span><code><span class="nb">export</span><span class="w"> </span><span class="nv">DOCKER_HOST</span><span class="o">=</span>unix:///run/user/1000/docker.sock
 </code></pre></div>
 or prefix the leverage tool with the env var:
@@ -4993,6 +5011,15 @@ or prefix the leverage tool with the env var:
 <p>The problem happes because of the file system virtualization that is used by default and can be fixed by choosing the "osxfs (Legacy)" option as shown below:
 <img alt="docket-daemon-not-responding" src="/assets/images/screenshots/leverage-docket-desktop-file-system.png" title="Docker daemon not responding" /></p>
 <p>Note: that setting can be accessed by clicking on the Docker Desktop icon tray, and then clicking on "Settings...". The setting should be in the "General" tab.</p>
+<h2 id="leverage-cli-fails-because-of-missing-gitconfig">Leverage CLI fails because of missing .gitconfig<a class="headerlink" href="#leverage-cli-fails-because-of-missing-gitconfig" title="Permanent link"> ¶</a></h2>
+<p>The Leverage CLI might fail when setting up for the first time if there is no <code>~/.gitconfig</code> in your home directory or if it is misconfigured. You will see something similar to: </p>
+<div class="highlight"><pre><span></span><code>[17:13:43.514] ERROR    Error creating container:
+                        APIError: 400 Client Error for http+docker://localhost/v1.43/containers/create: ... (&quot;could not find .gitconfig&quot;)
+</code></pre></div>
+<p>In order to fix this, just configure git globally: </p>
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>git<span class="w"> </span>config<span class="w"> </span>--global<span class="w"> </span>user.name<span class="w"> </span><span class="s2">&quot;Name Lastname&quot;</span>
+$<span class="w"> </span>git<span class="w"> </span>config<span class="w"> </span>--global<span class="w"> </span>user.email<span class="w"> </span><span class="s2">&quot;name.lastname@email.com&quot;</span>
+</code></pre></div>
 
 
   

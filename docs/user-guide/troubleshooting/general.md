@@ -58,7 +58,14 @@ Note: that setting can be accessed by clicking on the Docker Desktop icon tray, 
 
 ### Linux and Docker in Rootless mode
 
-The same problem might come from missing env variable `DOCKER_HOST`. `leverage` looks for Docker socket at `unix:///var/run/docker.sock` unless `DOCKER_HOST` is provided in environment. If you installed Docker in [Rootless mode](https://docs.docker.com/engine/security/rootless/), you need to remember to add `DOCKER_HOST` in you rc files:
+First make sure the user is added to the docker group: 
+
+```bash
+$ sudo usermod -aG docker $USER
+$ newgrp docker
+```
+
+If that does not solve it, then the same problem might come from missing env variable `DOCKER_HOST`. `leverage` looks for Docker socket at `unix:///var/run/docker.sock` unless `DOCKER_HOST` is provided in environment. If you installed Docker in [Rootless mode](https://docs.docker.com/engine/security/rootless/), you need to remember to add `DOCKER_HOST` in you rc files:
 ```bash
 export DOCKER_HOST=unix:///run/user/1000/docker.sock
 ```
@@ -79,3 +86,19 @@ The problem happes because of the file system virtualization that is used by def
 ![docket-daemon-not-responding](/assets/images/screenshots/leverage-docket-desktop-file-system.png "Docker daemon not responding")
 
 Note: that setting can be accessed by clicking on the Docker Desktop icon tray, and then clicking on "Settings...". The setting should be in the "General" tab.
+
+## Leverage CLI fails because of missing .gitconfig
+
+The Leverage CLI might fail when setting up for the first time if there is no `~/.gitconfig` in your home directory or if it is misconfigured. You will see something similar to: 
+
+```
+[17:13:43.514] ERROR    Error creating container:
+                        APIError: 400 Client Error for http+docker://localhost/v1.43/containers/create: ... ("could not find .gitconfig")
+```
+
+In order to fix this, just configure git globally: 
+
+```bash
+$ git config --global user.name "Name Lastname"
+$ git config --global user.email "name.lastname@email.com"
+```

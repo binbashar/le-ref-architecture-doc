@@ -4339,6 +4339,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#notes-on-multiple-argocd-instances-in-the-same-cluster" class="md-nav__link">
+    Notes on multiple ArgoCD instances in the same cluster
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#references" class="md-nav__link">
     References
   </a>
@@ -5082,6 +5089,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#notes-on-multiple-argocd-instances-in-the-same-cluster" class="md-nav__link">
+    Notes on multiple ArgoCD instances in the same cluster
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#references" class="md-nav__link">
     References
   </a>
@@ -5116,6 +5130,10 @@
 <p>Given an ArgoCD installation created with <a href="https://leverage.binbash.co/"><strong>binbash Leverage</strong></a> <a href="https://leverage.binbash.co/try-leverage/">Landing Zone</a> using the <a href="https://github.com/binbashar/le-tf-infra-aws/tree/master/apps-devstg/us-east-1/k8s-eks-demoapps">EKS layer</a>, add and manage an external Cluster.</p>
 <p>There can be a single ArgoCD instance for all cluster or multiple instances installed:</p>
 <p><img alt="ArgoCD External Cluster" src="/assets/diagrams/argocd-externalcluster-bigpicture.png" /></p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>If two or more cluster wide ArgoCD instances will be deployed in the same cluster, please see <a href="#notes-on-multiple-argocd-instances-in-the-same-cluster">these notes</a>!!!!</p>
+</div>
 <h3 id="assumptions">Assumptions<a class="headerlink" href="#assumptions" title="Permanent link"> ¶</a></h3>
 <p>We are assuming the <a href="https://leverage.binbash.co/"><strong>binbash Leverage</strong></a> <a href="https://leverage.binbash.co/try-leverage/">Landing Zone</a> is deployed, two accounts called <code>shared</code> and <code>apps-devstg</code> were created and a region <code>us-east-1</code> is being used. In any case you can adapt these examples to other scenarios.</p>
 <h3 id="requirements">Requirements<a class="headerlink" href="#requirements" title="Permanent link"> ¶</a></h3>
@@ -5622,6 +5640,34 @@ Now you can see the cluster in the ArgoCD web UI.</p>
 <span class="w">        </span><span class="nt">namespace</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;appnamespace&quot;</span>
 </code></pre></div>
 <p>Being <code>spec.destination.server</code> here the <code>config.clusterCredentials[*].server</code> in the ArgoCD's external cluster secret.</p>
+<h2 id="notes-on-multiple-argocd-instances-in-the-same-cluster">Notes on multiple ArgoCD instances in the same cluster<a class="headerlink" href="#notes-on-multiple-argocd-instances-in-the-same-cluster" title="Permanent link"> ¶</a></h2>
+<p>If multiple cluster wide ArgoCD instances will be deployed to the same cluster, this has to be kept in mind.</p>
+<p>ArgoCD will pick up the ArgoCD Applications from the same namespace the ArgoCD instance is deployed in. (Unless it is set with additional namespaces)</p>
+<p>Despite this, ArgoCD adds a label to know what ArgoCD Applications it has to manage. (It seems to be, at some point, ArgoCD will get all the ArgoCD Applications in the cluster and will filter them by label)</p>
+<p>So, it is needed to set different labels to be used by each ArgoCD instance.</p>
+<p>To do this, in the Helm configuration file in the components layer (for this example it is <code>shared/us-east-1/k8s-eks/k8s-components</code>), under directory <code>chart-values</code>, in the ArgoCD values file, add this:</p>
+<div class="highlight"><pre><span></span><code><span class="nt">configs</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">cm</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">application.instanceLabelKey</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">argocd.argoproj.io/instanceenv</span>
+</code></pre></div>
+<p>Note if you already have the <code>configs</code> key, you must add the value the the current key, e.g. for the example above:</p>
+<div class="highlight"><pre><span></span><code><span class="nt">configs</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">clusterCredentials</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">${remoteName}</span>
+<span class="w">      </span><span class="nt">server</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">${remoteServer}</span>
+<span class="w">      </span><span class="nt">labels</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">{}</span>
+<span class="w">      </span><span class="nt">annotations</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">{}</span>
+<span class="w">      </span><span class="nt">namespaces</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">namespace1,namespace2</span>
+<span class="w">      </span><span class="nt">clusterResources</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span>
+<span class="w">      </span><span class="nt">config</span><span class="p">:</span>
+<span class="w">        </span><span class="nt">bearerToken</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">${bearerToken}</span>
+<span class="w">        </span><span class="nt">tlsClientConfig</span><span class="p">:</span>
+<span class="w">          </span><span class="nt">insecure</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span>
+<span class="w">          </span><span class="nt">caData</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">${remoteClusterCertificate}</span>
+<span class="w">  </span><span class="nt">cm</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">application.instanceLabelKey</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">argocd.argoproj.io/instanceenv</span>
+</code></pre></div>
+<p>If the default labels are used by the two instances, they will try to manage the same ArgoCD Application (despite the fact they are in different namespaces), and they will conflict.</p>
 <hr />
 <h2 id="references">References<a class="headerlink" href="#references" title="Permanent link"> ¶</a></h2>
 <p><a href="https://argo-cd.readthedocs.io/en/stable/operator-manual/declarative-setup/#eks">ArgoCD documentation</a>.</p>

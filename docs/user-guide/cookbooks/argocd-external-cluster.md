@@ -8,6 +8,9 @@ There can be a single ArgoCD instance for all cluster or multiple instances inst
 
 ![ArgoCD External Cluster](/assets/diagrams/argocd-externalcluster-bigpicture.png)
 
+!!! Warning
+    If two or more cluster wide ArgoCD instances will be deployed in the same cluster, please see [these notes](#notes-on-multiple-argocd-instances-in-the-same-cluster)!!!!
+    
 ### Assumptions
 
 We are assuming the [**binbash Leverage**](https://leverage.binbash.co/) [Landing Zone](https://leverage.binbash.co/try-leverage/) is deployed, two accounts called `shared` and `apps-devstg` were created and a region `us-east-1` is being used. In any case you can adapt these examples to other scenarios.
@@ -608,6 +611,46 @@ To deploy an App to a given cluster, these lines have to be added to the manifes
 
 Being `spec.destination.server` here the `config.clusterCredentials[*].server` in the ArgoCD's external cluster secret.
 
+
+## Notes on multiple ArgoCD instances in the same cluster
+
+If multiple cluster wide ArgoCD instances will be deployed to the same cluster, this has to be kept in mind.
+
+ArgoCD will pick up the ArgoCD Applications from the same namespace the ArgoCD instance is deployed in. (Unless it is set with additional namespaces)
+
+Despite this, ArgoCD adds a label to know what ArgoCD Applications it has to manage. (It seems to be, at some point, ArgoCD will get all the ArgoCD Applications in the cluster and will filter them by label)
+
+So, it is needed to set different labels to be used by each ArgoCD instance.
+
+To do this, in the Helm configuration file in the components layer (for this example it is `shared/us-east-1/k8s-eks/k8s-components`), under directory `chart-values`, in the ArgoCD values file, add this:
+
+```yaml
+configs:
+  cm:
+    application.instanceLabelKey: argocd.argoproj.io/instanceenv
+```
+
+Note if you already have the `configs` key, you must add the value the the current key, e.g. for the example above:
+
+```yaml
+configs:
+  clusterCredentials:
+    - name: ${remoteName}
+      server: ${remoteServer}
+      labels: {}
+      annotations: {}
+      namespaces: namespace1,namespace2
+      clusterResources: false
+      config:
+        bearerToken: ${bearerToken}
+        tlsClientConfig:
+          insecure: false
+          caData: ${remoteClusterCertificate}
+  cm:
+    application.instanceLabelKey: argocd.argoproj.io/instanceenv
+```
+
+If the default labels are used by the two instances, they will try to manage the same ArgoCD Application (despite the fact they are in different namespaces), and they will conflict.
 
 ---
 

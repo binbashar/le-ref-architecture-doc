@@ -484,7 +484,7 @@ To recover the token and the API Server run this:
 
 ```shell
 NAMESPACE=test
-SECRET=$(leverage kubectl get secret -n ${NAMESPACE} -o jsonpath='{.items[?(@.metadata.generateName==\"argocd-managed-\")].metadata.name}' | sed -E '/^\[/d')
+SECRET=$(leverage kubectl get secret -n ${NAMESPACE} -o jsonpath='{.items[?(@.metadata.generateName=="argocd-managed-")].metadata.name}' | sed -E '/^\[/d')
 TOKEN=$(leverage kubectl get secret ${SECRET} -n ${NAMESPACE} -o jsonpath='{.data.token}' | sed -E '/^\[/d' | base64 --decode)
 APISERVER=$(leverage kubectl config view --minify -o jsonpath='{.clusters[0].cluster.server}' | sed -E '/^\[/d')
 ```

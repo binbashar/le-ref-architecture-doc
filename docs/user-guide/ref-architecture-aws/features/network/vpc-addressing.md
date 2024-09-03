@@ -10,7 +10,7 @@
 ### VPCs IP Addressing Plan (CIDR blocks sizing)
 
 !!! summary "Introduction"
-    VPCs can vary in size from 16 addresses (/28 netmask) to 65,536 addresses (/16 netmask). 
+    VPCs can vary in size from 16 addresses (/16 netmask) to 65,536 addresses (/28 netmask).
     In order to size a VPC correctly, it is important to understand the number, types, and sizes of workloads 
     expected to run in it, as well as workload elasticity and load balancing requirements. 
     
@@ -21,7 +21,7 @@
     Moving workloads or AWS resources between networks is not a trivial task, so be generous in your 
     IP address estimates to give yourself plenty of room to grow, deploy new workloads, or change your 
     VPC design configuration from one to another. The majority of AWS customers use VPCs with a /16 
-    netmask and subnets with /24 netmasks. The primary reason AWS customers select smaller VPC and 
+    netmask and subnets with /23 netmasks. The primary reason AWS customers select smaller VPC and 
     subnet sizes is to avoid overlapping network addresses with existing networks. 
 
     So having [AWS single VPC Design](https://aws.amazon.com/answers/networking/aws-single-vpc-design/) we've chosen
@@ -40,51 +40,63 @@
 
 
 !!! example "Individual CIDR Segments (VPCs)"
-    :fast_forward: Then each of these are /20 to /24
+    :fast_forward: Then each of these are /20 to /23
     
     *   [x] Considering the whole Starting CIDR Segment (AWS Org) before declared, we'll start at `172.18.0.0/20`
         *   **shared**
-            *   1ry VPC CIDR: `172.18.0.0/24`
-            *   2ry VPC CIDR: `172.18.16.0/24`
-            *   1ry VPC DR CIDR: `172.18.32.0/24`
-            *   2ry VPC DR CIDR: `172.18.48.0/24`
+            *   1ry VPC CIDR: `172.18.0.0/23`
+            *   2ry VPC CIDR: `172.18.16.0/23`
         *   **apps-devstg**
-            *   1ry VPC CIDR: `172.18.64.0/24`
-            *   2ry VPC CIDR: `172.18.80.0/24`
-            *   1ry VPC DR CIDR: `172.18.96.0/24`
-            *   2ry VPC DR CIDR: `172.18.112.0/24`
+            *   1ry VPC CIDR: `172.18.64.0/23`
+            *   2ry VPC CIDR: `172.18.80.0/23`
         *   **apps-prd**
-            *   1ry VPC CIDR: `172.18.128.0/24`
-            *   2ry VPC CIDR: `172.18.144.0/24`
-            *   1ry VPC DR CIDR: `172.18.160.0/24`
-            *   2ry VPC DR CIDR: `172.18.176.0/24`
+            *   1ry VPC CIDR: `172.18.128.0/23`
+            *   2ry VPC CIDR: `172.18.144.0/23`
             
     *   [x] Resulting in **Subnets: 16 x VPC**
         *   VPC Subnets with Hosts/Net: 256.
-        *   Eg: apps-devstg account → us-east-1 w/ 3 AZs → 3 x Private Subnets /az + 3 x Public Subnets /az
-            *   1ry VPC CIDR: `172.18.64.0/24 `Subnets:
-                *   Private `172.18.64.0/24, 172.18.66.0/24 and 172.18.68.0/24`
-                *   Public `172.18.65.0/24, 172.18.67.0/24 and 172.18.69.0/24`
+        *   Eg: apps-devstg account → us-east-1 w/ 3 AZs → 4 x Private Subnets /az + 4 x Public Subnets /az
+            *   1ry VPC CIDR: `172.18.64.0/23 `Subnets:
+                *   Private `172.18.64.0/23, 172.18.66.0/23, 172.18.68.0/23, and 172.18.70.0/23`
+                *   Public `172.18.72.0/23, 172.18.74.0/23, 172.18.76.0/23, and 172.18.78.0/23`
+                * Note: keep in mind that you may not strictly need 4 private subnets and 4 public subnets in every case. In some cases you might do fine with only 2 or 3, if that goes in sync with the kind of availability that you need to meet.
 
-## Planned Subnets per VPC
+## Planned VPCs and their Subnets
 
 Having defined the initial VPC that will be created in the different accounts that were defined, we are going to create
 subnets in each of these VPCs defining Private and Public subnets split among different availability zones:
     
-| Subnet address  |      Range of addresses       | Hosts |       Assignment        |
-| :-------------: | :---------------------------: | :---: | :---------------------: |
-|  172.18.0.0/20  |  172.18.0.0 - 172.18.15.255   | 4094  |     1ry VPC: shared     |
-| 172.18.16.0/20  |  172.18.16.0 - 172.18.31.255  | 4094  |     2ry VPC: shared     |
-| 172.18.32.0/20  |  172.18.32.0 - 172.18.47.255  | 4094  |   1ry VPC DR: shared    |
-| 172.18.48.0/20  |  172.18.48.0 - 172.18.63.255  | 4094  |   2ry VPC DR: shared    |
-| 172.18.64.0/20  |  172.18.64.0 - 172.18.79.255  | 4094  |  1ry VPC: apps-devstg   |
-| 172.18.80.0/20  |  172.18.80.0 - 172.18.95.255  | 4094  |  2ry VPC: apps-devstg   |
-| 172.18.96.0/20  | 172.18.96.0 - 172.18.111.255  | 4094  | 1ry VPC DR: apps-devstg |
-| 172.18.112.0/20 | 172.18.112.0 - 172.18.127.255 | 4094  | 2ry VPC DR: apps-devstg |
-| 172.18.128.0/20 | 172.18.128.0 - 172.18.143.255 | 4094  |    1ry VPC: apps-prd    |
-| 172.18.144.0/20 | 172.18.144.0 - 172.18.159.255 | 4094  |    2ry VPC: apps-prd    |
-| 172.18.160.0/20 | 172.18.160.0 - 172.18.175.255 | 4094  |  1ry VPC DR: apps-prd   |
-| 172.18.176.0/20 | 172.18.176.0 - 172.18.191.255 | 4094  |  2ry VPC DR: apps-prd   |
+| VPC CIDR         | Purpose       | Visual Subnet Calc |
+| :--------------: | :-----------: | :----------------: |
+| **Shared**       |               |
+|  172.18.0.0/20   | Primary       | [Link](https://www.davidc.net/sites/default/subnets/subnets.html?network=172.18.0.0&mask=20&division=15.7231) |
+| 172.18.16.0/20   | Secondary     | [Link](https://www.davidc.net/sites/default/subnets/subnets.html?network=172.18.16.0&mask=20&division=15.7231) |
+| 172.18.32.0/20   | Primary DR    | [Link](https://www.davidc.net/sites/default/subnets/subnets.html?network=172.18.32.0&mask=20&division=15.7231) |
+| 172.18.48.0/20   | Secondary DR  | [Link](https://www.davidc.net/sites/default/subnets/subnets.html?network=172.18.48.0&mask=20&division=15.7231) |
+| **Apps-DevStg**  |               |
+| 172.18.64.0/20   | Primary       | [Link](https://www.davidc.net/sites/default/subnets/subnets.html?network=172.18.64.0&mask=20&division=15.7231) |
+| 172.18.80.0/20   | Secondary     | [Link](https://www.davidc.net/sites/default/subnets/subnets.html?network=172.18.80.0&mask=20&division=15.7231) |
+| 172.18.96.0/20   | Primary DR    | [Link](https://www.davidc.net/sites/default/subnets/subnets.html?network=172.18.96.0&mask=20&division=15.7231) |
+| 172.18.112.0/20  | Secondary DR  | [Link](https://www.davidc.net/sites/default/subnets/subnets.html?network=172.18.112.0&mask=20&division=15.7231) |
+| **Apps-DevStg EKS** |               |
+|  10.2.0.0/16   | Primary       | [Link](https://www.davidc.net/sites/default/subnets/subnets.html?network=10.2.0.0&mask=16&division=15.7231) |
+| **Apps-DevStg EKS DemoApps** |               |
+|  10.1.0.0/16   | Primary  | [Link](https://www.davidc.net/sites/default/subnets/subnets.html?network=10.1.0.0&mask=16&division=15.7231) |
+| **Apps-Prd**     |               |
+| 172.18.128.0/20  | Primary       | [Link](https://www.davidc.net/sites/default/subnets/subnets.html?network=172.18.128.0&mask=20&division=15.7231) |
+| 172.18.144.0/20  | Secondary     | [Link](https://www.davidc.net/sites/default/subnets/subnets.html?network=172.18.144.0&mask=20&division=15.7231) |
+| 172.18.160.0/20  | Primary DR    | [Link](https://www.davidc.net/sites/default/subnets/subnets.html?network=172.18.160.0&mask=20&division=15.7231) |
+| 172.18.176.0/20  | Secondary DR  | [Link](https://www.davidc.net/sites/default/subnets/subnets.html?network=172.18.176.0&mask=20&division=15.7231) |
+| **Network** |               |
+|  172.20.0.0/20   | Primary       | [Link](https://www.davidc.net/sites/default/subnets/subnets.html?network=172.20.0.0&mask=20&division=15.7231) |
+| 172.20.16.0/20   | Secondary     | [Link](https://www.davidc.net/sites/default/subnets/subnets.html?network=172.20.16.0&mask=20&division=15.7231) |
+| 172.20.32.0/20   | Primary DR    | [Link](https://www.davidc.net/sites/default/subnets/subnets.html?network=172.20.32.0&mask=20&division=15.7231) |
+| 172.20.48.0/20   | Secondary DR  | [Link](https://www.davidc.net/sites/default/subnets/subnets.html?network=172.20.48.0&mask=20&division=15.7231) |
+| **Data-Science** |               |
+|  172.19.0.0/20   | Primary       | [Link](https://www.davidc.net/sites/default/subnets/subnets.html?network=172.19.0.0&mask=20&division=15.7231) |
+| 172.19.16.0/20   | Secondary     | [Link](https://www.davidc.net/sites/default/subnets/subnets.html?network=172.19.16.0&mask=20&division=15.7231) |
+| 172.19.32.0/20   | Primary DR    | [Link](https://www.davidc.net/sites/default/subnets/subnets.html?network=172.19.32.0&mask=20&division=15.7231) |
+| 172.19.48.0/20   | Secondary DR  | [Link](https://www.davidc.net/sites/default/subnets/subnets.html?network=172.19.48.0&mask=20&division=15.7231) |
 
 ### Considerations
 

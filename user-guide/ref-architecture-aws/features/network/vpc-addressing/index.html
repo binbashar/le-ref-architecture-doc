@@ -2072,11 +2072,11 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#planned-subnets-per-vpc" class="md-nav__link">
-    Planned Subnets per VPC
+  <a href="#planned-vpcs-and-their-subnets" class="md-nav__link">
+    Planned VPCs and their Subnets
   </a>
   
-    <nav class="md-nav" aria-label="Planned Subnets per VPC">
+    <nav class="md-nav" aria-label="Planned VPCs and their Subnets">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -4865,11 +4865,11 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#planned-subnets-per-vpc" class="md-nav__link">
-    Planned Subnets per VPC
+  <a href="#planned-vpcs-and-their-subnets" class="md-nav__link">
+    Planned VPCs and their Subnets
   </a>
   
-    <nav class="md-nav" aria-label="Planned Subnets per VPC">
+    <nav class="md-nav" aria-label="Planned VPCs and their Subnets">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -4941,7 +4941,7 @@
 <h3 id="vpcs-ip-addressing-plan-cidr-blocks-sizing">VPCs IP Addressing Plan (CIDR blocks sizing)<a class="headerlink" href="#vpcs-ip-addressing-plan-cidr-blocks-sizing" title="Permanent link"> ¶</a></h3>
 <div class="admonition summary">
 <p class="admonition-title">Introduction</p>
-<p>VPCs can vary in size from 16 addresses (/28 netmask) to 65,536 addresses (/16 netmask). 
+<p>VPCs can vary in size from 16 addresses (/16 netmask) to 65,536 addresses (/28 netmask).
 In order to size a VPC correctly, it is important to understand the number, types, and sizes of workloads 
 expected to run in it, as well as workload elasticity and load balancing requirements. </p>
 <p>Keep in mind that there is no charge for using Amazon VPC (aside from EC2 charges), therefore cost 
@@ -4950,7 +4950,7 @@ VPC for growth.</p>
 <p>Moving workloads or AWS resources between networks is not a trivial task, so be generous in your 
 IP address estimates to give yourself plenty of room to grow, deploy new workloads, or change your 
 VPC design configuration from one to another. The majority of AWS customers use VPCs with a /16 
-netmask and subnets with /24 netmasks. The primary reason AWS customers select smaller VPC and 
+netmask and subnets with /23 netmasks. The primary reason AWS customers select smaller VPC and 
 subnet sizes is to avoid overlapping network addresses with existing networks. </p>
 <p>So having <a href="https://aws.amazon.com/answers/networking/aws-single-vpc-design/">AWS single VPC Design</a> we've chosen
 a Medium/Small VPC/Subnet addressing plan which would probably fit a broad range variety of
@@ -4972,30 +4972,24 @@ use cases</p>
 </div>
 <div class="admonition example">
 <p class="admonition-title">Individual CIDR Segments (VPCs)</p>
-<p><img alt="⏩" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@14.1.2/assets/svg/23e9.svg" title=":fast_forward:" /> Then each of these are /20 to /24</p>
+<p><img alt="⏩" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@14.1.2/assets/svg/23e9.svg" title=":fast_forward:" /> Then each of these are /20 to /23</p>
 <ul class="task-list">
 <li class="task-list-item">
 <p><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Considering the whole Starting CIDR Segment (AWS Org) before declared, we'll start at <code>172.18.0.0/20</code></p>
 <ul>
 <li><strong>shared</strong><ul>
-<li>1ry VPC CIDR: <code>172.18.0.0/24</code></li>
-<li>2ry VPC CIDR: <code>172.18.16.0/24</code></li>
-<li>1ry VPC DR CIDR: <code>172.18.32.0/24</code></li>
-<li>2ry VPC DR CIDR: <code>172.18.48.0/24</code></li>
+<li>1ry VPC CIDR: <code>172.18.0.0/23</code></li>
+<li>2ry VPC CIDR: <code>172.18.16.0/23</code></li>
 </ul>
 </li>
 <li><strong>apps-devstg</strong><ul>
-<li>1ry VPC CIDR: <code>172.18.64.0/24</code></li>
-<li>2ry VPC CIDR: <code>172.18.80.0/24</code></li>
-<li>1ry VPC DR CIDR: <code>172.18.96.0/24</code></li>
-<li>2ry VPC DR CIDR: <code>172.18.112.0/24</code></li>
+<li>1ry VPC CIDR: <code>172.18.64.0/23</code></li>
+<li>2ry VPC CIDR: <code>172.18.80.0/23</code></li>
 </ul>
 </li>
 <li><strong>apps-prd</strong><ul>
-<li>1ry VPC CIDR: <code>172.18.128.0/24</code></li>
-<li>2ry VPC CIDR: <code>172.18.144.0/24</code></li>
-<li>1ry VPC DR CIDR: <code>172.18.160.0/24</code></li>
-<li>2ry VPC DR CIDR: <code>172.18.176.0/24</code></li>
+<li>1ry VPC CIDR: <code>172.18.128.0/23</code></li>
+<li>2ry VPC CIDR: <code>172.18.144.0/23</code></li>
 </ul>
 </li>
 </ul>
@@ -5004,10 +4998,11 @@ use cases</p>
 <p><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Resulting in <strong>Subnets: 16 x VPC</strong></p>
 <ul>
 <li>VPC Subnets with Hosts/Net: 256.</li>
-<li>Eg: apps-devstg account → us-east-1 w/ 3 AZs → 3 x Private Subnets /az + 3 x Public Subnets /az<ul>
-<li>1ry VPC CIDR: <code>172.18.64.0/24</code>Subnets:<ul>
-<li>Private <code>172.18.64.0/24, 172.18.66.0/24 and 172.18.68.0/24</code></li>
-<li>Public <code>172.18.65.0/24, 172.18.67.0/24 and 172.18.69.0/24</code></li>
+<li>Eg: apps-devstg account → us-east-1 w/ 3 AZs → 4 x Private Subnets /az + 4 x Public Subnets /az<ul>
+<li>1ry VPC CIDR: <code>172.18.64.0/23</code>Subnets:<ul>
+<li>Private <code>172.18.64.0/23, 172.18.66.0/23, 172.18.68.0/23, and 172.18.70.0/23</code></li>
+<li>Public <code>172.18.72.0/23, 172.18.74.0/23, 172.18.76.0/23, and 172.18.78.0/23</code></li>
+<li>Note: keep in mind that you may not strictly need 4 private subnets and 4 public subnets in every case. In some cases you might do fine with only 2 or 3, if that goes in sync with the kind of availability that you need to meet.</li>
 </ul>
 </li>
 </ul>
@@ -5016,90 +5011,162 @@ use cases</p>
 </li>
 </ul>
 </div>
-<h2 id="planned-subnets-per-vpc">Planned Subnets per VPC<a class="headerlink" href="#planned-subnets-per-vpc" title="Permanent link"> ¶</a></h2>
+<h2 id="planned-vpcs-and-their-subnets">Planned VPCs and their Subnets<a class="headerlink" href="#planned-vpcs-and-their-subnets" title="Permanent link"> ¶</a></h2>
 <p>Having defined the initial VPC that will be created in the different accounts that were defined, we are going to create
 subnets in each of these VPCs defining Private and Public subnets split among different availability zones:</p>
 <table>
 <thead>
 <tr>
-<th style="text-align: center;">Subnet address</th>
-<th style="text-align: center;">Range of addresses</th>
-<th style="text-align: center;">Hosts</th>
-<th style="text-align: center;">Assignment</th>
+<th style="text-align: center;">VPC CIDR</th>
+<th style="text-align: center;">Purpose</th>
+<th style="text-align: center;">Visual Subnet Calc</th>
 </tr>
 </thead>
 <tbody>
 <tr>
+<td style="text-align: center;"><strong>Shared</strong></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+</tr>
+<tr>
 <td style="text-align: center;">172.18.0.0/20</td>
-<td style="text-align: center;">172.18.0.0 - 172.18.15.255</td>
-<td style="text-align: center;">4094</td>
-<td style="text-align: center;">1ry VPC: shared</td>
+<td style="text-align: center;">Primary</td>
+<td style="text-align: center;"><a href="https://www.davidc.net/sites/default/subnets/subnets.html?network=172.18.0.0&amp;mask=20&amp;division=15.7231">Link</a></td>
 </tr>
 <tr>
 <td style="text-align: center;">172.18.16.0/20</td>
-<td style="text-align: center;">172.18.16.0 - 172.18.31.255</td>
-<td style="text-align: center;">4094</td>
-<td style="text-align: center;">2ry VPC: shared</td>
+<td style="text-align: center;">Secondary</td>
+<td style="text-align: center;"><a href="https://www.davidc.net/sites/default/subnets/subnets.html?network=172.18.16.0&amp;mask=20&amp;division=15.7231">Link</a></td>
 </tr>
 <tr>
 <td style="text-align: center;">172.18.32.0/20</td>
-<td style="text-align: center;">172.18.32.0 - 172.18.47.255</td>
-<td style="text-align: center;">4094</td>
-<td style="text-align: center;">1ry VPC DR: shared</td>
+<td style="text-align: center;">Primary DR</td>
+<td style="text-align: center;"><a href="https://www.davidc.net/sites/default/subnets/subnets.html?network=172.18.32.0&amp;mask=20&amp;division=15.7231">Link</a></td>
 </tr>
 <tr>
 <td style="text-align: center;">172.18.48.0/20</td>
-<td style="text-align: center;">172.18.48.0 - 172.18.63.255</td>
-<td style="text-align: center;">4094</td>
-<td style="text-align: center;">2ry VPC DR: shared</td>
+<td style="text-align: center;">Secondary DR</td>
+<td style="text-align: center;"><a href="https://www.davidc.net/sites/default/subnets/subnets.html?network=172.18.48.0&amp;mask=20&amp;division=15.7231">Link</a></td>
+</tr>
+<tr>
+<td style="text-align: center;"><strong>Apps-DevStg</strong></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
 </tr>
 <tr>
 <td style="text-align: center;">172.18.64.0/20</td>
-<td style="text-align: center;">172.18.64.0 - 172.18.79.255</td>
-<td style="text-align: center;">4094</td>
-<td style="text-align: center;">1ry VPC: apps-devstg</td>
+<td style="text-align: center;">Primary</td>
+<td style="text-align: center;"><a href="https://www.davidc.net/sites/default/subnets/subnets.html?network=172.18.64.0&amp;mask=20&amp;division=15.7231">Link</a></td>
 </tr>
 <tr>
 <td style="text-align: center;">172.18.80.0/20</td>
-<td style="text-align: center;">172.18.80.0 - 172.18.95.255</td>
-<td style="text-align: center;">4094</td>
-<td style="text-align: center;">2ry VPC: apps-devstg</td>
+<td style="text-align: center;">Secondary</td>
+<td style="text-align: center;"><a href="https://www.davidc.net/sites/default/subnets/subnets.html?network=172.18.80.0&amp;mask=20&amp;division=15.7231">Link</a></td>
 </tr>
 <tr>
 <td style="text-align: center;">172.18.96.0/20</td>
-<td style="text-align: center;">172.18.96.0 - 172.18.111.255</td>
-<td style="text-align: center;">4094</td>
-<td style="text-align: center;">1ry VPC DR: apps-devstg</td>
+<td style="text-align: center;">Primary DR</td>
+<td style="text-align: center;"><a href="https://www.davidc.net/sites/default/subnets/subnets.html?network=172.18.96.0&amp;mask=20&amp;division=15.7231">Link</a></td>
 </tr>
 <tr>
 <td style="text-align: center;">172.18.112.0/20</td>
-<td style="text-align: center;">172.18.112.0 - 172.18.127.255</td>
-<td style="text-align: center;">4094</td>
-<td style="text-align: center;">2ry VPC DR: apps-devstg</td>
+<td style="text-align: center;">Secondary DR</td>
+<td style="text-align: center;"><a href="https://www.davidc.net/sites/default/subnets/subnets.html?network=172.18.112.0&amp;mask=20&amp;division=15.7231">Link</a></td>
+</tr>
+<tr>
+<td style="text-align: center;"><strong>Apps-DevStg EKS</strong></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+</tr>
+<tr>
+<td style="text-align: center;">10.2.0.0/16</td>
+<td style="text-align: center;">Primary</td>
+<td style="text-align: center;"><a href="https://www.davidc.net/sites/default/subnets/subnets.html?network=10.2.0.0&amp;mask=16&amp;division=15.7231">Link</a></td>
+</tr>
+<tr>
+<td style="text-align: center;"><strong>Apps-DevStg EKS DemoApps</strong></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+</tr>
+<tr>
+<td style="text-align: center;">10.1.0.0/16</td>
+<td style="text-align: center;">Primary</td>
+<td style="text-align: center;"><a href="https://www.davidc.net/sites/default/subnets/subnets.html?network=10.1.0.0&amp;mask=16&amp;division=15.7231">Link</a></td>
+</tr>
+<tr>
+<td style="text-align: center;"><strong>Apps-Prd</strong></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
 </tr>
 <tr>
 <td style="text-align: center;">172.18.128.0/20</td>
-<td style="text-align: center;">172.18.128.0 - 172.18.143.255</td>
-<td style="text-align: center;">4094</td>
-<td style="text-align: center;">1ry VPC: apps-prd</td>
+<td style="text-align: center;">Primary</td>
+<td style="text-align: center;"><a href="https://www.davidc.net/sites/default/subnets/subnets.html?network=172.18.128.0&amp;mask=20&amp;division=15.7231">Link</a></td>
 </tr>
 <tr>
 <td style="text-align: center;">172.18.144.0/20</td>
-<td style="text-align: center;">172.18.144.0 - 172.18.159.255</td>
-<td style="text-align: center;">4094</td>
-<td style="text-align: center;">2ry VPC: apps-prd</td>
+<td style="text-align: center;">Secondary</td>
+<td style="text-align: center;"><a href="https://www.davidc.net/sites/default/subnets/subnets.html?network=172.18.144.0&amp;mask=20&amp;division=15.7231">Link</a></td>
 </tr>
 <tr>
 <td style="text-align: center;">172.18.160.0/20</td>
-<td style="text-align: center;">172.18.160.0 - 172.18.175.255</td>
-<td style="text-align: center;">4094</td>
-<td style="text-align: center;">1ry VPC DR: apps-prd</td>
+<td style="text-align: center;">Primary DR</td>
+<td style="text-align: center;"><a href="https://www.davidc.net/sites/default/subnets/subnets.html?network=172.18.160.0&amp;mask=20&amp;division=15.7231">Link</a></td>
 </tr>
 <tr>
 <td style="text-align: center;">172.18.176.0/20</td>
-<td style="text-align: center;">172.18.176.0 - 172.18.191.255</td>
-<td style="text-align: center;">4094</td>
-<td style="text-align: center;">2ry VPC DR: apps-prd</td>
+<td style="text-align: center;">Secondary DR</td>
+<td style="text-align: center;"><a href="https://www.davidc.net/sites/default/subnets/subnets.html?network=172.18.176.0&amp;mask=20&amp;division=15.7231">Link</a></td>
+</tr>
+<tr>
+<td style="text-align: center;"><strong>Network</strong></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+</tr>
+<tr>
+<td style="text-align: center;">172.20.0.0/20</td>
+<td style="text-align: center;">Primary</td>
+<td style="text-align: center;"><a href="https://www.davidc.net/sites/default/subnets/subnets.html?network=172.20.0.0&amp;mask=20&amp;division=15.7231">Link</a></td>
+</tr>
+<tr>
+<td style="text-align: center;">172.20.16.0/20</td>
+<td style="text-align: center;">Secondary</td>
+<td style="text-align: center;"><a href="https://www.davidc.net/sites/default/subnets/subnets.html?network=172.20.16.0&amp;mask=20&amp;division=15.7231">Link</a></td>
+</tr>
+<tr>
+<td style="text-align: center;">172.20.32.0/20</td>
+<td style="text-align: center;">Primary DR</td>
+<td style="text-align: center;"><a href="https://www.davidc.net/sites/default/subnets/subnets.html?network=172.20.32.0&amp;mask=20&amp;division=15.7231">Link</a></td>
+</tr>
+<tr>
+<td style="text-align: center;">172.20.48.0/20</td>
+<td style="text-align: center;">Secondary DR</td>
+<td style="text-align: center;"><a href="https://www.davidc.net/sites/default/subnets/subnets.html?network=172.20.48.0&amp;mask=20&amp;division=15.7231">Link</a></td>
+</tr>
+<tr>
+<td style="text-align: center;"><strong>Data-Science</strong></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+</tr>
+<tr>
+<td style="text-align: center;">172.19.0.0/20</td>
+<td style="text-align: center;">Primary</td>
+<td style="text-align: center;"><a href="https://www.davidc.net/sites/default/subnets/subnets.html?network=172.19.0.0&amp;mask=20&amp;division=15.7231">Link</a></td>
+</tr>
+<tr>
+<td style="text-align: center;">172.19.16.0/20</td>
+<td style="text-align: center;">Secondary</td>
+<td style="text-align: center;"><a href="https://www.davidc.net/sites/default/subnets/subnets.html?network=172.19.16.0&amp;mask=20&amp;division=15.7231">Link</a></td>
+</tr>
+<tr>
+<td style="text-align: center;">172.19.32.0/20</td>
+<td style="text-align: center;">Primary DR</td>
+<td style="text-align: center;"><a href="https://www.davidc.net/sites/default/subnets/subnets.html?network=172.19.32.0&amp;mask=20&amp;division=15.7231">Link</a></td>
+</tr>
+<tr>
+<td style="text-align: center;">172.19.48.0/20</td>
+<td style="text-align: center;">Secondary DR</td>
+<td style="text-align: center;"><a href="https://www.davidc.net/sites/default/subnets/subnets.html?network=172.19.48.0&amp;mask=20&amp;division=15.7231">Link</a></td>
 </tr>
 </tbody>
 </table>

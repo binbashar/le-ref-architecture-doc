@@ -132,8 +132,8 @@ markdown_extensions:
   - pymdownx.tabbed:
       alternate_style: true
   - pymdownx.emoji:
-      emoji_index: !!python/name:materialx.emoji.twemoji
-      emoji_generator: !!python/name:materialx.emoji.to_svg
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
   - toc:
       # insert a blank space before the character
       permalink: " ¶"
@@ -301,7 +301,11 @@ nav:
       - Encrypting/decrypting files with SOPS+KMS: "user-guide/cookbooks/sops-kms.md"
       - Enable/Disable nat gateway: "user-guide/cookbooks/enable-nat-gateway.md"
       - ArgoCD add external cluster: "user-guide/cookbooks/argocd-external-cluster.md"
-      - VPN Server: "user-guide/cookbooks/VPN-server.md"
+      - VPN Server:
+        - Index: "user-guide/cookbooks/VPN-server/index.md"
+        - 1. Terraform EC2 layer: "user-guide/cookbooks/VPN-server/VPN-server-terraform.md"
+        - 2. Ansible provisioning: "user-guide/cookbooks/VPN-server/VPN-server-ansible.md"
+        - 3. VPN Web GUI config: "user-guide/cookbooks/VPN-server/VPN-server-gui-setup.md"
   - Work with us:
       - Overview: "work-with-us/index.md"
       - Support: "work-with-us/support.md"

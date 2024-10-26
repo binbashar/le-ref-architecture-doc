@@ -23,5 +23,8 @@
 Pritunl documentation v1 Guides, accessed November 17th 2020).
 </figcaption>
 
+!!! info "Tip"
+    To deploy your Pritunl VPN Server you can follow [this guide](../../../cookbooks/VPN-server.md)
+
 ### Read More
 - [x] [Pritunl - Open Source Enterprise Distributed OpenVPN, IPsec and WireGuard Server Specifications](https://drive.google.com/file/d/1piF0pZSTwcV4oHTIh_VsqZzEWTK5_zlv/view?usp=sharing) :cloud: :lock:

@@ -102,3 +102,20 @@ In order to fix this, just configure git globally:
 $ git config --global user.name "Name Lastname"
 $ git config --global user.email "name.lastname@email.com"
 ```
+## Leverage CLI targeting specific resources with indexes
+
+Sometimes you want to target a specific resource, eg. when importing:
+
+```shell
+leverage terraform import aws_organizations_account.management 999999999999
+```
+
+But the real issue comes when indexes have to be used.
+
+To do this escape the target string like this:
+
+```shell
+leverage tf import 'aws_organizations_account.accounts[\"accountalias\"]' 99999999999
+```
+
+The same applies to other commands such as `plan`.

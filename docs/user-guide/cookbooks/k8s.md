@@ -265,7 +265,7 @@ See also [here](/user-guide/ref-architecture-eks/overview/).
 
 ### Goal
 
-A cluster with one node (worker) and the control plane managed by AWS is deployed here.
+A cluster with one node (worker) per AZ and the control plane managed by AWS is deployed here.
 
 Cluster autoscaler is used to create more nodes.
 
@@ -275,26 +275,83 @@ These are the steps:
 
 - 0 - copy the [K8s EKS layer](https://github.com/binbashar/le-tf-infra-aws/tree/master/apps-devstg/us-east-1/k8s-eks) to your [**binbash Leverage**](https://leverage.binbash.co/) project.
     - paste the layer under the `apps-devstg/us-east-1` account/region directory
-- 1 - apply layers
-- 2 - access the cluster
+- 1 - create the network
+- 2 - Add path to the VPN Server
+- 3 - create the cluster and dependencies/components
+- 4 - access the cluster
 
 --- 
 
 #### 0 - Copy the layer
 
-A few methods can be used to download the [KOPS layer](https://github.com/binbashar/le-tf-infra-aws/tree/master/apps-devstg/us-east-1/k8s-eks) directory into the [**binbash Leverage**](https://leverage.binbash.co/) project.
+A few methods can be used to download the [K8s EKS layer](https://github.com/binbashar/le-tf-infra-aws/tree/master/apps-devstg/us-east-1/k8s-eks) directory into the [**binbash Leverage**](https://leverage.binbash.co/) project.
 
 E.g. [this addon](https://addons.mozilla.org/en-US/firefox/addon/gitzip/?utm_source=addons.mozilla.org&utm_medium=referral&utm_content=search) is a nice way to do it.
 
-Paste this layer into the account/region chosen to host this, e.g. `apps-devstg/us-east-1/`, so the final layer is `apps-devstg/us-east-1/k8s-eks/`.
+Paste this layer into the account/region chosen to host this, e.g. `apps-devstg/us-east-1/`, so the final layer is `apps-devstg/us-east-1/k8s-eks/`. Note you can change the layer name (and CIDRs and cluster name) if you already have an EKS cluster in this Account/Region.
 
-#### 1 - Apply layers
+#### 1 - Create the network
 
-First go into each layer and config the Terraform S3 background key, CIDR for the network, names, addons, etc.
+First go into the network layer (e.g. `apps-devstg/us-east-1/k8s-eks/network`) and config the Terraform S3 background key, CIDR for the network, names, etc.
+
+```shell
+cd apps-devstg/us-east-1/k8s-eks/network
+```
+
+Then, from inside the layer run:
+
+```shell
+leverage tf init
+leverage tf apply
+```
+
+#### 2 - Add the path to the VPN server
+
+Since we are working on a private subnet (as per the [**binbash Leverage**](https://leverage.binbash.co/) and the AWS Well Architected Framework best practices), we need to set the VPN routes up.
+
+If you are using the [Pritunl VPN server](../VPN-server/) (as per the [**binbash Leverage**](https://leverage.binbash.co/) recommendations), add the route to the CIDR set in the step 1 to the server you are using to connect to the VPN.
+
+Then, connect to the VPN to access the private space.
+
+#### 3 - Create the cluster
+
+First go into each layer and config the Terraform S3 background key, names, addons, the components to install, etc.
+
+```shell
+cd apps-devstg/us-east-1/k8s-eks/
+```
 
 Then apply layers as follow:
 
 ```shell
-leverage tf init --layers network,cluster,identities,addons,k8s-components
-leverage tf apply --layers network,cluster,identities,addons,k8s-components
+leverage tf init --layers cluster,identities,addons,k8s-components
+leverage tf apply --layers cluster,identities,addons,k8s-components
 ```
+
+#### 4 - Access the cluster
+
+Go into the cluster layer:
+
+```shell
+cd apps-devstg/us-east-1/k8s-eks/cluster
+```
+
+Use the embedded `kubectl` to config the context:
+
+```shell
+leverage kubectl configure
+```
+
+!!! Info
+    You can export the context to use it with stand alone `kubectl`.
+
+Once this process is done, you'll end up with temporary credentials created for `kubectl`.
+
+Now you can try a `kubectl` command, e.g.:
+
+```shell
+leverage kubectl get ns
+```
+
+!!! Info
+    If you've followed the [**binbash Leverage**](https://leverage.binbash.co/) recommendations, your cluster will live on a private subnet, so you need to connect to the VPN in order to access the K8s API.

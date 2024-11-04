@@ -1,21 +1,16 @@
-# K8s pod autoscaling with KEDA
+# K8s pod autoscaling with KEDA based on HTTP requests 
 
-Kubernetes, a powerful container orchestration platform, revolutionized the way applications are deployed and managed. However, scaling applications to meet fluctuating workloads can be a complex task. KEDA, a Kubernetes-based Event-Driven Autoscaler, provides a simple yet effective solution to automatically scale Kubernetes Pods based on various metrics, including resource utilization, custom metrics, and external events.
+The KEDA HTTP Add-on allows Kubernetes users to automatically scale their HTTP servers up and down (including to/from zero) based on incoming HTTP traffic. Please see our use cases document to learn more about how and why you would use this project.
 
 ## Goal
 
-To install and configure KEDA on an EKS Cluster created on the [**binbash Leverage**](https://leverage.binbash.co/) way.
+To configure a KEDA Autoscaler based on HTTP requests to a K8s service.
+
+**Note** for the following example we will be using a Kedacore plugin called **http-add-on**.
 
 !!! Note
-    To read more on how to create the EKS Cluster on the [**binbash Leverage**](https://leverage.binbash.co/) way, read [here](./k8s.md).
-
-**Note** for the following example we will be using a Kedacore plugin called [http-add-on](https://github.com/kedacore/http-add-on/).
-
-!!! Note
-    To lear more about KEDA read [the official site](https://keda.sh/docs/2.15/).
+    To lear more about KEDA HTTP Add-on read [the official site](https://github.com/kedacore/http-add-on).
     
-![KEDA](https://keda.sh/img/logos/keda-icon-color.png)
-
 ### Assumptions
 
 We are assuming the [**binbash Leverage**](https://leverage.binbash.co/) [Landing Zone](https://leverage.binbash.co/try-leverage/) is deployed, an account called `apps-devstg` was created and region `us-east-1` is being used. In any case you can adapt these examples to other scenarios.
@@ -26,15 +21,17 @@ We are assuming the [**binbash Leverage**](https://leverage.binbash.co/) [Landin
 
 ## Installation
 
-To install KEDA, just enable it in the components layer [here](https://github.com/binbashar/le-tf-infra-aws/tree/master/apps-devstg/us-east-1/k8s-eks/k8s-components).
+Note that besides KEDA, the Add-on has to be enabled in the components layer [here](https://github.com/binbashar/le-tf-infra-aws/tree/master/apps-devstg/us-east-1/k8s-eks/k8s-components).
 
-Note `enable_keda` has to be enabled and, for the next example, also enable `enable_keda_http_add_on`.
+To do this, same as `enable_keda`, `enable_keda_http_add_on` has to be set to `true`.
 
 To read more on how to enable components see [here](./k8s.md#eks).
 
-## Giving it a try!
+## HTTP Requests as a base for escalation
 
 Now, let's create an example so we can show how KEDA Works
+
+### The app to scale
 
 We will deploy a simple NGINX server.
 
@@ -115,6 +112,8 @@ NAME                                          DESIRED   CURRENT   READY   AGE
 replicaset.apps/nginx-deployment-5bb85d69d8   1         1         1       56s
 ```
 
+### Accessing the app
+
 To try it, create a port-forward to the service and hit it from your browser.
 
 ```shell
@@ -129,7 +128,11 @@ curl localhost:8080
 
 Now, it has no horizontal autoscaling tool (HPA), so it won't scale. I.e. it always will have one pod (as per the manifests).
 
+### Go for Keda
+
 Let's create then a KEDA autoscaler!
+
+#### The HTTPScaledObject object
 
 This is the manifest:
 
@@ -170,6 +173,8 @@ kubectl port-forward -n demoapps svc/nginx-svc 8080:80
 ```
 
 ...it will fail, since no pod are available to answer the service.
+
+#### The intercepter
 
 Instead we have to hit a KEDA intercepter, that will route the traffic using the Hosts in the `HTTPScaledObject` object.
 

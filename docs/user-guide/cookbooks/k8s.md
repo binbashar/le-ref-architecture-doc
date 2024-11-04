@@ -317,6 +317,9 @@ Then, connect to the VPN to access the private space.
 
 First go into each layer and config the Terraform S3 background key, names, addons, the components to install, etc.
 
+!!! Note
+    If you are using [SSO](../../ref-architecture-aws/features/sso/overview/) with the [Landing Zone](https://leverage.binbash.co/try-leverage/), the [**binbash Leverage**](https://leverage.binbash.co/) recommended way to access your resources, note you have to set the right role name in file `cluster/locals.tf` under `map_roles` object.
+
 ```shell
 cd apps-devstg/us-east-1/k8s-eks/
 ```
@@ -355,3 +358,8 @@ leverage kubectl get ns
 
 !!! Info
     If you've followed the [**binbash Leverage**](https://leverage.binbash.co/) recommendations, your cluster will live on a private subnet, so you need to connect to the VPN in order to access the K8s API.
+
+!!! Attention
+    **About Destroying the cluster**</br></br>
+    Note if you will delete the cluster you have to do so in order, i.e. with:</br>`--layers k8s-components,addons,identities,cluster,network`.</br>(if you have applyed the `k8s-workloads` layer it has to go first.)</br></br>
+    Also note that when destroying the `network` layer you'll see an error saying the flow logs bucket can not be deleted.</br>It makes sense for a security reason (to keep the logs). If you want to delete the layer you must empty the bucket first.

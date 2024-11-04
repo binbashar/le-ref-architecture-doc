@@ -7,5 +7,5 @@
 - [x] [Encrypting/decrypting files with SOPS+KMS](./sops-kms.md)
 - [x] [Enable/Disable nat gateway](./enable-nat-gateway.md)
 - [x] [ArgoCD add external cluster](./argocd-external-cluster.md)
-- [x] [VPN Server](./VPN-server.md)
+- [x] [VPN Server](./VPN-server)
 

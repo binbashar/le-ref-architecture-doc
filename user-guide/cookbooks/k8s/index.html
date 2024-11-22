@@ -18,7 +18,7 @@
         <link rel="prev" href="../VPC-subnet-calculator/">
       
       
-        <link rel="next" href="../sops-kms/">
+        <link rel="next" href="../k8s.keda/">
       
       
       <link rel="icon" href="../../../assets/images/logos/favicon.ico">
@@ -4196,6 +4196,8 @@
       
         
       
+        
+      
     
     
       
@@ -4547,9 +4549,36 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#1-apply-layers" class="md-nav__link">
+  <a href="#1-create-the-network" class="md-nav__link">
     <span class="md-ellipsis">
-      1 - Apply layers
+      1 - Create the network
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-add-the-path-to-the-vpn-server" class="md-nav__link">
+    <span class="md-ellipsis">
+      2 - Add the path to the VPN server
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-create-the-cluster" class="md-nav__link">
+    <span class="md-ellipsis">
+      3 - Create the cluster
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-access-the-cluster" class="md-nav__link">
+    <span class="md-ellipsis">
+      4 - Access the cluster
     </span>
   </a>
   
@@ -4569,6 +4598,27 @@
   
 </nav>
       
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../k8s.keda/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    KEDA, Kubernetes autoscaling
+  </span>
+  
+
+      </a>
     </li>
   
 
@@ -4666,7 +4716,7 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_8_9" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_8_10" >
         
           
           
@@ -4682,14 +4732,14 @@
             </a>
             
               
-              <label class="md-nav__link " for="__nav_4_8_9" id="__nav_4_8_9_label" tabindex="0">
+              <label class="md-nav__link " for="__nav_4_8_10" id="__nav_4_8_10_label" tabindex="0">
                 <span class="md-nav__icon md-icon"></span>
               </label>
             
           </div>
         
-        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_4_8_9_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_4_8_9">
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_4_8_10_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_8_10">
             <span class="md-nav__icon md-icon"></span>
             VPN Server
           </label>
@@ -5560,9 +5610,36 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#1-apply-layers" class="md-nav__link">
+  <a href="#1-create-the-network" class="md-nav__link">
     <span class="md-ellipsis">
-      1 - Apply layers
+      1 - Create the network
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-add-the-path-to-the-vpn-server" class="md-nav__link">
+    <span class="md-ellipsis">
+      2 - Add the path to the VPN server
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-create-the-cluster" class="md-nav__link">
+    <span class="md-ellipsis">
+      3 - Create the cluster
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-access-the-cluster" class="md-nav__link">
+    <span class="md-ellipsis">
+      4 - Access the cluster
     </span>
   </a>
   
@@ -5789,7 +5866,7 @@ leverage<span class="w"> </span>tf<span class="w"> </span>apply
 <h2 id="eks">EKS<a class="headerlink" href="#eks" title="Permanent link"> ¶</a></h2>
 <p>See also <a href="/user-guide/ref-architecture-eks/overview/">here</a>.</p>
 <h3 id="goal_3">Goal<a class="headerlink" href="#goal_3" title="Permanent link"> ¶</a></h3>
-<p>A cluster with one node (worker) and the control plane managed by AWS is deployed here.</p>
+<p>A cluster with one node (worker) per AZ and the control plane managed by AWS is deployed here.</p>
 <p>Cluster autoscaler is used to create more nodes.</p>
 <h3 id="procedure_1">Procedure<a class="headerlink" href="#procedure_1" title="Permanent link"> ¶</a></h3>
 <p>These are the steps:</p>
@@ -5798,20 +5875,55 @@ leverage<span class="w"> </span>tf<span class="w"> </span>apply
 <li>paste the layer under the <code>apps-devstg/us-east-1</code> account/region directory</li>
 </ul>
 </li>
-<li>1 - apply layers</li>
-<li>2 - access the cluster</li>
+<li>1 - create the network</li>
+<li>2 - Add path to the VPN Server</li>
+<li>3 - create the cluster and dependencies/components</li>
+<li>4 - access the cluster</li>
 </ul>
 <hr />
 <h4 id="0-copy-the-layer_1">0 - Copy the layer<a class="headerlink" href="#0-copy-the-layer_1" title="Permanent link"> ¶</a></h4>
-<p>A few methods can be used to download the <a href="https://github.com/binbashar/le-tf-infra-aws/tree/master/apps-devstg/us-east-1/k8s-eks">KOPS layer</a> directory into the <a href="https://leverage.binbash.co/"><strong>binbash Leverage</strong></a> project.</p>
+<p>A few methods can be used to download the <a href="https://github.com/binbashar/le-tf-infra-aws/tree/master/apps-devstg/us-east-1/k8s-eks">K8s EKS layer</a> directory into the <a href="https://leverage.binbash.co/"><strong>binbash Leverage</strong></a> project.</p>
 <p>E.g. <a href="https://addons.mozilla.org/en-US/firefox/addon/gitzip/?utm_source=addons.mozilla.org&amp;utm_medium=referral&amp;utm_content=search">this addon</a> is a nice way to do it.</p>
-<p>Paste this layer into the account/region chosen to host this, e.g. <code>apps-devstg/us-east-1/</code>, so the final layer is <code>apps-devstg/us-east-1/k8s-eks/</code>.</p>
-<h4 id="1-apply-layers">1 - Apply layers<a class="headerlink" href="#1-apply-layers" title="Permanent link"> ¶</a></h4>
-<p>First go into each layer and config the Terraform S3 background key, CIDR for the network, names, addons, etc.</p>
-<p>Then apply layers as follow:</p>
-<div class="highlight"><pre><span></span><code>leverage<span class="w"> </span>tf<span class="w"> </span>init<span class="w"> </span>--layers<span class="w"> </span>network,cluster,identities,addons,k8s-components
-leverage<span class="w"> </span>tf<span class="w"> </span>apply<span class="w"> </span>--layers<span class="w"> </span>network,cluster,identities,addons,k8s-components
+<p>Paste this layer into the account/region chosen to host this, e.g. <code>apps-devstg/us-east-1/</code>, so the final layer is <code>apps-devstg/us-east-1/k8s-eks/</code>. Note you can change the layer name (and CIDRs and cluster name) if you already have an EKS cluster in this Account/Region.</p>
+<h4 id="1-create-the-network">1 - Create the network<a class="headerlink" href="#1-create-the-network" title="Permanent link"> ¶</a></h4>
+<p>First go into the network layer (e.g. <code>apps-devstg/us-east-1/k8s-eks/network</code>) and config the Terraform S3 background key, CIDR for the network, names, etc.</p>
+<div class="highlight"><pre><span></span><code><span class="nb">cd</span><span class="w"> </span>apps-devstg/us-east-1/k8s-eks/network
 </code></pre></div>
+<p>Then, from inside the layer run:</p>
+<div class="highlight"><pre><span></span><code>leverage<span class="w"> </span>tf<span class="w"> </span>init
+leverage<span class="w"> </span>tf<span class="w"> </span>apply
+</code></pre></div>
+<h4 id="2-add-the-path-to-the-vpn-server">2 - Add the path to the VPN server<a class="headerlink" href="#2-add-the-path-to-the-vpn-server" title="Permanent link"> ¶</a></h4>
+<p>Since we are working on a private subnet (as per the <a href="https://leverage.binbash.co/"><strong>binbash Leverage</strong></a> and the AWS Well Architected Framework best practices), we need to set the VPN routes up.</p>
+<p>If you are using the <a href="../VPN-server/">Pritunl VPN server</a> (as per the <a href="https://leverage.binbash.co/"><strong>binbash Leverage</strong></a> recommendations), add the route to the CIDR set in the step 1 to the server you are using to connect to the VPN.</p>
+<p>Then, connect to the VPN to access the private space.</p>
+<h4 id="3-create-the-cluster">3 - Create the cluster<a class="headerlink" href="#3-create-the-cluster" title="Permanent link"> ¶</a></h4>
+<p>First go into each layer and config the Terraform S3 background key, names, addons, the components to install, etc.</p>
+<div class="highlight"><pre><span></span><code><span class="nb">cd</span><span class="w"> </span>apps-devstg/us-east-1/k8s-eks/
+</code></pre></div>
+<p>Then apply layers as follow:</p>
+<div class="highlight"><pre><span></span><code>leverage<span class="w"> </span>tf<span class="w"> </span>init<span class="w"> </span>--layers<span class="w"> </span>cluster,identities,addons,k8s-components
+leverage<span class="w"> </span>tf<span class="w"> </span>apply<span class="w"> </span>--layers<span class="w"> </span>cluster,identities,addons,k8s-components
+</code></pre></div>
+<h4 id="4-access-the-cluster">4 - Access the cluster<a class="headerlink" href="#4-access-the-cluster" title="Permanent link"> ¶</a></h4>
+<p>Go into the cluster layer:</p>
+<div class="highlight"><pre><span></span><code><span class="nb">cd</span><span class="w"> </span>apps-devstg/us-east-1/k8s-eks/cluster
+</code></pre></div>
+<p>Use the embedded <code>kubectl</code> to config the context:</p>
+<div class="highlight"><pre><span></span><code>leverage<span class="w"> </span>kubectl<span class="w"> </span>configure
+</code></pre></div>
+<div class="admonition info">
+<p class="admonition-title">Info</p>
+<p>You can export the context to use it with stand alone <code>kubectl</code>.</p>
+</div>
+<p>Once this process is done, you'll end up with temporary credentials created for <code>kubectl</code>.</p>
+<p>Now you can try a <code>kubectl</code> command, e.g.:</p>
+<div class="highlight"><pre><span></span><code>leverage<span class="w"> </span>kubectl<span class="w"> </span>get<span class="w"> </span>ns
+</code></pre></div>
+<div class="admonition info">
+<p class="admonition-title">Info</p>
+<p>If you've followed the <a href="https://leverage.binbash.co/"><strong>binbash Leverage</strong></a> recommendations, your cluster will live on a private subnet, so you need to connect to the VPN in order to access the K8s API.</p>
+</div>
 
 
 
@@ -5866,13 +5978,13 @@ leverage<span class="w"> </span>tf<span class="w"> </span>apply<span class="w"> 
         
         
           
-          <a href="../sops-kms/" class="md-footer__link md-footer__link--next" aria-label="Next: Encrypting/decrypting files with SOPS+KMS">
+          <a href="../k8s.keda/" class="md-footer__link md-footer__link--next" aria-label="Next: KEDA, Kubernetes autoscaling">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 Next
               </span>
               <div class="md-ellipsis">
-                Encrypting/decrypting files with SOPS+KMS
+                KEDA, Kubernetes autoscaling
               </div>
             </div>
             <div class="md-footer__button md-icon">

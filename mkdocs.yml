@@ -298,6 +298,7 @@ nav:
       - Start/Stop EC2/RDS instances using schedule or manual endpoint: "user-guide/cookbooks/schedule-start-stop-ec2.md"
       - Calculate VPC cubnet CIDRs: "user-guide/cookbooks/VPC-subnet-calculator.md"
       - Kubernetes in different stages: "user-guide/cookbooks/k8s.md"
+      - KEDA, Kubernetes autoscaling: "user-guide/cookbooks/k8s.keda.md"
       - Encrypting/decrypting files with SOPS+KMS: "user-guide/cookbooks/sops-kms.md"
       - Enable/Disable nat gateway: "user-guide/cookbooks/enable-nat-gateway.md"
       - ArgoCD add external cluster: "user-guide/cookbooks/argocd-external-cluster.md"

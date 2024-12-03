@@ -71,6 +71,9 @@ Since we are working with EKS, these are the requisites to be able to work with 
 !!! Attention
     Be sure to meet these requirements before proceed!
 
+!!! Attention
+    Note that Cillium ENI support only allows IPV4 addresses for now.
+    
 ### Steps
 
 #### Step 0 - create the cluster

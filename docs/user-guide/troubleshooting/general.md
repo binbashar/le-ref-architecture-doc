@@ -118,4 +118,16 @@ To do this escape the target string like this:
 leverage tf import 'aws_organizations_account.accounts[\"accountalias\"]' 99999999999
 ```
 
-The same applies to other commands such as `plan`.
+For more info on escaping indexes for `import` see [here](../../leverage-cli/reference/terraform/#import)
+
+The same applies to other commands such as `plan`, `destroy` or `apply` when using `-target` with indexes.
+
+E.g.:
+
+```shell
+leverage tf plan -target='aws_route53_record.main[\"*.binbash.com.ar\"]'
+```
+
+Note the use of single quotes and double quotes.
+
+For more info on escaping indexes for `plan`, `destroy` and `apply` see [here](../../leverage-cli/reference/terraform/#plan)

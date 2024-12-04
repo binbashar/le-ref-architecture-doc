@@ -5879,6 +5879,17 @@
 <ul>
 <li><code>--layers</code>: Applies command to layers listed in this option. (see more info <a href="./layers">here</a>)</li>
 </ul>
+<div class="admonition info">
+<p class="admonition-title">using indexes</p>
+<p>When using <code>-target</code> flag with resources using indexes, it is possible you need to escape chars like this:</p>
+<p><strong>Example:</strong></p>
+<ul>
+<li>For target:  <code>aws_route53_record.main["*.binbash.com.ar"]</code></li>
+<li>Use:  <code>leverage tf plan -target='aws_route53_record.main[\"*.binbash.com.ar\"]'</code></li>
+</ul>
+<p>Note the single and double quotes. 
+This is valid for ZSH and BASH.</p>
+</div>
 <hr />
 <h2 id="apply"><code>apply</code><a class="headerlink" href="#apply" title="Permanent link"> ¶</a></h2>
 <h3 id="usage_2">Usage<a class="headerlink" href="#usage_2" title="Permanent link"> ¶</a></h3>
@@ -5891,6 +5902,11 @@
 <ul>
 <li><code>--layers</code>: Applies command to layers listed in this option. (see more info <a href="./layers">here</a>)</li>
 </ul>
+<div class="admonition info">
+<p class="admonition-title">using indexes</p>
+<p>When using <code>-target</code> flag with resources using indexes, it is possible you need to escape chars.</p>
+<p>See notes for <code>plan</code> <a href="#plan">here</a>.</p>
+</div>
 <hr />
 <h2 id="destroy"><code>destroy</code><a class="headerlink" href="#destroy" title="Permanent link"> ¶</a></h2>
 <h3 id="usage_3">Usage<a class="headerlink" href="#usage_3" title="Permanent link"> ¶</a></h3>
@@ -5903,6 +5919,11 @@
 <ul>
 <li><code>--layers</code>: Applies command to layers listed in this option. (see more info <a href="./layers">here</a>)</li>
 </ul>
+<div class="admonition info">
+<p class="admonition-title">using indexes</p>
+<p>When using <code>-target</code> flag with resources using indexes, it is possible you need to escape chars.</p>
+<p>See notes for <code>plan</code> <a href="#plan">here</a>.</p>
+</div>
 <hr />
 <h2 id="output"><code>output</code><a class="headerlink" href="#output" title="Permanent link"> ¶</a></h2>
 <h3 id="usage_4">Usage<a class="headerlink" href="#usage_4" title="Permanent link"> ¶</a></h3>

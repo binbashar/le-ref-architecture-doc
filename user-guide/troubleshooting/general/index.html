@@ -4256,6 +4256,15 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#leverage-cli-targeting-specific-resources-with-indexes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Leverage CLI targeting specific resources with indexes
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -5349,6 +5358,15 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#leverage-cli-targeting-specific-resources-with-indexes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Leverage CLI targeting specific resources with indexes
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -5439,6 +5457,21 @@ or prefix the leverage tool with the env var:
 <div class="highlight"><pre><span></span><code>$<span class="w"> </span>git<span class="w"> </span>config<span class="w"> </span>--global<span class="w"> </span>user.name<span class="w"> </span><span class="s2">&quot;Name Lastname&quot;</span>
 $<span class="w"> </span>git<span class="w"> </span>config<span class="w"> </span>--global<span class="w"> </span>user.email<span class="w"> </span><span class="s2">&quot;name.lastname@email.com&quot;</span>
 </code></pre></div>
+<h2 id="leverage-cli-targeting-specific-resources-with-indexes">Leverage CLI targeting specific resources with indexes<a class="headerlink" href="#leverage-cli-targeting-specific-resources-with-indexes" title="Permanent link"> ¶</a></h2>
+<p>Sometimes you want to target a specific resource, eg. when importing:</p>
+<div class="highlight"><pre><span></span><code>leverage<span class="w"> </span>terraform<span class="w"> </span>import<span class="w"> </span>aws_organizations_account.management<span class="w"> </span><span class="m">999999999999</span>
+</code></pre></div>
+<p>But the real issue comes when indexes have to be used.</p>
+<p>To do this escape the target string like this:</p>
+<div class="highlight"><pre><span></span><code>leverage<span class="w"> </span>tf<span class="w"> </span>import<span class="w"> </span><span class="s1">&#39;aws_organizations_account.accounts[\&quot;accountalias\&quot;]&#39;</span><span class="w"> </span><span class="m">99999999999</span>
+</code></pre></div>
+<p>For more info on escaping indexes for <code>import</code> see <a href="../../leverage-cli/reference/terraform/#import">here</a></p>
+<p>The same applies to other commands such as <code>plan</code>, <code>destroy</code> or <code>apply</code> when using <code>-target</code> with indexes.</p>
+<p>E.g.:</p>
+<div class="highlight"><pre><span></span><code>leverage<span class="w"> </span>tf<span class="w"> </span>plan<span class="w"> </span>-target<span class="o">=</span><span class="s1">&#39;aws_route53_record.main[\&quot;*.binbash.com.ar\&quot;]&#39;</span>
+</code></pre></div>
+<p>Note the use of single quotes and double quotes.</p>
+<p>For more info on escaping indexes for <code>plan</code>, <code>destroy</code> and <code>apply</code> see <a href="../../leverage-cli/reference/terraform/#plan">here</a></p>
 
 
 

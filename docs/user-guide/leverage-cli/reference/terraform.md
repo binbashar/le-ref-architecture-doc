@@ -58,6 +58,17 @@ Can only be run at **layer** level if `--layers` is not set, or at **account** o
 ### Options
 * `--layers`: Applies command to layers listed in this option. (see more info [here](./layers))
 
+!!! info "using indexes"
+    When using `-target` flag with resources using indexes, it is possible you need to escape chars like this:
+
+    **Example:**
+
+    - For target:  `aws_route53_record.main["*.binbash.com.ar"]`
+    - Use:  `leverage tf plan -target='aws_route53_record.main[\"*.binbash.com.ar\"]'`
+    
+    Note the single and double quotes. 
+    This is valid for ZSH and BASH.
+
 ---
 ## `apply`
 
@@ -75,6 +86,11 @@ Can only be run at **layer** level if `--layers` is not set, or at **account** o
 ### Options
 * `--layers`: Applies command to layers listed in this option. (see more info [here](./layers))
 
+!!! info "using indexes"
+    When using `-target` flag with resources using indexes, it is possible you need to escape chars.
+
+    See notes for `plan` [here](#plan).
+    
 ---
 ## `destroy`
 
@@ -91,6 +107,12 @@ Can only be run at **layer** level if `--layers` is not set, or at **account** o
 
 ### Options
 * `--layers`: Applies command to layers listed in this option. (see more info [here](./layers))
+
+!!! info "using indexes"
+    When using `-target` flag with resources using indexes, it is possible you need to escape chars.
+
+    See notes for `plan` [here](#plan).
+    
 
 ---
 ## `output`

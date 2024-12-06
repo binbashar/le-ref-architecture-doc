@@ -32,7 +32,215 @@ A cluster with one node (master/worker) is deployed here.
 
 Cluster autoscaler can be used with K3s to scale nodes, but it requires a lot of work that justifies going to KOPS.
 
-[TBD]
+### Assumptions
+
+The base VPC for the account will be used. 
+
+Since this K8s is aimed mainly to quick POCs, it will be created as a public machine (but using the OS Firewall to block unused ports).
+
+### Procedure
+
+Steps
+
+- 0: Create the EC2 instance
+- 1: Install K3s and enable firewall
+- 2: Access K8s
+
+#### 0 - Create the EC2 instance
+
+Here, the [**binbash Leverage**](https://leverage.binbash.co/) [EC2 fleet layer](https://github.com/binbashar/le-tf-infra-aws/tree/master/apps-devstg/us-east-1/ec2-fleet-ansible%20--) will be used.
+
+A few methods can be used to download the layer directory into the [**binbash Leverage**](https://leverage.binbash.co/) project.
+
+E.g. [this addon](https://addons.mozilla.org/en-US/firefox/addon/gitzip/?utm_source=addons.mozilla.org&utm_medium=referral&utm_content=search) is a nice way to do it.
+
+Paste this layer into the account/region chosen to host this, e.g. `apps-devstg/us-east-1/`, so the final layer is `apps-devstg/us-east-1/ec2-fleet-ansible/`.
+
+In the `locals.tf` file locate the object `multiple_instances` and add a configuration like this:
+
+```hcl
+  multiple_instances = {
+    1 = {
+      # MANDATORY the subnet in which the instance will be created
+      subnet_id        = data.terraform_remote_state.vpc.outputs.public_subnets[0]
+
+      instance_type    = "t3a.medium"
+      ami              = data.aws_ami.ubuntu_linux.id
+      key_name         = data.terraform_remote_state.security.outputs.aws_key_pair_name
+      # root ebs device
+      root_volume_size = 30
+      root_volume_type = "gp3"
+      # whether or not it is a spot instance
+      create_spot_instance = false
+      # the additional ebs volume for this instance
+      ebs_volume       = {
+                         # whether or not this ebs will be created
+                         enable = false
+                         # The size of the drive in GiBs.
+                         size = 8
+                         # The type of EBS volume. Can be standard, gp2, gp3, io1, io2, sc1 or st1
+                         # Check types in your region here https://aws.amazon.com/ebs/pricing/
+                         type = "gp3"
+                       }
+    }
+```
+
+!!! Info
+    Note the key set here. It will be later used to access the instance with Ansible.
+
+Open the `config.tf` file.
+
+Here set the backend key if needed:
+
+```terraform
+  backend "s3" {
+    key = "apps-devstg/us-east-1/ec2-fleet-ansible/terraform.tfstate"
+  }
+```
+
+Note you can add labels to the EC2 instances if you want them to be auto stopped/started using the [start/stop Lambda](https://github.com/binbashar/le-tf-infra-aws/tree/master/shared/us-east-1/tools-cloud-scheduler-stop-start), e.g. in the `locals.tf` file:
+
+```hcl
+locals {
+  tags = {
+    Terraform           = "true"
+    Environment         = var.environment
+    ScheduleStopDaily   = true
+    ScheduleStartManual = true
+  }
+}
+```
+
+Init and apply as usual:
+
+```shell
+leverage tf init
+leverage tf apply
+```
+
+##### DNS
+
+If you want to set a DNS or a local `hosts` record to access the server, use the public IP provided in the output.
+
+If you have set a DNS with [**binbash Leverage**](https://leverage.binbash.co/), you can automate this process adding a remote state and an automatic record creation like this in this layer:
+
+```hcl
+
+provider "aws" {
+  alias   = "shared"
+  region  = var.region
+  profile = "${var.project}-shared-devops"
+}
+data "terraform_remote_state" "shared-dns" {
+  backend = "s3"
+
+  config = {
+    region  = var.region
+    profile = "${var.project}-shared-devops"
+    bucket  = "${var.project}-shared-terraform-backend"
+    key     = "shared/global/dns/basemates.co/terraform.tfstate"
+  }
+}
+locals {
+    public_ips    = { for p in sort(keys(local.multiple_instances)) : p => module.ec2_ansible_fleet[p].public_ip }
+    public_domain = "instance1.binbash.co"
+}
+
+# Example for EC2 instance 1
+resource "aws_route53_record" "access-for-instance-1" {
+  provider = aws.shared
+
+  allow_overwrite = true
+  name            = local.public_domain
+  records         = [local.public_ips["1"]]
+  ttl             = 3600
+  type            = "A"
+  zone_id         = data.terraform_remote_state.shared-dns.outputs.public_zone_id
+
+  depends_on = [module.ec2_ansible_fleet]
+}
+```
+    
+
+#### 1 - Install K3s and enable firewall
+
+Once installed, you should have access to the EC2 **using the corresponding key**.
+
+```shell
+ssh ubuntu@instance1.binbash.co
+```
+
+Now we can install K3s with Ansible.
+
+I am using here this [Ansible playbook](https://gitlab.com/ansible-kungfoo/k3s#).
+
+!!! Info
+    You can add an ssh key so it is used by Ansible by adding it to the [ssh-agent](https://en.wikipedia.org/wiki/Ssh-agent) like this:
+    
+    ```shell
+    ssh-add <yourkeypath>
+    ```
+
+
+##### Playing with the Playbook
+
+As it says in the Ansible Playbook repository README:
+
+> Search in files for `<emailaddresshere>` and `<instancehostnamehere>` and replace with your own values.
+
+Copy file `inventory/hosts.prod.ini` to `inventory/hosts.dev.ini`. (I am using dev here, you use what you need)
+
+Test the connection:
+
+```shell
+ansible-playbook ping-servers.yaml --inventory-file inventory/hosts.dev.ini
+```
+
+Now install K3s:
+
+```shell
+ansible-playbook basedata-setup.yaml  --inventory-file inventory/hosts.dev.ini
+```
+
+Finally, since this is a public machine, close the unneeded ports:
+
+```shell
+ansible-playbook close-ports.yaml  --inventory-file inventory/hosts.dev.ini
+```
+
+##### Get the K3s credentials
+
+Now you can get the credentials using SSH:
+
+```shell
+# get the configfile
+ssh ubuntu@instance1.binbash.co sudo k3s kubectl config view --raw  | sed 's/server: https:\/\/127.0.0.1:6443/server: https:\/\/instance1.binbash.co:6443/' > ~/kubeconfig.yaml
+```
+
+Replace the hostname!
+
+And finally, test it:
+
+```shell
+# export the KUBECONFIG envvar
+export KUBECONFIG=${HOME}/kubeconfig.yaml
+# check it works
+kubectl --insecure-skip-tls-verify get nodes
+```
+
+Note here we are using the `--insecure-skip-tls-verify` flag to connect over internet.
+
+!!! Warning
+    This is not recommended for production!
+  
+!!! Info
+    To access the cluster you should reach the private IP for security reasons. (e.g. using a VPN or SSHing into the server)
+
+##### Ingress controller
+
+At the bottom of `basedata-setup.yaml` file, uncomment the Traefik part and re run the playbook.
+
+This will install Traefik.
 
 ---
 

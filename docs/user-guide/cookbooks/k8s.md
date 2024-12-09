@@ -234,13 +234,50 @@ Note here we are using the `--insecure-skip-tls-verify` flag to connect over int
     This is not recommended for production!
   
 !!! Info
-    To access the cluster you should reach the private IP for security reasons. (e.g. using a VPN or SSHing into the server)
+    To access the cluster you should reach the private IP for security reasons. (e.g. using a VPN or SSHing into the server, see next section)
+    
+###### SSH tunnel
+
+A secure way to access the K8s API is ssh-tunneling into the server.
+
+First get the Kube config file without the domainname change:
+
+```shell
+# get the configfile
+ssh ubuntu@instance1.binbash.co sudo k3s kubectl config view --raw > ~/kubeconfig.yaml
+```
+
+Now, in a terminal create the tunnel (more on SSH Tunneling [here](https://linuxize.com/post/how-to-setup-ssh-tunneling/)):
+
+```shell
+ssh -L 127.0.0.1:6443:127.0.0.1:6443 ubuntu@instance1.binbash.co
+```
+
+In a different terminal:
+
+```shell
+# export the KUBECONFIG envvar
+export KUBECONFIG=${HOME}/kubeconfig.yaml
+```
+
+...and 
+
+```shell
+kubectl get nodes             
+NAME               STATUS   ROLES                  AGE   VERSION
+ip-172-18-73-210   Ready    control-plane,master   28m   v1.28.15+k3s1
+```
+
+!!! Info
+    If you use tunneling ports other than 80 and 443 can be closed as well!
 
 ##### Ingress controller
 
 At the bottom of `basedata-setup.yaml` file, uncomment the Traefik part and re run the playbook.
 
 This will install Traefik.
+
+You are ready to go!
 
 ---
 

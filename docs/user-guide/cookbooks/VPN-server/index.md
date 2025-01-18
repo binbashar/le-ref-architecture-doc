@@ -32,7 +32,7 @@ in the Organization.
   - Each client connection per hour
   - Data transfer fees
 
-### 2. Pritunl VPN Server (on EC2)
+### 2. Pritunl VPN Server *on EC2*
 
 **Pros:**
 

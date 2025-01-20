@@ -28,15 +28,16 @@ in the Organization.
 - Limited customization options compared to self-managed solutions
 - Requires AWS VPN client software on end-user devices
 - Higher cost as you pay for:
-  - Each VPN endpoint association per hour
-  - Each client connection per hour
-  - Data transfer fees
+    - Each VPN endpoint association per hour
+    - Each client connection per hour
+    - Data transfer fees
 
 ### 2. Pritunl VPN Server *on EC2*
 
 **Pros:**
 
-- One-time EC2 instance cost plus storage
+- One-time EC2 instance configuration  
+- Constant cost: One EC2 instance (plus storage)  
 - Full control over the VPN server configuration
 - User-friendly web GUI for administration
 - Supports multiple organizations and users

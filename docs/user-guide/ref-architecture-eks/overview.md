@@ -42,7 +42,6 @@ your CloudOps team to safely migrate it to a Leverage supported EKS version.
 This is the primary resource which defines the cluster. We will create one cluster on each
 account:
 
-- [x] [apps-devstg/us-east-1/k8s-eks](https://github.com/binbashar/le-tf-infra-aws/tree/master/apps-devstg/us-east-1/k8s-eks)
 - [x] [apps-devstg/us-east-1/k8s-eks-demoapps](https://github.com/binbashar/le-tf-infra-aws/tree/master/apps-devstg/us-east-1/k8s-eks-demoapps)
 
 !!! info "Important" 

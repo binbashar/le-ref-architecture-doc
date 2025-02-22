@@ -3,7 +3,7 @@
 To use Leverage CLI you need to install it from the Python Package Index (Pypi). Currently, only Linux and Mac OS are supported operative systems.
 
 !!! done "Requirements"
-    * [x] **Python** `>= 3.8`
+    * [x] **Python** `>= 3.9`
     * [x] **Git** `>= 2.25`
     * [x] **Docker engine** `>= 20.x.y`
 
@@ -65,19 +65,18 @@ Usage: leverage [OPTIONS] COMMAND [ARGS]...
   Leverage Reference Architecture projects command-line tool.
 
 Options:
-  -f, --filename TEXT  Name of the build file containing the tasks
-                       definitions.  [default: build.py]
-  -l, --list-tasks     List available tasks to run.
-  -v, --verbose        Increase output verbosity.
-  --version            Show the version and exit.
-  --help               Show this message and exit.
+  -v, --verbose  Increase output verbosity.
+  --version      Show the version and exit.
+  --help         Show this message and exit.
 
 Commands:
   aws          Run AWS CLI commands in a custom containerized environment.
   credentials  Manage AWS cli credentials.
+  kc           Run Kubectl commands in a custom containerized environment.
   kubectl      Run Kubectl commands in a custom containerized environment.
   project      Manage a Leverage project.
   run          Perform specified task(s) and all of its dependencies.
+  shell        Run a shell in a generic container.
   terraform    Run Terraform commands in a custom containerized...
   tf           Run Terraform commands in a custom containerized...
   tfautomv     Run TFAutomv commands in a custom containerized...

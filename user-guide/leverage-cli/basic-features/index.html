@@ -5224,12 +5224,9 @@ Usage:<span class="w"> </span>leverage<span class="w"> </span><span class="o">[<
 <span class="w">  </span>Leverage<span class="w"> </span>Reference<span class="w"> </span>Architecture<span class="w"> </span>projects<span class="w"> </span>command-line<span class="w"> </span>tool.
 
 Options:
-<span class="w">  </span>-f,<span class="w"> </span>--filename<span class="w"> </span>TEXT<span class="w">  </span>Name<span class="w"> </span>of<span class="w"> </span>the<span class="w"> </span>build<span class="w"> </span>file<span class="w"> </span>containing<span class="w"> </span>the<span class="w"> </span>tasks
-<span class="w">                       </span>definitions.<span class="w">  </span><span class="o">[</span>default:<span class="w"> </span>build.py<span class="o">]</span>
-<span class="w">  </span>-l,<span class="w"> </span>--list-tasks<span class="w">     </span>List<span class="w"> </span>available<span class="w"> </span>tasks<span class="w"> </span>to<span class="w"> </span>run.
-<span class="w">  </span>-v,<span class="w"> </span>--verbose<span class="w">        </span>Increase<span class="w"> </span>output<span class="w"> </span>verbosity.
-<span class="w">  </span>--version<span class="w">            </span>Show<span class="w"> </span>the<span class="w"> </span>version<span class="w"> </span>and<span class="w"> </span>exit.
-<span class="w">  </span>--help<span class="w">               </span>Show<span class="w"> </span>this<span class="w"> </span>message<span class="w"> </span>and<span class="w"> </span>exit.
+<span class="w">  </span>-v,<span class="w"> </span>--verbose<span class="w">  </span>Increase<span class="w"> </span>output<span class="w"> </span>verbosity.
+<span class="w">  </span>--version<span class="w">      </span>Show<span class="w"> </span>the<span class="w"> </span>version<span class="w"> </span>and<span class="w"> </span>exit.
+<span class="w">  </span>--help<span class="w">         </span>Show<span class="w"> </span>this<span class="w"> </span>message<span class="w"> </span>and<span class="w"> </span>exit.
 
 Commands:
 <span class="w">  </span>aws<span class="w">          </span>Run<span class="w"> </span>AWS<span class="w"> </span>CLI<span class="w"> </span>commands<span class="w"> </span><span class="k">in</span><span class="w"> </span>a<span class="w"> </span>custom<span class="w"> </span>containerized<span class="w"> </span>environment.
@@ -5246,49 +5243,37 @@ Commands:
 <p>Similarly, subcommands provide further information by means of the <code>--help</code> flag. For example <code>leverage tf --help</code>.</p>
 <h2 id="global-options">Global options<a class="headerlink" href="#global-options" title="Permanent link"> ¶</a></h2>
 <ul>
-<li><code>-f</code> | <code>--filename</code>:  Name of the file containing the tasks' definition. Defaults to <code>build.py</code></li>
-<li><code>-l</code> | <code>--list-tasks</code>: List all the tasks defined for the project along a description of their purpose (when available).<br />
-  <div class="highlight"><pre><span></span><code>Tasks in build file `build.py`:
-
-  clean                   Clean build directory.
-  copy_file               
-  echo                    
-  html                    Generate HTML.
-  images        [Ignored] Prepare images.
-  start_server  [Default] Start the server
-  stop_server             
-
-Powered by Leverage 1.9.0
-</code></pre></div></li>
 <li>
 <p><code>-v</code> | <code>--verbose</code>: Increases output verbosity.<br />
   When running a command in a container, the tool provides a description of the container's configuration before the execution.<br />
   This is specially useful if the user were to to have the need of recreating Leverage's behavior by themselves.<br />
   <div class="highlight"><pre><span></span><code>$<span class="w"> </span>leverage<span class="w"> </span>-v<span class="w"> </span>tf<span class="w"> </span>plan
-<span class="o">[</span><span class="m">18</span>:23:22.222<span class="o">]</span><span class="w"> </span>DEBUG<span class="w">    </span>Found<span class="w"> </span>config<span class="w"> </span>file<span class="w"> </span>/home/user/binbash/le-tf-infra-aws/build.env
-<span class="o">[</span><span class="m">18</span>:23:22.239<span class="o">]</span><span class="w"> </span>DEBUG<span class="w">    </span>Container<span class="w"> </span>configuration:
+<span class="o">[</span><span class="m">20</span>:27:44.758<span class="o">]</span><span class="w"> </span>DEBUG<span class="w">    </span>Found<span class="w"> </span>config<span class="w"> </span>file<span class="w"> </span>/home/user/binbash/le-tf-infra-aws/build.env
+<span class="o">[</span><span class="m">20</span>:27:44.812<span class="o">]</span><span class="w"> </span>DEBUG<span class="w">    </span>Container<span class="w"> </span>configuration:
 <span class="w">                        </span><span class="o">{</span>
-<span class="w">                          </span><span class="s2">&quot;image&quot;</span>:<span class="w"> </span><span class="s2">&quot;binbash/leverage-toolbox:1.2.7-0.1.7&quot;</span>,<span class="w"> </span><span class="c1">#(1)!</span>
+<span class="w">                          </span><span class="s2">&quot;image&quot;</span>:<span class="w"> </span><span class="s2">&quot;binbash/leverage-toolbox:1.5.0-0.2.3-1000-1000&quot;</span>,<span class="w"> </span><span class="c1">#(1)!</span>
 <span class="w">                          </span><span class="s2">&quot;command&quot;</span>:<span class="w"> </span><span class="s2">&quot;&quot;</span>,
 <span class="w">                          </span><span class="s2">&quot;stdin_open&quot;</span>:<span class="w"> </span>true,
 <span class="w">                          </span><span class="s2">&quot;environment&quot;</span>:<span class="w"> </span><span class="o">{</span><span class="w"> </span><span class="c1">#(2)!</span>
 <span class="w">                            </span><span class="s2">&quot;COMMON_CONFIG_FILE&quot;</span>:<span class="w"> </span><span class="s2">&quot;/binbash/config/common.tfvars&quot;</span>,
-<span class="w">                            </span><span class="s2">&quot;ACCOUNT_CONFIG_FILE&quot;</span>:<span class="w"> </span><span class="s2">&quot;/binbash/security/config/account.tfvars&quot;</span>,
-<span class="w">                            </span><span class="s2">&quot;BACKEND_CONFIG_FILE&quot;</span>:<span class="w"> </span><span class="s2">&quot;/binbash/security/config/backend.tfvars&quot;</span>,
-<span class="w">                            </span><span class="s2">&quot;AWS_SHARED_CREDENTIALS_FILE&quot;</span>:<span class="w"> </span><span class="s2">&quot;/root/tmp/bb/credentials&quot;</span>,
-<span class="w">                            </span><span class="s2">&quot;AWS_CONFIG_FILE&quot;</span>:<span class="w"> </span><span class="s2">&quot;/root/tmp/bb/config&quot;</span>,
-<span class="w">                            </span><span class="s2">&quot;SRC_AWS_SHARED_CREDENTIALS_FILE&quot;</span>:<span class="w"> </span><span class="s2">&quot;/root/tmp/bb/credentials&quot;</span>,
-<span class="w">                            </span><span class="s2">&quot;SRC_AWS_CONFIG_FILE&quot;</span>:<span class="w"> </span><span class="s2">&quot;/root/tmp/bb/config&quot;</span>,
-<span class="w">                            </span><span class="s2">&quot;AWS_CACHE_DIR&quot;</span>:<span class="w"> </span><span class="s2">&quot;/root/tmp/bb/cache&quot;</span>,
-<span class="w">                            </span><span class="s2">&quot;SSO_CACHE_DIR&quot;</span>:<span class="w"> </span><span class="s2">&quot;/root/tmp/bb/sso/cache&quot;</span>,
+<span class="w">                            </span><span class="s2">&quot;ACCOUNT_CONFIG_FILE&quot;</span>:<span class="w"> </span><span class="s2">&quot;/binbash/apps-devstg/config/account.tfvars&quot;</span>,
+<span class="w">                            </span><span class="s2">&quot;BACKEND_CONFIG_FILE&quot;</span>:<span class="w"> </span><span class="s2">&quot;/binbash/apps-devstg/config/backend.tfvars&quot;</span>,
+<span class="w">                            </span><span class="s2">&quot;AWS_SHARED_CREDENTIALS_FILE&quot;</span>:<span class="w"> </span><span class="s2">&quot;/home/leverage/tmp/bb/credentials&quot;</span>,
+<span class="w">                            </span><span class="s2">&quot;AWS_CONFIG_FILE&quot;</span>:<span class="w"> </span><span class="s2">&quot;/home/leverage/tmp/bb/config&quot;</span>,
+<span class="w">                            </span><span class="s2">&quot;SRC_AWS_SHARED_CREDENTIALS_FILE&quot;</span>:<span class="w"> </span><span class="s2">&quot;/home/leverage/tmp/bb/credentials&quot;</span>,
+<span class="w">                            </span><span class="s2">&quot;SRC_AWS_CONFIG_FILE&quot;</span>:<span class="w"> </span><span class="s2">&quot;/home/leverage/tmp/bb/config&quot;</span>,
+<span class="w">                            </span><span class="s2">&quot;AWS_CACHE_DIR&quot;</span>:<span class="w"> </span><span class="s2">&quot;/home/leverage/tmp/bb/cache&quot;</span>,
+<span class="w">                            </span><span class="s2">&quot;SSO_CACHE_DIR&quot;</span>:<span class="w"> </span><span class="s2">&quot;/home/leverage/tmp/bb/sso/cache&quot;</span>,
+<span class="w">                            </span><span class="s2">&quot;SCRIPT_LOG_LEVEL&quot;</span>:<span class="w"> </span><span class="m">3</span>,
+<span class="w">                            </span><span class="s2">&quot;MFA_SCRIPT_LOG_LEVEL&quot;</span>:<span class="w"> </span><span class="m">3</span>,
 <span class="w">                            </span><span class="s2">&quot;SSH_AUTH_SOCK&quot;</span>:<span class="w"> </span><span class="s2">&quot;/ssh-agent&quot;</span>
 <span class="w">                          </span><span class="o">}</span>,
 <span class="w">                          </span><span class="s2">&quot;entrypoint&quot;</span>:<span class="w"> </span><span class="s2">&quot;/bin/terraform&quot;</span>,
-<span class="w">                          </span><span class="s2">&quot;working_dir&quot;</span>:<span class="w"> </span><span class="s2">&quot;/binbash/security/global/base-identities&quot;</span>,
+<span class="w">                          </span><span class="s2">&quot;working_dir&quot;</span>:<span class="w"> </span><span class="s2">&quot;/binbash/apps-devstg/us-east-1/k8s-eks/identities&quot;</span>,
 <span class="w">                          </span><span class="s2">&quot;host_config&quot;</span>:<span class="w"> </span><span class="o">{</span>
 <span class="w">                            </span><span class="s2">&quot;NetworkMode&quot;</span>:<span class="w"> </span><span class="s2">&quot;default&quot;</span>,
 <span class="w">                            </span><span class="s2">&quot;SecurityOpt&quot;</span>:<span class="w"> </span><span class="o">[</span>
-<span class="w">                              </span><span class="s2">&quot;label:disable&quot;</span>
+<span class="w">                              </span><span class="s2">&quot;label=disable&quot;</span>
 <span class="w">                            </span><span class="o">]</span>,
 <span class="w">                            </span><span class="s2">&quot;Mounts&quot;</span>:<span class="w"> </span><span class="o">[</span><span class="w"> </span><span class="c1">#(3)!</span>
 <span class="w">                              </span><span class="o">{</span>
@@ -5298,7 +5283,7 @@ Powered by Leverage 1.9.0
 <span class="w">                                </span><span class="s2">&quot;ReadOnly&quot;</span>:<span class="w"> </span><span class="nb">false</span>
 <span class="w">                              </span><span class="o">}</span>,
 <span class="w">                              </span><span class="o">{</span>
-<span class="w">                                </span><span class="s2">&quot;Target&quot;</span>:<span class="w"> </span><span class="s2">&quot;/root/tmp/bb&quot;</span>,
+<span class="w">                                </span><span class="s2">&quot;Target&quot;</span>:<span class="w"> </span><span class="s2">&quot;/home/leverage/tmp/bb&quot;</span>,
 <span class="w">                                </span><span class="s2">&quot;Source&quot;</span>:<span class="w"> </span><span class="s2">&quot;/home/user/.aws/bb&quot;</span>,
 <span class="w">                                </span><span class="s2">&quot;Type&quot;</span>:<span class="w"> </span><span class="s2">&quot;bind&quot;</span>,
 <span class="w">                                </span><span class="s2">&quot;ReadOnly&quot;</span>:<span class="w"> </span><span class="nb">false</span>
@@ -5318,11 +5303,25 @@ Powered by Leverage 1.9.0
 <span class="w">                            </span><span class="o">]</span>
 <span class="w">                          </span><span class="o">}</span>
 <span class="w">                        </span><span class="o">}</span>
-<span class="o">[</span><span class="m">18</span>:23:22.274<span class="o">]</span><span class="w"> </span>DEBUG<span class="w">    </span>Checking<span class="w"> </span><span class="k">for</span><span class="w"> </span>layer<span class="w"> </span>/home/user/binbash/le-tf-infra-aws/security/global/base-identities...
-<span class="o">[</span><span class="m">18</span>:23:22.279<span class="o">]</span><span class="w"> </span>DEBUG<span class="w">    </span>Checking<span class="w"> </span>layer<span class="w"> </span>/home/user/binbash/le-tf-infra-aws/security/global/base-identities...
-<span class="o">[</span><span class="m">18</span>:23:22.282<span class="o">]</span><span class="w"> </span>DEBUG<span class="w">    </span>Running<span class="w"> </span>command:<span class="w"> </span>sh<span class="w"> </span>-c<span class="w"> </span><span class="s1">&#39;cat $SSO_CACHE_DIR/token&#39;</span>
-<span class="o">[</span><span class="m">18</span>:23:22.901<span class="o">]</span><span class="w"> </span>DEBUG<span class="w">    </span>Running<span class="w"> </span>with<span class="w"> </span>entrypoint:<span class="w"> </span>/root/scripts/aws-sso/aws-sso-entrypoint.sh<span class="w"> </span>--<span class="w"> </span>/bin/terraform
-<span class="o">[</span><span class="m">18</span>:23:22.903<span class="o">]</span><span class="w"> </span>DEBUG<span class="w">    </span>Running<span class="w"> </span>command:<span class="w"> </span>plan<span class="w"> </span>-var-file<span class="o">=</span>/binbash/config/common.tfvars<span class="w"> </span>-var-file<span class="o">=</span>/binbash/security/config/account.tfvars<span class="w"> </span>-var-file<span class="o">=</span>/binbash/security/config/backend.tfvars<span class="w"> </span><span class="c1">#(4)!</span>
+<span class="o">[</span><span class="m">20</span>:27:44.825<span class="o">]</span><span class="w"> </span>INFO<span class="w">     </span>Checking<span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="nb">local</span><span class="w"> </span>docker<span class="w"> </span>image,<span class="w"> </span>tag:<span class="w"> </span><span class="m">1</span>.5.0-0.2.3-1000-1000...
+<span class="o">[</span><span class="m">20</span>:27:44.851<span class="o">]</span><span class="w"> </span>INFO<span class="w">     </span>✔<span class="w"> </span>OK
+
+<span class="o">[</span><span class="m">20</span>:27:44.853<span class="o">]</span><span class="w"> </span>DEBUG<span class="w">    </span>Checking<span class="w"> </span><span class="k">for</span><span class="w"> </span>layer<span class="w"> </span>/home/user/binbash/le-tf-infra-aws/apps-devstg/us-east-1/k8s-eks/identities...
+<span class="o">[</span><span class="m">20</span>:27:44.875<span class="o">]</span><span class="w"> </span>DEBUG<span class="w">    </span>Checking<span class="w"> </span>layer<span class="w"> </span>/home/user/binbash/le-tf-infra-aws/apps-devstg/us-east-1/k8s-eks/identities...
+<span class="o">[</span><span class="m">20</span>:27:44.876<span class="o">]</span><span class="w"> </span>DEBUG<span class="w">    </span>Running<span class="w"> </span>command:<span class="w"> </span>sh<span class="w"> </span>-c<span class="w"> </span><span class="s1">&#39;cat $SSO_CACHE_DIR/token&#39;</span>
+<span class="o">[</span><span class="m">20</span>:27:47.469<span class="o">]</span><span class="w"> </span>INFO<span class="w">     </span>Attempting<span class="w"> </span>to<span class="w"> </span>get<span class="w"> </span>temporary<span class="w"> </span>credentials<span class="w"> </span><span class="k">for</span><span class="w"> </span>shared<span class="w"> </span>account.
+<span class="o">[</span><span class="m">20</span>:27:47.471<span class="o">]</span><span class="w"> </span>DEBUG<span class="w">    </span>Token<span class="w"> </span>expiration<span class="w"> </span>time:<span class="w"> </span><span class="m">1740094585</span>.0
+<span class="w">              </span>DEBUG<span class="w">    </span>Token<span class="w"> </span>renewal<span class="w"> </span>time:<span class="w"> </span><span class="m">1740182267</span>.470991
+<span class="o">[</span><span class="m">20</span>:27:47.472<span class="o">]</span><span class="w"> </span>DEBUG<span class="w">    </span>Retrieving<span class="w"> </span>role<span class="w"> </span>credentials<span class="w"> </span><span class="k">for</span><span class="w"> </span>DevOps...
+<span class="o">[</span><span class="m">20</span>:27:48.558<span class="o">]</span><span class="w"> </span>INFO<span class="w">     </span>Writing<span class="w"> </span>binbash-shared-devops<span class="w"> </span>profile
+<span class="o">[</span><span class="m">20</span>:27:48.564<span class="o">]</span><span class="w"> </span>INFO<span class="w">     </span>Credentials<span class="w"> </span><span class="k">for</span><span class="w"> </span>shared<span class="w"> </span>account<span class="w"> </span>written<span class="w"> </span>successfully.
+<span class="o">[</span><span class="m">20</span>:27:48.567<span class="o">]</span><span class="w"> </span>INFO<span class="w">     </span>Attempting<span class="w"> </span>to<span class="w"> </span>get<span class="w"> </span>temporary<span class="w"> </span>credentials<span class="w"> </span><span class="k">for</span><span class="w"> </span>apps-devstg<span class="w"> </span>account.
+<span class="o">[</span><span class="m">20</span>:27:48.570<span class="o">]</span><span class="w"> </span>DEBUG<span class="w">    </span>Token<span class="w"> </span>expiration<span class="w"> </span>time:<span class="w"> </span><span class="m">1740094584</span>.0
+<span class="o">[</span><span class="m">20</span>:27:48.571<span class="o">]</span><span class="w"> </span>DEBUG<span class="w">    </span>Token<span class="w"> </span>renewal<span class="w"> </span>time:<span class="w"> </span><span class="m">1740182268</span>.5704691
+<span class="o">[</span><span class="m">20</span>:27:48.572<span class="o">]</span><span class="w"> </span>DEBUG<span class="w">    </span>Retrieving<span class="w"> </span>role<span class="w"> </span>credentials<span class="w"> </span><span class="k">for</span><span class="w"> </span>DevOps...
+<span class="o">[</span><span class="m">20</span>:27:49.171<span class="o">]</span><span class="w"> </span>INFO<span class="w">     </span>Writing<span class="w"> </span>binbash-apps-devstg-devops<span class="w"> </span>profile
+<span class="o">[</span><span class="m">20</span>:27:49.177<span class="o">]</span><span class="w"> </span>INFO<span class="w">     </span>Credentials<span class="w"> </span><span class="k">for</span><span class="w"> </span>apps-devstg<span class="w"> </span>account<span class="w"> </span>written<span class="w"> </span>successfully.
+<span class="o">[</span><span class="m">20</span>:27:49.182<span class="o">]</span><span class="w"> </span>DEBUG<span class="w">    </span>Running<span class="w"> </span>command:<span class="w"> </span>plan<span class="w"> </span>-var-file<span class="o">=</span>/binbash/config/common.tfvars<span class="w"> </span>-var-file<span class="o">=</span>/binbash/apps-devstg/config/account.tfvars<span class="w"> </span>-var-file<span class="o">=</span>/binbash/apps-devstg/config/backend.tfvars<span class="w"> </span><span class="c1">#(4)!</span>
 ...
 </code></pre></div></p>
 <ol>

@@ -132,9 +132,6 @@ Note the use of single quotes and double quotes.
 
 For more info on escaping indexes for `plan`, `destroy` and `apply` see [here](../../leverage-cli/reference/terraform/#plan)
 
-
-
-
 ## Terraform State Lock Errors
 
 Issue: Error Acquiring the State Lock.

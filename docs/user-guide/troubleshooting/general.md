@@ -176,3 +176,10 @@ terraform force-unlock 9c340c13-2308-122f-603c-66c0e72abaf3
 ```
 1. Confirm the operation when prompted
 1. Retry your original Leverage Terraform command
+
+Alternatively, manually delete the lock entry from DynamoDB table.
+
+1. Go to the AWS console 
+1. Navigate to DynamoDB service
+1. Find the state lock table (typically named `terraform-state-lock`)
+1. Locate and delete the record with the LockID matching the one in your error message

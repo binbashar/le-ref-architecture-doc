@@ -4265,6 +4265,15 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#terraform-state-lock-errors" class="md-nav__link">
+    <span class="md-ellipsis">
+      Terraform State Lock Errors
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -5367,6 +5376,15 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#terraform-state-lock-errors" class="md-nav__link">
+    <span class="md-ellipsis">
+      Terraform State Lock Errors
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -5472,6 +5490,47 @@ $<span class="w"> </span>git<span class="w"> </span>config<span class="w"> </spa
 </code></pre></div>
 <p>Note the use of single quotes and double quotes.</p>
 <p>For more info on escaping indexes for <code>plan</code>, <code>destroy</code> and <code>apply</code> see <a href="../../leverage-cli/reference/terraform/#plan">here</a></p>
+<h2 id="terraform-state-lock-errors">Terraform State Lock Errors<a class="headerlink" href="#terraform-state-lock-errors" title="Permanent link"> ¶</a></h2>
+<p>Issue: Error Acquiring the State Lock.</p>
+<p>When running Terraform operations, you may encounter an error message similar to:</p>
+<div class="highlight"><pre><span></span><code>Error: Error acquiring the state lock
+
+Error message: operation error DynamoDB: PutItem, https response error StatusCode: 400, RequestID: [REQUEST-ID]
+ConditionalCheckFailedException: The conditional request failed
+Lock Info:
+  ID:        9c340c13-2308-122f-603c-66c0e72abaf3
+  Path:      bb-apps-devstg-terraform-backend/apps-devstg/k8s-eks-demoapps/network/terraform.tfstate
+  Operation: OperationTypeApply
+  Who:       leverage@6af9e3efd01f
+  Version:   1.6.0
+  Created:   2025-02-15 16:44:48.04410067 +0000 UTC
+  Info:      
+
+Terraform acquires a state lock to protect the state from being written
+by multiple users at the same time. Please resolve the issue above and try
+again. For most commands, you can disable locking with the &quot;-lock=false&quot;
+flag, but this is not recommended.
+</code></pre></div>
+<p>This error occurs when Terraform cannot acquire a lock on the state file because another process already has it locked, or a previous process did not properly release the lock.</p>
+<p>Solution Procedure</p>
+<ol>
+<li>Navigate to the directory of the Terraform configuration that's experiencing the lock issue</li>
+<li>Access the Terraform shell using Leverage:
+<div class="highlight"><pre><span></span><code>leverage<span class="w"> </span>terraform<span class="w"> </span>shell
+</code></pre></div></li>
+<li>Run the <code>force-unlock</code> command with the <code>lock ID</code> shown in the error message:
+<div class="highlight"><pre><span></span><code>terraform<span class="w"> </span>force-unlock<span class="w"> </span>9c340c13-2308-122f-603c-66c0e72abaf3
+</code></pre></div></li>
+<li>Confirm the operation when prompted</li>
+<li>Retry your original Leverage Terraform command</li>
+</ol>
+<p>Alternatively, manually delete the lock entry from DynamoDB table.</p>
+<ol>
+<li>Go to the AWS console </li>
+<li>Navigate to DynamoDB service</li>
+<li>Find the state lock table (typically named <code>terraform-state-lock</code>)</li>
+<li>Locate and delete the record with the LockID matching the one in your error message</li>
+</ol>
 
 
 

@@ -131,3 +131,52 @@ leverage tf plan -target='aws_route53_record.main[\"*.binbash.com.ar\"]'
 Note the use of single quotes and double quotes.
 
 For more info on escaping indexes for `plan`, `destroy` and `apply` see [here](../../leverage-cli/reference/terraform/#plan)
+
+## Terraform State Lock Errors
+
+Issue: Error Acquiring the State Lock.
+
+When running Terraform operations, you may encounter an error message similar to:
+
+```
+Error: Error acquiring the state lock
+
+Error message: operation error DynamoDB: PutItem, https response error StatusCode: 400, RequestID: [REQUEST-ID]
+ConditionalCheckFailedException: The conditional request failed
+Lock Info:
+  ID:        9c340c13-2308-122f-603c-66c0e72abaf3
+  Path:      bb-apps-devstg-terraform-backend/apps-devstg/k8s-eks-demoapps/network/terraform.tfstate
+  Operation: OperationTypeApply
+  Who:       leverage@6af9e3efd01f
+  Version:   1.6.0
+  Created:   2025-02-15 16:44:48.04410067 +0000 UTC
+  Info:      
+
+Terraform acquires a state lock to protect the state from being written
+by multiple users at the same time. Please resolve the issue above and try
+again. For most commands, you can disable locking with the "-lock=false"
+flag, but this is not recommended.
+```
+
+This error occurs when Terraform cannot acquire a lock on the state file because another process already has it locked, or a previous process did not properly release the lock.
+
+Solution Procedure
+
+1. Navigate to the directory of the Terraform configuration that's experiencing the lock issue
+1. Access the Terraform shell using Leverage:
+```shell
+leverage terraform shell
+```
+1. Run the `force-unlock` command with the `lock ID` shown in the error message:
+```shell
+terraform force-unlock 9c340c13-2308-122f-603c-66c0e72abaf3
+```
+1. Confirm the operation when prompted
+1. Retry your original Leverage Terraform command
+
+Alternatively, manually delete the lock entry from DynamoDB table.
+
+1. Go to the AWS console 
+1. Navigate to DynamoDB service
+1. Find the state lock table (typically named `terraform-state-lock`)
+1. Locate and delete the record with the LockID matching the one in your error message

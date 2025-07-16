@@ -4,35 +4,32 @@
 AWS CloudTrail monitors and records account activity across your AWS infrastructure, 
 giving you control over storage, analysis, and remediation actions.
 
-!!! info "AWS CloudTrail overview"
-    This service will be configured to enable auditing of all AWS services in all accounts.
-    Once enabled, as shown in the below presented figure, CloudTrail will deliver all events 
-    from all accounts to the Security account in order to have a centralized way to audit 
-    operations on AWS resources.
-    Audit events will be available from CloudTrail for 90 days but a longer retention 
-    time will be available through a centralized S3 bucket.
-
 <figure markdown>
   ![Cloudtrail Diagram](/assets/images/diagrams/aws-cloudtrail.svg){ width="600" }
     <figcaption style="font-size:15px">
-    <b>Figure:</b> AWS CloudTrail components architecture diagram (just as reference).
+    <b>Figure:</b> CloudTrail Implementation Diagram (only for reference). Keep in mind that there will be only one trail in the Security account.
     (Source: binbash Leverage diagrams, accessed July 6th 2022).
     </figcaption>
 </figure>
 
+## How do we implement it?
+CloudTrail will be configured to enable auditing of all AWS services in all accounts and all regions.
+We start by delegating the administration of CloudTrail to the Security account. Then we create a single multi-region, organizational trail in that account and configure it to push events to a bucket in the same account.
+
+That way, all the accounts of the organization (existing and new), and all regions (currently enabled or enabled in the future), will ship the events to that centralized trail.
+
+The events will be available in CloudTrail's event history for 90 days whereas the S3 bucket will be configured with a longer retention time.
+
+!!! info "Tip"
+    The great thing about this setup is that whenever you create new accounts or enable new regions, you won't need to worry about performing additional configuration on CloudTrail.
+
 !!! example "![leverage-tf](/assets/images/logos/terraform.png "Terraform"){: style="width:25px"} IaC Terraform Codebase <>"
-    - [x] `binbash-management` account | Audit: Cloudtrail
-        - **Code:** [management/us-east-1/security-audit](https://github.com/binbashar/le-tf-infra-aws/tree/master/management/us-east-1/security-audit)
-    - [x] `binbash-security` account | Audit: Cloudtrail & S3 Bucket
+    - [x] `binbash-management` account | Cloudtrail Administrator Delegation
+        - **Code:** [management/us-east-1/security-audit](https://github.com/binbashar/le-tf-infra-aws/blob/master/management/global/organizations/organization.tf)
+    - [x] `binbash-security` account | Cloudtrail Trail & S3 Bucket
         - **Code:** [security/us-east-1/security-audit](https://github.com/binbashar/le-tf-infra-aws/tree/master/security/us-east-1/security-audit)
-    - [x] `binbash-shared` account | Audit: Cloudtrail
-        - **Code:** [shared/us-east-1/security-audit](https://github.com/binbashar/le-tf-infra-aws/tree/master/shared/us-east-1/security-audit)
-    - [x] `binbash-apps-devstg` account | Audit: Cloudtrail
-        - **Code:** [apps-devstg/us-east-1/security-audit](https://github.com/binbashar/le-tf-infra-aws/tree/master/apps-devstg/us-east-1/security-audit)
-    - [x] `binbash-apps-prd` account | Audit: Cloudtrail
-        - **Code:** [apps-prd/us-east-1/security-audit](https://github.com/binbashar/le-tf-infra-aws/tree/master/apps-prd/us-east-1/security-audit)
-    - [x] `binbash-network` account | Audit: Cloudtrail
-        - **Code:** [network/us-east-1/security-audit](https://github.com/binbashar/le-tf-infra-aws/tree/master/network/us-east-1/security-audit)
+    - [x] `binbash-security` account | KMS Customer Managed Key Permissions
+        - **Code:** [security/us-east-1/security-keys](https://github.com/binbashar/le-tf-infra-aws/blob/master/security/us-east-1/security-keys/kms.tf#L30)
 
 ## Read more
 !!! info "AWS reference links"

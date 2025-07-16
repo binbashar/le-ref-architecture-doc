@@ -76,6 +76,7 @@ $ DOCKER_HOST=unix:///run/user/1000/docker.sock leverage tf shell
 
 ## Leverage CLI fails to mount the SSH directory
 
+### Possible Cause 1: Operation Not Supported
 The Leverage CLI mounts the `~/.ssh` directory in order to make the pulling of private Terraform modules work. The error should look similar to the following:
 ```
 [18:26:44.416] ERROR    Error creating container:
@@ -86,6 +87,20 @@ The problem happes because of the file system virtualization that is used by def
 ![docket-daemon-not-responding](/assets/images/screenshots/leverage-docket-desktop-file-system.png "Docker daemon not responding")
 
 Note: that setting can be accessed by clicking on the Docker Desktop icon tray, and then clicking on "Settings...". The setting should be in the "General" tab.
+
+### Possible Cause 2: Source Path Does Not Exist
+This happens because the CLI tries to mount the SSH socket path but such path does not exist.
+The error looks similar to this:
+```
+[16:09:47.818] ERROR    Error creating container:                                                                                                                                          
+                        APIError: 400 Client Error for http+docker://localhost/v1.48/containers/create: Bad Request ("invalid mount config for type "bind": bind source path does not      
+                        exist: /socket_mnt/private/tmp/com.apple.launchd.wA4586wza6/Listeners")  
+```
+That typically happens because the CLI gets the SSH socket path from the `SSH_AUTH_SOCK` environment variable, which might be outdated or simply wrong. You should be able to fix the issue by unsetting said environment variable as follows:
+```
+unset env SSH_AUTH_SOCK
+```
+
 
 ## Leverage CLI fails because of missing .gitconfig
 

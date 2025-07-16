@@ -4245,6 +4245,30 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="Leverage CLI fails to mount the SSH directory">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#possible-cause-1-operation-not-supported" class="md-nav__link">
+    <span class="md-ellipsis">
+      Possible Cause 1: Operation Not Supported
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#possible-cause-2-source-path-does-not-exist" class="md-nav__link">
+    <span class="md-ellipsis">
+      Possible Cause 2: Source Path Does Not Exist
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
@@ -5356,6 +5380,30 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="Leverage CLI fails to mount the SSH directory">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#possible-cause-1-operation-not-supported" class="md-nav__link">
+    <span class="md-ellipsis">
+      Possible Cause 1: Operation Not Supported
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#possible-cause-2-source-path-does-not-exist" class="md-nav__link">
+    <span class="md-ellipsis">
+      Possible Cause 2: Source Path Does Not Exist
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
@@ -5459,6 +5507,7 @@ or prefix the leverage tool with the env var:
 <div class="highlight"><pre><span></span><code>$<span class="w"> </span><span class="nv">DOCKER_HOST</span><span class="o">=</span>unix:///run/user/1000/docker.sock<span class="w"> </span>leverage<span class="w"> </span>tf<span class="w"> </span>shell
 </code></pre></div></p>
 <h2 id="leverage-cli-fails-to-mount-the-ssh-directory">Leverage CLI fails to mount the SSH directory<a class="headerlink" href="#leverage-cli-fails-to-mount-the-ssh-directory" title="Permanent link"> ¶</a></h2>
+<h3 id="possible-cause-1-operation-not-supported">Possible Cause 1: Operation Not Supported<a class="headerlink" href="#possible-cause-1-operation-not-supported" title="Permanent link"> ¶</a></h3>
 <p>The Leverage CLI mounts the <code>~/.ssh</code> directory in order to make the pulling of private Terraform modules work. The error should look similar to the following:
 <div class="highlight"><pre><span></span><code>[18:26:44.416] ERROR    Error creating container:
                         APIError: 400 Client Error for http+docker://localhost/v1.43/containers/create: Bad Request (&quot;invalid mount config for type &quot;bind&quot;: stat /host_mnt/private/tmp/com.apple.launchd.CWrsoki5yP/Listeners: operation not supported&quot;)
@@ -5466,6 +5515,16 @@ or prefix the leverage tool with the env var:
 <p>The problem happes because of the file system virtualization that is used by default and can be fixed by choosing the "osxfs (Legacy)" option as shown below:
 <img alt="docket-daemon-not-responding" src="/assets/images/screenshots/leverage-docket-desktop-file-system.png" title="Docker daemon not responding" /></p>
 <p>Note: that setting can be accessed by clicking on the Docker Desktop icon tray, and then clicking on "Settings...". The setting should be in the "General" tab.</p>
+<h3 id="possible-cause-2-source-path-does-not-exist">Possible Cause 2: Source Path Does Not Exist<a class="headerlink" href="#possible-cause-2-source-path-does-not-exist" title="Permanent link"> ¶</a></h3>
+<p>This happens because the CLI tries to mount the SSH socket path but such path does not exist.
+The error looks similar to this:
+<div class="highlight"><pre><span></span><code>[16:09:47.818] ERROR    Error creating container:                                                                                                                                          
+                        APIError: 400 Client Error for http+docker://localhost/v1.48/containers/create: Bad Request (&quot;invalid mount config for type &quot;bind&quot;: bind source path does not      
+                        exist: /socket_mnt/private/tmp/com.apple.launchd.wA4586wza6/Listeners&quot;)  
+</code></pre></div>
+That typically happens because the CLI gets the SSH socket path from the <code>SSH_AUTH_SOCK</code> environment variable, which might be outdated or simply wrong. You should be able to fix the issue by unsetting said environment variable as follows:
+<div class="highlight"><pre><span></span><code>unset env SSH_AUTH_SOCK
+</code></pre></div></p>
 <h2 id="leverage-cli-fails-because-of-missing-gitconfig">Leverage CLI fails because of missing .gitconfig<a class="headerlink" href="#leverage-cli-fails-because-of-missing-gitconfig" title="Permanent link"> ¶</a></h2>
 <p>The Leverage CLI might fail when setting up for the first time if there is no <code>~/.gitconfig</code> in your home directory or if it is misconfigured. You will see something similar to: </p>
 <div class="highlight"><pre><span></span><code>[17:13:43.514] ERROR    Error creating container:

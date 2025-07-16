@@ -2015,6 +2015,15 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#how-do-we-implement-it" class="md-nav__link">
+    <span class="md-ellipsis">
+      How do we implement it?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#read-more" class="md-nav__link">
     <span class="md-ellipsis">
       Read more
@@ -5207,6 +5216,15 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#how-do-we-implement-it" class="md-nav__link">
+    <span class="md-ellipsis">
+      How do we implement it?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#read-more" class="md-nav__link">
     <span class="md-ellipsis">
       Read more
@@ -5242,47 +5260,35 @@
 <h2 id="overview">Overview<a class="headerlink" href="#overview" title="Permanent link"> ¶</a></h2>
 <p>AWS CloudTrail monitors and records account activity across your AWS infrastructure, 
 giving you control over storage, analysis, and remediation actions.</p>
-<div class="admonition info">
-<p class="admonition-title">AWS CloudTrail overview</p>
-<p>This service will be configured to enable auditing of all AWS services in all accounts.
-Once enabled, as shown in the below presented figure, CloudTrail will deliver all events 
-from all accounts to the Security account in order to have a centralized way to audit 
-operations on AWS resources.
-Audit events will be available from CloudTrail for 90 days but a longer retention 
-time will be available through a centralized S3 bucket.</p>
-</div>
 <figure>
 <p><img alt="Cloudtrail Diagram" src="/assets/images/diagrams/aws-cloudtrail.svg" width="600" />
     <figcaption style="font-size:15px">
-    <b>Figure:</b> AWS CloudTrail components architecture diagram (just as reference).
+    <b>Figure:</b> CloudTrail Implementation Diagram (only for reference). Keep in mind that there will be only one trail in the Security account.
     (Source: binbash Leverage diagrams, accessed July 6<sup>th</sup> 2022).
     </figcaption></p>
 </figure>
+<h2 id="how-do-we-implement-it">How do we implement it?<a class="headerlink" href="#how-do-we-implement-it" title="Permanent link"> ¶</a></h2>
+<p>CloudTrail will be configured to enable auditing of all AWS services in all accounts and all regions.
+We start by delegating the administration of CloudTrail to the Security account. Then we create a single multi-region, organizational trail in that account and configure it to push events to a bucket in the same account.</p>
+<p>That way, all the accounts of the organization (existing and new), and all regions (currently enabled or enabled in the future), will ship the events to that centralized trail.</p>
+<p>The events will be available in CloudTrail's event history for 90 days whereas the S3 bucket will be configured with a longer retention time.</p>
+<div class="admonition info">
+<p class="admonition-title">Tip</p>
+<p>The great thing about this setup is that whenever you create new accounts or enable new regions, you won't need to worry about performing additional configuration on CloudTrail.</p>
+</div>
 <div class="admonition example">
 <p class="admonition-title"><img alt="leverage-tf" src="/assets/images/logos/terraform.png" style="width:25px" title="Terraform" /> IaC Terraform Codebase &lt;&gt;</p>
 <ul class="task-list">
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> <code>binbash-management</code> account | Audit: Cloudtrail<ul>
-<li><strong>Code:</strong> <a href="https://github.com/binbashar/le-tf-infra-aws/tree/master/management/us-east-1/security-audit">management/us-east-1/security-audit</a></li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> <code>binbash-management</code> account | Cloudtrail Administrator Delegation<ul>
+<li><strong>Code:</strong> <a href="https://github.com/binbashar/le-tf-infra-aws/blob/master/management/global/organizations/organization.tf">management/us-east-1/security-audit</a></li>
 </ul>
 </li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> <code>binbash-security</code> account | Audit: Cloudtrail &amp; S3 Bucket<ul>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> <code>binbash-security</code> account | Cloudtrail Trail &amp; S3 Bucket<ul>
 <li><strong>Code:</strong> <a href="https://github.com/binbashar/le-tf-infra-aws/tree/master/security/us-east-1/security-audit">security/us-east-1/security-audit</a></li>
 </ul>
 </li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> <code>binbash-shared</code> account | Audit: Cloudtrail<ul>
-<li><strong>Code:</strong> <a href="https://github.com/binbashar/le-tf-infra-aws/tree/master/shared/us-east-1/security-audit">shared/us-east-1/security-audit</a></li>
-</ul>
-</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> <code>binbash-apps-devstg</code> account | Audit: Cloudtrail<ul>
-<li><strong>Code:</strong> <a href="https://github.com/binbashar/le-tf-infra-aws/tree/master/apps-devstg/us-east-1/security-audit">apps-devstg/us-east-1/security-audit</a></li>
-</ul>
-</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> <code>binbash-apps-prd</code> account | Audit: Cloudtrail<ul>
-<li><strong>Code:</strong> <a href="https://github.com/binbashar/le-tf-infra-aws/tree/master/apps-prd/us-east-1/security-audit">apps-prd/us-east-1/security-audit</a></li>
-</ul>
-</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> <code>binbash-network</code> account | Audit: Cloudtrail<ul>
-<li><strong>Code:</strong> <a href="https://github.com/binbashar/le-tf-infra-aws/tree/master/network/us-east-1/security-audit">network/us-east-1/security-audit</a></li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> <code>binbash-security</code> account | KMS Customer Managed Key Permissions<ul>
+<li><strong>Code:</strong> <a href="https://github.com/binbashar/le-tf-infra-aws/blob/master/security/us-east-1/security-keys/kms.tf#L30">security/us-east-1/security-keys</a></li>
 </ul>
 </li>
 </ul>

@@ -1,5 +1,5 @@
 # Security in AWS with Leverage Reference Architecture and NACLs
-When deploying an AWS Landing Zone resources, security is of fundamental importance. Network Access Control Lists (NACLs) play a crucial role in controlling traffic at the subnet level. In this section we'll describe the use of NACLs implementing with Terraform over the **Leverage AWS Reference Architecture**.
+When deploying an AWS Landing Zone resources, security is of fundamental importance. Network Access Control Lists (NACLs) play a crucial role in controlling traffic at the subnet level. In this section we'll describe the use of NACLs implementing with OpenTofu over the **Leverage AWS Reference Architecture**.
 
 ## Understanding Network Access Control Lists (NACLs)
 Network Access Control Lists (NACLs) act as a virtual firewall for your AWS VPC (Virtual Private Cloud), controlling inbound and outbound traffic at the subnet level. They operate on a rule-based system, allowing or denying traffic based on defined rules.

@@ -1,5 +1,5 @@
 # Managing Accounts
-Our default AWS Organizations terraform layout solution includes `5 accounts + 1` or **N accounts** (if you invite pre-existing AWS Accounts).
+Our default AWS Organizations OpenTofu layout solution includes `5 accounts + 1` or **N accounts** (if you invite pre-existing AWS Accounts).
 
 | Account                     | Description                                                                                                                                                                                                                                                                                |
 |-----------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|

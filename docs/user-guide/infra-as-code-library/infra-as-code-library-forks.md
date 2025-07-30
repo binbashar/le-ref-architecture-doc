@@ -14,7 +14,7 @@
     (the owners, generally individual maintainers of the original repository, might
     decide to move from github, ansible galaxy, etc. or even close their repo for
     personal reasons).
-    - [x] **Stability:** Our forks form modules (ansible roles / terraform / dockerfiles, etc.)
+    - [x] **Stability:** Our forks form modules (ansible roles / opentofu / dockerfiles, etc.)
     are always going to be locked to fixed versions for every client so no unexpected behavior will occur.
     - [x] **Projects that don't tag versions:** having the fork protects us against breaking
     changes.

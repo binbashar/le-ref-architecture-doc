@@ -10,7 +10,7 @@ Our focus is on creating reusable, high quality ![leverage-aws](/assets/images/i
 - [x] [**Reference Architecture**](/user-guide/ref-architecture-aws/overview/): Designed under optimal configs for the most popular modern web and mobile applications needs. Its design is fully based on the
 [**AWS Well Architected Framework**](/work-with-us/support/#aws-well-architected-review).
 
-- [x] [**Infrastructure as Code (IaC) Library**](/user-guide/infra-as-code-library/overview/): A collection of reusable, tested, production-ready E2E AWS Cloud infrastructure as code solutions, leveraged by modules written in: *Terraform, Ansible, Helm charts, Dockerfiles and Makefiles*.
+- [x] [**Infrastructure as Code (IaC) Library**](/user-guide/infra-as-code-library/overview/): A collection of reusable, tested, production-ready E2E AWS Cloud infrastructure as code solutions, leveraged by modules written in: *OpenTofu/Terraform, Ansible, Helm charts, Dockerfiles and Makefiles*.
 
 - [x] [**Leverage CLI**](/user-guide/leverage-cli/overview/): projects' command line tool. Provides the means to interact and deploy Leverage Reference Architecture on AWS and if needed it allows you to define custom tasks to run.
 

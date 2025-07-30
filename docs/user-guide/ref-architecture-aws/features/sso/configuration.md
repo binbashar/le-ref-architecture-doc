@@ -99,7 +99,7 @@ When the user has finished working, running `leverage sso logout` wipes out all 
 ## Additional Steps
 Further steps are required before you can safely start onboarding users and allowing them to sign in.
 
-**Important:** most of the following steps need to be applied manually because the Terraform AWS provider does not support them yet.
+**Important:** most of the following steps need to be applied manually because the OpenTofu AWS provider does not support them yet.
 
 ### Configuring MFA
 Enabling and requiring MFA is highly recommended. We typically choose these following guidelines:

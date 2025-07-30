@@ -20,7 +20,7 @@ pre-existing `project-legacy` (1 to n accounts).
   - Accept the invitation from the account being migrated.
   - Associate the account with the Organizational Unit (OU) and apply the required policies.
 
-#### Step 2: Update Terraform Code in  [`management/global/organizations/locals.tf`](https://github.com/binbashar/le-tf-infra-aws/blob/master/management/global/organizations/locals.tf)
+#### Step 2: Update OpenTofu Code in  [`management/global/organizations/locals.tf`](https://github.com/binbashar/le-tf-infra-aws/blob/master/management/global/organizations/locals.tf)
 Ensure the account to be imported is defined in [`management/global/organizations/locals.tf`](https://github.com/binbashar/le-tf-infra-aws/blob/master/management/global/organizations/locals.tf). For example, to import 
 an account called "existing," add the corresponding entry:
 
@@ -37,34 +37,34 @@ locals {
 ```
 
 #### Step 3: Import the Existing Account
-- Initialize Terraform if not already done:
+- Initialize OpenTofu if not already done:
   ```
-  leverage terraform init
+  leverage tofu init
   ```
 - Import the existing account. Replace `ACCOUNT_ID` with the ID of the new account being migrated:
   ```
-  leverage terraform import aws_organizations_account.accounts["existing"] ACCOUNT_ID
+  leverage tofu import aws_organizations_account.accounts["existing"] ACCOUNT_ID
   ```
 
-#### Step 4: Apply the Terraform Configuration
-Apply the Terraform configuration:
+#### Step 4: Apply the OpenTofu Configuration
+Apply the OpenTofu configuration:
 ```
-leverage terraform apply
+leverage tofu apply
 ```
 
-### Terraform Command Summary
+### OpenTofu Command Summary
 
-- **Initialize Terraform**:
+- **Initialize OpenTofu**:
   ```
-  terraform init
+  tofu init
   ```
 
 - **Import the Existing Account**:
   ```
-  terraform import aws_organizations_account.accounts["existing"] ACCOUNT_ID
+  tofu import aws_organizations_account.accounts["existing"] ACCOUNT_ID
   ```
 
-- **Apply Terraform Configuration**:
+- **Apply OpenTofu Configuration**:
   ```
-  terraform apply
+  tofu apply
   ```

@@ -11,7 +11,7 @@ Instead, whenever possible, it should ideally be associated, with a **distributi
 
 #### Email setup example
 **GSuite Group Email address:** `aws@domain.com` (to which admins / owners belong), and then using the `+` we generate
-the aliases automatically implicitly when running Terraform's Leverage code.
+the aliases automatically implicitly when running OpenTofu's Leverage code.
 
 * :e-mail: `aws+security@binbash.com.ar`
 * :e-mail: `aws+shared@binbash.com.ar`
@@ -73,11 +73,11 @@ the aliases automatically implicitly when running Terraform's Leverage code.
         - [common config](https://github.com/binbashar/le-tf-infra-aws/blob/master/config/common.config.example)
         - [account configs](https://github.com/binbashar/le-tf-infra-aws/tree/master/root/config)
 
-    6. Setup and create the **terraform remote state** for the new AWS Org Management account
-        - [x] [terraform remote state config](https://leverage.binbash.com.ar/user-guide/base-configuration/repo-le-tf-infra-aws/#remote-state)
+    6. Setup and create the **opentofu remote state** for the new AWS Org Management account
+        - [x] [opentofu remote state config](https://leverage.binbash.com.ar/user-guide/base-configuration/repo-le-tf-infra-aws/#remote-state)
         <!-- NOTE: Where should this point to? -->
-        - [x] [terraform remote state workflow](../../../base-workflow/repo-le-tf-infra-aws-tf-state/)
-        - [x] [terraform remote state ref code](https://github.com/binbashar/le-tf-infra-aws/tree/master/root/us-east-1/base-tf-backend)
+        - [x] [opentofu remote state workflow](../../../base-workflow/repo-le-tf-infra-aws-tf-state/)
+        - [x] [opentofu remote state ref code](https://github.com/binbashar/le-tf-infra-aws/tree/master/root/us-east-1/base-tf-backend)
         - :ledger: You'll 1st get a local state and then you'll need to move your tf state to s3; validate it and finally delete local state files
 
     7. The AWS Organization from the Reference Architecture

@@ -9,7 +9,7 @@ This **module** outputs commands and GPG messages which can be decrypted either 
 user's password and user's secret key.   
 
 !!! warning "Notes for keybase users"
-    If possible, always use GPG encryption to prevent Terraform from keeping unencrypted password and access secret key 
+    If possible, always use GPG encryption to prevent OpenTofu from keeping unencrypted password and access secret key 
     in state file.
 
 !!! check "Keybase pre-requisites"

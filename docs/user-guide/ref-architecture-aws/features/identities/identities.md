@@ -8,7 +8,7 @@ afterwards in your [`project-security`](https://github.com/binbashar/le-tf-infra
 !!! example "IAM user standard creation workflow"
     1. Pre-requisite add Public PGP Key following the [documentation](./gpg.md) 
     2. For steps 3. and 4. consider following 
-    [Leverage's Terraform workflow](../../../workflow/)
+    [Leverage's OpenTofu workflow](../../../workflow/)
     3. Update (add | remove) your IAM Users associated code and deploy 
     [security/global/base-identities/users.tf](https://github.com/binbashar/le-tf-infra-aws/blob/master/security/global/base-identities/users.tf)
         - :file_folder: Consider customizing your [account Alias and Password Policy](https://github.com/binbashar/le-tf-infra-aws/blob/master/security/global/base-identities/account.tf)

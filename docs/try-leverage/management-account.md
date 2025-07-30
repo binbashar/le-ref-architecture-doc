@@ -14,18 +14,18 @@ To begin, place yourself in the `management` account directory.
 cd management
 ```
 
-### Terraform backend layer
+### OpenTofu backend layer
 Move into the `us-east-1/base-tf-backend` directory and run:
 ``` bash
-leverage terraform init --skip-validation
-leverage terraform apply
+leverage tofu init --skip-validation
+leverage tofu apply
 ```
 
 All `apply` commands will prompt for confirmation, answer `yes` when this happens.
 
-!!! info "More information on [`terraform init`](/user-guide/leverage-cli/reference/terraform#init) and [`terraform apply`](/user-guide/leverage-cli/reference/terraform#apply)"
+!!! info "More information on [`tofu init`](/user-guide/leverage-cli/reference/tofu#init) and [`tofu apply`](/user-guide/leverage-cli/reference/tofu#apply)"
 
-Now, the infrastructure for the Terraform state management is created. The next step is to push the local `.tfstate` to the bucket. To do this, uncomment the `backend` section for the `terraform` configuration in `management/base-tf-backend/config.tf`
+Now, the infrastructure for the OpenTofu state management is created. The next step is to push the local `.tfstate` to the bucket. To do this, uncomment the `backend` section for the `terraform` configuration in `management/base-tf-backend/config.tf`
 
 ``` terraform
   backend "s3" {
@@ -35,25 +35,25 @@ Now, the infrastructure for the Terraform state management is created. The next 
 
 And run once more:
 ``` bash
-leverage terraform init
+leverage tofu init
 ```
 
 When prompted, answer `yes`. Now you can safely remove the `terraform.tfstate` and `terraform.tfstate.backup` files created during the `apply` step.
 
-!!! info "Terraform backend"
-    More information regarding what is the Terraform backend and Terraform state management:
+!!! info "OpenTofu backend"
+    More information regarding what is the OpenTofu backend and OpenTofu state management:
 
-    * [Terraform backend](https://www.terraform.io/docs/language/settings/backends/index.html)
-    * [How to manage Terraform state](https://blog.gruntwork.io/how-to-manage-terraform-state-28f5697e68fa)
+    * [OpenTofu backend](https://opentofu.org/docs/language/settings/backends/configuration/)
+    * [How to manage Terraform/OpenTofu state](https://blog.gruntwork.io/how-to-manage-terraform-state-28f5697e68fa)
 
 ### Organizations layer
 Next, in the same fashion as in the previous layer, move into the `global/organizations` directory and run:
 ``` bash
-leverage terraform init
-leverage terraform apply
+leverage tofu init
+leverage tofu apply
 ```
 
-The AWS account that you created manually is the `management` account itself, so to prevent Terraform from trying to create it and error out, this account definition is commented by default in the code. Now you need to make the Terraform state aware of the link between the two. To do that, uncomment the `management` organizations account resource in `accounts.tf`
+The AWS account that you created manually is the `management` account itself, so to prevent OpenTofu from trying to create it and error out, this account definition is commented by default in the code. Now you need to make the OpenTofu state aware of the link between the two. To do that, uncomment the `management` organizations account resource in `accounts.tf`
 
 ``` terraform
 resource "aws_organizations_account" "management" {
@@ -76,10 +76,10 @@ organization:
 
 And run:
 ``` bash
-leverage terraform import aws_organizations_account.management 000123456789
+leverage tofu import aws_organizations_account.management 000123456789
 ```
 
-!!! info "More information on [`terraform import`](/user-guide/leverage-cli/reference/terraform#import)"
+!!! info "More information on [`tofu import`](/user-guide/leverage-cli/reference/tofu#import)"
 
 !!! info "Getting errors with zsh?"
     Zsh users may need to prepend `noglob` to the import command for it to be recognized correctly, as an alternative, square brackets can be escaped as `\[\]`
@@ -87,8 +87,8 @@ leverage terraform import aws_organizations_account.management 000123456789
 ### Security layer
 Change directory to `us-east-1/security-base` and run this:
 ``` bash
-leverage terraform init
-leverage terraform apply
+leverage tofu init
+leverage tofu apply
 ```
 
 ## Update the bootstrap credentials
@@ -117,8 +117,8 @@ Before working on the SSO layer you have to navigate to the [AWS IAM Identity Ce
 
 Now back to the terminal. The SSO layer is deployed in two steps. First, switch to the `global/sso` directory and run the following:
 ``` bash
-leverage terraform init
-leverage terraform apply
+leverage tofu init
+leverage tofu apply
 ```
 
 Secondly, open the `account_assignments.tf` file and uncomment the entire section that starts with this line:
@@ -134,8 +134,8 @@ Secondly, open the `account_assignments.tf` file and uncomment the entire sectio
 
 After that, run these commands:
 ``` bash
-leverage terraform init
-leverage terraform apply
+leverage tofu init
+leverage tofu apply
 ```
 
 ## Next steps

@@ -177,7 +177,7 @@ Open the `config.tf` file and edit the backend key if needed:
 
     The final template in file `cluster.yaml`.
 
-If you are happy with the config (or you are not happy but you think the file is ok), let's create the Terraform files!
+If you are happy with the config (or you are not happy but you think the file is ok), let's create the OpenTofu files!
 
 ```shell
 make cluster-update
@@ -292,7 +292,7 @@ Paste this layer into the account/region chosen to host this, e.g. `apps-devstg/
 
 #### 1 - Create the network
 
-First go into the network layer (e.g. `apps-devstg/us-east-1/k8s-eks/network`) and config the Terraform S3 background key, CIDR for the network, names, etc.
+First go into the network layer (e.g. `apps-devstg/us-east-1/k8s-eks/network`) and config the OpenTofu S3 background key, CIDR for the network, names, etc.
 
 ```shell
 cd apps-devstg/us-east-1/k8s-eks/network
@@ -315,7 +315,7 @@ Then, connect to the VPN to access the private space.
 
 #### 3 - Create the cluster
 
-First go into each layer and config the Terraform S3 background key, names, addons, the components to install, etc.
+First go into each layer and config the OpenTofu S3 background key, names, addons, the components to install, etc.
 
 ```shell
 cd apps-devstg/us-east-1/k8s-eks/

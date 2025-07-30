@@ -16,13 +16,13 @@ from the VPN.
 ## Hashicorp Vault token
 
 We'll need to setup this Vault auth token in our [/config/common.config] file whenever we run the 
-Terraform Leverage Reference architecture for:
+OpenTofu Leverage Reference architecture for:
 
 - [x] [le-tf-infra-aws](https://github.com/binbashar/le-tf-infra-aws/blob/master/config/common.config.example)
 - [x] [le-tf-vault](https://github.com/binbashar/le-tf-vault/blob/master/config/common.config.example)
 
 !!! info "Vault token generation and authentication"
-    Vault token that will be used by Terraform, or vault cli to perform calls to Vault API.
+    Vault token that will be used by OpenTofu, or vault cli to perform calls to Vault API.
     During the initial setup, you will have to use a root token. If you are
     using a self-hosted installation you will get such token after you initialize
     Vault; if you are using Hashicorp Cloud Platform you can get the token from

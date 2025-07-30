@@ -157,7 +157,7 @@ The following block provides a brief explanation of the chosen files/folders lay
 
 [Configuration files](configuration.md) are organized by environments (e.g. dev, stg, prd), and service type,
 which we call **layers** (identities, organizations, storage, etc) to keep any changes made to them separate.
-Within each of those **layers** folders you should find the Terraform files that are used to define all the 
+Within each of those **layers** folders you should find the OpenTofu files that are used to define all the 
 resources that belong to such account environment and specific layer.
 
 !!! info "Project file structure " 
@@ -178,7 +178,7 @@ binbash Leverage Doc, accessed August 4th 2021).
 created in AWS, basically they've been destroyed or not yet exist. 
 
 Such layer separation is meant to avoid situations in which a single folder contains a lot of resources. 
-That is important to avoid because at some point, running `leverage terraform plan / apply` starts taking 
+That is important to avoid because at some point, running `leverage tofu plan / apply` starts taking 
 too long and that becomes a problem.
 
 This organization also provides a layout that is easier to navigate and discover. 

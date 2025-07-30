@@ -304,7 +304,7 @@ nav:
       - ArgoCD add external cluster: "user-guide/cookbooks/argocd-external-cluster.md"
       - VPN Server:
         - Index: "user-guide/cookbooks/VPN-server/index.md"
-        - 1. Terraform EC2 layer: "user-guide/cookbooks/VPN-server/VPN-server-terraform.md"
+        - 1. OpenTofu EC2 layer: "user-guide/cookbooks/VPN-server/VPN-server-opentofu.md"
         - 2. Ansible provisioning: "user-guide/cookbooks/VPN-server/VPN-server-ansible.md"
         - 3. VPN Web GUI config: "user-guide/cookbooks/VPN-server/VPN-server-gui-setup.md"
   - Work with us:

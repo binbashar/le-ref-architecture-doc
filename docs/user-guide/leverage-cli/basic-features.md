@@ -20,8 +20,9 @@ Commands:
   project      Manage a Leverage project.
   run          Perform specified task(s) and all of its dependencies.
   shell        Run a shell in a generic container.
+  tofu         Run OpenTofu commands in a custom containerized...
+  tf           Run OpenTofu commands in a custom containerized...
   terraform    Run Terraform commands in a custom containerized...
-  tf           Run Terraform commands in a custom containerized...
   tfautomv     Run TFAutomv commands in a custom containerized...
 ```
 
@@ -53,7 +54,7 @@ Similarly, subcommands provide further information by means of the `--help` flag
                               "MFA_SCRIPT_LOG_LEVEL": 3,
                               "SSH_AUTH_SOCK": "/ssh-agent"
                             },
-                            "entrypoint": "/bin/terraform",
+                            "entrypoint": "/bin/tofu",
                             "working_dir": "/binbash/apps-devstg/us-east-1/k8s-eks/identities",
                             "host_config": {
                               "NetworkMode": "default",

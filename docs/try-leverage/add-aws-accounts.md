@@ -20,10 +20,10 @@ You can add new AWS accounts to your Leverage project by following the steps in 
         }
     ```
     Note that the `apps` organizational unit (OU) is being used as the parent OU of the new account. If you need to use a new OU you can add it to `organizational_units` variable in the same file.
-3. Run the [Terraform workflow](https://leverage.binbash.co/user-guide/ref-architecture-aws/workflow/) to apply the new changes. Typically that would be this:
+3. Run the [OpenTofu workflow](https://leverage.binbash.co/user-guide/ref-architecture-aws/workflow/) to apply the new changes. Typically that would be this:
     ```shell
-    leverage terraform init
-    leverage terraform apply
+    leverage tofu init
+    leverage tofu apply
     ```
 !!! info "Authentication error"
     Note this layer was first applied before using the boostrap user. Now, that we are working with SSO, credentials have changed. So, if this is the first account you add you'll probably get this error applying: "Error: error configuring S3 Backend: no valid credential sources for S3 Backend found."
@@ -71,7 +71,7 @@ You can add new AWS accounts to your Leverage project by following the steps in 
     
     Apply these changes:
     ```shell
-    leverage terraform apply
+    leverage tofu apply
     ```
     And you must update your AWS config file accordingly by running this:
     ```shell
@@ -97,14 +97,14 @@ In this example we will create the `apps-prd` account structure by using the `sh
     2. Open `apps-prd/config/backend.tfvars` and replace any occurrences of `shared` with `apps-prd`.
     3. Do the same with `apps-prd/config/account.tfvars`
 
-### Create the Terraform Backend layer
+### Create the OpenTofu Backend layer
 1. Copy the layer from an existing one:
     ```shell
     cp -r shared/us-east-1/base-tf-backend apps-prd/us-east-1/base-tf-backend
     ```
     
     !!! info
-        If the source layer was already initialized you should delete the previous Terraform setup using `sudo rm -rf .terraform*` in the target layer's directory, e.g. `rm -rf apps-prd/us-east-1/base-tf-backend/.terraform* `
+        If the source layer was already initialized you should delete the previous OpenTofu setup using `sudo rm -rf .terraform*` in the target layer's directory, e.g. `rm -rf apps-prd/us-east-1/base-tf-backend/.terraform* `
     
 2. Go to the `apps-prd/us-east-1/base-tf-backend` directory, open the `config.tf` file and comment the S3 backend block. E.g.:
     ```yaml
@@ -114,11 +114,11 @@ In this example we will create the `apps-prd` account structure by using the `sh
     ```
     We need to do this for the first apply of this layer.
     
-3. Now run the [Terraform workflow](https://leverage.binbash.co/user-guide/ref-architecture-aws/workflow/) to initialize and
+3. Now run the [OpenTofu workflow](https://leverage.binbash.co/user-guide/ref-architecture-aws/workflow/) to initialize and
     apply this layer. The flag `--skip-validation` is needed here since the bucket does not yet exist.
     ```shell
-    leverage terraform init --skip-validation
-    leverage terraform apply
+    leverage tofu init --skip-validation
+    leverage tofu apply
     ```
 4. Open the `config.tf` file again uncommenting the block commented before and replacing `shared` with `apps-prd`. E.g.:
     ```yaml
@@ -128,9 +128,9 @@ In this example we will create the `apps-prd` account structure by using the `sh
     ```
 5. To finish with the backend layer, re-init to move the `tfstate` to the new location. Run:
     ```shell
-    leverage terraform init
+    leverage tofu init
     ```
-    Terraform will detect that you are trying to move from a local to a remote state and will ask for confirmation.
+    OpenTofu will detect that you are trying to move from a local to a remote state and will ask for confirmation.
     ```shell
     Initializing the backend...
     Acquiring state lock. This may take a few moments...
@@ -152,7 +152,7 @@ In this example we will create the `apps-prd` account structure by using the `sh
     ```
 
     !!! info
-        If the source layer was already initialized you should delete the previous Terraform setup using `sudo rm -rf .terraform*` in the target layer's directory, e.g. `rm -rf apps-prd/us-east-1/security-base/.terraform* `
+        If the source layer was already initialized you should delete the previous OpenTofu setup using `sudo rm -rf .terraform*` in the target layer's directory, e.g. `rm -rf apps-prd/us-east-1/security-base/.terraform* `
 
 2. Go to the `apps-prd/us-east-1/security-base` directory and open the `config.tf` file replacing any occurrences of `shared` with `apps-prd`
     E.g. this line should be:
@@ -176,7 +176,7 @@ In this example we will create the `apps-prd` account structure by using the `sh
     ```
 
     !!! info
-        If the source layer was already initialized you should delete the previous Terraform setup using `sudo rm -rf .terraform*` in the target layer's directory, e.g. `rm -rf apps-prd/us-east-1/base-network/.terraform* `
+        If the source layer was already initialized you should delete the previous OpenTofu setup using `sudo rm -rf .terraform*` in the target layer's directory, e.g. `rm -rf apps-prd/us-east-1/base-network/.terraform* `
 
 2. Go to the `apps-prd/us-east-1/base-network` directory and open the `config.tf` file replacing any occurrences of `shared` with `apps-prd`. E.g. this line should be:
     ```yaml
@@ -311,8 +311,8 @@ In this example we will create the `apps-prd` account structure by using the `sh
     ```
     Apply the changes (be sure to CD into `shared/us-east-1/base-network` layer for doing this):
     ```shell
-    leverage terraform init
-    leverage terraform apply
+    leverage tofu init
+    leverage tofu apply
     ```
 
 ## Done!
@@ -320,7 +320,7 @@ That should be it. At this point you should have the following:
 
 1. A brand new AWS account in your AWS organization.
 2. Working configuration files for both existing layers and any new layer you add in the future.
-3. A remote Terraform State Backend for this new account.
+3. A remote OpenTofu State Backend for this new account.
 4. Roles and policies (SSO) that are necessary to access the new account.
 5. The base networking resources ready to host your compute services.
 6. The VPC peerings between the new account and shared

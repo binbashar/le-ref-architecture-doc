@@ -218,7 +218,7 @@ data "terraform_remote_state" "vpc" {
   }
 }
 ```
-Again, since we are not using the full **binbash Leverage** capabilities, we are not using the S3 Terraform backend, thus the backend is local.
+Again, since we are not using the full **binbash Leverage** capabilities, we are not using the S3 OpenTofu backend, thus the backend is local.
 
 In `ec2_fleet.tf` update module version like this:
 ```yaml

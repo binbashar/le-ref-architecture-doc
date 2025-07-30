@@ -26,13 +26,13 @@ profile = "me-security-devops"
 
 If it is not, please modify it. Note we are using a sample short project name `me`, use the one you have set.
 
-### Terraform backend layer
+### OpenTofu backend layer
 Move into the `us-east-1/base-tf-backend` directory and run:
 ``` bash
-leverage terraform init --skip-validation
-leverage terraform apply
+leverage tofu init --skip-validation
+leverage tofu apply
 ```
-!!! info "More information on [`terraform init`](/user-guide/leverage-cli/reference/terraform#init) and [`terraform apply`](/user-guide/leverage-cli/reference/terraform#apply)"
+!!! info "More information on [`tofu init`](/user-guide/leverage-cli/reference/tofu#init) and [`tofu apply`](/user-guide/leverage-cli/reference/tofu#apply)"
 
 Now, to push the local `.tfstate` to the bucket, uncomment the `backend` section for the `terraform` configuration in `security/base-tf-backend/config.tf`
 ``` terraform
@@ -43,7 +43,7 @@ Now, to push the local `.tfstate` to the bucket, uncomment the `backend` section
 
 And run again:
 ``` bash
-leverage terraform init
+leverage tofu init
 ```
 
 When prompted, answer `yes`.
@@ -53,8 +53,8 @@ Now you can safely remove the `terraform.tfstate` and `terraform.tfstate.backup`
 ### Security layer
 The last layer for the `security` account is the security layer. Move into the `us-east-1/security-base` directory and run:
 ``` bash
-leverage terraform init
-leverage terraform apply
+leverage tofu init
+leverage tofu apply
 ```
 
 ## Deploy the Shared account's layers
@@ -78,13 +78,13 @@ profile = "me-shared-devops"
 If it is not, please modify it. Note we are using a sample short project name `me`, use the one you have set.
 
 
-### Terraform backend layer
+### OpenTofu backend layer
 Move into the `us-east-1/base-tf-backend` directory and run:
 ``` bash
-leverage terraform init --skip-validation
-leverage terraform apply
+leverage tofu init --skip-validation
+leverage tofu apply
 ```
-!!! info "More information on [`terraform init`](/user-guide/leverage-cli/reference/terraform#init) and [`terraform apply`](/user-guide/leverage-cli/reference/terraform#apply)"
+!!! info "More information on [`tofu init`](/user-guide/leverage-cli/reference/tofu#init) and [`tofu apply`](/user-guide/leverage-cli/reference/tofu#apply)"
 
 Now, to push the local `.tfstate` to the bucket, uncomment the `backend` section for the `terraform` configuration in `shared/base-tf-backend/config.tf`
 ``` terraform
@@ -95,7 +95,7 @@ Now, to push the local `.tfstate` to the bucket, uncomment the `backend` section
 
 And run a second time:
 ``` bash
-leverage terraform init
+leverage tofu init
 ```
 
 When prompted, answer `yes`.
@@ -105,15 +105,15 @@ Now you can safely remove the `terraform.tfstate` and `terraform.tfstate.backup`
 ### Security layer
 Next, move into the `us-east-1/security-base` directory:
 ``` bash
-leverage terraform init
-leverage terraform apply
+leverage tofu init
+leverage tofu apply
 ```
 
 ### Network layer
 The last layer should be the network layer, so switch to that `us-east-1/base-network` and run:
 ``` bash
-leverage terraform init
-leverage terraform apply
+leverage tofu init
+leverage tofu apply
 ```
 
 ## Next steps

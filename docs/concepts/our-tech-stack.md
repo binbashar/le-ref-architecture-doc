@@ -1,5 +1,5 @@
 # Our Tech Stack
-Leverage was built around the [AWS Well Architected Framework](https://aws.amazon.com/architecture/well-architected/) and it uses a stack that includes [Terraform](https://www.terraform.io/), [Ansible](https://www.ansible.com/), [Helm](https://helm.sh/) and other tools.
+Leverage was built around the [AWS Well Architected Framework](https://aws.amazon.com/architecture/well-architected/) and it uses a stack that includes [OpenTofu](https://opentofu.org/), [Ansible](https://www.ansible.com/), [Helm](https://helm.sh/) and other tools.
 
 We are also adopters and supporters of Kubernetes and the Cloud Native movement, which should become self-evident as you keep exploring our technology stack.
 
@@ -27,7 +27,7 @@ We are also adopters and supporters of Kubernetes and the Cloud Native movement,
     
     :books: **Read More:** [AWS Well-architected](https://aws.amazon.com/architecture/well-architected)
 
-??? info "Why Infra as Code (IaC) & Terraform❓"
+??? info "Why Infra as Code (IaC) & OpenTofu❓"
 
     - [x] **Confidence:** A change breaks the env? Just roll it back. Still not working?
     Build a whole new env with a few keystrokes. IaC enables this.
@@ -50,28 +50,28 @@ We are also adopters and supporters of Kubernetes and the Cloud Native movement,
     provisioned. In the #cloud this can be a huge #cost issue. IaC allows tracking your
     resources.
 
-    - [x] **Portability:** Some IaC techs are #multicloud. Also, translating #Terraform from
+    - [x] **Portability:** Some IaC techs are #multicloud. Also, translating #OpenTofu from
     one cloud provider to another is considerably more simple than recreating your entire
     envs in a cloud-specific tool.
 
     - [x] **Security:** See history of changes to your SG rules along with commit messages can
     do wonders for being confident about the security configs of your envs.
 
-    **Terraform** allows to codify your application infrastructure, reduce human error and 
+    **OpenTofu** allows to codify your application infrastructure, reduce human error and 
     increase automation by provisioning infrastructure as code.
-    With TF we can manage infrastructure across clouds and provision infrastructure 
+    With Tofu we can manage infrastructure across clouds and provision infrastructure 
     across 300+ public clouds and services using a single workflow.
     Moreover it helps to create reproducible infrastructure and provision consistent testing,
     staging, and production environments with the same configuration.
 
-    **Terraform** has everything we expect from a IaC framework: open source, cloud-agnostic
+    **OpenTofu** has everything we expect from a IaC framework: open source, cloud-agnostic
     provisioning tool that supported immutable infrastructure, a declarative language, and
     a client-only architecture.
 
     :books: **Read More**
 
     - [Why Infrastructure as Code](https://www.simplethread.com/why-infrastructure-as-code/)
-    - [Why Terraform by Gruntwork](https://blog.gruntwork.io/why-we-use-terraform-and-not-chef-puppet-ansible-saltstack-or-cloudformation-7989dad2865c)
+    - [Why Terraform by Gruntwork](https://blog.gruntwork.io/why-we-use-terraform-and-not-chef-puppet-ansible-saltstack-or-cloudformation-7989dad2865c) (most of the points made in the article also apply to OpenTofu)
 
 ??? info "Why Organizations❓"
     AWS Organizations helps you centrally manage and govern your environment as you grow

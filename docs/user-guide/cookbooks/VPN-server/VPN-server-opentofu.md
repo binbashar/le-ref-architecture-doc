@@ -1,4 +1,4 @@
-## Create the EC2 terraform layer
+## Create the EC2 OpenTofu layer
 
 ### Copy the layer
 
@@ -127,7 +127,7 @@ Store the keys in a safe place.
 
 Then you have 2 options to set up the SSH key pair in your EC2:
 
-#### Opt-1: Via terraform 
+#### Opt-1: Via OpenTofu 
 Copy the content of the public key in the associated 
 [shared/us-east-1/security-keys layer variable](https://github.com/binbashar/le-tf-infra-aws/blob/2d573360a60f1ca48019bd00f845236d6127cfb0/shared/us-east-1/security-keys/variables.tf#L17).
 

@@ -6,8 +6,6 @@ It transparently manages authentication, either Multi-Factor or Single Sign-On, 
 
 Some commands can only be run at **layer** level and will not run anywhere else in the project.
 
-The command can also be invoked via its shortened version `tf`.
-
 Since version 1.12, all the subcommands supports `--mount` and `--env-var` parameters in form of tuples:
 
 ```bash

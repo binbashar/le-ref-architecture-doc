@@ -1,7 +1,7 @@
 # AWS Organizations
 
 ## Overview
-This repository contains all Terraform configuration files used to create binbash Leverage Reference 
+This repository contains all OpenTofu configuration files used to create binbash Leverage Reference 
 [**AWS Organizations**](https://aws.amazon.com/organizations/) Multi-Account baseline layout.
 
 !!! check "Why AWS Organizations?"
@@ -58,7 +58,7 @@ binbash Leverage Doc, accessed August 4th 2021).
     - [x] **Operations:** Will reduce the **blast radius** to the maximum possible.   
     - [x] **Compatibility:** Legacy accounts can (probably should) be [invited 
          as a member of the new Organization](https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_invites.html)
-          and afterwards even imported into your [terraform code](https://www.terraform.io/docs/providers/aws/r/organizations_account.html#import).
+          and afterwards even imported into your [OpenTofu code](https://search.opentofu.org/provider/opentofu/aws/latest/docs/resources/organizations_account#import).
     - [x] **Migration:** After having your baseline AWS Org reference cloud solutions architecture deployed
         (IAM, VPC, NACLS, VPC-Peering, DNS Cross-Org,
         CloudTrail, etc) you're ready to start progressively orchestrating new resources in order to segregate different
@@ -76,7 +76,7 @@ binbash Leverage Doc, accessed August 4th 2021).
               6. Finally switch `jenkins2.aws.domain.com` -> to -> `jenkins.aws.domain.com`
               7. Stop your old EC2_A.
               8. If everything looks fine after after 2/4 weeks you could terminate your EC2_A (hope everything is as 
-                code and just `terraform destroy`)
+                code and just `tofu destroy`)
               9. Considering the previously detailed steps plan your roadmap to move forward with every other component
                 to be migrated.
 

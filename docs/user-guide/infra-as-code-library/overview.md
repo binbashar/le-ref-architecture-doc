@@ -2,7 +2,7 @@
 
 ## Overview
 A collection of reusable, tested, production-ready E2E
-infrastructure as code solutions, leveraged by modules written in Terraform, Ansible,
+infrastructure as code solutions, leveraged by modules written in OpenTofu, Ansible,
 Dockerfiles, Helm charts and Makefiles.
 
 ## Model

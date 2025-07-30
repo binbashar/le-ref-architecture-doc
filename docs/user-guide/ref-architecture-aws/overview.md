@@ -5,7 +5,7 @@ The AWS Reference Architecture was created on a set of opinionated definitions a
 
 * [how to organize files/folders](dir-structure.md),
 * where to store [configuration files](configuration.md),
-* how to handle [credentials](configuration.md#setting-credentials-for-terraform-via-aws-profiles),
+* how to handle [credentials](configuration.md#setting-credentials-for-opentofu-via-aws-profiles),
 * how to [set up](tf-state.md) and [manage state](workflow.md),
 * which [commands and workflows](workflow.md) to run in order to perform different tasks,
 * and more.

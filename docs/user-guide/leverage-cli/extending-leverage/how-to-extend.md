@@ -15,7 +15,7 @@ This helps you avoid compatibility issues and ensures that your infrastructure d
 
 ## `.tfvars` config files
 Using additional `.tfvars` configuration files at the account level or at the global level will allow you to extend your
-terraform configuration entries. Consider that using multiple `.tfvars` configuration files allows you to keep your 
+tofu configuration entries. Consider that using multiple `.tfvars` configuration files allows you to keep your 
 configuration entries well-organized. You can have separate files for different accounts or environments, making it easy
 to manage and maintain your infrastructure. This also makes it easier for other team members to understand and work with
 your configuration, reducing the risk of misconfigurations or errors.

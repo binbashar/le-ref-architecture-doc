@@ -12,7 +12,7 @@ Value:
 
 | Parameter  | Type   | Description                                       |
 |:-----------|:-------|:--------------------------------------------------|
-| `--layers` | string | A comma serparated list of layer's relative paths |
+| `--layers` | string | A comma separated list of layer's relative paths |
 
 ## Common workflow
 

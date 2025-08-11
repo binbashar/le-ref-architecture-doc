@@ -1,6 +1,6 @@
 # Private Repositories
 
-## Working with Terraform modules in private repos
+## Working with OpenTofu/Terraform modules in private repos
 If it is the case that the layer is using a module from a private repository read the following. E.g.:
 ```yaml
 module "themodule" {
@@ -11,7 +11,7 @@ module "themodule" {
 where `gitlab.com:some-org/some-project/the-private-repo.git` is a private repo.
 
 ## SSH accessed repository
-To source a Terraform module from a private repository in a layer via an SSH connection these considerations have to be kept in mind.
+To source an OpenTofu/Terraform module from a private repository in a layer via an SSH connection these considerations have to be kept in mind.
 
 Leverage CLI will mount the host's SSH-Agent socket into the Leverage Toolbox container, this way your keys are accessed in a secure way.
 

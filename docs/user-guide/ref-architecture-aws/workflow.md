@@ -33,7 +33,7 @@ Now, the extended workflow is annotated with more explanations and it is intende
     7. Run `leverage tofu apply` to give it a final review and to apply any changes.
 
 !!! info "Tip"
-    You can use the `--layers` argument to run Terraform commands on more than one layer. For more information see [here](../leverage-cli/reference/tofu/layers.md)
+    You can use the `--layers` argument to run OpenTofu/Terraform commands on more than one layer. For more information see [here](../leverage-cli/reference/tofu/layers.md)
 
 !!! note 
     If desired, at step **#5** you could submit a PR, allowing you and the rest of the team to 
@@ -43,8 +43,8 @@ Now, the extended workflow is annotated with more explanations and it is intende
     rest of our tools and practices like CI/CD, in
 
 ## Running in Automation
-![leverage-aws-terraform](/assets/images/diagrams/aws-terraform-automation.png "Terraform"){: style="width:350"}
-<figcaption style="font-size:15px">Figure: Running terraform with AWS in automation (just as reference).</figcaption>
+![leverage-aws-terraform](/assets/images/diagrams/aws-opentofu-automation.png "OpenTofu"){: style="width:350"}
+<figcaption style="font-size:15px">Figure: Running tofu with AWS in automation (just as reference).</figcaption>
 
 !!! info "Read More"
     * :ledger: [Running Terraform in automation](https://learn.hashicorp.com/terraform/development/running-terraform-in-automation)

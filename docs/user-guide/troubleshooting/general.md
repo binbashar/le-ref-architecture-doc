@@ -14,13 +14,13 @@ The `--verbose` flag can also be used when you are working with the Ansible Refe
 leverage --verbose run init
 ```
 
-## Understanding how Leverage gets the AWS credentials for OpenTofu and other tools
-Firstly, you need to know that OpenTofu doesn't support AWS authentication methods that require user interaction. For instance, logging in via SSO or assuming roles that require MFA. That is why Leverage made the following two design decisions in that regard:
+## Understanding how Leverage gets the AWS credentials for OpenTofu/Terraform and other tools
+Firstly, you need to know that OpenTofu/Terraform doesn't support AWS authentication methods that require user interaction. For instance, logging in via SSO or assuming roles that require MFA. That is why Leverage made the following two design decisions in that regard:
 
-1. Configure OpenTofu to use AWS profiles via OpenTofu AWS provider and local [AWS configuration files](https://docs.aws.amazon.com/cli/latest/userguide/cli-configure-files.html).
-2. Leverage handles the user interactivity during the authentication phase in order to get the credentials that OpenTofu needs through AWS profiles.
+1. Configure OpenTofu/Terraform to use AWS profiles via OpenTofu/Terraform AWS provider and local [AWS configuration files](https://docs.aws.amazon.com/cli/latest/userguide/cli-configure-files.html).
+2. Leverage handles the user interactivity during the authentication phase in order to get the credentials that OpenTofu/Terraform needs through AWS profiles.
 
-So, Leverage runs simple bash scripts to deal with 2. and then passes the execution flow to OpenTofu which by then should have the AWS profiles ready-to-use and in the expected path.
+So, Leverage runs simple bash scripts to deal with 2. and then passes the execution flow to OpenTofu/Terraform which by then should have the AWS profiles ready-to-use and in the expected path.
 
 ## Where are those AWS profiles stored again?
 They are stored in 2 files: `config` and `credentials`.
@@ -77,7 +77,7 @@ $ DOCKER_HOST=unix:///run/user/1000/docker.sock leverage tf shell
 ## Leverage CLI fails to mount the SSH directory
 
 ### Possible Cause 1: Operation Not Supported
-The Leverage CLI mounts the `~/.ssh` directory in order to make the pulling of private OpenTofu modules work. The error should look similar to the following:
+The Leverage CLI mounts the `~/.ssh` directory in order to make the pulling of private OpenTofu/Terraform modules work. The error should look similar to the following:
 ```
 [18:26:44.416] ERROR    Error creating container:
                         APIError: 400 Client Error for http+docker://localhost/v1.43/containers/create: Bad Request ("invalid mount config for type "bind": stat /host_mnt/private/tmp/com.apple.launchd.CWrsoki5yP/Listeners: operation not supported")

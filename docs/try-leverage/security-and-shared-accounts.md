@@ -34,7 +34,7 @@ leverage tofu apply
 ```
 !!! info "More information on [`tofu init`](/user-guide/leverage-cli/reference/tofu#init) and [`tofu apply`](/user-guide/leverage-cli/reference/tofu#apply)"
 
-Now, to push the local `.tfstate` to the bucket, uncomment the `backend` section for the `terraform` configuration in `security/base-tf-backend/config.tf`
+Now, to push the local `.tfstate` to the bucket, uncomment the `backend` section for the `terraform` configuration block in `security/base-tf-backend/config.tf`
 ``` terraform
   backend "s3" {
     key = "security/tf-backend/terraform.tfstate"

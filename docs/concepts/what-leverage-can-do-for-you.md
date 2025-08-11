@@ -24,15 +24,15 @@ Still not convinced? Check out the following sections which describe what Levera
     our contributors.
 
 ??? question "**Hours or days, not weeks or months**"
-    ***Leverage*** implements infrastructure as code at all times. We have rolled this out using OpenTofu, and has been
-    fully proven in AWS and other OpenTofu providers that are part of our reference architecture like Kubernetes,
-    Helm and Hashicorp Vault. By using the `Leverage CLI`, our binary will help you to quickly bootstrap your AWS
-    Landing Zone in a matter of hours (or at most a few days).
+    ***Leverage*** implements infrastructure as code at all times. We have rolled this out using OpenTofu/Terraform,
+    and has been fully proven in AWS and other OpenTofu/Terraform providers that are part of our reference
+    architecture like Kubernetes, Helm and Hashicorp Vault. By using the `Leverage CLI`, our binary will help you
+    to quickly bootstrap your AWS Landing Zone in a matter of hours (or at most a few days).
 
 ??? question "**It's not just a pile of scripts**"
     It's not just another layer of untested, one time and stand-alone developed scripts. The code is modularized
     and well designed under best practices, our `Leverage CLI` has both unit and integration tests. While our
-    OpenTofu code has been extensively E2E tested. Moreover, 100% of the code is yours (to modify, extend,
+    OpenTofu/Terraform code has been extensively E2E tested. Moreover, 100% of the code is yours (to modify, extend,
     reuse, etc), with no vendor locking and vendor licensing fees. We use the MIT license, so you can take the
     code, modify it and use it as your private code. All we ask in return is a friendly greeting and that
     (if possible) consider contributing to ***binbash Leverage*** project. Implement ***Leverage*** yourself or we 
@@ -90,15 +90,15 @@ Still not convinced? Check out the following sections which describe what Levera
 ??? question "**There is no vendor lock-in. You own the solution**"
     With ***Leverage*** you own 100% of the code with no lock-in clauses. If you choose to leave ***Leverage***, you will still 
     have your entire AWS cloud infrastructure that you can access and manage. If you drop ***Leverage***, you will still
-    have your entire cloud native infrastructure code (OpenTofu, Helm, Ansible, Python). It’s 100% Open Source
+    have your entire cloud native infrastructure code (OpenTofu/Terraform, Helm, Ansible, Python). It’s 100% Open Source
     on GitHub and is free to use with no strings attached under [MIT license](https://choosealicense.com/licenses/) 
     (no licensing fees), and you are free to commercially and privately use, distribute and modify.
 
 ??? question "**Consistent environments (Dev/prod parity)**"
     Keep development, staging, and production cloud envs parity.
     Infrastructure as code allow us to define and provisioning all infrastructure components (think networks, load 
-    balancers, databases, security, compute and storage, etc.) using code. ***Leverage*** uses OpenTofu as the IaC language,
-    to deploy and setup all the AWS, Kubernetes and Hashicorp Vault resources (it has support for multiple cloud and
+    balancers, databases, security, compute and storage, etc.) using code. ***Leverage*** uses OpenTofu/Terraform as the IaC
+    language, to deploy and setup all the AWS, Kubernetes and Hashicorp Vault resources (it has support for multiple cloud and
     technology providers). Backed by code, your cloud environments are built exactly the identical way all the time. 
     Finally, this will result in no differences between development, staging and production.
 

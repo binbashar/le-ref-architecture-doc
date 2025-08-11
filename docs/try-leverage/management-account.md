@@ -44,7 +44,7 @@ When prompted, answer `yes`. Now you can safely remove the `terraform.tfstate` a
     More information regarding what is the OpenTofu backend and OpenTofu state management:
 
     * [OpenTofu backend](https://opentofu.org/docs/language/settings/backends/configuration/)
-    * [How to manage Terraform/OpenTofu state](https://blog.gruntwork.io/how-to-manage-terraform-state-28f5697e68fa)
+    * [How to manage OpenTofu/Terraform state](https://blog.gruntwork.io/how-to-manage-terraform-state-28f5697e68fa)
 
 ### Organizations layer
 Next, in the same fashion as in the previous layer, move into the `global/organizations` directory and run:

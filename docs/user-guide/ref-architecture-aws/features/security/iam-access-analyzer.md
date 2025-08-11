@@ -31,7 +31,7 @@ AWS Documentation, accessed June 11th 2021).
     Such step cannot be performed by Terraform yet so it was set
     up manually as described below:
     [https://docs.aws.amazon.com/IAM/latest/UserGuide/access-analyzer-settings.html](https://docs.aws.amazon.com/IAM/latest/UserGuide/access-analyzer-settings.html)
-    
+
     If you're configuring AWS IAM Access Analyzer in your AWS Organizations management account, 
     you can add a member account in the organization as the delegated administrator to manage 
     Access Analyzer for your organization. The delegated administrator has permissions to create 

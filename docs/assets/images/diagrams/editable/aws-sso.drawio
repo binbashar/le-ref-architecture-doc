@@ -1,0 +1,203 @@
+<mxfile host="65bd71144e">
+    <diagram id="Qp8wQVnxEE6Wqc5rfqcQ" name="AWS SSO">
+        <mxGraphModel dx="1864" dy="1900" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+            <root>
+                <mxCell id="0"/>
+                <mxCell id="1" parent="0"/>
+                <mxCell id="vdma2DZSf0bA1jL2YvWc-1" value="AWS Organization" style="points=[[0,0],[0.25,0],[0.5,0],[0.75,0],[1,0],[1,0.25],[1,0.5],[1,0.75],[1,1],[0.75,1],[0.5,1],[0.25,1],[0,1],[0,0.75],[0,0.5],[0,0.25]];outlineConnect=0;gradientColor=none;html=1;whiteSpace=wrap;fontSize=13;fontStyle=0;shape=mxgraph.aws4.group;grIcon=mxgraph.aws4.group_aws_cloud_alt;strokeColor=#232F3E;fillColor=default;verticalAlign=top;align=left;spacingLeft=30;fontColor=#232F3E;dashed=0;" parent="1" vertex="1">
+                    <mxGeometry x="-440" y="-1010" width="1200" height="690" as="geometry"/>
+                </mxCell>
+                <mxCell id="vdma2DZSf0bA1jL2YvWc-5" value="" style="dashed=1;verticalAlign=top;fontStyle=0;fontSize=13;fillColor=none;" parent="1" vertex="1">
+                    <mxGeometry x="-372" y="-586.87" width="260" height="246.87" as="geometry"/>
+                </mxCell>
+                <mxCell id="vdma2DZSf0bA1jL2YvWc-44" value="" style="fillColor=none;strokeColor=#5A6C86;dashed=1;verticalAlign=top;fontStyle=0;fontColor=#5A6C86;fontSize=13;" parent="1" vertex="1">
+                    <mxGeometry x="468" y="-586.87" width="282" height="246.87" as="geometry"/>
+                </mxCell>
+                <mxCell id="vdma2DZSf0bA1jL2YvWc-2" value="" style="fillColor=none;strokeColor=#5A6C86;dashed=1;verticalAlign=top;fontStyle=0;fontColor=#5A6C86;fontSize=13;" parent="1" vertex="1">
+                    <mxGeometry x="-92" y="-586.87" width="260" height="246.87" as="geometry"/>
+                </mxCell>
+                <mxCell id="vdma2DZSf0bA1jL2YvWc-3" value="Security Account" style="points=[[0,0],[0.25,0],[0.5,0],[0.75,0],[1,0],[1,0.25],[1,0.5],[1,0.75],[1,1],[0.75,1],[0.5,1],[0.25,1],[0,1],[0,0.75],[0,0.5],[0,0.25]];outlineConnect=0;html=1;whiteSpace=wrap;fontSize=13;fontStyle=0;shape=mxgraph.aws4.group;grIcon=mxgraph.aws4.group_aws_cloud_alt;verticalAlign=top;align=left;spacingLeft=30;dashed=0;labelBackgroundColor=none;" parent="1" vertex="1">
+                    <mxGeometry x="-352" y="-567.49" width="220" height="151.37" as="geometry"/>
+                </mxCell>
+                <mxCell id="vdma2DZSf0bA1jL2YvWc-4" value="Management Account" style="points=[[0,0],[0.25,0],[0.5,0],[0.75,0],[1,0],[1,0.25],[1,0.5],[1,0.75],[1,1],[0.75,1],[0.5,1],[0.25,1],[0,1],[0,0.75],[0,0.5],[0,0.25]];outlineConnect=0;html=1;whiteSpace=wrap;fontSize=13;fontStyle=0;shape=mxgraph.aws4.group;grIcon=mxgraph.aws4.group_aws_cloud_alt;verticalAlign=top;align=left;spacingLeft=30;dashed=0;labelBackgroundColor=none;" parent="1" vertex="1">
+                    <mxGeometry x="-420" y="-970" width="1040" height="360" as="geometry"/>
+                </mxCell>
+                <mxCell id="vdma2DZSf0bA1jL2YvWc-6" value="&lt;span style=&quot;font-size: 13px;&quot;&gt;Management&lt;br style=&quot;font-size: 13px;&quot;&gt;SSO Cross-Account&amp;nbsp;&lt;br style=&quot;font-size: 13px;&quot;&gt;Permission Set&lt;br style=&quot;font-size: 13px;&quot;&gt;&lt;/span&gt;" style="outlineConnect=0;fontColor=#232F3E;gradientColor=none;fillColor=#C7131F;strokeColor=none;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=13;fontStyle=0;aspect=fixed;pointerEvents=1;shape=mxgraph.aws4.addon;labelBackgroundColor=none;" parent="1" vertex="1">
+                    <mxGeometry x="-302" y="-513.87" width="57.53" height="29.5" as="geometry"/>
+                </mxCell>
+                <mxCell id="vdma2DZSf0bA1jL2YvWc-7" value="" style="group;fontSize=13;" parent="1" connectable="0" vertex="1">
+                    <mxGeometry x="310" y="-946.62" width="90" height="120" as="geometry"/>
+                </mxCell>
+                <mxCell id="vdma2DZSf0bA1jL2YvWc-8" value="" style="points=[[0,0,0],[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0,0],[0,1,0],[0.25,1,0],[0.5,1,0],[0.75,1,0],[1,1,0],[0,0.25,0],[0,0.5,0],[0,0.75,0],[1,0.25,0],[1,0.5,0],[1,0.75,0]];points=[[0,0,0],[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0,0],[0,1,0],[0.25,1,0],[0.5,1,0],[0.75,1,0],[1,1,0],[0,0.25,0],[0,0.5,0],[0,0.75,0],[1,0.25,0],[1,0.5,0],[1,0.75,0]];outlineConnect=0;fontColor=#232F3E;gradientColor=#F34482;gradientDirection=north;fillColor=#BC1356;strokeColor=#ffffff;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=13;fontStyle=0;aspect=fixed;shape=mxgraph.aws4.resourceIcon;resIcon=mxgraph.aws4.organizations;" parent="vdma2DZSf0bA1jL2YvWc-7" vertex="1">
+                    <mxGeometry width="85.09090909090908" height="85.09090909090908" as="geometry"/>
+                </mxCell>
+                <mxCell id="vdma2DZSf0bA1jL2YvWc-9" value="&lt;b style=&quot;font-size: 13px;&quot;&gt;AWS Organizations&lt;/b&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=13;" parent="vdma2DZSf0bA1jL2YvWc-7" vertex="1">
+                    <mxGeometry x="4.615384615384615" y="98.18181818181817" width="80.76923076923076" height="21.818181818181817" as="geometry"/>
+                </mxCell>
+                <mxCell id="vdma2DZSf0bA1jL2YvWc-10" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;fontSize=13;" parent="1" source="vdma2DZSf0bA1jL2YvWc-11" target="vdma2DZSf0bA1jL2YvWc-5" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <Array as="points">
+                            <mxPoint x="196" y="-630"/>
+                            <mxPoint x="-242" y="-630"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="vdma2DZSf0bA1jL2YvWc-11" value="Security OU" style="outlineConnect=0;fontColor=#232F3E;gradientColor=none;strokeColor=none;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=13;fontStyle=0;aspect=fixed;pointerEvents=1;shape=mxgraph.aws4.organizations_organizational_unit;fillColor=#F34482;" parent="1" vertex="1">
+                    <mxGeometry x="167" y="-762.12" width="58.21" height="50" as="geometry"/>
+                </mxCell>
+                <mxCell id="34Pr18fF8TJs2jRLvVUe-1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="vdma2DZSf0bA1jL2YvWc-13" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="350" y="-590" as="targetPoint"/>
+                        <Array as="points">
+                            <mxPoint x="420" y="-620"/>
+                            <mxPoint x="350" y="-620"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="vdma2DZSf0bA1jL2YvWc-13" value="Legacy OU" style="outlineConnect=0;fontColor=#232F3E;gradientColor=none;strokeColor=none;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=13;fontStyle=0;aspect=fixed;pointerEvents=1;shape=mxgraph.aws4.organizations_organizational_unit;fillColor=#F34482;" parent="1" vertex="1">
+                    <mxGeometry x="391" y="-762.12" width="58.21" height="50" as="geometry"/>
+                </mxCell>
+                <mxCell id="vdma2DZSf0bA1jL2YvWc-16" value="AWS SSO" style="sketch=0;points=[[0,0,0],[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0,0],[0,1,0],[0.25,1,0],[0.5,1,0],[0.75,1,0],[1,1,0],[0,0.25,0],[0,0.5,0],[0,0.75,0],[1,0.25,0],[1,0.5,0],[1,0.75,0]];outlineConnect=0;fontColor=#232F3E;gradientColor=#F54749;gradientDirection=north;fillColor=#C7131F;strokeColor=#ffffff;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=13;fontStyle=0;aspect=fixed;shape=mxgraph.aws4.resourceIcon;resIcon=mxgraph.aws4.single_sign_on;" parent="1" vertex="1">
+                    <mxGeometry x="-169.75" y="-955.62" width="88" height="88" as="geometry"/>
+                </mxCell>
+                <mxCell id="vdma2DZSf0bA1jL2YvWc-18" value="permissions" style="sketch=0;outlineConnect=0;fontColor=#232F3E;gradientColor=none;fillColor=#FF5252;strokeColor=none;dashed=0;verticalLabelPosition=top;verticalAlign=bottom;align=center;html=1;fontSize=13;fontStyle=0;aspect=fixed;pointerEvents=1;shape=mxgraph.aws4.permissions;labelPosition=center;" parent="1" vertex="1">
+                    <mxGeometry x="-242.5" y="-523.37" width="31" height="39" as="geometry"/>
+                </mxCell>
+                <mxCell id="vdma2DZSf0bA1jL2YvWc-19" value="&lt;div style=&quot;font-size: 13px;&quot;&gt;DevOps&lt;/div&gt;" style="outlineConnect=0;fontColor=#232F3E;gradientColor=none;fillColor=#232F3E;strokeColor=none;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=13;fontStyle=0;aspect=fixed;pointerEvents=1;shape=mxgraph.aws4.users;" parent="1" vertex="1">
+                    <mxGeometry x="-240" y="-808.37" width="50" height="50" as="geometry"/>
+                </mxCell>
+                <mxCell id="vdma2DZSf0bA1jL2YvWc-20" value="&lt;div style=&quot;font-size: 13px;&quot;&gt;Administrators&lt;/div&gt;&lt;div style=&quot;font-size: 13px;&quot;&gt;&lt;br style=&quot;font-size: 13px;&quot;&gt;&lt;/div&gt;" style="outlineConnect=0;fontColor=#232F3E;gradientColor=none;fillColor=#232F3E;strokeColor=none;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=13;fontStyle=0;aspect=fixed;pointerEvents=1;shape=mxgraph.aws4.users;" parent="1" vertex="1">
+                    <mxGeometry x="-242.5" y="-728.37" width="55" height="55" as="geometry"/>
+                </mxCell>
+                <mxCell id="vdma2DZSf0bA1jL2YvWc-21" value="&lt;div style=&quot;font-size: 13px;&quot;&gt;Developers&lt;/div&gt;" style="outlineConnect=0;fontColor=#232F3E;gradientColor=none;fillColor=#232F3E;strokeColor=none;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=13;fontStyle=0;aspect=fixed;pointerEvents=1;shape=mxgraph.aws4.users;" parent="1" vertex="1">
+                    <mxGeometry x="-151.5" y="-809.87" width="51.5" height="51.5" as="geometry"/>
+                </mxCell>
+                <mxCell id="vdma2DZSf0bA1jL2YvWc-22" value="&lt;div style=&quot;font-size: 13px;&quot;&gt;Security Auditor&lt;/div&gt;" style="outlineConnect=0;fontColor=#232F3E;gradientColor=none;fillColor=#232F3E;strokeColor=none;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=13;fontStyle=0;aspect=fixed;pointerEvents=1;shape=mxgraph.aws4.users;" parent="1" vertex="1">
+                    <mxGeometry x="-150" y="-723.37" width="50" height="50" as="geometry"/>
+                </mxCell>
+                <mxCell id="vdma2DZSf0bA1jL2YvWc-23" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;fontSize=13;" parent="1" source="vdma2DZSf0bA1jL2YvWc-9" target="vdma2DZSf0bA1jL2YvWc-11" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="vdma2DZSf0bA1jL2YvWc-24" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;fontSize=13;" parent="1" source="vdma2DZSf0bA1jL2YvWc-9" target="vdma2DZSf0bA1jL2YvWc-13" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <Array as="points">
+                            <mxPoint x="390" y="-810"/>
+                            <mxPoint x="420" y="-810"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="vdma2DZSf0bA1jL2YvWc-25" value="Permission Set&lt;br style=&quot;font-size: 13px;&quot;&gt;DevOps" style="sketch=0;outlineConnect=0;fontColor=#232F3E;gradientColor=none;fillColor=#BF0816;strokeColor=none;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=13;fontStyle=0;aspect=fixed;pointerEvents=1;shape=mxgraph.aws4.permissions;" parent="1" vertex="1">
+                    <mxGeometry x="-50" y="-842.37" width="48.49" height="61" as="geometry"/>
+                </mxCell>
+                <mxCell id="vdma2DZSf0bA1jL2YvWc-26" value="Shared Account" style="points=[[0,0],[0.25,0],[0.5,0],[0.75,0],[1,0],[1,0.25],[1,0.5],[1,0.75],[1,1],[0.75,1],[0.5,1],[0.25,1],[0,1],[0,0.75],[0,0.5],[0,0.25]];outlineConnect=0;html=1;whiteSpace=wrap;fontSize=13;fontStyle=0;shape=mxgraph.aws4.group;grIcon=mxgraph.aws4.group_aws_cloud_alt;verticalAlign=top;align=left;spacingLeft=30;dashed=0;labelBackgroundColor=none;" parent="1" vertex="1">
+                    <mxGeometry x="-72" y="-567.37" width="220" height="147.37" as="geometry"/>
+                </mxCell>
+                <mxCell id="vdma2DZSf0bA1jL2YvWc-27" value="&lt;span style=&quot;font-size: 13px;&quot;&gt;Management&lt;br style=&quot;font-size: 13px;&quot;&gt;SSO Cross-Account&amp;nbsp;&lt;br style=&quot;font-size: 13px;&quot;&gt;Permission Set&lt;br style=&quot;font-size: 13px;&quot;&gt;&lt;/span&gt;" style="outlineConnect=0;fontColor=#232F3E;gradientColor=none;fillColor=#C7131F;strokeColor=none;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=13;fontStyle=0;aspect=fixed;pointerEvents=1;shape=mxgraph.aws4.addon;labelBackgroundColor=none;" parent="1" vertex="1">
+                    <mxGeometry x="-21.99999999999997" y="-517.75" width="57.53" height="29.5" as="geometry"/>
+                </mxCell>
+                <mxCell id="vdma2DZSf0bA1jL2YvWc-28" value="permissions" style="sketch=0;outlineConnect=0;fontColor=#232F3E;gradientColor=none;fillColor=#FF5252;strokeColor=none;dashed=0;verticalLabelPosition=top;verticalAlign=bottom;align=center;html=1;fontSize=13;fontStyle=0;aspect=fixed;pointerEvents=1;shape=mxgraph.aws4.permissions;labelPosition=center;" parent="1" vertex="1">
+                    <mxGeometry x="37.53" y="-522.5" width="31" height="39" as="geometry"/>
+                </mxCell>
+                <mxCell id="vdma2DZSf0bA1jL2YvWc-30" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;fontSize=13;" parent="1" source="vdma2DZSf0bA1jL2YvWc-31" target="vdma2DZSf0bA1jL2YvWc-2" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <Array as="points">
+                            <mxPoint x="305" y="-620"/>
+                            <mxPoint x="38" y="-620"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="vdma2DZSf0bA1jL2YvWc-31" value="Shared OU" style="outlineConnect=0;fontColor=#232F3E;gradientColor=none;strokeColor=none;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=13;fontStyle=0;aspect=fixed;pointerEvents=1;shape=mxgraph.aws4.organizations_organizational_unit;fillColor=#F34482;" parent="1" vertex="1">
+                    <mxGeometry x="279" y="-762.12" width="58.21" height="50" as="geometry"/>
+                </mxCell>
+                <mxCell id="vdma2DZSf0bA1jL2YvWc-35" value="&lt;b style=&quot;font-size: 13px;&quot;&gt;AWS SSO Group&lt;/b&gt;" style="outlineConnect=0;gradientColor=none;html=1;whiteSpace=wrap;fontSize=13;fontStyle=0;strokeColor=#879196;fillColor=none;verticalAlign=top;align=center;fontColor=#879196;dashed=1;spacingTop=3;" parent="1" vertex="1">
+                    <mxGeometry x="-260" y="-845.62" width="180" height="203.25" as="geometry"/>
+                </mxCell>
+                <mxCell id="vdma2DZSf0bA1jL2YvWc-36" value="&lt;div style=&quot;font-size: 13px;&quot;&gt;AWS SSO&amp;nbsp;&lt;/div&gt;&lt;div style=&quot;font-size: 13px;&quot;&gt;Users&lt;/div&gt;" style="outlineConnect=0;fontColor=#232F3E;gradientColor=none;fillColor=#232F3E;strokeColor=none;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=13;fontStyle=0;aspect=fixed;pointerEvents=1;shape=mxgraph.aws4.users;" parent="1" vertex="1">
+                    <mxGeometry x="-59.75" y="-943.62" width="60" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="vdma2DZSf0bA1jL2YvWc-37" value="Permission Set&lt;br style=&quot;font-size: 13px;&quot;&gt;Administrator" style="sketch=0;outlineConnect=0;fontColor=#232F3E;gradientColor=none;fillColor=#BF0816;strokeColor=none;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=13;fontStyle=0;aspect=fixed;pointerEvents=1;shape=mxgraph.aws4.permissions;" parent="1" vertex="1">
+                    <mxGeometry x="-50" y="-738.37" width="48.49" height="61" as="geometry"/>
+                </mxCell>
+                <mxCell id="vdma2DZSf0bA1jL2YvWc-38" value="Permission Set&lt;br style=&quot;font-size: 13px;&quot;&gt;Developers" style="sketch=0;outlineConnect=0;fontColor=#232F3E;gradientColor=none;fillColor=#BF0816;strokeColor=none;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=13;fontStyle=0;aspect=fixed;pointerEvents=1;shape=mxgraph.aws4.permissions;" parent="1" vertex="1">
+                    <mxGeometry x="40" y="-842.37" width="48.49" height="61" as="geometry"/>
+                </mxCell>
+                <mxCell id="vdma2DZSf0bA1jL2YvWc-39" value="Permission Set&lt;br style=&quot;font-size: 13px;&quot;&gt;Developers" style="sketch=0;outlineConnect=0;fontColor=#232F3E;gradientColor=none;fillColor=#BF0816;strokeColor=none;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=13;fontStyle=0;aspect=fixed;pointerEvents=1;shape=mxgraph.aws4.permissions;" parent="1" vertex="1">
+                    <mxGeometry x="40" y="-738.37" width="48.49" height="61" as="geometry"/>
+                </mxCell>
+                <mxCell id="vdma2DZSf0bA1jL2YvWc-40" value="" style="fillColor=none;strokeColor=#5A6C86;dashed=1;verticalAlign=top;fontStyle=0;fontColor=#5A6C86;fontSize=13;" parent="1" vertex="1">
+                    <mxGeometry x="188" y="-585.24" width="260" height="245.24" as="geometry"/>
+                </mxCell>
+                <mxCell id="vdma2DZSf0bA1jL2YvWc-41" value="Legacy" style="points=[[0,0],[0.25,0],[0.5,0],[0.75,0],[1,0],[1,0.25],[1,0.5],[1,0.75],[1,1],[0.75,1],[0.5,1],[0.25,1],[0,1],[0,0.75],[0,0.5],[0,0.25]];outlineConnect=0;html=1;whiteSpace=wrap;fontSize=13;fontStyle=0;shape=mxgraph.aws4.group;grIcon=mxgraph.aws4.group_aws_cloud_alt;verticalAlign=top;align=left;spacingLeft=30;dashed=0;labelBackgroundColor=none;" parent="1" vertex="1">
+                    <mxGeometry x="208" y="-565.74" width="220" height="147.37" as="geometry"/>
+                </mxCell>
+                <mxCell id="vdma2DZSf0bA1jL2YvWc-42" value="&lt;span style=&quot;font-size: 13px;&quot;&gt;Management&lt;br style=&quot;font-size: 13px;&quot;&gt;SSO Cross-Account&amp;nbsp;&lt;br style=&quot;font-size: 13px;&quot;&gt;Permission Set&lt;br style=&quot;font-size: 13px;&quot;&gt;&lt;/span&gt;" style="outlineConnect=0;fontColor=#232F3E;gradientColor=none;fillColor=#C7131F;strokeColor=none;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=13;fontStyle=0;aspect=fixed;pointerEvents=1;shape=mxgraph.aws4.addon;labelBackgroundColor=none;" parent="1" vertex="1">
+                    <mxGeometry x="258" y="-516.12" width="57.53" height="29.5" as="geometry"/>
+                </mxCell>
+                <mxCell id="vdma2DZSf0bA1jL2YvWc-43" value="permissions" style="sketch=0;outlineConnect=0;fontColor=#232F3E;gradientColor=none;fillColor=#FF5252;strokeColor=none;dashed=0;verticalLabelPosition=top;verticalAlign=bottom;align=center;html=1;fontSize=13;fontStyle=0;aspect=fixed;pointerEvents=1;shape=mxgraph.aws4.permissions;labelPosition=center;" parent="1" vertex="1">
+                    <mxGeometry x="317.53" y="-520.87" width="31" height="39" as="geometry"/>
+                </mxCell>
+                <mxCell id="vdma2DZSf0bA1jL2YvWc-48" value="&lt;span style=&quot;font-size: 13px;&quot;&gt;- Users&lt;/span&gt;&lt;br style=&quot;font-size: 13px;&quot;&gt;&lt;span style=&quot;font-size: 13px;&quot;&gt;- User Groups&lt;br style=&quot;font-size: 13px;&quot;&gt;&amp;nbsp; &amp;nbsp; - &lt;span style=&quot;font-size: 13px;&quot;&gt;Administrators&lt;/span&gt;&lt;br style=&quot;font-size: 13px;&quot;&gt;&amp;nbsp; &amp;nbsp; - DevOps&lt;br style=&quot;font-size: 13px;&quot;&gt;&amp;nbsp; &amp;nbsp; - Developers&lt;br style=&quot;font-size: 13px;&quot;&gt;&amp;nbsp; &amp;nbsp; - SecurityAuditors&lt;br style=&quot;font-size: 13px;&quot;&gt;- Apps: AWS SSO&lt;br style=&quot;font-size: 13px;&quot;&gt;&amp;nbsp; &amp;nbsp; - Auth: SAML2.0&lt;br style=&quot;font-size: 13px;&quot;&gt;&lt;/span&gt;" style="outlineConnect=0;fontColor=#232F3E;gradientColor=none;fillColor=#232F3E;strokeColor=none;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=left;html=1;fontSize=13;fontStyle=0;aspect=fixed;pointerEvents=1;shape=mxgraph.aws4.users;" parent="1" vertex="1">
+                    <mxGeometry x="-400" y="-843.12" width="50" height="50" as="geometry"/>
+                </mxCell>
+                <mxCell id="vdma2DZSf0bA1jL2YvWc-49" value="" style="outlineConnect=0;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;shape=mxgraph.aws3.data_encryption_key;fillColor=#7D7C7C;gradientColor=none;fontSize=13;" parent="1" vertex="1">
+                    <mxGeometry x="-340" y="-845.62" width="46.5" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="GlVq6zL9pQC_tLf6PMxV-5" style="edgeStyle=orthogonalEdgeStyle;html=1;rounded=0;" parent="1" source="GlVq6zL9pQC_tLf6PMxV-1" target="vdma2DZSf0bA1jL2YvWc-44" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <Array as="points">
+                            <mxPoint x="532" y="-630"/>
+                            <mxPoint x="598" y="-630"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="GlVq6zL9pQC_tLf6PMxV-1" value="Apps OU" style="outlineConnect=0;fontColor=#232F3E;gradientColor=none;strokeColor=none;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=13;fontStyle=0;aspect=fixed;pointerEvents=1;shape=mxgraph.aws4.organizations_organizational_unit;fillColor=#F34482;" parent="1" vertex="1">
+                    <mxGeometry x="503" y="-762.12" width="58.21" height="50" as="geometry"/>
+                </mxCell>
+                <mxCell id="GlVq6zL9pQC_tLf6PMxV-4" style="edgeStyle=orthogonalEdgeStyle;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;rounded=0;" parent="1" source="vdma2DZSf0bA1jL2YvWc-9" target="GlVq6zL9pQC_tLf6PMxV-1" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="GlVq6zL9pQC_tLf6PMxV-6" style="edgeStyle=orthogonalEdgeStyle;html=1;rounded=0;" parent="1" source="vdma2DZSf0bA1jL2YvWc-9" target="vdma2DZSf0bA1jL2YvWc-31" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <Array as="points">
+                            <mxPoint x="330" y="-810"/>
+                            <mxPoint x="308" y="-810"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="GlVq6zL9pQC_tLf6PMxV-8" value="" style="group" parent="1" vertex="1" connectable="0">
+                    <mxGeometry x="491.79" y="-565.8" width="219.99999999999994" height="147.37" as="geometry"/>
+                </mxCell>
+                <mxCell id="vdma2DZSf0bA1jL2YvWc-50" value="Apps Production" style="points=[[0,0],[0.25,0],[0.5,0],[0.75,0],[1,0],[1,0.25],[1,0.5],[1,0.75],[1,1],[0.75,1],[0.5,1],[0.25,1],[0,1],[0,0.75],[0,0.5],[0,0.25]];outlineConnect=0;html=1;whiteSpace=wrap;fontSize=13;fontStyle=0;shape=mxgraph.aws4.group;grIcon=mxgraph.aws4.group_aws_cloud_alt;verticalAlign=top;align=left;spacingLeft=30;dashed=0;labelBackgroundColor=none;" parent="GlVq6zL9pQC_tLf6PMxV-8" vertex="1">
+                    <mxGeometry width="220" height="147.37" as="geometry"/>
+                </mxCell>
+                <mxCell id="vdma2DZSf0bA1jL2YvWc-46" value="&lt;span style=&quot;font-size: 13px;&quot;&gt;Management&lt;br style=&quot;font-size: 13px;&quot;&gt;SSO Cross-Account&amp;nbsp;&lt;br style=&quot;font-size: 13px;&quot;&gt;Permission Set&lt;br style=&quot;font-size: 13px;&quot;&gt;&lt;/span&gt;" style="outlineConnect=0;fontColor=#232F3E;gradientColor=none;fillColor=#C7131F;strokeColor=none;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=13;fontStyle=0;aspect=fixed;pointerEvents=1;shape=mxgraph.aws4.addon;labelBackgroundColor=none;" parent="GlVq6zL9pQC_tLf6PMxV-8" vertex="1">
+                    <mxGeometry x="46.20999999999998" y="48.049999999999955" width="57.53" height="29.5" as="geometry"/>
+                </mxCell>
+                <mxCell id="vdma2DZSf0bA1jL2YvWc-47" value="permissions" style="sketch=0;outlineConnect=0;fontColor=#232F3E;gradientColor=none;fillColor=#FF5252;strokeColor=none;dashed=0;verticalLabelPosition=top;verticalAlign=bottom;align=center;html=1;fontSize=13;fontStyle=0;aspect=fixed;pointerEvents=1;shape=mxgraph.aws4.permissions;labelPosition=center;" parent="GlVq6zL9pQC_tLf6PMxV-8" vertex="1">
+                    <mxGeometry x="105.73999999999995" y="43.299999999999955" width="31" height="39" as="geometry"/>
+                </mxCell>
+                <mxCell id="GlVq6zL9pQC_tLf6PMxV-9" value="" style="group" parent="1" vertex="1" connectable="0">
+                    <mxGeometry x="501.79" y="-539.8" width="219.99999999999994" height="147.37" as="geometry"/>
+                </mxCell>
+                <mxCell id="GlVq6zL9pQC_tLf6PMxV-10" value="Apps Dev Stg" style="points=[[0,0],[0.25,0],[0.5,0],[0.75,0],[1,0],[1,0.25],[1,0.5],[1,0.75],[1,1],[0.75,1],[0.5,1],[0.25,1],[0,1],[0,0.75],[0,0.5],[0,0.25]];outlineConnect=0;html=1;whiteSpace=wrap;fontSize=13;fontStyle=0;shape=mxgraph.aws4.group;grIcon=mxgraph.aws4.group_aws_cloud_alt;verticalAlign=top;align=left;spacingLeft=30;dashed=0;labelBackgroundColor=none;" parent="GlVq6zL9pQC_tLf6PMxV-9" vertex="1">
+                    <mxGeometry width="220" height="147.37" as="geometry"/>
+                </mxCell>
+                <mxCell id="GlVq6zL9pQC_tLf6PMxV-11" value="&lt;span style=&quot;font-size: 13px;&quot;&gt;Management&lt;br style=&quot;font-size: 13px;&quot;&gt;SSO Cross-Account&amp;nbsp;&lt;br style=&quot;font-size: 13px;&quot;&gt;Permission Set&lt;br style=&quot;font-size: 13px;&quot;&gt;&lt;/span&gt;" style="outlineConnect=0;fontColor=#232F3E;gradientColor=none;fillColor=#C7131F;strokeColor=none;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=13;fontStyle=0;aspect=fixed;pointerEvents=1;shape=mxgraph.aws4.addon;labelBackgroundColor=none;" parent="GlVq6zL9pQC_tLf6PMxV-9" vertex="1">
+                    <mxGeometry x="46.20999999999998" y="48.049999999999955" width="57.53" height="29.5" as="geometry"/>
+                </mxCell>
+                <mxCell id="GlVq6zL9pQC_tLf6PMxV-12" value="permissions" style="sketch=0;outlineConnect=0;fontColor=#232F3E;gradientColor=none;fillColor=#FF5252;strokeColor=none;dashed=0;verticalLabelPosition=top;verticalAlign=bottom;align=center;html=1;fontSize=13;fontStyle=0;aspect=fixed;pointerEvents=1;shape=mxgraph.aws4.permissions;labelPosition=center;" parent="GlVq6zL9pQC_tLf6PMxV-9" vertex="1">
+                    <mxGeometry x="105.73999999999995" y="43.299999999999955" width="31" height="39" as="geometry"/>
+                </mxCell>
+                <mxCell id="GlVq6zL9pQC_tLf6PMxV-14" value="Apps Data Science" style="points=[[0,0],[0.25,0],[0.5,0],[0.75,0],[1,0],[1,0.25],[1,0.5],[1,0.75],[1,1],[0.75,1],[0.5,1],[0.25,1],[0,1],[0,0.75],[0,0.5],[0,0.25]];outlineConnect=0;html=1;whiteSpace=wrap;fontSize=13;fontStyle=0;shape=mxgraph.aws4.group;grIcon=mxgraph.aws4.group_aws_cloud_alt;verticalAlign=top;align=left;spacingLeft=30;dashed=0;labelBackgroundColor=none;" parent="GlVq6zL9pQC_tLf6PMxV-9" vertex="1">
+                    <mxGeometry x="10" y="27" width="220" height="147.37" as="geometry"/>
+                </mxCell>
+                <mxCell id="GlVq6zL9pQC_tLf6PMxV-15" value="permissions" style="sketch=0;outlineConnect=0;fontColor=#232F3E;gradientColor=none;fillColor=#FF5252;strokeColor=none;dashed=0;verticalLabelPosition=top;verticalAlign=bottom;align=center;html=1;fontSize=13;fontStyle=0;aspect=fixed;pointerEvents=1;shape=mxgraph.aws4.permissions;labelPosition=center;" parent="GlVq6zL9pQC_tLf6PMxV-9" vertex="1">
+                    <mxGeometry x="115.73999999999995" y="70.29999999999995" width="31" height="39" as="geometry"/>
+                </mxCell>
+                <mxCell id="GlVq6zL9pQC_tLf6PMxV-16" value="&lt;span style=&quot;font-size: 13px;&quot;&gt;Management&lt;br style=&quot;font-size: 13px;&quot;&gt;SSO Cross-Account&amp;nbsp;&lt;br style=&quot;font-size: 13px;&quot;&gt;Permission Set&lt;br style=&quot;font-size: 13px;&quot;&gt;&lt;/span&gt;" style="outlineConnect=0;fontColor=#232F3E;gradientColor=none;fillColor=#C7131F;strokeColor=none;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=13;fontStyle=0;aspect=fixed;pointerEvents=1;shape=mxgraph.aws4.addon;labelBackgroundColor=none;" parent="GlVq6zL9pQC_tLf6PMxV-9" vertex="1">
+                    <mxGeometry x="56.20999999999998" y="75.04999999999995" width="57.53" height="29.5" as="geometry"/>
+                </mxCell>
+            </root>
+        </mxGraphModel>
+    </diagram>
+</mxfile>

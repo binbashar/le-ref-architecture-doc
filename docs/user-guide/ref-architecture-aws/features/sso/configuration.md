@@ -6,11 +6,6 @@ Before deploying your AWS SSO definition in the project, it will first have to b
 !!! note ":books: [Prerequisites](https://docs.aws.amazon.com/singlesignon/latest/userguide/prereqs.html)"
 !!! info ":books: [Enable AWS SSO](https://docs.aws.amazon.com/singlesignon/latest/userguide/step1.html)"
 
-After that, choosing and configuring an Identity Provider (IdP) is the next step. For this, we will make use of JumpCloud, as described in the [how it works](/user-guide/ref-architecture-aws/features/sso/overview/) section. These resources point to all requirements and procedures to have your JumpCloud account setup and synched with AWS SSO:
-
-!!! info ":books: [AWS JumpCloud support guide](https://docs.aws.amazon.com/singlesignon/latest/userguide/jumpcloud-idp.html)"
-!!! info ":books: [JumpCloud guide on how to configure as IdP for AWS SSO](https://docs.aws.amazon.com/singlesignon/latest/userguide/jumpcloud-idp.html)"
-
 Once this is set up, the SSO layer can be safely deployed.
 
 ## Preparing the project to use AWS SSO

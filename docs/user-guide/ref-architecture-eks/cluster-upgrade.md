@@ -174,7 +174,7 @@ No extra considerations are needed to upgrade from v1.25 to v1.26. The standard 
 In a similar fashion to the previous upgrade notes, the standard procedure listed above should work with no issues.
 
 !!! info "Official AWS procedure"
-    A step-bystep instructions guide for upgrading an EKS cluster can be found at the following link:
+    A step-by-step instructions guide for upgrading an EKS cluster can be found at the following link:
     [https://repost.aws/knowledge-center/eks-plan-upgrade-cluster](https://repost.aws/knowledge-center/eks-plan-upgrade-cluster)
 
 !!! info "Official AWS Release Notes"

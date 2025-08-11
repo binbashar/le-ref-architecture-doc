@@ -253,7 +253,7 @@ variable "region" {
 ##=============================#
 variable "aws_ami_os_id" {
   type        = string
-  description = "AWS AMI Operating System Identificator"
+  description = "AWS AMI Operating System Identifier"
   default     = "ubuntu/images/hvm-ssd/ubuntu-jammy-22.04-amd64-server-*"
 }
 

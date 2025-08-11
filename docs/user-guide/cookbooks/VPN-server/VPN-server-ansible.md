@@ -17,7 +17,7 @@ EC2 instance that was deployed as explained at "SSH CONNECTION" section before.
 
 This Ansible repo will be used here: **[>> Pritunl VPN Server Playbook <<](https://github.com/binbashar/le-ansible-infra/tree/master/vpn-pritunl)**
 
-Copy the playbooks into your project repository. (e.g. you can create an `ansible` directory inside your [**binbash Leverage**](https://leverage.binbash.co/) project repository, so all your infraesctructure code is in the same place)
+Copy the playbooks into your project repository. (e.g. you can create an `ansible` directory inside your [**binbash Leverage**](https://leverage.binbash.co/) project repository, so all your infrastructure code is in the same place)
 
 `cd` into the `ansible-pritunl-vpn-server` (or the name you've chosen) directory.
 

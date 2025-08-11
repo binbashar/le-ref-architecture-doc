@@ -51,7 +51,7 @@ this workflow shows up:
 
 - ArgoCD deployment, in Kubernetes, has a ServiceAccount
 - this ServiceAccount is bound to an IAM Role that we'll call source
-- the source Role can assume a second Role taht we'll call target
+- the source Role can assume a second Role that we'll call target
 - the target Role can assume RBAC permissions using the `aws_auth` config map in the target cluster
 
 This way, ArgoCD, from the source cluster, can deploy stuff into the target cluster.
@@ -77,7 +77,7 @@ The identities to be used by ArgoCD have to be updated in the `shared/us-east-1/
 
 So, go into this layer and edit the `ids_argocd.tf` file.
 
-Here the ServiceAccount used have to be modified to include all the posibilities in the `argocd` namespace:
+Here the ServiceAccount used have to be modified to include all the possibilities in the `argocd` namespace:
 
 ```terraform
 module "role_argocd_devstg" {
@@ -143,8 +143,8 @@ module "iam_assumable_role_argocd" {
 }
 ```
 
-Note MFA is deactivated since this is a programatic access role. Also no policies are added since we need to assume it just to access the cluster.
-    
+Note MFA is deactivated since this is a programmatic access role. Also no policies are added since we need to assume it just to access the cluster.
+
 Apply the layer:
 
 ```shell
@@ -207,7 +207,7 @@ resource "helm_release" "argocd_devstg" {
     templatefile("chart-values/argocd.yaml", {
       argoHost      = "argocd-devstg.${local.environment}.${local.private_base_domain}"
       ingressClass  = local.private_ingress_class
-      clusterIssuer = local.clusterissuer_vistapath
+      clusterIssuer = local.clusterissuer
       roleArn       = data.terraform_remote_state.eks-identities.outputs.argocd_devstg_role_arn
       remoteRoleARN = "role"
       remoteClusterName   = "clustername"

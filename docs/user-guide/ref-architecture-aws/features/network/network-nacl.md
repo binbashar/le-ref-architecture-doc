@@ -15,7 +15,7 @@ manage_default_network_acl    = true
 public_dedicated_network_acl  = false // use dedicated network ACL for the public subnets.
 private_dedicated_network_acl = false // use dedicated network ACL for the private subnets.
 ```
-To verify that default NACLs are enabled in your Leverage proyect, follow this steps:
+To verify that default NACLs are enabled in your Leverage project, follow this steps:
 
 1. Move into the `/shared/us-east-1/base-network/` directory.
 

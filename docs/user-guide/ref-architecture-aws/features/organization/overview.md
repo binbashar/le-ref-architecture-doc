@@ -86,7 +86,7 @@ binbash Leverage Doc, accessed August 4th 2021).
         
     - :orange_book: [**Why should I set up a multi-account AWS environment?**](https://aws.amazon.com/organizations/getting-started/best-practices/)       
     - :orange_book: [**AWS Multiple Account User Management Strategy**](https://docs.aws.amazon.com/IAM/latest/UserGuide/tutorial_cross-account-with-roles.html)
-    - :orange_book: [**AWS Muttiple Account Security Strategy**](https://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-sharing-logs.html)
+    - :orange_book: [**AWS Multiple Account Security Strategy**](https://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-sharing-logs.html)
     - :orange_book: [**AWS Multiple Account Billing Strategy**](https://aws.amazon.com/answers/account-management/aws-multi-account-billing-strategy/)
     - :orange_book: [**AWS Secure Account Setup**](https://aws.amazon.com/answers/security/aws-secure-account-setup/)
     - :orange_book: [**Authentication and Access Control for AWS Organizations**](https://docs.aws.amazon.com/organizations/latest/userguide/orgs_permissions.html) (keep in mind EC2 and other services can also use AWS IAM Roles to get secure cross-account access)

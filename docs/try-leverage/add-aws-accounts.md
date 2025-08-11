@@ -211,12 +211,12 @@ In this example we will create the `apps-prd` account structure by using the `sh
     ]
     ```
     Note here only two AZs are enabled, if needed uncomment the other ones in the three structures.
-    
+
     !!! warning "Do not overlap CIDRs!"
-        Be careful when chosing CIDRs.
-        Avoid overlaping CIDRs between accounts.
+        Be careful when choosing CIDRs.
+        Avoid overlapping CIDRs between accounts.
         If you need a reference on how to chose the right CIDRs, please see [here](/user-guide/ref-architecture-aws/features/network/vpc-addressing/).
-        
+
     !!! info "Calculate CIDRs"
         To calculate CIDRs you can check [this playbook](/user-guide/playbooks/VPC-subnet-calculator/).
 

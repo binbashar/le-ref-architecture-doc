@@ -37,7 +37,7 @@ Can only be run at **layer** level if `--layers` is not set, or at **account** o
 * `--layers`: Applies command to layers listed in this option. (see more info [here](./layers))
 
 !!! info "Regarding S3 backend keys"
-    If the S3 backend block is set, and no key was defined, Leverage CLI will try to create a new one autoatically and store it in the `config.tf` file. It will be based on the layer path relative to the account.
+    If the S3 backend block is set, and no key was defined, Leverage CLI will try to create a new one automatically and store it in the `config.tf` file. It will be based on the layer path relative to the account.
 
 ---
 ## `plan`

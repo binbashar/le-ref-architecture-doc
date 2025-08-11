@@ -11,7 +11,7 @@ through the complete deployment of a basic landing zone configuration.
 The Leverage Landing Zone is the smallest possible fully functional configuration. 
 It lays out the base infrastructure required to manage the environment: billing and
 financial management, user management, security enforcement, and shared services and
-resources. Always following the best practices layed out by the
+resources. Always following the best practices laid out by the
 [AWS Well-Architected Framework](https://docs.aws.amazon.com/wellarchitected/latest/framework/welcome.html) 
 to ensure quality and to provide a solid base to build upon. This is the starting point from which
 any Leverage user can and will develop all the features and capabilities they may require to satisfy

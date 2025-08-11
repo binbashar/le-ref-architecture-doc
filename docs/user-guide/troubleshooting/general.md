@@ -83,7 +83,7 @@ The Leverage CLI mounts the `~/.ssh` directory in order to make the pulling of p
                         APIError: 400 Client Error for http+docker://localhost/v1.43/containers/create: Bad Request ("invalid mount config for type "bind": stat /host_mnt/private/tmp/com.apple.launchd.CWrsoki5yP/Listeners: operation not supported")
 ```
 
-The problem happes because of the file system virtualization that is used by default and can be fixed by choosing the "osxfs (Legacy)" option as shown below:
+The problem happens because of the file system virtualization that is used by default and can be fixed by choosing the "osxfs (Legacy)" option as shown below:
 ![docket-daemon-not-responding](/assets/images/screenshots/leverage-docket-desktop-file-system.png "Docker daemon not responding")
 
 Note: that setting can be accessed by clicking on the Docker Desktop icon tray, and then clicking on "Settings...". The setting should be in the "General" tab.

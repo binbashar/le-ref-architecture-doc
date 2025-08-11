@@ -15,7 +15,7 @@ To source an OpenTofu/Terraform module from a private repository in a layer via 
 
 Leverage CLI will mount the host's SSH-Agent socket into the Leverage Toolbox container, this way your keys are accessed in a secure way.
 
-So, if an SSH private reporitory has to be accessed, the corresponding keys need to be loaded to the SSH-Agent.
+So, if an SSH private repository has to be accessed, the corresponding keys need to be loaded to the SSH-Agent.
 
 If the agent is automatically started and the needed keys added in the host system, it should work as it is.
 

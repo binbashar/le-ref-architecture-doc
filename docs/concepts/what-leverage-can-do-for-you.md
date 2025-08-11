@@ -78,7 +78,7 @@ Still not convinced? Check out the following sections which describe what Levera
     ***Leverage*** provides your DevOps, Cloud, SRE and Development teams with the ability to provision on-demand
     infrastructure, granting that it will meet the rigorous security requirements of modern cloud native best practices. 
     It fully implements AWS Well-Architected Framework (WAF) and best DevOps practices, including practices, including
-    collaboration, version control, CI/CD, continuous testing, cloud infrastructure and losely couple architectures.
+    collaboration, version control, CI/CD, continuous testing, cloud infrastructure and loosely couple architectures.
 
 ??? question "**Easier to support and maintain**"
     ***Leverage*** IaC approach significantly reduce your AWS infra deployment, config and support burden and reduce risk. 

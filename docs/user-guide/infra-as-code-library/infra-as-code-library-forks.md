@@ -28,7 +28,7 @@
     - [x] **Automation:** We’ll maintain all this workflow cross-tech as standardized and
     automated as possible, adding any extra validation like testing, security check, etc., if
     needed -> [Leverage dev-tools](https://github.com/binbashar/le-dev-tools )
-    - [x] **Licence & Ownership:** Since we fork open-source and commercially reusable
+    - [x] **License & Ownership:** Since we fork open-source and commercially reusable
     components w/ [MIT and Apache 2.0 license](https://choosealicense.com/licenses/apache-2.0/). 
     We keep full rights to all commercial, modification, distribution, and private use of
     the code (No Lock-In w/ owners) through forks inside our own Leverage Project repos. 

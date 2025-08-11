@@ -76,7 +76,7 @@ AWS_PROFILE=bb-apps-devstg-devops /extrabin/sops --decrypt secrets.enc.yaml
 
 Now that the secret is stored in a secure file, it can be used.
 
-The example here is prety simple, just getting the value and sending it to an output. But it can be used in any other resource.
+The example here is pretty simple, just getting the value and sending it to an output. But it can be used in any other resource.
 
 First your user (the one used to run [**binbash Leverage**](https://leverage.binbash.co/) ) needs access to the used KMS key.
 

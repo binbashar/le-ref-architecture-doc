@@ -265,7 +265,7 @@ Dictionary:
     
 And this in the second file:
 
-```terraform
+```yaml
 configs:
   clusterCredentials:
     - name: ${remoteName}

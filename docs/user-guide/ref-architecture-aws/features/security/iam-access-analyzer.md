@@ -21,7 +21,7 @@ Supported resource types:
 "How it works - monitoring external access to resources"</a>,
 AWS Documentation, accessed June 11th 2021).
 </figcaption>
-
+<!-- TODO: No longer true, needs to be removed -->
 ## AWS Organizations
 !!! important "CONSIDERATION: AWS Organization integration"
     In order to enable ***AccessAnalyzer*** with the Organization at the zone of

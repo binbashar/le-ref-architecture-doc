@@ -339,7 +339,7 @@ e.g. if you rely on some resource created in a different layer and not reference
   "usage": {
    "used": true,
    "files": [
-    "/home/jdelacamara/Dev/work/BinBash/code/le-tf-infra-aws/apps-devstg/us-east-1/ec2-fleet-ansible --/ec2_fleet.tf"
+    "/home/user/code/le-tf-infra-aws/apps-devstg/us-east-1/ec2-fleet-ansible --/ec2_fleet.tf"
    ]
   }
  },
@@ -352,8 +352,8 @@ e.g. if you rely on some resource created in a different layer and not reference
   "usage": {
    "used": true,
    "files": [
-    "/home/jdelacamara/Dev/work/BinBash/code/le-tf-infra-aws/apps-devstg/us-east-1/ec2-fleet-ansible --/locals.tf",
-    "/home/jdelacamara/Dev/work/BinBash/code/le-tf-infra-aws/apps-devstg/us-east-1/ec2-fleet-ansible --/ec2_fleet.tf"
+    "/home/user/code/le-tf-infra-aws/apps-devstg/us-east-1/ec2-fleet-ansible --/locals.tf",
+    "/home/user/code/le-tf-infra-aws/apps-devstg/us-east-1/ec2-fleet-ansible --/ec2_fleet.tf"
    ]
   }
  },
@@ -366,7 +366,7 @@ e.g. if you rely on some resource created in a different layer and not reference
   "usage": {
    "used": true,
    "files": [
-    "/home/jdelacamara/Dev/work/BinBash/code/le-tf-infra-aws/apps-devstg/us-east-1/ec2-fleet-ansible --/ec2_fleet.tf"
+    "/home/user/code/le-tf-infra-aws/apps-devstg/us-east-1/ec2-fleet-ansible --/ec2_fleet.tf"
    ]
   }
  }

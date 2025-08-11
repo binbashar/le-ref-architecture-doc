@@ -19,14 +19,14 @@ PROJECT=bb
 # General
 MFA_ENABLED=false
 
-# Terraform
-TERRAFORM_IMAGE_TAG=1.2.7-0.1.4
+# OpenTofu
+TF_IMAGE_TAG=1.2.7-0.1.4
 ```
 
 !!! info "Customizing or extending the leverage-toolbox docker image"
     You can locally copy and edit the [Dockerfile](https://github.com/binbashar/le-docker-leverage-toolbox/blob/master/Dockerfile)
     in order to rebuild it based on your needs, eg for a `Dockerfile` placed in the current working directory:
-    `$ docker build -t binbash/leverage-toolbox:1.2.7-0.1.4 --build-arg TERRAFORM_VERSION='1.2.7' .`
+    `$ docker build -t binbash/leverage-toolbox:1.2.7-0.1.4 --build-arg TOFU_VERSION='1.2.7' .`
     In case you like this changes to be permanent please consider 
     [creating and submitting a PR](https://github.com/binbashar/leverage/pulls).
 

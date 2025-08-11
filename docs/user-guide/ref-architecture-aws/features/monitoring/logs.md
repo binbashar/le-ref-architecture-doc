@@ -20,7 +20,7 @@ binbash Leverage Doc, accessed November 18th 2020).
 </figcaption>
 
 !!! danger "Alerting based on Logs" 
-    Certain features that were only available under licence were recently made available by Elastic, and included in the
+    Certain features that were only available under license were recently made available by Elastic, and included in the
     open source project of Elasticsearch. [**Elastalert**](https://github.com/Yelp/elastalert) allow us to generate
     alerts based on certain log entries or even after counting a certain amount of a type of entry, providing great
     flexibility.

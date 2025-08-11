@@ -10,7 +10,7 @@ The `aws` command is a wrapper for a containerized installation of AWS CLI 2.0. 
 leverage aws configure sso
 ```
 
-Extracts information from the project's Terraform configuration to generate the required profiles for AWS CLI to handle SSO.
+Extracts information from the project's OpenTofu configuration to generate the required profiles for AWS CLI to handle SSO.
 
 In the process, you will need to log in via your identity provider. To allow you to do this, Leverage will attempt to open the login page in the system's default browser.
 

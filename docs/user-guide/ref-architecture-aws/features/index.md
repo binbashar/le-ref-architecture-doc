@@ -17,7 +17,7 @@ This reference architecture supports a growing number of AWS services. This sect
     - [x] [Hashicorp Vault Credentials](identities/credentials-vault.md)
 
 !!! check "Single Sign-On (SSO)"
-    - [x] [AWS SSO + Jumpcloud IdP](sso/overview.md)
+    - [x] [AWS SSO](sso/overview.md)
 
 !!! check "Cost Monitoring & Optimization"
     - [x] [Costs](costs/costs.md)

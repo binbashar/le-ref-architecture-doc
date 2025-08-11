@@ -24,4 +24,4 @@ leverage project create
 
 The `project create` subcommand creates the files structure for the architecture in the current directory and configures it based on the values set in the `project.yaml` file.
 
-It will then proceed to make sure all files follow the standard Terraform code style.
+It will then proceed to make sure all files follow the standard OpenTofu code style.

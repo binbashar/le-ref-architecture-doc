@@ -5,7 +5,7 @@
     - :file_folder: **Global config file** 
     [`/config/common.tfvars`](https://github.com/binbashar/le-tf-infra-aws/blob/master/config/common.tfvars.example) 
     contains global context TF variables that we inject to TF commands which are used by all sub-directories such as 
-    `leverage terraform plan` or `leverage terraform apply` and which cannot be stored in `backend.tfvars` due to TF.
+    `leverage tofu plan` or `leverage tofu apply` and which cannot be stored in `backend.tfvars` due to TF.
     - :file_folder: **Account config files** 
         - [`backend.tfvars`](https://github.com/binbashar/le-tf-infra-aws/blob/master/shared/config/backend.tfvars)
          contains TF variables that are mainly used to configure TF backend but since
@@ -14,13 +14,13 @@
          contains TF variables that are specific to an AWS account.
     - :file_folder: **Global `common-variables.tf` file**
     [`/config/common-variables.tfvars`](https://github.com/binbashar/le-tf-infra-aws/blob/master/config/common-variables.tf)
-    contains global context TF variables that we symlink to all terraform layers code e.g. [shared/us-east-1/tools-vpn-server/common-variables.tf](https://github.com/binbashar/le-tf-infra-aws/blob/master/shared/us-east-1/tools-vpn-server/common-variables.tf).
+    contains global context TF variables that we symlink to all opentofu layers code e.g. [shared/us-east-1/tools-vpn-server/common-variables.tf](https://github.com/binbashar/le-tf-infra-aws/blob/master/shared/us-east-1/tools-vpn-server/common-variables.tf).
     - :file_folder: **`build.env` file**
         - By utilizing the [`build.env`](https://github.com/binbashar/le-tf-infra-aws/blob/master/build.env) capability,
           you can easily change some default behaviors of the CLI. Read more in its dedicated
           ["Override defaults via `build.env` file" section](../leverage-cli/extending-leverage/build.env.md).
           
-## Setting credentials for Terraform via AWS profiles
+## Setting credentials for OpenTofu via AWS profiles
 - File `backend.tfvars` will inject the profile name that TF will use to make changes on AWS.
 - Such profile is usually one that relies on another profile to assume a role to get access to each corresponding account.
 - Please read [the credentials section](./credentials.md) to understand the alternatives supported by Leverage to authenticate with AWS.

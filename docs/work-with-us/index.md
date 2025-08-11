@@ -2,7 +2,7 @@
 
 ## Customers collaboration methodology  
 
-![leverage-worflow](/assets/images/diagrams/ref-architecture-collab-methodology.png "Leverage"){: style="width:1200px"}
+![leverage-workflow](/assets/images/diagrams/ref-architecture-collab-methodology.png "Leverage"){: style="width:1200px"}
 
 !!! info "What are all the steps of an engagement"
     - [x] **1st Stage:** Leverage Customer Tech Intro Interview

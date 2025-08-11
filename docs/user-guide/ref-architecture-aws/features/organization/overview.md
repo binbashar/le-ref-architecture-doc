@@ -1,7 +1,7 @@
 # AWS Organizations
 
 ## Overview
-This repository contains all Terraform configuration files used to create binbash Leverage Reference 
+This repository contains all OpenTofu configuration files used to create binbash Leverage Reference 
 [**AWS Organizations**](https://aws.amazon.com/organizations/) Multi-Account baseline layout.
 
 !!! check "Why AWS Organizations?"
@@ -58,7 +58,7 @@ binbash Leverage Doc, accessed August 4th 2021).
     - [x] **Operations:** Will reduce the **blast radius** to the maximum possible.   
     - [x] **Compatibility:** Legacy accounts can (probably should) be [invited 
          as a member of the new Organization](https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_invites.html)
-          and afterwards even imported into your [terraform code](https://www.terraform.io/docs/providers/aws/r/organizations_account.html#import).
+          and afterwards even imported into your [OpenTofu code](https://search.opentofu.org/provider/opentofu/aws/latest/docs/resources/organizations_account#import).
     - [x] **Migration:** After having your baseline AWS Org reference cloud solutions architecture deployed
         (IAM, VPC, NACLS, VPC-Peering, DNS Cross-Org,
         CloudTrail, etc) you're ready to start progressively orchestrating new resources in order to segregate different
@@ -76,7 +76,7 @@ binbash Leverage Doc, accessed August 4th 2021).
               6. Finally switch `jenkins2.aws.domain.com` -> to -> `jenkins.aws.domain.com`
               7. Stop your old EC2_A.
               8. If everything looks fine after after 2/4 weeks you could terminate your EC2_A (hope everything is as 
-                code and just `terraform destroy`)
+                code and just `tofu destroy`)
               9. Considering the previously detailed steps plan your roadmap to move forward with every other component
                 to be migrated.
 
@@ -86,7 +86,7 @@ binbash Leverage Doc, accessed August 4th 2021).
         
     - :orange_book: [**Why should I set up a multi-account AWS environment?**](https://aws.amazon.com/organizations/getting-started/best-practices/)       
     - :orange_book: [**AWS Multiple Account User Management Strategy**](https://docs.aws.amazon.com/IAM/latest/UserGuide/tutorial_cross-account-with-roles.html)
-    - :orange_book: [**AWS Muttiple Account Security Strategy**](https://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-sharing-logs.html)
+    - :orange_book: [**AWS Multiple Account Security Strategy**](https://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-sharing-logs.html)
     - :orange_book: [**AWS Multiple Account Billing Strategy**](https://aws.amazon.com/answers/account-management/aws-multi-account-billing-strategy/)
     - :orange_book: [**AWS Secure Account Setup**](https://aws.amazon.com/answers/security/aws-secure-account-setup/)
     - :orange_book: [**Authentication and Access Control for AWS Organizations**](https://docs.aws.amazon.com/organizations/latest/userguide/orgs_permissions.html) (keep in mind EC2 and other services can also use AWS IAM Roles to get secure cross-account access)

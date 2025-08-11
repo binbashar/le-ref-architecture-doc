@@ -23,7 +23,7 @@ The events will be available in CloudTrail's event history for 90 days whereas t
 !!! info "Tip"
     The great thing about this setup is that whenever you create new accounts or enable new regions, you won't need to worry about performing additional configuration on CloudTrail.
 
-!!! example "![leverage-tf](/assets/images/logos/terraform.png "Terraform"){: style="width:25px"} IaC Terraform Codebase <>"
+!!! example "![leverage-tf](/assets/images/logos/opentofu.png "OpenTofu"){: style="width:25px"} IaC OpenTofu Codebase <>"
     - [x] `binbash-management` account | Cloudtrail Administrator Delegation
         - **Code:** [management/us-east-1/security-audit](https://github.com/binbashar/le-tf-infra-aws/blob/master/management/global/organizations/organization.tf)
     - [x] `binbash-security` account | Cloudtrail Trail & S3 Bucket

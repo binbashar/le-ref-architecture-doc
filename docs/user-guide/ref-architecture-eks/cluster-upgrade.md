@@ -37,7 +37,7 @@ Another documentation you should refer to is the Kubernetes official documentati
 For instance, typical changes include:
 
 * Removed/deprecated Kubernetes APIs: this one may require that you also upgrade the resources used by your applications or even base components your applications rely on. E.g. cert-manager, external-dns, etc.
-* You can use tools such as [kubent](https://github.com/doitintl/kube-no-trouble) to find deprecated API versions. That should list the resources that need to be upgraded however you may still need to figure out if it's an EKS base component or a cluster component installed via Terraform & Helm.
+* You can use tools such as [kubent](https://github.com/doitintl/kube-no-trouble) to find deprecated API versions. That should list the resources that need to be upgraded however you may still need to figure out if it's an EKS base component or a cluster component installed via OpenTofu & Helm.
 * Base component updates: this is about changes to control plane components. components that run on the nodes. An example of that would be the deprecation and removal of Docker as a container runtime.
 
 #### Plan a maintenance window for the upgrade
@@ -57,16 +57,16 @@ Such tools include the AWS console (via AWS EKS Monitoring section) and also too
 ### 3) Upgrade Steps
 
 #### 1) Upgrade Control Plane
-This is simply about updating the `cluster_version` variable in the `variables.tf` file within the `cluster` layer of the cluster you want to upgrade and then applying that change. However, the current version of the Terraform EKS module, when modifying the cluster version input, it will show that it needs to upgrade the control plane and the nodes which may not follow the expected order (first cluster, then nodes). Another thing that could go wrong is Terraform ending up in an unfinished state due to the upgrade taking too long to complete (or, what happened to me, the cluster gets upgraded but somehow the launch template used for the nodes is deleted and thus the upgraded nodes cannot be spun up).
+This is simply about updating the `cluster_version` variable in the `variables.tf` file within the `cluster` layer of the cluster you want to upgrade and then applying that change. However, the current version of the Terraform EKS module, when modifying the cluster version input, it will show that it needs to upgrade the control plane and the nodes which may not follow the expected order (first cluster, then nodes). Another thing that could go wrong is OpenTofu ending up in an unfinished state due to the upgrade taking too long to complete (or, what happened to me, the cluster gets upgraded but somehow the launch template used for the nodes is deleted and thus the upgraded nodes cannot be spun up).
 
-The alternative to all of that is to perform the upgrade outside Terraform and, after it is complete, to update the `cluster_version` variable in `variables.tf` file. Then you can run a Terraform Plan to verify the output shows no changes. This should be the method that provides a good degree of control over the upgrade.
+The alternative to all of that is to perform the upgrade outside OpenTofu and, after it is complete, to update the `cluster_version` variable in `variables.tf` file. Then you can run a OpenTofu Plan to verify the output shows no changes. This should be the method that provides a good degree of control over the upgrade.
 
 Having said that, go ahead and proceed with the upgrade, either via [the AWS console, the AWS CLI or the EKS CLI](https://docs.aws.amazon.com/eks/latest/userguide/update-cluster.html) and watch the upgrade as it happens. As it was stated in a previous step, the Kubernetes API may evidence some down-time during this operation so make sure you prepare accordingly.
 
 #### 2) Upgrade Managed Node Groups
 Once the control plane is upgraded you should be ready to upgrade the nodes. There are 2 strategies you could use here: rolling-upgrade or recreate. The former is recommended for causing the minimal disruption. Recreate could be used in an environment where down-time won't be an issue.
 
-As it was mentioned in the previous step, the recommendation is to trigger the upgrade outside Terraform so please proceed with that and monitor the operation as it happens (via AWS EKS console, via Kubectl, via Prometheus/Grafana).
+As it was mentioned in the previous step, the recommendation is to trigger the upgrade outside OpenTofu so please proceed with that and monitor the operation as it happens (via AWS EKS console, via Kubectl, via Prometheus/Grafana).
 
 If you go with the AWS CLI, you can use the following command to get a list of the clusters available to your current AWS credentials:
 ```
@@ -96,7 +96,7 @@ The `--force` flag is generally useful to bypass pod eviction failures.
 Once you are done with the upgrade you can continue with the rest of the node groups.
 
 #### 3) Upgrade Cluster AutoScaler version
-Modify [scaling.tf](https://github.com/binbashar/le-tf-infra-aws/blob/master/apps-devstg/us-east-1/k8s-eks/k8s-components/scaling.tf) per [the official Kubernetes autoscaler chart](https://github.com/kubernetes/autoscaler/tree/master/charts/cluster-autoscaler) and apply with Terraform.
+Modify [scaling.tf](https://github.com/binbashar/le-tf-infra-aws/blob/master/apps-devstg/us-east-1/k8s-eks/k8s-components/scaling.tf) per [the official Kubernetes autoscaler chart](https://github.com/kubernetes/autoscaler/tree/master/charts/cluster-autoscaler) and apply with OpenTofu.
 The version of the cluster autoscaler should at least match the cluster version you are moving to. A greater version of the autoscaler might work with earlier version of Kubernetes but the opposite most likely won't be the case.
 
 #### 4) Upgrade EKS base components
@@ -141,7 +141,7 @@ panic: runtime error: invalid memory address or nil pointer dereference
 
 Cluster Autoscaler: it is already at v1.23.0. The idea is that this should match with the Kubernetes version but since the version we have has been working well so far, we can keep it and it should cover us until we upgrade Kubernetes to a matching version.
 
-Managed Nodes failures due to PodEvictionFailure: this one happened twice during a Production cluster upgrade. It seemed to be related to Calico pods using tolerations that are not compatible with Kubernetes typical node upgrade procedure. In short, the pods tolerate the NoSchedule taint and thus refuse to be evicted from the nodes during a drain procedure. The workaround that worked was using a forced upgrade. That is essentially a flag that can be passed via Terraform (or via AWS CLI). A more permanent solution would involve figuring out a proper way to configure Calico pods without the problematic toleration; we just need to keep in mind that we are deploying Calico via the Tigera Operator.
+Managed Nodes failures due to PodEvictionFailure: this one happened twice during a Production cluster upgrade. It seemed to be related to Calico pods using tolerations that are not compatible with Kubernetes typical node upgrade procedure. In short, the pods tolerate the NoSchedule taint and thus refuse to be evicted from the nodes during a drain procedure. The workaround that worked was using a forced upgrade. That is essentially a flag that can be passed via OpenTofu (or via AWS CLI). A more permanent solution would involve figuring out a proper way to configure Calico pods without the problematic toleration; we just need to keep in mind that we are deploying Calico via the Tigera Operator.
 
 ##### Upgrade to v1.22
 
@@ -174,7 +174,7 @@ No extra considerations are needed to upgrade from v1.25 to v1.26. The standard 
 In a similar fashion to the previous upgrade notes, the standard procedure listed above should work with no issues.
 
 !!! info "Official AWS procedure"
-    A step-bystep instructions guide for upgrading an EKS cluster can be found at the following link:
+    A step-by-step instructions guide for upgrading an EKS cluster can be found at the following link:
     [https://repost.aws/knowledge-center/eks-plan-upgrade-cluster](https://repost.aws/knowledge-center/eks-plan-upgrade-cluster)
 
 !!! info "Official AWS Release Notes"

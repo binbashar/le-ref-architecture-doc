@@ -6,14 +6,14 @@
     AWS Backup is a fully managed backup service that makes it easy to centralize and automate the backup of data across
     AWS services. Using AWS Backup, you can centrally configure backup policies and monitor backup activity for AWS
     resources, such as:
-    
+
     * [x] Amazon **EBS volumes**, 
     * [x] Amazon **EC2 instances**, 
     * [x] Amazon **RDS databases**, 
     * [x] Amazon **DynamoDB tables**, 
     * [x] Amazon **EFS file systems**,
     * [x] and AWS **Storage Gateway volumes**. 
-    
+
     AWS Backup automates and consolidates backup tasks previously performed service-by-service, removing the need to 
     create custom scripts and manual processes. 
     With just a few clicks in the AWS Backup console, you can create backup policies that automate backup schedules
@@ -39,8 +39,8 @@ This can be setup on request to increase durability and along with database back
 ## Comparison of the backup and retention policies strategies
 
 In this sub-section you'll find the resources to review and adjust your backup retention policies to 
-adhere to compliance rules that govern your specific institutions regulations. This post is a summarised
-write-up of how we approached this sensitive task, the alternatives we analysed and the recommended 
+adhere to compliance rules that govern your specific institutions regulations. This post is a summarized
+write-up of how we approached this sensitive task, the alternatives we analyzed and the recommended 
 solutions we provided in order to meet the requirements. We hope it can be useful for others as well.
 
 !!! info "Leverage Confluence Documentation"    

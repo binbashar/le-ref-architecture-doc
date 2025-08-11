@@ -103,7 +103,7 @@ Note this instance can be started/stopped in an scheduled fashion, see [here](/u
 (Note also, if no EIP is being used, when the instance is stopped and then started again the IP will change.)
 
 #### Deployment Steps
-1. [Create the EC2 instance with Terraform](./VPN-server-terraform.md)
+1. [Create the EC2 instance with OpenTofu](./VPN-server-opentofu.md)
 2. [Deploy Pritunl VPN Server with Ansible](./VPN-server-ansible.md)
 3. [Configure Pritunl from its web GUI interface](./VPN-server-gui-setup.md)
 

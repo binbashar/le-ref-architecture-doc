@@ -77,23 +77,23 @@ cp -r shared/config apps-dummy/
 ```
 
 In `config/account.tfvars` change this:
-```yaml
+```hcl
 ## Environment Name
 environment = "shared"
 ```
 to this
-```yaml
+```hcl
 ## Environment Name
 environment = "apps-dummy"
 ```
 (note the environment is the same as the created dir)
 
 In `config/backend.tfvars` change this:
-```yaml
+```hcl
 profile = "bm-shared-oaar"
 ```
 to this:
-```yaml
+```hcl
 profile = "bm-management"
 ```
 
@@ -115,7 +115,7 @@ cd apps-dummy/us-east-1/base-network
 
 Since we are testing we won't use the S3 backend (we didn't create the bucket, but you can do it easily with the `base-tf-backend` layer), so comment this line in `config.tf` file:
 
-```yaml
+```hcl
   #backend "s3" {
   #  key = "shared/network/terraform.tfstate"
   #}
@@ -197,20 +197,20 @@ rm common-variables.tf
 
 Again, since we are not running the whole **binbash Leverage Landing Zone** we need to comment out these lines in `config.tf`:
 
-```yaml
+```hcl
   #backend "s3" {
   #  key = "apps-devstg/ec2-fleet-ansible/terraform.tfstate"
   #}
 ```
 
 Also in this file, comment out these two resources:
-```yaml
+```hcl
 data "terraform_remote_state" "security" {
 data "terraform_remote_state" "vpc-shared" {
 ```
 
 And change `vpc` to be like this:
-```yaml
+```hcl
 data "terraform_remote_state" "vpc" {
   backend = "local"
   config = {
@@ -218,10 +218,10 @@ data "terraform_remote_state" "vpc" {
   }
 }
 ```
-Again, since we are not using the full **binbash Leverage** capabilities, we are not using the S3 Terraform backend, thus the backend is local.
+Again, since we are not using the full **binbash Leverage** capabilities, we are not using the S3 OpenTofu backend, thus the backend is local.
 
 In `ec2_fleet.tf` update module version like this:
-```yaml
+```hcl
   source = "github.com/binbashar/terraform-aws-ec2-instance.git?ref=v5.5.0"
 ```
 
@@ -235,7 +235,7 @@ Now, we need some common and specific vars that are not set.
 
 So, create a `variables.tf` file with this content:
 
-```yaml
+```hcl
 variable "environment" {
   type        = string
   description = "Environment Name"
@@ -253,7 +253,7 @@ variable "region" {
 ##=============================#
 variable "aws_ami_os_id" {
   type        = string
-  description = "AWS AMI Operating System Identificator"
+  description = "AWS AMI Operating System Identifier"
   default     = "ubuntu/images/hvm-ssd/ubuntu-jammy-22.04-amd64-server-*"
 }
 
@@ -295,7 +295,7 @@ variable "enable_ssm_access" {
 
 In `ec2_fleet.tf` file comment these lines:
 
-```yaml
+```hcl
  # data.terraform_remote_state.vpc-shared.outputs.vpc_cidr_block
 
  # key_name               = data.terraform_remote_state.security.outputs.aws_key_pair_name
@@ -305,7 +305,7 @@ In `ec2_fleet.tf` file comment these lines:
 If you plan to access the instance from the Internet (EC2 in a public subnet)(e.g. to use Ansible), you change the first line to `"0.0.0.0/0"`. (or better, a specific public IP)
 
 If you want to add an SSH key (e.g. to use Ansible), you can [generate a new SSH key](https://www.ssh.com/academy/ssh/keygen), add a resource like this:
-```yaml
+```hcl
 resource "aws_key_pair" "devops" {
   key_name   = "devops-key"
   public_key = "ssh-ed25519 AAAAC3N9999999999999999999999999eF Binbash-AWS-instances"
@@ -313,7 +313,7 @@ resource "aws_key_pair" "devops" {
 
 ```
 And replace the line in `ec2_fleet.tf` with this one:
-```yaml
+```hcl
   key_name               = aws_key_pair.devops.key_name
 ```
 
@@ -321,12 +321,12 @@ In the same file, change `instance_type` as per your needs.
 
 Also you can add this 
 * * *to the `ec2_ansible_fleet` resource:
-```yaml
+```hcl
   create_spot_instance = true
 ```
 to create spot instances....
 and this
-```yaml
+```hcl
   create_iam_instance_profile = true
   iam_role_description        = "IAM role for EC2 instance"
   iam_role_policies = {

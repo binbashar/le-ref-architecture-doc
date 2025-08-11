@@ -1,5 +1,5 @@
 # Our Tech Stack
-Leverage was built around the [AWS Well Architected Framework](https://aws.amazon.com/architecture/well-architected/) and it uses a stack that includes [Terraform](https://www.terraform.io/), [Ansible](https://www.ansible.com/), [Helm](https://helm.sh/) and other tools.
+Leverage was built around the [AWS Well Architected Framework](https://aws.amazon.com/architecture/well-architected/) and it uses a stack that includes [OpenTofu](https://opentofu.org/)/[Terraform](https://developer.hashicorp.com/terraform), [Ansible](https://www.ansible.com/), [Helm](https://helm.sh/) and other tools.
 
 We are also adopters and supporters of Kubernetes and the Cloud Native movement, which should become self-evident as you keep exploring our technology stack.
 
@@ -11,11 +11,11 @@ We are also adopters and supporters of Kubernetes and the Cloud Native movement,
     Millions of customers—including the fastest-growing startups, largest enterprises,
     and leading government agencies—are using AWS to lower costs, become more agile,
     and innovate faster.
-    
+
     Build, Deploy, and Manage Websites, Apps or Processes On AWS' Secure, Reliable Network.
     AWS is Secure, Reliable, Scalable Services. HIPAA Compliant.
     Easily Manage Clusters. Global Infrastructure. Highly Scalable.
-    
+
     :books: **Read More:** [What is AWS](https://aws.amazon.com/what-is-aws/)
 
 ??? info "Why WAF (Well Architected Framework)❓"
@@ -24,10 +24,10 @@ We are also adopters and supporters of Kubernetes and the Cloud Native movement,
     — operational excellence, security, reliability, performance efficiency, and cost
     optimization — AWS Well-Architected provides a consistent approach for customers and
     partners to evaluate architectures, and implement designs that can scale over time.
-    
+
     :books: **Read More:** [AWS Well-architected](https://aws.amazon.com/architecture/well-architected)
 
-??? info "Why Infra as Code (IaC) & Terraform❓"
+??? info "Why Infra as Code (IaC) & OpenTofu/Terraform❓"
 
     - [x] **Confidence:** A change breaks the env? Just roll it back. Still not working?
     Build a whole new env with a few keystrokes. IaC enables this.
@@ -50,28 +50,28 @@ We are also adopters and supporters of Kubernetes and the Cloud Native movement,
     provisioned. In the #cloud this can be a huge #cost issue. IaC allows tracking your
     resources.
 
-    - [x] **Portability:** Some IaC techs are #multicloud. Also, translating #Terraform from
-    one cloud provider to another is considerably more simple than recreating your entire
+    - [x] **Portability:** Some IaC techs are #multicloud. Also, translating #OpenTofu/Terraform
+    from one cloud provider to another is considerably more simple than recreating your entire
     envs in a cloud-specific tool.
 
     - [x] **Security:** See history of changes to your SG rules along with commit messages can
     do wonders for being confident about the security configs of your envs.
 
-    **Terraform** allows to codify your application infrastructure, reduce human error and 
-    increase automation by provisioning infrastructure as code.
-    With TF we can manage infrastructure across clouds and provision infrastructure 
+    **OpenTofu/Terraform** allows to codify your application infrastructure, reduce human error
+    and increase automation by provisioning infrastructure as code.
+    With Tofu we can manage infrastructure across clouds and provision infrastructure 
     across 300+ public clouds and services using a single workflow.
     Moreover it helps to create reproducible infrastructure and provision consistent testing,
     staging, and production environments with the same configuration.
 
-    **Terraform** has everything we expect from a IaC framework: open source, cloud-agnostic
-    provisioning tool that supported immutable infrastructure, a declarative language, and
-    a client-only architecture.
+    **OpenTofu/Terraform** has everything we expect from a IaC framework: open source,
+    cloud-agnostic provisioning tool that supported immutable infrastructure, a declarative
+    language, and a client-only architecture.
 
     :books: **Read More**
 
     - [Why Infrastructure as Code](https://www.simplethread.com/why-infrastructure-as-code/)
-    - [Why Terraform by Gruntwork](https://blog.gruntwork.io/why-we-use-terraform-and-not-chef-puppet-ansible-saltstack-or-cloudformation-7989dad2865c)
+    - [Why Terraform by Gruntwork](https://blog.gruntwork.io/why-we-use-terraform-and-not-chef-puppet-ansible-saltstack-or-cloudformation-7989dad2865c) (most of the points made in the article also apply to OpenTofu)
 
 ??? info "Why Organizations❓"
     AWS Organizations helps you centrally manage and govern your environment as you grow
@@ -81,7 +81,7 @@ We are also adopters and supporters of Kubernetes and the Cloud Native movement,
     single payment method for all of your accounts.
 
     :books: **Read More** 
-    
+
     - [How it works: AWS Organizations](/user-guide/organization/organization/)
     - [AWS Organizations](https://aws.amazon.com/organizations/)
 
@@ -89,18 +89,18 @@ We are also adopters and supporters of Kubernetes and the Cloud Native movement,
     AWS Identity and Access Management (IAM) enables you to manage access to AWS services
     and resources securely. Using IAM, you can create and manage AWS users and groups,
     and use permissions to allow and deny their access to AWS resources.
-    
+
     - Integration and Fine-grained access control with almost every AWS service and
     its resources.
     - Multi-factor authentication for highly privileged users.
     - Analyze, monitor and audit access.
 
     :books: **Read More** 
-    
+
     - [How it works: AWS IAM](/user-guide/identities/identities/)
     - [AWS Identity and Access Management (IAM)](https://aws.amazon.com/iam/)
 
-??? info "Security | Why Web Application Firewall (WAF), Cloud Trail, Config, Guarduty❓"
+??? info "Security | Why Web Application Firewall (WAF), CloudTrail, Config, GuardDuty❓"
     Raise your security posture with AWS infrastructure and services.
     Using AWS, you will gain the control and confidence you need to securely run your
     business with the most flexible and secure cloud computing environment available today.
@@ -141,7 +141,7 @@ We are also adopters and supporters of Kubernetes and the Cloud Native movement,
     as patching, node provisioning, and updates. Customers such as Intel, Snap, Intuit,
     GoDaddy, and Autodesk trust EKS to run their most sensitive and mission critical
     applications.
-    
+
     **EKS** runs upstream Kubernetes and is certified Kubernetes conformant for a predictable
     experience. You can easily migrate any standard Kubernetes application to EKS without 
     needing to refactor your code.
@@ -204,7 +204,7 @@ We are also adopters and supporters of Kubernetes and the Cloud Native movement,
     HashiCorp Vault makes it very easy to control and manage access by providing you
     with a unilateral interface to manage every secret in your infrastructure. Not only 
     that, you can also create detailed audit logs and keep track of who accessed what.
-    
+
     Manage Secrets and Protect Sensitive Data. Secure, store and tightly control access
     to tokens, passwords, certificates, encryption keys for protecting secrets and other
     sensitive data using a UI, CLI, or HTTP API.

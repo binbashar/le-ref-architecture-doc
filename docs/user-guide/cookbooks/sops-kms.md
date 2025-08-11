@@ -62,7 +62,7 @@ AWS_PROFILE=bb-apps-devstg-devops /extrabin/sops --encrypt --kms {your-kms-arn-h
     Since [**binbash Leverage**](https://leverage.binbash.co/) [Landing Zone](https://leverage.binbash.co/try-leverage/) is being used, the default key for the account+region has an alias: `${var.project}_${var.environment}_${var.kms_key_name}_key`, in this case is `vp_apps-devstg_default_key`, so `arn:aws:kms:<region>:<account>:alias/vp_apps-devstg_default_key` should be used.
     
 !!! info
-    To use this file with Terraform, edit the `secrets.enc.yaml` and at the bottom, edit the line with `aws_profile` and set there the AWS Profile you've used to encrypt the file.
+    To use this file with OpenTofu, edit the `secrets.enc.yaml` and at the bottom, edit the line with `aws_profile` and set there the AWS Profile you've used to encrypt the file.
 
 ##  Decrypt the file
 
@@ -76,7 +76,7 @@ AWS_PROFILE=bb-apps-devstg-devops /extrabin/sops --decrypt secrets.enc.yaml
 
 Now that the secret is stored in a secure file, it can be used.
 
-The example here is prety simple, just getting the value and sending it to an output. But it can be used in any other resource.
+The example here is pretty simple, just getting the value and sending it to an output. But it can be used in any other resource.
 
 First your user (the one used to run [**binbash Leverage**](https://leverage.binbash.co/) ) needs access to the used KMS key.
 

@@ -42,7 +42,7 @@ Make a note of all of these and keep them in a safe place as you will need them 
 
 !!! info
         If you are only getting the bootstrap user credentials for someone else in your team or
-        in Binbash's team, then please share that using a secure way (e.g. password management
+        in binbash's team, then please share that using a secure way (e.g. password management
         service, GPG keys, etc).
 
 !!! info

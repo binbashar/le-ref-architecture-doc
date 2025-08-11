@@ -72,7 +72,7 @@ show below:
 
 ![leverage-vpn-pritunl](../../../assets/images/screenshots/vpn-pritunl-servers.png "Pritunl VPN"){: style="width: 650px"}
 <figcaption style="font-size:15px">
-<b>Figure:</b> Pritunl VPN Administrartor & DevOps Servers.
+<b>Figure:</b> Pritunl VPN Administrator & DevOps Servers.
 </figcaption>
 
 - :books: [OFFICIAL DOC: Config Server & Connect](https://docs.pritunl.com/docs/connecting)

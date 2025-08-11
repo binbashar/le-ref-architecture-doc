@@ -1,15 +1,15 @@
-# Terraform - S3 & DynamoDB for Remote State Storage & Locking
+# OpenTofu - S3 & DynamoDB for Remote State Storage & Locking
 
 ## Overview
-Use this terraform configuration files to create the **S3 bucket** & **DynamoDB** table needed to use Terraform Remote State Storage & Locking.
+Use this tofu configuration to create the **S3 bucket** & **DynamoDB** table needed to use OpenTofu Remote State Storage & Locking.
 
-!!! info "What is the Terraform Remote State?"
-    Read the [official definition](https://developer.hashicorp.com/terraform/language/state/remote) by Hashicorp.
+!!! info "What is the OpenTofu Remote State?"
+    Read the [official definition](https://opentofu.org/docs/language/state/remote/) by Hashicorp.
 
-![leverage-ref-arch-tf](/assets/images/diagrams/terraform-aws-s3-backend.png "Leverage"){: style="width:350px"}
+![leverage-ref-arch-tf](/assets/images/diagrams/opentofu-aws-s3-backend.png "Leverage"){: style="width:350px; display:block; margin: 0 auto;"}
 
 <figcaption style="font-size:15px">
-<b>Figure:</b> Terraform remote state store & locking necessary AWS S3 bucket and DynamoDB table components.
+<b>Figure:</b> OpenTofu remote state store & locking necessary AWS S3 bucket and DynamoDB table components.
 (Source: binbash Leverage, 
 <a href="https://registry.terraform.io/modules/binbashar/tfstate-backend/aws/latest">
 "Terraform Module: Terraform Backend"</a>,
@@ -18,11 +18,11 @@ Terraform modules registry, accessed December 3rd 2020).
 
 ## Prerequisites
 
-!!! example "Terraform repo structure + state backend initialization"
+!!! example "OpenTofu repo structure + state backend initialization"
     1. Ensure you have [`Leverage CLI`](/user-guide/leverage-cli/overview.md) installed in your system
     2. Refer to [Configuration Pre-requisites](./configuration.md) to understand how to set up the
       configuration files required for this layer. Where you must build your
-      [Terraform Reference Architecture account structure](features/organization/overview.md)
+      [OpenTofu Reference Architecture account structure](features/organization/overview.md)
     3. Leveraged by the [Infrastructure as Code (IaC) Library](/user-guide/infra-as-code-library/overview.md) through the
      [terraform-aws-tfstate-backend module](https://registry.terraform.io/modules/binbashar/tfstate-backend/aws/latest)
         - [/management/base-tf-backend](https://github.com/binbashar/le-tf-infra-aws/tree/master/root/us-east-1/base-tf-backend)
@@ -37,26 +37,26 @@ Terraform modules registry, accessed December 3rd 2020).
 !!! example "Steps to initialize your tf-backend"
     1. At the corresponding account dir, 
       eg: [/shared/base-tf-backend](https://github.com/binbashar/le-tf-infra-aws/tree/master/shared/us-east-1/base-tf-backend) then,
-    2. Run `leverage terraform init --skip-validation`
-    3. Run `leverage terraform plan`, review the output to understand the expected changes
-    4. Run `leverage terraform apply`, review the output once more and type `yes` if you are okay with that
+    2. Run `leverage tofu init --skip-validation`
+    3. Run `leverage tofu plan`, review the output to understand the expected changes
+    4. Run `leverage tofu apply`, review the output once more and type `yes` if you are okay with that
     5. This should create a `terraform.tfstate` file in this directory but we don't want to push that to the repository so 
       let's push the state to the backend we just created
-        
+
         - Open `config.tf` and uncomment the following lines:
         ```
           # backend "s3" {
           #   key = "shared/tf-backend/terraform.tfstate"
           # }
         ```
-        - Run `leverage terraform init` and type `yes` when Terraform asks if you want to import the state to the S3 backend
+        - Run `leverage tofu init` and type `yes` when OpenTofu asks if you want to import the state to the S3 backend
         - Done. You can remove `terraform.tfstate` now (and also `terraform.tfstate.backup` if available)
 
 ## Expected workflow after set up 
 :warning: This video is outdated!
 [![asciicast](https://asciinema.org/a/377220.svg)](https://asciinema.org/a/377220)
 
-# Terraform Remote State
+# OpenTofu Remote State
 In the `base-tf-backend` folder you should find the definition of the infrastructure that needs to be deployed before 
 you can get to work with anything else.
 

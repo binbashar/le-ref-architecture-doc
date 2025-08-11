@@ -84,7 +84,7 @@ To ensure that worked, let's run a few commands to verify:
 2. Move to the `management/global/sso` layer
 3. Run: `leverage tf plan`
 4. You should get this error: "Error: error configuring S3 Backend: no valid credential sources for S3 Backend found."
-5. This happens because so far you have been running Terraform with a different AWS profile (the bootstrap one). Luckily the fix is simple, just run this: `leverage tf init -reconfigure`. Terraform should reconfigure the AWS profile in the `.terraform/terraform.tfstate` file.
+5. This happens because so far you have been running OpenTofu with a different AWS profile (the bootstrap one). Luckily the fix is simple, just run this: `leverage tf init -reconfigure`. OpenTofu should reconfigure the AWS profile in the `.terraform/terraform.tfstate` file.
 6. Now try running that `leverage tf plan` command again
 7. This time it should succeed, you should see the message: `No changes. Your infrastructure matches the configuration.`
 

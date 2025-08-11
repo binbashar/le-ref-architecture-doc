@@ -2,7 +2,7 @@
 
 The `credentials` command is used to set up and manage the AWS CLI credentials required to interact with the AWS environment.
 
-All `credentials`'s subcommands feed off the `project.yaml`, `build.env`, and Terraform configuration files to obtain the information they need. In case the basic required information is not found, the subcommands will prompt the user for it.
+All `credentials`'s subcommands feed off the `project.yaml`, `build.env`, and OpenTofu configuration files to obtain the information they need. In case the basic required information is not found, the subcommands will prompt the user for it.
 
 ---
 ## `configure`
@@ -14,7 +14,7 @@ leverage credentials configure --type [BOOTSTRAP|MANAGEMENT|SECURITY] [options]
 
 The `credentials configure` command sets up the credentials needed to interact with the AWS environment, from the initial deployment process (`BOOTSTRAP`) to everyday management (`MANAGEMENT`) and development or use (`SECURITY`) of it.
 
-It attempts to retrieve the structure of the organization in order to generate all the [AWS CLI profiles required to interact with the environment](/user-guide/identities/credentials.md) and update the terraform configuration with the id of all relevant accounts.
+It attempts to retrieve the structure of the organization in order to generate all the [AWS CLI profiles required to interact with the environment](/user-guide/identities/credentials.md) and update the OpenTofu configuration with the id of all relevant accounts.
 
 Backups of the previous configured credentials files are always created when overwriting or updating the current ones.
 

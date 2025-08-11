@@ -100,7 +100,7 @@ subnets in each of these VPCs defining Private and Public subnets split among di
 
 ### Considerations
 
-- Kubernetes on EKS General Requirements for Network Layer: [**K8s EKS Networking | VPC Adressing**](/user-guide/ref-architecture-eks/vpc/)
+- Kubernetes on EKS General Requirements for Network Layer: [**K8s EKS Networking | VPC Addressing**](/user-guide/ref-architecture-eks/vpc/)
 
     
 ## User guide
@@ -114,7 +114,7 @@ afterwards in the necessary member accounts which will host network connected re
 
 !!! example "Network layer standard creation workflow"
     1. Please follow 
-    [Leverage's Terraform workflow](../../../base-workflow/repo-le-tf-infra/) for
+    [Leverage's OpenTofu workflow](../../../base-workflow/repo-le-tf-infra/) for
     each of your accounts.
     2. We'll start by `project-shared` AWS Account Update (add | remove | customize) your VPC associated code before 
     deploying this layer [shared/base-network](https://github.com/binbashar/le-tf-infra-aws/tree/master/shared/us-east-1/base-network)

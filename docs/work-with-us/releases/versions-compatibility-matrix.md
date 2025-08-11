@@ -17,10 +17,10 @@ If you are looking for the versions of the software included in the Toolbox Dock
 
 ## Release Schedule
 
-This project does not follow the **Terraform** or other release schedule. Leverage aims to
+This project does not follow the **OpenTofu/Terraform** or other release schedule. Leverage aims to
 provide a reliable deployment and operations experience for the [binbash Leverage™ Reference Architecture
 for AWS](https://leverage.binbash.co/how-it-works/ref-architecture/), and typically releases about a quarter after
-the corresponding Terraform release. This time allows for the Terraform project to resolve any issues introduced
+the corresponding OpenTofu/Terraform release. This time allows for the OpenTofu project to resolve any issues introduced
 by the new version and ensures that we can support the latest features.
 
 ## Read more
@@ -28,6 +28,6 @@ by the new version and ensures that we can support the latest features.
 !!! info "Reference links"
     Consider the following extra links as reference:
 
-    - :blue_book: [Hashicorp Terraform releases](https://github.com/hashicorp/terraform/releases)
+    - :blue_book: [OpenTofu releases](https://github.com/opentofu/opentofu/releases)
     - :orange_book: [Amazon EKS Kubernetes release calendar](https://docs.aws.amazon.com/eks/latest/userguide/kubernetes-versions.html#kubernetes-release-calendar)
     - :orange_book: [Amazon EKS Kubernetes versions - Amazon EKS](https://docs.aws.amazon.com/eks/latest/userguide/kubernetes-versions.html)

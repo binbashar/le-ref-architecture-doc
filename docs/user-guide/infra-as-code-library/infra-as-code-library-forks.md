@@ -14,7 +14,7 @@
     (the owners, generally individual maintainers of the original repository, might
     decide to move from github, ansible galaxy, etc. or even close their repo for
     personal reasons).
-    - [x] **Stability:** Our forks form modules (ansible roles / terraform / dockerfiles, etc.)
+    - [x] **Stability:** Our forks form modules (ansible roles / opentofu / dockerfiles, etc.)
     are always going to be locked to fixed versions for every client so no unexpected behavior will occur.
     - [x] **Projects that don't tag versions:** having the fork protects us against breaking
     changes.
@@ -28,7 +28,7 @@
     - [x] **Automation:** We’ll maintain all this workflow cross-tech as standardized and
     automated as possible, adding any extra validation like testing, security check, etc., if
     needed -> [Leverage dev-tools](https://github.com/binbashar/le-dev-tools )
-    - [x] **Licence & Ownership:** Since we fork open-source and commercially reusable
+    - [x] **License & Ownership:** Since we fork open-source and commercially reusable
     components w/ [MIT and Apache 2.0 license](https://choosealicense.com/licenses/apache-2.0/). 
     We keep full rights to all commercial, modification, distribution, and private use of
     the code (No Lock-In w/ owners) through forks inside our own Leverage Project repos. 

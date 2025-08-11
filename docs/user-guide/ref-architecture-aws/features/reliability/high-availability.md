@@ -1,4 +1,4 @@
-# High Availability & Helthchecks 
+# High Availability & Health-checks 
 
 ## Recovery from Failures 
 
@@ -30,7 +30,7 @@
 ![leverage-aws-reliability](/assets/images/diagrams/aws-reliability-ha-recovery-scaling.png "Leverage"){: style="width:750px"}
 <figcaption style="font-size:15px">Figure: AWS HA scalable architecture diagrams (just as reference).</figcaption>
 
-## Healthchecks & Self-healing
+## Health-checks & Self-healing
 
 ### K8s and containers
 

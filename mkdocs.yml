@@ -269,9 +269,12 @@ nav:
         - project: "user-guide/leverage-cli/reference/project.md"
         - credentials: "user-guide/leverage-cli/reference/credentials.md"
         - aws: "user-guide/leverage-cli/reference/aws.md"
+        - tofu:
+            - commands: "user-guide/leverage-cli/reference/tofu/tofu.md"
+            - layers: "user-guide/leverage-cli/reference/tofu/layers.md"
         - terraform:
             - commands: "user-guide/leverage-cli/reference/terraform.md"
-            - layers: "user-guide/leverage-cli/reference/terraform/layers.md"
+            - layers: "user-guide/leverage-cli/reference/tofu/layers.md"
         - tfautomv: "user-guide/leverage-cli/reference/tfautomv.md"
         - run: "user-guide/leverage-cli/reference/run.md"
         - kubectl: "user-guide/leverage-cli/reference/kubectl.md"
@@ -280,6 +283,7 @@ nav:
         - How to extend Leverage: "user-guide/leverage-cli/extending-leverage/how-to-extend.md"
         - The build.env file: "user-guide/leverage-cli/extending-leverage/build.env.md"
         - Custom tasks: "user-guide/leverage-cli/extending-leverage/tasks.md"
+      - Using newer versions of Terraform: "user-guide/leverage-cli/terraform-new-versions.md"
       - Private Repositories: "user-guide/leverage-cli/private-repositories.md"
       - Getting shell access: "user-guide/leverage-cli/shell.md"
       - A bit of history: "user-guide/leverage-cli/history.md"
@@ -304,7 +308,7 @@ nav:
       - ArgoCD add external cluster: "user-guide/cookbooks/argocd-external-cluster.md"
       - VPN Server:
         - Index: "user-guide/cookbooks/VPN-server/index.md"
-        - 1. Terraform EC2 layer: "user-guide/cookbooks/VPN-server/VPN-server-terraform.md"
+        - 1. OpenTofu EC2 layer: "user-guide/cookbooks/VPN-server/VPN-server-opentofu.md"
         - 2. Ansible provisioning: "user-guide/cookbooks/VPN-server/VPN-server-ansible.md"
         - 3. VPN Web GUI config: "user-guide/cookbooks/VPN-server/VPN-server-gui-setup.md"
   - Work with us:

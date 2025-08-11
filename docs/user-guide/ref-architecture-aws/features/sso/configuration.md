@@ -6,11 +6,6 @@ Before deploying your AWS SSO definition in the project, it will first have to b
 !!! note ":books: [Prerequisites](https://docs.aws.amazon.com/singlesignon/latest/userguide/prereqs.html)"
 !!! info ":books: [Enable AWS SSO](https://docs.aws.amazon.com/singlesignon/latest/userguide/step1.html)"
 
-After that, choosing and configuring an Identity Provider (IdP) is the next step. For this, we will make use of JumpCloud, as described in the [how it works](/user-guide/ref-architecture-aws/features/sso/overview/) section. These resources point to all requirements and procedures to have your JumpCloud account setup and synched with AWS SSO:
-
-!!! info ":books: [AWS JumpCloud support guide](https://docs.aws.amazon.com/singlesignon/latest/userguide/jumpcloud-idp.html)"
-!!! info ":books: [JumpCloud guide on how to configure as IdP for AWS SSO](https://docs.aws.amazon.com/singlesignon/latest/userguide/jumpcloud-idp.html)"
-
 Once this is set up, the SSO layer can be safely deployed.
 
 ## Preparing the project to use AWS SSO
@@ -99,7 +94,7 @@ When the user has finished working, running `leverage sso logout` wipes out all 
 ## Additional Steps
 Further steps are required before you can safely start onboarding users and allowing them to sign in.
 
-**Important:** most of the following steps need to be applied manually because the Terraform AWS provider does not support them yet.
+**Important:** most of the following steps need to be applied manually because the OpenTofu AWS provider does not support them yet.
 
 ### Configuring MFA
 Enabling and requiring MFA is highly recommended. We typically choose these following guidelines:

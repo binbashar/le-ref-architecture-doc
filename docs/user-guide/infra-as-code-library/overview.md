@@ -2,7 +2,7 @@
 
 ## Overview
 A collection of reusable, tested, production-ready E2E
-infrastructure as code solutions, leveraged by modules written in Terraform, Ansible,
+infrastructure as code solutions, leveraged by modules written in OpenTofu/Terraform, Ansible,
 Dockerfiles, Helm charts and Makefiles.
 
 ## Model
@@ -16,7 +16,7 @@ High level summary of the the code reusability efficiency.
 
 !!! important "Considerations"
     :warning: Above detailed `%` are to be seen as estimates: 
-    
+
     - :cloud: :lock: [AWS PCI-DSS Reference article](https://aws.amazon.com/quickstart/architecture/compliance-pci/)
     - :cloud: :lock: [AWS HIPAA Reference article](https://aws.amazon.com/compliance/hipaa-compliance/)
     - :cloud: :lock: [AWS GDPR Reference article](https://aws.amazon.com/compliance/gdpr-center/)

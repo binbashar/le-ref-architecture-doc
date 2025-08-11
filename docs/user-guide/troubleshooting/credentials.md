@@ -20,14 +20,14 @@ MFA is optionally used via the IAM method. It can be enabled/disabled in the [bu
 !!! info "Keep in mind that MFA should only be used with the IAM method, not with SSO."
 
 ## Identify which credentials are failing
-Since Leverage actually relies on Terraform and, since most of the definitions are AWS resources, it is likely that you are having issues with the Terraform AWS provider, in other words, you might be struggling with AWS credentials. Now, bear in mind that Leverage can also be used with other providers such as Gitlab, Github, Hashicorp Cloud Platform, or even SSH via Ansible; so the point here is to understand what credentials are not working for you in order to focus the troubleshooting on the right suspect.
+Since Leverage actually relies on OpenTofu and, since most of the definitions are AWS resources, it is likely that you are having issues with the OpenTofu AWS provider, in other words, you might be struggling with AWS credentials. Now, bear in mind that Leverage can also be used with other providers such as Gitlab, Github, Hashicorp Cloud Platform, or even SSH via Ansible; so the point here is to understand what credentials are not working for you in order to focus the troubleshooting on the right suspect.
 
 ## Determine the AWS profile you are using
 When you are facing AWS credentials issues it's important to understand what is the AWS profile that might be causing the issue. [Enabling verbose mode](../general/#gathering-more-information) should help with that. The suspect profile is likely to show right above the error line and, once you have identified that, you can skip to the next section.
 
 If the above doesn't make the error evident yet, perhaps you can explore the following questions:
 
-1. Is it a problem with the Terraform remote state backend? The profile used for that is typically defined in the backend.tfvars file, e.g. [this one](https://github.com/binbashar/le-tf-infra-aws/blob/master/apps-devstg/config/backend.tfvars#L6), or [this other one](https://github.com/binbashar/le-tf-infra-aws/blob/master/shared/config/backend.tfvars).
+1. Is it a problem with the OpenTofu remote state backend? The profile used for that is typically defined in the backend.tfvars file, e.g. [this one](https://github.com/binbashar/le-tf-infra-aws/blob/master/apps-devstg/config/backend.tfvars#L6), or [this other one](https://github.com/binbashar/le-tf-infra-aws/blob/master/shared/config/backend.tfvars).
 2. Is it a problem with another profile used by the layer? Keep in mind that layers can have multiple profile definitions in order to be able to access resources in different accounts. For instance, this is a [simple provider definition that uses a single profile](https://github.com/binbashar/le-tf-infra-aws/blob/master/shared/us-east-1/security-base/config.tf#L4-L7), but here's [a more complex definition with multiple provider blocks](https://github.com/binbashar/le-tf-infra-aws/blob/master/shared/us-east-1/base-network/config.tf#L1-L43).
 3. Can the problematic profile be found in the AWS config file? Or is the profile entry in the AWS config file properly defined? Read the next sections for more details on that.
 
@@ -55,7 +55,7 @@ export AWS_SHARED_CREDENTIALS_FILE=~/.aws/[project_name_here]/credentials
 
 ## Test the failing profile with the AWS CLI
 Once you have narrowed down your investigation to a profile what you can do is test it.
-For instance, let's assume that the suspect profile is `le-shared-devops`. You can run this command: `aws sts get-caller-identity --profile le-shared-devops` in order to mimic the way that AWS credentials are generated in order to be used by Terraform, so if that command succeeds then that's a good sign.
+For instance, let's assume that the suspect profile is `le-shared-devops`. You can run this command: `aws sts get-caller-identity --profile le-shared-devops` in order to mimic the way that AWS credentials are generated in order to be used by OpenTofu, so if that command succeeds then that's a good sign.
 
 Note: if you use the AWS CLI installed in your host machine, you will need to configure the environment variables in the section "Configure the AWS CLI for Leverage" below.
 
@@ -72,5 +72,5 @@ When using IAM, regenerating your AWS config file can be achieved through the `l
 When using SSO, the command you need to run is `leverage aws configure sso`. Refer to [that command's documentation](/user-guide/leverage-cli/reference/aws/#configure-sso) for more details.
 
 ## Logging out of your SSO session
-Seldom times, when using SSO, we have received reports of strange behaviors while trying to run Terraform commands via the Leverage CLI. For instance, users would try to run a `leverage tf init` command but would get an error saying that their session is expire; so they would try to log in via `leverage aws sso login` as expected, which would proceed normally so they would try the init command again just to get the same error as before.
+Seldom times, when using SSO, we have received reports of strange behaviors while trying to run OpenTofu commands via the Leverage CLI. For instance, users would try to run a `leverage tf init` command but would get an error saying that their session is expire; so they would try to log in via `leverage aws sso login` as expected, which would proceed normally so they would try the init command again just to get the same error as before.
 In these cases, which we are still investigating as they are very hard to reproduce, what has worked for most users is to log out from the SSO session via `leverage aws sso logout`, even log out from your SSO session through the AWS console running your browser, then try logging back in via `leverage aws sso login`, and then try the init command again.

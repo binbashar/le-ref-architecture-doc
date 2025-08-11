@@ -3442,6 +3442,8 @@
       
         
       
+        
+      
     
     
       
@@ -3544,6 +3546,8 @@
   
     
     
+      
+        
       
         
       
@@ -3685,7 +3689,7 @@
             
   
   <span class="md-ellipsis">
-    terraform
+    tofu
   </span>
   
 
@@ -3694,6 +3698,100 @@
         
         <nav class="md-nav" data-md-level="4" aria-labelledby="__nav_4_5_4_4_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_4_5_4_4">
+            <span class="md-nav__icon md-icon"></span>
+            tofu
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../leverage-cli/reference/tofu/tofu/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    commands
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../leverage-cli/reference/tofu/layers/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    layers
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_5_4_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_5_4_5" id="__nav_4_5_4_5_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    terraform
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="4" aria-labelledby="__nav_4_5_4_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_5_4_5">
             <span class="md-nav__icon md-icon"></span>
             terraform
           </label>
@@ -3727,7 +3825,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../leverage-cli/reference/terraform/layers/" class="md-nav__link">
+      <a href="../../../../leverage-cli/reference/tofu/layers/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3953,6 +4051,27 @@
           </ul>
         </nav>
       
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../leverage-cli/terraform-new-versions/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Using newer versions of Terraform
+  </span>
+  
+
+      </a>
     </li>
   
 
@@ -4584,11 +4703,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../cookbooks/VPN-server/VPN-server-terraform/" class="md-nav__link">
+      <a href="../../../../cookbooks/VPN-server/VPN-server-opentofu/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    1. Terraform EC2 layer
+    1. OpenTofu EC2 layer
   </span>
   
 
@@ -5579,7 +5698,7 @@ subnets in each of these VPCs defining Private and Public subnets split among di
 </table>
 <h3 id="considerations">Considerations<a class="headerlink" href="#considerations" title="Permanent link"> ¶</a></h3>
 <ul>
-<li>Kubernetes on EKS General Requirements for Network Layer: <a href="/user-guide/ref-architecture-eks/vpc/"><strong>K8s EKS Networking | VPC Adressing</strong></a></li>
+<li>Kubernetes on EKS General Requirements for Network Layer: <a href="/user-guide/ref-architecture-eks/vpc/"><strong>K8s EKS Networking | VPC Addressing</strong></a></li>
 </ul>
 <h2 id="user-guide">User guide<a class="headerlink" href="#user-guide" title="Permanent link"> ¶</a></h2>
 <p>Please follow the steps below to orchestrate your <code>base-network</code> layer, 1<sup>st</sup> in your
@@ -5593,7 +5712,7 @@ afterwards in the necessary member accounts which will host network connected re
 <p class="admonition-title">Network layer standard creation workflow</p>
 <ol>
 <li>Please follow 
-<a href="../../../base-workflow/repo-le-tf-infra/">Leverage's Terraform workflow</a> for
+<a href="../../../base-workflow/repo-le-tf-infra/">Leverage's OpenTofu workflow</a> for
 each of your accounts.</li>
 <li>We'll start by <code>project-shared</code> AWS Account Update (add | remove | customize) your VPC associated code before 
 deploying this layer <a href="https://github.com/binbashar/le-tf-infra-aws/tree/master/shared/us-east-1/base-network">shared/base-network</a>

@@ -3388,6 +3388,8 @@
       
         
       
+        
+      
     
     
       
@@ -3490,6 +3492,8 @@
   
     
     
+      
+        
       
         
       
@@ -3631,7 +3635,7 @@
             
   
   <span class="md-ellipsis">
-    terraform
+    tofu
   </span>
   
 
@@ -3640,6 +3644,100 @@
         
         <nav class="md-nav" data-md-level="4" aria-labelledby="__nav_4_5_4_4_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_4_5_4_4">
+            <span class="md-nav__icon md-icon"></span>
+            tofu
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../user-guide/leverage-cli/reference/tofu/tofu/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    commands
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../user-guide/leverage-cli/reference/tofu/layers/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    layers
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_5_4_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_5_4_5" id="__nav_4_5_4_5_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    terraform
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="4" aria-labelledby="__nav_4_5_4_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_5_4_5">
             <span class="md-nav__icon md-icon"></span>
             terraform
           </label>
@@ -3673,7 +3771,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../user-guide/leverage-cli/reference/terraform/layers/" class="md-nav__link">
+      <a href="../../user-guide/leverage-cli/reference/tofu/layers/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3899,6 +3997,27 @@
           </ul>
         </nav>
       
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../user-guide/leverage-cli/terraform-new-versions/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Using newer versions of Terraform
+  </span>
+  
+
+      </a>
     </li>
   
 
@@ -4530,11 +4649,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../../user-guide/cookbooks/VPN-server/VPN-server-terraform/" class="md-nav__link">
+      <a href="../../user-guide/cookbooks/VPN-server/VPN-server-opentofu/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    1. Terraform EC2 layer
+    1. OpenTofu EC2 layer
   </span>
   
 
@@ -5260,16 +5379,16 @@ our contributors.</p>
 </details>
 <details class="question">
 <summary><strong>Hours or days, not weeks or months</strong></summary>
-<p><strong><em>Leverage</em></strong> implements infrastructure as code at all times. We have rolled this out using Terraform, and has been
-fully proven in AWS and other Terraform providers that are part of our reference architecture like Kubernetes,
-Helm and Hashicorp Vault. By using the <code>Leverage CLI</code>, our binary will help you to quickly bootstrap your AWS
-Landing Zone in a matter of hours (or at most a few days).</p>
+<p><strong><em>Leverage</em></strong> implements infrastructure as code at all times. We have rolled this out using OpenTofu/Terraform,
+and has been fully proven in AWS and other OpenTofu/Terraform providers that are part of our reference
+architecture like Kubernetes, Helm and Hashicorp Vault. By using the <code>Leverage CLI</code>, our binary will help you
+to quickly bootstrap your AWS Landing Zone in a matter of hours (or at most a few days).</p>
 </details>
 <details class="question">
 <summary><strong>It's not just a pile of scripts</strong></summary>
 <p>It's not just another layer of untested, one time and stand-alone developed scripts. The code is modularized
 and well designed under best practices, our <code>Leverage CLI</code> has both unit and integration tests. While our
-Terraform code has been extensively E2E tested. Moreover, 100% of the code is yours (to modify, extend,
+OpenTofu/Terraform code has been extensively E2E tested. Moreover, 100% of the code is yours (to modify, extend,
 reuse, etc), with no vendor locking and vendor licensing fees. We use the MIT license, so you can take the
 code, modify it and use it as your private code. All we ask in return is a friendly greeting and that
 (if possible) consider contributing to <strong><em>binbash Leverage</em></strong> project. Implement <strong><em>Leverage</em></strong> yourself or we 
@@ -5320,7 +5439,7 @@ successfully orchestrated many customers to AWS cloud.</p>
 <p><strong><em>Leverage</em></strong> provides your DevOps, Cloud, SRE and Development teams with the ability to provision on-demand
 infrastructure, granting that it will meet the rigorous security requirements of modern cloud native best practices. 
 It fully implements AWS Well-Architected Framework (WAF) and best DevOps practices, including practices, including
-collaboration, version control, CI/CD, continuous testing, cloud infrastructure and losely couple architectures.</p>
+collaboration, version control, CI/CD, continuous testing, cloud infrastructure and loosely couple architectures.</p>
 </details>
 <details class="question">
 <summary><strong>Easier to support and maintain</strong></summary>
@@ -5334,7 +5453,7 @@ internal processes as your cloud operating model evolves.</p>
 <summary><strong>There is no vendor lock-in. You own the solution</strong></summary>
 <p>With <strong><em>Leverage</em></strong> you own 100% of the code with no lock-in clauses. If you choose to leave <strong><em>Leverage</em></strong>, you will still 
 have your entire AWS cloud infrastructure that you can access and manage. If you drop <strong><em>Leverage</em></strong>, you will still
-have your entire cloud native infrastructure code (Terraform, Helm, Ansible, Python). It’s 100% Open Source
+have your entire cloud native infrastructure code (OpenTofu/Terraform, Helm, Ansible, Python). It’s 100% Open Source
 on GitHub and is free to use with no strings attached under <a href="https://choosealicense.com/licenses/">MIT license</a> 
 (no licensing fees), and you are free to commercially and privately use, distribute and modify.</p>
 </details>
@@ -5342,8 +5461,8 @@ on GitHub and is free to use with no strings attached under <a href="https://cho
 <summary><strong>Consistent environments (Dev/prod parity)</strong></summary>
 <p>Keep development, staging, and production cloud envs parity.
 Infrastructure as code allow us to define and provisioning all infrastructure components (think networks, load 
-balancers, databases, security, compute and storage, etc.) using code. <strong><em>Leverage</em></strong> uses Terraform as the IaC language,
-to deploy and setup all the AWS, Kubernetes and Hashicorp Vault resources (it has support for multiple cloud and
+balancers, databases, security, compute and storage, etc.) using code. <strong><em>Leverage</em></strong> uses OpenTofu/Terraform as the IaC
+language, to deploy and setup all the AWS, Kubernetes and Hashicorp Vault resources (it has support for multiple cloud and
 technology providers). Backed by code, your cloud environments are built exactly the identical way all the time. 
 Finally, this will result in no differences between development, staging and production.</p>
 </details>

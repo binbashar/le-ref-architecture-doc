@@ -90,7 +90,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#high-availability-helthchecks" class="md-skip">
+        <a href="#high-availability-health-checks" class="md-skip">
           Skip to content
         </a>
       
@@ -3068,13 +3068,13 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#healthchecks-self-healing" class="md-nav__link">
+  <a href="#health-checks-self-healing" class="md-nav__link">
     <span class="md-ellipsis">
-      Healthchecks &amp; Self-healing
+      Health-checks &amp; Self-healing
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Healthchecks & Self-healing">
+    <nav class="md-nav" aria-label="Health-checks & Self-healing">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -3427,6 +3427,8 @@
       
         
       
+        
+      
     
     
       
@@ -3529,6 +3531,8 @@
   
     
     
+      
+        
       
         
       
@@ -3670,7 +3674,7 @@
             
   
   <span class="md-ellipsis">
-    terraform
+    tofu
   </span>
   
 
@@ -3679,6 +3683,100 @@
         
         <nav class="md-nav" data-md-level="4" aria-labelledby="__nav_4_5_4_4_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_4_5_4_4">
+            <span class="md-nav__icon md-icon"></span>
+            tofu
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../leverage-cli/reference/tofu/tofu/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    commands
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../leverage-cli/reference/tofu/layers/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    layers
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_5_4_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_5_4_5" id="__nav_4_5_4_5_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    terraform
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="4" aria-labelledby="__nav_4_5_4_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_5_4_5">
             <span class="md-nav__icon md-icon"></span>
             terraform
           </label>
@@ -3712,7 +3810,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../leverage-cli/reference/terraform/layers/" class="md-nav__link">
+      <a href="../../../../leverage-cli/reference/tofu/layers/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3938,6 +4036,27 @@
           </ul>
         </nav>
       
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../leverage-cli/terraform-new-versions/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Using newer versions of Terraform
+  </span>
+  
+
+      </a>
     </li>
   
 
@@ -4569,11 +4688,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../cookbooks/VPN-server/VPN-server-terraform/" class="md-nav__link">
+      <a href="../../../../cookbooks/VPN-server/VPN-server-opentofu/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    1. Terraform EC2 layer
+    1. OpenTofu EC2 layer
   </span>
   
 
@@ -5258,13 +5377,13 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#healthchecks-self-healing" class="md-nav__link">
+  <a href="#health-checks-self-healing" class="md-nav__link">
     <span class="md-ellipsis">
-      Healthchecks &amp; Self-healing
+      Health-checks &amp; Self-healing
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Healthchecks & Self-healing">
+    <nav class="md-nav" aria-label="Health-checks & Self-healing">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -5304,7 +5423,7 @@
   
 
 
-<h1 id="high-availability-helthchecks">High Availability &amp; Helthchecks<a class="headerlink" href="#high-availability-helthchecks" title="Permanent link"> ¶</a></h1>
+<h1 id="high-availability-health-checks">High Availability &amp; Health-checks<a class="headerlink" href="#high-availability-health-checks" title="Permanent link"> ¶</a></h1>
 <h2 id="recovery-from-failures">Recovery from Failures<a class="headerlink" href="#recovery-from-failures" title="Permanent link"> ¶</a></h2>
 <div class="admonition attention">
 <p class="admonition-title">Automatic recovery from failure</p>
@@ -5335,7 +5454,7 @@ the environment’s lifecycle.</p>
 <p><img alt="leverage-aws-reliability" src="/assets/images/diagrams/aws-reliability-ha-recovery-scaling.png" style="width:750px" title="Leverage" /></p>
 <figcaption style="font-size:15px">Figure: AWS HA scalable architecture diagrams (just as reference).</figcaption>
 
-<h2 id="healthchecks-self-healing">Healthchecks &amp; Self-healing<a class="headerlink" href="#healthchecks-self-healing" title="Permanent link"> ¶</a></h2>
+<h2 id="health-checks-self-healing">Health-checks &amp; Self-healing<a class="headerlink" href="#health-checks-self-healing" title="Permanent link"> ¶</a></h2>
 <h3 id="k8s-and-containers">K8s and containers<a class="headerlink" href="#k8s-and-containers" title="Permanent link"> ¶</a></h3>
 <div class="admonition quote">
 <p class="admonition-title"><a href="https://cloud.google.com/health-checks-with-readiness-and-liveness-probes">K8s readiness and liveness probes</a></p>

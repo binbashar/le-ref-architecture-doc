@@ -3319,6 +3319,8 @@
       
         
       
+        
+      
     
     
       
@@ -3421,6 +3423,8 @@
   
     
     
+      
+        
       
         
       
@@ -3562,7 +3566,7 @@
             
   
   <span class="md-ellipsis">
-    terraform
+    tofu
   </span>
   
 
@@ -3571,6 +3575,100 @@
         
         <nav class="md-nav" data-md-level="4" aria-labelledby="__nav_4_5_4_4_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_4_5_4_4">
+            <span class="md-nav__icon md-icon"></span>
+            tofu
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../leverage-cli/reference/tofu/tofu/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    commands
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../leverage-cli/reference/tofu/layers/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    layers
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_5_4_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_5_4_5" id="__nav_4_5_4_5_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    terraform
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="4" aria-labelledby="__nav_4_5_4_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_5_4_5">
             <span class="md-nav__icon md-icon"></span>
             terraform
           </label>
@@ -3604,7 +3702,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../leverage-cli/reference/terraform/layers/" class="md-nav__link">
+      <a href="../../../../leverage-cli/reference/tofu/layers/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3830,6 +3928,27 @@
           </ul>
         </nav>
       
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../leverage-cli/terraform-new-versions/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Using newer versions of Terraform
+  </span>
+  
+
+      </a>
     </li>
   
 
@@ -4461,11 +4580,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../cookbooks/VPN-server/VPN-server-terraform/" class="md-nav__link">
+      <a href="../../../../cookbooks/VPN-server/VPN-server-opentofu/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    1. Terraform EC2 layer
+    1. OpenTofu EC2 layer
   </span>
   
 
@@ -5223,14 +5342,14 @@ from the VPN.</p>
 <p><code>vault_address = "https://bb-le-shared-vault-cluster.private.vault.xxxxxxxxxx.aws.hashicorp.cloud:8200"</code></p>
 <h2 id="hashicorp-vault-token">Hashicorp Vault token<a class="headerlink" href="#hashicorp-vault-token" title="Permanent link"> ¶</a></h2>
 <p>We'll need to setup this Vault auth token in our [/config/common.config] file whenever we run the 
-Terraform Leverage Reference architecture for:</p>
+OpenTofu Leverage Reference architecture for:</p>
 <ul class="task-list">
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> <a href="https://github.com/binbashar/le-tf-infra-aws/blob/master/config/common.config.example">le-tf-infra-aws</a></li>
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> <a href="https://github.com/binbashar/le-tf-vault/blob/master/config/common.config.example">le-tf-vault</a></li>
 </ul>
 <div class="admonition info">
 <p class="admonition-title">Vault token generation and authentication</p>
-<p>Vault token that will be used by Terraform, or vault cli to perform calls to Vault API.
+<p>Vault token that will be used by OpenTofu, or vault cli to perform calls to Vault API.
 During the initial setup, you will have to use a root token. If you are
 using a self-hosted installation you will get such token after you initialize
 Vault; if you are using Hashicorp Cloud Platform you can get the token from

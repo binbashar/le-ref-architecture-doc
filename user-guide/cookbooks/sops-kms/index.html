@@ -3330,6 +3330,8 @@
       
         
       
+        
+      
     
     
       
@@ -3432,6 +3434,8 @@
   
     
     
+      
+        
       
         
       
@@ -3573,7 +3577,7 @@
             
   
   <span class="md-ellipsis">
-    terraform
+    tofu
   </span>
   
 
@@ -3582,6 +3586,100 @@
         
         <nav class="md-nav" data-md-level="4" aria-labelledby="__nav_4_5_4_4_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_4_5_4_4">
+            <span class="md-nav__icon md-icon"></span>
+            tofu
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../leverage-cli/reference/tofu/tofu/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    commands
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../leverage-cli/reference/tofu/layers/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    layers
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_5_4_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_5_4_5" id="__nav_4_5_4_5_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    terraform
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="4" aria-labelledby="__nav_4_5_4_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_5_4_5">
             <span class="md-nav__icon md-icon"></span>
             terraform
           </label>
@@ -3615,7 +3713,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../leverage-cli/reference/terraform/layers/" class="md-nav__link">
+      <a href="../../leverage-cli/reference/tofu/layers/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3841,6 +3939,27 @@
           </ul>
         </nav>
       
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../leverage-cli/terraform-new-versions/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Using newer versions of Terraform
+  </span>
+  
+
+      </a>
     </li>
   
 
@@ -4616,11 +4735,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../VPN-server/VPN-server-terraform/" class="md-nav__link">
+      <a href="../VPN-server/VPN-server-opentofu/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    1. Terraform EC2 layer
+    1. OpenTofu EC2 layer
   </span>
   
 
@@ -5444,7 +5563,7 @@ For example, for my <code>apps-devstg</code> account, using the role <code>devop
 </div>
 <div class="admonition info">
 <p class="admonition-title">Info</p>
-<p>To use this file with Terraform, edit the <code>secrets.enc.yaml</code> and at the bottom, edit the line with <code>aws_profile</code> and set there the AWS Profile you've used to encrypt the file.</p>
+<p>To use this file with OpenTofu, edit the <code>secrets.enc.yaml</code> and at the bottom, edit the line with <code>aws_profile</code> and set there the AWS Profile you've used to encrypt the file.</p>
 </div>
 <h2 id="decrypt-the-file">Decrypt the file<a class="headerlink" href="#decrypt-the-file" title="Permanent link"> ¶</a></h2>
 <p>From the shell decrypt your file:</p>
@@ -5452,7 +5571,7 @@ For example, for my <code>apps-devstg</code> account, using the role <code>devop
 </code></pre></div>
 <h2 id="how-to-use-it-with-leverage">How to use it with Leverage<a class="headerlink" href="#how-to-use-it-with-leverage" title="Permanent link"> ¶</a></h2>
 <p>Now that the secret is stored in a secure file, it can be used.</p>
-<p>The example here is prety simple, just getting the value and sending it to an output. But it can be used in any other resource.</p>
+<p>The example here is pretty simple, just getting the value and sending it to an output. But it can be used in any other resource.</p>
 <p>First your user (the one used to run <a href="https://leverage.binbash.co/"><strong>binbash Leverage</strong></a> ) needs access to the used KMS key.</p>
 <p>Then, open the file:</p>
 <div class="highlight"><pre><span></span><code><span class="kr">data</span><span class="w"> </span><span class="nc">&quot;sops_file&quot;</span><span class="w"> </span><span class="nv">&quot;secrets&quot;</span><span class="w"> </span><span class="p">{</span>

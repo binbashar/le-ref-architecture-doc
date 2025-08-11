@@ -860,9 +860,9 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#terraform-backend-layer" class="md-nav__link">
+  <a href="#opentofu-backend-layer" class="md-nav__link">
     <span class="md-ellipsis">
-      Terraform backend layer
+      OpenTofu backend layer
     </span>
   </a>
   
@@ -902,9 +902,9 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#terraform-backend-layer_1" class="md-nav__link">
+  <a href="#opentofu-backend-layer_1" class="md-nav__link">
     <span class="md-ellipsis">
-      Terraform backend layer
+      OpenTofu backend layer
     </span>
   </a>
   
@@ -3472,6 +3472,8 @@
       
         
       
+        
+      
     
     
       
@@ -3574,6 +3576,8 @@
   
     
     
+      
+        
       
         
       
@@ -3715,7 +3719,7 @@
             
   
   <span class="md-ellipsis">
-    terraform
+    tofu
   </span>
   
 
@@ -3724,6 +3728,100 @@
         
         <nav class="md-nav" data-md-level="4" aria-labelledby="__nav_4_5_4_4_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_4_5_4_4">
+            <span class="md-nav__icon md-icon"></span>
+            tofu
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../user-guide/leverage-cli/reference/tofu/tofu/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    commands
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../user-guide/leverage-cli/reference/tofu/layers/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    layers
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_5_4_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_5_4_5" id="__nav_4_5_4_5_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    terraform
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="4" aria-labelledby="__nav_4_5_4_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_5_4_5">
             <span class="md-nav__icon md-icon"></span>
             terraform
           </label>
@@ -3757,7 +3855,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../user-guide/leverage-cli/reference/terraform/layers/" class="md-nav__link">
+      <a href="../../user-guide/leverage-cli/reference/tofu/layers/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3983,6 +4081,27 @@
           </ul>
         </nav>
       
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../user-guide/leverage-cli/terraform-new-versions/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Using newer versions of Terraform
+  </span>
+  
+
+      </a>
     </li>
   
 
@@ -4614,11 +4733,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../../user-guide/cookbooks/VPN-server/VPN-server-terraform/" class="md-nav__link">
+      <a href="../../user-guide/cookbooks/VPN-server/VPN-server-opentofu/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    1. Terraform EC2 layer
+    1. OpenTofu EC2 layer
   </span>
   
 
@@ -5295,9 +5414,9 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#terraform-backend-layer" class="md-nav__link">
+  <a href="#opentofu-backend-layer" class="md-nav__link">
     <span class="md-ellipsis">
-      Terraform backend layer
+      OpenTofu backend layer
     </span>
   </a>
   
@@ -5337,9 +5456,9 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#terraform-backend-layer_1" class="md-nav__link">
+  <a href="#opentofu-backend-layer_1" class="md-nav__link">
     <span class="md-ellipsis">
-      Terraform backend layer
+      OpenTofu backend layer
     </span>
   </a>
   
@@ -5418,28 +5537,28 @@
 <div class="highlight"><pre><span></span><code><span class="l l-Scalar l-Scalar-Plain">profile = &quot;me-security-devops&quot;</span>
 </code></pre></div>
 <p>If it is not, please modify it. Note we are using a sample short project name <code>me</code>, use the one you have set.</p>
-<h3 id="terraform-backend-layer">Terraform backend layer<a class="headerlink" href="#terraform-backend-layer" title="Permanent link"> ¶</a></h3>
+<h3 id="opentofu-backend-layer">OpenTofu backend layer<a class="headerlink" href="#opentofu-backend-layer" title="Permanent link"> ¶</a></h3>
 <p>Move into the <code>us-east-1/base-tf-backend</code> directory and run:
-<div class="highlight"><pre><span></span><code>leverage<span class="w"> </span>terraform<span class="w"> </span>init<span class="w"> </span>--skip-validation
-leverage<span class="w"> </span>terraform<span class="w"> </span>apply
+<div class="highlight"><pre><span></span><code>leverage<span class="w"> </span>tofu<span class="w"> </span>init<span class="w"> </span>--skip-validation
+leverage<span class="w"> </span>tofu<span class="w"> </span>apply
 </code></pre></div></p>
 <div class="admonition info">
-<p class="admonition-title">More information on <a href="/user-guide/leverage-cli/reference/terraform#init"><code>terraform init</code></a> and <a href="/user-guide/leverage-cli/reference/terraform#apply"><code>terraform apply</code></a></p>
+<p class="admonition-title">More information on <a href="/user-guide/leverage-cli/reference/tofu#init"><code>tofu init</code></a> and <a href="/user-guide/leverage-cli/reference/tofu#apply"><code>tofu apply</code></a></p>
 </div>
-<p>Now, to push the local <code>.tfstate</code> to the bucket, uncomment the <code>backend</code> section for the <code>terraform</code> configuration in <code>security/base-tf-backend/config.tf</code>
+<p>Now, to push the local <code>.tfstate</code> to the bucket, uncomment the <code>backend</code> section for the <code>terraform</code> configuration block in <code>security/base-tf-backend/config.tf</code>
 <div class="highlight"><pre><span></span><code><span class="w">  </span><span class="kr">backend</span><span class="w"> </span><span class="nv">&quot;s3&quot;</span><span class="w"> </span><span class="p">{</span>
 <span class="w">    </span><span class="na">key</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;security/tf-backend/terraform.tfstate&quot;</span>
 <span class="w">  </span><span class="p">}</span>
 </code></pre></div></p>
 <p>And run again:
-<div class="highlight"><pre><span></span><code>leverage<span class="w"> </span>terraform<span class="w"> </span>init
+<div class="highlight"><pre><span></span><code>leverage<span class="w"> </span>tofu<span class="w"> </span>init
 </code></pre></div></p>
 <p>When prompted, answer <code>yes</code>.</p>
 <p>Now you can safely remove the <code>terraform.tfstate</code> and <code>terraform.tfstate.backup</code> files created during the <code>apply</code> step.</p>
 <h3 id="security-layer">Security layer<a class="headerlink" href="#security-layer" title="Permanent link"> ¶</a></h3>
 <p>The last layer for the <code>security</code> account is the security layer. Move into the <code>us-east-1/security-base</code> directory and run:
-<div class="highlight"><pre><span></span><code>leverage<span class="w"> </span>terraform<span class="w"> </span>init
-leverage<span class="w"> </span>terraform<span class="w"> </span>apply
+<div class="highlight"><pre><span></span><code>leverage<span class="w"> </span>tofu<span class="w"> </span>init
+leverage<span class="w"> </span>tofu<span class="w"> </span>apply
 </code></pre></div></p>
 <h2 id="deploy-the-shared-accounts-layers">Deploy the Shared account's layers<a class="headerlink" href="#deploy-the-shared-accounts-layers" title="Permanent link"> ¶</a></h2>
 <p>The last account in this deployment is the <code>shared</code> account.</p>
@@ -5452,13 +5571,13 @@ leverage<span class="w"> </span>terraform<span class="w"> </span>apply
 <div class="highlight"><pre><span></span><code><span class="l l-Scalar l-Scalar-Plain">profile = &quot;me-shared-devops&quot;</span>
 </code></pre></div>
 <p>If it is not, please modify it. Note we are using a sample short project name <code>me</code>, use the one you have set.</p>
-<h3 id="terraform-backend-layer_1">Terraform backend layer<a class="headerlink" href="#terraform-backend-layer_1" title="Permanent link"> ¶</a></h3>
+<h3 id="opentofu-backend-layer_1">OpenTofu backend layer<a class="headerlink" href="#opentofu-backend-layer_1" title="Permanent link"> ¶</a></h3>
 <p>Move into the <code>us-east-1/base-tf-backend</code> directory and run:
-<div class="highlight"><pre><span></span><code>leverage<span class="w"> </span>terraform<span class="w"> </span>init<span class="w"> </span>--skip-validation
-leverage<span class="w"> </span>terraform<span class="w"> </span>apply
+<div class="highlight"><pre><span></span><code>leverage<span class="w"> </span>tofu<span class="w"> </span>init<span class="w"> </span>--skip-validation
+leverage<span class="w"> </span>tofu<span class="w"> </span>apply
 </code></pre></div></p>
 <div class="admonition info">
-<p class="admonition-title">More information on <a href="/user-guide/leverage-cli/reference/terraform#init"><code>terraform init</code></a> and <a href="/user-guide/leverage-cli/reference/terraform#apply"><code>terraform apply</code></a></p>
+<p class="admonition-title">More information on <a href="/user-guide/leverage-cli/reference/tofu#init"><code>tofu init</code></a> and <a href="/user-guide/leverage-cli/reference/tofu#apply"><code>tofu apply</code></a></p>
 </div>
 <p>Now, to push the local <code>.tfstate</code> to the bucket, uncomment the <code>backend</code> section for the <code>terraform</code> configuration in <code>shared/base-tf-backend/config.tf</code>
 <div class="highlight"><pre><span></span><code><span class="w">  </span><span class="kr">backend</span><span class="w"> </span><span class="nv">&quot;s3&quot;</span><span class="w"> </span><span class="p">{</span>
@@ -5466,19 +5585,19 @@ leverage<span class="w"> </span>terraform<span class="w"> </span>apply
 <span class="w">  </span><span class="p">}</span>
 </code></pre></div></p>
 <p>And run a second time:
-<div class="highlight"><pre><span></span><code>leverage<span class="w"> </span>terraform<span class="w"> </span>init
+<div class="highlight"><pre><span></span><code>leverage<span class="w"> </span>tofu<span class="w"> </span>init
 </code></pre></div></p>
 <p>When prompted, answer <code>yes</code>.</p>
 <p>Now you can safely remove the <code>terraform.tfstate</code> and <code>terraform.tfstate.backup</code> files created during the <code>apply</code> step.</p>
 <h3 id="security-layer_1">Security layer<a class="headerlink" href="#security-layer_1" title="Permanent link"> ¶</a></h3>
 <p>Next, move into the <code>us-east-1/security-base</code> directory:
-<div class="highlight"><pre><span></span><code>leverage<span class="w"> </span>terraform<span class="w"> </span>init
-leverage<span class="w"> </span>terraform<span class="w"> </span>apply
+<div class="highlight"><pre><span></span><code>leverage<span class="w"> </span>tofu<span class="w"> </span>init
+leverage<span class="w"> </span>tofu<span class="w"> </span>apply
 </code></pre></div></p>
 <h3 id="network-layer">Network layer<a class="headerlink" href="#network-layer" title="Permanent link"> ¶</a></h3>
 <p>The last layer should be the network layer, so switch to that <code>us-east-1/base-network</code> and run:
-<div class="highlight"><pre><span></span><code>leverage<span class="w"> </span>terraform<span class="w"> </span>init
-leverage<span class="w"> </span>terraform<span class="w"> </span>apply
+<div class="highlight"><pre><span></span><code>leverage<span class="w"> </span>tofu<span class="w"> </span>init
+leverage<span class="w"> </span>tofu<span class="w"> </span>apply
 </code></pre></div></p>
 <h2 id="next-steps">Next steps<a class="headerlink" href="#next-steps" title="Permanent link"> ¶</a></h2>
 <p>You have now a fully deployed landing zone configuration for the Leverage Reference Architecture for AWS, with its three accounts management, security and shared ready to be used.</p>

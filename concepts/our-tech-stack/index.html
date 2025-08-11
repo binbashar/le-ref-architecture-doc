@@ -3379,6 +3379,8 @@
       
         
       
+        
+      
     
     
       
@@ -3481,6 +3483,8 @@
   
     
     
+      
+        
       
         
       
@@ -3622,7 +3626,7 @@
             
   
   <span class="md-ellipsis">
-    terraform
+    tofu
   </span>
   
 
@@ -3631,6 +3635,100 @@
         
         <nav class="md-nav" data-md-level="4" aria-labelledby="__nav_4_5_4_4_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_4_5_4_4">
+            <span class="md-nav__icon md-icon"></span>
+            tofu
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../user-guide/leverage-cli/reference/tofu/tofu/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    commands
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../user-guide/leverage-cli/reference/tofu/layers/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    layers
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_5_4_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_5_4_5" id="__nav_4_5_4_5_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    terraform
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="4" aria-labelledby="__nav_4_5_4_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_5_4_5">
             <span class="md-nav__icon md-icon"></span>
             terraform
           </label>
@@ -3664,7 +3762,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../user-guide/leverage-cli/reference/terraform/layers/" class="md-nav__link">
+      <a href="../../user-guide/leverage-cli/reference/tofu/layers/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3890,6 +3988,27 @@
           </ul>
         </nav>
       
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../user-guide/leverage-cli/terraform-new-versions/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Using newer versions of Terraform
+  </span>
+  
+
+      </a>
     </li>
   
 
@@ -4521,11 +4640,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../../user-guide/cookbooks/VPN-server/VPN-server-terraform/" class="md-nav__link">
+      <a href="../../user-guide/cookbooks/VPN-server/VPN-server-opentofu/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    1. Terraform EC2 layer
+    1. OpenTofu EC2 layer
   </span>
   
 
@@ -5215,7 +5334,7 @@
 
 
 <h1 id="our-tech-stack">Our Tech Stack<a class="headerlink" href="#our-tech-stack" title="Permanent link"> ¶</a></h1>
-<p>Leverage was built around the <a href="https://aws.amazon.com/architecture/well-architected/">AWS Well Architected Framework</a> and it uses a stack that includes <a href="https://www.terraform.io/">Terraform</a>, <a href="https://www.ansible.com/">Ansible</a>, <a href="https://helm.sh/">Helm</a> and other tools.</p>
+<p>Leverage was built around the <a href="https://aws.amazon.com/architecture/well-architected/">AWS Well Architected Framework</a> and it uses a stack that includes <a href="https://opentofu.org/">OpenTofu</a>/<a href="https://developer.hashicorp.com/terraform">Terraform</a>, <a href="https://www.ansible.com/">Ansible</a>, <a href="https://helm.sh/">Helm</a> and other tools.</p>
 <p>We are also adopters and supporters of Kubernetes and the Cloud Native movement, which should become self-evident as you keep exploring our technology stack.</p>
 <h2 id="why-did-we-choose-our-tech-stack">Why did we choose our tech stack?<a class="headerlink" href="#why-did-we-choose-our-tech-stack" title="Permanent link"> ¶</a></h2>
 <details class="info">
@@ -5240,7 +5359,7 @@ partners to evaluate architectures, and implement designs that can scale over ti
 <p><img alt="📚" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.0.3/assets/svg/1f4da.svg" title=":books:" /> <strong>Read More:</strong> <a href="https://aws.amazon.com/architecture/well-architected">AWS Well-architected</a></p>
 </details>
 <details class="info">
-<summary>Why Infra as Code (IaC) &amp; Terraform❓</summary>
+<summary>Why Infra as Code (IaC) &amp; OpenTofu/Terraform❓</summary>
 <ul class="task-list">
 <li class="task-list-item">
 <p><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> <strong>Confidence:</strong> A change breaks the env? Just roll it back. Still not working?
@@ -5270,8 +5389,8 @@ provisioned. In the #cloud this can be a huge #cost issue. IaC allows tracking y
 resources.</p>
 </li>
 <li class="task-list-item">
-<p><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> <strong>Portability:</strong> Some IaC techs are #multicloud. Also, translating #Terraform from
-one cloud provider to another is considerably more simple than recreating your entire
+<p><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> <strong>Portability:</strong> Some IaC techs are #multicloud. Also, translating #OpenTofu/Terraform
+from one cloud provider to another is considerably more simple than recreating your entire
 envs in a cloud-specific tool.</p>
 </li>
 <li class="task-list-item">
@@ -5279,19 +5398,19 @@ envs in a cloud-specific tool.</p>
 do wonders for being confident about the security configs of your envs.</p>
 </li>
 </ul>
-<p><strong>Terraform</strong> allows to codify your application infrastructure, reduce human error and 
-increase automation by provisioning infrastructure as code.
-With TF we can manage infrastructure across clouds and provision infrastructure 
+<p><strong>OpenTofu/Terraform</strong> allows to codify your application infrastructure, reduce human error
+and increase automation by provisioning infrastructure as code.
+With Tofu we can manage infrastructure across clouds and provision infrastructure 
 across 300+ public clouds and services using a single workflow.
 Moreover it helps to create reproducible infrastructure and provision consistent testing,
 staging, and production environments with the same configuration.</p>
-<p><strong>Terraform</strong> has everything we expect from a IaC framework: open source, cloud-agnostic
-provisioning tool that supported immutable infrastructure, a declarative language, and
-a client-only architecture.</p>
+<p><strong>OpenTofu/Terraform</strong> has everything we expect from a IaC framework: open source,
+cloud-agnostic provisioning tool that supported immutable infrastructure, a declarative
+language, and a client-only architecture.</p>
 <p><img alt="📚" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.0.3/assets/svg/1f4da.svg" title=":books:" /> <strong>Read More</strong></p>
 <ul>
 <li><a href="https://www.simplethread.com/why-infrastructure-as-code/">Why Infrastructure as Code</a></li>
-<li><a href="https://blog.gruntwork.io/why-we-use-terraform-and-not-chef-puppet-ansible-saltstack-or-cloudformation-7989dad2865c">Why Terraform by Gruntwork</a></li>
+<li><a href="https://blog.gruntwork.io/why-we-use-terraform-and-not-chef-puppet-ansible-saltstack-or-cloudformation-7989dad2865c">Why Terraform by Gruntwork</a> (most of the points made in the article also apply to OpenTofu)</li>
 </ul>
 </details>
 <details class="info">
@@ -5325,7 +5444,7 @@ its resources.</li>
 </ul>
 </details>
 <details class="info">
-<summary>Security | Why Web Application Firewall (WAF), Cloud Trail, Config, Guarduty❓</summary>
+<summary>Security | Why Web Application Firewall (WAF), CloudTrail, Config, GuardDuty❓</summary>
 <p>Raise your security posture with AWS infrastructure and services.
 Using AWS, you will gain the control and confidence you need to securely run your
 business with the most flexible and secure cloud computing environment available today.

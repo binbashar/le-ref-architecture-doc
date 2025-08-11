@@ -3330,6 +3330,8 @@
       
         
       
+        
+      
     
     
       
@@ -3432,6 +3434,8 @@
   
     
     
+      
+        
       
         
       
@@ -3573,7 +3577,7 @@
             
   
   <span class="md-ellipsis">
-    terraform
+    tofu
   </span>
   
 
@@ -3582,6 +3586,100 @@
         
         <nav class="md-nav" data-md-level="4" aria-labelledby="__nav_4_5_4_4_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_4_5_4_4">
+            <span class="md-nav__icon md-icon"></span>
+            tofu
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../leverage-cli/reference/tofu/tofu/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    commands
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../leverage-cli/reference/tofu/layers/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    layers
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_5_4_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_5_4_5" id="__nav_4_5_4_5_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    terraform
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="4" aria-labelledby="__nav_4_5_4_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_5_4_5">
             <span class="md-nav__icon md-icon"></span>
             terraform
           </label>
@@ -3615,7 +3713,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../leverage-cli/reference/terraform/layers/" class="md-nav__link">
+      <a href="../../leverage-cli/reference/tofu/layers/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3841,6 +3939,27 @@
           </ul>
         </nav>
       
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../leverage-cli/terraform-new-versions/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Using newer versions of Terraform
+  </span>
+  
+
+      </a>
     </li>
   
 
@@ -4179,9 +4298,9 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#understanding-how-leverage-gets-the-aws-credentials-for-terraform-and-other-tools" class="md-nav__link">
+  <a href="#understanding-how-leverage-gets-the-aws-credentials-for-opentofuterraform-and-other-tools" class="md-nav__link">
     <span class="md-ellipsis">
-      Understanding how Leverage gets the AWS credentials for Terraform and other tools
+      Understanding how Leverage gets the AWS credentials for OpenTofu/Terraform and other tools
     </span>
   </a>
   
@@ -4290,9 +4409,9 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#terraform-state-lock-errors" class="md-nav__link">
+  <a href="#opentofu-state-lock-errors" class="md-nav__link">
     <span class="md-ellipsis">
-      Terraform State Lock Errors
+      OpenTofu State Lock Errors
     </span>
   </a>
   
@@ -4643,11 +4762,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../../cookbooks/VPN-server/VPN-server-terraform/" class="md-nav__link">
+      <a href="../../cookbooks/VPN-server/VPN-server-opentofu/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    1. Terraform EC2 layer
+    1. OpenTofu EC2 layer
   </span>
   
 
@@ -5314,9 +5433,9 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#understanding-how-leverage-gets-the-aws-credentials-for-terraform-and-other-tools" class="md-nav__link">
+  <a href="#understanding-how-leverage-gets-the-aws-credentials-for-opentofuterraform-and-other-tools" class="md-nav__link">
     <span class="md-ellipsis">
-      Understanding how Leverage gets the AWS credentials for Terraform and other tools
+      Understanding how Leverage gets the AWS credentials for OpenTofu/Terraform and other tools
     </span>
   </a>
   
@@ -5425,9 +5544,9 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#terraform-state-lock-errors" class="md-nav__link">
+  <a href="#opentofu-state-lock-errors" class="md-nav__link">
     <span class="md-ellipsis">
-      Terraform State Lock Errors
+      OpenTofu State Lock Errors
     </span>
   </a>
   
@@ -5459,26 +5578,26 @@
 <h1 id="troubleshooting-general-issues">Troubleshooting general issues<a class="headerlink" href="#troubleshooting-general-issues" title="Permanent link"> ¶</a></h1>
 <h2 id="gathering-more-information">Gathering more information<a class="headerlink" href="#gathering-more-information" title="Permanent link"> ¶</a></h2>
 <p>Trying to get as much information about the issue as possible is key when troubleshooting.</p>
-<p>If the issue happens while you are working on a layer of the reference architecture and you are using Terraform, you can use the <code>--verbose</code> flag to try to get more information about the underlying issue.
-For instance, if the error shows up while running a Terraform plan command, you can enable a more verbose output like follows:
+<p>If the issue happens while you are working on a layer of the reference architecture and you are using OpenTofu, you can use the <code>--verbose</code> flag to try to get more information about the underlying issue.
+For instance, if the error shows up while running a tofu plan command, you can enable a more verbose output like follows:
 <div class="highlight"><pre><span></span><code>leverage --verbose tf plan
 </code></pre></div></p>
 <p>The <code>--verbose</code> flag can also be used when you are working with the Ansible Reference Architecture:
 <div class="highlight"><pre><span></span><code>leverage --verbose run init
 </code></pre></div></p>
-<h2 id="understanding-how-leverage-gets-the-aws-credentials-for-terraform-and-other-tools">Understanding how Leverage gets the AWS credentials for Terraform and other tools<a class="headerlink" href="#understanding-how-leverage-gets-the-aws-credentials-for-terraform-and-other-tools" title="Permanent link"> ¶</a></h2>
-<p>Firstly, you need to know that Terraform doesn't support AWS authentication methods that require user interaction. For instance, logging in via SSO or assuming roles that require MFA. That is why Leverage made the following two design decisions in that regard:</p>
+<h2 id="understanding-how-leverage-gets-the-aws-credentials-for-opentofuterraform-and-other-tools">Understanding how Leverage gets the AWS credentials for OpenTofu/Terraform and other tools<a class="headerlink" href="#understanding-how-leverage-gets-the-aws-credentials-for-opentofuterraform-and-other-tools" title="Permanent link"> ¶</a></h2>
+<p>Firstly, you need to know that OpenTofu/Terraform doesn't support AWS authentication methods that require user interaction. For instance, logging in via SSO or assuming roles that require MFA. That is why Leverage made the following two design decisions in that regard:</p>
 <ol>
-<li>Configure Terraform to use AWS profiles via Terraform AWS provider and local <a href="https://docs.aws.amazon.com/cli/latest/userguide/cli-configure-files.html">AWS configuration files</a>.</li>
-<li>Leverage handles the user interactivity during the authentication phase in order to get the credentials that Terraform needs through AWS profiles.</li>
+<li>Configure OpenTofu/Terraform to use AWS profiles via OpenTofu/Terraform AWS provider and local <a href="https://docs.aws.amazon.com/cli/latest/userguide/cli-configure-files.html">AWS configuration files</a>.</li>
+<li>Leverage handles the user interactivity during the authentication phase in order to get the credentials that OpenTofu/Terraform needs through AWS profiles.</li>
 </ol>
-<p>So, Leverage runs simple bash scripts to deal with 2. and then passes the execution flow to Terraform which by then should have the AWS profiles ready-to-use and in the expected path.</p>
+<p>So, Leverage runs simple bash scripts to deal with 2. and then passes the execution flow to OpenTofu/Terraform which by then should have the AWS profiles ready-to-use and in the expected path.</p>
 <h2 id="where-are-those-aws-profiles-stored-again">Where are those AWS profiles stored again?<a class="headerlink" href="#where-are-those-aws-profiles-stored-again" title="Permanent link"> ¶</a></h2>
 <p>They are stored in 2 files: <code>config</code> and <code>credentials</code>.
 By default, the AWS CLI will create those files under this path: <code>~/.aws/</code> but Leverage uses a slightly different convention, so they should actually be located in this path: <code>~/.aws/[project_name_here]/</code>.</p>
 <p>So, for instance, if your project name is <code>acme</code>, then said files should be found under: <code>~/.aws/acme/config</code> and <code>~/.aws/acme/credentials</code>.</p>
 <h2 id="ssh-reiterative-confirmation">SSH reiterative confirmation<a class="headerlink" href="#ssh-reiterative-confirmation" title="Permanent link"> ¶</a></h2>
-<p>If you get a reiterative dialog for confirmation while running a <code>leverage terraform init</code> :
+<p>If you get a reiterative dialog for confirmation while running a <code>leverage tofu init</code> :
 <div class="highlight"><pre><span></span><code>Warning: the ECDSA host key for &#39;YYY&#39; differs from the key for the IP address &#39;ZZZ.ZZZ.ZZZ.ZZZ&#39;
 Offending key for IP in /root/.ssh/known_hosts:xyz
 Matching host key in /root/.ssh/known_hosts:xyw
@@ -5508,11 +5627,11 @@ or prefix the leverage tool with the env var:
 </code></pre></div></p>
 <h2 id="leverage-cli-fails-to-mount-the-ssh-directory">Leverage CLI fails to mount the SSH directory<a class="headerlink" href="#leverage-cli-fails-to-mount-the-ssh-directory" title="Permanent link"> ¶</a></h2>
 <h3 id="possible-cause-1-operation-not-supported">Possible Cause 1: Operation Not Supported<a class="headerlink" href="#possible-cause-1-operation-not-supported" title="Permanent link"> ¶</a></h3>
-<p>The Leverage CLI mounts the <code>~/.ssh</code> directory in order to make the pulling of private Terraform modules work. The error should look similar to the following:
+<p>The Leverage CLI mounts the <code>~/.ssh</code> directory in order to make the pulling of private OpenTofu/Terraform modules work. The error should look similar to the following:
 <div class="highlight"><pre><span></span><code>[18:26:44.416] ERROR    Error creating container:
                         APIError: 400 Client Error for http+docker://localhost/v1.43/containers/create: Bad Request (&quot;invalid mount config for type &quot;bind&quot;: stat /host_mnt/private/tmp/com.apple.launchd.CWrsoki5yP/Listeners: operation not supported&quot;)
 </code></pre></div></p>
-<p>The problem happes because of the file system virtualization that is used by default and can be fixed by choosing the "osxfs (Legacy)" option as shown below:
+<p>The problem happens because of the file system virtualization that is used by default and can be fixed by choosing the "osxfs (Legacy)" option as shown below:
 <img alt="docket-daemon-not-responding" src="/assets/images/screenshots/leverage-docket-desktop-file-system.png" title="Docker daemon not responding" /></p>
 <p>Note: that setting can be accessed by clicking on the Docker Desktop icon tray, and then clicking on "Settings...". The setting should be in the "General" tab.</p>
 <h3 id="possible-cause-2-source-path-does-not-exist">Possible Cause 2: Source Path Does Not Exist<a class="headerlink" href="#possible-cause-2-source-path-does-not-exist" title="Permanent link"> ¶</a></h3>
@@ -5536,22 +5655,22 @@ $<span class="w"> </span>git<span class="w"> </span>config<span class="w"> </spa
 </code></pre></div>
 <h2 id="leverage-cli-targeting-specific-resources-with-indexes">Leverage CLI targeting specific resources with indexes<a class="headerlink" href="#leverage-cli-targeting-specific-resources-with-indexes" title="Permanent link"> ¶</a></h2>
 <p>Sometimes you want to target a specific resource, eg. when importing:</p>
-<div class="highlight"><pre><span></span><code>leverage<span class="w"> </span>terraform<span class="w"> </span>import<span class="w"> </span>aws_organizations_account.management<span class="w"> </span><span class="m">999999999999</span>
+<div class="highlight"><pre><span></span><code>leverage<span class="w"> </span>tofu<span class="w"> </span>import<span class="w"> </span>aws_organizations_account.management<span class="w"> </span><span class="m">999999999999</span>
 </code></pre></div>
 <p>But the real issue comes when indexes have to be used.</p>
 <p>To do this escape the target string like this:</p>
 <div class="highlight"><pre><span></span><code>leverage<span class="w"> </span>tf<span class="w"> </span>import<span class="w"> </span><span class="s1">&#39;aws_organizations_account.accounts[\&quot;accountalias\&quot;]&#39;</span><span class="w"> </span><span class="m">99999999999</span>
 </code></pre></div>
-<p>For more info on escaping indexes for <code>import</code> see <a href="../../leverage-cli/reference/terraform/#import">here</a></p>
+<p>For more info on escaping indexes for <code>import</code> see <a href="../../leverage-cli/reference/tofu/#import">here</a></p>
 <p>The same applies to other commands such as <code>plan</code>, <code>destroy</code> or <code>apply</code> when using <code>-target</code> with indexes.</p>
 <p>E.g.:</p>
 <div class="highlight"><pre><span></span><code>leverage<span class="w"> </span>tf<span class="w"> </span>plan<span class="w"> </span>-target<span class="o">=</span><span class="s1">&#39;aws_route53_record.main[\&quot;*.binbash.com.ar\&quot;]&#39;</span>
 </code></pre></div>
 <p>Note the use of single quotes and double quotes.</p>
-<p>For more info on escaping indexes for <code>plan</code>, <code>destroy</code> and <code>apply</code> see <a href="../../leverage-cli/reference/terraform/#plan">here</a></p>
-<h2 id="terraform-state-lock-errors">Terraform State Lock Errors<a class="headerlink" href="#terraform-state-lock-errors" title="Permanent link"> ¶</a></h2>
+<p>For more info on escaping indexes for <code>plan</code>, <code>destroy</code> and <code>apply</code> see <a href="../../leverage-cli/reference/tofu/#plan">here</a></p>
+<h2 id="opentofu-state-lock-errors">OpenTofu State Lock Errors<a class="headerlink" href="#opentofu-state-lock-errors" title="Permanent link"> ¶</a></h2>
 <p>Issue: Error Acquiring the State Lock.</p>
-<p>When running Terraform operations, you may encounter an error message similar to:</p>
+<p>When running OpenTofu operations, you may encounter an error message similar to:</p>
 <div class="highlight"><pre><span></span><code>Error: Error acquiring the state lock
 
 Error message: operation error DynamoDB: PutItem, https response error StatusCode: 400, RequestID: [REQUEST-ID]
@@ -5565,23 +5684,23 @@ Lock Info:
   Created:   2025-02-15 16:44:48.04410067 +0000 UTC
   Info:      
 
-Terraform acquires a state lock to protect the state from being written
+OpenTofu acquires a state lock to protect the state from being written
 by multiple users at the same time. Please resolve the issue above and try
 again. For most commands, you can disable locking with the &quot;-lock=false&quot;
 flag, but this is not recommended.
 </code></pre></div>
-<p>This error occurs when Terraform cannot acquire a lock on the state file because another process already has it locked, or a previous process did not properly release the lock.</p>
+<p>This error occurs when OpenTofu cannot acquire a lock on the state file because another process already has it locked, or a previous process did not properly release the lock.</p>
 <p>Solution Procedure</p>
 <ol>
-<li>Navigate to the directory of the Terraform configuration that's experiencing the lock issue</li>
-<li>Access the Terraform shell using Leverage:
-<div class="highlight"><pre><span></span><code>leverage<span class="w"> </span>terraform<span class="w"> </span>shell
+<li>Navigate to the directory of the OpenTofu configuration that's experiencing the lock issue</li>
+<li>Access the OpenTofu shell using Leverage:
+<div class="highlight"><pre><span></span><code>leverage<span class="w"> </span>tofu<span class="w"> </span>shell
 </code></pre></div></li>
 <li>Run the <code>force-unlock</code> command with the <code>lock ID</code> shown in the error message:
-<div class="highlight"><pre><span></span><code>terraform<span class="w"> </span>force-unlock<span class="w"> </span>9c340c13-2308-122f-603c-66c0e72abaf3
+<div class="highlight"><pre><span></span><code>tofu<span class="w"> </span>force-unlock<span class="w"> </span>9c340c13-2308-122f-603c-66c0e72abaf3
 </code></pre></div></li>
 <li>Confirm the operation when prompted</li>
-<li>Retry your original Leverage Terraform command</li>
+<li>Retry your original Leverage OpenTofu command</li>
 </ol>
 <p>Alternatively, manually delete the lock entry from DynamoDB table.</p>
 <ol>

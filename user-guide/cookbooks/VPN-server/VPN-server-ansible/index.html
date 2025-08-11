@@ -15,7 +15,7 @@
         <link rel="canonical" href="https://leverage.binbash.co/user-guide/cookbooks/VPN-server/VPN-server-ansible/">
       
       
-        <link rel="prev" href="../VPN-server-terraform/">
+        <link rel="prev" href="../VPN-server-opentofu/">
       
       
         <link rel="next" href="../VPN-server-gui-setup/">
@@ -3330,6 +3330,8 @@
       
         
       
+        
+      
     
     
       
@@ -3432,6 +3434,8 @@
   
     
     
+      
+        
       
         
       
@@ -3573,7 +3577,7 @@
             
   
   <span class="md-ellipsis">
-    terraform
+    tofu
   </span>
   
 
@@ -3582,6 +3586,100 @@
         
         <nav class="md-nav" data-md-level="4" aria-labelledby="__nav_4_5_4_4_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_4_5_4_4">
+            <span class="md-nav__icon md-icon"></span>
+            tofu
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../leverage-cli/reference/tofu/tofu/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    commands
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../leverage-cli/reference/tofu/layers/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    layers
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_5_4_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_5_4_5" id="__nav_4_5_4_5_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    terraform
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="4" aria-labelledby="__nav_4_5_4_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_5_4_5">
             <span class="md-nav__icon md-icon"></span>
             terraform
           </label>
@@ -3615,7 +3713,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../leverage-cli/reference/terraform/layers/" class="md-nav__link">
+      <a href="../../../leverage-cli/reference/tofu/layers/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3841,6 +3939,27 @@
           </ul>
         </nav>
       
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../leverage-cli/terraform-new-versions/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Using newer versions of Terraform
+  </span>
+  
+
+      </a>
     </li>
   
 
@@ -4476,11 +4595,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../VPN-server-terraform/" class="md-nav__link">
+      <a href="../VPN-server-opentofu/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    1. Terraform EC2 layer
+    1. OpenTofu EC2 layer
   </span>
   
 
@@ -5306,7 +5425,7 @@ use the SSH key generated in the <code>security-keys</code> layer of the Shared 
 EC2 instance that was deployed as explained at "SSH CONNECTION" section before.</p>
 <h4 id="pritunl-vpn-ansible-playbook">Pritunl VPN Ansible Playbook<a class="headerlink" href="#pritunl-vpn-ansible-playbook" title="Permanent link"> ¶</a></h4>
 <p>This Ansible repo will be used here: <strong><a href="https://github.com/binbashar/le-ansible-infra/tree/master/vpn-pritunl">&gt;&gt; Pritunl VPN Server Playbook &lt;&lt;</a></strong></p>
-<p>Copy the playbooks into your project repository. (e.g. you can create an <code>ansible</code> directory inside your <a href="https://leverage.binbash.co/"><strong>binbash Leverage</strong></a> project repository, so all your infraesctructure code is in the same place)</p>
+<p>Copy the playbooks into your project repository. (e.g. you can create an <code>ansible</code> directory inside your <a href="https://leverage.binbash.co/"><strong>binbash Leverage</strong></a> project repository, so all your infrastructure code is in the same place)</p>
 <p><code>cd</code> into the <code>ansible-pritunl-vpn-server</code> (or the name you've chosen) directory.</p>
 <p>Follow the steps in the repository <a href="https://github.com/binbashar/le-ansible-infra/blob/master/vpn-pritunl/README.md"><strong>README.md</strong></a> file to install the server.</p>
 <div class="admonition warning">
@@ -5365,7 +5484,7 @@ Please consider updating the MongoDB version as well. We have an open issue in t
       <nav class="md-footer__inner md-grid" aria-label="Footer" >
         
           
-          <a href="../VPN-server-terraform/" class="md-footer__link md-footer__link--prev" aria-label="Previous: 1. Terraform EC2 layer">
+          <a href="../VPN-server-opentofu/" class="md-footer__link md-footer__link--prev" aria-label="Previous: 1. OpenTofu EC2 layer">
             <div class="md-footer__button md-icon">
               
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
@@ -5375,7 +5494,7 @@ Please consider updating the MongoDB version as well. We have an open issue in t
                 Previous
               </span>
               <div class="md-ellipsis">
-                1. Terraform EC2 layer
+                1. OpenTofu EC2 layer
               </div>
             </div>
           </a>

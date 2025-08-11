@@ -90,7 +90,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#terraform-s3-dynamodb-for-remote-state-storage-locking" class="md-skip">
+        <a href="#opentofu-s3-dynamodb-for-remote-state-storage-locking" class="md-skip">
           Skip to content
         </a>
       
@@ -3408,6 +3408,8 @@
       
         
       
+        
+      
     
     
       
@@ -3510,6 +3512,8 @@
   
     
     
+      
+        
       
         
       
@@ -3651,7 +3655,7 @@
             
   
   <span class="md-ellipsis">
-    terraform
+    tofu
   </span>
   
 
@@ -3660,6 +3664,100 @@
         
         <nav class="md-nav" data-md-level="4" aria-labelledby="__nav_4_5_4_4_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_4_5_4_4">
+            <span class="md-nav__icon md-icon"></span>
+            tofu
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../leverage-cli/reference/tofu/tofu/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    commands
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../leverage-cli/reference/tofu/layers/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    layers
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_5_4_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_5_4_5" id="__nav_4_5_4_5_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    terraform
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="4" aria-labelledby="__nav_4_5_4_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_5_4_5">
             <span class="md-nav__icon md-icon"></span>
             terraform
           </label>
@@ -3693,7 +3791,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../leverage-cli/reference/terraform/layers/" class="md-nav__link">
+      <a href="../../leverage-cli/reference/tofu/layers/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3919,6 +4017,27 @@
           </ul>
         </nav>
       
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../leverage-cli/terraform-new-versions/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Using newer versions of Terraform
+  </span>
+  
+
+      </a>
     </li>
   
 
@@ -4550,11 +4669,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../../cookbooks/VPN-server/VPN-server-terraform/" class="md-nav__link">
+      <a href="../../cookbooks/VPN-server/VPN-server-opentofu/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    1. Terraform EC2 layer
+    1. OpenTofu EC2 layer
   </span>
   
 
@@ -5270,16 +5389,16 @@
   
 
 
-<h1 id="terraform-s3-dynamodb-for-remote-state-storage-locking">Terraform - S3 &amp; DynamoDB for Remote State Storage &amp; Locking<a class="headerlink" href="#terraform-s3-dynamodb-for-remote-state-storage-locking" title="Permanent link"> ¶</a></h1>
+<h1 id="opentofu-s3-dynamodb-for-remote-state-storage-locking">OpenTofu - S3 &amp; DynamoDB for Remote State Storage &amp; Locking<a class="headerlink" href="#opentofu-s3-dynamodb-for-remote-state-storage-locking" title="Permanent link"> ¶</a></h1>
 <h2 id="overview">Overview<a class="headerlink" href="#overview" title="Permanent link"> ¶</a></h2>
-<p>Use this terraform configuration files to create the <strong>S3 bucket</strong> &amp; <strong>DynamoDB</strong> table needed to use Terraform Remote State Storage &amp; Locking.</p>
+<p>Use this tofu configuration to create the <strong>S3 bucket</strong> &amp; <strong>DynamoDB</strong> table needed to use OpenTofu Remote State Storage &amp; Locking.</p>
 <div class="admonition info">
-<p class="admonition-title">What is the Terraform Remote State?</p>
-<p>Read the <a href="https://developer.hashicorp.com/terraform/language/state/remote">official definition</a> by Hashicorp.</p>
+<p class="admonition-title">What is the OpenTofu Remote State?</p>
+<p>Read the <a href="https://opentofu.org/docs/language/state/remote/">official definition</a> by Hashicorp.</p>
 </div>
-<p><img alt="leverage-ref-arch-tf" src="/assets/images/diagrams/terraform-aws-s3-backend.png" style="width:350px" title="Leverage" /></p>
+<p><img alt="leverage-ref-arch-tf" src="/assets/images/diagrams/opentofu-aws-s3-backend.png" style="width:350px; display:block; margin: 0 auto;" title="Leverage" /></p>
 <figcaption style="font-size:15px">
-<b>Figure:</b> Terraform remote state store & locking necessary AWS S3 bucket and DynamoDB table components.
+<b>Figure:</b> OpenTofu remote state store & locking necessary AWS S3 bucket and DynamoDB table components.
 (Source: binbash Leverage, 
 <a href="https://registry.terraform.io/modules/binbashar/tfstate-backend/aws/latest">
 "Terraform Module: Terraform Backend"</a>,
@@ -5288,12 +5407,12 @@ Terraform modules registry, accessed December 3rd 2020).
 
 <h2 id="prerequisites">Prerequisites<a class="headerlink" href="#prerequisites" title="Permanent link"> ¶</a></h2>
 <div class="admonition example">
-<p class="admonition-title">Terraform repo structure + state backend initialization</p>
+<p class="admonition-title">OpenTofu repo structure + state backend initialization</p>
 <ol>
 <li>Ensure you have <a href="/user-guide/leverage-cli/overview.md"><code>Leverage CLI</code></a> installed in your system</li>
 <li>Refer to <a href="../configuration/">Configuration Pre-requisites</a> to understand how to set up the
   configuration files required for this layer. Where you must build your
-  <a href="../features/organization/overview/">Terraform Reference Architecture account structure</a></li>
+  <a href="../features/organization/overview/">OpenTofu Reference Architecture account structure</a></li>
 <li>Leveraged by the <a href="/user-guide/infra-as-code-library/overview.md">Infrastructure as Code (IaC) Library</a> through the
  <a href="https://registry.terraform.io/modules/binbashar/tfstate-backend/aws/latest">terraform-aws-tfstate-backend module</a><ul>
 <li><a href="https://github.com/binbashar/le-tf-infra-aws/tree/master/root/us-east-1/base-tf-backend">/management/base-tf-backend</a></li>
@@ -5312,9 +5431,9 @@ Terraform modules registry, accessed December 3rd 2020).
 <ol>
 <li>At the corresponding account dir, 
   eg: <a href="https://github.com/binbashar/le-tf-infra-aws/tree/master/shared/us-east-1/base-tf-backend">/shared/base-tf-backend</a> then,</li>
-<li>Run <code>leverage terraform init --skip-validation</code></li>
-<li>Run <code>leverage terraform plan</code>, review the output to understand the expected changes</li>
-<li>Run <code>leverage terraform apply</code>, review the output once more and type <code>yes</code> if you are okay with that</li>
+<li>Run <code>leverage tofu init --skip-validation</code></li>
+<li>Run <code>leverage tofu plan</code>, review the output to understand the expected changes</li>
+<li>Run <code>leverage tofu apply</code>, review the output once more and type <code>yes</code> if you are okay with that</li>
 <li>
 <p>This should create a <code>terraform.tfstate</code> file in this directory but we don't want to push that to the repository so 
   let's push the state to the backend we just created</p>
@@ -5324,7 +5443,7 @@ Terraform modules registry, accessed December 3rd 2020).
   #   key = &quot;shared/tf-backend/terraform.tfstate&quot;
   # }
 </code></pre></div></li>
-<li>Run <code>leverage terraform init</code> and type <code>yes</code> when Terraform asks if you want to import the state to the S3 backend</li>
+<li>Run <code>leverage tofu init</code> and type <code>yes</code> when OpenTofu asks if you want to import the state to the S3 backend</li>
 <li>Done. You can remove <code>terraform.tfstate</code> now (and also <code>terraform.tfstate.backup</code> if available)</li>
 </ul>
 </li>
@@ -5333,7 +5452,7 @@ Terraform modules registry, accessed December 3rd 2020).
 <h2 id="expected-workflow-after-set-up">Expected workflow after set up<a class="headerlink" href="#expected-workflow-after-set-up" title="Permanent link"> ¶</a></h2>
 <p><img alt="⚠" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.0.3/assets/svg/26a0.svg" title=":warning:" /> This video is outdated!
 <a href="https://asciinema.org/a/377220"><img alt="asciicast" src="https://asciinema.org/a/377220.svg" /></a></p>
-<h1 id="terraform-remote-state">Terraform Remote State<a class="headerlink" href="#terraform-remote-state" title="Permanent link"> ¶</a></h1>
+<h1 id="opentofu-remote-state">OpenTofu Remote State<a class="headerlink" href="#opentofu-remote-state" title="Permanent link"> ¶</a></h1>
 <p>In the <code>base-tf-backend</code> folder you should find the definition of the infrastructure that needs to be deployed before 
 you can get to work with anything else.</p>
 <p><strong>IMPORTANT:</strong> THIS IS ONLY NEEDED IF THE BACKEND WAS NOT CREATED YET. IF THE BACKEND ALREADY EXISTS YOU JUST USE IT.</p>

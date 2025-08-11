@@ -3381,6 +3381,8 @@
       
         
       
+        
+      
     
     
       
@@ -3483,6 +3485,8 @@
   
     
     
+      
+        
       
         
       
@@ -3624,7 +3628,7 @@
             
   
   <span class="md-ellipsis">
-    terraform
+    tofu
   </span>
   
 
@@ -3633,6 +3637,100 @@
         
         <nav class="md-nav" data-md-level="4" aria-labelledby="__nav_4_5_4_4_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_4_5_4_4">
+            <span class="md-nav__icon md-icon"></span>
+            tofu
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../leverage-cli/reference/tofu/tofu/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    commands
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../leverage-cli/reference/tofu/layers/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    layers
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_5_4_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_5_4_5" id="__nav_4_5_4_5_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    terraform
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="4" aria-labelledby="__nav_4_5_4_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_5_4_5">
             <span class="md-nav__icon md-icon"></span>
             terraform
           </label>
@@ -3666,7 +3764,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../leverage-cli/reference/terraform/layers/" class="md-nav__link">
+      <a href="../../leverage-cli/reference/tofu/layers/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3892,6 +3990,27 @@
           </ul>
         </nav>
       
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../leverage-cli/terraform-new-versions/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Using newer versions of Terraform
+  </span>
+  
+
+      </a>
     </li>
   
 
@@ -4523,11 +4642,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../../cookbooks/VPN-server/VPN-server-terraform/" class="md-nav__link">
+      <a href="../../cookbooks/VPN-server/VPN-server-opentofu/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    1. Terraform EC2 layer
+    1. OpenTofu EC2 layer
   </span>
   
 
@@ -5373,7 +5492,7 @@
 </details>
 <p><a href="../configuration/">Configuration files</a> are organized by environments (e.g. dev, stg, prd), and service type,
 which we call <strong>layers</strong> (identities, organizations, storage, etc) to keep any changes made to them separate.
-Within each of those <strong>layers</strong> folders you should find the Terraform files that are used to define all the 
+Within each of those <strong>layers</strong> folders you should find the OpenTofu files that are used to define all the 
 resources that belong to such account environment and specific layer.</p>
 <div class="admonition info">
 <p class="admonition-title">Project file structure </p>
@@ -5393,7 +5512,7 @@ binbash Leverage Doc, accessed August 4th 2021).
 <p><strong>NOTE:</strong> As a convention folders with the <code>--</code> suffix reflect that the resources are not currently
 created in AWS, basically they've been destroyed or not yet exist. </p>
 <p>Such layer separation is meant to avoid situations in which a single folder contains a lot of resources. 
-That is important to avoid because at some point, running <code>leverage terraform plan / apply</code> starts taking 
+That is important to avoid because at some point, running <code>leverage tofu plan / apply</code> starts taking 
 too long and that becomes a problem.</p>
 <p>This organization also provides a layout that is easier to navigate and discover. 
 You simply start with the accounts at the top level and then you get to explore the resource categories within 

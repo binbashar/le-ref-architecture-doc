@@ -18,7 +18,7 @@
         <link rel="prev" href="../build.env/">
       
       
-        <link rel="next" href="../../private-repositories/">
+        <link rel="next" href="../../terraform-new-versions/">
       
       
       <link rel="icon" href="../../../../assets/images/logos/favicon.ico">
@@ -3332,6 +3332,8 @@
       
         
       
+        
+      
     
     
       
@@ -3434,6 +3436,8 @@
   
     
     
+      
+        
       
         
       
@@ -3575,7 +3579,7 @@
             
   
   <span class="md-ellipsis">
-    terraform
+    tofu
   </span>
   
 
@@ -3584,6 +3588,100 @@
         
         <nav class="md-nav" data-md-level="4" aria-labelledby="__nav_4_5_4_4_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_4_5_4_4">
+            <span class="md-nav__icon md-icon"></span>
+            tofu
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../reference/tofu/tofu/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    commands
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../reference/tofu/layers/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    layers
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_5_4_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_5_4_5" id="__nav_4_5_4_5_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    terraform
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="4" aria-labelledby="__nav_4_5_4_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_5_4_5">
             <span class="md-nav__icon md-icon"></span>
             terraform
           </label>
@@ -3617,7 +3715,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../reference/terraform/layers/" class="md-nav__link">
+      <a href="../../reference/tofu/layers/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -4011,6 +4109,27 @@
           </ul>
         </nav>
       
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../terraform-new-versions/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Using newer versions of Terraform
+  </span>
+  
+
+      </a>
     </li>
   
 
@@ -4642,11 +4761,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../cookbooks/VPN-server/VPN-server-terraform/" class="md-nav__link">
+      <a href="../../../cookbooks/VPN-server/VPN-server-opentofu/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    1. Terraform EC2 layer
+    1. OpenTofu EC2 layer
   </span>
   
 
@@ -5718,7 +5837,7 @@ e.g.<span class="w"> </span><span class="k">if</span><span class="w"> </span>you
 <span class="w">  </span><span class="s2">&quot;usage&quot;</span>:<span class="w"> </span><span class="o">{</span>
 <span class="w">   </span><span class="s2">&quot;used&quot;</span>:<span class="w"> </span>true,
 <span class="w">   </span><span class="s2">&quot;files&quot;</span>:<span class="w"> </span><span class="o">[</span>
-<span class="w">    </span><span class="s2">&quot;/home/jdelacamara/Dev/work/BinBash/code/le-tf-infra-aws/apps-devstg/us-east-1/ec2-fleet-ansible --/ec2_fleet.tf&quot;</span>
+<span class="w">    </span><span class="s2">&quot;/home/user/code/le-tf-infra-aws/apps-devstg/us-east-1/ec2-fleet-ansible --/ec2_fleet.tf&quot;</span>
 <span class="w">   </span><span class="o">]</span>
 <span class="w">  </span><span class="o">}</span>
 <span class="w"> </span><span class="o">}</span>,
@@ -5731,8 +5850,8 @@ e.g.<span class="w"> </span><span class="k">if</span><span class="w"> </span>you
 <span class="w">  </span><span class="s2">&quot;usage&quot;</span>:<span class="w"> </span><span class="o">{</span>
 <span class="w">   </span><span class="s2">&quot;used&quot;</span>:<span class="w"> </span>true,
 <span class="w">   </span><span class="s2">&quot;files&quot;</span>:<span class="w"> </span><span class="o">[</span>
-<span class="w">    </span><span class="s2">&quot;/home/jdelacamara/Dev/work/BinBash/code/le-tf-infra-aws/apps-devstg/us-east-1/ec2-fleet-ansible --/locals.tf&quot;</span>,
-<span class="w">    </span><span class="s2">&quot;/home/jdelacamara/Dev/work/BinBash/code/le-tf-infra-aws/apps-devstg/us-east-1/ec2-fleet-ansible --/ec2_fleet.tf&quot;</span>
+<span class="w">    </span><span class="s2">&quot;/home/user/code/le-tf-infra-aws/apps-devstg/us-east-1/ec2-fleet-ansible --/locals.tf&quot;</span>,
+<span class="w">    </span><span class="s2">&quot;/home/user/code/le-tf-infra-aws/apps-devstg/us-east-1/ec2-fleet-ansible --/ec2_fleet.tf&quot;</span>
 <span class="w">   </span><span class="o">]</span>
 <span class="w">  </span><span class="o">}</span>
 <span class="w"> </span><span class="o">}</span>,
@@ -5745,7 +5864,7 @@ e.g.<span class="w"> </span><span class="k">if</span><span class="w"> </span>you
 <span class="w">  </span><span class="s2">&quot;usage&quot;</span>:<span class="w"> </span><span class="o">{</span>
 <span class="w">   </span><span class="s2">&quot;used&quot;</span>:<span class="w"> </span>true,
 <span class="w">   </span><span class="s2">&quot;files&quot;</span>:<span class="w"> </span><span class="o">[</span>
-<span class="w">    </span><span class="s2">&quot;/home/jdelacamara/Dev/work/BinBash/code/le-tf-infra-aws/apps-devstg/us-east-1/ec2-fleet-ansible --/ec2_fleet.tf&quot;</span>
+<span class="w">    </span><span class="s2">&quot;/home/user/code/le-tf-infra-aws/apps-devstg/us-east-1/ec2-fleet-ansible --/ec2_fleet.tf&quot;</span>
 <span class="w">   </span><span class="o">]</span>
 <span class="w">  </span><span class="o">}</span>
 <span class="w"> </span><span class="o">}</span>
@@ -5835,13 +5954,13 @@ e.g.<span class="w"> </span><span class="k">if</span><span class="w"> </span>you
         
         
           
-          <a href="../../private-repositories/" class="md-footer__link md-footer__link--next" aria-label="Next: Private Repositories">
+          <a href="../../terraform-new-versions/" class="md-footer__link md-footer__link--next" aria-label="Next: Using newer versions of Terraform">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 Next
               </span>
               <div class="md-ellipsis">
-                Private Repositories
+                Using newer versions of Terraform
               </div>
             </div>
             <div class="md-footer__button md-icon">

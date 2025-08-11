@@ -3439,6 +3439,8 @@
       
         
       
+        
+      
     
     
       
@@ -3541,6 +3543,8 @@
   
     
     
+      
+        
       
         
       
@@ -3682,7 +3686,7 @@
             
   
   <span class="md-ellipsis">
-    terraform
+    tofu
   </span>
   
 
@@ -3691,6 +3695,100 @@
         
         <nav class="md-nav" data-md-level="4" aria-labelledby="__nav_4_5_4_4_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_4_5_4_4">
+            <span class="md-nav__icon md-icon"></span>
+            tofu
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../user-guide/leverage-cli/reference/tofu/tofu/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    commands
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../user-guide/leverage-cli/reference/tofu/layers/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    layers
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_5_4_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_5_4_5" id="__nav_4_5_4_5_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    terraform
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="4" aria-labelledby="__nav_4_5_4_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_5_4_5">
             <span class="md-nav__icon md-icon"></span>
             terraform
           </label>
@@ -3724,7 +3822,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../user-guide/leverage-cli/reference/terraform/layers/" class="md-nav__link">
+      <a href="../../user-guide/leverage-cli/reference/tofu/layers/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3950,6 +4048,27 @@
           </ul>
         </nav>
       
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../user-guide/leverage-cli/terraform-new-versions/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Using newer versions of Terraform
+  </span>
+  
+
+      </a>
     </li>
   
 
@@ -4581,11 +4700,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../../user-guide/cookbooks/VPN-server/VPN-server-terraform/" class="md-nav__link">
+      <a href="../../user-guide/cookbooks/VPN-server/VPN-server-opentofu/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    1. Terraform EC2 layer
+    1. OpenTofu EC2 layer
   </span>
   
 
@@ -5400,7 +5519,7 @@ Please note that in the examples above my short project name is <code>me</code> 
 <li>Move to the <code>management/global/sso</code> layer</li>
 <li>Run: <code>leverage tf plan</code></li>
 <li>You should get this error: "Error: error configuring S3 Backend: no valid credential sources for S3 Backend found."</li>
-<li>This happens because so far you have been running Terraform with a different AWS profile (the bootstrap one). Luckily the fix is simple, just run this: <code>leverage tf init -reconfigure</code>. Terraform should reconfigure the AWS profile in the <code>.terraform/terraform.tfstate</code> file.</li>
+<li>This happens because so far you have been running OpenTofu with a different AWS profile (the bootstrap one). Luckily the fix is simple, just run this: <code>leverage tf init -reconfigure</code>. OpenTofu should reconfigure the AWS profile in the <code>.terraform/terraform.tfstate</code> file.</li>
 <li>Now try running that <code>leverage tf plan</code> command again</li>
 <li>This time it should succeed, you should see the message: <code>No changes. Your infrastructure matches the configuration.</code></li>
 </ol>

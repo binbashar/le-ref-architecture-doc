@@ -3319,6 +3319,8 @@
       
         
       
+        
+      
     
     
       
@@ -3421,6 +3423,8 @@
   
     
     
+      
+        
       
         
       
@@ -3562,7 +3566,7 @@
             
   
   <span class="md-ellipsis">
-    terraform
+    tofu
   </span>
   
 
@@ -3571,6 +3575,100 @@
         
         <nav class="md-nav" data-md-level="4" aria-labelledby="__nav_4_5_4_4_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_4_5_4_4">
+            <span class="md-nav__icon md-icon"></span>
+            tofu
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../user-guide/leverage-cli/reference/tofu/tofu/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    commands
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../user-guide/leverage-cli/reference/tofu/layers/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    layers
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_5_4_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_5_4_5" id="__nav_4_5_4_5_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    terraform
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="4" aria-labelledby="__nav_4_5_4_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_5_4_5">
             <span class="md-nav__icon md-icon"></span>
             terraform
           </label>
@@ -3604,7 +3702,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../user-guide/leverage-cli/reference/terraform/layers/" class="md-nav__link">
+      <a href="../../../user-guide/leverage-cli/reference/tofu/layers/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3830,6 +3928,27 @@
           </ul>
         </nav>
       
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../user-guide/leverage-cli/terraform-new-versions/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Using newer versions of Terraform
+  </span>
+  
+
+      </a>
     </li>
   
 
@@ -4461,11 +4580,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../user-guide/cookbooks/VPN-server/VPN-server-terraform/" class="md-nav__link">
+      <a href="../../../user-guide/cookbooks/VPN-server/VPN-server-opentofu/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    1. Terraform EC2 layer
+    1. OpenTofu EC2 layer
   </span>
   
 
@@ -5171,11 +5290,11 @@ is the responsibility of the executor (to ensure everything is OK please conside
 </ul>
 </li>
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> <strong>Infra as Code + GitOps</strong> <ul>
-<li>After deployment via IaC (Terraform, Ansible &amp; Helm) all subsequent changes will
+<li>After deployment via IaC (OpenTofu/Terraform, Ansible &amp; Helm) all subsequent changes will
 be performed via versioned controlled code, by modifying the corresponding repository and running the proper IaC
 Automation execution. </li>
-<li>All AWS resources will be deployed via <strong><em>Terraform</em></strong> and rarely occasional CloudFormation, Python SDK &amp; AWS CLI
-when the resource is not defined by Terraform (almost none scenario). All code and scripts will be included in the
+<li>All AWS resources will be deployed via <strong><em>OpenTofu/Terraform</em></strong> and rarely occasional CloudFormation, Python SDK &amp; AWS CLI
+when the resource is not defined by OpenTofu/Terraform (almost no scenario). All code and scripts will be included in the
 repository.
 We'll start the process via Local Workstations. Afterwards full exec automation will be considered via: Github Actions, 
 ,Gitlab Pipelines or equivalent preferred service. </li>
@@ -5184,7 +5303,7 @@ We'll start the process via Local Workstations. Afterwards full exec automation 
 </ul>
 </li>
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> <strong>Server OS provisioning</strong>: Provisioning via <strong><em>Ansible</em></strong> for resources that need to be provisioned on an OS.</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> <strong>Containers Orchestration:</strong> Orchestration via <strong><em>Terraform + Helm Charts</em></strong> for resources that need to be 
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> <strong>Containers Orchestration:</strong> Orchestration via <strong><em>OpenTofu/Terraform + Helm Charts</em></strong> for resources that need to be 
     provisioned in Kubernetes (with <strong><em>Docker</em></strong> as preferred container engine).</li>
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> <strong>Pre-existing AWS Accounts:</strong> All resources will be deployed in several new AWS accounts created inside the Client AWS Organization. 
     Except for the AWS Legacy Account invitation to the AWS Org and <em>OrganizationAccountAccessRole</em> creation in it, 

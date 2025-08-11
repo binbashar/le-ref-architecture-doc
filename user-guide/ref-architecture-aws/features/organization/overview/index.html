@@ -3403,6 +3403,8 @@
       
         
       
+        
+      
     
     
       
@@ -3505,6 +3507,8 @@
   
     
     
+      
+        
       
         
       
@@ -3646,7 +3650,7 @@
             
   
   <span class="md-ellipsis">
-    terraform
+    tofu
   </span>
   
 
@@ -3655,6 +3659,100 @@
         
         <nav class="md-nav" data-md-level="4" aria-labelledby="__nav_4_5_4_4_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_4_5_4_4">
+            <span class="md-nav__icon md-icon"></span>
+            tofu
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../leverage-cli/reference/tofu/tofu/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    commands
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../leverage-cli/reference/tofu/layers/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    layers
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_5_4_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_5_4_5" id="__nav_4_5_4_5_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    terraform
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="4" aria-labelledby="__nav_4_5_4_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_5_4_5">
             <span class="md-nav__icon md-icon"></span>
             terraform
           </label>
@@ -3688,7 +3786,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../leverage-cli/reference/terraform/layers/" class="md-nav__link">
+      <a href="../../../../leverage-cli/reference/tofu/layers/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3914,6 +4012,27 @@
           </ul>
         </nav>
       
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../leverage-cli/terraform-new-versions/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Using newer versions of Terraform
+  </span>
+  
+
+      </a>
     </li>
   
 
@@ -4545,11 +4664,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../cookbooks/VPN-server/VPN-server-terraform/" class="md-nav__link">
+      <a href="../../../../cookbooks/VPN-server/VPN-server-opentofu/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    1. Terraform EC2 layer
+    1. OpenTofu EC2 layer
   </span>
   
 
@@ -5258,7 +5377,7 @@
 
 <h1 id="aws-organizations">AWS Organizations<a class="headerlink" href="#aws-organizations" title="Permanent link"> ¶</a></h1>
 <h2 id="overview">Overview<a class="headerlink" href="#overview" title="Permanent link"> ¶</a></h2>
-<p>This repository contains all Terraform configuration files used to create binbash Leverage Reference 
+<p>This repository contains all OpenTofu configuration files used to create binbash Leverage Reference 
 <a href="https://aws.amazon.com/organizations/"><strong>AWS Organizations</strong></a> Multi-Account baseline layout.</p>
 <div class="admonition check">
 <p class="admonition-title">Why AWS Organizations?</p>
@@ -5315,7 +5434,7 @@ place (usually, security/users account) and use AssumeRole to works with org acc
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> <strong>Operations:</strong> Will reduce the <strong>blast radius</strong> to the maximum possible.   </li>
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> <strong>Compatibility:</strong> Legacy accounts can (probably should) be <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_invites.html">invited 
      as a member of the new Organization</a>
-      and afterwards even imported into your <a href="https://www.terraform.io/docs/providers/aws/r/organizations_account.html#import">terraform code</a>.</li>
+      and afterwards even imported into your <a href="https://search.opentofu.org/provider/opentofu/aws/latest/docs/resources/organizations_account#import">OpenTofu code</a>.</li>
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> <strong>Migration:</strong> After having your baseline AWS Org reference cloud solutions architecture deployed
     (IAM, VPC, NACLS, VPC-Peering, DNS Cross-Org,
     CloudTrail, etc) you're ready to start progressively orchestrating new resources in order to segregate different
@@ -5333,7 +5452,7 @@ place (usually, security/users account) and use AssumeRole to works with org acc
 <li>Finally switch <code>jenkins2.aws.domain.com</code> -&gt; to -&gt; <code>jenkins.aws.domain.com</code></li>
 <li>Stop your old EC2_A.</li>
 <li>If everything looks fine after after 2/4 weeks you could terminate your EC2_A (hope everything is as 
-    code and just <code>terraform destroy</code>)</li>
+    code and just <code>tofu destroy</code>)</li>
 <li>Considering the previously detailed steps plan your roadmap to move forward with every other component
     to be migrated.</li>
 </ol>
@@ -5349,7 +5468,7 @@ place (usually, security/users account) and use AssumeRole to works with org acc
 <ul>
 <li><img alt="📙" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.0.3/assets/svg/1f4d9.svg" title=":orange_book:" /> <a href="https://aws.amazon.com/organizations/getting-started/best-practices/"><strong>Why should I set up a multi-account AWS environment?</strong></a>       </li>
 <li><img alt="📙" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.0.3/assets/svg/1f4d9.svg" title=":orange_book:" /> <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/tutorial_cross-account-with-roles.html"><strong>AWS Multiple Account User Management Strategy</strong></a></li>
-<li><img alt="📙" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.0.3/assets/svg/1f4d9.svg" title=":orange_book:" /> <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-sharing-logs.html"><strong>AWS Muttiple Account Security Strategy</strong></a></li>
+<li><img alt="📙" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.0.3/assets/svg/1f4d9.svg" title=":orange_book:" /> <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-sharing-logs.html"><strong>AWS Multiple Account Security Strategy</strong></a></li>
 <li><img alt="📙" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.0.3/assets/svg/1f4d9.svg" title=":orange_book:" /> <a href="https://aws.amazon.com/answers/account-management/aws-multi-account-billing-strategy/"><strong>AWS Multiple Account Billing Strategy</strong></a></li>
 <li><img alt="📙" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.0.3/assets/svg/1f4d9.svg" title=":orange_book:" /> <a href="https://aws.amazon.com/answers/security/aws-secure-account-setup/"><strong>AWS Secure Account Setup</strong></a></li>
 <li><img alt="📙" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.0.3/assets/svg/1f4d9.svg" title=":orange_book:" /> <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_permissions.html"><strong>Authentication and Access Control for AWS Organizations</strong></a> (keep in mind EC2 and other services can also use AWS IAM Roles to get secure cross-account access)</li>

@@ -3330,6 +3330,8 @@
       
         
       
+        
+      
     
     
       
@@ -3432,6 +3434,8 @@
   
     
     
+      
+        
       
         
       
@@ -3573,7 +3577,7 @@
             
   
   <span class="md-ellipsis">
-    terraform
+    tofu
   </span>
   
 
@@ -3582,6 +3586,100 @@
         
         <nav class="md-nav" data-md-level="4" aria-labelledby="__nav_4_5_4_4_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_4_5_4_4">
+            <span class="md-nav__icon md-icon"></span>
+            tofu
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../leverage-cli/reference/tofu/tofu/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    commands
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../leverage-cli/reference/tofu/layers/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    layers
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_5_4_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_5_4_5" id="__nav_4_5_4_5_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    terraform
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="4" aria-labelledby="__nav_4_5_4_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_5_4_5">
             <span class="md-nav__icon md-icon"></span>
             terraform
           </label>
@@ -3615,7 +3713,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../leverage-cli/reference/terraform/layers/" class="md-nav__link">
+      <a href="../../leverage-cli/reference/tofu/layers/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3841,6 +3939,27 @@
           </ul>
         </nav>
       
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../leverage-cli/terraform-new-versions/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Using newer versions of Terraform
+  </span>
+  
+
+      </a>
     </li>
   
 
@@ -4754,11 +4873,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../VPN-server/VPN-server-terraform/" class="md-nav__link">
+      <a href="../VPN-server/VPN-server-opentofu/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    1. Terraform EC2 layer
+    1. OpenTofu EC2 layer
   </span>
   
 
@@ -5816,7 +5935,7 @@ A key managed by KMS can be used here. A regular key-in-a-file is used for this 
 </code></pre></div>
 <p>The final template in file <code>cluster.yaml</code>.</p>
 </div>
-<p>If you are happy with the config (or you are not happy but you think the file is ok), let's create the Terraform files!</p>
+<p>If you are happy with the config (or you are not happy but you think the file is ok), let's create the OpenTofu files!</p>
 <div class="highlight"><pre><span></span><code>make<span class="w"> </span>cluster-update
 </code></pre></div>
 <p>Finally, apply the layer:</p>
@@ -5886,7 +6005,7 @@ leverage<span class="w"> </span>tf<span class="w"> </span>apply
 <p>E.g. <a href="https://addons.mozilla.org/en-US/firefox/addon/gitzip/?utm_source=addons.mozilla.org&amp;utm_medium=referral&amp;utm_content=search">this addon</a> is a nice way to do it.</p>
 <p>Paste this layer into the account/region chosen to host this, e.g. <code>apps-devstg/us-east-1/</code>, so the final layer is <code>apps-devstg/us-east-1/k8s-eks/</code>. Note you can change the layer name (and CIDRs and cluster name) if you already have an EKS cluster in this Account/Region.</p>
 <h4 id="1-create-the-network">1 - Create the network<a class="headerlink" href="#1-create-the-network" title="Permanent link"> ¶</a></h4>
-<p>First go into the network layer (e.g. <code>apps-devstg/us-east-1/k8s-eks/network</code>) and config the Terraform S3 background key, CIDR for the network, names, etc.</p>
+<p>First go into the network layer (e.g. <code>apps-devstg/us-east-1/k8s-eks/network</code>) and config the OpenTofu S3 background key, CIDR for the network, names, etc.</p>
 <div class="highlight"><pre><span></span><code><span class="nb">cd</span><span class="w"> </span>apps-devstg/us-east-1/k8s-eks/network
 </code></pre></div>
 <p>Then, from inside the layer run:</p>
@@ -5898,7 +6017,7 @@ leverage<span class="w"> </span>tf<span class="w"> </span>apply
 <p>If you are using the <a href="../VPN-server/">Pritunl VPN server</a> (as per the <a href="https://leverage.binbash.co/"><strong>binbash Leverage</strong></a> recommendations), add the route to the CIDR set in the step 1 to the server you are using to connect to the VPN.</p>
 <p>Then, connect to the VPN to access the private space.</p>
 <h4 id="3-create-the-cluster">3 - Create the cluster<a class="headerlink" href="#3-create-the-cluster" title="Permanent link"> ¶</a></h4>
-<p>First go into each layer and config the Terraform S3 background key, names, addons, the components to install, etc.</p>
+<p>First go into each layer and config the OpenTofu S3 background key, names, addons, the components to install, etc.</p>
 <div class="highlight"><pre><span></span><code><span class="nb">cd</span><span class="w"> </span>apps-devstg/us-east-1/k8s-eks/
 </code></pre></div>
 <p>Then apply layers as follow:</p>

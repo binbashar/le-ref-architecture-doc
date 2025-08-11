@@ -3585,6 +3585,8 @@
       
         
       
+        
+      
     
     
       
@@ -3687,6 +3689,8 @@
   
     
     
+      
+        
       
         
       
@@ -3828,7 +3832,7 @@
             
   
   <span class="md-ellipsis">
-    terraform
+    tofu
   </span>
   
 
@@ -3837,6 +3841,100 @@
         
         <nav class="md-nav" data-md-level="4" aria-labelledby="__nav_4_5_4_4_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_4_5_4_4">
+            <span class="md-nav__icon md-icon"></span>
+            tofu
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../leverage-cli/reference/tofu/tofu/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    commands
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../leverage-cli/reference/tofu/layers/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    layers
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_5_4_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_5_4_5" id="__nav_4_5_4_5_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    terraform
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="4" aria-labelledby="__nav_4_5_4_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_5_4_5">
             <span class="md-nav__icon md-icon"></span>
             terraform
           </label>
@@ -3870,7 +3968,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../leverage-cli/reference/terraform/layers/" class="md-nav__link">
+      <a href="../../leverage-cli/reference/tofu/layers/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -4096,6 +4194,27 @@
           </ul>
         </nav>
       
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../leverage-cli/terraform-new-versions/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Using newer versions of Terraform
+  </span>
+  
+
+      </a>
     </li>
   
 
@@ -4727,11 +4846,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../../cookbooks/VPN-server/VPN-server-terraform/" class="md-nav__link">
+      <a href="../../cookbooks/VPN-server/VPN-server-opentofu/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    1. Terraform EC2 layer
+    1. OpenTofu EC2 layer
   </span>
   
 
@@ -5664,7 +5783,7 @@
 <p>For instance, typical changes include:</p>
 <ul>
 <li>Removed/deprecated Kubernetes APIs: this one may require that you also upgrade the resources used by your applications or even base components your applications rely on. E.g. cert-manager, external-dns, etc.</li>
-<li>You can use tools such as <a href="https://github.com/doitintl/kube-no-trouble">kubent</a> to find deprecated API versions. That should list the resources that need to be upgraded however you may still need to figure out if it's an EKS base component or a cluster component installed via Terraform &amp; Helm.</li>
+<li>You can use tools such as <a href="https://github.com/doitintl/kube-no-trouble">kubent</a> to find deprecated API versions. That should list the resources that need to be upgraded however you may still need to figure out if it's an EKS base component or a cluster component installed via OpenTofu &amp; Helm.</li>
 <li>Base component updates: this is about changes to control plane components. components that run on the nodes. An example of that would be the deprecation and removal of Docker as a container runtime.</li>
 </ul>
 <h4 id="plan-a-maintenance-window-for-the-upgrade">Plan a maintenance window for the upgrade<a class="headerlink" href="#plan-a-maintenance-window-for-the-upgrade" title="Permanent link"> ¶</a></h4>
@@ -5678,12 +5797,12 @@
 Such tools include the AWS console (via AWS EKS Monitoring section) and also tools like Prometheus/Grafana and ElasticSearch/Kibana. Make sure you are familiar with those before the upgrade.</p>
 <h3 id="3-upgrade-steps">3) Upgrade Steps<a class="headerlink" href="#3-upgrade-steps" title="Permanent link"> ¶</a></h3>
 <h4 id="1-upgrade-control-plane">1) Upgrade Control Plane<a class="headerlink" href="#1-upgrade-control-plane" title="Permanent link"> ¶</a></h4>
-<p>This is simply about updating the <code>cluster_version</code> variable in the <code>variables.tf</code> file within the <code>cluster</code> layer of the cluster you want to upgrade and then applying that change. However, the current version of the Terraform EKS module, when modifying the cluster version input, it will show that it needs to upgrade the control plane and the nodes which may not follow the expected order (first cluster, then nodes). Another thing that could go wrong is Terraform ending up in an unfinished state due to the upgrade taking too long to complete (or, what happened to me, the cluster gets upgraded but somehow the launch template used for the nodes is deleted and thus the upgraded nodes cannot be spun up).</p>
-<p>The alternative to all of that is to perform the upgrade outside Terraform and, after it is complete, to update the <code>cluster_version</code> variable in <code>variables.tf</code> file. Then you can run a Terraform Plan to verify the output shows no changes. This should be the method that provides a good degree of control over the upgrade.</p>
+<p>This is simply about updating the <code>cluster_version</code> variable in the <code>variables.tf</code> file within the <code>cluster</code> layer of the cluster you want to upgrade and then applying that change. However, the current version of the Terraform EKS module, when modifying the cluster version input, it will show that it needs to upgrade the control plane and the nodes which may not follow the expected order (first cluster, then nodes). Another thing that could go wrong is OpenTofu ending up in an unfinished state due to the upgrade taking too long to complete (or, what happened to me, the cluster gets upgraded but somehow the launch template used for the nodes is deleted and thus the upgraded nodes cannot be spun up).</p>
+<p>The alternative to all of that is to perform the upgrade outside OpenTofu and, after it is complete, to update the <code>cluster_version</code> variable in <code>variables.tf</code> file. Then you can run a OpenTofu Plan to verify the output shows no changes. This should be the method that provides a good degree of control over the upgrade.</p>
 <p>Having said that, go ahead and proceed with the upgrade, either via <a href="https://docs.aws.amazon.com/eks/latest/userguide/update-cluster.html">the AWS console, the AWS CLI or the EKS CLI</a> and watch the upgrade as it happens. As it was stated in a previous step, the Kubernetes API may evidence some down-time during this operation so make sure you prepare accordingly.</p>
 <h4 id="2-upgrade-managed-node-groups">2) Upgrade Managed Node Groups<a class="headerlink" href="#2-upgrade-managed-node-groups" title="Permanent link"> ¶</a></h4>
 <p>Once the control plane is upgraded you should be ready to upgrade the nodes. There are 2 strategies you could use here: rolling-upgrade or recreate. The former is recommended for causing the minimal disruption. Recreate could be used in an environment where down-time won't be an issue.</p>
-<p>As it was mentioned in the previous step, the recommendation is to trigger the upgrade outside Terraform so please proceed with that and monitor the operation as it happens (via AWS EKS console, via Kubectl, via Prometheus/Grafana).</p>
+<p>As it was mentioned in the previous step, the recommendation is to trigger the upgrade outside OpenTofu so please proceed with that and monitor the operation as it happens (via AWS EKS console, via Kubectl, via Prometheus/Grafana).</p>
 <p>If you go with the AWS CLI, you can use the following command to get a list of the clusters available to your current AWS credentials:
 <div class="highlight"><pre><span></span><code>aws eks list-clusters --profile [AWS_PROFILE]
 </code></pre></div>
@@ -5704,7 +5823,7 @@ This is determined by the <a href="https://docs.aws.amazon.com/eks/latest/usergu
 The <code>--force</code> flag is generally useful to bypass pod eviction failures.</p>
 <p>Once you are done with the upgrade you can continue with the rest of the node groups.</p>
 <h4 id="3-upgrade-cluster-autoscaler-version">3) Upgrade Cluster AutoScaler version<a class="headerlink" href="#3-upgrade-cluster-autoscaler-version" title="Permanent link"> ¶</a></h4>
-<p>Modify <a href="https://github.com/binbashar/le-tf-infra-aws/blob/master/apps-devstg/us-east-1/k8s-eks/k8s-components/scaling.tf">scaling.tf</a> per <a href="https://github.com/kubernetes/autoscaler/tree/master/charts/cluster-autoscaler">the official Kubernetes autoscaler chart</a> and apply with Terraform.
+<p>Modify <a href="https://github.com/binbashar/le-tf-infra-aws/blob/master/apps-devstg/us-east-1/k8s-eks/k8s-components/scaling.tf">scaling.tf</a> per <a href="https://github.com/kubernetes/autoscaler/tree/master/charts/cluster-autoscaler">the official Kubernetes autoscaler chart</a> and apply with OpenTofu.
 The version of the cluster autoscaler should at least match the cluster version you are moving to. A greater version of the autoscaler might work with earlier version of Kubernetes but the opposite most likely won't be the case.</p>
 <h4 id="4-upgrade-eks-base-components">4) Upgrade EKS base components<a class="headerlink" href="#4-upgrade-eks-base-components" title="Permanent link"> ¶</a></h4>
 <p>Namely these components are:</p>
@@ -5740,7 +5859,7 @@ panic: runtime error: invalid memory address or nil pointer dereference
 [signal SIGSEGV: segmentation violation code=0x1 addr=0x39 pc=0x560d2186d418]
 </code></pre></div></p>
 <p>Cluster Autoscaler: it is already at v1.23.0. The idea is that this should match with the Kubernetes version but since the version we have has been working well so far, we can keep it and it should cover us until we upgrade Kubernetes to a matching version.</p>
-<p>Managed Nodes failures due to PodEvictionFailure: this one happened twice during a Production cluster upgrade. It seemed to be related to Calico pods using tolerations that are not compatible with Kubernetes typical node upgrade procedure. In short, the pods tolerate the NoSchedule taint and thus refuse to be evicted from the nodes during a drain procedure. The workaround that worked was using a forced upgrade. That is essentially a flag that can be passed via Terraform (or via AWS CLI). A more permanent solution would involve figuring out a proper way to configure Calico pods without the problematic toleration; we just need to keep in mind that we are deploying Calico via the Tigera Operator.</p>
+<p>Managed Nodes failures due to PodEvictionFailure: this one happened twice during a Production cluster upgrade. It seemed to be related to Calico pods using tolerations that are not compatible with Kubernetes typical node upgrade procedure. In short, the pods tolerate the NoSchedule taint and thus refuse to be evicted from the nodes during a drain procedure. The workaround that worked was using a forced upgrade. That is essentially a flag that can be passed via OpenTofu (or via AWS CLI). A more permanent solution would involve figuring out a proper way to configure Calico pods without the problematic toleration; we just need to keep in mind that we are deploying Calico via the Tigera Operator.</p>
 <h5 id="upgrade-to-v122">Upgrade to v1.22<a class="headerlink" href="#upgrade-to-v122" title="Permanent link"> ¶</a></h5>
 <p>Control plane and managed nodes: no issues.<br />
 Cluster Autoscaler: already at v1.23.0.<br />
@@ -5762,7 +5881,7 @@ The second issue to tackle is to upgrade <code>aws-load-balancer-controller</cod
 <p>In a similar fashion to the previous upgrade notes, the standard procedure listed above should work with no issues.</p>
 <div class="admonition info">
 <p class="admonition-title">Official AWS procedure</p>
-<p>A step-bystep instructions guide for upgrading an EKS cluster can be found at the following link:
+<p>A step-by-step instructions guide for upgrading an EKS cluster can be found at the following link:
 <a href="https://repost.aws/knowledge-center/eks-plan-upgrade-cluster">https://repost.aws/knowledge-center/eks-plan-upgrade-cluster</a></p>
 </div>
 <div class="admonition info">

@@ -18,7 +18,7 @@
         <link rel="prev" href="../argocd-external-cluster/">
       
       
-        <link rel="next" href="VPN-server-terraform/">
+        <link rel="next" href="VPN-server-opentofu/">
       
       
       <link rel="icon" href="../../../assets/images/logos/favicon.ico">
@@ -3330,6 +3330,8 @@
       
         
       
+        
+      
     
     
       
@@ -3432,6 +3434,8 @@
   
     
     
+      
+        
       
         
       
@@ -3573,7 +3577,7 @@
             
   
   <span class="md-ellipsis">
-    terraform
+    tofu
   </span>
   
 
@@ -3582,6 +3586,100 @@
         
         <nav class="md-nav" data-md-level="4" aria-labelledby="__nav_4_5_4_4_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_4_5_4_4">
+            <span class="md-nav__icon md-icon"></span>
+            tofu
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../leverage-cli/reference/tofu/tofu/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    commands
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../leverage-cli/reference/tofu/layers/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    layers
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_5_4_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_5_4_5" id="__nav_4_5_4_5_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    terraform
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="4" aria-labelledby="__nav_4_5_4_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_5_4_5">
             <span class="md-nav__icon md-icon"></span>
             terraform
           </label>
@@ -3615,7 +3713,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../leverage-cli/reference/terraform/layers/" class="md-nav__link">
+      <a href="../../leverage-cli/reference/tofu/layers/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3841,6 +3939,27 @@
           </ul>
         </nav>
       
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../leverage-cli/terraform-new-versions/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Using newer versions of Terraform
+  </span>
+  
+
+      </a>
     </li>
   
 
@@ -4476,11 +4595,11 @@
   
   
     <li class="md-nav__item">
-      <a href="VPN-server-terraform/" class="md-nav__link">
+      <a href="VPN-server-opentofu/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    1. Terraform EC2 layer
+    1. OpenTofu EC2 layer
   </span>
   
 
@@ -5385,7 +5504,7 @@ the <code>shared</code> base-network VPC.</p>
 (Note also, if no EIP is being used, when the instance is stopped and then started again the IP will change.)</p>
 <h4 id="deployment-steps">Deployment Steps<a class="headerlink" href="#deployment-steps" title="Permanent link"> ¶</a></h4>
 <ol>
-<li><a href="VPN-server-terraform/">Create the EC2 instance with Terraform</a></li>
+<li><a href="VPN-server-opentofu/">Create the EC2 instance with OpenTofu</a></li>
 <li><a href="VPN-server-ansible/">Deploy Pritunl VPN Server with Ansible</a></li>
 <li><a href="VPN-server-gui-setup/">Configure Pritunl from its web GUI interface</a></li>
 </ol>
@@ -5445,13 +5564,13 @@ the <code>shared</code> base-network VPC.</p>
         
         
           
-          <a href="VPN-server-terraform/" class="md-footer__link md-footer__link--next" aria-label="Next: 1. Terraform EC2 layer">
+          <a href="VPN-server-opentofu/" class="md-footer__link md-footer__link--next" aria-label="Next: 1. OpenTofu EC2 layer">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 Next
               </span>
               <div class="md-ellipsis">
-                1. Terraform EC2 layer
+                1. OpenTofu EC2 layer
               </div>
             </div>
             <div class="md-footer__button md-icon">

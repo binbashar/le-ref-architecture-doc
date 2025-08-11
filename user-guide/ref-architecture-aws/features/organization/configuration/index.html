@@ -3433,6 +3433,8 @@
       
         
       
+        
+      
     
     
       
@@ -3535,6 +3537,8 @@
   
     
     
+      
+        
       
         
       
@@ -3676,7 +3680,7 @@
             
   
   <span class="md-ellipsis">
-    terraform
+    tofu
   </span>
   
 
@@ -3685,6 +3689,100 @@
         
         <nav class="md-nav" data-md-level="4" aria-labelledby="__nav_4_5_4_4_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_4_5_4_4">
+            <span class="md-nav__icon md-icon"></span>
+            tofu
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../leverage-cli/reference/tofu/tofu/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    commands
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../leverage-cli/reference/tofu/layers/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    layers
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_5_4_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_5_4_5" id="__nav_4_5_4_5_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    terraform
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="4" aria-labelledby="__nav_4_5_4_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_5_4_5">
             <span class="md-nav__icon md-icon"></span>
             terraform
           </label>
@@ -3718,7 +3816,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../leverage-cli/reference/terraform/layers/" class="md-nav__link">
+      <a href="../../../../leverage-cli/reference/tofu/layers/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3944,6 +4042,27 @@
           </ul>
         </nav>
       
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../leverage-cli/terraform-new-versions/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Using newer versions of Terraform
+  </span>
+  
+
+      </a>
     </li>
   
 
@@ -4575,11 +4694,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../cookbooks/VPN-server/VPN-server-terraform/" class="md-nav__link">
+      <a href="../../../../cookbooks/VPN-server/VPN-server-opentofu/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    1. Terraform EC2 layer
+    1. OpenTofu EC2 layer
   </span>
   
 
@@ -5326,7 +5445,7 @@ Instead, whenever possible, it should ideally be associated, with a <strong>dist
 (DevOps | SecOps | Cloud Engineering Team) to manage its notifications avoiding a single point of contact (constraint).</p>
 <h4 id="email-setup-example">Email setup example<a class="headerlink" href="#email-setup-example" title="Permanent link"> ¶</a></h4>
 <p><strong>GSuite Group Email address:</strong> <code>aws@domain.com</code> (to which admins / owners belong), and then using the <code>+</code> we generate
-the aliases automatically implicitly when running Terraform's Leverage code.</p>
+the aliases automatically implicitly when running OpenTofu's Leverage code.</p>
 <ul>
 <li><img alt="📧" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.0.3/assets/svg/1f4e7.svg" title=":e-mail:" /> <code>aws+security@binbash.com.ar</code></li>
 <li><img alt="📧" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.0.3/assets/svg/1f4e7.svg" title=":e-mail:" /> <code>aws+shared@binbash.com.ar</code></li>
@@ -5403,12 +5522,12 @@ email: <code>aws@binbash.com.ar</code>) <a href="https://docs.aws.amazon.com/IAM
 </ul>
 </li>
 <li>
-<p>Setup and create the <strong>terraform remote state</strong> for the new AWS Org Management account</p>
+<p>Setup and create the <strong>opentofu remote state</strong> for the new AWS Org Management account</p>
 <ul class="task-list">
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> <a href="https://leverage.binbash.com.ar/user-guide/base-configuration/repo-le-tf-infra-aws/#remote-state">terraform remote state config</a>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> <a href="https://leverage.binbash.com.ar/user-guide/base-configuration/repo-le-tf-infra-aws/#remote-state">opentofu remote state config</a>
 <!-- NOTE: Where should this point to? --></li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> <a href="../../../base-workflow/repo-le-tf-infra-aws-tf-state/">terraform remote state workflow</a></li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> <a href="https://github.com/binbashar/le-tf-infra-aws/tree/master/root/us-east-1/base-tf-backend">terraform remote state ref code</a></li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> <a href="../../../base-workflow/repo-le-tf-infra-aws-tf-state/">opentofu remote state workflow</a></li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> <a href="https://github.com/binbashar/le-tf-infra-aws/tree/master/root/us-east-1/base-tf-backend">opentofu remote state ref code</a></li>
 <li><img alt="📒" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.0.3/assets/svg/1f4d2.svg" title=":ledger:" /> You'll 1<sup>st</sup> get a local state and then you'll need to move your tf state to s3; validate it and finally delete local state files</li>
 </ul>
 </li>

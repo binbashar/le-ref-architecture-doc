@@ -920,9 +920,9 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#create-the-terraform-backend-layer" class="md-nav__link">
+  <a href="#create-the-opentofu-backend-layer" class="md-nav__link">
     <span class="md-ellipsis">
-      Create the Terraform Backend layer
+      Create the OpenTofu Backend layer
     </span>
   </a>
   
@@ -3457,6 +3457,8 @@
       
         
       
+        
+      
     
     
       
@@ -3559,6 +3561,8 @@
   
     
     
+      
+        
       
         
       
@@ -3700,7 +3704,7 @@
             
   
   <span class="md-ellipsis">
-    terraform
+    tofu
   </span>
   
 
@@ -3709,6 +3713,100 @@
         
         <nav class="md-nav" data-md-level="4" aria-labelledby="__nav_4_5_4_4_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_4_5_4_4">
+            <span class="md-nav__icon md-icon"></span>
+            tofu
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../user-guide/leverage-cli/reference/tofu/tofu/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    commands
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../user-guide/leverage-cli/reference/tofu/layers/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    layers
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_5_4_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_5_4_5" id="__nav_4_5_4_5_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    terraform
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="4" aria-labelledby="__nav_4_5_4_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_5_4_5">
             <span class="md-nav__icon md-icon"></span>
             terraform
           </label>
@@ -3742,7 +3840,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../user-guide/leverage-cli/reference/terraform/layers/" class="md-nav__link">
+      <a href="../../user-guide/leverage-cli/reference/tofu/layers/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3968,6 +4066,27 @@
           </ul>
         </nav>
       
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../user-guide/leverage-cli/terraform-new-versions/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Using newer versions of Terraform
+  </span>
+  
+
+      </a>
     </li>
   
 
@@ -4599,11 +4718,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../../user-guide/cookbooks/VPN-server/VPN-server-terraform/" class="md-nav__link">
+      <a href="../../user-guide/cookbooks/VPN-server/VPN-server-opentofu/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    1. Terraform EC2 layer
+    1. OpenTofu EC2 layer
   </span>
   
 
@@ -5298,9 +5417,9 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#create-the-terraform-backend-layer" class="md-nav__link">
+  <a href="#create-the-opentofu-backend-layer" class="md-nav__link">
     <span class="md-ellipsis">
-      Create the Terraform Backend layer
+      Create the OpenTofu Backend layer
     </span>
   </a>
   
@@ -5391,9 +5510,9 @@
 <span class="w">    </span><span class="l l-Scalar l-Scalar-Plain">}</span>
 </code></pre></div>
     Note that the <code>apps</code> organizational unit (OU) is being used as the parent OU of the new account. If you need to use a new OU you can add it to <code>organizational_units</code> variable in the same file.</li>
-<li>Run the <a href="https://leverage.binbash.co/user-guide/ref-architecture-aws/workflow/">Terraform workflow</a> to apply the new changes. Typically that would be this:
-    <div class="highlight"><pre><span></span><code>leverage<span class="w"> </span>terraform<span class="w"> </span>init
-leverage<span class="w"> </span>terraform<span class="w"> </span>apply
+<li>Run the <a href="https://leverage.binbash.co/user-guide/ref-architecture-aws/workflow/">OpenTofu workflow</a> to apply the new changes. Typically that would be this:
+    <div class="highlight"><pre><span></span><code>leverage<span class="w"> </span>tofu<span class="w"> </span>init
+leverage<span class="w"> </span>tofu<span class="w"> </span>apply
 </code></pre></div></li>
 </ol>
 <div class="admonition info">
@@ -5439,7 +5558,7 @@ In this case running <code>leverage tf init -reconfigure</code> will fix the iss
 </code></pre></div>
 Note your needs can vary, these permissions are just an example, please be careful with what you are granting here.</p>
 <p>Apply these changes:
-<div class="highlight"><pre><span></span><code>leverage<span class="w"> </span>terraform<span class="w"> </span>apply
+<div class="highlight"><pre><span></span><code>leverage<span class="w"> </span>tofu<span class="w"> </span>apply
 </code></pre></div>
 And you must update your AWS config file accordingly by running this:
 <div class="highlight"><pre><span></span><code>leverage<span class="w"> </span>aws<span class="w"> </span>configure<span class="w"> </span>sso
@@ -5464,7 +5583,7 @@ And you must update your AWS config file accordingly by running this:
 </ol>
 </li>
 </ol>
-<h3 id="create-the-terraform-backend-layer">Create the Terraform Backend layer<a class="headerlink" href="#create-the-terraform-backend-layer" title="Permanent link"> ¶</a></h3>
+<h3 id="create-the-opentofu-backend-layer">Create the OpenTofu Backend layer<a class="headerlink" href="#create-the-opentofu-backend-layer" title="Permanent link"> ¶</a></h3>
 <ol>
 <li>
 <p>Copy the layer from an existing one:
@@ -5472,7 +5591,7 @@ And you must update your AWS config file accordingly by running this:
 </code></pre></div></p>
 <div class="admonition info">
 <p class="admonition-title">Info</p>
-<p>If the source layer was already initialized you should delete the previous Terraform setup using <code>sudo rm -rf .terraform*</code> in the target layer's directory, e.g. <code>rm -rf apps-prd/us-east-1/base-tf-backend/.terraform*</code></p>
+<p>If the source layer was already initialized you should delete the previous OpenTofu setup using <code>sudo rm -rf .terraform*</code> in the target layer's directory, e.g. <code>rm -rf apps-prd/us-east-1/base-tf-backend/.terraform*</code></p>
 </div>
 </li>
 <li>
@@ -5484,10 +5603,10 @@ And you must update your AWS config file accordingly by running this:
     We need to do this for the first apply of this layer.</p>
 </li>
 <li>
-<p>Now run the <a href="https://leverage.binbash.co/user-guide/ref-architecture-aws/workflow/">Terraform workflow</a> to initialize and
+<p>Now run the <a href="https://leverage.binbash.co/user-guide/ref-architecture-aws/workflow/">OpenTofu workflow</a> to initialize and
     apply this layer. The flag <code>--skip-validation</code> is needed here since the bucket does not yet exist.
-    <div class="highlight"><pre><span></span><code>leverage<span class="w"> </span>terraform<span class="w"> </span>init<span class="w"> </span>--skip-validation
-leverage<span class="w"> </span>terraform<span class="w"> </span>apply
+    <div class="highlight"><pre><span></span><code>leverage<span class="w"> </span>tofu<span class="w"> </span>init<span class="w"> </span>--skip-validation
+leverage<span class="w"> </span>tofu<span class="w"> </span>apply
 </code></pre></div></p>
 </li>
 <li>Open the <code>config.tf</code> file again uncommenting the block commented before and replacing <code>shared</code> with <code>apps-prd</code>. E.g.:
@@ -5496,9 +5615,9 @@ leverage<span class="w"> </span>terraform<span class="w"> </span>apply
 <span class="l l-Scalar l-Scalar-Plain">}</span>
 </code></pre></div></li>
 <li>To finish with the backend layer, re-init to move the <code>tfstate</code> to the new location. Run:
-    <div class="highlight"><pre><span></span><code>leverage<span class="w"> </span>terraform<span class="w"> </span>init
+    <div class="highlight"><pre><span></span><code>leverage<span class="w"> </span>tofu<span class="w"> </span>init
 </code></pre></div>
-    Terraform will detect that you are trying to move from a local to a remote state and will ask for confirmation.
+    OpenTofu will detect that you are trying to move from a local to a remote state and will ask for confirmation.
     <div class="highlight"><pre><span></span><code>Initializing<span class="w"> </span>the<span class="w"> </span>backend...
 Acquiring<span class="w"> </span>state<span class="w"> </span>lock.<span class="w"> </span>This<span class="w"> </span>may<span class="w"> </span>take<span class="w"> </span>a<span class="w"> </span>few<span class="w"> </span>moments...
 Do<span class="w"> </span>you<span class="w"> </span>want<span class="w"> </span>to<span class="w"> </span>copy<span class="w"> </span>existing<span class="w"> </span>state<span class="w"> </span>to<span class="w"> </span>the<span class="w"> </span>new<span class="w"> </span>backend?
@@ -5520,7 +5639,7 @@ Do<span class="w"> </span>you<span class="w"> </span>want<span class="w"> </span
 </code></pre></div></p>
 <div class="admonition info">
 <p class="admonition-title">Info</p>
-<p>If the source layer was already initialized you should delete the previous Terraform setup using <code>sudo rm -rf .terraform*</code> in the target layer's directory, e.g. <code>rm -rf apps-prd/us-east-1/security-base/.terraform*</code></p>
+<p>If the source layer was already initialized you should delete the previous OpenTofu setup using <code>sudo rm -rf .terraform*</code> in the target layer's directory, e.g. <code>rm -rf apps-prd/us-east-1/security-base/.terraform*</code></p>
 </div>
 </li>
 <li>
@@ -5547,7 +5666,7 @@ leverage<span class="w"> </span>tf<span class="w"> </span>apply
 </code></pre></div></p>
 <div class="admonition info">
 <p class="admonition-title">Info</p>
-<p>If the source layer was already initialized you should delete the previous Terraform setup using <code>sudo rm -rf .terraform*</code> in the target layer's directory, e.g. <code>rm -rf apps-prd/us-east-1/base-network/.terraform*</code></p>
+<p>If the source layer was already initialized you should delete the previous OpenTofu setup using <code>sudo rm -rf .terraform*</code> in the target layer's directory, e.g. <code>rm -rf apps-prd/us-east-1/base-network/.terraform*</code></p>
 </div>
 </li>
 <li>
@@ -5586,8 +5705,8 @@ leverage<span class="w"> </span>tf<span class="w"> </span>apply
     Note here only two AZs are enabled, if needed uncomment the other ones in the three structures.</p>
 <div class="admonition warning">
 <p class="admonition-title">Do not overlap CIDRs!</p>
-<p>Be careful when chosing CIDRs.
-Avoid overlaping CIDRs between accounts.
+<p>Be careful when choosing CIDRs.
+Avoid overlapping CIDRs between accounts.
 If you need a reference on how to chose the right CIDRs, please see <a href="/user-guide/ref-architecture-aws/features/network/vpc-addressing/">here</a>.</p>
 </div>
 <div class="admonition info">
@@ -5680,8 +5799,8 @@ leverage<span class="w"> </span>tf<span class="w"> </span>apply
 <span class="w">    </span><span class="l l-Scalar l-Scalar-Plain">}</span>
 </code></pre></div>
     Apply the changes (be sure to CD into <code>shared/us-east-1/base-network</code> layer for doing this):
-    <div class="highlight"><pre><span></span><code>leverage<span class="w"> </span>terraform<span class="w"> </span>init
-leverage<span class="w"> </span>terraform<span class="w"> </span>apply
+    <div class="highlight"><pre><span></span><code>leverage<span class="w"> </span>tofu<span class="w"> </span>init
+leverage<span class="w"> </span>tofu<span class="w"> </span>apply
 </code></pre></div></p>
 </li>
 </ol>
@@ -5690,7 +5809,7 @@ leverage<span class="w"> </span>terraform<span class="w"> </span>apply
 <ol>
 <li>A brand new AWS account in your AWS organization.</li>
 <li>Working configuration files for both existing layers and any new layer you add in the future.</li>
-<li>A remote Terraform State Backend for this new account.</li>
+<li>A remote OpenTofu State Backend for this new account.</li>
 <li>Roles and policies (SSO) that are necessary to access the new account.</li>
 <li>The base networking resources ready to host your compute services.</li>
 <li>The VPC peerings between the new account and shared</li>

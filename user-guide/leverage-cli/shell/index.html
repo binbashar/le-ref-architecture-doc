@@ -3332,6 +3332,8 @@
       
         
       
+        
+      
     
     
       
@@ -3434,6 +3436,8 @@
   
     
     
+      
+        
       
         
       
@@ -3575,7 +3579,7 @@
             
   
   <span class="md-ellipsis">
-    terraform
+    tofu
   </span>
   
 
@@ -3584,6 +3588,100 @@
         
         <nav class="md-nav" data-md-level="4" aria-labelledby="__nav_4_5_4_4_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_4_5_4_4">
+            <span class="md-nav__icon md-icon"></span>
+            tofu
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/tofu/tofu/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    commands
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/tofu/layers/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    layers
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_5_4_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_5_4_5" id="__nav_4_5_4_5_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    terraform
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="4" aria-labelledby="__nav_4_5_4_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_5_4_5">
             <span class="md-nav__icon md-icon"></span>
             terraform
           </label>
@@ -3617,7 +3715,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../reference/terraform/layers/" class="md-nav__link">
+      <a href="../reference/tofu/layers/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3843,6 +3941,27 @@
           </ul>
         </nav>
       
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../terraform-new-versions/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Using newer versions of Terraform
+  </span>
+  
+
+      </a>
     </li>
   
 
@@ -4565,11 +4684,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../../cookbooks/VPN-server/VPN-server-terraform/" class="md-nav__link">
+      <a href="../../cookbooks/VPN-server/VPN-server-opentofu/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    1. Terraform EC2 layer
+    1. OpenTofu EC2 layer
   </span>
   
 
@@ -5302,37 +5421,37 @@
 
 <h1 id="getting-shell-access">Getting Shell Access<a class="headerlink" href="#getting-shell-access" title="Permanent link"> ¶</a></h1>
 <h2 id="the-shell-environment">The shell environment<a class="headerlink" href="#the-shell-environment" title="Permanent link"> ¶</a></h2>
-<p>When launching a Terraform shell, Leverage provides the user with a completely isolated environment tailored to operate in the current project via a Docker container.</p>
+<p>When launching a OpenTofu shell, Leverage provides the user with a completely isolated environment tailored to operate in the current project via a Docker container.</p>
 <p>The whole project is mounted on a directory named after the value for <code>project_long</code> in the global configuration file, or simply named <code>"project"</code> if this value is not defined. A project named <code>myexample</code>, would be mounted in <code>/myexample</code>.</p>
 <p>The <code>.gitconfig</code> user's file is also mounted on <code>/etc/gitconfig</code> for convenience, while (if <code>ssh-agent</code> is running), the socket stated in <code>SSH_AUTH_SOCK</code> is mounted on <code>/ssh-agent</code>. Also, the credentials files (<code>credentials</code> and <code>config</code>) found in the project AWS credentials directory (<code>~/.aws/myexample</code>), are mapped to the locations given by the environment variables <code>AWS_SHARED_CREDENTIALS_FILE</code> and <code>AWS_CONFIG_FILE</code> respectively within the container. </p>
 <h2 id="authentication">Authentication<a class="headerlink" href="#authentication" title="Permanent link"> ¶</a></h2>
-<p>Determining which credentials are needed to operate on a layer, and retrieving those credentials, may prove cumbersome for many complex layer definitions. In addition to that, correctly configuring them can also become a tedious an error prone process. For that reason Leverage automates this process upon launching the shell if requested by the user via the <a href="../reference/terraform/#shell"><code>shell</code> command options</a>.</p>
+<p>Determining which credentials are needed to operate on a layer, and retrieving those credentials, may prove cumbersome for many complex layer definitions. In addition to that, correctly configuring them can also become a tedious an error prone process. For that reason Leverage automates this process upon launching the shell if requested by the user via the <a href="reference/tofu.md#shell"><code>shell</code> command options</a>.</p>
 <p>Bear in mind, that an authenticated shell session's credentials are obtained for the layer in which the session was launched. These credentials may not be valid for other layers in which different roles need to be assumed or require more permissions.</p>
 <h3 id="multi-factor-authentication">Multi-Factor authentication<a class="headerlink" href="#multi-factor-authentication" title="Permanent link"> ¶</a></h3>
-<div class="highlight"><pre><span></span><code>leverage<span class="w"> </span>terraform<span class="w"> </span>shell<span class="w"> </span>--mfa
+<div class="highlight"><pre><span></span><code>leverage<span class="w"> </span>tofu<span class="w"> </span>shell<span class="w"> </span>--mfa
 </code></pre></div>
 <p>If MFA authentication is required, Leverage will prompt the user for the required tokens for the layer or use the cached credentials if still valid.</p>
 <p>The user's programmatic keys must be configured beforehand via <code>leverage credentials configure</code> command.</p>
 <h3 id="single-sign-on">Single-Sign On<a class="headerlink" href="#single-sign-on" title="Permanent link"> ¶</a></h3>
 <p>If authentication via SSO is required, the user will need to <a href="../reference/aws/#configure-sso">configure</a> or <a href="../reference/aws/#sso-login">login</a> into SSO before launching the shell via</p>
-<div class="highlight"><pre><span></span><code>leverage<span class="w"> </span>terraform<span class="w"> </span>shell<span class="w"> </span>--sso
+<div class="highlight"><pre><span></span><code>leverage<span class="w"> </span>tofu<span class="w"> </span>shell<span class="w"> </span>--sso
 </code></pre></div>
 <h2 id="operations-on-the-projects-layer">Operations on the project's layer<a class="headerlink" href="#operations-on-the-projects-layer" title="Permanent link"> ¶</a></h2>
-<p>In order to operate in a project's layer, Terraform commands such as <code>plan</code> or <code>apply</code> will need to receive extra parameters providing the location of the files that contain the definition of the variables required by the layer. Usually, these files are:</p>
+<p>In order to operate in a project's layer, OpenTofu commands such as <code>plan</code> or <code>apply</code> will need to receive extra parameters providing the location of the files that contain the definition of the variables required by the layer. Usually, these files are:</p>
 <ul>
 <li>the project global configuration file <code>common.tfvars</code></li>
 <li>the account configuration file <code>account.tfvars</code></li>
-<li>the terraform backend configuration file <code>backend.tfvars</code></li>
+<li>the OpenTofu backend configuration file <code>backend.tfvars</code></li>
 </ul>
 <p>In this case these parameters should take the form:
 <div class="highlight"><pre><span></span><code>-var-file<span class="o">=</span>/myexample/config/common.tfvars<span class="w"> </span>-var-file<span class="o">=</span>/myexample/account/config/account.tfvars<span class="w"> </span>-var-file<span class="o">=</span>/myexample/account/config/backend.tfvars<span class="sb">`</span>
 </code></pre></div></p>
 <p>Relative paths can prove useful when providing these locations. A layer definition may require more than just these files.</p>
 <p>So, for example, to apply changes on a standard Leverage Reference Architecture layer, the complete command would be:
-<div class="highlight"><pre><span></span><code>terraform<span class="w"> </span>apply<span class="w"> </span>-var-file<span class="o">=</span>../../../config/common.tfvars<span class="w"> </span>-var-file<span class="o">=</span>../../config/account.tfvars<span class="w"> </span>-var-file<span class="o">=</span>../../config/backend.tfvars
+<div class="highlight"><pre><span></span><code>tofu<span class="w"> </span>apply<span class="w"> </span>-var-file<span class="o">=</span>../../../config/common.tfvars<span class="w"> </span>-var-file<span class="o">=</span>../../config/account.tfvars<span class="w"> </span>-var-file<span class="o">=</span>../../config/backend.tfvars
 </code></pre></div>
-However, when initializing Terraform different parameters are needed, so it should be run as:
-<div class="highlight"><pre><span></span><code>terraform<span class="w"> </span>init<span class="w"> </span>-backend-config<span class="o">=</span>../../config/backend.tfvars
+However, when initializing OpenTofu different parameters are needed, so it should be run as:
+<div class="highlight"><pre><span></span><code>tofu<span class="w"> </span>init<span class="w"> </span>-backend-config<span class="o">=</span>../../config/backend.tfvars
 </code></pre></div></p>
 
 

@@ -3330,6 +3330,8 @@
       
         
       
+        
+      
     
     
       
@@ -3432,6 +3434,8 @@
   
     
     
+      
+        
       
         
       
@@ -3573,7 +3577,7 @@
             
   
   <span class="md-ellipsis">
-    terraform
+    tofu
   </span>
   
 
@@ -3582,6 +3586,100 @@
         
         <nav class="md-nav" data-md-level="4" aria-labelledby="__nav_4_5_4_4_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_4_5_4_4">
+            <span class="md-nav__icon md-icon"></span>
+            tofu
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../leverage-cli/reference/tofu/tofu/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    commands
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../leverage-cli/reference/tofu/layers/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    layers
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_5_4_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_5_4_5" id="__nav_4_5_4_5_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    terraform
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="4" aria-labelledby="__nav_4_5_4_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_5_4_5">
             <span class="md-nav__icon md-icon"></span>
             terraform
           </label>
@@ -3615,7 +3713,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../leverage-cli/reference/terraform/layers/" class="md-nav__link">
+      <a href="../../leverage-cli/reference/tofu/layers/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3841,6 +3939,27 @@
           </ul>
         </nav>
       
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../leverage-cli/terraform-new-versions/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Using newer versions of Terraform
+  </span>
+  
+
+      </a>
     </li>
   
 
@@ -4703,11 +4822,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../VPN-server/VPN-server-terraform/" class="md-nav__link">
+      <a href="../VPN-server/VPN-server-opentofu/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    1. Terraform EC2 layer
+    1. OpenTofu EC2 layer
   </span>
   
 
@@ -5612,7 +5731,7 @@
 <ul>
 <li>ArgoCD deployment, in Kubernetes, has a ServiceAccount</li>
 <li>this ServiceAccount is bound to an IAM Role that we'll call source</li>
-<li>the source Role can assume a second Role taht we'll call target</li>
+<li>the source Role can assume a second Role that we'll call target</li>
 <li>the target Role can assume RBAC permissions using the <code>aws_auth</code> config map in the target cluster</li>
 </ul>
 <p>This way, ArgoCD, from the source cluster, can deploy stuff into the target cluster.</p>
@@ -5634,7 +5753,7 @@
 <p>ArgoCD should be deployed using the <code>shared/us-east-1/k8s-eks/k8s-components</code> layer. </p>
 <p>The identities to be used by ArgoCD have to be updated in the <code>shared/us-east-1/k8s-eks/identities</code> layer.</p>
 <p>So, go into this layer and edit the <code>ids_argocd.tf</code> file.</p>
-<p>Here the ServiceAccount used have to be modified to include all the posibilities in the <code>argocd</code> namespace:</p>
+<p>Here the ServiceAccount used have to be modified to include all the possibilities in the <code>argocd</code> namespace:</p>
 <div class="highlight"><pre><span></span><code><span class="kr">module</span><span class="w"> </span><span class="nv">&quot;role_argocd_devstg&quot;</span><span class="w"> </span><span class="p">{</span>
 <span class="w">  </span><span class="na">source</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;github.com/binbashar/terraform-aws-iam.git//modules/iam-assumable-role-with-oidc?ref=v5.37.1&quot;</span>
 
@@ -5688,7 +5807,7 @@
 <span class="w">  </span><span class="na">tags</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">local.tags</span>
 <span class="p">}</span>
 </code></pre></div>
-<p>Note MFA is deactivated since this is a programatic access role. Also no policies are added since we need to assume it just to access the cluster.</p>
+<p>Note MFA is deactivated since this is a programmatic access role. Also no policies are added since we need to assume it just to access the cluster.</p>
 <p>Apply the layer:</p>
 <div class="highlight"><pre><span></span><code>leverage<span class="w"> </span>tf<span class="w"> </span>apply
 </code></pre></div>
@@ -5736,7 +5855,7 @@
 <span class="w">    </span><span class="nf">templatefile</span><span class="p">(</span><span class="s2">&quot;chart-values/argocd.yaml&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">{</span>
 <span class="w">      </span><span class="na">argoHost</span><span class="w">      </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;argocd-devstg.${local.environment}.${local.private_base_domain}&quot;</span>
 <span class="w">      </span><span class="na">ingressClass</span><span class="w">  </span><span class="o">=</span><span class="w"> </span><span class="nv">local.private_ingress_class</span>
-<span class="w">      </span><span class="na">clusterIssuer</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">local.clusterissuer_vistapath</span>
+<span class="w">      </span><span class="na">clusterIssuer</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">local.clusterissuer</span>
 <span class="w">      </span><span class="na">roleArn</span><span class="w">       </span><span class="o">=</span><span class="w"> </span><span class="nv">data.terraform_remote_state.eks-identities.outputs.argocd_devstg_role_arn</span>
 <span class="w">      </span><span class="na">remoteRoleARN</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;role&quot;</span>
 <span class="w">      </span><span class="na">remoteClusterName</span><span class="w">   </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;clustername&quot;</span>
@@ -5789,21 +5908,21 @@
 <li>remoteClusterCertificate: the target cluster CA Certificate on Base64</li>
 </ul>
 <p>And this in the second file:</p>
-<div class="highlight"><pre><span></span><code><span class="err">configs</span><span class="p">:</span>
-<span class="w">  </span><span class="err">clusterCredentials</span><span class="p">:</span>
-<span class="w">    </span><span class="err">-</span><span class="w"> </span><span class="err">name</span><span class="p">:</span><span class="w"> </span><span class="err">$</span><span class="p">{</span><span class="err">remoteName</span><span class="p">}</span>
-<span class="w">      </span><span class="err">server</span><span class="p">:</span><span class="w"> </span><span class="err">$</span><span class="p">{</span><span class="err">remoteServer</span><span class="p">}</span>
-<span class="w">      </span><span class="err">labels</span><span class="p">:</span><span class="w"> </span><span class="p">{}</span>
-<span class="w">      </span><span class="err">annotations</span><span class="p">:</span><span class="w"> </span><span class="p">{}</span>
-<span class="w">      </span><span class="err">namespaces</span><span class="p">:</span><span class="w"> </span><span class="err">namespace</span><span class="m">1</span><span class="p">,</span><span class="err">namespace</span><span class="m">2</span>
-<span class="w">      </span><span class="err">clusterResources</span><span class="p">:</span><span class="w"> </span><span class="no">false</span>
-<span class="w">      </span><span class="err">config</span><span class="p">:</span>
-<span class="w">        </span><span class="err">awsAuthConfig</span><span class="p">:</span>
-<span class="w">          </span><span class="err">clusterName</span><span class="p">:</span><span class="w"> </span><span class="err">$</span><span class="p">{</span><span class="err">remoteClusterName</span><span class="p">}</span>
-<span class="w">          </span><span class="err">roleARN</span><span class="p">:</span><span class="w"> </span><span class="err">$</span><span class="p">{</span><span class="err">remoteRoleARN</span><span class="p">}</span>
-<span class="w">        </span><span class="err">tlsClientConfig</span><span class="p">:</span>
-<span class="w">          </span><span class="err">insecure</span><span class="p">:</span><span class="w"> </span><span class="no">false</span>
-<span class="w">          </span><span class="err">caData</span><span class="p">:</span><span class="w"> </span><span class="err">$</span><span class="p">{</span><span class="err">remoteClusterCertificate</span><span class="p">}</span>
+<div class="highlight"><pre><span></span><code><span class="nt">configs</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">clusterCredentials</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">${remoteName}</span>
+<span class="w">      </span><span class="nt">server</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">${remoteServer}</span>
+<span class="w">      </span><span class="nt">labels</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">{}</span>
+<span class="w">      </span><span class="nt">annotations</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">{}</span>
+<span class="w">      </span><span class="nt">namespaces</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">namespace1,namespace2</span>
+<span class="w">      </span><span class="nt">clusterResources</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span>
+<span class="w">      </span><span class="nt">config</span><span class="p">:</span>
+<span class="w">        </span><span class="nt">awsAuthConfig</span><span class="p">:</span>
+<span class="w">          </span><span class="nt">clusterName</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">${remoteClusterName}</span>
+<span class="w">          </span><span class="nt">roleARN</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">${remoteRoleARN}</span>
+<span class="w">        </span><span class="nt">tlsClientConfig</span><span class="p">:</span>
+<span class="w">          </span><span class="nt">insecure</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span>
+<span class="w">          </span><span class="nt">caData</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">${remoteClusterCertificate}</span>
 </code></pre></div>
 <p><code>clusterResources</code> false is so that ArgoCD is prevented to manage cluster level resources.</p>
 <p><code>namespaces</code> scopes the namespaces on which ArgoCD can deploy resources.</p>

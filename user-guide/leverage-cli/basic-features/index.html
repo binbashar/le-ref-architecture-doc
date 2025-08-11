@@ -3332,6 +3332,8 @@
       
         
       
+        
+      
     
     
       
@@ -3500,6 +3502,8 @@
       
         
       
+        
+      
     
     
       
@@ -3624,7 +3628,7 @@
             
   
   <span class="md-ellipsis">
-    terraform
+    tofu
   </span>
   
 
@@ -3633,6 +3637,100 @@
         
         <nav class="md-nav" data-md-level="4" aria-labelledby="__nav_4_5_4_4_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_4_5_4_4">
+            <span class="md-nav__icon md-icon"></span>
+            tofu
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/tofu/tofu/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    commands
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/tofu/layers/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    layers
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_5_4_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_5_4_5" id="__nav_4_5_4_5_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    terraform
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="4" aria-labelledby="__nav_4_5_4_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_5_4_5">
             <span class="md-nav__icon md-icon"></span>
             terraform
           </label>
@@ -3666,7 +3764,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../reference/terraform/layers/" class="md-nav__link">
+      <a href="../reference/tofu/layers/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3892,6 +3990,27 @@
           </ul>
         </nav>
       
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../terraform-new-versions/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Using newer versions of Terraform
+  </span>
+  
+
+      </a>
     </li>
   
 
@@ -4523,11 +4642,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../../cookbooks/VPN-server/VPN-server-terraform/" class="md-nav__link">
+      <a href="../../cookbooks/VPN-server/VPN-server-opentofu/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    1. Terraform EC2 layer
+    1. OpenTofu EC2 layer
   </span>
   
 
@@ -5236,8 +5355,9 @@ Commands:
 <span class="w">  </span>project<span class="w">      </span>Manage<span class="w"> </span>a<span class="w"> </span>Leverage<span class="w"> </span>project.
 <span class="w">  </span>run<span class="w">          </span>Perform<span class="w"> </span>specified<span class="w"> </span>task<span class="o">(</span>s<span class="o">)</span><span class="w"> </span>and<span class="w"> </span>all<span class="w"> </span>of<span class="w"> </span>its<span class="w"> </span>dependencies.
 <span class="w">  </span>shell<span class="w">        </span>Run<span class="w"> </span>a<span class="w"> </span>shell<span class="w"> </span><span class="k">in</span><span class="w"> </span>a<span class="w"> </span>generic<span class="w"> </span>container.
+<span class="w">  </span>tofu<span class="w">         </span>Run<span class="w"> </span>OpenTofu<span class="w"> </span>commands<span class="w"> </span><span class="k">in</span><span class="w"> </span>a<span class="w"> </span>custom<span class="w"> </span>containerized...
+<span class="w">  </span>tf<span class="w">           </span>Run<span class="w"> </span>OpenTofu<span class="w"> </span>commands<span class="w"> </span><span class="k">in</span><span class="w"> </span>a<span class="w"> </span>custom<span class="w"> </span>containerized...
 <span class="w">  </span>terraform<span class="w">    </span>Run<span class="w"> </span>Terraform<span class="w"> </span>commands<span class="w"> </span><span class="k">in</span><span class="w"> </span>a<span class="w"> </span>custom<span class="w"> </span>containerized...
-<span class="w">  </span>tf<span class="w">           </span>Run<span class="w"> </span>Terraform<span class="w"> </span>commands<span class="w"> </span><span class="k">in</span><span class="w"> </span>a<span class="w"> </span>custom<span class="w"> </span>containerized...
 <span class="w">  </span>tfautomv<span class="w">     </span>Run<span class="w"> </span>TFAutomv<span class="w"> </span>commands<span class="w"> </span><span class="k">in</span><span class="w"> </span>a<span class="w"> </span>custom<span class="w"> </span>containerized...
 </code></pre></div></p>
 <p>Similarly, subcommands provide further information by means of the <code>--help</code> flag. For example <code>leverage tf --help</code>.</p>
@@ -5268,7 +5388,7 @@ Commands:
 <span class="w">                            </span><span class="s2">&quot;MFA_SCRIPT_LOG_LEVEL&quot;</span>:<span class="w"> </span><span class="m">3</span>,
 <span class="w">                            </span><span class="s2">&quot;SSH_AUTH_SOCK&quot;</span>:<span class="w"> </span><span class="s2">&quot;/ssh-agent&quot;</span>
 <span class="w">                          </span><span class="o">}</span>,
-<span class="w">                          </span><span class="s2">&quot;entrypoint&quot;</span>:<span class="w"> </span><span class="s2">&quot;/bin/terraform&quot;</span>,
+<span class="w">                          </span><span class="s2">&quot;entrypoint&quot;</span>:<span class="w"> </span><span class="s2">&quot;/bin/tofu&quot;</span>,
 <span class="w">                          </span><span class="s2">&quot;working_dir&quot;</span>:<span class="w"> </span><span class="s2">&quot;/binbash/apps-devstg/us-east-1/k8s-eks/identities&quot;</span>,
 <span class="w">                          </span><span class="s2">&quot;host_config&quot;</span>:<span class="w"> </span><span class="o">{</span>
 <span class="w">                            </span><span class="s2">&quot;NetworkMode&quot;</span>:<span class="w"> </span><span class="s2">&quot;default&quot;</span>,

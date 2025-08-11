@@ -15,7 +15,7 @@
         <link rel="canonical" href="https://leverage.binbash.co/user-guide/leverage-cli/private-repositories/">
       
       
-        <link rel="prev" href="../extending-leverage/tasks/">
+        <link rel="prev" href="../terraform-new-versions/">
       
       
         <link rel="next" href="../shell/">
@@ -3332,6 +3332,8 @@
       
         
       
+        
+      
     
     
       
@@ -3434,6 +3436,8 @@
   
     
     
+      
+        
       
         
       
@@ -3575,7 +3579,7 @@
             
   
   <span class="md-ellipsis">
-    terraform
+    tofu
   </span>
   
 
@@ -3584,6 +3588,100 @@
         
         <nav class="md-nav" data-md-level="4" aria-labelledby="__nav_4_5_4_4_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_4_5_4_4">
+            <span class="md-nav__icon md-icon"></span>
+            tofu
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/tofu/tofu/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    commands
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/tofu/layers/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    layers
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_5_4_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_5_4_5" id="__nav_4_5_4_5_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    terraform
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="4" aria-labelledby="__nav_4_5_4_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_5_4_5">
             <span class="md-nav__icon md-icon"></span>
             terraform
           </label>
@@ -3617,7 +3715,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../reference/terraform/layers/" class="md-nav__link">
+      <a href="../reference/tofu/layers/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3852,6 +3950,27 @@
                 
   
   
+  
+  
+    <li class="md-nav__item">
+      <a href="../terraform-new-versions/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Using newer versions of Terraform
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
     
   
   
@@ -3901,9 +4020,9 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#working-with-terraform-modules-in-private-repos" class="md-nav__link">
+  <a href="#working-with-opentofuterraform-modules-in-private-repos" class="md-nav__link">
     <span class="md-ellipsis">
-      Working with Terraform modules in private repos
+      Working with OpenTofu/Terraform modules in private repos
     </span>
   </a>
   
@@ -4541,11 +4660,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../../cookbooks/VPN-server/VPN-server-terraform/" class="md-nav__link">
+      <a href="../../cookbooks/VPN-server/VPN-server-opentofu/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    1. Terraform EC2 layer
+    1. OpenTofu EC2 layer
   </span>
   
 
@@ -5203,9 +5322,9 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#working-with-terraform-modules-in-private-repos" class="md-nav__link">
+  <a href="#working-with-opentofuterraform-modules-in-private-repos" class="md-nav__link">
     <span class="md-ellipsis">
-      Working with Terraform modules in private repos
+      Working with OpenTofu/Terraform modules in private repos
     </span>
   </a>
   
@@ -5253,7 +5372,7 @@
 
 
 <h1 id="private-repositories">Private Repositories<a class="headerlink" href="#private-repositories" title="Permanent link"> ¶</a></h1>
-<h2 id="working-with-terraform-modules-in-private-repos">Working with Terraform modules in private repos<a class="headerlink" href="#working-with-terraform-modules-in-private-repos" title="Permanent link"> ¶</a></h2>
+<h2 id="working-with-opentofuterraform-modules-in-private-repos">Working with OpenTofu/Terraform modules in private repos<a class="headerlink" href="#working-with-opentofuterraform-modules-in-private-repos" title="Permanent link"> ¶</a></h2>
 <p>If it is the case that the layer is using a module from a private repository read the following. E.g.:
 <div class="highlight"><pre><span></span><code><span class="l l-Scalar l-Scalar-Plain">module &quot;themodule&quot; {</span>
 <span class="w">  </span><span class="l l-Scalar l-Scalar-Plain">source = &quot;git@gitlab.com:some-org/some-project/the-private-repo.git//modules/the-module?ref=v0.0.1&quot;</span>
@@ -5262,9 +5381,9 @@
 </code></pre></div>
 where <code>gitlab.com:some-org/some-project/the-private-repo.git</code> is a private repo.</p>
 <h2 id="ssh-accessed-repository">SSH accessed repository<a class="headerlink" href="#ssh-accessed-repository" title="Permanent link"> ¶</a></h2>
-<p>To source a Terraform module from a private repository in a layer via an SSH connection these considerations have to be kept in mind.</p>
+<p>To source an OpenTofu/Terraform module from a private repository in a layer via an SSH connection these considerations have to be kept in mind.</p>
 <p>Leverage CLI will mount the host's SSH-Agent socket into the Leverage Toolbox container, this way your keys are accessed in a secure way.</p>
-<p>So, if an SSH private reporitory has to be accessed, the corresponding keys need to be loaded to the SSH-Agent.</p>
+<p>So, if an SSH private repository has to be accessed, the corresponding keys need to be loaded to the SSH-Agent.</p>
 <p>If the agent is automatically started and the needed keys added in the host system, it should work as it is.</p>
 <p>These steps should be followed otherwise:</p>
 <ul>
@@ -5281,7 +5400,7 @@ where <code>gitlab.com:some-org/some-project/the-private-repo.git</code> is a pr
 </li>
 </ul>
 <h2 id="using-the-ssh-config-file-to-specify-the-key-that-must-be-used-for-a-given-host">Using the SSH config file to specify the key that must be used for a given host<a class="headerlink" href="#using-the-ssh-config-file-to-specify-the-key-that-must-be-used-for-a-given-host" title="Permanent link"> ¶</a></h2>
-<p>The ssh-agent socket is not always available in all the OS, like in Mac. So now our <code>leverage terraform init</code> command copies the ssh config file (and the whole .ssh directory) into the container volume, which means any custom configuration you have there,
+<p>The ssh-agent socket is not always available in all the OS, like in Mac. So now our <code>leverage tofu init</code> command copies the ssh config file (and the whole .ssh directory) into the container volume, which means any custom configuration you have there,
 will be used. You can read more on the <a href="https://www.ssh.com/academy/ssh/config">ssh official documentation</a>.</p>
 <p>If, for example, you need to use a custom key for your private repositories on gitlab, you could add a block to your <code>ssh config</code> file, specifying:</p>
 <div class="highlight"><pre><span></span><code>host gitlab.com
@@ -5325,7 +5444,7 @@ will be used. You can read more on the <a href="https://www.ssh.com/academy/ssh/
       <nav class="md-footer__inner md-grid" aria-label="Footer" >
         
           
-          <a href="../extending-leverage/tasks/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Custom tasks">
+          <a href="../terraform-new-versions/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Using newer versions of Terraform">
             <div class="md-footer__button md-icon">
               
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
@@ -5335,7 +5454,7 @@ will be used. You can read more on the <a href="https://www.ssh.com/academy/ssh/
                 Previous
               </span>
               <div class="md-ellipsis">
-                Custom tasks
+                Using newer versions of Terraform
               </div>
             </div>
           </a>

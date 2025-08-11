@@ -3502,6 +3502,8 @@
       
         
       
+        
+      
     
     
       
@@ -3604,6 +3606,8 @@
   
     
     
+      
+        
       
         
       
@@ -3745,7 +3749,7 @@
             
   
   <span class="md-ellipsis">
-    terraform
+    tofu
   </span>
   
 
@@ -3754,6 +3758,100 @@
         
         <nav class="md-nav" data-md-level="4" aria-labelledby="__nav_4_5_4_4_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_4_5_4_4">
+            <span class="md-nav__icon md-icon"></span>
+            tofu
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../leverage-cli/reference/tofu/tofu/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    commands
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../leverage-cli/reference/tofu/layers/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    layers
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_5_4_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_5_4_5" id="__nav_4_5_4_5_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    terraform
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="4" aria-labelledby="__nav_4_5_4_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_5_4_5">
             <span class="md-nav__icon md-icon"></span>
             terraform
           </label>
@@ -3787,7 +3885,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../leverage-cli/reference/terraform/layers/" class="md-nav__link">
+      <a href="../../../../leverage-cli/reference/tofu/layers/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -4013,6 +4111,27 @@
           </ul>
         </nav>
       
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../leverage-cli/terraform-new-versions/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Using newer versions of Terraform
+  </span>
+  
+
+      </a>
     </li>
   
 
@@ -4644,11 +4763,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../cookbooks/VPN-server/VPN-server-terraform/" class="md-nav__link">
+      <a href="../../../../cookbooks/VPN-server/VPN-server-opentofu/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    1. Terraform EC2 layer
+    1. OpenTofu EC2 layer
   </span>
   
 
@@ -5463,13 +5582,6 @@
 <div class="admonition info">
 <p class="admonition-title"><img alt="📚" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.0.3/assets/svg/1f4da.svg" title=":books:" /> <a href="https://docs.aws.amazon.com/singlesignon/latest/userguide/step1.html">Enable AWS SSO</a></p>
 </div>
-<p>After that, choosing and configuring an Identity Provider (IdP) is the next step. For this, we will make use of JumpCloud, as described in the <a href="/user-guide/ref-architecture-aws/features/sso/overview/">how it works</a> section. These resources point to all requirements and procedures to have your JumpCloud account setup and synched with AWS SSO:</p>
-<div class="admonition info">
-<p class="admonition-title"><img alt="📚" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.0.3/assets/svg/1f4da.svg" title=":books:" /> <a href="https://docs.aws.amazon.com/singlesignon/latest/userguide/jumpcloud-idp.html">AWS JumpCloud support guide</a></p>
-</div>
-<div class="admonition info">
-<p class="admonition-title"><img alt="📚" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.0.3/assets/svg/1f4da.svg" title=":books:" /> <a href="https://docs.aws.amazon.com/singlesignon/latest/userguide/jumpcloud-idp.html">JumpCloud guide on how to configure as IdP for AWS SSO</a></p>
-</div>
 <p>Once this is set up, the SSO layer can be safely deployed.</p>
 <h2 id="preparing-the-project-to-use-aws-sso">Preparing the project to use AWS SSO<a class="headerlink" href="#preparing-the-project-to-use-aws-sso" title="Permanent link"> ¶</a></h2>
 <p>To implement SSO authentication in your IaC definition, some configuration values need to be present in your project.</p>
@@ -5532,7 +5644,7 @@
 <p>When the user has finished working, running <code>leverage sso logout</code> wipes out all remaining valid credentials and voids the token obtained from logging in.</p>
 <h2 id="additional-steps">Additional Steps<a class="headerlink" href="#additional-steps" title="Permanent link"> ¶</a></h2>
 <p>Further steps are required before you can safely start onboarding users and allowing them to sign in.</p>
-<p><strong>Important:</strong> most of the following steps need to be applied manually because the Terraform AWS provider does not support them yet.</p>
+<p><strong>Important:</strong> most of the following steps need to be applied manually because the OpenTofu AWS provider does not support them yet.</p>
 <h3 id="configuring-mfa">Configuring MFA<a class="headerlink" href="#configuring-mfa" title="Permanent link"> ¶</a></h3>
 <p>Enabling and requiring MFA is highly recommended. We typically choose these following guidelines:</p>
 <ul>

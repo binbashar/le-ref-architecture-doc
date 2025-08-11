@@ -3412,6 +3412,8 @@
       
         
       
+        
+      
     
     
       
@@ -3514,6 +3516,8 @@
   
     
     
+      
+        
       
         
       
@@ -3655,7 +3659,7 @@
             
   
   <span class="md-ellipsis">
-    terraform
+    tofu
   </span>
   
 
@@ -3664,6 +3668,100 @@
         
         <nav class="md-nav" data-md-level="4" aria-labelledby="__nav_4_5_4_4_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_4_5_4_4">
+            <span class="md-nav__icon md-icon"></span>
+            tofu
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../leverage-cli/reference/tofu/tofu/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    commands
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../leverage-cli/reference/tofu/layers/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    layers
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_5_4_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_5_4_5" id="__nav_4_5_4_5_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    terraform
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="4" aria-labelledby="__nav_4_5_4_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_5_4_5">
             <span class="md-nav__icon md-icon"></span>
             terraform
           </label>
@@ -3697,7 +3795,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../leverage-cli/reference/terraform/layers/" class="md-nav__link">
+      <a href="../../../../leverage-cli/reference/tofu/layers/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3923,6 +4021,27 @@
           </ul>
         </nav>
       
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../leverage-cli/terraform-new-versions/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Using newer versions of Terraform
+  </span>
+  
+
+      </a>
     </li>
   
 
@@ -4554,11 +4673,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../cookbooks/VPN-server/VPN-server-terraform/" class="md-nav__link">
+      <a href="../../../../cookbooks/VPN-server/VPN-server-opentofu/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    1. Terraform EC2 layer
+    1. OpenTofu EC2 layer
   </span>
   
 
@@ -5275,7 +5394,7 @@
 
 
 <h1 id="security-in-aws-with-leverage-reference-architecture-and-nacls">Security in AWS with Leverage Reference Architecture and NACLs<a class="headerlink" href="#security-in-aws-with-leverage-reference-architecture-and-nacls" title="Permanent link"> ¶</a></h1>
-<p>When deploying an AWS Landing Zone resources, security is of fundamental importance. Network Access Control Lists (NACLs) play a crucial role in controlling traffic at the subnet level. In this section we'll describe the use of NACLs implementing with Terraform over the <strong>Leverage AWS Reference Architecture</strong>.</p>
+<p>When deploying an AWS Landing Zone resources, security is of fundamental importance. Network Access Control Lists (NACLs) play a crucial role in controlling traffic at the subnet level. In this section we'll describe the use of NACLs implementing with OpenTofu over the <strong>Leverage AWS Reference Architecture</strong>.</p>
 <h2 id="understanding-network-access-control-lists-nacls">Understanding Network Access Control Lists (NACLs)<a class="headerlink" href="#understanding-network-access-control-lists-nacls" title="Permanent link"> ¶</a></h2>
 <p>Network Access Control Lists (NACLs) act as a virtual firewall for your AWS VPC (Virtual Private Cloud), controlling inbound and outbound traffic at the subnet level. They operate on a rule-based system, allowing or denying traffic based on defined rules.</p>
 <h2 id="leverage-ref-arch-default-configuration-and-variables-setup-for-nacls">Leverage Ref Arch: Default Configuration and Variables Setup for NACLs<a class="headerlink" href="#leverage-ref-arch-default-configuration-and-variables-setup-for-nacls" title="Permanent link"> ¶</a></h2>
@@ -5286,7 +5405,7 @@ This foundational setup not only ensures a controlled security environment but a
 <span class="nv">public_dedicated_network_acl</span><span class="w">  </span><span class="o">=</span><span class="w"> </span><span class="nb">false</span><span class="w"> </span>//<span class="w"> </span>use<span class="w"> </span>dedicated<span class="w"> </span>network<span class="w"> </span>ACL<span class="w"> </span><span class="k">for</span><span class="w"> </span>the<span class="w"> </span>public<span class="w"> </span>subnets.
 <span class="nv">private_dedicated_network_acl</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">false</span><span class="w"> </span>//<span class="w"> </span>use<span class="w"> </span>dedicated<span class="w"> </span>network<span class="w"> </span>ACL<span class="w"> </span><span class="k">for</span><span class="w"> </span>the<span class="w"> </span>private<span class="w"> </span>subnets.
 </code></pre></div>
-To verify that default NACLs are enabled in your Leverage proyect, follow this steps:</p>
+To verify that default NACLs are enabled in your Leverage project, follow this steps:</p>
 <ol>
 <li>
 <p>Move into the <code>/shared/us-east-1/base-network/</code> directory.</p>

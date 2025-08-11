@@ -809,9 +809,9 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#terraform-backend-layer" class="md-nav__link">
+  <a href="#opentofu-backend-layer" class="md-nav__link">
     <span class="md-ellipsis">
-      Terraform backend layer
+      OpenTofu backend layer
     </span>
   </a>
   
@@ -3445,6 +3445,8 @@
       
         
       
+        
+      
     
     
       
@@ -3547,6 +3549,8 @@
   
     
     
+      
+        
       
         
       
@@ -3688,7 +3692,7 @@
             
   
   <span class="md-ellipsis">
-    terraform
+    tofu
   </span>
   
 
@@ -3697,6 +3701,100 @@
         
         <nav class="md-nav" data-md-level="4" aria-labelledby="__nav_4_5_4_4_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_4_5_4_4">
+            <span class="md-nav__icon md-icon"></span>
+            tofu
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../user-guide/leverage-cli/reference/tofu/tofu/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    commands
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../user-guide/leverage-cli/reference/tofu/layers/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    layers
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_5_4_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_5_4_5" id="__nav_4_5_4_5_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    terraform
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="4" aria-labelledby="__nav_4_5_4_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_5_4_5">
             <span class="md-nav__icon md-icon"></span>
             terraform
           </label>
@@ -3730,7 +3828,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../user-guide/leverage-cli/reference/terraform/layers/" class="md-nav__link">
+      <a href="../../user-guide/leverage-cli/reference/tofu/layers/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3956,6 +4054,27 @@
           </ul>
         </nav>
       
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../user-guide/leverage-cli/terraform-new-versions/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Using newer versions of Terraform
+  </span>
+  
+
+      </a>
     </li>
   
 
@@ -4587,11 +4706,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../../user-guide/cookbooks/VPN-server/VPN-server-terraform/" class="md-nav__link">
+      <a href="../../user-guide/cookbooks/VPN-server/VPN-server-opentofu/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    1. Terraform EC2 layer
+    1. OpenTofu EC2 layer
   </span>
   
 
@@ -5259,9 +5378,9 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#terraform-backend-layer" class="md-nav__link">
+  <a href="#opentofu-backend-layer" class="md-nav__link">
     <span class="md-ellipsis">
-      Terraform backend layer
+      OpenTofu backend layer
     </span>
   </a>
   
@@ -5358,38 +5477,38 @@
 <p>To begin, place yourself in the <code>management</code> account directory.
 <div class="highlight"><pre><span></span><code><span class="nb">cd</span><span class="w"> </span>management
 </code></pre></div></p>
-<h3 id="terraform-backend-layer">Terraform backend layer<a class="headerlink" href="#terraform-backend-layer" title="Permanent link"> ¶</a></h3>
+<h3 id="opentofu-backend-layer">OpenTofu backend layer<a class="headerlink" href="#opentofu-backend-layer" title="Permanent link"> ¶</a></h3>
 <p>Move into the <code>us-east-1/base-tf-backend</code> directory and run:
-<div class="highlight"><pre><span></span><code>leverage<span class="w"> </span>terraform<span class="w"> </span>init<span class="w"> </span>--skip-validation
-leverage<span class="w"> </span>terraform<span class="w"> </span>apply
+<div class="highlight"><pre><span></span><code>leverage<span class="w"> </span>tofu<span class="w"> </span>init<span class="w"> </span>--skip-validation
+leverage<span class="w"> </span>tofu<span class="w"> </span>apply
 </code></pre></div></p>
 <p>All <code>apply</code> commands will prompt for confirmation, answer <code>yes</code> when this happens.</p>
 <div class="admonition info">
-<p class="admonition-title">More information on <a href="/user-guide/leverage-cli/reference/terraform#init"><code>terraform init</code></a> and <a href="/user-guide/leverage-cli/reference/terraform#apply"><code>terraform apply</code></a></p>
+<p class="admonition-title">More information on <a href="/user-guide/leverage-cli/reference/tofu#init"><code>tofu init</code></a> and <a href="/user-guide/leverage-cli/reference/tofu#apply"><code>tofu apply</code></a></p>
 </div>
-<p>Now, the infrastructure for the Terraform state management is created. The next step is to push the local <code>.tfstate</code> to the bucket. To do this, uncomment the <code>backend</code> section for the <code>terraform</code> configuration in <code>management/base-tf-backend/config.tf</code></p>
+<p>Now, the infrastructure for the OpenTofu state management is created. The next step is to push the local <code>.tfstate</code> to the bucket. To do this, uncomment the <code>backend</code> section for the <code>terraform</code> configuration in <code>management/base-tf-backend/config.tf</code></p>
 <div class="highlight"><pre><span></span><code><span class="w">  </span><span class="kr">backend</span><span class="w"> </span><span class="nv">&quot;s3&quot;</span><span class="w"> </span><span class="p">{</span>
 <span class="w">    </span><span class="na">key</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;management/tf-backend/terraform.tfstate&quot;</span>
 <span class="w">  </span><span class="p">}</span>
 </code></pre></div>
 <p>And run once more:
-<div class="highlight"><pre><span></span><code>leverage<span class="w"> </span>terraform<span class="w"> </span>init
+<div class="highlight"><pre><span></span><code>leverage<span class="w"> </span>tofu<span class="w"> </span>init
 </code></pre></div></p>
 <p>When prompted, answer <code>yes</code>. Now you can safely remove the <code>terraform.tfstate</code> and <code>terraform.tfstate.backup</code> files created during the <code>apply</code> step.</p>
 <div class="admonition info">
-<p class="admonition-title">Terraform backend</p>
-<p>More information regarding what is the Terraform backend and Terraform state management:</p>
+<p class="admonition-title">OpenTofu backend</p>
+<p>More information regarding what is the OpenTofu backend and OpenTofu state management:</p>
 <ul>
-<li><a href="https://www.terraform.io/docs/language/settings/backends/index.html">Terraform backend</a></li>
-<li><a href="https://blog.gruntwork.io/how-to-manage-terraform-state-28f5697e68fa">How to manage Terraform state</a></li>
+<li><a href="https://opentofu.org/docs/language/settings/backends/configuration/">OpenTofu backend</a></li>
+<li><a href="https://blog.gruntwork.io/how-to-manage-terraform-state-28f5697e68fa">How to manage OpenTofu/Terraform state</a></li>
 </ul>
 </div>
 <h3 id="organizations-layer">Organizations layer<a class="headerlink" href="#organizations-layer" title="Permanent link"> ¶</a></h3>
 <p>Next, in the same fashion as in the previous layer, move into the <code>global/organizations</code> directory and run:
-<div class="highlight"><pre><span></span><code>leverage<span class="w"> </span>terraform<span class="w"> </span>init
-leverage<span class="w"> </span>terraform<span class="w"> </span>apply
+<div class="highlight"><pre><span></span><code>leverage<span class="w"> </span>tofu<span class="w"> </span>init
+leverage<span class="w"> </span>tofu<span class="w"> </span>apply
 </code></pre></div></p>
-<p>The AWS account that you created manually is the <code>management</code> account itself, so to prevent Terraform from trying to create it and error out, this account definition is commented by default in the code. Now you need to make the Terraform state aware of the link between the two. To do that, uncomment the <code>management</code> organizations account resource in <code>accounts.tf</code></p>
+<p>The AWS account that you created manually is the <code>management</code> account itself, so to prevent OpenTofu from trying to create it and error out, this account definition is commented by default in the code. Now you need to make the OpenTofu state aware of the link between the two. To do that, uncomment the <code>management</code> organizations account resource in <code>accounts.tf</code></p>
 <div class="highlight"><pre><span></span><code><span class="kr">resource</span><span class="w"> </span><span class="nc">&quot;aws_organizations_account&quot;</span><span class="w"> </span><span class="nv">&quot;management&quot;</span><span class="w"> </span><span class="p">{</span>
 <span class="w">  </span><span class="na">name</span><span class="w">  </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;${var.project_long}-management&quot;</span>
 <span class="w">  </span><span class="na">email</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">local.management_account.email</span>
@@ -5405,10 +5524,10 @@ leverage<span class="w"> </span>terraform<span class="w"> </span>apply
 <span class="nn">...</span>
 </code></pre></div>
 <p>And run:
-<div class="highlight"><pre><span></span><code>leverage<span class="w"> </span>terraform<span class="w"> </span>import<span class="w"> </span>aws_organizations_account.management<span class="w"> </span><span class="m">000123456789</span>
+<div class="highlight"><pre><span></span><code>leverage<span class="w"> </span>tofu<span class="w"> </span>import<span class="w"> </span>aws_organizations_account.management<span class="w"> </span><span class="m">000123456789</span>
 </code></pre></div></p>
 <div class="admonition info">
-<p class="admonition-title">More information on <a href="/user-guide/leverage-cli/reference/terraform#import"><code>terraform import</code></a></p>
+<p class="admonition-title">More information on <a href="/user-guide/leverage-cli/reference/tofu#import"><code>tofu import</code></a></p>
 </div>
 <div class="admonition info">
 <p class="admonition-title">Getting errors with zsh?</p>
@@ -5416,8 +5535,8 @@ leverage<span class="w"> </span>terraform<span class="w"> </span>apply
 </div>
 <h3 id="security-layer">Security layer<a class="headerlink" href="#security-layer" title="Permanent link"> ¶</a></h3>
 <p>Change directory to <code>us-east-1/security-base</code> and run this:
-<div class="highlight"><pre><span></span><code>leverage<span class="w"> </span>terraform<span class="w"> </span>init
-leverage<span class="w"> </span>terraform<span class="w"> </span>apply
+<div class="highlight"><pre><span></span><code>leverage<span class="w"> </span>tofu<span class="w"> </span>init
+leverage<span class="w"> </span>tofu<span class="w"> </span>apply
 </code></pre></div></p>
 <h2 id="update-the-bootstrap-credentials">Update the bootstrap credentials<a class="headerlink" href="#update-the-bootstrap-credentials" title="Permanent link"> ¶</a></h2>
 <p>Now that the <code>management</code> account has been deployed, and more specifically, all Organizations accounts have been created (in the <a href="#organizations-layer">organizations layer</a>) you need to update the credentials for the bootstrap process before proceeding to deploy any of the remaining accounts.</p>
@@ -5441,8 +5560,8 @@ leverage<span class="w"> </span>terraform<span class="w"> </span>apply
 <h3 id="sso-layer">SSO layer<a class="headerlink" href="#sso-layer" title="Permanent link"> ¶</a></h3>
 <p>Before working on the SSO layer you have to navigate to the <a href="https://console.aws.amazon.com/singlesignon/">AWS IAM Identity Center page</a>, set the region to the primary region you've chosen and enable Single Sign-On (SSO) by clicking on the <code>Enable</code> button.</p>
 <p>Now back to the terminal. The SSO layer is deployed in two steps. First, switch to the <code>global/sso</code> directory and run the following:
-<div class="highlight"><pre><span></span><code>leverage<span class="w"> </span>terraform<span class="w"> </span>init
-leverage<span class="w"> </span>terraform<span class="w"> </span>apply
+<div class="highlight"><pre><span></span><code>leverage<span class="w"> </span>tofu<span class="w"> </span>init
+leverage<span class="w"> </span>tofu<span class="w"> </span>apply
 </code></pre></div></p>
 <p>Secondly, open the <code>account_assignments.tf</code> file and uncomment the entire section that starts with this line:
 <div class="highlight"><pre><span></span><code># module &quot;account_assignments&quot; {
@@ -5454,8 +5573,8 @@ leverage<span class="w"> </span>terraform<span class="w"> </span>apply
 # }
 </code></pre></div></p>
 <p>After that, run these commands:
-<div class="highlight"><pre><span></span><code>leverage<span class="w"> </span>terraform<span class="w"> </span>init
-leverage<span class="w"> </span>terraform<span class="w"> </span>apply
+<div class="highlight"><pre><span></span><code>leverage<span class="w"> </span>tofu<span class="w"> </span>init
+leverage<span class="w"> </span>tofu<span class="w"> </span>apply
 </code></pre></div></p>
 <h2 id="next-steps">Next steps<a class="headerlink" href="#next-steps" title="Permanent link"> ¶</a></h2>
 <p>You have successfully orchestrated the <code>management</code> account for your project and configured the credentials for the next steps.</p>

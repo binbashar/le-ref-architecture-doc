@@ -1264,9 +1264,9 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#setting-credentials-for-terraform-via-aws-profiles" class="md-nav__link">
+  <a href="#setting-credentials-for-opentofu-via-aws-profiles" class="md-nav__link">
     <span class="md-ellipsis">
-      Setting credentials for Terraform via AWS profiles
+      Setting credentials for OpenTofu via AWS profiles
     </span>
   </a>
   
@@ -3390,6 +3390,8 @@
       
         
       
+        
+      
     
     
       
@@ -3492,6 +3494,8 @@
   
     
     
+      
+        
       
         
       
@@ -3633,7 +3637,7 @@
             
   
   <span class="md-ellipsis">
-    terraform
+    tofu
   </span>
   
 
@@ -3642,6 +3646,100 @@
         
         <nav class="md-nav" data-md-level="4" aria-labelledby="__nav_4_5_4_4_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_4_5_4_4">
+            <span class="md-nav__icon md-icon"></span>
+            tofu
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../leverage-cli/reference/tofu/tofu/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    commands
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../leverage-cli/reference/tofu/layers/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    layers
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_5_4_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_5_4_5" id="__nav_4_5_4_5_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    terraform
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="4" aria-labelledby="__nav_4_5_4_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_5_4_5">
             <span class="md-nav__icon md-icon"></span>
             terraform
           </label>
@@ -3675,7 +3773,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../leverage-cli/reference/terraform/layers/" class="md-nav__link">
+      <a href="../../leverage-cli/reference/tofu/layers/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3901,6 +3999,27 @@
           </ul>
         </nav>
       
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../leverage-cli/terraform-new-versions/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Using newer versions of Terraform
+  </span>
+  
+
+      </a>
     </li>
   
 
@@ -4532,11 +4651,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../../cookbooks/VPN-server/VPN-server-terraform/" class="md-nav__link">
+      <a href="../../cookbooks/VPN-server/VPN-server-opentofu/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    1. Terraform EC2 layer
+    1. OpenTofu EC2 layer
   </span>
   
 
@@ -5203,9 +5322,9 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#setting-credentials-for-terraform-via-aws-profiles" class="md-nav__link">
+  <a href="#setting-credentials-for-opentofu-via-aws-profiles" class="md-nav__link">
     <span class="md-ellipsis">
-      Setting credentials for Terraform via AWS profiles
+      Setting credentials for OpenTofu via AWS profiles
     </span>
   </a>
   
@@ -5242,7 +5361,7 @@
 <li><img alt="📁" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.0.3/assets/svg/1f4c1.svg" title=":file_folder:" /> <strong>Global config file</strong> 
 <a href="https://github.com/binbashar/le-tf-infra-aws/blob/master/config/common.tfvars.example"><code>/config/common.tfvars</code></a> 
 contains global context TF variables that we inject to TF commands which are used by all sub-directories such as 
-<code>leverage terraform plan</code> or <code>leverage terraform apply</code> and which cannot be stored in <code>backend.tfvars</code> due to TF.</li>
+<code>leverage tofu plan</code> or <code>leverage tofu apply</code> and which cannot be stored in <code>backend.tfvars</code> due to TF.</li>
 <li><img alt="📁" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.0.3/assets/svg/1f4c1.svg" title=":file_folder:" /> <strong>Account config files</strong> <ul>
 <li><a href="https://github.com/binbashar/le-tf-infra-aws/blob/master/shared/config/backend.tfvars"><code>backend.tfvars</code></a>
  contains TF variables that are mainly used to configure TF backend but since
@@ -5253,7 +5372,7 @@ contains global context TF variables that we inject to TF commands which are use
 </li>
 <li><img alt="📁" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.0.3/assets/svg/1f4c1.svg" title=":file_folder:" /> <strong>Global <code>common-variables.tf</code> file</strong>
 <a href="https://github.com/binbashar/le-tf-infra-aws/blob/master/config/common-variables.tf"><code>/config/common-variables.tfvars</code></a>
-contains global context TF variables that we symlink to all terraform layers code e.g. <a href="https://github.com/binbashar/le-tf-infra-aws/blob/master/shared/us-east-1/tools-vpn-server/common-variables.tf">shared/us-east-1/tools-vpn-server/common-variables.tf</a>.</li>
+contains global context TF variables that we symlink to all opentofu layers code e.g. <a href="https://github.com/binbashar/le-tf-infra-aws/blob/master/shared/us-east-1/tools-vpn-server/common-variables.tf">shared/us-east-1/tools-vpn-server/common-variables.tf</a>.</li>
 <li><img alt="📁" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.0.3/assets/svg/1f4c1.svg" title=":file_folder:" /> <strong><code>build.env</code> file</strong><ul>
 <li>By utilizing the <a href="https://github.com/binbashar/le-tf-infra-aws/blob/master/build.env"><code>build.env</code></a> capability,
   you can easily change some default behaviors of the CLI. Read more in its dedicated
@@ -5262,7 +5381,7 @@ contains global context TF variables that we symlink to all terraform layers cod
 </li>
 </ul>
 </div>
-<h2 id="setting-credentials-for-terraform-via-aws-profiles">Setting credentials for Terraform via AWS profiles<a class="headerlink" href="#setting-credentials-for-terraform-via-aws-profiles" title="Permanent link"> ¶</a></h2>
+<h2 id="setting-credentials-for-opentofu-via-aws-profiles">Setting credentials for OpenTofu via AWS profiles<a class="headerlink" href="#setting-credentials-for-opentofu-via-aws-profiles" title="Permanent link"> ¶</a></h2>
 <ul>
 <li>File <code>backend.tfvars</code> will inject the profile name that TF will use to make changes on AWS.</li>
 <li>Such profile is usually one that relies on another profile to assume a role to get access to each corresponding account.</li>

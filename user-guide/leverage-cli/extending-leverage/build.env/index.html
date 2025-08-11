@@ -3332,6 +3332,8 @@
       
         
       
+        
+      
     
     
       
@@ -3434,6 +3436,8 @@
   
     
     
+      
+        
       
         
       
@@ -3575,7 +3579,7 @@
             
   
   <span class="md-ellipsis">
-    terraform
+    tofu
   </span>
   
 
@@ -3584,6 +3588,100 @@
         
         <nav class="md-nav" data-md-level="4" aria-labelledby="__nav_4_5_4_4_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_4_5_4_4">
+            <span class="md-nav__icon md-icon"></span>
+            tofu
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../reference/tofu/tofu/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    commands
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../reference/tofu/layers/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    layers
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_5_4_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_5_4_5" id="__nav_4_5_4_5_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    terraform
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="4" aria-labelledby="__nav_4_5_4_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_5_4_5">
             <span class="md-nav__icon md-icon"></span>
             terraform
           </label>
@@ -3617,7 +3715,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../reference/terraform/layers/" class="md-nav__link">
+      <a href="../../reference/tofu/layers/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3914,6 +4012,27 @@
           </ul>
         </nav>
       
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../terraform-new-versions/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Using newer versions of Terraform
+  </span>
+  
+
+      </a>
     </li>
   
 
@@ -4545,11 +4664,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../cookbooks/VPN-server/VPN-server-terraform/" class="md-nav__link">
+      <a href="../../../cookbooks/VPN-server/VPN-server-opentofu/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    1. Terraform EC2 layer
+    1. OpenTofu EC2 layer
   </span>
   
 
@@ -5280,14 +5399,14 @@ PROJECT=bb
 # General
 MFA_ENABLED=false
 
-# Terraform
-TERRAFORM_IMAGE_TAG=1.2.7-0.1.4
+# OpenTofu
+TF_IMAGE_TAG=1.2.7-0.1.4
 </code></pre></div>
 <div class="admonition info">
 <p class="admonition-title">Customizing or extending the leverage-toolbox docker image</p>
 <p>You can locally copy and edit the <a href="https://github.com/binbashar/le-docker-leverage-toolbox/blob/master/Dockerfile">Dockerfile</a>
 in order to rebuild it based on your needs, eg for a <code>Dockerfile</code> placed in the current working directory:
-<code>$ docker build -t binbash/leverage-toolbox:1.2.7-0.1.4 --build-arg TERRAFORM_VERSION='1.2.7' .</code>
+<code>$ docker build -t binbash/leverage-toolbox:1.2.7-0.1.4 --build-arg TOFU_VERSION='1.2.7' .</code>
 In case you like this changes to be permanent please consider 
 <a href="https://github.com/binbashar/leverage/pulls">creating and submitting a PR</a>.</p>
 </div>

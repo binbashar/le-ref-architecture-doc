@@ -3330,6 +3330,8 @@
       
         
       
+        
+      
     
     
       
@@ -3432,6 +3434,8 @@
   
     
     
+      
+        
       
         
       
@@ -3573,7 +3577,7 @@
             
   
   <span class="md-ellipsis">
-    terraform
+    tofu
   </span>
   
 
@@ -3582,6 +3586,100 @@
         
         <nav class="md-nav" data-md-level="4" aria-labelledby="__nav_4_5_4_4_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_4_5_4_4">
+            <span class="md-nav__icon md-icon"></span>
+            tofu
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../leverage-cli/reference/tofu/tofu/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    commands
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../leverage-cli/reference/tofu/layers/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    layers
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_5_4_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_5_4_5" id="__nav_4_5_4_5_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    terraform
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="4" aria-labelledby="__nav_4_5_4_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_5_4_5">
             <span class="md-nav__icon md-icon"></span>
             terraform
           </label>
@@ -3615,7 +3713,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../leverage-cli/reference/terraform/layers/" class="md-nav__link">
+      <a href="../../leverage-cli/reference/tofu/layers/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3841,6 +3939,27 @@
           </ul>
         </nav>
       
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../leverage-cli/terraform-new-versions/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Using newer versions of Terraform
+  </span>
+  
+
+      </a>
     </li>
   
 
@@ -4484,11 +4603,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../../cookbooks/VPN-server/VPN-server-terraform/" class="md-nav__link">
+      <a href="../../cookbooks/VPN-server/VPN-server-opentofu/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    1. Terraform EC2 layer
+    1. OpenTofu EC2 layer
   </span>
   
 
@@ -5165,8 +5284,7 @@
 <summary><img alt="🏁" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.0.3/assets/svg/1f3c1.svg" title=":checkered_flag:" /> <strong>As Code:</strong> Hundred of thousands lines of code</summary>
 <p>Written in:</p>
 <ul class="task-list">
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Terraform</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Groovy (Jenkinsfiles)</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> OpenTofu</li>
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Ansible</li>
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Makefiles + Bash </li>
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Dockerfiles</li>
@@ -5197,15 +5315,15 @@
 <p>Which will be 100%</p>
 <ul>
 <li><img alt="⏩" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.0.3/assets/svg/23e9.svg" title=":fast_forward:" /> modular <ul>
-<li>equivalent to other programming languages functions - Example for terraform -
- <a href="https://www.terraform.io/docs/modules/usage.html">https://www.terraform.io/docs/modules/usage.html</a> (but can be propagated for other languages and tools):<ol>
+<li>equivalent to other programming languages functions - Example for OpenTofu -
+ <a href="https://opentofu.org/docs/language/modules/">https://opentofu.org/docs/language/modules/</a><ol>
 <li><strong>inputs, outputs parameters.</strong></li>
 <li><strong>code reuse (reusable):</strong> consider tf modules and sub-modules approach.</li>
 <li><strong>testable</strong> by module / function.<ol>
 <li>Since TF is oriented to work through 3<sup>rd</sup> party API calls, then tests are more likely to be
- <code>integration tests</code> rather than <code>unit tests</code>. If we don't allow integration for terraform then we
+ <code>integration tests</code> rather than <code>unit tests</code>. If we don't allow integration for OpenTofu then we
   can't work at all.<ol>
-<li>This has to be analyzed for every language we'll be using and how we implement it (terraform,
+<li>This has to be analyzed for every language we'll be using and how we implement it (opentofu,
  cloudformation, ansible, python, bash, docker, kops and k8s kubeclt cmds)</li>
 </ol>
 </li>
@@ -5218,18 +5336,18 @@
 <li><strong>abstraction</strong> (abstract away complexity): we have a very complex function but we only expose it's
  definition to the API, <strong>eg:</strong> <code>def_ai_processing(data_set){very complex algorithm here};
   ai_processing([our_data_set_here])</code></li>
-<li><strong>avoid inline blocks:</strong> The configuration for some Terraform resources can be defined either as
- inline blocks or as separate resources. For example, the <a href="https://www.terraform.io/docs/providers/aws/r/route_table.html">aws_route_table</a> 
+<li><strong>avoid inline blocks:</strong> The configuration for some OpenTofu resources can be defined either as
+ inline blocks or as separate resources. For example, the <a href="https://search.opentofu.org/provider/opentofu/aws/latest/docs/resources/route_table">aws_route_table</a> 
   resource allows you to define routes via inline blocks. But by doing so, your module become less 
   flexible and configurable. Also, if a mix of both, inline blocks <em>and</em> separate resources, is used,
    errors may arise in which they conflict and overwrite each other. Therefore, you must use one or
     the other (ref: <a href="https://blog.gruntwork.io/how-to-create-reusable-infrastructure-with-terraform-modules-25526d65f73d">https://blog.gruntwork.io/how-to-create-reusable-infrastructure-with-terraform-modules-25526d65f73d</a>)
     <br />As a rule of thumb, when creating a module, separate resources should always be used.</li>
 <li><strong>use module-relative paths: </strong>The catch is that the used file path has to be relative
- (since you could run Terraform on many different computers) — but relative to what? By default,
-  Terraform interprets the path as relative to the working directory. That’s a good default for normal
-   Terraform templates, but it won’t work if the file is part of a module. 
-   <br />To solve this issue, always use a <a href="https://www.terraform.io/docs/configuration/interpolation.html#path-information">path variable</a>
+ (since you could run OpenTofu on many different computers) — but relative to what? By default,
+  OpenTofu interprets the path as relative to the working directory. That’s a good default for normal
+   OpenTofu templates, but it won’t work if the file is part of a module. 
+   <br />To solve this issue, always use a <a href="https://opentofu.org/docs/language/expressions/strings/#interpolation">path variable</a>
     in file paths.
     eg: 
     <div class="highlight"><pre><span></span><code>resource &quot;aws_instance&quot; &quot;example&quot; {
@@ -5271,7 +5389,7 @@ This way we'll be able to know which version is currently deployed in a given cl
 <li><a href="https://www.digitalocean.com/community/tutorials/how-to-test-ansible-roles-with-molecule-on-ubuntu-16-04">How to test ansible roles with molecule on ubuntu</a></li>
 </ul>
 </li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Terraform:<ul>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> OpenTofu:<ul>
 <li><a href="https://github.com/gruntwork-io/terratest">gruntwork-io/terratest</a></li>
 </ul>
 </li>

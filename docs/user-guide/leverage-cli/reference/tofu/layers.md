@@ -1,6 +1,6 @@
 # Layers parameter
 
-This parameter can be used with the following Leverage CLI OpenTofu commands:
+This parameter can be used with the following Leverage CLI OpenTofu/Terraform commands:
 
 * `init`
 * `plan`
@@ -47,7 +47,7 @@ Leverage CLI will iterate through the layer's relative paths, going into each on
 For this command, from `/home/user/project/management/`:
 
 ```bash
-leverage tf plan --layers us-east-1/terraform-backend,global/security-base
+leverage tofu plan --layers us-east-1/terraform-backend,global/security-base
 ```
 
 ...the Leverage CLI will:
@@ -71,7 +71,7 @@ When using the `--layers` option, the validation is run for every layer before t
 For this command, from `/home/user/project/management/`:
 
 ```bash
-leverage tf init --layers us-east-1/terraform-backend,global/security-base
+leverage tofu init --layers us-east-1/terraform-backend,global/security-base
 ```
 
 ...the Leverage CLI will:
@@ -95,13 +95,13 @@ This is done this way to prevent truncated executions. Meaning, if any of the va
 !!! info "Skipping the validation"
     The `--skip-validation` flag still can be used here with `--layers`.
 
-## OpenTofu parameters and flags
+## OpenTofu/Terraform parameters and flags
 
-OpenTofu parameters and flags can still be passed when using the `--layers` parameter.
+OpenTofu/Terraform parameters and flags can still be passed when using the `--layers` parameter.
 
 **Example:**
 
 
 ```bash
-leverage tf apply --layers us-east-1/terraform-backend,global/security-base -auto-approve
+leverage tofu apply --layers us-east-1/terraform-backend,global/security-base -auto-approve
 ```

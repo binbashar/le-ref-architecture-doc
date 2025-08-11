@@ -269,9 +269,12 @@ nav:
         - project: "user-guide/leverage-cli/reference/project.md"
         - credentials: "user-guide/leverage-cli/reference/credentials.md"
         - aws: "user-guide/leverage-cli/reference/aws.md"
+        - tofu:
+            - commands: "user-guide/leverage-cli/reference/tofu/tofu.md"
+            - layers: "user-guide/leverage-cli/reference/tofu/layers.md"
         - terraform:
             - commands: "user-guide/leverage-cli/reference/terraform.md"
-            - layers: "user-guide/leverage-cli/reference/terraform/layers.md"
+            - layers: "user-guide/leverage-cli/reference/tofu/layers.md"
         - tfautomv: "user-guide/leverage-cli/reference/tfautomv.md"
         - run: "user-guide/leverage-cli/reference/run.md"
         - kubectl: "user-guide/leverage-cli/reference/kubectl.md"

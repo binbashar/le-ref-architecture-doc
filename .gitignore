@@ -15,6 +15,7 @@
 !/.github
 !*.gitkeep
 !*.editorconfig
+!/.cursor
 
 # SSH keys #
 ############

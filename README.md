@@ -13,7 +13,7 @@
 
 This repository contains the comprehensive documentation for **binbash Leverage™**, an enterprise-grade AWS infrastructure-as-code ecosystem that accelerates cloud deployment by up to 10x.
 
-**🌐 Live Documentation:** [leverage.binbash.co](https://leverage.binbash.co)
+**Live Documentation:** [leverage.binbash.co](https://leverage.binbash.co)
 
 ### What is Leverage?
 
@@ -29,11 +29,11 @@ Leverage is a complete AWS cloud infrastructure framework consisting of:
 
 The documentation covers everything you need to know about Leverage:
 
-- **💡 Concepts**: Core principles and architecture overview
-- **🎯 Try Leverage**: Step-by-step tutorial to deploy your first AWS infrastructure
-- **📖 User Guide**: Comprehensive implementation guides for all components
-- **🔧 How It Works**: Deep dives into architecture and design decisions
-- **🤝 Work With Us**: Community, support, and contribution information
+- **Concepts**: Core principles and architecture overview
+- **Try Leverage**: Step-by-step tutorial to deploy your first AWS infrastructure
+- **User Guide**: Comprehensive implementation guides for all components
+- **How It Works**: Deep dives into architecture and design decisions
+- **Work With Us**: Community, support, and contribution information
 
 ### Repository Structure
 
@@ -64,20 +64,20 @@ We welcome contributions to improve the documentation and the entire binbash Lev
 
 Interested in contributing to the broader Leverage ecosystem?
 
-- **🏗️ [Reference Architecture](https://github.com/binbashar/le-tf-infra-aws)**: AWS infrastructure code
-- **⚡ [CLI Tool](https://github.com/binbashar/leverage)**: Command-line interface
-- **📚 [Terraform Modules](https://github.com/topics/binbash-terraform)**: 50+ AWS modules
+- **[Reference Architecture](https://github.com/binbashar/le-tf-infra-aws)**: AWS infrastructure code
+- **[CLI Tool](https://github.com/binbashar/leverage)**: Command-line interface
+- **[Terraform Modules](https://github.com/topics/binbash-terraform)**: 50+ AWS modules
 
-📋 **Detailed Guidelines**: See our [Contributing Guide](CONTRIBUTING.md) for documentation-specific guidelines, or visit our [comprehensive contributing guide](https://leverage.binbash.co/work-with-us/contributing/) for all projects. 
+**Detailed Guidelines**: See our [Contributing Guide](CONTRIBUTING.md) for documentation-specific guidelines, or visit our [comprehensive contributing guide](https://leverage.binbash.co/work-with-us/contributing/) for all projects. 
 
 ## 🛠️ Development
 
 ### Technology Stack
 
-- **📝 Documentation Generator**: [MkDocs Material](https://squidfunk.github.io/mkdocs-material/)
-- **🐳 Development Environment**: Docker-based for consistency
-- **🔄 Auto-Deployment**: CircleCI pipeline to GitHub Pages
-- **🎨 Theme**: Custom Material theme with binbash branding
+- **Documentation Generator**: [MkDocs Material](https://squidfunk.github.io/mkdocs-material/)
+- **Development Environment**: Docker-based for consistency
+- **Auto-Deployment**: CircleCI pipeline to GitHub Pages
+- **Theme**: Custom Material theme with binbash branding
 
 ### Available Commands
 
@@ -91,16 +91,16 @@ make docs-check-dead-links  # Validate all links (requires GNU tools)
 
 ### Diagrams and Assets
 
-- **📊 Editable Diagrams**: Located in `docs/assets/diagrams/editable/` (DrawIO format)
-- **🖼️ Static Images**: Exported diagrams and screenshots in `docs/assets/images/`
-- **🎨 Logos**: Brand assets in `docs/assets/images/logos/`
+- **Editable Diagrams**: Located in `docs/assets/diagrams/editable/` (DrawIO format)
+- **Static Images**: Exported diagrams and screenshots in `docs/assets/images/`
+- **Logos**: Brand assets in `docs/assets/images/logos/`
 
 ## 📞 Support
 
-- **📖 Documentation**: [leverage.binbash.co](https://leverage.binbash.co)
-- **💬 Community**: [GitHub Discussions](https://github.com/binbashar/leverage/discussions)
-- **🐛 Issues**: [Report bugs or request features](https://github.com/binbashar/le-ref-architecture-doc/issues)
-- **✉️ Contact**: [leverage@binbash.co](mailto:leverage@binbash.co)
+- **Documentation**: [leverage.binbash.co](https://leverage.binbash.co)
+- **Community**: [GitHub Discussions](https://github.com/binbashar/leverage/discussions)
+- **Issues**: [Report bugs or request features](https://github.com/binbashar/le-ref-architecture-doc/issues)
+- **Contact**: [leverage@binbash.co](mailto:leverage@binbash.co)
 
 ## 📄 License
 

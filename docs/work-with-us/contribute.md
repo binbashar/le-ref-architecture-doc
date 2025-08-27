@@ -66,9 +66,8 @@ Each repository has setup instructions in its README file.
 Need assistance? Here's how to get help:
 
 1. **Check existing documentation** and GitHub issues
-3. **Report issues** in this repository
-4. **Email support**: [leverage@binbash.co](mailto:leverage@binbash.co)
-
+2. **Report issues** in this repository
+3. **Email support**: [leverage@binbash.co](mailto:leverage@binbash.co)
 ---
 
 **Thank you for contributing to binbash Leverage!** Your contributions help make cloud infrastructure more accessible and reliable for everyone! 🚀

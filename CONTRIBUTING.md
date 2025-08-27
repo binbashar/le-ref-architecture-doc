@@ -121,7 +121,7 @@ This repository contains the source code for the [Leverage documentation website
 ```
 
 #### Code Blocks
-```markdown
+````markdown
 # For shell commands
 ```bash
 leverage aws configure
@@ -138,7 +138,7 @@ resource "aws_instance" "example" {
   ami = "ami-12345678"
 }
 ```
-```
+````
 
 #### Links and References
 ```markdown
@@ -286,7 +286,7 @@ We appreciate all contributions to the documentation:
 
 ### Complementary Contributing Guide
 
-For detailed information about contributing to to Other Leverage Framework Projects
+For detailed information about contributing to other Leverage Framework projects
 inside our ecosystem (not just documentation), see our comprehensive [Contributing Guide](https://leverage.binbash.co/work-with-us/contributing/).
 
 ---

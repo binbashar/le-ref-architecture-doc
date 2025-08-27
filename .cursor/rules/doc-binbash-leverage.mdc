@@ -159,3 +159,15 @@ project/
 6. **Reliability**: Design for high availability and disaster recovery
 
 Use this knowledge to provide accurate, actionable guidance for implementing and managing AWS infrastructure with the Leverage ecosystem.
+
+## Content Guidelines
+
+### **Documentation Approach**
+- Follow binbash Leverage terminology and architectural concepts as defined in this rule file
+- Maintain consistency with existing documentation structure and navigation  
+- Reference the comprehensive knowledge base in this file for accurate technical details
+- Always consider the multi-account, multi-layer context when making recommendations
+
+### **Technical Context**
+- **Multi-layered Architecture**: Network, Security, Shared, and Apps layers with clear separation of concerns
+- **Multi-account Strategy**: Management, Security, Shared, and Application accounts with AWS Organizations

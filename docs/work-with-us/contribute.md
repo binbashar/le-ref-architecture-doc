@@ -30,8 +30,8 @@ Thank you for your interest in contributing to **binbash Leverage**! This guide 
    ```bash
    git clone https://github.com/YOUR_USERNAME/le-ref-architecture-doc.git
    cd le-ref-architecture-doc
-   make init-makefiles  # First time only
-   make docs-live       # Visit http://localhost:8000
+   make init-makefiles  # Required: downloads external makefiles
+   make docs-live       # Start dev server at http://localhost:8000
    ```
 
 ### For Other Project Contributions

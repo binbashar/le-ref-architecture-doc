@@ -47,7 +47,7 @@ make release-{major|minor|patch}    # Create releases
 ### Configuration Files
 - `mkdocs.yml` - Complete MkDocs configuration with navigation structure
 - `Makefile` - Build automation entry point
-- `.cursorrules` - AI assistant guidelines for binbash Leverage ecosystem
+- `.cursor/rules/doc-binbash-leverage.mdc` - AI assistant guidelines for the Leverage documentation ecosystem
 
 ## Content Organization
 
@@ -75,7 +75,7 @@ The documentation follows a structured approach:
 - Follow existing content structure and navigation defined in `mkdocs.yml`
 - Place images in `docs/assets/images/` with appropriate subdirectories
 - Use DrawIO for editable diagrams, store sources in `docs/assets/diagrams/editable/`
-- Follow binbash Leverage terminology and concepts as defined in `.cursorrules`
+- Follow binbash Leverage terminology and concepts as defined in `.cursor/rules/doc-binbash-leverage.mdc`
 
 ### Deployment Process
 - **Branches**: `master` for source, `gh-pages` for deployed site
@@ -114,7 +114,7 @@ This documentation covers the **binbash Leverage™** ecosystem - an enterprise-
 - **Multi-account Strategy**: Management, Security, Shared, and Application accounts with AWS Organizations
 
 ### Content Guidelines
-- Follow binbash Leverage terminology and architectural concepts as defined in `.cursorrules`
+- Follow binbash Leverage terminology and architectural concepts as defined in `.cursor/rules/doc-binbash-leverage.mdc`
 - Maintain consistency with existing documentation structure and navigation
-- Reference the comprehensive knowledge base in `.cursorrules` for accurate technical details
+- Reference the comprehensive knowledge base in `.cursor/rules/doc-binbash-leverage.mdc` for accurate technical details
 - Always consider the multi-account, multi-layer context when making recommendations

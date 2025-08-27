@@ -8,7 +8,7 @@ repo_url: https://github.com/binbashar/le-ref-architecture-doc
 site_url: https://leverage.binbash.co/
 site_description: binbash Leverage Reference Architecture Documentation
 site_author: binbash
-copyright: Copyright &copy; 2017-2023 <a href="https://www.binbash.co">binbash</a>
+copyright: Copyright &copy; 2017-2025 <a href="https://www.binbash.co">binbash</a>
 
 #===================================================================================#
 # Mkdocs Theme (Material Mkdocs) + Extras
@@ -319,7 +319,7 @@ nav:
           - Versions compatibility matrix: "work-with-us/releases/versions-compatibility-matrix.md"
       - Leverage vs Competition: "work-with-us/leverage-vs-competition.md"
       #- Subscription Plans: "work-with-us/subscription-plans.md"
-      - Contribute: "work-with-us/contribute.md"
+      - Contributing: "work-with-us/contribute.md"
       - Roadmap:
         - Reference Architecture:
           - Overview: "work-with-us/roadmap/ref-arch/overview.md"

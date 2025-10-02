@@ -1,4 +1,6 @@
-## Connect and configure the server
+# Configuring Pritunl
+
+## Connecting to Pritunl Web Admin
 
 `ssh` into the server and run this command: 
 
@@ -26,12 +28,12 @@ In the initial setup page and change the **password** and enter the domain in
 
 First things first, add a user.
 
-1. Go to Users.
-2. Hit Add Organization.
-3. Enter a name and hit Add.
-4. Now Add User.
-5. Enter a name, select the organization, enter an email and let the pin empty. 
-6. Hit Add.
+1. Go to the "Users" menu.
+2. Click on "Add Organization".
+3. Type a name and click "Add".
+4. Now click on "Add User".
+5. Enter a name, select the organization, enter an email and leave the pin empty. 
+6. Click Add.
 
 ![leverage-vpn-pritunl](../../../assets/images/screenshots/vpn-pritunl-org-users.png "Pritunl VPN"){: style="width: 650px"}
 <figcaption style="font-size:15px">

@@ -308,9 +308,10 @@ nav:
       - ArgoCD add external cluster: "user-guide/cookbooks/argocd-external-cluster.md"
       - VPN Server:
         - Index: "user-guide/cookbooks/VPN-server/index.md"
-        - 1. OpenTofu EC2 layer: "user-guide/cookbooks/VPN-server/VPN-server-opentofu.md"
-        - 2. Ansible provisioning: "user-guide/cookbooks/VPN-server/VPN-server-ansible.md"
-        - 3. VPN Web GUI config: "user-guide/cookbooks/VPN-server/VPN-server-gui-setup.md"
+        - 1. Evaluating Alternatives: "user-guide/cookbooks/VPN-server/VPN-comparison.md"
+        - 2. Provisioning the Infrastructure: "user-guide/cookbooks/VPN-server/VPN-server-opentofu.md"
+        - 3. Installing the Software: "user-guide/cookbooks/VPN-server/VPN-server-ansible.md"
+        - 4. Configuring Pritunl: "user-guide/cookbooks/VPN-server/VPN-server-gui-setup.md"
   - Work with us:
       - Overview: "work-with-us/index.md"
       - Support: "work-with-us/support.md"

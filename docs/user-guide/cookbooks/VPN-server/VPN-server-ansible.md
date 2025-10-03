@@ -1,4 +1,4 @@
-# Installing Pritunl via Ansible
+# Installing the Software
 
 ## Overview
 

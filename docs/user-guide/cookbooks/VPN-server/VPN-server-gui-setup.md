@@ -1,30 +1,56 @@
 # Configuring Pritunl
 
+## Overview
+At this point you should have provisioned the infrastructure and software required to run Pritunl.
+Now it's time to apply the finishing steps.
+
 ## Connecting to Pritunl Web Admin
 
-`ssh` into the server and run this command: 
+Browse to the Pritunl URL. In our case that's [https://vpn.aws.binbash.com.ar](https://vpn.aws.binbash.com.ar) but in yours the domain will probably be different.
+
+!!! Note "Access via IP Address"  
+    In case you still don't have your DNS record you can access via public IP Addrress
+
+The first time you access Pritunl's Web Admin, it should guide you through the initialization process which consists of setting up the database and then the admin password.
+
+![leverage-vpn-pritunl](https://files.readme.io/WeEG06lTLOTXvcLeKBYU_database_setup0.png "Pritunl VPN"){: style="width: 450px"}
+<figcaption style="font-size:15px">
+<b>Figure:</b> Pritunl Database Setup screen
+</figcaption>
+
+This initialization usually requires using SSH to log into the instance and then running a few simple commands.
+
+The command below should get you the setup key which is used for configuring the database (MongoDB):
+
+```shell
+sudo pritunl setup-key
+```
+
+And then the next command should get you the initial password:
 
 ```shell
 sudo pritunl default-password
 ```
 
-Grab the user and password and use them as credentials in the web page at your public domain 
-https://vpn.aws.binbash.com.ar 
+!!! Note "About the initialization commands"
+    The above commands might change in future versions so it's recommended to follow the instructions
+    presented by Pritunl's Web Admin instead.
 
-!!! Note "Access via IP Address"  
-    In case you still don't have your DNS record you can access via public IP Addrress
 
-In the initial setup page and change the **password** and enter the domain in 
-"Lets Encrypt Domain": `vpn.binbash.com.ar`.
+## Setting up TLS
 
-![leverage-vpn-pritunl](../../../assets/images/screenshots/vpn-pritunl-init.png "Pritunl VPN"){: style="width: 450px"}
+In the initial setup screen, you can fill the "Lets Encrypt Domain" field and then click "Save".
+That should have Pritunl talk to Let's Encrypt in order to have a TLS certificate issued for your Pritunl instance.
+
+![leverage-vpn-pritunl](https://files.readme.io/R9WA2PdrRQm2RHXqYOYY_configuration2.png "Pritunl VPN"){: style="width: 450px"}
 <figcaption style="font-size:15px">
-<b>Figure:</b> Pritunl VPN web interface initialization.
+<b>Figure:</b> Pritunl Initial Setup screen
 </figcaption>
 
-- :books: [OFFICIAL DOC: Initial configuration of Pritunl](https://docs.pritunl.com/docs/configuration-5)
+!!! Note "Pritunl Documentation"
+    We highly encourage you to read more about the initial setup in [Pritunl's official documentation](https://docs.pritunl.com/docs/configuration-5#initial-setup).
 
-### Create user and organizations
+## Create users and organizations
 
 First things first, add a user.
 
@@ -40,7 +66,7 @@ First things first, add a user.
 <b>Figure:</b> Pritunl VPN Users web interface.
 </figcaption>
 
-### Adding a new server
+## Adding a new server
 
 Now add a server to log into.
 
@@ -79,7 +105,7 @@ show below:
 
 - :books: [OFFICIAL DOC: Config Server & Connect](https://docs.pritunl.com/docs/connecting)
  
-### A note on AWS private DNS
+## A note on AWS private DNS
 
 To use a Route53 private zone (where your private addresses are set), these steps have to be followed:
 

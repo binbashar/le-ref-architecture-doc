@@ -1,4 +1,4 @@
-# Create the EC2 OpenTofu layer
+# Provisioning the Infrastructure
 
 ## Getting the reference code
 

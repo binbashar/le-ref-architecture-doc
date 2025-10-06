@@ -30,8 +30,7 @@ This section provides instructions to stand up a Pritunl server on AWS EC2.
     - We will use an Elastic IP so the EC2 instance can be started/stopped without worrying about getting a new public IP address every time you start the instance.
 
 !!! tip "Hint"
-    If you would like to start/stop this instance in an scheduled fashion, check [here](/user-guide/cookbooks/schedule-start-stop-ec2).
-
+    If you would like to start/stop this instance in a scheduled fashion, review the [scheduled start/stop guide](/user-guide/cookbooks/schedule-start-stop-ec2).
 #### Deployment Steps
 
 Our Pritunl deployment consists of 3 steps:

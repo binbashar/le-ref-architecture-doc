@@ -9,8 +9,7 @@ Now it's time to apply the finishing steps.
 Browse to the Pritunl URL. In our case that's [https://vpn.aws.binbash.com.ar](https://vpn.aws.binbash.com.ar) but in yours the domain will probably be different.
 
 !!! Note "Access via IP Address"  
-    In case you still don't have your DNS record you can access via public IP Addrress
-
+    In case you still don't have your DNS record you can access via public IP Address
 The first time you access Pritunl's Web Admin, it should guide you through the initialization process which consists of setting up the database and then the admin password.
 
 ![leverage-vpn-pritunl](https://files.readme.io/WeEG06lTLOTXvcLeKBYU_database_setup0.png "Pritunl VPN"){: style="width: 450px"}

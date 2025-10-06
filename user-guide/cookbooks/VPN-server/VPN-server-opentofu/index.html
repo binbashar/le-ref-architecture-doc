@@ -15,7 +15,7 @@
         <link rel="canonical" href="https://leverage.binbash.co/user-guide/cookbooks/VPN-server/VPN-server-opentofu/">
       
       
-        <link rel="prev" href="../">
+        <link rel="prev" href="../VPN-comparison/">
       
       
         <link rel="next" href="../VPN-server-ansible/">
@@ -26,7 +26,7 @@
     
     
       
-        <title>1. OpenTofu EC2 layer - binbash Leverage™</title>
+        <title>2. Provisioning the Infrastructure - binbash Leverage™</title>
       
     
     
@@ -90,7 +90,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#create-the-ec2-opentofu-layer" class="md-skip">
+        <a href="#provisioning-the-infrastructure" class="md-skip">
           Skip to content
         </a>
       
@@ -124,7 +124,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              1. OpenTofu EC2 layer
+              2. Provisioning the Infrastructure
             
           </span>
         </div>
@@ -4547,6 +4547,8 @@
       
         
       
+        
+      
     
     
       
@@ -4592,6 +4594,27 @@
                 
   
   
+  
+  
+    <li class="md-nav__item">
+      <a href="../VPN-comparison/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    1. Evaluating Alternatives
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
     
   
   
@@ -4601,12 +4624,14 @@
       <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
       
       
+        
+      
       
         <label class="md-nav__link md-nav__link--active" for="__toc">
           
   
   <span class="md-ellipsis">
-    1. OpenTofu EC2 layer
+    2. Provisioning the Infrastructure
   </span>
   
 
@@ -4617,7 +4642,7 @@
         
   
   <span class="md-ellipsis">
-    1. OpenTofu EC2 layer
+    2. Provisioning the Infrastructure
   </span>
   
 
@@ -4629,6 +4654,8 @@
   
   
   
+    
+  
   
     <label class="md-nav__title" for="__toc">
       <span class="md-nav__icon md-icon"></span>
@@ -4637,70 +4664,55 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#create-the-ec2-opentofu-layer" class="md-nav__link">
+  <a href="#getting-the-reference-code" class="md-nav__link">
     <span class="md-ellipsis">
-      Create the EC2 OpenTofu layer
+      Getting the reference code
     </span>
   </a>
-  
-    <nav class="md-nav" aria-label="Create the EC2 OpenTofu layer">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#copy-the-layer" class="md-nav__link">
-    <span class="md-ellipsis">
-      Copy the layer
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#update-the-layer" class="md-nav__link">
-    <span class="md-ellipsis">
-      Update the layer
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#apply-the-layer" class="md-nav__link">
-    <span class="md-ellipsis">
-      Apply the layer
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#ssh-connection" class="md-nav__link">
+  <a href="#adjusting-the-code" class="md-nav__link">
     <span class="md-ellipsis">
-      SSH connection
+      Adjusting the code
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="SSH connection">
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#applying-the-changes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Applying the changes
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#connecting-to-the-ec2-instance" class="md-nav__link">
+    <span class="md-ellipsis">
+      Connecting to the EC2 instance
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Connecting to the EC2 instance">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#opt-1-via-opentofu" class="md-nav__link">
+  <a href="#option-1-connect-via-ssh" class="md-nav__link">
     <span class="md-ellipsis">
-      Opt-1: Via OpenTofu
+      Option 1: Connect via SSH
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#opt-2-via-web-console-ssm-access" class="md-nav__link">
+  <a href="#option-2-connect-via-ssm" class="md-nav__link">
     <span class="md-ellipsis">
-      Opt-2: Via Web Console SSM access
+      Option 2: Connect via SSM
     </span>
   </a>
   
@@ -4731,7 +4743,7 @@
         
   
   <span class="md-ellipsis">
-    2. Ansible provisioning
+    3. Installing the Software
   </span>
   
 
@@ -4752,7 +4764,7 @@
         
   
   <span class="md-ellipsis">
-    3. VPN Web GUI config
+    4. Configuring Pritunl
   </span>
   
 
@@ -5358,6 +5370,8 @@
   
   
   
+    
+  
   
     <label class="md-nav__title" for="__toc">
       <span class="md-nav__icon md-icon"></span>
@@ -5366,70 +5380,55 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#create-the-ec2-opentofu-layer" class="md-nav__link">
+  <a href="#getting-the-reference-code" class="md-nav__link">
     <span class="md-ellipsis">
-      Create the EC2 OpenTofu layer
+      Getting the reference code
     </span>
   </a>
-  
-    <nav class="md-nav" aria-label="Create the EC2 OpenTofu layer">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#copy-the-layer" class="md-nav__link">
-    <span class="md-ellipsis">
-      Copy the layer
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#update-the-layer" class="md-nav__link">
-    <span class="md-ellipsis">
-      Update the layer
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#apply-the-layer" class="md-nav__link">
-    <span class="md-ellipsis">
-      Apply the layer
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#ssh-connection" class="md-nav__link">
+  <a href="#adjusting-the-code" class="md-nav__link">
     <span class="md-ellipsis">
-      SSH connection
+      Adjusting the code
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="SSH connection">
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#applying-the-changes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Applying the changes
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#connecting-to-the-ec2-instance" class="md-nav__link">
+    <span class="md-ellipsis">
+      Connecting to the EC2 instance
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Connecting to the EC2 instance">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#opt-1-via-opentofu" class="md-nav__link">
+  <a href="#option-1-connect-via-ssh" class="md-nav__link">
     <span class="md-ellipsis">
-      Opt-1: Via OpenTofu
+      Option 1: Connect via SSH
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#opt-2-via-web-console-ssm-access" class="md-nav__link">
+  <a href="#option-2-connect-via-ssm" class="md-nav__link">
     <span class="md-ellipsis">
-      Opt-2: Via Web Console SSM access
+      Option 2: Connect via SSM
     </span>
   </a>
   
@@ -5463,128 +5462,93 @@
   
 
 
-  <h1>1. OpenTofu EC2 layer</h1>
-
-<h2 id="create-the-ec2-opentofu-layer">Create the EC2 OpenTofu layer<a class="headerlink" href="#create-the-ec2-opentofu-layer" title="Permanent link"> ¶</a></h2>
-<h3 id="copy-the-layer">Copy the layer<a class="headerlink" href="#copy-the-layer" title="Permanent link"> ¶</a></h3>
-<p>A few methods can be used to download the <a href="https://github.com/binbashar/le-tf-infra-aws/tree/master/shared/us-east-1/tools-vpn-server">VPN Server layer</a> directory into the <a href="https://leverage.binbash.co/"><strong>binbash Leverage</strong></a> project.</p>
-<p>E.g. <a href="https://addons.mozilla.org/en-US/firefox/addon/gitzip/?utm_source=addons.mozilla.org&amp;utm_medium=referral&amp;utm_content=search">this addon</a> is a nice way to do it.</p>
-<p>Paste this layer into the account/region chosen to host this, e.g. <code>shared/us-east-1/</code>, so the final layer is <code>shared/us-east-1/tools-vpn-server/</code>.</p>
-<div class="admonition info">
-<p class="admonition-title">Info</p>
-<p>As usual when copying a layer this way, remove the file <code>common-variables.tf</code> and soft-link it to your project </p>
+<h1 id="provisioning-the-infrastructure">Provisioning the Infrastructure<a class="headerlink" href="#provisioning-the-infrastructure" title="Permanent link"> ¶</a></h1>
+<h2 id="getting-the-reference-code">Getting the reference code<a class="headerlink" href="#getting-the-reference-code" title="Permanent link"> ¶</a></h2>
+<p>The VPN Server layer is located here: https://github.com/binbashar/le-tf-infra-aws/tree/master/shared/us-east-1/tools-vpn-server
+It contains the code you will use as a reference for building your own implementation. You just need to download that directory and place it within the directory structure of your Leverage project.</p>
+<p>For instance, that layer usually goes within your Shared account folder and within your primary region folder, which in the case of the Reference Architecture is this: <code>shared/us-east-1/tools-vpn-server/</code>.</p>
+<div class="admonition warning">
+<p class="admonition-title">Important</p>
+<p>As usual when copying a layer this way, you need to remove the <code>common-variables.tf</code> file and then soft-link it to the file located in the config folder of the root directory of your Leverage project. E.g. <code>rm common-variables.tf &amp;&amp; ln -s ../../../config/common-variables.tf .</code>.</p>
 </div>
-<p>level one. E.g. <code>rm common-variables.tf &amp;&amp; ln -s ../../../config/common-variables.tf common-variables.tf</code>.</p>
-<h3 id="update-the-layer">Update the layer<a class="headerlink" href="#update-the-layer" title="Permanent link"> ¶</a></h3>
-<p>Change as per your needs. At a minimum, change the S3 backend key in <a href="https://github.com/binbashar/le-tf-infra-aws/blob/2d573360a60f1ca48019bd00f845236d6127cfb0/shared/us-east-1/tools-vpn-server/config.tf#L20"><code>config.tf</code></a> 
-file and in file <a href="https://github.com/binbashar/le-tf-infra-aws/blob/master/shared/us-east-1/tools-vpn-server/ec2.tf"><code>ec2.tf</code></a> update the
-objects <a href="https://github.com/binbashar/le-tf-infra-aws/blob/efe68338a6cd67c41dfb756bd451c770fd9b8ada/shared/us-east-1/tools-vpn-server/ec2.tf#L104"><code>dns_records_public_hosted_zone</code></a> 
-and <a href="https://github.com/binbashar/le-tf-infra-aws/blob/efe68338a6cd67c41dfb756bd451c770fd9b8ada/shared/us-east-1/tools-vpn-server/ec2.tf#L76"><code>dns_records_internal_hosted_zone</code></a> with your own domain.</p>
+<h2 id="adjusting-the-code">Adjusting the code<a class="headerlink" href="#adjusting-the-code" title="Permanent link"> ¶</a></h2>
+<p>Given that the layer you copied is configured to Binbash's implementation, you'll need to tweak it a little bit so it fits with your project.</p>
+<p>The adjustments you'll need to make are only temporarily and include steps like granting yourself access to common ports 22 (SSH) and port 443 (HTTPS), and creating DNS records.</p>
 <div class="admonition warning">
 <p class="admonition-title">DNS: AWS Route53 Hosted Zones and Domain Delegation</p>
-<p>If you're using the Leverage LZ you will use the already deployed <a href="https://github.com/binbashar/le-tf-infra-aws/tree/master/shared/global/base-dns/binbash.co">AWS Route53 layer</a>
+<p>If you're using the Leverage Landing Zone, you will use the already deployed <a href="https://github.com/binbashar/le-tf-infra-aws/tree/master/shared/global/base-dns/binbash.co">AWS Route53 layer</a>
 and the hosted zones in it. In most cases you'll need to delegate your <code>domain.com</code> 
 (eg: <code>binbash.co</code>) or a subdomain eg: <code>aws.domain.com</code> passing the <code>ns</code> from your
 Route53 public hosted zone. </p>
 </div>
-<p>Also, temporarily, allow access to port 22 (SSH) so we can access the instance with Ansible. 
-Moreover, open port 443 (HTTPS) and create the public DNS record to access the Pritunl web interface.</p>
-<p>To do this, in file <a href="https://github.com/binbashar/le-tf-infra-aws/blob/master/shared/us-east-1/tools-vpn-server/ec2.tf"><code>ec2.tf</code></a> change this</p>
-<p><strong>From:</strong></p>
+<p>Let's start with a few adjustments. Open the <a href="https://github.com/binbashar/le-tf-infra-aws/blob/master/shared/us-east-1/tools-vpn-server/ec2.tf"><code>ec2.tf</code></a> file for editing. Now, locate the following block, read the comments to understand what is it for, and then add your IP to the <code>cidr_blocks</code> list:</p>
 <div class="highlight"><pre><span></span><code><span class="w">    </span><span class="p">{</span>
 <span class="w">      </span><span class="na">from_port</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">22</span><span class="p">,</span><span class="c1"> # SSH</span>
 <span class="w">      </span><span class="na">to_port</span><span class="w">   </span><span class="o">=</span><span class="w"> </span><span class="m">22</span><span class="p">,</span>
 <span class="w">      </span><span class="na">protocol</span><span class="w">  </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;tcp&quot;</span><span class="p">,</span>
-<span class="c1">      #cidr_blocks = [&quot;0.0.0.0/0&quot;],</span>
-<span class="w">      </span><span class="na">cidr_blocks</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="nv">data.terraform_remote_state.vpc.outputs.vpc_cidr_block</span><span class="p">],</span>
+<span class="w">      </span><span class="na">cidr_blocks</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span>
+<span class="c1">        # SSH access is allowed while connected to the VPN</span>
+<span class="w">        </span><span class="nv">data.terraform_remote_state.vpc.outputs.vpc_cidr_block</span><span class="p">,</span>
+<span class="c1">        #</span>
+<span class="c1">        # NOTE: During the first installation, it is convenient to add your</span>
+<span class="c1">        #       IP here (unless you are planning to use SSM instead).</span>
+<span class="c1">        #</span>
+<span class="w">      </span><span class="p">],</span>
 <span class="w">      </span><span class="na">description</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;Allow SSH&quot;</span>
 <span class="w">    </span><span class="p">},</span>
 </code></pre></div>
-<p><strong>To:</strong></p>
+<p>Now, do something similar in this other block:</p>
 <div class="highlight"><pre><span></span><code><span class="w">    </span><span class="p">{</span>
-<span class="w">      </span><span class="na">from_port</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">22</span><span class="p">,</span><span class="c1"> # SSH</span>
-<span class="w">      </span><span class="na">to_port</span><span class="w">   </span><span class="o">=</span><span class="w"> </span><span class="m">22</span><span class="p">,</span>
+<span class="w">      </span><span class="na">from_port</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">443</span><span class="p">,</span><span class="c1"> # Pritunl VPN Server UI</span>
+<span class="w">      </span><span class="na">to_port</span><span class="w">   </span><span class="o">=</span><span class="w"> </span><span class="m">443</span><span class="p">,</span>
 <span class="w">      </span><span class="na">protocol</span><span class="w">  </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;tcp&quot;</span><span class="p">,</span>
-<span class="w">      </span><span class="na">cidr_blocks</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;0.0.0.0/0&quot;</span><span class="p">],</span>
-<span class="c1">      #cidr_blocks = [data.terraform_remote_state.vpc.outputs.vpc_cidr_block],</span>
-<span class="w">      </span><span class="na">description</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;Allow SSH&quot;</span>
+<span class="w">      </span><span class="na">cidr_blocks</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span>
+<span class="c1">        # Access to Pritunl Admin Web from the VPN is allowed</span>
+<span class="w">        </span><span class="nv">data.terraform_remote_state.vpc.outputs.vpc_cidr_block</span><span class="p">,</span>
+<span class="c1">        # NOTE: Opening port 443 is usually required for onboarding new users,</span>
+<span class="c1">        #       so they can set up their pin code and OTP. A more secure option</span>
+<span class="c1">        #       is to whitelist each user&#39;s IP.</span>
+<span class="c1">        #&quot;0.0.0.0/0&quot;,</span>
+<span class="w">      </span><span class="p">],</span>
+<span class="w">      </span><span class="na">description</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;Allow Pritunl HTTPS UI&quot;</span>
 <span class="w">    </span><span class="p">},</span>
 </code></pre></div>
-<p><strong>and DNS from:</strong></p>
+<p>Now, locate this block and uncomment it:
 <div class="highlight"><pre><span></span><code><span class="cm">  /*  dns_records_public_hosted_zone = [{</span>
-<span class="cm">    zone_id = data.terraform_remote_state.dns.outputs.aws_public_zone_id[0],</span>
-<span class="cm">    name    = &quot;vpn.aws.binbash.co&quot;,</span>
+<span class="cm">    zone_id = data.terraform_remote_state.dns.outputs.aws_public_zone_id,</span>
+<span class="cm">    name    = &quot;vpn.aws.binbash.com.ar&quot;,</span>
 <span class="cm">    type    = &quot;A&quot;,</span>
 <span class="cm">    ttl     = 300</span>
 <span class="cm">  }]*/</span>
-</code></pre></div>
-<p><strong>To:</strong></p>
-<div class="highlight"><pre><span></span><code><span class="w">  </span><span class="na">dns_records_public_hosted_zone</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[{</span>
-<span class="w">    </span><span class="na">zone_id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">data.terraform_remote_state.dns.outputs.public_zone_id</span><span class="p">,</span>
-<span class="w">    </span><span class="na">name</span><span class="w">    </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;vpn.binbash.co&quot;</span><span class="p">,</span>
-<span class="w">    </span><span class="na">type</span><span class="w">    </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;A&quot;</span><span class="p">,</span>
-<span class="w">    </span><span class="na">ttl</span><span class="w">     </span><span class="o">=</span><span class="w"> </span><span class="m">300</span>
-<span class="w">  </span><span class="p">}]</span>
-</code></pre></div>
-<p>Also, to access in port 443 this need to be changed <strong>from</strong>:</p>
-<div class="highlight"><pre><span></span><code><span class="w">    </span><span class="p">{</span>
-<span class="w">      </span><span class="na">from_port</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">443</span><span class="p">,</span><span class="c1"> # Pritunl VPN Server UI</span>
-<span class="w">      </span><span class="na">to_port</span><span class="w">   </span><span class="o">=</span><span class="w"> </span><span class="m">443</span><span class="p">,</span>
-<span class="w">      </span><span class="na">protocol</span><span class="w">  </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;tcp&quot;</span><span class="p">,</span>
-<span class="c1">      #cidr_blocks = [&quot;0.0.0.0/0&quot;], # Public temporally accessible for new users setup (when needed)</span>
-<span class="w">      </span><span class="na">cidr_blocks</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="nv">data.terraform_remote_state.vpc.outputs.vpc_cidr_block</span><span class="p">],</span>
-<span class="w">      </span><span class="na">description</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;Allow Pritunl HTTPS UI&quot;</span>
-<span class="w">    </span><span class="p">},</span>
-</code></pre></div>
-<p><strong>To:</strong></p>
-<div class="highlight"><pre><span></span><code><span class="w">    </span><span class="p">{</span>
-<span class="w">      </span><span class="na">from_port</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">443</span><span class="p">,</span><span class="c1"> # Pritunl VPN Server UI</span>
-<span class="w">      </span><span class="na">to_port</span><span class="w">   </span><span class="o">=</span><span class="w"> </span><span class="m">443</span><span class="p">,</span>
-<span class="w">      </span><span class="na">protocol</span><span class="w">  </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;tcp&quot;</span><span class="p">,</span>
-<span class="w">      </span><span class="na">cidr_blocks</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;0.0.0.0/0&quot;</span><span class="p">],</span><span class="c1"> # Public temporally accessible for new users setup (when needed)</span>
-<span class="c1">      #cidr_blocks = [data.terraform_remote_state.vpc.outputs.vpc_cidr_block],</span>
-<span class="w">      </span><span class="na">description</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;Allow Pritunl HTTPS UI&quot;</span>
-<span class="w">    </span><span class="p">},</span>
-</code></pre></div>
+</code></pre></div></p>
 <div class="admonition info">
-<p class="admonition-title">Info</p>
+<p class="admonition-title">An important note on DNS</p>
 <p>Replace the domain with your own. A public record is being created so we can reach the server.</p>
 </div>
-<h3 id="apply-the-layer">Apply the layer<a class="headerlink" href="#apply-the-layer" title="Permanent link"> ¶</a></h3>
-<p>As usual:</p>
+<p>Finally, make sure you review the rest of the code to spot other parts you may want to adjust to your needs, for instance:</p>
+<ul>
+<li><a href="https://github.com/binbashar/le-tf-infra-aws/blob/master/shared/us-east-1/tools-vpn-server/ec2.tf#L18">Key pair name</a>: this is SSH key that will be used for connecting to the instance.</li>
+<li>VPC settings: VPC id and subnets.</li>
+<li>SSM access: which can be used to access the instance via SSM instead of SSH.</li>
+</ul>
+<h2 id="applying-the-changes">Applying the changes<a class="headerlink" href="#applying-the-changes" title="Permanent link"> ¶</a></h2>
+<p>As usual, just follow the <a href="/user-guide/ref-architecture-aws/workflow/#the-basic-workflow">Terraform/OpenTofu workflow</a> to initialize, plan, and apply the changes:</p>
 <div class="highlight"><pre><span></span><code>leverage<span class="w"> </span>tf<span class="w"> </span>init<span class="w"> </span>
 leverage<span class="w"> </span>tf<span class="w"> </span>plan
 leverage<span class="w"> </span>tf<span class="w"> </span>apply
 </code></pre></div>
-<h2 id="ssh-connection">SSH connection<a class="headerlink" href="#ssh-connection" title="Permanent link"> ¶</a></h2>
-<p>For this a new key pair will be created, same one that will be used for <code>ansible</code> provisioning.</p>
-<p>Create a key pair, more <a href="https://www.ssh.com/academy/ssh/keygen">here</a>, or use an already created one.</p>
-<p>Store the keys in a safe place.</p>
-<p>Then you have 2 options to set up the SSH key pair in your EC2:</p>
-<h4 id="opt-1-via-opentofu">Opt-1: Via OpenTofu<a class="headerlink" href="#opt-1-via-opentofu" title="Permanent link"> ¶</a></h4>
-<p>Copy the content of the public key in the associated 
-<a href="https://github.com/binbashar/le-tf-infra-aws/blob/2d573360a60f1ca48019bd00f845236d6127cfb0/shared/us-east-1/security-keys/variables.tf#L17">shared/us-east-1/security-keys layer variable</a>.</p>
-<p>And pass this at the <a href="https://github.com/binbashar/le-tf-infra-aws/blob/master/shared/us-east-1/tools-vpn-server/ec2.tf"><strong>ec2.tf</strong> <code>key_pair_name = data.terraform_remote_state.keys.outputs.aws_key_pair_name</code></a> parameter</p>
-<p>Check the connection:</p>
-<div class="highlight"><pre><span></span><code>ssh<span class="w"> </span>-i<span class="w"> </span>&lt;path-2-your-private-key&gt;<span class="w"> </span>ubuntu@&lt;the-instance-public-ip&gt;
+<h2 id="connecting-to-the-ec2-instance">Connecting to the EC2 instance<a class="headerlink" href="#connecting-to-the-ec2-instance" title="Permanent link"> ¶</a></h2>
+<p>There are at last two options to connect to the EC2 instance: SSH and SSM.</p>
+<h3 id="option-1-connect-via-ssh">Option 1: Connect via SSH<a class="headerlink" href="#option-1-connect-via-ssh" title="Permanent link"> ¶</a></h3>
+<p>Here you simply need the public IP of the instance and the private key associated to the public key that is defined in 
+<a href="https://github.com/binbashar/le-tf-infra-aws/blob/2d573360a60f1ca48019bd00f845236d6127cfb0/shared/us-east-1/security-keys/variables.tf#L17">this layer</a>.</p>
+<p>Using both you can run this command:</p>
+<div class="highlight"><pre><span></span><code>ssh<span class="w"> </span>-i<span class="w"> </span>&lt;path-to-your-private-key&gt;<span class="w"> </span>ubuntu@&lt;the-instance-public-ip&gt;
 </code></pre></div>
 <p>When prompted to accept the fingerprint, type "yes" and hit enter.</p>
-<h4 id="opt-2-via-web-console-ssm-access">Opt-2: Via Web Console SSM access<a class="headerlink" href="#opt-2-via-web-console-ssm-access" title="Permanent link"> ¶</a></h4>
-<p>Access the EC2 instance from <a href="https://us-east-1.console.aws.amazon.com/ec2/home?region=us-east-1#Home:">AWS Web Console</a>. (use the <code>shared</code> account)</p>
-<p>Connect to the instance (connect button) using SSM (Session Manager).</p>
-<p>Once in the instance terminal, paste the copied content in the to the authorized keys file:</p>
-<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>bash<span class="w"> </span>-c<span class="w"> </span><span class="s1">&#39;echo &quot;ssh-ed25519 yourkey binbhash-AWS-instances&quot; &gt;&gt; /home/ubuntu/.ssh/authorized_keys&#39;</span>
-</code></pre></div>
-<p><em>Replace the content between double quotes with your private key content</em></p>
-<p>Check the connection:</p>
-<div class="highlight"><pre><span></span><code>ssh<span class="w"> </span>-i<span class="w"> </span>&lt;path-2-your-private-key&gt;<span class="w"> </span>ubuntu@&lt;the-instance-public-ip&gt;
-</code></pre></div>
-<p>When prompted to accept the fingerprint, type "yes" and hit enter.</p>
-<div class="admonition info">
-<p class="admonition-title">CONSIDERATIONS</p>
-<p><code>ubuntu</code> is the default user for the default image used here, if needed change it.
-In this command you can use the public URL that was set, in the example <code>vpn.binbash.com.ar</code>.</p>
-</div>
+<h3 id="option-2-connect-via-ssm">Option 2: Connect via SSM<a class="headerlink" href="#option-2-connect-via-ssm" title="Permanent link"> ¶</a></h3>
+<p>Browse to the <a href="https://us-east-1.console.aws.amazon.com/ec2/home?region=us-east-1#Home:">AWS Management Console</a>. Make sure you are in the <code>shared</code> account.</p>
+<p>Locate the instance, select it and then click on the "Connect" button. You should get SSH-like access via a Web Terminal interface.</p>
 
 
 
@@ -5622,7 +5586,7 @@ In this command you can use the public URL that was set, in the example <code>vp
       <nav class="md-footer__inner md-grid" aria-label="Footer" >
         
           
-          <a href="../" class="md-footer__link md-footer__link--prev" aria-label="Previous: Index">
+          <a href="../VPN-comparison/" class="md-footer__link md-footer__link--prev" aria-label="Previous: 1. Evaluating Alternatives">
             <div class="md-footer__button md-icon">
               
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
@@ -5632,20 +5596,20 @@ In this command you can use the public URL that was set, in the example <code>vp
                 Previous
               </span>
               <div class="md-ellipsis">
-                Index
+                1. Evaluating Alternatives
               </div>
             </div>
           </a>
         
         
           
-          <a href="../VPN-server-ansible/" class="md-footer__link md-footer__link--next" aria-label="Next: 2. Ansible provisioning">
+          <a href="../VPN-server-ansible/" class="md-footer__link md-footer__link--next" aria-label="Next: 3. Installing the Software">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 Next
               </span>
               <div class="md-ellipsis">
-                2. Ansible provisioning
+                3. Installing the Software
               </div>
             </div>
             <div class="md-footer__button md-icon">

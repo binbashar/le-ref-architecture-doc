@@ -18,7 +18,7 @@
         <link rel="prev" href="../argocd-external-cluster/">
       
       
-        <link rel="next" href="VPN-server-opentofu/">
+        <link rel="next" href="VPN-comparison/">
       
       
       <link rel="icon" href="../../../assets/images/logos/favicon.ico">
@@ -90,7 +90,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#how-to-create-a-vpn-server" class="md-skip">
+        <a href="#setting-up-a-vpn-server" class="md-skip">
           Skip to content
         </a>
       
@@ -4547,6 +4547,8 @@
       
         
       
+        
+      
     
     
       
@@ -4595,11 +4597,32 @@
   
   
     <li class="md-nav__item">
+      <a href="VPN-comparison/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    1. Evaluating Alternatives
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="VPN-server-opentofu/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    1. OpenTofu EC2 layer
+    2. Provisioning the Infrastructure
   </span>
   
 
@@ -4620,7 +4643,7 @@
         
   
   <span class="md-ellipsis">
-    2. Ansible provisioning
+    3. Installing the Software
   </span>
   
 
@@ -4641,7 +4664,7 @@
         
   
   <span class="md-ellipsis">
-    3. VPN Web GUI config
+    4. Configuring Pritunl
   </span>
   
 
@@ -5257,83 +5280,41 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#goal" class="md-nav__link">
+  <a href="#overview" class="md-nav__link">
     <span class="md-ellipsis">
-      Goal
+      Overview
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#vpn-solution-alternatives" class="md-nav__link">
+  <a href="#comparing-alternatives" class="md-nav__link">
     <span class="md-ellipsis">
-      VPN Solution Alternatives
+      Comparing alternatives
     </span>
   </a>
-  
-    <nav class="md-nav" aria-label="VPN Solution Alternatives">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#1-aws-client-vpn-endpoint" class="md-nav__link">
-    <span class="md-ellipsis">
-      1. AWS Client VPN Endpoint
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#2-pritunl-vpn-server-on-ec2" class="md-nav__link">
-    <span class="md-ellipsis">
-      2. Pritunl VPN Server on EC2
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#key-considerations" class="md-nav__link">
-    <span class="md-ellipsis">
-      Key Considerations
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#use-case-recommendations" class="md-nav__link">
-    <span class="md-ellipsis">
-      Use Case Recommendations
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#how-to" class="md-nav__link">
+  <a href="#implementation-guide" class="md-nav__link">
     <span class="md-ellipsis">
-      How to
+      Implementation Guide
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="How to">
+    <nav class="md-nav" aria-label="Implementation Guide">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#pritunl" class="md-nav__link">
+  <a href="#spinning-up-a-pritunl-server-on-aws-ec2" class="md-nav__link">
     <span class="md-ellipsis">
-      Pritunl
+      Spinning up a Pritunl server on AWS EC2
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Pritunl">
+    <nav class="md-nav" aria-label="Spinning up a Pritunl server on AWS EC2">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -5387,126 +5368,40 @@
   
 
 
-<h1 id="how-to-create-a-vpn-server">How to create a VPN Server<a class="headerlink" href="#how-to-create-a-vpn-server" title="Permanent link"> ¶</a></h1>
-<h2 id="goal">Goal<a class="headerlink" href="#goal" title="Permanent link"> ¶</a></h2>
-<p>To create a VPN server to access all the private networks (or at least, those ones "peered" to the VPN one) 
-in the Organization.</p>
+<h1 id="setting-up-a-vpn-server">Setting up a VPN Server<a class="headerlink" href="#setting-up-a-vpn-server" title="Permanent link"> ¶</a></h1>
+<h2 id="overview">Overview<a class="headerlink" href="#overview" title="Permanent link"> ¶</a></h2>
+<p>Companies use Client VPNs primarily to give remote employees secure access to internal company resources, protect data transmission over public networks, and maintain security policies and compliance requirements for workers outside the office.</p>
+<p>This post explores a couple of alternatives that we have successfully implemented for our clients. It then goes on to provide detailed instructions on how to set up your own Client VPN.</p>
+<h2 id="comparing-alternatives">Comparing alternatives<a class="headerlink" href="#comparing-alternatives" title="Permanent link"> ¶</a></h2>
+<p>Two common approaches cover most needs: a managed service (AWS Client VPN) and a self‑hosted server (Pritunl on EC2).</p>
+<ul>
+<li><strong>AWS Client VPN</strong>: Managed by AWS, integrates with IAM/SSO, auto-scales and offers high availability out of the box. Trade-offs are higher ongoing costs and fewer low-level customization options.</li>
+<li><strong>Pritunl on EC2</strong>: Full control and OpenVPN compatibility with a predictable EC2-based cost; you own patching, scaling, and any high-availability setup.</li>
+</ul>
+<p>Refer to the <a href="VPN-comparison/">VPN Solutions Comparison</a> page for a full, side‑by‑side comparison.</p>
+<h2 id="implementation-guide">Implementation Guide<a class="headerlink" href="#implementation-guide" title="Permanent link"> ¶</a></h2>
+<h3 id="spinning-up-a-pritunl-server-on-aws-ec2">Spinning up a Pritunl server on AWS EC2<a class="headerlink" href="#spinning-up-a-pritunl-server-on-aws-ec2" title="Permanent link"> ¶</a></h3>
+<p>This section provides instructions to stand up a Pritunl server on AWS EC2.</p>
 <div class="admonition note">
-<p class="admonition-title">Assumptions</p>
-<p>We are assuming the <a href="https://leverage.binbash.co/"><strong>binbash Leverage</strong></a> <a href="https://leverage.binbash.co/try-leverage/">Landing Zone</a> is deployed, <code>apps-devstg</code> and <code>shared</code> were
-created and region <code>us-east-1</code> is being used. In any case you can adapt these examples to other scenarios.</p>
+<p class="admonition-title">Pre-requisites</p>
+<p>Before you start, this guide makes the following assumptions:</p>
+<ul>
+<li>Your AWS infrastructure follows the conventions of the <a href="https://leverage.binbash.co/"><strong>binbash Leverage</strong></a> <a href="https://leverage.binbash.co/try-leverage/">Landing Zone</a>.</li>
+<li>We will be using region <code>us-east-1</code>.</li>
+<li>We will deploy the EC2 instance on a public subnet of the <code>shared</code> VPC.</li>
+<li>We will use an Elastic IP so the EC2 instance can be started/stopped without worrying about getting a new public IP address every time you start the instance.</li>
+</ul>
 </div>
-<h2 id="vpn-solution-alternatives">VPN Solution Alternatives<a class="headerlink" href="#vpn-solution-alternatives" title="Permanent link"> ¶</a></h2>
-<h3 id="1-aws-client-vpn-endpoint">1. AWS Client VPN Endpoint<a class="headerlink" href="#1-aws-client-vpn-endpoint" title="Permanent link"> ¶</a></h3>
-<p><strong>Pros:</strong></p>
-<ul>
-<li>Fully managed AWS service - no infrastructure management required</li>
-<li>Native integration with AWS IAM and AWS SSO for authentication</li>
-<li>Automatic scaling and high availability</li>
-<li>Built-in security features and encryption</li>
-<li>Direct integration with VPC networking</li>
-<li>Supports split-tunnel VPN configurations</li>
-<li>CloudWatch integration for monitoring and logging</li>
-</ul>
-<p><strong>Cons:</strong></p>
-<ul>
-<li>Limited customization options compared to self-managed solutions</li>
-<li>Requires AWS VPN client software on end-user devices</li>
-<li>Higher cost as you pay for:<ul>
-<li>Each VPN endpoint association per hour</li>
-<li>Each client connection per hour</li>
-<li>Data transfer fees</li>
-</ul>
-</li>
-</ul>
-<h3 id="2-pritunl-vpn-server-on-ec2">2. Pritunl VPN Server <em>on EC2</em><a class="headerlink" href="#2-pritunl-vpn-server-on-ec2" title="Permanent link"> ¶</a></h3>
-<p><strong>Pros:</strong></p>
-<ul>
-<li>One-time EC2 instance configuration  </li>
-<li>Constant cost: One EC2 instance (plus storage)  </li>
-<li>Full control over the VPN server configuration</li>
-<li>User-friendly web GUI for administration</li>
-<li>Supports multiple organizations and users</li>
-<li>Compatible with standard OpenVPN clients</li>
-<li>Flexible authentication options (certificates, 2FA)</li>
-<li>Can be scheduled to start/stop to reduce costs</li>
-<li>Custom routing and network configurations</li>
-</ul>
-<p><strong>Cons:</strong></p>
-<ul>
-<li>Requires manual setup and maintenance</li>
-<li>Self-managed security updates and patches</li>
-<li>High availability requires additional configuration</li>
-<li>Scaling requires manual intervention</li>
-<li>Infrastructure management overhead</li>
-<li>Dependent on EC2 instance availability</li>
-</ul>
-<h3 id="key-considerations">Key Considerations<a class="headerlink" href="#key-considerations" title="Permanent link"> ¶</a></h3>
-<table>
-<thead>
-<tr>
-<th><strong>Aspect</strong></th>
-<th><strong>AWS Client VPN</strong></th>
-<th><strong>Pritunl</strong></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Setup Complexity</td>
-<td>Simple setup through AWS Console or IaC</td>
-<td>Requires EC2 instance setup, software installation, and configuration</td>
-</tr>
-<tr>
-<td>Administration</td>
-<td>Managed through AWS Console, simple user management with SSO</td>
-<td>Web GUI interface, certificate management, more hands-on administration</td>
-</tr>
-<tr>
-<td>Scalability</td>
-<td>Automatic scaling, managed by AWS</td>
-<td>Manual scaling, dependent on EC2 instance size</td>
-</tr>
-<tr>
-<td>Reliability</td>
-<td>Built-in high availability</td>
-<td>Requires custom HA setup if needed</td>
-</tr>
-</tbody>
-</table>
-<h3 id="use-case-recommendations">Use Case Recommendations<a class="headerlink" href="#use-case-recommendations" title="Permanent link"> ¶</a></h3>
-<p><strong>Choose AWS Client VPN when:</strong></p>
-<ul>
-<li>You need a managed solution with minimal overhead</li>
-<li>Your organization uses AWS SSO</li>
-<li>You require automatic scaling and high availability</li>
-<li>Budget is not a primary concern</li>
-</ul>
-<p><strong>Choose Pritunl when:</strong></p>
-<ul>
-<li>Cost optimization is important</li>
-<li>You need full control over the VPN configuration</li>
-<li>You have technical expertise for maintenance</li>
-<li>You want to leverage existing OpenVPN clients</li>
-<li>You need to implement custom routing or configurations</li>
-</ul>
-<h2 id="how-to">How to<a class="headerlink" href="#how-to" title="Permanent link"> ¶</a></h2>
-<h3 id="pritunl">Pritunl<a class="headerlink" href="#pritunl" title="Permanent link"> ¶</a></h3>
-<p>As per <a href="https://leverage.binbash.co/"><strong>binbash Leverage</strong></a> <a href="https://leverage.binbash.co/try-leverage/">Landing Zone</a> defaults, the VPN server will be created in a public network of 
-the <code>shared</code> base-network VPC.</p>
-<p>It is a "Pritunl" server.</p>
-<p>All the networks that should be accessible from the VPN must:</p>
-<ul>
-<li>be "peered" to the <code>shared</code> base-network VPC</li>
-<li>their CIDR have to be added to the <a href="https://pritunl.com/">"Pritunl VPN" server</a></li>
-</ul>
-<p>This Pritunl server will be deployed in an EC2 instance.</p>
-<p>Note this instance can be started/stopped in an scheduled fashion, see <a href="/user-guide/cookbooks/schedule-start-stop-ec2">here</a> for more info. 
-(Note also, if no EIP is being used, when the instance is stopped and then started again the IP will change.)</p>
+<div class="admonition tip">
+<p class="admonition-title">Hint</p>
+<p>If you would like to start/stop this instance in a scheduled fashion, review the <a href="/user-guide/cookbooks/schedule-start-stop-ec2">scheduled start/stop guide</a>.</p>
+</div>
 <h4 id="deployment-steps">Deployment Steps<a class="headerlink" href="#deployment-steps" title="Permanent link"> ¶</a></h4>
+<p>Our Pritunl deployment consists of 3 steps:</p>
 <ol>
-<li><a href="VPN-server-opentofu/">Create the EC2 instance with OpenTofu</a></li>
-<li><a href="VPN-server-ansible/">Deploy Pritunl VPN Server with Ansible</a></li>
-<li><a href="VPN-server-gui-setup/">Configure Pritunl from its web GUI interface</a></li>
+<li><a href="VPN-server-opentofu/">Creating the EC2 instance via Terraform/OpenTofu</a></li>
+<li><a href="VPN-server-ansible/">Installing Pritunl via Ansible</a></li>
+<li><a href="VPN-server-gui-setup/">Configuring Pritunl through the Web Admin</a></li>
 </ol>
 <h3 id="aws-vpn-client">AWS VPN Client<a class="headerlink" href="#aws-vpn-client" title="Permanent link"> ¶</a></h3>
 <p>For detailed instructions on implementing AWS Client VPN, including endpoint configuration, authentication setup, and network associations, please refer to our <a href="https://github.com/binbashar/le-tf-infra-aws/blob/master/network/us-east-1/client-vpn/README.md">AWS Client VPN implementation guide</a>. The guide provides step-by-step procedures for creating a secure VPN connection, configuring authorization rules, and managing client access using AWS best practices.</p>
@@ -5564,13 +5459,13 @@ the <code>shared</code> base-network VPC.</p>
         
         
           
-          <a href="VPN-server-opentofu/" class="md-footer__link md-footer__link--next" aria-label="Next: 1. OpenTofu EC2 layer">
+          <a href="VPN-comparison/" class="md-footer__link md-footer__link--next" aria-label="Next: 1. Evaluating Alternatives">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 Next
               </span>
               <div class="md-ellipsis">
-                1. OpenTofu EC2 layer
+                1. Evaluating Alternatives
               </div>
             </div>
             <div class="md-footer__button md-icon">

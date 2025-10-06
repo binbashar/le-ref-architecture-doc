@@ -26,7 +26,7 @@
     
     
       
-        <title>3. VPN Web GUI config - binbash Leverage™</title>
+        <title>4. Configuring Pritunl - binbash Leverage™</title>
       
     
     
@@ -90,7 +90,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#connect-and-configure-the-server" class="md-skip">
+        <a href="#configuring-pritunl" class="md-skip">
           Skip to content
         </a>
       
@@ -124,7 +124,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              3. VPN Web GUI config
+              4. Configuring Pritunl
             
           </span>
         </div>
@@ -4547,6 +4547,8 @@
       
         
       
+        
+      
     
     
       
@@ -4595,11 +4597,32 @@
   
   
     <li class="md-nav__item">
+      <a href="../VPN-comparison/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    1. Evaluating Alternatives
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../VPN-server-opentofu/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    1. OpenTofu EC2 layer
+    2. Provisioning the Infrastructure
   </span>
   
 
@@ -4620,7 +4643,7 @@
         
   
   <span class="md-ellipsis">
-    2. Ansible provisioning
+    3. Installing the Software
   </span>
   
 
@@ -4643,12 +4666,14 @@
       <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
       
       
+        
+      
       
         <label class="md-nav__link md-nav__link--active" for="__toc">
           
   
   <span class="md-ellipsis">
-    3. VPN Web GUI config
+    4. Configuring Pritunl
   </span>
   
 
@@ -4659,7 +4684,7 @@
         
   
   <span class="md-ellipsis">
-    3. VPN Web GUI config
+    4. Configuring Pritunl
   </span>
   
 
@@ -4671,6 +4696,8 @@
   
   
   
+    
+  
   
     <label class="md-nav__title" for="__toc">
       <span class="md-nav__icon md-icon"></span>
@@ -4679,25 +4706,42 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#connect-and-configure-the-server" class="md-nav__link">
+  <a href="#overview" class="md-nav__link">
     <span class="md-ellipsis">
-      Connect and configure the server
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Connect and configure the server">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#create-user-and-organizations" class="md-nav__link">
-    <span class="md-ellipsis">
-      Create user and organizations
+      Overview
     </span>
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
+      
+        <li class="md-nav__item">
+  <a href="#connecting-to-pritunl-web-admin" class="md-nav__link">
+    <span class="md-ellipsis">
+      Connecting to Pritunl Web Admin
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#setting-up-tls" class="md-nav__link">
+    <span class="md-ellipsis">
+      Setting up TLS
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#create-users-and-organizations" class="md-nav__link">
+    <span class="md-ellipsis">
+      Create users and organizations
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#adding-a-new-server" class="md-nav__link">
     <span class="md-ellipsis">
       Adding a new server
@@ -4705,15 +4749,16 @@
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
+      
+        <li class="md-nav__item">
   <a href="#a-note-on-aws-private-dns" class="md-nav__link">
     <span class="md-ellipsis">
       A note on AWS private DNS
     </span>
   </a>
   
-</li>
+    <nav class="md-nav" aria-label="A note on AWS private DNS">
+      <ul class="md-nav__list">
         
           <li class="md-nav__item">
   <a href="#setup-new-users-vpn-client" class="md-nav__link">
@@ -5361,6 +5406,8 @@
   
   
   
+    
+  
   
     <label class="md-nav__title" for="__toc">
       <span class="md-nav__icon md-icon"></span>
@@ -5369,25 +5416,42 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#connect-and-configure-the-server" class="md-nav__link">
+  <a href="#overview" class="md-nav__link">
     <span class="md-ellipsis">
-      Connect and configure the server
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Connect and configure the server">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#create-user-and-organizations" class="md-nav__link">
-    <span class="md-ellipsis">
-      Create user and organizations
+      Overview
     </span>
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
+      
+        <li class="md-nav__item">
+  <a href="#connecting-to-pritunl-web-admin" class="md-nav__link">
+    <span class="md-ellipsis">
+      Connecting to Pritunl Web Admin
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#setting-up-tls" class="md-nav__link">
+    <span class="md-ellipsis">
+      Setting up TLS
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#create-users-and-organizations" class="md-nav__link">
+    <span class="md-ellipsis">
+      Create users and organizations
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#adding-a-new-server" class="md-nav__link">
     <span class="md-ellipsis">
       Adding a new server
@@ -5395,15 +5459,16 @@
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
+      
+        <li class="md-nav__item">
   <a href="#a-note-on-aws-private-dns" class="md-nav__link">
     <span class="md-ellipsis">
       A note on AWS private DNS
     </span>
   </a>
   
-</li>
+    <nav class="md-nav" aria-label="A note on AWS private DNS">
+      <ul class="md-nav__list">
         
           <li class="md-nav__item">
   <a href="#setup-new-users-vpn-client" class="md-nav__link">
@@ -5469,44 +5534,62 @@
   
 
 
-  <h1>3. VPN Web GUI config</h1>
-
-<h2 id="connect-and-configure-the-server">Connect and configure the server<a class="headerlink" href="#connect-and-configure-the-server" title="Permanent link"> ¶</a></h2>
-<p><code>ssh</code> into the server and run this command: </p>
-<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>pritunl<span class="w"> </span>default-password
-</code></pre></div>
-<p>Grab the user and password and use them as credentials in the web page at your public domain 
-https://vpn.aws.binbash.com.ar </p>
+<h1 id="configuring-pritunl">Configuring Pritunl<a class="headerlink" href="#configuring-pritunl" title="Permanent link"> ¶</a></h1>
+<h2 id="overview">Overview<a class="headerlink" href="#overview" title="Permanent link"> ¶</a></h2>
+<p>At this point you should have provisioned the infrastructure and software required to run Pritunl.
+Now it's time to apply the finishing steps.</p>
+<h2 id="connecting-to-pritunl-web-admin">Connecting to Pritunl Web Admin<a class="headerlink" href="#connecting-to-pritunl-web-admin" title="Permanent link"> ¶</a></h2>
+<p>Browse to the Pritunl URL. In our case that's <a href="https://vpn.aws.binbash.com.ar">https://vpn.aws.binbash.com.ar</a> but in yours the domain will probably be different.</p>
 <div class="admonition note">
 <p class="admonition-title">Access via IP Address</p>
-<p>In case you still don't have your DNS record you can access via public IP Addrress</p>
+<p>In case you still don't have your DNS record you can access via public IP Address</p>
 </div>
-<p>In the initial setup page and change the <strong>password</strong> and enter the domain in 
-"Lets Encrypt Domain": <code>vpn.binbash.com.ar</code>.</p>
-<p><img alt="leverage-vpn-pritunl" src="../../../../assets/images/screenshots/vpn-pritunl-init.png" style="width: 450px" title="Pritunl VPN" /></p>
+<p>The first time you access Pritunl's Web Admin, it should guide you through the initialization process which consists of setting up the database and then the admin password.</p>
+<p><img alt="leverage-vpn-pritunl" src="https://files.readme.io/WeEG06lTLOTXvcLeKBYU_database_setup0.png" style="width: 450px" title="Pritunl VPN" /></p>
 <figcaption style="font-size:15px">
-<b>Figure:</b> Pritunl VPN web interface initialization.
+<b>Figure:</b> Pritunl Database Setup screen
 </figcaption>
 
-<ul>
-<li><img alt="📚" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.0.3/assets/svg/1f4da.svg" title=":books:" /> <a href="https://docs.pritunl.com/docs/configuration-5">OFFICIAL DOC: Initial configuration of Pritunl</a></li>
-</ul>
-<h3 id="create-user-and-organizations">Create user and organizations<a class="headerlink" href="#create-user-and-organizations" title="Permanent link"> ¶</a></h3>
+<p>This initialization usually requires using SSH to log into the instance and then running a few simple commands.</p>
+<p>The command below should get you the setup key which is used for configuring the database (MongoDB):</p>
+<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>pritunl<span class="w"> </span>setup-key
+</code></pre></div>
+<p>And then the next command should get you the initial password:</p>
+<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>pritunl<span class="w"> </span>default-password
+</code></pre></div>
+<div class="admonition note">
+<p class="admonition-title">About the initialization commands</p>
+<p>The above commands might change in future versions so it's recommended to follow the instructions
+presented by Pritunl's Web Admin instead.</p>
+</div>
+<h2 id="setting-up-tls">Setting up TLS<a class="headerlink" href="#setting-up-tls" title="Permanent link"> ¶</a></h2>
+<p>In the initial setup screen, you can fill the "Lets Encrypt Domain" field and then click "Save".
+That should have Pritunl talk to Let's Encrypt in order to have a TLS certificate issued for your Pritunl instance.</p>
+<p><img alt="leverage-vpn-pritunl" src="https://files.readme.io/R9WA2PdrRQm2RHXqYOYY_configuration2.png" style="width: 450px" title="Pritunl VPN" /></p>
+<figcaption style="font-size:15px">
+<b>Figure:</b> Pritunl Initial Setup screen
+</figcaption>
+
+<div class="admonition note">
+<p class="admonition-title">Pritunl Documentation</p>
+<p>We highly encourage you to read more about the initial setup in <a href="https://docs.pritunl.com/docs/configuration-5#initial-setup">Pritunl's official documentation</a>.</p>
+</div>
+<h2 id="create-users-and-organizations">Create users and organizations<a class="headerlink" href="#create-users-and-organizations" title="Permanent link"> ¶</a></h2>
 <p>First things first, add a user.</p>
 <ol>
-<li>Go to Users.</li>
-<li>Hit Add Organization.</li>
-<li>Enter a name and hit Add.</li>
-<li>Now Add User.</li>
-<li>Enter a name, select the organization, enter an email and let the pin empty. </li>
-<li>Hit Add.</li>
+<li>Go to the "Users" menu.</li>
+<li>Click on "Add Organization".</li>
+<li>Type a name and click "Add".</li>
+<li>Now click on "Add User".</li>
+<li>Enter a name, select the organization, enter an email and leave the pin empty. </li>
+<li>Click Add.</li>
 </ol>
 <p><img alt="leverage-vpn-pritunl" src="../../../../assets/images/screenshots/vpn-pritunl-org-users.png" style="width: 650px" title="Pritunl VPN" /></p>
 <figcaption style="font-size:15px">
 <b>Figure:</b> Pritunl VPN Users web interface.
 </figcaption>
 
-<h3 id="adding-a-new-server">Adding a new server<a class="headerlink" href="#adding-a-new-server" title="Permanent link"> ¶</a></h3>
+<h2 id="adding-a-new-server">Adding a new server<a class="headerlink" href="#adding-a-new-server" title="Permanent link"> ¶</a></h2>
 <p>Now add a server to log into.</p>
 <ol>
 <li>Go to Servers and hit "Add Server".</li>
@@ -5548,7 +5631,7 @@ show below:</p>
 <ul>
 <li><img alt="📚" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.0.3/assets/svg/1f4da.svg" title=":books:" /> <a href="https://docs.pritunl.com/docs/connecting">OFFICIAL DOC: Config Server &amp; Connect</a></li>
 </ul>
-<h3 id="a-note-on-aws-private-dns">A note on AWS private DNS<a class="headerlink" href="#a-note-on-aws-private-dns" title="Permanent link"> ¶</a></h3>
+<h2 id="a-note-on-aws-private-dns">A note on AWS private DNS<a class="headerlink" href="#a-note-on-aws-private-dns" title="Permanent link"> ¶</a></h2>
 <p>To use a Route53 private zone (where your private addresses are set), these steps have to be followed:</p>
 <ol>
 <li>Edit the server </li>
@@ -5688,7 +5771,7 @@ need to repeat this process.</li>
       <nav class="md-footer__inner md-grid" aria-label="Footer" >
         
           
-          <a href="../VPN-server-ansible/" class="md-footer__link md-footer__link--prev" aria-label="Previous: 2. Ansible provisioning">
+          <a href="../VPN-server-ansible/" class="md-footer__link md-footer__link--prev" aria-label="Previous: 3. Installing the Software">
             <div class="md-footer__button md-icon">
               
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
@@ -5698,7 +5781,7 @@ need to repeat this process.</li>
                 Previous
               </span>
               <div class="md-ellipsis">
-                2. Ansible provisioning
+                3. Installing the Software
               </div>
             </div>
           </a>

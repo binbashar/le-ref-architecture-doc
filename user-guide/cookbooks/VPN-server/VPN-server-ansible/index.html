@@ -26,7 +26,7 @@
     
     
       
-        <title>2. Ansible provisioning - binbash Leverage™</title>
+        <title>3. Installing the Software - binbash Leverage™</title>
       
     
     
@@ -90,7 +90,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#provision-pritunl-ec2-with-ansible" class="md-skip">
+        <a href="#installing-the-software" class="md-skip">
           Skip to content
         </a>
       
@@ -124,7 +124,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              2. Ansible provisioning
+              3. Installing the Software
             
           </span>
         </div>
@@ -4547,6 +4547,8 @@
       
         
       
+        
+      
     
     
       
@@ -4595,11 +4597,32 @@
   
   
     <li class="md-nav__item">
+      <a href="../VPN-comparison/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    1. Evaluating Alternatives
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../VPN-server-opentofu/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    1. OpenTofu EC2 layer
+    2. Provisioning the Infrastructure
   </span>
   
 
@@ -4622,12 +4645,14 @@
       <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
       
       
+        
+      
       
         <label class="md-nav__link md-nav__link--active" for="__toc">
           
   
   <span class="md-ellipsis">
-    2. Ansible provisioning
+    3. Installing the Software
   </span>
   
 
@@ -4638,7 +4663,7 @@
         
   
   <span class="md-ellipsis">
-    2. Ansible provisioning
+    3. Installing the Software
   </span>
   
 
@@ -4650,6 +4675,8 @@
   
   
   
+    
+  
   
     <label class="md-nav__title" for="__toc">
       <span class="md-nav__icon md-icon"></span>
@@ -4658,50 +4685,29 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#provision-pritunl-ec2-with-ansible" class="md-nav__link">
+  <a href="#overview" class="md-nav__link">
     <span class="md-ellipsis">
-      Provision Pritunl EC2 with Ansible
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Provision Pritunl EC2 with Ansible">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#run-ansible-playbooks" class="md-nav__link">
-    <span class="md-ellipsis">
-      Run Ansible Playbooks
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Run Ansible Playbooks">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#security-users-ansible-playbook" class="md-nav__link">
-    <span class="md-ellipsis">
-      Security &amp; Users Ansible Playbook
+      Overview
     </span>
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
-  <a href="#pritunl-vpn-ansible-playbook" class="md-nav__link">
+      
+        <li class="md-nav__item">
+  <a href="#run-the-security-users-ansible-playbook" class="md-nav__link">
     <span class="md-ellipsis">
-      Pritunl VPN Ansible Playbook
+      Run the Security &amp; Users Ansible Playbook
     </span>
   </a>
   
 </li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-      </ul>
-    </nav>
+      
+        <li class="md-nav__item">
+  <a href="#run-the-pritunl-vpn-ansible-playbook" class="md-nav__link">
+    <span class="md-ellipsis">
+      Run the Pritunl VPN Ansible Playbook
+    </span>
+  </a>
   
 </li>
       
@@ -4725,7 +4731,7 @@
         
   
   <span class="md-ellipsis">
-    3. VPN Web GUI config
+    4. Configuring Pritunl
   </span>
   
 
@@ -5331,6 +5337,8 @@
   
   
   
+    
+  
   
     <label class="md-nav__title" for="__toc">
       <span class="md-nav__icon md-icon"></span>
@@ -5339,50 +5347,29 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#provision-pritunl-ec2-with-ansible" class="md-nav__link">
+  <a href="#overview" class="md-nav__link">
     <span class="md-ellipsis">
-      Provision Pritunl EC2 with Ansible
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Provision Pritunl EC2 with Ansible">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#run-ansible-playbooks" class="md-nav__link">
-    <span class="md-ellipsis">
-      Run Ansible Playbooks
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Run Ansible Playbooks">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#security-users-ansible-playbook" class="md-nav__link">
-    <span class="md-ellipsis">
-      Security &amp; Users Ansible Playbook
+      Overview
     </span>
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
-  <a href="#pritunl-vpn-ansible-playbook" class="md-nav__link">
+      
+        <li class="md-nav__item">
+  <a href="#run-the-security-users-ansible-playbook" class="md-nav__link">
     <span class="md-ellipsis">
-      Pritunl VPN Ansible Playbook
+      Run the Security &amp; Users Ansible Playbook
     </span>
   </a>
   
 </li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-      </ul>
-    </nav>
+      
+        <li class="md-nav__item">
+  <a href="#run-the-pritunl-vpn-ansible-playbook" class="md-nav__link">
+    <span class="md-ellipsis">
+      Run the Pritunl VPN Ansible Playbook
+    </span>
+  </a>
   
 </li>
       
@@ -5409,21 +5396,14 @@
   
 
 
-  <h1>2. Ansible provisioning</h1>
-
-<h2 id="provision-pritunl-ec2-with-ansible">Provision Pritunl EC2 with Ansible<a class="headerlink" href="#provision-pritunl-ec2-with-ansible" title="Permanent link"> ¶</a></h2>
-<h3 id="run-ansible-playbooks">Run Ansible Playbooks<a class="headerlink" href="#run-ansible-playbooks" title="Permanent link"> ¶</a></h3>
-<div class="admonition info">
-<p class="admonition-title">Pre-requisites</p>
-<p>It seems to be obvious but... you need Ansible installed.</p>
-</div>
-<h4 id="security-users-ansible-playbook">Security &amp; Users Ansible Playbook<a class="headerlink" href="#security-users-ansible-playbook" title="Permanent link"> ¶</a></h4>
-<p>Optionally (but recommended) utilize the Ansible playbook for initial basic hardening and local user configuration:
-https://github.com/binbashar/le-ansible-infra/tree/master/sec-users
-To use the Ansible playbook and prepare the <code>.hosts</code> and <code>ansible.cfg</code> files in an initial configuration, 
-use the SSH key generated in the <code>security-keys</code> layer of the Shared account (ssh.tf), referenced as infra-key in the
-EC2 instance that was deployed as explained at "SSH CONNECTION" section before.</p>
-<h4 id="pritunl-vpn-ansible-playbook">Pritunl VPN Ansible Playbook<a class="headerlink" href="#pritunl-vpn-ansible-playbook" title="Permanent link"> ¶</a></h4>
+<h1 id="installing-the-software">Installing the Software<a class="headerlink" href="#installing-the-software" title="Permanent link"> ¶</a></h1>
+<h2 id="overview">Overview<a class="headerlink" href="#overview" title="Permanent link"> ¶</a></h2>
+<p>Once you have provisioned the required infrastructure, you'll have to use Ansible to install and configure Pritunl and its dependencies.</p>
+<h2 id="run-the-security-users-ansible-playbook">Run the Security &amp; Users Ansible Playbook<a class="headerlink" href="#run-the-security-users-ansible-playbook" title="Permanent link"> ¶</a></h2>
+<p>Optionally, but recommended, you can use <a href="https://github.com/binbashar/le-ansible-infra/tree/master/sec-users">the Ansible playbook</a> to centrally manage users and groups, and to perform basic hardening steps on the operating system.</p>
+<p>Before you can use the Ansible playbook you need to configure the <a href="https://github.com/binbashar/le-ansible-infra/blob/master/sec-users/.hosts.example">.hosts</a> and <a href="https://github.com/binbashar/le-ansible-infra/blob/master/sec-users/ansible.cfg.example">ansible.cfg</a> files. Then, use the SSH key generated in the <code>security-keys</code> layer of the Shared account (ssh.tf), referenced as infra-key in the
+EC2 instance that was deployed as explained in previous pages of this guide.</p>
+<h2 id="run-the-pritunl-vpn-ansible-playbook">Run the Pritunl VPN Ansible Playbook<a class="headerlink" href="#run-the-pritunl-vpn-ansible-playbook" title="Permanent link"> ¶</a></h2>
 <p>This Ansible repo will be used here: <strong><a href="https://github.com/binbashar/le-ansible-infra/tree/master/vpn-pritunl">&gt;&gt; Pritunl VPN Server Playbook &lt;&lt;</a></strong></p>
 <p>Copy the playbooks into your project repository. (e.g. you can create an <code>ansible</code> directory inside your <a href="https://leverage.binbash.co/"><strong>binbash Leverage</strong></a> project repository, so all your infrastructure code is in the same place)</p>
 <p><code>cd</code> into the <code>ansible-pritunl-vpn-server</code> (or the name you've chosen) directory.</p>
@@ -5433,15 +5413,9 @@ EC2 instance that was deployed as explained at "SSH CONNECTION" section before.<
 <p>During the installation, you may encounter two errors related to displaying the default generated username and
 password. These can be ignored at this stage; you'll remove them via the command line after the first iteration. </p>
 </div>
-<div class="admonition warning">
-<p class="admonition-title">IMPORTANT CONSIDERATION: Ubuntu LTS 22.04 SUPPORT </p>
-<p>We recommend using the Ubuntu LTS 22.04 version, as 20.04 has limited support remaining. 
-Please consider updating the MongoDB version as well. We have an open issue in the Ansible Ref Arch to address this <a href="https://github.com/binbashar/le-ansible-infra/issues/74">issue link</a>.</p>
-</div>
-<hr />
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>This is a <strong>private repository</strong>, please get in touch with us to get access to it!<br /></p>
+<div class="admonition info">
+<p class="admonition-title">Important</p>
+<p>This is a <strong>private repository</strong>, please get in touch with us to get access to it!</p>
 <ul>
 <li><a href="https://www.binbash.co/es/contact" target="_blank">https://www.binbash.co/es/contact</a></li>
 <li><a href="mailto:leverage@binbash.co">leverage@binbash.co</a></li>
@@ -5484,7 +5458,7 @@ Please consider updating the MongoDB version as well. We have an open issue in t
       <nav class="md-footer__inner md-grid" aria-label="Footer" >
         
           
-          <a href="../VPN-server-opentofu/" class="md-footer__link md-footer__link--prev" aria-label="Previous: 1. OpenTofu EC2 layer">
+          <a href="../VPN-server-opentofu/" class="md-footer__link md-footer__link--prev" aria-label="Previous: 2. Provisioning the Infrastructure">
             <div class="md-footer__button md-icon">
               
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
@@ -5494,20 +5468,20 @@ Please consider updating the MongoDB version as well. We have an open issue in t
                 Previous
               </span>
               <div class="md-ellipsis">
-                1. OpenTofu EC2 layer
+                2. Provisioning the Infrastructure
               </div>
             </div>
           </a>
         
         
           
-          <a href="../VPN-server-gui-setup/" class="md-footer__link md-footer__link--next" aria-label="Next: 3. VPN Web GUI config">
+          <a href="../VPN-server-gui-setup/" class="md-footer__link md-footer__link--next" aria-label="Next: 4. Configuring Pritunl">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 Next
               </span>
               <div class="md-ellipsis">
-                3. VPN Web GUI config
+                4. Configuring Pritunl
               </div>
             </div>
             <div class="md-footer__button md-icon">

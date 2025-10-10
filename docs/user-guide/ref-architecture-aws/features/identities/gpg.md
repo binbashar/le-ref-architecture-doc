@@ -1,10 +1,8 @@
 # GPG Keys
 
 ## Why do we use GPG keys?
-By default our [Leverage Reference Architecture base-identities layer](https://github.com/binbashar/le-tf-infra-aws/blob/master/security/global/base-identities/users.tf) 
-approach is to use [IAM module](https://github.com/binbashar/terraform-aws-iam/tree/master/modules/iam-user) 
-to manage AWS IAM Users credentials with **encryption to grant strong security**. 
-
+Whenever we need to create IAM users, although for exceptional cases, we follow the approach defined in the [Leverage Reference Architecture base-identities layer](https://github.com/binbashar/le-tf-infra-aws/blob/master/security/global/base-identities/users.tf). Such layer uses the [IAM module](https://github.com/binbashar/terraform-aws-iam/tree/master/modules/iam-user) to manage AWS IAM Users credentials with **encryption to grant strong security**. 
+ 
 This **module** outputs commands and GPG messages which can be decrypted either using command line to get AWS Web Console
 user's password and user's secret key.   
 

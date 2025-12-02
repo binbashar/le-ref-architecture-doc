@@ -261,6 +261,7 @@ nav:
     - Reference Architecture for Ansible:
       - Overview: "user-guide/ref-architecture-ansible/overview.md"
       - Workflow: "user-guide/ref-architecture-ansible/workflow.md"
+      - Known issues: "user-guide/ref-architecture-ansible/known-issues.md"
     - Leverage CLI:
       - Overview: "user-guide/leverage-cli/overview.md"
       - Installation: "user-guide/leverage-cli/installation.md"

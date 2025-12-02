@@ -1,38 +1,37 @@
-# Known issues
+# Ansible Known Issues 
 
-## SSH keys
+## Issues with SSH Keys in `leverage run apply`
 
-When connecting to instances, Ansible uses an SSH Key to authenticate.
+When using `leverage run apply`, **Ansible** relies on **SSH keys** for authenticating connections to **EC2 instances**. The command runs Ansible inside a **container**, which can lead to specific issues related to how SSH keys are accessed.
 
-Usually, this key is set when the EC2 instance is being created.
+### Key Management and Container Mounting
 
-Then, when running `leverage run appy`, a container is creater behind the scenes to run the command.
+During the execution of `leverage run apply`, a temporary container is created. The key directory **`~/.ssh/bb`** from your host machine is **mounted** into this container to make your keys available for Ansible.
 
-As it can be seen in the command output, the `~/.ssh/bb` directory is mounted in the container to make keys available in the container.
+Two common problems arise when the expected key isn't accessible within the container:
 
-Here two common issues can arise.
+#### 1\. Key Location Mismatch
 
-## Key location
-
-Some people creates the specific project keys in their very own directories.
-
-In this case, the keys won't be available inside the container since they are not in the mounted directory.
+If you store your project-specific SSH keys in a directory **other than `~/.ssh/bb`** (e.g., a project folder), the keys will **not** be available inside the container because only the `~/.ssh/bb` directory is mounted.
 
 !!! idea "Solution"
-    The solution for this case is to copy the key into the `~/.ssh/bb` directory before running the command.
+      **Copy** the necessary key(s) into the `~/.ssh/bb` directory **before** running the command.
 
-E.g. copy them to `~/.ssh/bb/me` and then set the `.host` file with something like this:
+
+For example, you could copy the key to `~/.ssh/bb/me/aws-instance-ssh-key`}.
+Then, update your **inventory file** (e.g., `.host`) to reference this new path, ensuring it points to the location **inside the mounted directory**:
 
 ```yaml
-[infra] vpn-pritunl     ansible_host='vpn.aws.domain.com' ansible_user='ubuntu' ansible_ssh_private
-_key_file='~/.ssh/bb/me/aws-instance-ssh-key' ansible_python_interpreter='/usr/bin/python3'
+[infra] vpn-pritunl ansible_host='vpn.aws.domain.com' ansible_user='ubuntu' ansible_ssh_private_key_file='~/.ssh/bb/me/aws-instance-ssh-key' ansible_python_interpreter='/usr/bin/python3'
 ```
 
-## Passphrase
+#### 2\. Keys Protected by a Passphrase
 
-Some people creates the keys with a passphrase. Then use the `ssh-agent` to make the key available in the shell.
+Some users create SSH keys with a **passphrase** and then use the **ssh-agent** on their host machine to manage and unlock the key for their shell session.
 
-When running `leverage run appy`, the `ssh-agent` is not mounted in the container, making the key (with passphrase) unavailble in the container.
+When `leverage run apply` executes, the **ssh-agent connection** is **not** mounted or forwarded into the container. Consequently, the key remains **locked** inside the container, and Ansible cannot use it.
 
 !!! idea "Solution"
-    The solution is to use, for the EC2 machines, SSH keys with no passphrase.
+      For SSH keys intended for use with **EC2 instances** via `leverage run apply`, it is recommended to use keys that **do not have a passphrase**.
+
+-----

@@ -18,7 +18,7 @@ If you store your project-specific SSH keys in a directory **other than `~/.ssh/
       **Copy** the necessary key(s) into the `~/.ssh/bb` directory **before** running the command.
 
 
-For example, you could copy the key to `~/.ssh/bb/me/aws-instance-ssh-key`}.
+For example, you could copy the key to `~/.ssh/bb/me/aws-instance-ssh-key`.
 Then, update your **inventory file** (e.g., `.host`) to reference this new path, ensuring it points to the location **inside the mounted directory**:
 
 ```yaml

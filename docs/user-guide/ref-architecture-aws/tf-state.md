@@ -60,4 +60,5 @@ Terraform modules registry, accessed December 3rd 2020).
 In the `base-tf-backend` folder you should find the definition of the infrastructure that needs to be deployed before 
 you can get to work with anything else.
 
-**IMPORTANT:** THIS IS ONLY NEEDED IF THE BACKEND WAS NOT CREATED YET. IF THE BACKEND ALREADY EXISTS YOU JUST USE IT.
+!!! info "IMPORTANT"
+    This is only needed if the backend was not created yet. If the backend already exists just use it.

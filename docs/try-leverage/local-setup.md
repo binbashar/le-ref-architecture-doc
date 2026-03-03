@@ -5,8 +5,7 @@ Leverage-based projects are better managed via the [Leverage CLI](/user-guide/le
 In order to install the CLI you should have the following installed in your system:
 
 - [X] [Git](https://git-scm.com/)
-- [X] [Python 3](https://www.python.org/) `version 3.8 and up`
-- [X] [Docker](https://docs.docker.com/engine/install/)
+- [X] [Python 3](https://www.python.org/) `version 3.9 and up`
 
 ## Install [Leverage CLI](/user-guide/leverage-cli/overview/)
 Leverage CLI is distributed as a python package that you can install it via `pip` as follows:

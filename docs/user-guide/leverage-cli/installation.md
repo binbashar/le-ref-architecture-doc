@@ -1,11 +1,10 @@
 # Installation
 
-To use Leverage CLI you need to install it from the Python Package Index (Pypi). Currently, only Linux and Mac OS are supported operative systems.
+To use Leverage CLI you need to install it from the Python Package Index (Pypi). Currently, only Linux and Mac OS are officially supported operative systems.
 
 !!! done "Requirements"
     * [x] **Python** `>= 3.9`
     * [x] **Git** `>= 2.25`
-    * [x] **Docker engine** `>= 20.x.y`
 
 !!! warning "Having issues with the CLI?"
     Check out [the troubleshooting section](/user-guide/troubleshooting/general) to find more help.

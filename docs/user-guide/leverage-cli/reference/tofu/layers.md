@@ -16,7 +16,7 @@ Value:
 
 ## Common workflow
 
-When using the `--layers` parameter, these commands should be run from `account` or `layers-container-directory` directories.
+When using the `--layers` parameter, these commands should be run from `account` directory.
 
 **Example:**
 

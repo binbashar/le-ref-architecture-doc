@@ -19,7 +19,7 @@ pip install leverage
 Verify that your Leverage CLI installation was successful by running the following command:
 ``` bash
 $ leverage --version
-leverage, version 1.9.2
+leverage, version 3.0.0
 ```
 
 !!! info "It is generally recommended to install the latest stable version of the CLI"

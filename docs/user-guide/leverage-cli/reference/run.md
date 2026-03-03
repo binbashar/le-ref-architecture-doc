@@ -38,5 +38,5 @@ leverage run task1 task2[arg1,arg2] task3[arg1,kwarg1=val1,kwarg2=val2]
     start_server  [Default]	Start the server
     stop_server            	
 
-  Powered by Leverage 1.13.0
+  Powered by Leverage 3.0.0
   ```

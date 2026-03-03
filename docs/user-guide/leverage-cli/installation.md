@@ -46,7 +46,7 @@ $ pip3 install leverage
 
 Upgrade to a specific [version](https://github.com/binbashar/leverage/releases).
 ``` bash
-$ pip3 install -Iv leverage==1.9.1
+$ pip3 install -Iv leverage==2.2.0
 ```
 
 Upgrade to the latest stable version
@@ -69,17 +69,16 @@ Options:
   --help         Show this message and exit.
 
 Commands:
-  aws          Run AWS CLI commands in a custom containerized environment.
+  aws          Run AWS CLI commands in the context of the current project.
   credentials  Manage AWS cli credentials.
-  kc           Run Kubectl commands in a custom containerized environment.
-  kubectl      Run Kubectl commands in a custom containerized environment.
+  kc           Run Kubectl commands in the context of the current project.
+  kubectl      Run Kubectl commands in the context of the current project.
   project      Manage a Leverage project.
   run          Perform specified task(s) and all of its dependencies.
-  shell        Run a shell in a generic container.
-  tofu         Run OpenTofu commands in a custom containerized...
-  tf           Run OpenTofu commands in a custom containerized...
-  terraform    Run Terraform commands in a custom containerized...
-  tfautomv     Run TFAutomv commands in a custom containerized...
+  terraform    Run Terraform commands in the context of the current project.
+  tf           Run OpenTofu commands in the context of the current project.
+  tfautomv     Run TFAutomv commands in the context of the current project.`
+  tofu         Run OpenTofu commands in the context of the current project.
 ```
 
 ##Installation in an isolated environment

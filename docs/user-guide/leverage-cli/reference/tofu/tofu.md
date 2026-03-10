@@ -180,7 +180,7 @@ Values checked:
 * AWS CLI profile name prefix
 * S3 Bucket name prefix
 * DynamoDB locking table name prefix
-Can only be run at **layer** level if `--layers` is not set, or at **account** or **layers-container-directory** if it is.
+Can only be run at **layer** level if `--layers` is not set, or at **account** otherwise.
 
 ---
 ## `import`

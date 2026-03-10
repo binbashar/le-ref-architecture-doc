@@ -6,7 +6,7 @@ It transparently handles authentication, whether it is Multi-Factor or via Singl
 
 This command can only be run at **layer** level and will not run anywhere else in the project.
 
-If the binary is not installed in the system the CLI will prompt the user to do so.
+If the binary is not installed in the system, the CLI will prompt the user to do so.
 
 ---
 ## `run`

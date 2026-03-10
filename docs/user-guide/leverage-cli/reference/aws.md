@@ -1,6 +1,6 @@
 # Command: `aws`
 
-Run aws-cli commands with the proper credentials for the project. All commands are passed directly to the AWS CLI and you should expect the standard behavior from all of them, except for the few specific cases listed below.
+Run AWS CLI commands with the proper credentials for the project. All commands are passed directly to the AWS CLI and you should expect the standard behavior from all of them, except for the few specific cases listed below.
 
 ---
 ## `configure sso`

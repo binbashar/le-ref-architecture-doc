@@ -1,6 +1,6 @@
 # Command: `tofu` | `tf`
 
-The `tofu` provides the OpenTofu executable with specific configuration values required by Leverage.
+The `tofu` command provides the OpenTofu executable with specific configuration values required by Leverage.
 
 It transparently manages authentication, either Multi-Factor or Single Sign-On, on behalf of the user on commands that require it. SSO authentication takes precedence over MFA when both are active.
 

@@ -15,7 +15,7 @@ The command can also be invoked via its shortened version `kc`.
 !!! info "Discovering clusters"
     You can now run the `discover` command from the root of the project to find and configure all the involved clusters. 
 
-If the binary is not installed in the system the CLI will prompt the user to do so.
+If the binary is not installed in the system, the CLI will prompt the user to do so.
 
 ---
 ## `run`

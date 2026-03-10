@@ -1,6 +1,6 @@
 # Command: `tfautomv`
 
-The `tfautomv` command  provides the [tfautomv](https://tfautomv.dev/) executable with specific configuration values required by Leverage.
+The `tfautomv` command provides the [tfautomv](https://tfautomv.dev/) executable with specific configuration values required by Leverage.
 
 It transparently handles authentication, whether it is Multi-Factor or via Single Sign-On, on behalf of the user in the commands that require it. SSO Authentication takes precedence over MFA when both are active. 
 

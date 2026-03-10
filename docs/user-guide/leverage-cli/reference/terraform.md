@@ -52,7 +52,7 @@ Can only be run at **layer** level if `--layers` is not set, or at **account** l
     **Example:**
 
     - For target:  `aws_route53_record.main["*.binbash.com.ar"]`
-    - Use:  `leverage tf plan -target='aws_route53_record.main[\"*.binbash.com.ar\"]'`
+    - Use:  `leverage terraform plan -target='aws_route53_record.main[\"*.binbash.com.ar\"]'`
     
     Note the single and double quotes. 
     This is valid for ZSH and BASH.
@@ -199,5 +199,5 @@ Can only be run at **layer** level.
 
     **Examples:**
 
-    - Opt-1:  `leverage tf import module.s3_bucket.aws_s3_bucket.this\[0\] s3-bag-data-bucket`
-    - Opt-2:  `noglob leverage tf import module.s3_bucket.aws_s3_bucket.this[0] s3-bag-data-bucket`  
+    - Opt-1:  `leverage terraform import module.s3_bucket.aws_s3_bucket.this\[0\] s3-bag-data-bucket`
+    - Opt-2:  `noglob leverage terraform import module.s3_bucket.aws_s3_bucket.this[0] s3-bag-data-bucket`  

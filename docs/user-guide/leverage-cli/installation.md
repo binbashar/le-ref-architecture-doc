@@ -85,13 +85,13 @@ Commands:
 
 If you prefer not to install the Leverage package globally and would like to limit its influence to only the directory of your project, we recommend using tools like [uv](https://docs.astral.sh/uv/) or [Poetry](https://python-poetry.org/). These tools are commonly used when working with python applications and help manage common issues that may result from installing and using such applications globally.
 
-###Installation using uv
+### Installation using uv
 
-####Install uv
+#### Install uv
 
 Follow the instructions laid out in the [official `uv` installation guide](https://docs.astral.sh/uv/getting-started/installation/).
 
-####Local python version
+#### Local python version
 
 You can choose to have a python installation exclusive to the local project.
 ``` bash
@@ -99,13 +99,13 @@ uv python install 3.13
 uv python pin 3.13
 ```
 
-####Initialize the project and install `leverage`
+#### Initialize the project and install `leverage`
 ``` bash
 uv init
 uv add leverage
 ```
 
-####Activate the virtual environment
+#### Activate the virtual environment
 Once the project is initialized and Leverage CLI is installed you can run commands as
 ``` bash
 uv run leverage tofu plan

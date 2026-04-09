@@ -1,6 +1,6 @@
 # Command: `tofu` | `tf`
 
-The `tofu` command is a wrapper for a containerized installation of OpenTofu. It provides the OpenTofu executable with specific configuration values required by Leverage.
+The `tofu` command provides the OpenTofu executable with specific configuration values required by Leverage.
 
 It transparently manages authentication, either Multi-Factor or Single Sign-On, on behalf of the user on commands that require it. SSO authentication takes precedence over MFA when both are active.
 
@@ -8,16 +8,6 @@ Some commands can only be run at **layer** level and will not run anywhere else 
 
 The command can also be invoked via its shortened version `tf`.
 
-Since version 1.12, all the subcommands supports `--mount` and `--env-var` parameters in form of tuples:
-
-```bash
-leverage tofu --mount /home/user/bin/ /usr/bin/ --env-var FOO BAR apply
-```
-
-You can also provide them multiple times:
-```bash
-leverage tofu --mount /usr/bin/ /usr/bin/ --mount /etc/config /config --env-var FOO BAR --env-var TEST OK init
-```
 ---
 ## `init`
 
@@ -30,7 +20,7 @@ Equivalent to `tofu init`.
 
 All arguments given are passed as received to OpenTofu.
 
-Can only be run at **layer** level if `--layers` is not set, or at **account** or **layers-container-directory** if it is.
+Can only be run at **layer** level if `--layers` is not set, or at **account** level otherwise.
 
 [Layout validation](#validate-layout) is performed before actually initializing OpenTofu unless explicitly indicated against via the `--skip-validation` flag.
 
@@ -53,7 +43,7 @@ Equivalent to `tofu plan`.
 
 All arguments given are passed as received to OpenTofu.
 
-Can only be run at **layer** level if `--layers` is not set, or at **account** or **layers-container-directory** if it is.
+Can only be run at **layer** level if `--layers` is not set, or at **account** level otherwise.
 
 ### Options
 * `--layers`: Applies command to layers listed in this option. (see more info [here](./layers))
@@ -81,7 +71,7 @@ Equivalent to `tofu apply`.
 
 All arguments given are passed as received to OpenTofu.
 
-Can only be run at **layer** level if `--layers` is not set, or at **account** or **layers-container-directory** if it is.
+Can only be run at **layer** level if `--layers` is not set, or at **account** level otherwise.
 
 ### Options
 * `--layers`: Applies command to layers listed in this option. (see more info [here](./layers))
@@ -103,7 +93,7 @@ Equivalent to `tofu destroy`.
 
 All arguments given are passed as received to OpenTofu.
 
-Can only be run at **layer** level if `--layers` is not set, or at **account** or **layers-container-directory** if it is.
+Can only be run at **layer** level if `--layers` is not set, or at **account** level otherwise.
 
 ### Options
 * `--layers`: Applies command to layers listed in this option. (see more info [here](./layers))
@@ -126,7 +116,7 @@ Equivalent to `tofu output`.
 
 All arguments given are passed as received to OpenTofu.
 
-Can only be run at **layer** level if `--layers` is not set, or at **account** or **layers-container-directory** if it is.
+Can only be run at **layer** level if `--layers` is not set, or at **account** level otherwise.
 
 ### Options
 * `--layers`: Applies command to layers listed in this option. (see more info [here](./layers))
@@ -142,30 +132,6 @@ leverage tofu version
 Equivalent to `tofu version`.
 
 Print OpenTofu version.
-
----
-## `shell`
-
-### Usage
-``` bash
-leverage tofu shell [option]
-```
-
-Open a shell into the OpenTofu container in the current directory. An authenticated shell can only be opened at **layer** level.
-
-!!! info "[:books: OpenTofu shell environment documentation](../shell.md)"
-
-### Options
-* `--mfa`: Authenticate via MFA upon launching shell.
-* `--sso`: Authenticate via SSO upon launching shell.
-
-_Note:_ When `--sso` flag is used, the `--mfa` flag status is ignored.
-
-!!! example "What if I want to run a OpenTofu command that is not supported by the CLI?"
-    One common error you could encounter is `"Error acquiring the state lock"`, where you might need to use `force-unlock`. You can do the following:
-
-    1. `leverage tofu shell --sso`.
-    2.  Then from inside the container: `tofu force-unlock LOCK-ID`.
 
 ---
 ## `format`
@@ -214,7 +180,7 @@ Values checked:
 * AWS CLI profile name prefix
 * S3 Bucket name prefix
 * DynamoDB locking table name prefix
-
+Can only be run at **layer** level if `--layers` is not set, or at **account** otherwise.
 
 ---
 ## `import`

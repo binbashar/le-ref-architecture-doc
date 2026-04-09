@@ -1,21 +1,11 @@
 # Command: `terraform`
 
-The `terraform` command is a wrapper for a containerized installation of Terraform. It provides the Terraform executable with specific configuration values required by Leverage.
+The `terraform` command provides the Terraform executable with specific configuration values required by Leverage.
 
 It transparently manages authentication, either Multi-Factor or Single Sign-On, on behalf of the user on commands that require it. SSO authentication takes precedence over MFA when both are active.
 
 Some commands can only be run at **layer** level and will not run anywhere else in the project.
 
-Since version 1.12, all the subcommands supports `--mount` and `--env-var` parameters in form of tuples:
-
-```bash
-leverage terraform --mount /home/user/bin/ /usr/bin/ --env-var FOO BAR apply
-```
-
-You can also provide them multiple times:
-```bash
-leverage terraform --mount /usr/bin/ /usr/bin/ --mount /etc/config /config --env-var FOO BAR --env-var TEST OK init
-```
 ---
 ## `init`
 
@@ -28,7 +18,7 @@ Equivalent to `terraform init`.
 
 All arguments given are passed as received to Terraform.
 
-Can only be run at **layer** level if `--layers` is not set, or at **account** or **layers-container-directory** if it is.
+Can only be run at **layer** level if `--layers` is not set, or at **account** level otherwise.
 
 [Layout validation](#validate-layout) is performed before actually initializing Terraform unless explicitly indicated against via the `--skip-validation` flag.
 
@@ -51,7 +41,7 @@ Equivalent to `terraform plan`.
 
 All arguments given are passed as received to Terraform.
 
-Can only be run at **layer** level if `--layers` is not set, or at **account** or **layers-container-directory** if it is.
+Can only be run at **layer** level if `--layers` is not set, or at **account** level otherwise.
 
 ### Options
 * `--layers`: Applies command to layers listed in this option. (see more info [here](./layers))
@@ -62,7 +52,7 @@ Can only be run at **layer** level if `--layers` is not set, or at **account** o
     **Example:**
 
     - For target:  `aws_route53_record.main["*.binbash.com.ar"]`
-    - Use:  `leverage tf plan -target='aws_route53_record.main[\"*.binbash.com.ar\"]'`
+    - Use:  `leverage terraform plan -target='aws_route53_record.main[\"*.binbash.com.ar\"]'`
     
     Note the single and double quotes. 
     This is valid for ZSH and BASH.
@@ -79,7 +69,7 @@ Equivalent to `terraform apply`.
 
 All arguments given are passed as received to Terraform.
 
-Can only be run at **layer** level if `--layers` is not set, or at **account** or **layers-container-directory** if it is.
+Can only be run at **layer** level if `--layers` is not set, or at **account** level otherwise.
 
 ### Options
 * `--layers`: Applies command to layers listed in this option. (see more info [here](./layers))
@@ -101,7 +91,7 @@ Equivalent to `terraform destroy`.
 
 All arguments given are passed as received to Terraform.
 
-Can only be run at **layer** level if `--layers` is not set, or at **account** or **layers-container-directory** if it is.
+Can only be run at **layer** level if `--layers` is not set, or at **account** level otherwise.
 
 ### Options
 * `--layers`: Applies command to layers listed in this option. (see more info [here](./layers))
@@ -124,7 +114,7 @@ Equivalent to `terraform output`.
 
 All arguments given are passed as received to Terraform.
 
-Can only be run at **layer** level if `--layers` is not set, or at **account** or **layers-container-directory** if it is.
+Can only be run at **layer** level if `--layers` is not set, or at **account** level otherwise.
 
 ### Options
 * `--layers`: Applies command to layers listed in this option. (see more info [here](./layers))
@@ -140,30 +130,6 @@ leverage terraform version
 Equivalent to `terraform version`.
 
 Print Terraform version.
-
----
-## `shell`
-
-### Usage
-``` bash
-leverage terraform shell [option]
-```
-
-Open a shell into the Terraform container in the current directory. An authenticated shell can only be opened at **layer** level.
-
-!!! info "[:books: Terraform shell environment documentation](../shell.md)"
-
-### Options
-* `--mfa`: Authenticate via MFA upon launching shell.
-* `--sso`: Authenticate via SSO upon launching shell.
-
-_Note:_ When `--sso` flag is used, the `--mfa` flag status is ignored.
-
-!!! example "What if I want to run a Terraform command that is not supported by the CLI?"
-    One common error you could encounter is `"Error acquiring the state lock"`, where you might need to use `force-unlock`. You can do the following:
-
-    1. `leverage terraform shell --sso`.       
-    2.  Then from inside the container: `terraform force-unlock LOCK-ID`.
 
 ---
 ## `format`
@@ -233,5 +199,5 @@ Can only be run at **layer** level.
 
     **Examples:**
 
-    - Opt-1:  `leverage tf import module.s3_bucket.aws_s3_bucket.this\[0\] s3-bag-data-bucket`
-    - Opt-2:  `noglob leverage tf import module.s3_bucket.aws_s3_bucket.this[0] s3-bag-data-bucket`  
+    - Opt-1:  `leverage terraform import module.s3_bucket.aws_s3_bucket.this\[0\] s3-bag-data-bucket`
+    - Opt-2:  `noglob leverage terraform import module.s3_bucket.aws_s3_bucket.this[0] s3-bag-data-bucket`  

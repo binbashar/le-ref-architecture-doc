@@ -1,11 +1,10 @@
 # Installation
 
-To use Leverage CLI you need to install it from the Python Package Index (Pypi). Currently, only Linux and Mac OS are supported operative systems.
+To use Leverage CLI you need to install it from the Python Package Index (Pypi). Currently, only Linux and Mac OS are officially supported operative systems.
 
 !!! done "Requirements"
     * [x] **Python** `>= 3.9`
     * [x] **Git** `>= 2.25`
-    * [x] **Docker engine** `>= 20.x.y`
 
 !!! warning "Having issues with the CLI?"
     Check out [the troubleshooting section](/user-guide/troubleshooting/general) to find more help.
@@ -47,7 +46,7 @@ $ pip3 install leverage
 
 Upgrade to a specific [version](https://github.com/binbashar/leverage/releases).
 ``` bash
-$ pip3 install -Iv leverage==1.9.1
+$ pip3 install -Iv leverage==2.2.0
 ```
 
 Upgrade to the latest stable version
@@ -70,22 +69,57 @@ Options:
   --help         Show this message and exit.
 
 Commands:
-  aws          Run AWS CLI commands in a custom containerized environment.
+  aws          Run AWS CLI commands in the context of the current project.
   credentials  Manage AWS cli credentials.
-  kc           Run Kubectl commands in a custom containerized environment.
-  kubectl      Run Kubectl commands in a custom containerized environment.
+  kc           Run Kubectl commands in the context of the current project.
+  kubectl      Run Kubectl commands in the context of the current project.
   project      Manage a Leverage project.
   run          Perform specified task(s) and all of its dependencies.
-  shell        Run a shell in a generic container.
-  tofu         Run OpenTofu commands in a custom containerized...
-  tf           Run OpenTofu commands in a custom containerized...
-  terraform    Run Terraform commands in a custom containerized...
-  tfautomv     Run TFAutomv commands in a custom containerized...
+  terraform    Run Terraform commands in the context of the current project.
+  tf           Run OpenTofu commands in the context of the current project.
+  tfautomv     Run TFAutomv commands in the context of the current project.`
+  tofu         Run OpenTofu commands in the context of the current project.
 ```
 
 ##Installation in an isolated environment
 
-If you prefer not to install the Leverage package globally and would like to limit its influence to only the directory of your project, we recommend using tools like [Pipenv](https://pipenv.pypa.io/en/latest/) or [Poetry](https://python-poetry.org/). These tools are commonly used when working with python applications and help manage common issues that may result from installing and using such applications globally.
+If you prefer not to install the Leverage package globally and would like to limit its influence to only the directory of your project, we recommend using tools like [uv](https://docs.astral.sh/uv/) or [Poetry](https://python-poetry.org/). These tools are commonly used when working with python applications and help manage common issues that may result from installing and using such applications globally.
+
+### Installation using uv
+
+#### Install uv
+
+Follow the instructions laid out in the [official `uv` installation guide](https://docs.astral.sh/uv/getting-started/installation/).
+
+#### Local python version
+
+You can choose to have a python installation exclusive to the local project.
+``` bash
+uv python install 3.13
+uv python pin 3.13
+```
+
+#### Initialize the project and install `leverage`
+``` bash
+uv init
+uv add leverage
+```
+
+#### Activate the virtual environment
+Once the project is initialized and Leverage CLI is installed you can run commands as
+``` bash
+uv run leverage tofu plan
+```
+However a simpler approach is to activate the virtual environment in the current shell, running
+``` bash
+source .venv/bin/activate
+```
+Now all Leverage CLI commands can be executed directly
+``` bash
+leverage tofu plan 
+```
+
+###
 
 ##Shell completion
 

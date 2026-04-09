@@ -3,11 +3,7 @@ By utilizing the [`build.env` capability](https://github.com/binbashar/leverage/
 easily change some default behaviors of the CLI. In the **binbash Leverage™ Ref
 Architecture** you will find the following
 [`build.env` example](https://github.com/binbashar/le-tf-infra-aws/blob/master/build.env) as an example. 
-This allows you to specify several configurations for the CLI, such as the
-[Leverage-Toolbox-Image](https://hub.docker.com/repository/docker/binbash/leverage-toolbox/general) you want to
-use, ensuring that you are using the latest version or a specific version that you prefer based on your [compatibility
-requirements](https://leverage.binbash.com.ar/work-with-us/releases/versions-compatibility-matrix/#compatibility-matrix).
-This helps you avoid compatibility issues and ensures that your infrastructure deployments go smoothly.
+This allows you to specify several configurations for the CLI, such as the project short name that is injected throughout the codebase.
 
 ### `build.env` file format
 The `build.env` file format and supported parameters are the following:
@@ -20,15 +16,8 @@ PROJECT=bb
 MFA_ENABLED=false
 
 # OpenTofu
-TF_IMAGE_TAG=1.2.7-0.1.4
+TF_BINARY=./@bin/tofu
 ```
-
-!!! info "Customizing or extending the leverage-toolbox docker image"
-    You can locally copy and edit the [Dockerfile](https://github.com/binbashar/le-docker-leverage-toolbox/blob/master/Dockerfile)
-    in order to rebuild it based on your needs, eg for a `Dockerfile` placed in the current working directory:
-    `$ docker build -t binbash/leverage-toolbox:1.2.7-0.1.4 --build-arg TOFU_VERSION='1.2.7' .`
-    In case you like this changes to be permanent please consider 
-    [creating and submitting a PR](https://github.com/binbashar/leverage/pulls).
 
 ### Working principle & multiple `build.env` precedence
 

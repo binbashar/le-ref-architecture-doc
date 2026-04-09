@@ -35,7 +35,7 @@ Tasks in build file `build.py`:
 
   copy_file               Copy src file to dst
 
-Powered by Leverage 1.0.10
+Powered by Leverage 3.0.0
 ```
 
 Any argument that the task may receive are to be given when [running the task](d). The syntax for passing arguments is similar to that of Rake.

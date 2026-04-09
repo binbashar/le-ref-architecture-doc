@@ -3349,14 +3349,6 @@
       
         
       
-        
-      
-        
-      
-        
-      
-        
-      
     
     
       
@@ -3459,8 +3451,6 @@
   
     
     
-      
-        
       
         
       
@@ -3823,27 +3813,6 @@
 
               
             
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../reference/shell/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    shell
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
           </ul>
         </nav>
       
@@ -4035,90 +4004,6 @@
           </ul>
         </nav>
       
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../terraform-new-versions/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Using newer versions of Terraform
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../private-repositories/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Private Repositories
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../shell/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Getting shell access
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../history/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    A bit of history
-  </span>
-  
-
-      </a>
     </li>
   
 
@@ -5432,11 +5317,7 @@
 easily change some default behaviors of the CLI. In the <strong>binbash Leverage™ Ref
 Architecture</strong> you will find the following
 <a href="https://github.com/binbashar/le-tf-infra-aws/blob/master/build.env"><code>build.env</code> example</a> as an example. 
-This allows you to specify several configurations for the CLI, such as the
-<a href="https://hub.docker.com/repository/docker/binbash/leverage-toolbox/general">Leverage-Toolbox-Image</a> you want to
-use, ensuring that you are using the latest version or a specific version that you prefer based on your <a href="https://leverage.binbash.com.ar/work-with-us/releases/versions-compatibility-matrix/#compatibility-matrix">compatibility
-requirements</a>.
-This helps you avoid compatibility issues and ensures that your infrastructure deployments go smoothly.</p>
+This allows you to specify several configurations for the CLI, such as the project short name that is injected throughout the codebase.</p>
 <h3 id="buildenv-file-format"><code>build.env</code> file format<a class="headerlink" href="#buildenv-file-format" title="Permanent link"> ¶</a></h3>
 <p>The <code>build.env</code> file format and supported parameters are the following:</p>
 <div class="highlight"><pre><span></span><code># Project settings
@@ -5446,16 +5327,8 @@ PROJECT=bb
 MFA_ENABLED=false
 
 # OpenTofu
-TF_IMAGE_TAG=1.2.7-0.1.4
+TF_BINARY=./@bin/tofu
 </code></pre></div>
-<div class="admonition info">
-<p class="admonition-title">Customizing or extending the leverage-toolbox docker image</p>
-<p>You can locally copy and edit the <a href="https://github.com/binbashar/le-docker-leverage-toolbox/blob/master/Dockerfile">Dockerfile</a>
-in order to rebuild it based on your needs, eg for a <code>Dockerfile</code> placed in the current working directory:
-<code>$ docker build -t binbash/leverage-toolbox:1.2.7-0.1.4 --build-arg TOFU_VERSION='1.2.7' .</code>
-In case you like this changes to be permanent please consider 
-<a href="https://github.com/binbashar/leverage/pulls">creating and submitting a PR</a>.</p>
-</div>
 <h3 id="working-principle-multiple-buildenv-precedence">Working principle &amp; multiple <code>build.env</code> precedence<a class="headerlink" href="#working-principle-multiple-buildenv-precedence" title="Permanent link"> ¶</a></h3>
 <p>The <code>leverage CLI</code> has an environmental variable loading utility that will load all <code>.env</code> files with the given name in 
 the current directory an all of its parents up to the repository root directory, and store them in a dictionary.
@@ -5655,7 +5528,7 @@ For example the <a href="https://github.com/binbashar/le-tf-infra-aws/blob/maste
     </div>
     
     
-    <script id="__config" type="application/json">{"base": "../../../..", "features": ["navigation.tabs", "navigation.instant", "navigation.tracking", "navigation.indexes", "navigation.top", "navigation.footer", "header.autohide", "content.action.edit", "content.code.annotate"], "search": "../../../../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    <script id="__config" type="application/json">{"base": "../../../..", "features": ["navigation.tabs", "navigation.instant", "navigation.tracking", "navigation.indexes", "navigation.top", "navigation.footer", "header.autohide", "content.action.edit", "content.code.copy", "content.code.annotate"], "search": "../../../../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
       <script src="../../../../assets/javascripts/bundle.83f73b43.min.js"></script>

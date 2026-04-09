@@ -15,7 +15,7 @@
         <link rel="canonical" href="https://leverage.binbash.co/user-guide/leverage-cli/extending-leverage/how-to-extend/">
       
       
-        <link rel="prev" href="../../reference/shell/">
+        <link rel="prev" href="../../reference/kubectl/">
       
       
         <link rel="next" href="../build.env/">
@@ -3349,14 +3349,6 @@
       
         
       
-        
-      
-        
-      
-        
-      
-        
-      
     
     
       
@@ -3459,8 +3451,6 @@
   
     
     
-      
-        
       
         
       
@@ -3823,27 +3813,6 @@
 
               
             
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../reference/shell/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    shell
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
           </ul>
         </nav>
       
@@ -4042,90 +4011,6 @@
           </ul>
         </nav>
       
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../terraform-new-versions/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Using newer versions of Terraform
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../private-repositories/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Private Repositories
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../shell/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Getting shell access
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../history/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    A bit of history
-  </span>
-  
-
-      </a>
     </li>
   
 
@@ -5441,11 +5326,7 @@
 <h2 id="override-defaults-via-buildenv-file">Override defaults via <code>build.env</code> file<a class="headerlink" href="#override-defaults-via-buildenv-file" title="Permanent link"> ¶</a></h2>
 <p>By utilizing the <a href="https://github.com/binbashar/leverage/blob/master/leverage/conf.py"><code>build.env</code> capability</a>, you can
 easily change some default behaviors of the CLI. This allows you to specify several configurations for the CLI, 
-such as the
-<a href="https://hub.docker.com/repository/docker/binbash/leverage-toolbox/general">Leverage-Toolbox-Image</a> that you want to
-use, ensuring that you are using the latest version or a specific version that you prefer based on your <a href="https://leverage.binbash.com.ar/work-with-us/releases/versions-compatibility-matrix/#compatibility-matrix">compatibility
-requirements</a>. 
-This helps you avoid compatibility issues and ensures that your infrastructure deployments go smoothly. </p>
+such as the OpenTofu/Terraform binary location, if it were to be found in a non standard location.</p>
 <div class="admonition info">
 <p class="admonition-title">Read More about <code>build.env</code></p>
 <p>In order to further understand this mechanism and how to use it please visit the dedicated 
@@ -5519,7 +5400,7 @@ serving the needs of the community and making infrastructure deployments easier 
       <nav class="md-footer__inner md-grid" aria-label="Footer" >
         
           
-          <a href="../../reference/shell/" class="md-footer__link md-footer__link--prev" aria-label="Previous: shell">
+          <a href="../../reference/kubectl/" class="md-footer__link md-footer__link--prev" aria-label="Previous: kubectl">
             <div class="md-footer__button md-icon">
               
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
@@ -5529,7 +5410,7 @@ serving the needs of the community and making infrastructure deployments easier 
                 Previous
               </span>
               <div class="md-ellipsis">
-                shell
+                kubectl
               </div>
             </div>
           </a>
@@ -5672,7 +5553,7 @@ serving the needs of the community and making infrastructure deployments easier 
     </div>
     
     
-    <script id="__config" type="application/json">{"base": "../../../..", "features": ["navigation.tabs", "navigation.instant", "navigation.tracking", "navigation.indexes", "navigation.top", "navigation.footer", "header.autohide", "content.action.edit", "content.code.annotate"], "search": "../../../../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    <script id="__config" type="application/json">{"base": "../../../..", "features": ["navigation.tabs", "navigation.instant", "navigation.tracking", "navigation.indexes", "navigation.top", "navigation.footer", "header.autohide", "content.action.edit", "content.code.copy", "content.code.annotate"], "search": "../../../../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
       <script src="../../../../assets/javascripts/bundle.83f73b43.min.js"></script>

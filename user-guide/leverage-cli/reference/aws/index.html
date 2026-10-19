@@ -3638,6 +3638,48 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#options" class="md-nav__link">
+    <span class="md-ellipsis">
+      Options
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sso-refresh" class="md-nav__link">
+    <span class="md-ellipsis">
+      sso refresh
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="sso refresh">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#usage_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      Usage
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#options_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Options
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -3654,7 +3696,7 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#usage_2" class="md-nav__link">
+  <a href="#usage_3" class="md-nav__link">
     <span class="md-ellipsis">
       Usage
     </span>
@@ -5342,6 +5384,48 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#options" class="md-nav__link">
+    <span class="md-ellipsis">
+      Options
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sso-refresh" class="md-nav__link">
+    <span class="md-ellipsis">
+      sso refresh
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="sso refresh">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#usage_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      Usage
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#options_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Options
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -5358,7 +5442,7 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#usage_2" class="md-nav__link">
+  <a href="#usage_3" class="md-nav__link">
     <span class="md-ellipsis">
       Usage
     </span>
@@ -5406,12 +5490,60 @@
 <hr />
 <h2 id="sso-login"><code>sso login</code><a class="headerlink" href="#sso-login" title="Permanent link"> ¶</a></h2>
 <h3 id="usage_1">Usage<a class="headerlink" href="#usage_1" title="Permanent link"> ¶</a></h3>
-<div class="highlight"><pre><span></span><code>leverage<span class="w"> </span>aws<span class="w"> </span>sso<span class="w"> </span>login
+<div class="highlight"><pre><span></span><code>leverage<span class="w"> </span>aws<span class="w"> </span>sso<span class="w"> </span>login<span class="w"> </span><span class="o">[</span>option<span class="o">]</span>
 </code></pre></div>
 <p>It wraps <code>aws sso login</code> taking extra steps to allow <code>Leverage</code> to use the resulting token while is valid.</p>
+<h3 id="options">Options<a class="headerlink" href="#options" title="Permanent link"> ¶</a></h3>
+<ul>
+<li><code>--refresh-all</code>: Once the login succeeds, refresh the temporary credentials of every account profile configured in the project, instead of waiting for each layer to request them on demand.</li>
+</ul>
+<div class="admonition info">
+<p class="admonition-title">Why refreshing all accounts at once</p>
+<p>By default, credentials for a given account are only obtained the first time you run a command on a layer
+that needs them. With <code>--refresh-all</code> you get a single, up front refresh for all the accounts, which is
+handy when you need valid credentials for tooling that runs outside of Leverage, e.g. the AWS CLI itself,
+<code>kubectl</code>, or your IDE's AWS integration.</p>
+</div>
+<p>Accounts that already hold credentials valid for more than 30 minutes are skipped, and accounts on which your
+user is not allowed to assume the configured role are reported and skipped too, so a single missing permission
+does not abort the whole refresh.</p>
+<div class="admonition note">
+<p class="admonition-title">Prefer refreshing credentials per layer</p>
+<p>Bulk refreshing is a convenience, not the recommended default. Whenever possible, use
+<code>leverage tf refresh-credentials</code> (also available as <code>leverage tofu refresh-credentials</code> and
+<code>leverage terraform refresh-credentials</code>) from within the layer you are working on. It only obtains
+credentials for the account that layer actually needs, which follows the principle of least privilege:
+you avoid keeping valid credentials for every account in the project lying around on your machine when
+you are only going to work with one or two of them.</p>
+</div>
+<hr />
+<h2 id="sso-refresh"><code>sso refresh</code><a class="headerlink" href="#sso-refresh" title="Permanent link"> ¶</a></h2>
+<h3 id="usage_2">Usage<a class="headerlink" href="#usage_2" title="Permanent link"> ¶</a></h3>
+<div class="highlight"><pre><span></span><code>leverage<span class="w"> </span>aws<span class="w"> </span>sso<span class="w"> </span>refresh<span class="w"> </span><span class="o">[</span>option<span class="o">]</span>
+</code></pre></div>
+<p>Refreshes the temporary credentials of every account profile configured in the project, reusing the current
+SSO token. It performs the same bulk refresh as <code>leverage aws sso login --refresh-all</code>, but without going
+through the login flow again, so it can be run at any moment while your SSO session is still valid.</p>
+<p>Credentials that are still valid for more than 30 minutes are skipped, and a summary with the number of
+refreshed, skipped and failed accounts is printed at the end.</p>
+<h3 id="options_1">Options<a class="headerlink" href="#options_1" title="Permanent link"> ¶</a></h3>
+<ul>
+<li><code>--force</code>: Refresh the credentials of all accounts even if they have not expired yet.</li>
+</ul>
+<div class="admonition warn">
+<p class="admonition-title">Important</p>
+<p>This command requires an active SSO session. If your token has expired or you never logged in, run
+<code>leverage aws sso login</code> first.</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>As with <code>--refresh-all</code>, prefer <code>leverage tf refresh-credentials</code> from within the layer you are working on
+whenever you can, so that only the credentials that layer needs are obtained, in line with the principle of
+least privilege. See <a href="#sso-login"><code>sso login</code></a> for more details.</p>
+</div>
 <hr />
 <h2 id="sso-logout"><code>sso logout</code><a class="headerlink" href="#sso-logout" title="Permanent link"> ¶</a></h2>
-<h3 id="usage_2">Usage<a class="headerlink" href="#usage_2" title="Permanent link"> ¶</a></h3>
+<h3 id="usage_3">Usage<a class="headerlink" href="#usage_3" title="Permanent link"> ¶</a></h3>
 <pre><code>leverage aws sso logout</code></pre>
 
 <p>It wraps <code>aws sso logout</code> taking extra steps to make sure that all tokens and temporary credentials are wiped from the system. It also reminds the user to log out form the AWS SSO login page and identity provider portal. This last action is left to the user to perform.</p>

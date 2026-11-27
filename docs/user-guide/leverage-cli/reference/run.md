@@ -24,6 +24,8 @@ leverage run task1 task2[arg1,arg2] task3[arg1,kwarg1=val1,kwarg2=val2]
   
 * `task3` receives one positional argument `arg1` and two keyworded arguments `kwarg1` with value `val1` and `kwarg2` with value `val2`
 
+Arguments are separated by commas, so a value can't contain one. A keyworded argument's value can contain `=` signs: in `task4[query=a=b]`, `query` gets the value `a=b`.
+
 ### Options
 * `-f` | `--filename`:  Name of the file containing the tasks' definition. Defaults to `build.py`
 * `-l` | `--list-tasks`: List all the tasks defined for the project along a description of their purpose (when available).  

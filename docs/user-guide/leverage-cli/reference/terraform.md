@@ -27,7 +27,9 @@ Can only be run at **layer** level if `--layers` is not set, or at **account** l
 * `--layers`: Applies command to layers listed in this option. (see more info [here](./layers))
 
 !!! info "Regarding S3 backend keys"
-    If the S3 backend block is set, and no key was defined, Leverage CLI will try to create a new one automatically and store it in the `config.tf` file. It will be based on the layer path relative to the account.
+    If the S3 backend block is set, and no key was defined, Leverage CLI will try to create a new one automatically and store it in the `config.tf` file. It will be based on the layer path relative to the account: the account directory, then the layer's directories without their `base-` or `tools-` prefix, then `terraform.tfstate`. For example, the layer `apps-devstg/us-east-1/base-network` gets the key `apps-devstg/us-east-1/network/terraform.tfstate`.
+
+    When running `init` with `--layers`, each layer gets its own key.
 
 ---
 ## `plan`
@@ -178,6 +180,14 @@ Values checked:
 * AWS CLI profile name prefix
 * S3 Bucket name prefix
 * DynamoDB locking table name prefix
+
+The command exits with an error when any check fails, so it can be used in CI pipelines or pre-commit hooks.
+
+The S3 bucket key must be `<environment>/<layer path>/terraform.tfstate`, where `<environment>` is the `environment` set in the account's `account.tfvars`, and the layer path is relative to the account directory, with the `base-` or `tools-` prefix of a directory left out. These variants are accepted too:
+
+* Without the region directory: for `apps-devstg/us-east-1/base-network`, both `apps-devstg/us-east-1/network/terraform.tfstate` and `apps-devstg/network/terraform.tfstate` are valid.
+* With `tf-` in place of `terraform-`, or the other way around, in a directory name.
+* With `-dr` appended to the first directory after the region, for disaster recovery layers: `apps-devstg/us-east-1/network-dr/terraform.tfstate`.
 
 
 ---

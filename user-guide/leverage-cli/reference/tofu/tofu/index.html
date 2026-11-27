@@ -5843,7 +5843,8 @@
 </ul>
 <div class="admonition info">
 <p class="admonition-title">Regarding S3 backend keys</p>
-<p>If the S3 backend block is set, and no key was defined, Leverage CLI will try to create a new one automatically and store it in the <code>config.tf</code> file. It will be based on the layer path relative to the account.</p>
+<p>If the S3 backend block is set, and no key was defined, Leverage CLI will try to create a new one automatically and store it in the <code>config.tf</code> file. It will be based on the layer path relative to the account: the account directory, then the layer's directories without their <code>base-</code> or <code>tools-</code> prefix, then <code>terraform.tfstate</code>. For example, the layer <code>apps-devstg/us-east-1/base-network</code> gets the key <code>apps-devstg/us-east-1/network/terraform.tfstate</code>.</p>
+<p>When running <code>init</code> with <code>--layers</code>, each layer gets its own key.</p>
 </div>
 <hr />
 <h2 id="plan"><code>plan</code><a class="headerlink" href="#plan" title="Permanent link"> ¶</a></h2>
@@ -5951,9 +5952,16 @@ This is valid for ZSH and BASH.</p>
 <li>S3 bucket key</li>
 <li>AWS CLI profile name prefix</li>
 <li>S3 Bucket name prefix</li>
-<li>DynamoDB locking table name prefix
-Can only be run at <strong>layer</strong> level if <code>--layers</code> is not set, or at <strong>account</strong> otherwise.</li>
+<li>DynamoDB locking table name prefix</li>
 </ul>
+<p>The command exits with an error when any check fails, so it can be used in CI pipelines or pre-commit hooks.</p>
+<p>The S3 bucket key must be <code>&lt;environment&gt;/&lt;layer path&gt;/terraform.tfstate</code>, where <code>&lt;environment&gt;</code> is the <code>environment</code> set in the account's <code>account.tfvars</code>, and the layer path is relative to the account directory, with the <code>base-</code> or <code>tools-</code> prefix of a directory left out. These variants are accepted too:</p>
+<ul>
+<li>Without the region directory: for <code>apps-devstg/us-east-1/base-network</code>, both <code>apps-devstg/us-east-1/network/terraform.tfstate</code> and <code>apps-devstg/network/terraform.tfstate</code> are valid.</li>
+<li>With <code>tf-</code> in place of <code>terraform-</code>, or the other way around, in a directory name.</li>
+<li>With <code>-dr</code> appended to the first directory after the region, for disaster recovery layers: <code>apps-devstg/us-east-1/network-dr/terraform.tfstate</code>.</li>
+</ul>
+<p>Can only be run at <strong>layer</strong> level if <code>--layers</code> is not set, or at <strong>account</strong> otherwise.</p>
 <hr />
 <h2 id="import"><code>import</code><a class="headerlink" href="#import" title="Permanent link"> ¶</a></h2>
 <h3 id="usage_9">Usage<a class="headerlink" href="#usage_9" title="Permanent link"> ¶</a></h3>
